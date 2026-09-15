@@ -1,0 +1,156 @@
+{
+  "name": "pocket-basic-linter",
+  "displayName": "Pocket BASIC / ASM Linter",
+  "description": "PC-E500 series BASIC and SC62015 assembly (e500asm) syntax checking with extensible dialect support.",
+  "version": "0.2.0",
+  "publisher": "pokecom-tools",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.95.0"
+  },
+  "categories": ["Programming Languages", "Linters"],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "pocket-basic",
+        "aliases": ["Pocket BASIC", "PC-E500 BASIC"],
+        "extensions": [".bas", ".basic", ".e500"],
+        "configuration": "./language-configuration.json"
+      },
+      {
+        "id": "pocket-asm",
+        "aliases": ["PC-E500 Assembly", "SC62015 Assembly", "e500asm"],
+        "extensions": [".asm", ".inc", ".e500asm"],
+        "configuration": "./language-configuration-asm.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "pocket-basic",
+        "scopeName": "source.pocket-basic",
+        "path": "./syntaxes/pocket-basic.tmLanguage.json"
+      },
+      {
+        "language": "pocket-asm",
+        "scopeName": "source.pocket-asm",
+        "path": "./syntaxes/pocket-asm.tmLanguage.json"
+      }
+    ],
+    "commands": [
+      {
+        "command": "pocketBasic.openAsPocketBasic",
+        "title": "Pocket BASIC として開く",
+        "category": "Pocket BASIC"
+      },
+      {
+        "command": "pocketAsm.openAsPocketAsm",
+        "title": "PC-E500 アセンブリとして開く",
+        "category": "Pocket ASM"
+      },
+      {
+        "command": "pocketAsm.assemble",
+        "title": "e500asm でアセンブル",
+        "category": "Pocket ASM"
+      }
+    ],
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "pocketAsm.assemble",
+          "when": "editorLangId == pocket-asm"
+        }
+      ],
+      "explorer/context": [
+        {
+          "command": "pocketBasic.openAsPocketBasic",
+          "group": "navigation@20",
+          "when": "resourceScheme == file"
+        },
+        {
+          "command": "pocketAsm.openAsPocketAsm",
+          "group": "navigation@21",
+          "when": "resourceScheme == file"
+        }
+      ],
+      "editor/title/context": [
+        {
+          "command": "pocketBasic.openAsPocketBasic",
+          "group": "navigation@20",
+          "when": "resourceScheme == file && editorLangId != pocket-basic"
+        },
+        {
+          "command": "pocketAsm.openAsPocketAsm",
+          "group": "navigation@21",
+          "when": "resourceScheme == file && editorLangId != pocket-asm"
+        }
+      ],
+      "editor/context": [
+        {
+          "command": "pocketAsm.assemble",
+          "group": "navigation@20",
+          "when": "editorLangId == pocket-asm"
+        }
+      ]
+    },
+    "configuration": [
+      {
+        "title": "Pocket BASIC Linter",
+        "properties": {
+          "pocketBasic.dialect": {
+            "type": "string",
+            "enum": ["pc-e500"],
+            "enumDescriptions": ["SHARP PC-E500 series (ROM 8.5 analysis)"],
+            "default": "pc-e500",
+            "description": "BASIC dialect used for syntax checking."
+          },
+          "pocketBasic.requireLineNumbers": {
+            "type": "boolean",
+            "default": true,
+            "description": "Report source lines that do not start with a line number."
+          },
+          "pocketBasic.checkMissingTargets": {
+            "type": "boolean",
+            "default": true,
+            "description": "Check literal GOTO/GOSUB/RESTORE/RESUME targets."
+          }
+        }
+      },
+      {
+        "title": "Pocket ASM Linter",
+        "properties": {
+          "pocketAsm.includeDirectories": {
+            "type": "array",
+            "items": { "type": "string" },
+            "default": [],
+            "description": "Additional directories searched by INCLUDE / INCBIN (same as e500asm -I). Relative paths are resolved from the workspace folder."
+          },
+          "pocketAsm.defines": {
+            "type": "object",
+            "additionalProperties": { "type": "number" },
+            "default": {},
+            "description": "Symbols defined before assembling (same as e500asm -D NAME=VALUE)."
+          },
+          "pocketAsm.assemblerPath": {
+            "type": "string",
+            "default": "",
+            "description": "Path to e500asm.exe (or e500asm.cmd) used by the 'e500asm でアセンブル' command. Empty disables the command."
+          }
+        }
+      }
+    ]
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "test": "npm run compile && node --test out/test/**/*.test.js",
+    "package": "npm run compile && npx @vscode/vsce package"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "@types/vscode": "^1.95.0",
+    "@vscode/vsce": "^3.2.1",
+    "typescript": "^5.7.2"
+  }
+}

@@ -1,0 +1,27 @@
+# 非公開フォルダ
+/.claude/
+/Emulator/
+/Sharp_ce140f_emul/
+/TETRIS/
+/docs/
+
+# 作業用一時ファイル（マニュアルスキャン等を含むため公開しない）
+/Assembler/tmp/
+/DisAssembler/tmp/
+/Assembler/tests/output/
+
+# ビルド生成物
+bin/
+obj/
+*.obj
+*.user
+.vs/
+node_modules/
+/VSCodeExtensions/pocket-basic-linter/out/
+
+# .NET 製の自己完結型 EXE（各 70〜120 MB）は GitHub の 1 ファイル上限を超えるため同梱しない
+# → GitHub Releases から取得するか、各フォルダの build.cmd でビルドする（app/ に生成される）
+/Assembler/app/*.exe
+/DisAssembler/app/*.exe
+
+# ce140conv.exe と VSIX は小さいので同梱する

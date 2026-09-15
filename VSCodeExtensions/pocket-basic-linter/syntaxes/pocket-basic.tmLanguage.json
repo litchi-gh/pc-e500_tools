@@ -1,0 +1,59 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Pocket BASIC",
+  "scopeName": "source.pocket-basic",
+  "patterns": [
+    { "include": "#comments" },
+    { "include": "#strings" },
+    { "include": "#line-numbers" },
+    { "include": "#labels" },
+    { "include": "#statements" },
+    { "include": "#functions" },
+    { "include": "#numbers" },
+    { "include": "#variables" },
+    { "include": "#operators" }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        { "name": "comment.line.apostrophe.pocket-basic", "match": "'.*$" },
+        { "name": "comment.line.rem.pocket-basic", "match": "(?i)\\bREM\\b.*$" }
+      ]
+    },
+    "strings": {
+      "name": "string.quoted.double.pocket-basic",
+      "begin": "\"",
+      "end": "\""
+    },
+    "line-numbers": {
+      "match": "^\\s*(\\d+)",
+      "captures": {
+        "1": { "name": "constant.numeric.line-number.pocket-basic" }
+      }
+    },
+    "labels": {
+      "name": "entity.name.label.pocket-basic",
+      "match": "(?i)\\*[A-Z][A-Z0-9]*\\b"
+    },
+    "statements": {
+      "name": "keyword.control.pocket-basic",
+      "match": "(?i)\\b(?:APPEND|AS|ARUN|AUTOGOTO|AUTO|BEEP|BASIC|BTEXT\\$|BDATA\\$|CONT|CONSOLE|CLEAR|CLOAD|CSAVE|CLOSE|CALL|CLS|CHAIN|COPY|CSIZE|COLOR|CROTATE|CIRCLE|CASE|DIM|DEGREE|DATA|DELETE|DEFDBL|DEFSNG|DEFAULT|END|ERASE|ERROR|ELSE|FOR|FILES|GOTO|GOSUB|GPRINT|GCURSOR|GRAD|GRAPH|GLCURSOR|INPUT|IF|INIT|KILL|KEY|LIST|LLIST|LPRINT|LOCATE|LOAD|LINE|LET|LFILES|LTEXT|LF|LLINE|MEM\\$|MERGE|NEXT|NAME|NEW|ON|OPEN|OUTPUT|PRINT|PASS|POKE|PSET|PRESET|PAUSE|PAINT|RUN|RETURN|READ|RESTORE|RANDOMIZE|RADIAN|REM|RENUM|RLINE|RESUME|REPEAT|STOP|SAVE|STEP|SET|SORGN|SWITCH|THEN|TEXT|TRON|TROFF|TO|USING|UNTIL|WAIT|WHILE|WEND|ENDIF|ENDSWITCH)\\b"
+    },
+    "functions": {
+      "name": "support.function.pocket-basic",
+      "match": "(?i)\\b(?:ASC|AND|ABS|ATN|ASN|ACS|AHS|AHC|AHT|AER|BTEXT\\$|BDATA\\$|COS|CHR\\$|CUB|CUR|DEG|DMS|DECI|EXP|EOF|ERL|ERN|EVAL|FRE|FACT|HEX\\$|HEX|HSN|HCS|HTN|INPUT|INT|INKEY\\$|KEY|LOG|LOF|LOC|LN|LEN|LEFT\\$|MID\\$|MEM\\$|MDF|NOT|NCR|NPR|OPEN|OR|PI|PEEK|POINT|POL|RND|RIGHT\\$|ROT|RCP|REC|SQR|SIN|SGN|STR\\$|SQU|TAN|TEN|VAL|XOR|DSKF)\\b"
+    },
+    "numbers": {
+      "name": "constant.numeric.pocket-basic",
+      "match": "(?i)(?:&[0-9A-F]+|(?:\\d+(?:\\.\\d*)?|\\.\\d+)(?:E[+-]?\\d+)?)"
+    },
+    "variables": {
+      "name": "variable.other.pocket-basic",
+      "match": "(?i)\\b[A-Z][A-Z0-9]*(?:[$#])?\\b"
+    },
+    "operators": {
+      "name": "keyword.operator.pocket-basic",
+      "match": "<>|<=|>=|[+\\-*/^=<>]"
+    }
+  }
+}

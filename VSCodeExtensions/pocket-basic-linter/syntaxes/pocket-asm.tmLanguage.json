@@ -1,0 +1,91 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "PC-E500 Assembly",
+  "scopeName": "source.pocket-asm",
+  "patterns": [
+    { "include": "#comments" },
+    { "include": "#strings" },
+    { "include": "#label-definitions" },
+    { "include": "#constant-definitions" },
+    { "include": "#directives" },
+    { "include": "#branch-mnemonics" },
+    { "include": "#mnemonics" },
+    { "include": "#functions" },
+    { "include": "#registers" },
+    { "include": "#numbers" },
+    { "include": "#location-counter" },
+    { "include": "#operators" },
+    { "include": "#identifiers" }
+  ],
+  "repository": {
+    "comments": {
+      "name": "comment.line.semicolon.pocket-asm",
+      "match": ";.*$"
+    },
+    "strings": {
+      "patterns": [
+        {
+          "name": "string.quoted.double.pocket-asm",
+          "begin": "\"",
+          "end": "\"",
+          "patterns": [{ "name": "constant.character.escape.pocket-asm", "match": "\\\\(?:x[0-9A-Fa-f]{2}|.)" }]
+        },
+        {
+          "name": "string.quoted.single.pocket-asm",
+          "begin": "'",
+          "end": "'",
+          "patterns": [{ "name": "constant.character.escape.pocket-asm", "match": "\\\\(?:x[0-9A-Fa-f]{2}|.)" }]
+        }
+      ]
+    },
+    "label-definitions": {
+      "match": "^\\s*([A-Za-z_.][A-Za-z0-9_.]*)\\s*(:)",
+      "captures": {
+        "1": { "name": "entity.name.function.label.pocket-asm" },
+        "2": { "name": "punctuation.separator.label.pocket-asm" }
+      }
+    },
+    "constant-definitions": {
+      "match": "(?i)^\\s*([A-Za-z_.][A-Za-z0-9_.]*)\\s+(?=\\.?EQU\\b|=)",
+      "captures": {
+        "1": { "name": "entity.name.constant.pocket-asm" }
+      }
+    },
+    "directives": {
+      "name": "keyword.control.directive.pocket-asm",
+      "match": "(?i)(?<![A-Za-z0-9_])\\.?(?:ORG|EQU|DB|DEFB|BYTE|DW|DEFW|WORD|DP|DS|DEFS|SPACE|ALIGN|INCLUDE|INCBIN|ASSERT|END|PRE)\\b"
+    },
+    "branch-mnemonics": {
+      "name": "keyword.control.branch.pocket-asm",
+      "match": "(?i)\\b(?:JP|JPZ|JPNZ|JPC|JPNC|JPF|JR|JRZ|JRNZ|JRC|JRNC|CALL|CALLF|RET|RETF|RETI)\\b"
+    },
+    "mnemonics": {
+      "name": "keyword.other.instruction.pocket-asm",
+      "match": "(?i)\\b(?:NOP|SC|RC|TCL|HALT|OFF|WAIT|IR|INT|RESET|PUSHU|POPU|PUSHS|POPS|INC|DEC|ROR|ROL|SHR|SHL|DSLL|DSRL|SWAP|MV|MVW|MVP|MVL|MVLD|ADD|SUB|ADC|SBC|ADCL|SBCL|DADL|DSBL|CMP|CMPW|CMPP|TEST|XOR|AND|OR|EX|EXW|EXP|EXL|PMDF)\\b"
+    },
+    "functions": {
+      "name": "support.function.pocket-asm",
+      "match": "(?i)\\b(?:LOW|HIGH|BANK)(?=\\s*\\()"
+    },
+    "registers": {
+      "name": "variable.language.register.pocket-asm",
+      "match": "(?i)\\b(?:A|B|BA|IL|IH|I|X|Y|U|S|F|IMR|BP|PX|PY|PC|PS)\\b"
+    },
+    "numbers": {
+      "name": "constant.numeric.pocket-asm",
+      "match": "(?i)(?<![A-Za-z0-9_.])(?:\\$[0-9A-F]+|&[0-9A-F]+|0X[0-9A-F]+|0B[01]+|[0-9][0-9A-F]*H|[0-9]+)\\b"
+    },
+    "location-counter": {
+      "name": "variable.language.location-counter.pocket-asm",
+      "match": "(?<![A-Za-z0-9_.])[$*](?![0-9A-Fa-f])"
+    },
+    "operators": {
+      "name": "keyword.operator.pocket-asm",
+      "match": "<<|>>|\\+\\+|--|[-+*/%&|^~=#]"
+    },
+    "identifiers": {
+      "name": "variable.other.symbol.pocket-asm",
+      "match": "[A-Za-z_.][A-Za-z0-9_.]*"
+    }
+  }
+}
