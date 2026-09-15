@@ -31,7 +31,7 @@ SHARP ポケットコンピュータ PC-E500 シリーズ（PC-E500 / PC-E550 / 
 
 ### Assembler/ — クロスアセンブラ e500asm
 
-SC62015 の全命令、内部 RAM アドレッシング（BP / PX / PY と PRE バイトの自動生成）、外部メモリの 20 ビットアドレッシングに対応したコマンドラインアセンブラです。
+SC62015 の全命令、内部 RAM アドレッシング（BP / PX / PY と PRE バイトの自動生成）、外部メモリの 20 ビットアドレッシングに対応したコマンドラインアセンブラです。機械語については解析資料を参照してください。
 
 ```powershell
 cd Assembler
@@ -54,7 +54,7 @@ cd Assembler
 
 ### DisAssembler/ — 逆アセンブラ e500dasm / E500Disassembler
 
-機械語を `e500asm` で再アセンブル可能なソースへ戻します。各命令をアセンブラのエンコーダで照合してから出力するため、生成された ASM は元のバイナリと完全一致で往復できます。
+機械語を `e500asm` で再アセンブル可能なソースへ戻します。各命令をアセンブラのエンコーダで照合してから出力するため、生成された ASM は元のバイナリと完全一致で往復できます。機械語については解析資料を参照してください。
 
 ```powershell
 cd DisAssembler
@@ -141,6 +141,5 @@ PC-E500 / PC-E650 の ROM 8.5 解析と一次資料から整理した、機械�
 
 ## 参考資料
 
-- SHARP CORPORATION, *ESR-L INSTRUCTION MANUAL*（[Forth500 resources](https://github.com/Robert-van-Engelen/Forth500/blob/main/resources/ESR%20L%20CPU%20technical%20manual.pdf) で公開されているスキャン）
 - [Sharp_ce140f_emul](https://github.com/ffxx68/Sharp_ce140f_emul) — CE-140F ディスクドライブエミュレータ
   
