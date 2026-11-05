@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 560" width="980" height="560" role="img" aria-labelledby="t d">
+  <title id="t">CE-140F のプロトコル</title>
+  <desc id="d">ポケコンと CE-140F のやり取りを、デバイスコードの送信、コマンド、応答の 3 段階で示した図。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .lbl { font-size: 12px; fill: #52606D; paint-order: stroke; stroke: #FFFFFF; stroke-width: 4px; stroke-linejoin: round; }
+  </style>
+  <defs><marker id="a2F6DB5" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2F6DB5"/></marker><marker id="a2F855A" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2F855A"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="559" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">CE-140F のプロトコル</text>
+  <text x="24" y="55" class="sub">1 回のやり取りは、デバイスコード → コマンド → 応答の順に進む</text>
+  <rect x="50" y="72" width="260" height="44" rx="8" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+  <text x="180.0" y="99.0" class="b" text-anchor="middle">ポケコン</text>
+  <rect x="670" y="72" width="260" height="44" rx="8" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="800.0" y="99.0" class="b" text-anchor="middle">CE-140F（または互換装置）</text>
+  <line x1="180" y1="116" x2="180" y2="480" stroke="#9AA5B1" stroke-width="1.5" stroke-dasharray="4 4"/>
+  <line x1="800" y1="116" x2="800" y2="480" stroke="#9AA5B1" stroke-width="1.5" stroke-dasharray="4 4"/>
+  <rect x="320" y="126" width="340" height="74" rx="8" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="490.0" y="149.0" class="b" text-anchor="middle">1. デバイスコード 41h</text>
+  <text x="490.0" y="168.0" class="s" text-anchor="middle">XOUT と DOUT を 40 ms 以上 High にしてから</text>
+  <text x="490.0" y="187.0" class="s" text-anchor="middle">DOUT で LSB 先頭の 1 ビットずつ、計 8 ビット</text>
+  <polyline points="180,212 800,212" fill="none" stroke="#2F6DB5" stroke-width="1.8" marker-end="url(#a2F6DB5)"/>
+  <text x="250" y="205" class="lbl" text-anchor="middle">41h</text>
+  <polyline points="800,236 180,236" fill="none" stroke="#2F855A" stroke-width="1.8" marker-end="url(#a2F855A)"/>
+  <text x="250" y="230" class="lbl" text-anchor="middle">ACK で応答</text>
+  <rect x="320" y="250" width="340" height="40" rx="8" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="490.0" y="275.0" class="b" text-anchor="middle">2. コマンド（4 ビットずつ 2 回に分けて転送）</text>
+  <rect x="306" y="298" width="70" height="30" rx="0" fill="#FDECEA" stroke="#C0392B" stroke-width="1.1"/>
+  <text x="341.0" y="318.0" text-anchor="middle">cmd</text>
+  <rect x="376" y="298" width="210" height="30" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.1"/>
+  <text x="481.0" y="318.0" text-anchor="middle">payload（N バイト）</text>
+  <rect x="586" y="298" width="88" height="30" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.1"/>
+  <text x="630.0" y="318.0" text-anchor="middle">sum</text>
+  <polyline points="180,342 800,342" fill="none" stroke="#2F6DB5" stroke-width="1.8" marker-end="url(#a2F6DB5)"/>
+  <rect x="320" y="356" width="340" height="40" rx="8" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="490.0" y="381.0" class="b" text-anchor="middle">3. 応答</text>
+  <rect x="306" y="404" width="70" height="30" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.1"/>
+  <text x="341.0" y="424.0" text-anchor="middle">00</text>
+  <rect x="376" y="404" width="210" height="30" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.1"/>
+  <text x="481.0" y="424.0" text-anchor="middle">payload（N バイト）</text>
+  <rect x="586" y="404" width="88" height="30" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.1"/>
+  <text x="630.0" y="424.0" text-anchor="middle">sum</text>
+  <polyline points="800,448 180,448" fill="none" stroke="#2F855A" stroke-width="1.8" marker-end="url(#a2F855A)"/>
+  <text x="490" y="470" class="lbl">例外: EOF（1Ah）の応答は結果の 1 バイトだけ（00 もチェックサムもなし）</text>
+  <text x="24" y="506" class="sub">チェックサムは 8 ビットの加算（合計の下位 8 ビット）。</text>
+  <text x="24" y="526" class="sub">転送の 4 ビット: DIN = bit3 / bit7、DOUT = bit2 / bit6、IO2 = bit1 / bit5、IO1 = bit0 / bit4（1 回目 / 2 回目）。</text>
+</svg>
