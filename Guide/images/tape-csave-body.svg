@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 440" width="980" height="440" role="img" aria-labelledby="t d">
+  <title id="t">CSAVE の本体</title>
+  <desc id="d">本体はメモリ上のプログラム領域そのもので、管理情報 19 バイトと中間コードの行、終端 FFh からなる。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+  </style>
+  <rect x="0.5" y="0.5" width="979" height="439" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">CSAVE の本体</text>
+  <text x="24" y="55" class="sub">10 PRINT "HI" と 20 END を CSAVE "AB","PW" で保存したときの実データ（36 バイト + 検査 2）</text>
+  <rect x="40" y="84" width="46" height="40" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.1"/>
+  <text x="63.0" y="109.0" class="m" text-anchor="middle">FF</text>
+  <rect x="86" y="84" width="138" height="40" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.1"/>
+  <text x="155.0" y="109.0" class="m" text-anchor="middle">00 00 00</text>
+  <rect x="224" y="84" width="138" height="40" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.1"/>
+  <text x="293.0" y="109.0" class="m" text-anchor="middle">34 00 00</text>
+  <rect x="362" y="84" width="138" height="40" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.1"/>
+  <text x="431.0" y="109.0" class="m" text-anchor="middle">45 00 00</text>
+  <rect x="500" y="84" width="368" height="40" rx="0" fill="#FDECEA" stroke="#C0392B" stroke-width="1.1"/>
+  <text x="684.0" y="109.0" class="m" text-anchor="middle">50 57 00 00 00 00 00 00</text>
+  <rect x="868" y="84" width="46" height="40" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.1"/>
+  <text x="891.0" y="109.0" class="m" text-anchor="middle">0D</text>
+  <polyline points="40,131 40,136 914,136 914,131" fill="none" stroke="#9AA5B1" stroke-width="1.2" stroke-linejoin="round"/>
+  <text x="477.0" y="152" class="s" text-anchor="middle">管理情報 13h バイト（+00〜+12）</text>
+  <text x="42" y="78" class="s">先頭</text>
+  <text x="88" y="78" class="s">00 固定</text>
+  <text x="226" y="78" class="s">+04 34h</text>
+  <text x="364" y="78" class="s">+07 34h + 行の長さ</text>
+  <text x="502" y="78" class="s">+0A パスワード 8 バイト（平文）</text>
+  <text x="870" y="78" class="s">0D</text>
+  <rect x="40" y="176" width="92" height="40" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.1"/>
+  <text x="86.0" y="201.0" class="m" text-anchor="middle">00 0A</text>
+  <rect x="132" y="176" width="46" height="40" rx="0" fill="#F1ECFA" stroke="#6B46C1" stroke-width="1.1"/>
+  <text x="155.0" y="201.0" class="m" text-anchor="middle">07</text>
+  <rect x="178" y="176" width="92" height="40" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.1"/>
+  <text x="224.0" y="201.0" class="m" text-anchor="middle">FE 60</text>
+  <rect x="270" y="176" width="184" height="40" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.1"/>
+  <text x="362.0" y="201.0" class="m" text-anchor="middle">22 48 49 22</text>
+  <rect x="454" y="176" width="46" height="40" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.1"/>
+  <text x="477.0" y="201.0" class="m" text-anchor="middle">0D</text>
+  <text x="40" y="234" class="s">行番号 10（上位が先）</text>
+  <text x="138" y="234" class="s"></text>
+  <text x="184" y="234" class="s">PRINT</text>
+  <text x="276" y="234" class="s">"HI"</text>
+  <text x="456" y="234" class="s">行末</text>
+  <text x="514" y="201" class="s">07 は行の長さ（中間コードと 0D の合計）</text>
+  <rect x="40" y="254" width="92" height="40" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.1"/>
+  <text x="86.0" y="279.0" class="m" text-anchor="middle">00 14</text>
+  <rect x="132" y="254" width="46" height="40" rx="0" fill="#F1ECFA" stroke="#6B46C1" stroke-width="1.1"/>
+  <text x="155.0" y="279.0" class="m" text-anchor="middle">03</text>
+  <rect x="178" y="254" width="92" height="40" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.1"/>
+  <text x="224.0" y="279.0" class="m" text-anchor="middle">FE 5A</text>
+  <rect x="270" y="254" width="46" height="40" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.1"/>
+  <text x="293.0" y="279.0" class="m" text-anchor="middle">0D</text>
+  <rect x="316" y="254" width="46" height="40" rx="0" fill="#FDECEA" stroke="#C0392B" stroke-width="1.1"/>
+  <text x="339.0" y="279.0" class="m" text-anchor="middle">FF</text>
+  <rect x="362" y="254" width="92" height="40" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.1"/>
+  <text x="408.0" y="279.0" class="m" text-anchor="middle">00 4C</text>
+  <text x="40" y="312" class="s">行番号 20</text>
+  <text x="184" y="312" class="s">END</text>
+  <text x="322" y="312" class="s">終端</text>
+  <text x="368" y="312" class="s">検査値</text>
+  <text x="40" y="350">・パスワードは暗号化されずテープに残る。CLOAD? は比較のときこの 8 バイトを読み飛ばす</text>
+  <text x="40" y="374">・読み込みでは先頭 3 バイトが FF 00 00 であることを確かめる</text>
+  <text x="40" y="398">・ROM 2.1、3.2、7.2、8.4、8.5 で同じバイト列になり、互いに読めることをエミュレータで確かめた</text>
+</svg>

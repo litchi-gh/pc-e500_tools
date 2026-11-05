@@ -106,6 +106,18 @@ describe("SC62015 encoder", () => {
     golden("MV A,(BP-1)", "80FF");
     golden("MV A,(PX+2)", "348002");
   });
+
+  it("treats a displacement as one expression that starts at its sign", () => {
+    const cases: Array<[string, string]> = [
+      ["MV A,[X-1+2]", "908401"], ["MV A,[X-3+1]", "90C402"], ["MV A,[X+1-2]", "90C401"], ["MV A,[X+1+2]", "908403"], ["MV A,[X-(1+2)]", "90C403"], ["MV A,[X-0]", "90C400"], ["MV A,[X+0]", "908400"],
+      ["MV A,(BP-1+2)", "8001"], ["MV A,(BP-3+1)", "80FE"], ["MV A,(BP+1-2)", "80FF"], ["MV A,(PX-1+2)", "348001"], ["JP (BP-1+2)", "1001"],
+      ["MV A,[(5)-1+2]", "3098800501"], ["MV A,[(5)-3+1]", "3098C00502"], ["MV A,[(5)+1+2]", "3098800503"],
+      ["MVL ($23),[X-1+2]", "3056842301"], ["MVL [Y-3+1],($23)", "305EC52302"],
+      ["off EQU 1\nMV A,[X-off+2]", "908401"], ["MV A,[X-later]\nlater EQU 2", "90C402"]
+    ];
+    for (const [src, expected] of cases) golden(src, expected);
+    for (const src of ["MV A,[X+256]", "MV A,[X-256]", "MV A,[X+200+100]"]) reject(src, "ASM040", "8 ビット");
+  });
 });
 
 describe("SC62015 assembler", () => {

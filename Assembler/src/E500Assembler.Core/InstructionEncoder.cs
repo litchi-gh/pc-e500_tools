@@ -43,7 +43,7 @@ internal sealed class InstructionEncoder(Func<string, long> evaluate, int pc, bo
                 if ((m.Groups[1].Success ? 1 : 0) + (m.Groups[3].Success ? 1 : 0) + (m.Groups[4].Success ? 1 : 0) > 1) throw new AssemblyException("Cannot combine auto update and displacement");
                 r = Array.IndexOf(Registers, m.Groups[2].Value.ToUpperInvariant());
                 int index = m.Groups[1].Success ? 0x30 : m.Groups[3].Success ? 0x20 : m.Groups[4].Success ? (m.Groups[4].Value == "+" ? 0x80 : 0xc0) : 0;
-                return new("ER", inside, r, Index: index, Offset: m.Groups[5].Success ? m.Groups[5].Value : null);
+                return new("ER", inside, r, Index: index, Offset: m.Groups[5].Success ? m.Groups[4].Value + m.Groups[5].Value : null);
             }
             if (inside.StartsWith('('))
             {
@@ -52,7 +52,7 @@ internal sealed class InstructionEncoder(Func<string, long> evaluate, int pc, bo
                 if (end < 0) throw new AssemblyException("Missing ')' in indirect address");
                 var inner = Internal(inside[1..end]); string tail = inside[(end + 1)..].Trim();
                 if (tail.Length > 0 && tail[0] is not ('+' or '-')) throw new AssemblyException("Invalid indirect displacement");
-                return new("EI", inside, Index: tail.Length == 0 ? 0 : tail[0] == '+' ? 0x80 : 0xc0, Offset: tail.Length == 0 ? null : tail[1..], Inner: inner);
+                return new("EI", inside, Index: tail.Length == 0 ? 0 : tail[0] == '+' ? 0x80 : 0xc0, Offset: tail.Length == 0 ? null : tail, Inner: inner);
             }
             if (Regex.IsMatch(s, @"^\[(?:A|IL|BA|I|B)(?:\]|[+-])")) throw new AssemblyException("External memory index must be X, Y, U or S");
             return new("EA", inside);
@@ -68,7 +68,7 @@ internal sealed class InstructionEncoder(Func<string, long> evaluate, int pc, bo
         if (m.Success)
         {
             string name = m.Groups[1].Value.ToUpperInvariant();
-            return new("M", m.Groups[3].Success ? m.Groups[2].Value + "(" + m.Groups[3].Value + ")" : "0", Mode: name == "BP" ? 1 : 2, Index: name == "PX" ? 1 : name == "PY" ? 2 : 0);
+            return new("M", m.Groups[3].Success ? m.Groups[2].Value + m.Groups[3].Value : "0", Mode: name == "BP" ? 1 : 2, Index: name == "PX" ? 1 : name == "PY" ? 2 : 0);
         }
         return new("M", text, Mode: 0);
     }
@@ -84,11 +84,16 @@ internal sealed class InstructionEncoder(Func<string, long> evaluate, int pc, bo
             if (memory != null && store) Mem(memory);
             return;
         }
-        Emit(ext.Index | (ext.Kind == "ER" ? ext.Reg : 0));
+        // The displacement keeps its sign, so [X-1+2] is X+1. A zero keeps the written sign: [X-0] is a distinct encoding.
+        long displacement = ext.Offset == null ? 0 : evaluate(ext.Offset);
+        int index = displacement == 0 ? ext.Index : displacement < 0 ? 0xc0 : 0x80;
+        long magnitude = displacement < 0 ? -displacement : displacement;
+        if (strict && (magnitude < 0 || magnitude > 255)) throw new AssemblyException($"Value {magnitude} does not fit in 8 bits");
+        Emit(index | (ext.Kind == "ER" ? ext.Reg : 0));
         if (ext.Kind == "EI" && store) Mem(ext.Inner!);
         if (memory != null) Mem(memory);
         if (ext.Kind == "EI" && !store) Mem(ext.Inner!);
-        if (ext.Offset != null) Immediate(ext.Offset, 8);
+        if (ext.Offset != null) Emit((int)magnitude);
     }
     public byte[] Encode(string mnemonic, string[] arguments)
     {

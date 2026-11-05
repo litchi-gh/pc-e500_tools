@@ -3,6 +3,7 @@ import * as fs from "node:fs";
 import * as path from "node:path";
 import * as vscode from "vscode";
 import { AsmHost, lintAsm } from "./asm/assembler";
+import { assemblerInvocation, Invocation } from "./asm/invocation";
 import { LintIssue } from "./core";
 import { getDialect } from "./dialects";
 import { lint } from "./linter/parser";
@@ -128,8 +129,14 @@ export function activate(context: vscode.ExtensionContext): void {
     output.clear();
     output.show(true);
     output.appendLine(`> ${command} ${args.join(" ")}`);
-    const isCmd = /\.(?:cmd|bat)$/i.test(command);
-    execFile(isCmd ? "cmd.exe" : command, isCmd ? ["/c", command, ...args] : args, { cwd: path.dirname(source), windowsHide: true }, (error, stdout, stderr) => {
+    let invocation: Invocation;
+    try {
+      invocation = assemblerInvocation(command, args);
+    } catch (error) {
+      void vscode.window.showErrorMessage(error instanceof Error ? error.message : String(error));
+      return;
+    }
+    execFile(invocation.file, [...invocation.args], { cwd: path.dirname(source), windowsHide: true, windowsVerbatimArguments: invocation.verbatim }, (error, stdout, stderr) => {
       if (stdout) output.append(stdout);
       if (stderr) output.append(stderr);
       if (error && !stdout && !stderr) output.appendLine(error.message);

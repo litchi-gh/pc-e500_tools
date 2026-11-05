@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 560" width="980" height="560" role="img" aria-labelledby="t d">
+  <title id="t">テープ上のファイルの並び</title>
+  <desc id="d">無音、搬送音、同期の並び、ヘッダ 48 バイトと検査値のあとに、同じ形の本体ブロックが 1 個以上続く。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+  </style>
+  <rect x="0.5" y="0.5" width="979" height="559" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">テープ上のファイルの並び</text>
+  <text x="24" y="55" class="sub">1 つのファイルは、ヘッダブロック 1 個と本体ブロック 1 個以上からなる</text>
+  <text x="40" y="84" class="b">ヘッダブロック</text>
+  <rect x="40" y="96" width="96" height="46" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.1"/>
+  <text x="88.0" y="124.0" text-anchor="middle">無音</text>
+  <rect x="136" y="96" width="170" height="46" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.1"/>
+  <text x="221.0" y="124.0" text-anchor="middle">搬送音</text>
+  <rect x="306" y="96" width="58" height="46" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.1"/>
+  <text x="335.0" y="124.0" text-anchor="middle">長 40</text>
+  <rect x="364" y="96" width="58" height="46" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.1"/>
+  <text x="393.0" y="124.0" text-anchor="middle">短 40</text>
+  <rect x="422" y="96" width="46" height="46" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.1"/>
+  <text x="445.0" y="124.0" text-anchor="middle">長 1</text>
+  <rect x="468" y="96" width="180" height="46" rx="0" fill="#F1ECFA" stroke="#6B46C1" stroke-width="1.1"/>
+  <text x="558.0" y="124.0" text-anchor="middle">データ 48 バイト</text>
+  <rect x="648" y="96" width="66" height="46" rx="0" fill="#FDECEA" stroke="#C0392B" stroke-width="1.1"/>
+  <text x="681.0" y="124.0" text-anchor="middle">検査 2</text>
+  <rect x="714" y="96" width="46" height="46" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.1"/>
+  <text x="737.0" y="124.0" text-anchor="middle">長 1</text>
+  <rect x="760" y="96" width="180" height="46" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.1"/>
+  <text x="850.0" y="124.0" text-anchor="middle">無音</text>
+  <text x="88" y="160" class="s" text-anchor="middle">約 8.3 秒</text>
+  <text x="221" y="160" class="s" text-anchor="middle">短 10000 周期 / 約 3.4 秒</text>
+  <text x="830" y="160" class="s" text-anchor="middle">約 3.0 秒</text>
+  <text x="40" y="190" class="b">本体ブロック</text>
+  <rect x="40" y="202" width="170" height="46" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.1"/>
+  <text x="125.0" y="230.0" text-anchor="middle">搬送音</text>
+  <rect x="210" y="202" width="58" height="46" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.1"/>
+  <text x="239.0" y="230.0" text-anchor="middle">長 20</text>
+  <rect x="268" y="202" width="58" height="46" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.1"/>
+  <text x="297.0" y="230.0" text-anchor="middle">短 20</text>
+  <rect x="326" y="202" width="46" height="46" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.1"/>
+  <text x="349.0" y="230.0" text-anchor="middle">長 1</text>
+  <rect x="372" y="202" width="280" height="46" rx="0" fill="#F1ECFA" stroke="#6B46C1" stroke-width="1.1"/>
+  <text x="512.0" y="230.0" text-anchor="middle">データ（任意の長さ）</text>
+  <rect x="652" y="202" width="66" height="46" rx="0" fill="#FDECEA" stroke="#C0392B" stroke-width="1.1"/>
+  <text x="685.0" y="230.0" text-anchor="middle">検査 2</text>
+  <rect x="718" y="202" width="46" height="46" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.1"/>
+  <text x="741.0" y="230.0" text-anchor="middle">長 1</text>
+  <rect x="764" y="202" width="176" height="46" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.1"/>
+  <text x="852.0" y="230.0" text-anchor="middle">無音</text>
+  <text x="125" y="266" class="s" text-anchor="middle">短 11000 周期 / 約 3.7 秒</text>
+  <text x="812" y="266" class="s" text-anchor="middle">約 5 秒</text>
+  <polyline points="24,288 956,288" fill="none" stroke="#D9E0E8" stroke-width="1" stroke-linejoin="round"/>
+  <text x="40" y="316">検査値：データ内の 1 のビットの数を 16 ビットで数え、上位バイト、下位バイトの順に置く。合わないと読み込みは I/O error になる</text>
+  <text x="40" y="338">番地やブロック番号は本体にない。CSAVE M の番地はヘッダだけが持つ</text>
+  <text x="40" y="376" class="b">命令ごとの本体の分け方</text>
+  <text x="40" y="414" class="b">CSAVE</text>
+  <rect x="200" y="392" width="190" height="32" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.1"/>
+  <text x="295.0" y="413.0" text-anchor="middle">ヘッダ（種別 02h）</text>
+  <rect x="390" y="392" width="520" height="32" rx="0" fill="#F1ECFA" stroke="#6B46C1" stroke-width="1.1"/>
+  <text x="650.0" y="413.0" text-anchor="middle">本体 1 個（プログラム全体）</text>
+  <text x="40" y="458" class="b">CSAVE M</text>
+  <rect x="200" y="436" width="190" height="32" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.1"/>
+  <text x="295.0" y="457.0" text-anchor="middle">ヘッダ（種別 01h）</text>
+  <rect x="390" y="436" width="520" height="32" rx="0" fill="#F1ECFA" stroke="#6B46C1" stroke-width="1.1"/>
+  <text x="650.0" y="457.0" text-anchor="middle">本体 1 個（指定範囲のメモリそのまま）</text>
+  <text x="40" y="502" class="b">SAVE "CAS:" / OPEN</text>
+  <rect x="200" y="480" width="190" height="32" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.1"/>
+  <text x="295.0" y="501.0" text-anchor="middle">ヘッダ（種別 04h）</text>
+  <rect x="390" y="480" width="170" height="32" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.1"/>
+  <text x="475.0" y="501.0" text-anchor="middle">本体 256 バイト</text>
+  <rect x="560" y="480" width="170" height="32" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.1"/>
+  <text x="645.0" y="501.0" text-anchor="middle">本体 256 バイト</text>
+  <rect x="730" y="480" width="50" height="32" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.1"/>
+  <text x="755.0" y="501.0" text-anchor="middle">…</text>
+  <rect x="780" y="480" width="130" height="32" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.1"/>
+  <text x="845.0" y="501.0" text-anchor="middle">最後の 256 バイト</text>
+  <text x="40" y="540" class="s">256 バイトの本体は 1 個ごとに搬送音と無音が付く。最後の本体は 1Ah で終わり、残りには初期化していないバッファの内容がそのまま入る</text>
+</svg>

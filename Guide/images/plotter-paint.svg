@@ -1,0 +1,243 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 500" width="980" height="500" role="img" aria-labelledby="t d">
+  <title id="t">PAINT の模様</title>
+  <desc id="d">LLINE で描いた 100×100 の四角形に PAINT 1〜10 を実行したときに ROM が送るコマンドを描いた図。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+  </style>
+  <rect x="0.5" y="0.5" width="979" height="499" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">PAINT の模様</text>
+  <text x="24" y="55" class="sub">(0,0)-(100,-100) の四角形に対して ROM が送ったコマンドをそのまま描いた図（1 ステップ = 0.2 mm）</text>
+  <text x="50" y="88" class="b">PAINT 1（横 42）</text>
+  <rect x="50" y="96" width="135.0" height="135.0" rx="0" fill="#FFFFFF" stroke="#1F2933" stroke-width="1.2"/>
+  <polyline points="50.0,174.3 185.0,174.3" fill="none" stroke="#2F6DB5" stroke-width="0.9" stroke-linejoin="round"/>
+  <polyline points="50.0,117.6 185.0,117.6" fill="none" stroke="#2F6DB5" stroke-width="0.9" stroke-linejoin="round"/>
+  <text x="235" y="88" class="b">PAINT 2（縦 42）</text>
+  <rect x="235" y="96" width="135.0" height="135.0" rx="0" fill="#FFFFFF" stroke="#1F2933" stroke-width="1.2"/>
+  <polyline points="291.7,231.0 291.7,96.0" fill="none" stroke="#2F6DB5" stroke-width="0.9" stroke-linejoin="round"/>
+  <polyline points="348.4,231.0 348.4,96.0" fill="none" stroke="#2F6DB5" stroke-width="0.9" stroke-linejoin="round"/>
+  <text x="420" y="88" class="b">PAINT 3（右上がり 42）</text>
+  <rect x="420" y="96" width="135.0" height="135.0" rx="0" fill="#FFFFFF" stroke="#1F2933" stroke-width="1.2"/>
+  <polyline points="441.6,96.0 420.0,117.6" fill="none" stroke="#2F6DB5" stroke-width="0.9" stroke-linejoin="round"/>
+  <polyline points="498.3,96.0 420.0,174.3" fill="none" stroke="#2F6DB5" stroke-width="0.9" stroke-linejoin="round"/>
+  <polyline points="555.0,96.0 420.0,231.0" fill="none" stroke="#2F6DB5" stroke-width="0.9" stroke-linejoin="round"/>
+  <polyline points="555.0,152.7 476.7,231.0" fill="none" stroke="#2F6DB5" stroke-width="0.9" stroke-linejoin="round"/>
+  <polyline points="555.0,209.4 533.4,231.0" fill="none" stroke="#2F6DB5" stroke-width="0.9" stroke-linejoin="round"/>
+  <text x="605" y="88" class="b">PAINT 4（右下がり 42）</text>
+  <rect x="605" y="96" width="135.0" height="135.0" rx="0" fill="#FFFFFF" stroke="#1F2933" stroke-width="1.2"/>
+  <polyline points="605.0,174.3 661.7,231.0" fill="none" stroke="#2F6DB5" stroke-width="0.9" stroke-linejoin="round"/>
+  <polyline points="605.0,117.6 718.4,231.0" fill="none" stroke="#2F6DB5" stroke-width="0.9" stroke-linejoin="round"/>
+  <polyline points="640.1,96.0 740.0,195.9" fill="none" stroke="#2F6DB5" stroke-width="0.9" stroke-linejoin="round"/>
+  <polyline points="696.8,96.0 740.0,139.2" fill="none" stroke="#2F6DB5" stroke-width="0.9" stroke-linejoin="round"/>
+  <text x="790" y="88" class="b">PAINT 5（横 14）</text>
+  <rect x="790" y="96" width="135.0" height="135.0" rx="0" fill="#FFFFFF" stroke="#1F2933" stroke-width="1.2"/>
+  <polyline points="790.0,212.1 925.0,212.1" fill="none" stroke="#2F6DB5" stroke-width="0.9" stroke-linejoin="round"/>
+  <polyline points="790.0,193.2 925.0,193.2" fill="none" stroke="#2F6DB5" stroke-width="0.9" stroke-linejoin="round"/>
+  <polyline points="790.0,174.3 925.0,174.3" fill="none" stroke="#2F6DB5" stroke-width="0.9" stroke-linejoin="round"/>
+  <polyline points="790.0,155.4 925.0,155.4" fill="none" stroke="#2F6DB5" stroke-width="0.9" stroke-linejoin="round"/>
+  <polyline points="790.0,136.5 925.0,136.5" fill="none" stroke="#2F6DB5" stroke-width="0.9" stroke-linejoin="round"/>
+  <polyline points="790.0,117.6 925.0,117.6" fill="none" stroke="#2F6DB5" stroke-width="0.9" stroke-linejoin="round"/>
+  <polyline points="790.0,98.7 925.0,98.7" fill="none" stroke="#2F6DB5" stroke-width="0.9" stroke-linejoin="round"/>
+  <text x="50" y="284" class="b">PAINT 6（縦 14）</text>
+  <rect x="50" y="292" width="135.0" height="135.0" rx="0" fill="#FFFFFF" stroke="#1F2933" stroke-width="1.2"/>
+  <polyline points="68.9,427.0 68.9,292.0" fill="none" stroke="#2F6DB5" stroke-width="0.9" stroke-linejoin="round"/>
+  <polyline points="87.8,427.0 87.8,292.0" fill="none" stroke="#2F6DB5" stroke-width="0.9" stroke-linejoin="round"/>
+  <polyline points="106.7,427.0 106.7,292.0" fill="none" stroke="#2F6DB5" stroke-width="0.9" stroke-linejoin="round"/>
+  <polyline points="125.6,427.0 125.6,292.0" fill="none" stroke="#2F6DB5" stroke-width="0.9" stroke-linejoin="round"/>
+  <polyline points="144.5,427.0 144.5,292.0" fill="none" stroke="#2F6DB5" stroke-width="0.9" stroke-linejoin="round"/>
+  <polyline points="163.4,427.0 163.4,292.0" fill="none" stroke="#2F6DB5" stroke-width="0.9" stroke-linejoin="round"/>
+  <polyline points="182.3,427.0 182.3,292.0" fill="none" stroke="#2F6DB5" stroke-width="0.9" stroke-linejoin="round"/>
+  <text x="235" y="284" class="b">PAINT 7（右上がり 14）</text>
+  <rect x="235" y="292" width="135.0" height="135.0" rx="0" fill="#FFFFFF" stroke="#1F2933" stroke-width="1.2"/>
+  <polyline points="237.7,292.0 235.0,294.7" fill="none" stroke="#2F6DB5" stroke-width="0.9" stroke-linejoin="round"/>
+  <polyline points="256.6,292.0 235.0,313.6" fill="none" stroke="#2F6DB5" stroke-width="0.9" stroke-linejoin="round"/>
+  <polyline points="275.5,292.0 235.0,332.5" fill="none" stroke="#2F6DB5" stroke-width="0.9" stroke-linejoin="round"/>
+  <polyline points="294.4,292.0 235.0,351.4" fill="none" stroke="#2F6DB5" stroke-width="0.9" stroke-linejoin="round"/>
+  <polyline points="313.3,292.0 235.0,370.3" fill="none" stroke="#2F6DB5" stroke-width="0.9" stroke-linejoin="round"/>
+  <polyline points="332.2,292.0 235.0,389.2" fill="none" stroke="#2F6DB5" stroke-width="0.9" stroke-linejoin="round"/>
+  <polyline points="351.1,292.0 235.0,408.1" fill="none" stroke="#2F6DB5" stroke-width="0.9" stroke-linejoin="round"/>
+  <polyline points="370.0,292.0 235.0,427.0" fill="none" stroke="#2F6DB5" stroke-width="0.9" stroke-linejoin="round"/>
+  <polyline points="370.0,310.9 253.9,427.0" fill="none" stroke="#2F6DB5" stroke-width="0.9" stroke-linejoin="round"/>
+  <polyline points="370.0,329.8 272.8,427.0" fill="none" stroke="#2F6DB5" stroke-width="0.9" stroke-linejoin="round"/>
+  <polyline points="370.0,348.7 291.7,427.0" fill="none" stroke="#2F6DB5" stroke-width="0.9" stroke-linejoin="round"/>
+  <polyline points="370.0,367.6 310.6,427.0" fill="none" stroke="#2F6DB5" stroke-width="0.9" stroke-linejoin="round"/>
+  <polyline points="370.0,386.5 329.5,427.0" fill="none" stroke="#2F6DB5" stroke-width="0.9" stroke-linejoin="round"/>
+  <polyline points="370.0,405.4 348.4,427.0" fill="none" stroke="#2F6DB5" stroke-width="0.9" stroke-linejoin="round"/>
+  <polyline points="370.0,424.3 367.3,427.0" fill="none" stroke="#2F6DB5" stroke-width="0.9" stroke-linejoin="round"/>
+  <text x="420" y="284" class="b">PAINT 8（右下がり 14）</text>
+  <rect x="420" y="292" width="135.0" height="135.0" rx="0" fill="#FFFFFF" stroke="#1F2933" stroke-width="1.2"/>
+  <polyline points="420.0,408.1 438.9,427.0" fill="none" stroke="#2F6DB5" stroke-width="0.9" stroke-linejoin="round"/>
+  <polyline points="420.0,389.2 457.8,427.0" fill="none" stroke="#2F6DB5" stroke-width="0.9" stroke-linejoin="round"/>
+  <polyline points="420.0,370.3 476.7,427.0" fill="none" stroke="#2F6DB5" stroke-width="0.9" stroke-linejoin="round"/>
+  <polyline points="420.0,351.4 495.6,427.0" fill="none" stroke="#2F6DB5" stroke-width="0.9" stroke-linejoin="round"/>
+  <polyline points="420.0,332.5 514.5,427.0" fill="none" stroke="#2F6DB5" stroke-width="0.9" stroke-linejoin="round"/>
+  <polyline points="420.0,313.6 533.4,427.0" fill="none" stroke="#2F6DB5" stroke-width="0.9" stroke-linejoin="round"/>
+  <polyline points="420.0,294.7 552.3,427.0" fill="none" stroke="#2F6DB5" stroke-width="0.9" stroke-linejoin="round"/>
+  <polyline points="436.2,292.0 555.0,410.8" fill="none" stroke="#2F6DB5" stroke-width="0.9" stroke-linejoin="round"/>
+  <polyline points="455.1,292.0 555.0,391.9" fill="none" stroke="#2F6DB5" stroke-width="0.9" stroke-linejoin="round"/>
+  <polyline points="474.0,292.0 555.0,373.0" fill="none" stroke="#2F6DB5" stroke-width="0.9" stroke-linejoin="round"/>
+  <polyline points="492.9,292.0 555.0,354.1" fill="none" stroke="#2F6DB5" stroke-width="0.9" stroke-linejoin="round"/>
+  <polyline points="511.8,292.0 555.0,335.2" fill="none" stroke="#2F6DB5" stroke-width="0.9" stroke-linejoin="round"/>
+  <polyline points="530.7,292.0 555.0,316.3" fill="none" stroke="#2F6DB5" stroke-width="0.9" stroke-linejoin="round"/>
+  <polyline points="549.6,292.0 555.0,297.4" fill="none" stroke="#2F6DB5" stroke-width="0.9" stroke-linejoin="round"/>
+  <text x="605" y="284" class="b">PAINT 9（横 2）</text>
+  <rect x="605" y="292" width="135.0" height="135.0" rx="0" fill="#FFFFFF" stroke="#1F2933" stroke-width="1.2"/>
+  <polyline points="605.0,424.3 740.0,424.3" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="605.0,421.6 740.0,421.6" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="605.0,418.9 740.0,418.9" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="605.0,416.2 740.0,416.2" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="605.0,413.5 740.0,413.5" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="605.0,410.8 740.0,410.8" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="605.0,408.1 740.0,408.1" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="605.0,405.4 740.0,405.4" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="605.0,402.7 740.0,402.7" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="605.0,400.0 740.0,400.0" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="605.0,397.3 740.0,397.3" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="605.0,394.6 740.0,394.6" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="605.0,391.9 740.0,391.9" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="605.0,389.2 740.0,389.2" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="605.0,386.5 740.0,386.5" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="605.0,383.8 740.0,383.8" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="605.0,381.1 740.0,381.1" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="605.0,378.4 740.0,378.4" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="605.0,375.7 740.0,375.7" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="605.0,373.0 740.0,373.0" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="605.0,370.3 740.0,370.3" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="605.0,367.6 740.0,367.6" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="605.0,364.9 740.0,364.9" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="605.0,362.2 740.0,362.2" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="605.0,359.5 740.0,359.5" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="605.0,356.8 740.0,356.8" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="605.0,354.1 740.0,354.1" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="605.0,351.4 740.0,351.4" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="605.0,348.7 740.0,348.7" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="605.0,346.0 740.0,346.0" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="605.0,343.3 740.0,343.3" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="605.0,340.6 740.0,340.6" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="605.0,337.9 740.0,337.9" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="605.0,335.2 740.0,335.2" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="605.0,332.5 740.0,332.5" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="605.0,329.8 740.0,329.8" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="605.0,327.1 740.0,327.1" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="605.0,324.4 740.0,324.4" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="605.0,321.7 740.0,321.7" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="605.0,319.0 740.0,319.0" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="605.0,316.3 740.0,316.3" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="605.0,313.6 740.0,313.6" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="605.0,310.9 740.0,310.9" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="605.0,308.2 740.0,308.2" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="605.0,305.5 740.0,305.5" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="605.0,302.8 740.0,302.8" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="605.0,300.1 740.0,300.1" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="605.0,297.4 740.0,297.4" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="605.0,294.7 740.0,294.7" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="605.0,292.0 740.0,292.0" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <text x="790" y="284" class="b">PAINT 10（横 1）</text>
+  <rect x="790" y="292" width="135.0" height="135.0" rx="0" fill="#FFFFFF" stroke="#1F2933" stroke-width="1.2"/>
+  <polyline points="790.0,425.6 925.0,425.6" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,424.3 925.0,424.3" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,423.0 925.0,423.0" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,421.6 925.0,421.6" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,420.2 925.0,420.2" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,418.9 925.0,418.9" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,417.6 925.0,417.6" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,416.2 925.0,416.2" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,414.9 925.0,414.9" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,413.5 925.0,413.5" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,412.1 925.0,412.1" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,410.8 925.0,410.8" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,409.4 925.0,409.4" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,408.1 925.0,408.1" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,406.8 925.0,406.8" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,405.4 925.0,405.4" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,404.1 925.0,404.1" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,402.7 925.0,402.7" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,401.4 925.0,401.4" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,400.0 925.0,400.0" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,398.6 925.0,398.6" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,397.3 925.0,397.3" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,395.9 925.0,395.9" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,394.6 925.0,394.6" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,393.2 925.0,393.2" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,391.9 925.0,391.9" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,390.6 925.0,390.6" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,389.2 925.0,389.2" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,387.9 925.0,387.9" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,386.5 925.0,386.5" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,385.1 925.0,385.1" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,383.8 925.0,383.8" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,382.4 925.0,382.4" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,381.1 925.0,381.1" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,379.8 925.0,379.8" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,378.4 925.0,378.4" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,377.1 925.0,377.1" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,375.7 925.0,375.7" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,374.4 925.0,374.4" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,373.0 925.0,373.0" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,371.6 925.0,371.6" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,370.3 925.0,370.3" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,368.9 925.0,368.9" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,367.6 925.0,367.6" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,366.2 925.0,366.2" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,364.9 925.0,364.9" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,363.6 925.0,363.6" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,362.2 925.0,362.2" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,360.9 925.0,360.9" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,359.5 925.0,359.5" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,358.1 925.0,358.1" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,356.8 925.0,356.8" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,355.4 925.0,355.4" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,354.1 925.0,354.1" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,352.8 925.0,352.8" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,351.4 925.0,351.4" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,350.1 925.0,350.1" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,348.7 925.0,348.7" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,347.4 925.0,347.4" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,346.0 925.0,346.0" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,344.6 925.0,344.6" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,343.3 925.0,343.3" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,341.9 925.0,341.9" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,340.6 925.0,340.6" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,339.2 925.0,339.2" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,337.9 925.0,337.9" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,336.6 925.0,336.6" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,335.2 925.0,335.2" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,333.9 925.0,333.9" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,332.5 925.0,332.5" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,331.1 925.0,331.1" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,329.8 925.0,329.8" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,328.4 925.0,328.4" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,327.1 925.0,327.1" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,325.8 925.0,325.8" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,324.4 925.0,324.4" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,323.1 925.0,323.1" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,321.7 925.0,321.7" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,320.4 925.0,320.4" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,319.0 925.0,319.0" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,317.6 925.0,317.6" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,316.3 925.0,316.3" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,314.9 925.0,314.9" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,313.6 925.0,313.6" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,312.2 925.0,312.2" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,310.9 925.0,310.9" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,309.6 925.0,309.6" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,308.2 925.0,308.2" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,306.9 925.0,306.9" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,305.5 925.0,305.5" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,304.1 925.0,304.1" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,302.8 925.0,302.8" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,301.4 925.0,301.4" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,300.1 925.0,300.1" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,298.8 925.0,298.8" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,297.4 925.0,297.4" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,296.1 925.0,296.1" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,294.7 925.0,294.7" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,293.4 925.0,293.4" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <polyline points="790.0,292.0 925.0,292.0" fill="none" stroke="#2F6DB5" stroke-width="0.5" stroke-linejoin="round"/>
+  <text x="50" y="484" class="s">数字は線の間隔のステップ数。PAINT 0 は線を引かない</text>
+</svg>

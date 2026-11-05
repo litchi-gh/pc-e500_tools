@@ -154,6 +154,9 @@ PC-E500 / PC-E650 の ROM 8.5 解析と一次資料から整理した、機械�
 | [IOCS_REFERENCE.md](Analysis/IOCS_REFERENCE.md) | IOCS / FCS の呼び出し方（`CALLF FFFE8h`）、コマンド番号、ROM 上の入口表 |
 | [HARDWARE_REFERENCE.md](Analysis/HARDWARE_REFERENCE.md) | メモリマップ、I/O ポート、LCD コントローラ、キーボード、コネクタなどのハードウェア情報 |
 | [CE-140F_PROTOCOL.md](Analysis/CE-140F_PROTOCOL.md) | CE-140F ディスクドライブの通信手順。デバイスコード、4 ビット転送、コマンドと応答、`SAVE M` のヘッダ |
+| [CE-515P_PLOTTER.md](Analysis/CE-515P_PLOTTER.md) | CE-515P カラープロッタの解析。`GRAPH`、`LLINE`、`CIRCLE`、`PAINT` などが送るコマンド、円の計算、網掛けの模様 |
+| [TAPE_FORMAT.md](Analysis/TAPE_FORMAT.md) | テープの解析。`CSAVE`、`CLOAD`、`CSAVE M`、`CLOAD M` の信号、ブロック、ヘッダ、本体の形 |
+| [SERIAL_PORT.md](Analysis/SERIAL_PORT.md) | シリアルポートの解析。`COM:` の信号線、設定、文字の変換、フロー制御 |
 | [BASIC_REFERENCE.md](Analysis/BASIC_REFERENCE.md) | BASIC 全 168 キーワードの索引（中間コード token、分類、ROM 処理入口）と各命令の書式・引数 |
 | [ROM_VERSIONS_BASIC.md](Analysis/ROM_VERSIONS_BASIC.md) | ROM 版（2.1〜8.5、11 本）ごとの BASIC の違い。版番号の読み方、改訂ごとの修正点、修正の有無の早見表 |
 | [ROM_VERSIONS_DRIVERS.md](Analysis/ROM_VERSIONS_DRIVERS.md) | 同じく E8000h〜EBFFFh 帯（行列演算、CAS・PRN・COM・X:Y: のドライバ、プリンタの文字変換、エラーメッセージ表）の違い |
