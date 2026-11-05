@@ -2,7 +2,7 @@
   "name": "pocket-basic-linter",
   "displayName": "Pocket BASIC / ASM Linter",
   "description": "PC-E500 series BASIC and SC62015 assembly (e500asm) syntax checking with extensible dialect support.",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "publisher": "pokecom-tools",
   "license": "MIT",
   "engines": {

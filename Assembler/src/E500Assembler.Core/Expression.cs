@@ -62,8 +62,8 @@ internal sealed class Expression(string text, Func<string, long> symbol, long pc
             int radix = 10;
             if (n[0] is '$' or '&') { n = n[1..]; radix = 16; }
             else if (n.StartsWith("0x", StringComparison.OrdinalIgnoreCase)) { n = n[2..]; radix = 16; }
+            else if (n.EndsWith('h') || n.EndsWith('H')) { n = n[..^1]; radix = 16; } // before 0b: 0B8000h is hexadecimal
             else if (n.StartsWith("0b", StringComparison.OrdinalIgnoreCase)) { n = n[2..]; radix = 2; }
-            else if (n.EndsWith('h') || n.EndsWith('H')) { n = n[..^1]; radix = 16; }
             try { return Convert.ToInt64(n, radix); } catch (Exception e) when (e is FormatException or OverflowException or ArgumentException) { throw new AssemblyException($"Invalid number: {text[start..pos]}"); }
         }
         if (char.IsLetter(ch) || ch is '_' or '.')

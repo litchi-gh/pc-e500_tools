@@ -29,6 +29,7 @@
 // Optional Shift-JIS support on the PC-text side uses the Win32 API (_WIN32).
 // -----------------------------------------------------------------------------
 
+#include <cctype>
 #include <cstdint>
 #include <cstdio>
 #include <cstdlib>
@@ -288,7 +289,7 @@ static Bytes buildHeader(uint32_t addr, uint32_t length) {
 struct Options {
     bool sjis        = false;   // treat PC text as Shift-JIS (CP932) instead of UTF-8
     bool sharpCR     = false;   // Sharp line terminator: CR only (default CR+LF)
-    bool noEof       = false;   // do not append 0x1A EOF marker
+    bool eof         = false;   // append a 0x1A EOF marker (the emulator sends its own at end of file)
     bool hostLF      = false;   // bas2text: output LF only (default CR+LF)
     bool asciiOnly   = false;   // ignore charset table, ASCII identity only
     uint32_t addr    = 0;       // bin2bas load address
@@ -322,16 +323,23 @@ static int text2bas(const std::string& in, const std::string& out,
                     const Charset& cs, const Options& o) {
     Bytes raw = readFile(in);
     std::vector<uint32_t> cps = decodePcText(raw, o);
+    // a trailing EOF marker is not part of the program (bas2text drops it too)
+    while (!cps.empty() && cps.back() == 0x1A) cps.pop_back();
+    if (cps.empty())
+        std::cerr << "ce140conv: warning: " << in << " has no text, so the output is empty\n";
 
     Bytes result;
     size_t warnUnmapped = 0;
+    auto endLine = [&] {
+        result.push_back(0x0D);
+        if (!o.sharpCR) result.push_back(0x0A);
+    };
     for (size_t i = 0; i < cps.size(); i++) {
         uint32_t cp = cps[i];
         // normalise any of CRLF / CR / LF into the Sharp line terminator
         if (cp == 0x0D || cp == 0x0A) {
             if (cp == 0x0D && i + 1 < cps.size() && cps[i + 1] == 0x0A) i++; // eat CRLF pair
-            result.push_back(0x0D);
-            if (!o.sharpCR) result.push_back(0x0A);
+            endLine();
             continue;
         }
         uint8_t b;
@@ -347,7 +355,9 @@ static int text2bas(const std::string& in, const std::string& out,
         }
         result.push_back(b);
     }
-    if (!o.noEof) result.push_back(0x1A); // end-of-file marker
+    // LOAD reads a line up to 0x0D, so the last line needs its terminator too
+    if (!cps.empty() && cps.back() != 0x0D && cps.back() != 0x0A) endLine();
+    if (o.eof) result.push_back(0x1A); // end-of-file marker
 
     writeFile(out, result);
     if (warnUnmapped)
@@ -407,8 +417,6 @@ static int bin2bas(const std::string& in, const std::string& out,
         if (!o.haveAddr)
             std::cerr << "ce140conv: warning: no --addr given, using 0. Provide "
                          "the real load address for a correct LOAD M header.\n";
-        if (addr > 0xFFFFFF)
-            die("--addr does not fit in the 24-bit address field");
         if (payload.size() > 0xFFFFFF)
             die("payload is larger than the 24-bit length field (16777215 bytes)");
         header = buildHeader(addr, (uint32_t)payload.size());
@@ -525,28 +533,36 @@ static void usage() {
 "Text options:\n"
 "  --sjis            PC text is Shift-JIS (CP932) instead of UTF-8 (Windows)\n"
 "  --cr              Sharp line terminator = CR only (default CR+LF)\n"
-"  --no-eof          do not append the 0x1A end-of-file marker (text2bas)\n"
+"  --eof             append a 0x1A end-of-file marker (text2bas). Sharp_ce140f_emul\n"
+"                    sends its own at end of file, and two give an I/O error\n"
+"  --no-eof          do not append the marker (the default; kept for old scripts)\n"
 "  --lf              output LF line endings (bas2text; default CR+LF)\n"
 "  --ascii           ignore the charset table, map ASCII only\n"
 "  --charset <file>  use this Sharp charset table (default: charset_e500.tab\n"
 "                    next to the exe or in the current directory)\n"
 "\n"
 "Binary options:\n"
-"  --addr <n>        load address for bin2bas (e.g. --addr 0xB0000)\n"
+"  --addr <hex>      load address for bin2bas, always hexadecimal\n"
+"                    (e.g. --addr B0000; 0xB0000, $B0000, &HB0000, 0B0000h also work)\n"
 "  --header <file>   inject this exact 16-byte header (bin2bas)\n"
 "  --save-header <f> save the stripped 16-byte header (bas2bin)\n";
 }
 
-static uint32_t parseUint(const std::string& s) {
+// Always hexadecimal, like e500asm --org and e500dasm --org: BEC00, $BEC00,
+// &BEC00, &HBEC00, 0xBEC00, 0BEC00h. '_' separators are allowed.
+static uint32_t parseAddress(const std::string& s) {
+    std::string n;
+    for (char c : s) if (c != '_') n.push_back(c);
+    if (n.size() >= 2 && n[0] == '&' && (n[1] == 'H' || n[1] == 'h')) n.erase(0, 2);
+    else if (!n.empty() && (n[0] == '$' || n[0] == '&')) n.erase(0, 1);
+    else if (n.size() >= 2 && n[0] == '0' && (n[1] == 'x' || n[1] == 'X')) n.erase(0, 2);
+    else if (!n.empty() && (n.back() == 'h' || n.back() == 'H')) n.pop_back();
+    if (n.empty()) die("invalid address: " + s);
     uint32_t v = 0;
-    const char* p = s.c_str();
-    if ((p[0] == '0' && (p[1] == 'x' || p[1] == 'X')) || p[0] == '$') {
-        p += (p[0] == '$') ? 1 : 2;
-        if (sscanf(p, "%x", &v) != 1) die("bad number: " + s);
-    } else if (p[0] == '&' && (p[1] == 'H' || p[1] == 'h')) {
-        if (sscanf(p + 2, "%x", &v) != 1) die("bad number: " + s);
-    } else {
-        if (sscanf(p, "%u", &v) != 1) die("bad number: " + s);
+    for (char c : n) {
+        if (!isxdigit((unsigned char)c)) die("invalid address: " + s);
+        v = v * 16 + (uint32_t)(isdigit((unsigned char)c) ? c - '0' : toupper((unsigned char)c) - 'A' + 10);
+        if (v > 0xFFFFF) die("--addr must be 00000h..FFFFFh (always hexadecimal): " + s);
     }
     return v;
 }
@@ -567,10 +583,11 @@ int main(int argc, char** argv) {
         };
         if      (a == "--sjis")   o.sjis = true;
         else if (a == "--cr")     o.sharpCR = true;
-        else if (a == "--no-eof") o.noEof = true;
+        else if (a == "--eof") o.eof = true;
+        else if (a == "--no-eof") o.eof = false;
         else if (a == "--lf")     o.hostLF = true;
         else if (a == "--ascii")  o.asciiOnly = true;
-        else if (a == "--addr")   { o.addr = parseUint(need("--addr")); o.haveAddr = true; }
+        else if (a == "--addr")   { o.addr = parseAddress(need("--addr")); o.haveAddr = true; }
         else if (a == "--header") o.headerFile = need("--header");
         else if (a == "--save-header") o.saveHeader = need("--save-header");
         else if (a == "--charset") o.charsetFile = need("--charset");

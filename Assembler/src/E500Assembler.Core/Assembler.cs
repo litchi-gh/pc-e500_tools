@@ -30,11 +30,12 @@ public sealed record AssemblyResult(int Origin, byte[] Binary, IReadOnlyDictiona
         var output = new StringBuilder("Address  Machine code              Source\n");
         foreach (var line in Listing)
         {
-            if (line.Bytes.Length == 0) output.AppendLine($"{line.Address:X5}                            {line.Source.File}({line.Source.Number}): {line.Source.Text}");
+            string source = $"{Path.GetFileName(line.Source.File)}({line.Source.Number}): {line.Source.Text}";
+            if (line.Bytes.Length == 0) output.AppendLine($"{line.Address:X5}                            {source}");
             for (int i = 0; i < line.Bytes.Length; i += 8)
             {
                 string data = string.Join(" ", line.Bytes.Skip(i).Take(8).Select(x => x.ToString("X2")));
-                output.AppendLine($"{line.Address + i:X5}    {data,-23}   {(i == 0 ? $"{line.Source.File}({line.Source.Number}): {line.Source.Text}" : "")}");
+                output.AppendLine($"{line.Address + i:X5}    {data,-23}   {(i == 0 ? source : "")}");
             }
         }
         return output.ToString();
@@ -56,6 +57,16 @@ public sealed class Assembler
     private sealed record Statement(SourceLine Source, string? Label, string Op, string[] Args);
     private static readonly HashSet<string> Directives = new(StringComparer.OrdinalIgnoreCase) { "ORG", "EQU", "DB", "DEFB", "BYTE", "DW", "DEFW", "WORD", "DP", "DS", "DEFS", "SPACE", "ALIGN", "INCLUDE", "INCBIN", "END", "ASSERT" };
     public static long EvaluateExpression(string text) => new Expression(text, s => throw new AssemblyException($"Unknown symbol: {s}"), 0).Evaluate();
+    /// <summary>Parse a command-line address. Always hexadecimal: B8000, $B8000, &amp;B8000, 0xB8000 or 0B8000h.</summary>
+    public static int ParseAddress(string text)
+    {
+        string n = text.Trim().Replace("_", "");
+        if (n.StartsWith('$') || n.StartsWith('&')) n = n[1..];
+        else if (n.StartsWith("0x", StringComparison.OrdinalIgnoreCase)) n = n[2..];
+        else if (n.EndsWith('h') || n.EndsWith('H')) n = n[..^1];
+        try { return Convert.ToInt32(n, 16); }
+        catch (Exception e) when (e is FormatException or OverflowException or ArgumentException) { throw new AssemblyException($"Invalid address: {text}"); }
+    }
     /// <summary>Encode a single instruction with numeric operands, without assembly passes.</summary>
     public static byte[] EncodeInstruction(string mnemonic, string[] operands, int address = 0)
     {

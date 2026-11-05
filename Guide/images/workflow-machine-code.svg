@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 500" width="980" height="500" role="img" aria-labelledby="t d">
+  <title id="t">機械語の開発フロー</title>
+  <desc id="d">ASM からバイナリ、LOAD M 用ファイルを経て実機で実行する往路と、SAVE M したファイルを逆アセンブルする復路。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .lbl { font-size: 12px; fill: #52606D; paint-order: stroke; stroke: #FFFFFF; stroke-width: 4px; stroke-linejoin: round; }
+  </style>
+  <defs><marker id="a52606D" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#52606D"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="499" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">機械語の流れ</text>
+  <text x="24" y="55" class="sub">往路はそのまま実機で動かすまで、復路は実機のデータを読むまで</text>
+  <text x="24" y="88" class="b">往路 — PC で書いて実機で動かす</text>
+  <rect x="20" y="100" width="142" height="112" rx="8" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="91.0" y="143.0" class="b" text-anchor="middle">hello.asm</text>
+  <text x="91.0" y="161.0" class="s" text-anchor="middle">ORG に配置先を書く</text>
+  <text x="91.0" y="179.0" class="s" text-anchor="middle">VS Code で診断</text>
+  <rect x="182" y="100" width="142" height="112" rx="8" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="253.0" y="134.0" class="b" text-anchor="middle">e500asm</text>
+  <text x="253.0" y="152.0" class="m" xml:space="preserve" text-anchor="middle">-o hello.bin</text>
+  <text x="253.0" y="170.0" class="m" xml:space="preserve" text-anchor="middle">-l .lst -s .sym</text>
+  <text x="253.0" y="188.0" class="s" text-anchor="middle">.hex も出力できる</text>
+  <rect x="344" y="100" width="142" height="112" rx="8" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="415.0" y="143.0" class="b" text-anchor="middle">hello.bin</text>
+  <text x="415.0" y="161.0" class="s" text-anchor="middle">生バイナリ 46 バイト</text>
+  <text x="415.0" y="179.0" class="s" text-anchor="middle">番地の情報なし</text>
+  <rect x="506" y="100" width="142" height="112" rx="8" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="577.0" y="143.0" class="b" text-anchor="middle">ce140conv</text>
+  <text x="577.0" y="161.0" class="m" xml:space="preserve" text-anchor="middle">bin2bas</text>
+  <text x="577.0" y="179.0" class="m" xml:space="preserve" text-anchor="middle">--addr 0xBEC00</text>
+  <rect x="668" y="100" width="142" height="112" rx="8" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="739.0" y="134.0" class="b" text-anchor="middle">HELLO.BAS</text>
+  <text x="739.0" y="152.0" class="s" text-anchor="middle">16 バイトヘッダ</text>
+  <text x="739.0" y="170.0" class="s" text-anchor="middle">+ 本体 46 バイト</text>
+  <text x="739.0" y="188.0" class="s" text-anchor="middle">SD カードへコピー</text>
+  <rect x="830" y="100" width="130" height="112" rx="8" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+  <text x="895.0" y="134.0" class="b" text-anchor="middle">実機</text>
+  <text x="895.0" y="152.0" class="ms" xml:space="preserve" text-anchor="middle">LOAD M</text>
+  <text x="895.0" y="170.0" class="ms" xml:space="preserve" text-anchor="middle">"X:HELLO.BAS"</text>
+  <text x="895.0" y="188.0" class="ms" xml:space="preserve" text-anchor="middle">CALL &amp;HBEC00</text>
+  <polyline points="162,156.0 182,156.0" fill="none" stroke="#52606D" stroke-width="1.8" marker-end="url(#a52606D)"/>
+  <polyline points="324,156.0 344,156.0" fill="none" stroke="#52606D" stroke-width="1.8" marker-end="url(#a52606D)"/>
+  <polyline points="486,156.0 506,156.0" fill="none" stroke="#52606D" stroke-width="1.8" marker-end="url(#a52606D)"/>
+  <polyline points="648,156.0 668,156.0" fill="none" stroke="#52606D" stroke-width="1.8" marker-end="url(#a52606D)"/>
+  <polyline points="810,156.0 830,156.0" fill="none" stroke="#52606D" stroke-width="1.8" marker-end="url(#a52606D)"/>
+  <text x="24" y="256" class="b">復路 — 実機のデータを読む</text>
+  <rect x="20" y="268" width="142" height="112" rx="8" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+  <text x="91.0" y="311.0" class="b" text-anchor="middle">実機</text>
+  <text x="91.0" y="329.0" class="ms" xml:space="preserve" text-anchor="middle">SAVE M "X:CODE.BAS",</text>
+  <text x="91.0" y="347.0" class="ms" xml:space="preserve" text-anchor="middle">  &amp;HBEC00,&amp;HBEC2D</text>
+  <rect x="182" y="268" width="142" height="112" rx="8" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="253.0" y="311.0" class="b" text-anchor="middle">CODE.BAS</text>
+  <text x="253.0" y="329.0" class="s" text-anchor="middle">SD カードから</text>
+  <text x="253.0" y="347.0" class="s" text-anchor="middle">PC へコピー</text>
+  <rect x="344" y="268" width="142" height="112" rx="8" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="415.0" y="302.0" class="b" text-anchor="middle">e500dasm</text>
+  <text x="415.0" y="320.0" class="m" xml:space="preserve" text-anchor="middle">--format ce140f</text>
+  <text x="415.0" y="338.0" class="s" text-anchor="middle">ヘッダから番地を</text>
+  <text x="415.0" y="356.0" class="s" text-anchor="middle">自動で読む</text>
+  <rect x="506" y="268" width="142" height="112" rx="8" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="577.0" y="311.0" class="b" text-anchor="middle">code.asm</text>
+  <text x="577.0" y="329.0" class="s" text-anchor="middle">読んで直せる</text>
+  <text x="577.0" y="347.0" class="s" text-anchor="middle">ソース</text>
+  <rect x="668" y="268" width="142" height="112" rx="8" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="739.0" y="320.0" class="b" text-anchor="middle">e500asm</text>
+  <text x="739.0" y="338.0" class="s" text-anchor="middle">再アセンブル</text>
+  <rect x="830" y="268" width="130" height="112" rx="8" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+  <text x="895.0" y="311.0" class="b" text-anchor="middle">本体と</text>
+  <text x="895.0" y="329.0" class="b" text-anchor="middle">バイト一致</text>
+  <text x="895.0" y="347.0" class="s" text-anchor="middle">（ヘッダを除く）</text>
+  <polyline points="162,324.0 182,324.0" fill="none" stroke="#52606D" stroke-width="1.8" marker-end="url(#a52606D)"/>
+  <polyline points="324,324.0 344,324.0" fill="none" stroke="#52606D" stroke-width="1.8" marker-end="url(#a52606D)"/>
+  <polyline points="486,324.0 506,324.0" fill="none" stroke="#52606D" stroke-width="1.8" marker-end="url(#a52606D)"/>
+  <polyline points="648,324.0 668,324.0" fill="none" stroke="#52606D" stroke-width="1.8" marker-end="url(#a52606D)"/>
+  <polyline points="810,324.0 830,324.0" fill="none" stroke="#52606D" stroke-width="1.8" marker-end="url(#a52606D)"/>
+  <rect x="344" y="410" width="142" height="66" rx="8" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="415.0" y="439.0" class="b" text-anchor="middle">ce140conv</text>
+  <text x="415.0" y="457.0" class="m" xml:space="preserve" text-anchor="middle">bas2bin</text>
+  <rect x="506" y="410" width="142" height="66" rx="8" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="577.0" y="439.0" class="b" text-anchor="middle">生バイナリ</text>
+  <text x="577.0" y="457.0" class="s" text-anchor="middle">+ .hdr（任意で保存）</text>
+  <rect x="668" y="410" width="304" height="66" rx="8" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="820.0" y="439.0" class="b" text-anchor="middle">e500dasm --format raw --org BEC00</text>
+  <text x="820.0" y="457.0" class="s" text-anchor="middle">ヘッダがないので番地を指定する</text>
+  <polyline points="253.0,380 253.0,443 344,443" fill="none" stroke="#52606D" stroke-width="1.8" marker-end="url(#a52606D)"/>
+  <text x="245.0" y="418" class="lbl" text-anchor="end">本体だけ取り出す</text>
+  <polyline points="486,443 506,443" fill="none" stroke="#52606D" stroke-width="1.8" marker-end="url(#a52606D)"/>
+  <polyline points="648,443 668,443" fill="none" stroke="#52606D" stroke-width="1.8" marker-end="url(#a52606D)"/>
+  <rect x="24" y="479" width="14" height="14" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="44" y="490" class="s">ツール</text>
+  <rect x="102.0" y="479" width="14" height="14" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="122.0" y="490" class="s">ファイル</text>
+  <rect x="192.0" y="479" width="14" height="14" rx="3" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="212.0" y="490" class="s">実機・確認結果</text>
+</svg>

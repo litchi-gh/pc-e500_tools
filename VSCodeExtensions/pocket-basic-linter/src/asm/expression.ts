@@ -121,14 +121,10 @@ class Parser {
       let radix = 10;
       if (n[0] === "$" || n[0] === "&") { n = n.slice(1); radix = 16; }
       else if (/^0x/i.test(n)) { n = n.slice(2); radix = 16; }
+      else if (/h$/i.test(n)) { n = n.slice(0, -1); radix = 16; } // before 0b: 0B8000h is hexadecimal
       else if (/^0b/i.test(n)) { n = n.slice(2); radix = 2; }
-      else if (/h$/i.test(n)) { n = n.slice(0, -1); radix = 16; }
       const valid = radix === 16 ? /^[0-9A-Fa-f]+$/ : radix === 2 ? /^[01]+$/ : /^[0-9]+$/;
-      if (!valid.test(n)) {
-        const body = raw.slice(1, -1);
-        const hint = /^0b.*h$/i.test(raw) ? `（B で始まる 16 進数は e500asm が 2 進数と解釈するため、$${body} または &${body} と書きます）` : "";
-        throw new AssemblyError(`数値 ${raw} を解釈できません。${hint}`, "ASM010");
-      }
+      if (!valid.test(n)) throw new AssemblyError(`数値 ${raw} を解釈できません。`, "ASM010");
       const value = BigInt((radix === 16 ? "0x" : radix === 2 ? "0b" : "") + n);
       if (value > INT64_MAX) throw new AssemblyError(`数値 ${raw} を解釈できません。`, "ASM010");
       return value;

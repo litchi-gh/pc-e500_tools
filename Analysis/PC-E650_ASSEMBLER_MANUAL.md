@@ -6,6 +6,8 @@ PC-E650（および PC-E500 系）の CPU **SC62015（SHARP 社内名 ESR-L）**
 
 ### 1.1 レジスタ
 
+![SC62015 のレジスタ](../Guide/images/cpu-registers.svg)
+
 | 記号 | 幅 | 役割 |
 |---|---|---|
 | A | 8 bit | アキュムレータ。8 bit 演算の主役。 |
@@ -42,6 +44,8 @@ PC-E650（および PC-E500 系）の CPU **SC62015（SHARP 社内名 ESR-L）**
 
 PC-E650 の割当て（本体 ROM 8.5、内蔵 RAM 64 KB）:
 
+![外部メモリマップ](../Guide/images/memory-map-external.svg)
+
 | CPU アドレス | 内容 |
 |---|---|
 | 00000h–03FFFh / 04000h–07FFFh | LCD ドライバ（SH-26 系）の窓。ROM が使う。 |
@@ -58,6 +62,8 @@ PC-E650 の割当て（本体 ROM 8.5、内蔵 RAM 64 KB）:
 ROM の詳細は [PC-E650_ROM_MAP.md](PC-E650_ROM_MAP.md)、IOCS の入口は [IOCS_REFERENCE.md](IOCS_REFERENCE.md) を参照。
 
 ### 1.4 内部 RAM（256 バイト）
+
+![内部 RAM マップ](../Guide/images/memory-map-internal.svg)
 
 | 番地 | 名前 | 内容 |
 |---|---|---|
@@ -113,7 +119,7 @@ ROM 8.5 の BASIC が IOCS の引数に使う番地（技術資料の表記と�
 
 ### 2.2 即値
 
-`MV A,12h`、`MV BA,1234h`、`MV X,0B0000h`。転送先の幅の分だけ命令に埋め込まれる。
+`MV A,12h`、`MV BA,1234h`、`MV X,$B0000`。転送先の幅の分だけ命令に埋め込まれる。
 
 ### 2.3 内部 RAM `(…)`
 
@@ -160,7 +166,7 @@ table:  DB    "TEXT",13,10,0     ; 文字列と数値
         END
 ```
 
-- 数値: `$BEC00` / `&BEC00` / `0xBEC00` / `0BEC00h`（16 進）、`0b1010`（2 進）、`'A'`（文字）。`$` または `*` 単独は現在のアドレス。**注意: `0B…h` 形式（例 `0BEC00h`）は現行の e500asm が 2 進の `0b` 接頭辞と誤認してエラーになる。B で始まる 16 進は `$BEC00` か `&BEC00` で書く。**
+- 数値: `$BEC00` / `&BEC00` / `0xBEC00` / `0BEC00h`（16 進）、`0b1010`（2 進）、`'A'`（文字）。`$` または `*` 単独は現在のアドレス。`h` で終わる数値は 16 進として読む（`0B8H` も 16 進）。
 - 式: `+ - * / % & | ^ << >>`、単項 `- ~`、括弧、`LOW(x)`、`HIGH(x)`、`BANK(x)`（bit19–16）。
 - 疑似命令: `ORG`, `EQU`, `DB`/`DEFB`/`BYTE`, `DW`/`DEFW`/`WORD`, `DP`, `DS`/`DEFS`/`SPACE`, `ALIGN`, `INCLUDE`, `INCBIN`, `ASSERT`, `END`。先頭に `.` を付けてもよい。
 - 分岐先: `JR label` のようにラベルを書けば変位は自動計算。`JR +5` / `JR -3` の直接指定も可。
@@ -424,6 +430,8 @@ e500dasm PROG.BIN -f ce140f -o prog.asm                     # SAVE M 形式（16
 `20h`（PRE の既定組合せに相当）、`BFh`（`MV [(n)],S` に当たるが S の間接指定は存在しない）は `e500asm` が生成せず、`e500dasm` は `DB` にする。`97h`/`9Fh`（`MV S,[r3]`/`MV S,[(n)]` の位置）は `SC`/`RC`、`B7h` は `CMP (m),(n)` に割り当てられている。
 
 ### 4.9 PRE — 内部 RAM アドレッシング指定バイト
+
+![PRE バイト](../Guide/images/pre-byte.svg)
 
 命令の直前に 1 バイト置き、内部 RAM オペランドのモードを変える。第 1 オペランドは PX、第 2 オペランドは PY を使う。
 
@@ -738,6 +746,8 @@ ROM 8.5 は内蔵 RAM の上端（BFC00h 直下）に 21 個の作業領域を�
 
 ### 7.2 機械語エリアの確保（検証済み）
 
+![機械語エリアの確保](../Guide/images/ml-area.svg)
+
 IOCS device 8（SYSTM:）command 42h「作業領域確保」を、公開入口 FFFD8h 経由で BASIC から呼ぶ。FFFD8h は `[BFE03h]` を X（ポインタ表の番地）、`[BFE06h]` を Y（確保するバイト数）として command 42h を実行し、そのままメインメニューへ戻る。
 
 ```basic
@@ -754,6 +764,8 @@ POKE &HBFE03,&H1A,&HFD,&H0B, &H00,&H10,&H00 : CALL &HFFFD8
 技術資料 p.85 には同じ方法で IOCS 作業領域（BFD17h）を広げる BASIC プログラム例がある。
 
 ### 7.3 CALL 文の規約（検証済み）
+
+![CALL 文の動き](../Guide/images/basic-call.svg)
 
 ROM 8.5 の `CALL addr` は次のように動く（F9F34h）:
 
@@ -789,6 +801,8 @@ ROM は X しか保存しない。他のレジスタは壊してよいが、U/S 
 - ブザー（XOUT）は SCR（FDh）の bit6–4。`AND (0FDh),8Fh` で止まる。
 
 ### 7.5 IOCS の呼び方
+
+![IOCS の呼び出し](../Guide/images/iocs-call.svg)
 
 ```asm
         MV   ($D6),device      ; (cl) デバイス番号

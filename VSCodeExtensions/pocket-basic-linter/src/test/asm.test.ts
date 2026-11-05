@@ -162,9 +162,18 @@ describe("SC62015 assembler", () => {
       ["a1 EQU a2\na2 EQU a1\nDB a1", "ASM032"], ["a1 EQU a1+1", "ASM001"], ["a1 EQU missing\nDB a1", "ASM031"],
       ["DB \"bad", "ASM010"], ["DB '\\q'", "ASM010"], ["MV A,,1", "ASM010"], ["MV A,()", "ASM010"],
       ["EQU 2", "ASM032"], ["DB 1 << 64", "ASM040"], ["DB 999999999999999999999999", "ASM010"],
-      ["FOO A,1", "ASM020", "FOO"], ["start\nRET", "ASM020", "':'"], ["MV A,0BEC00h", "ASM010", "$BEC00"]
+      ["FOO A,1", "ASM020", "FOO"], ["start\nRET", "ASM020", "':'"], ["DB 0b102", "ASM010"]
     ];
     for (const [src, code, fragment] of cases) reject(src, code, fragment);
+  });
+
+  it("reads an h suffix as hexadecimal even after 0B", () => {
+    golden("MV X,0B8000h", "0C 00 80 0B");
+    golden("MV X,0BEC00H", "0C 00 EC 0B");
+    golden("MV A,0B8H", "08 B8");
+    golden("DW 0b101h", "01 B1");
+    golden("DB 0b1010", "0A");
+    golden("DW 0C000h", "00 C0");
   });
 
   it("reports several independent problems in one document", () => {
