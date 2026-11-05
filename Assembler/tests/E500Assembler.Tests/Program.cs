@@ -91,6 +91,16 @@ string[] sourceModes = ["($34)","(BP+$34)","(PY+$34)","(BP+PY)"];
 string[,] prefixes = {{"32","30","33","31"},{"22","","23","21"},{"36","34","37","35"},{"26","24","27","25"}};
 for(int d=0; d<4; d++) for(int s=0; s<4; s++) Golden($"MV {dest[d]},{sourceModes[s]}", $"{prefixes[d,s]}C8{(d==3?"00":"12")}{(s==3?"00":"34")}");
 Golden("MV A,(BP-1)","80FF"); Golden("MV A,(PX+2)","348002");
+// A displacement is one expression that starts at its sign: X-1+2 is X+1, not X-(1+2).
+foreach (var (src, hex) in new (string, string)[]
+{
+    ("MV A,[X-1+2]","908401"),("MV A,[X-3+1]","90C402"),("MV A,[X+1-2]","90C401"),("MV A,[X+1+2]","908403"),("MV A,[X-(1+2)]","90C403"),("MV A,[X-0]","90C400"),("MV A,[X+0]","908400"),
+    ("MV A,(BP-1+2)","8001"),("MV A,(BP-3+1)","80FE"),("MV A,(BP+1-2)","80FF"),("MV A,(PX-1+2)","348001"),("JP (BP-1+2)","1001"),
+    ("MV A,[(5)-1+2]","3098800501"),("MV A,[(5)-3+1]","3098C00502"),("MV A,[(5)+1+2]","3098800503"),
+    ("MVL ($23),[X-1+2]","3056842301"),("MVL [Y-3+1],($23)","305EC52302"),
+    ("off EQU 1\nMV A,[X-off+2]","908401"),("MV A,[X-later]\nlater EQU 2","90C402")
+}) Golden(src,hex);
+Reject("MV A,[X+256]","8 bits"); Reject("MV A,[X-256]","8 bits"); Reject("MV A,[X+200+100]","8 bits");
 Golden("ORG $B8000\nstart: MV A,0\nMV IL,10\nloop: ADD A,IL\nDEC IL\nJRNZ loop\nRET", "0800090A46017C011B0606");
 Golden("ORG $B8000\nJR next\nDB 1,2\nnext: CALL done\nRET\ndone: RET", "120201020408800606");
 Golden("ORG $BFFFC\nJR $B0001", "1203");

@@ -27,6 +27,9 @@
 | 画面、キー、ファイルを機械語から使う | [IOCS_REFERENCE.md](../Analysis/IOCS_REFERENCE.md) |
 | LCD、キーボード、ポートを直接操作する | [HARDWARE_REFERENCE.md](../Analysis/HARDWARE_REFERENCE.md) |
 | CE-140F の通信手順を調べる | [CE-140F_PROTOCOL.md](../Analysis/CE-140F_PROTOCOL.md) |
+| CE-515P へ送るコマンドを調べる | [CE-515P_PLOTTER.md](../Analysis/CE-515P_PLOTTER.md) |
+| テープのデータの形を調べる | [TAPE_FORMAT.md](../Analysis/TAPE_FORMAT.md) |
+| シリアルポートの設定と通信を調べる | [SERIAL_PORT.md](../Analysis/SERIAL_PORT.md) |
 | 文字のドットパターンを調べる | [CHARACTER_FONT.md](../Analysis/CHARACTER_FONT.md) |
 | BASIC の命令の書式を調べる | [BASIC_REFERENCE.md](../Analysis/BASIC_REFERENCE.md) |
 | ROM の中を読む | [PC-E650_ROM_MAP.md](../Analysis/PC-E650_ROM_MAP.md)、[PC-E650_GDRIVE.md](../Analysis/PC-E650_GDRIVE.md) |

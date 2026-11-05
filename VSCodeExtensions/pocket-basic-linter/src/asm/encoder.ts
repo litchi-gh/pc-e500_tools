@@ -77,7 +77,7 @@ export class InstructionEncoder {
         if ((m[1] ? 1 : 0) + (m[3] ? 1 : 0) + (m[4] ? 1 : 0) > 1) throw new AssemblyError("自動増減と変位は同時に指定できません。", "ASM020");
         const reg = (REGISTERS as readonly string[]).indexOf(m[2].toUpperCase());
         const index = m[1] ? 0x30 : m[3] ? 0x20 : m[4] ? (m[4] === "+" ? 0x80 : 0xc0) : 0;
-        return operand("ER", inside, { reg, index, offset: m[5] });
+        return operand("ER", inside, { reg, index, offset: m[5] === undefined ? undefined : m[4] + m[5] });
       }
       if (inside.startsWith("(")) {
         let depth = 0;
@@ -90,7 +90,7 @@ export class InstructionEncoder {
         const inner = InstructionEncoder.internal(inside.slice(1, end));
         const tail = inside.slice(end + 1).trim();
         if (tail.length > 0 && tail[0] !== "+" && tail[0] !== "-") throw new AssemblyError("間接アドレスの変位が不正です。", "ASM020");
-        return operand("EI", inside, { index: tail.length === 0 ? 0 : tail[0] === "+" ? 0x80 : 0xc0, offset: tail.length === 0 ? undefined : tail.slice(1), inner });
+        return operand("EI", inside, { index: tail.length === 0 ? 0 : tail[0] === "+" ? 0x80 : 0xc0, offset: tail.length === 0 ? undefined : tail, inner });
       }
       if (/^\[(?:A|IL|BA|I|B)(?:\]|[+-])/.test(s)) throw new AssemblyError("外部メモリの添字レジスタは X, Y, U, S のいずれかです。", "ASM020");
       return operand("EA", inside);
@@ -105,7 +105,7 @@ export class InstructionEncoder {
     const m = /^\s*(BP|PX|PY)\s*(?:([+-])\s*(.+))?$/i.exec(text);
     if (m) {
       const name = m[1].toUpperCase();
-      return operand("M", m[3] ? `${m[2]}(${m[3]})` : "0", { mode: name === "BP" ? 1 : 2, index: name === "PX" ? 1 : name === "PY" ? 2 : 0 });
+      return operand("M", m[3] ? m[2] + m[3] : "0", { mode: name === "BP" ? 1 : 2, index: name === "PX" ? 1 : name === "PY" ? 2 : 0 });
     }
     return operand("M", text, { mode: 0 });
   }
@@ -127,11 +127,16 @@ export class InstructionEncoder {
       if (memory && store) this.mem(memory);
       return;
     }
-    this.emit(ext.index | (ext.kind === "ER" ? ext.reg : 0));
+    // The displacement keeps its sign, so [X-1+2] is X+1. A zero keeps the written sign: [X-0] is a distinct encoding.
+    const displacement = ext.offset === undefined ? 0n : this.evaluate(ext.offset);
+    const index = displacement === 0n ? ext.index : displacement < 0n ? 0xc0 : 0x80;
+    const magnitude = displacement < 0n ? -displacement : displacement;
+    if (this.strict && magnitude > 255n) throw new AssemblyError(`値 ${magnitude} は 8 ビットに収まりません。`, "ASM040");
+    this.emit(index | (ext.kind === "ER" ? ext.reg : 0));
     if (ext.kind === "EI" && store) this.mem(ext.inner!);
     if (memory) this.mem(memory);
     if (ext.kind === "EI" && !store) this.mem(ext.inner!);
-    if (ext.offset !== undefined) this.immediate(ext.offset, 8);
+    if (ext.offset !== undefined) this.emit(Number(magnitude & 0xffn));
   }
 
   encode(mnemonic: string, args: readonly string[]): number[] {

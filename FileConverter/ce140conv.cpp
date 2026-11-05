@@ -34,7 +34,9 @@
 #include <cstdio>
 #include <cstdlib>
 #include <cstring>
+#include <filesystem>
 #include <string>
+#include <system_error>
 #include <vector>
 #include <map>
 #include <fstream>
@@ -73,6 +75,14 @@ static void writeFile(const std::string& path, const Bytes& data) {
         f.write(reinterpret_cast<const char*>(data.data()),
                 static_cast<std::streamsize>(data.size()));
     if (!f) die("write failed: " + path);
+}
+
+// Stop before writing if an output is also a file this run reads or writes,
+// however the two names are spelled (case, ".\", relative or absolute).
+static void rejectSameFile(const std::string& output, const std::string& other) {
+    std::error_code ec;
+    if (output == other || std::filesystem::equivalent(output, other, ec))
+        die("output would overwrite " + other + "; choose another output file");
 }
 
 // directory part of a path (including trailing separator), or "" if none
@@ -417,8 +427,9 @@ static int bin2bas(const std::string& in, const std::string& out,
         if (!o.haveAddr)
             std::cerr << "ce140conv: warning: no --addr given, using 0. Provide "
                          "the real load address for a correct LOAD M header.\n";
-        if (payload.size() > 0xFFFFFF)
-            die("payload is larger than the 24-bit length field (16777215 bytes)");
+        if ((uint64_t)addr + payload.size() > 0x100000)
+            die("image of " + std::to_string(payload.size()) +
+                " bytes does not fit in 00000h..FFFFFh at this --addr");
         header = buildHeader(addr, (uint32_t)payload.size());
     }
     Bytes result;
@@ -624,6 +635,15 @@ int main(int argc, char** argv) {
     auto needPos = [&](size_t n) {
         if (pos.size() < n) { usage(); die("missing file argument(s)"); }
     };
+
+    if (cmd != "info" && pos.size() >= 2) {
+        rejectSameFile(pos[1], pos[0]);
+        if (!o.headerFile.empty()) rejectSameFile(pos[1], o.headerFile);
+        if (!o.saveHeader.empty()) {
+            rejectSameFile(o.saveHeader, pos[0]);
+            rejectSameFile(o.saveHeader, pos[1]);
+        }
+    }
 
     if (cmd == "text2bas") { needPos(2); return text2bas(pos[0], pos[1], cs, o); }
     if (cmd == "bas2text") { needPos(2); return bas2text(pos[0], pos[1], cs, o); }
