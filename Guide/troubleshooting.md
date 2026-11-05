@@ -45,7 +45,7 @@ e500asm は最初のエラーで止まり、既存の出力ファイルは更新
 | 症状・メッセージ | 原因 | 対処 |
 |---|---|---|
 | `warning: no --addr given, using 0.` | `bin2bas` に番地がない | `--addr` を付ける。`0` のままだと `LOAD M` で 0 番地に読み込もうとする |
-| `--addr BEC00` が失敗する | 16 進数には接頭辞が必要 | `--addr 0xBEC00` にする |
+| `--addr must be 00000h..FFFFFh` | `--addr` は常に 16 進数で、`781312` のような 10 進数は範囲を超える | `--addr BEC00` のように 16 進数で書く |
 | `error: input is shorter than a 16-byte header` | `bas2bin` にヘッダなしのファイルを渡した | `ce140conv info` で種類を確かめる |
 | `bas2text` の結果が文字化けする | `SAVE` に `,A` を付けなかった | 実機で `SAVE "X:PROG.BAS",A` をやり直す |
 | カナが違う文字になる | 文字コード表の配列が実機と違う | `charset_e500.tab` を修正する。再コンパイルは不要 |
