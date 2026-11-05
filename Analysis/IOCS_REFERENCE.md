@@ -4,6 +4,8 @@ PC-E500 の ROM 8.5 を解析して得た IOCS/FCS の入口表と、Sharp *Tech
 
 ## 最初に: IOCS の使い方
 
+![IOCS の呼び出し](../Guide/images/iocs-call.svg)
+
 IOCS はデバイスを統一的に操作するディスパッチャである。呼出し前に内部 RAM のデバイス番号とドライブ番号、`IL` のコマンド番号を設定し、公開ベクタ `FFFE8h` を `CALLF` する。呼出し先を直接 `CALLF E0000h` に固定せず、互換性のため公開ベクタを用いる。
 
 ```asm
@@ -54,8 +56,6 @@ CALLF $FFFE8
 | `3Fh` | format |
 | `40h` | 初期化 |
 | `41h`–`7Fh` | デバイス固有処理 |
-
-## ROM 8.5のIOCSヘッダ
 
 ## ROM 8.5のIOCSヘッダ
 

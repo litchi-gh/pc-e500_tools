@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 330" width="980" height="330" role="img" aria-labelledby="t d">
+  <title id="t">BASIC の開発フロー</title>
+  <desc id="d">PC のテキストを text2bas で ASCII BASIC に変換して LOAD する往路と、SAVE ,A したファイルを bas2text で読む復路。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .lbl { font-size: 12px; fill: #52606D; paint-order: stroke; stroke: #FFFFFF; stroke-width: 4px; stroke-linejoin: round; }
+  </style>
+  <defs><marker id="a52606D" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#52606D"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="329" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">BASIC の流れ</text>
+  <text x="24" y="55" class="sub">SD カードに置くのは ASCII 形式。中間コードの形式はこのツールでは扱わない</text>
+  <text x="24" y="88" class="b">往路</text>
+  <rect x="20" y="98" width="170" height="92" rx="8" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="105.0" y="131.0" class="b" text-anchor="middle">SAMPLE.E500</text>
+  <text x="105.0" y="149.0" class="s" text-anchor="middle">UTF-8 / Shift-JIS</text>
+  <text x="105.0" y="167.0" class="s" text-anchor="middle">VS Code で診断</text>
+  <rect x="215" y="98" width="170" height="92" rx="8" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="300.0" y="131.0" class="b" text-anchor="middle">ce140conv</text>
+  <text x="300.0" y="149.0" class="m" xml:space="preserve" text-anchor="middle">text2bas</text>
+  <text x="300.0" y="167.0" class="s" text-anchor="middle">文字コード表で変換</text>
+  <rect x="410" y="98" width="170" height="92" rx="8" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="495.0" y="131.0" class="b" text-anchor="middle">PROG.BAS</text>
+  <text x="495.0" y="149.0" class="s" text-anchor="middle">Sharp 文字コード</text>
+  <text x="495.0" y="167.0" class="s" text-anchor="middle">改行 CR+LF</text>
+  <rect x="605" y="98" width="170" height="92" rx="8" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="690.0" y="140.0" class="b" text-anchor="middle">SD カード</text>
+  <text x="690.0" y="158.0" class="s" text-anchor="middle">CE-140F エミュレータ</text>
+  <rect x="800" y="98" width="160" height="92" rx="8" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+  <text x="880.0" y="140.0" class="b" text-anchor="middle">実機</text>
+  <text x="880.0" y="158.0" class="m" xml:space="preserve" text-anchor="middle">LOAD "X:PROG.BAS"</text>
+  <polyline points="190,144.0 215,144.0" fill="none" stroke="#52606D" stroke-width="1.8" marker-end="url(#a52606D)"/>
+  <polyline points="385,144.0 410,144.0" fill="none" stroke="#52606D" stroke-width="1.8" marker-end="url(#a52606D)"/>
+  <polyline points="580,144.0 605,144.0" fill="none" stroke="#52606D" stroke-width="1.8" marker-end="url(#a52606D)"/>
+  <polyline points="775,144.0 800,144.0" fill="none" stroke="#52606D" stroke-width="1.8" marker-end="url(#a52606D)"/>
+  <text x="24" y="224" class="b">復路</text>
+  <rect x="20" y="234" width="170" height="92" rx="8" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+  <text x="105.0" y="267.0" class="b" text-anchor="middle">実機</text>
+  <text x="105.0" y="285.0" class="m" xml:space="preserve" text-anchor="middle">SAVE "X:PROG.BAS",A</text>
+  <text x="105.0" y="303.0" class="s" text-anchor="middle">,A がないと中間コード</text>
+  <rect x="215" y="234" width="170" height="92" rx="8" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="300.0" y="276.0" class="b" text-anchor="middle">PROG.BAS</text>
+  <text x="300.0" y="294.0" class="s" text-anchor="middle">SD から PC へコピー</text>
+  <rect x="410" y="234" width="170" height="92" rx="8" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="495.0" y="276.0" class="b" text-anchor="middle">ce140conv</text>
+  <text x="495.0" y="294.0" class="m" xml:space="preserve" text-anchor="middle">bas2text</text>
+  <rect x="605" y="234" width="170" height="92" rx="8" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="690.0" y="276.0" class="b" text-anchor="middle">PROG.TXT</text>
+  <text x="690.0" y="294.0" class="s" text-anchor="middle">PC で読める文字コード</text>
+  <rect x="800" y="234" width="160" height="92" rx="8" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="880.0" y="276.0" class="b" text-anchor="middle">VS Code</text>
+  <text x="880.0" y="294.0" class="s" text-anchor="middle">編集して往路へ</text>
+  <polyline points="190,280.0 215,280.0" fill="none" stroke="#52606D" stroke-width="1.8" marker-end="url(#a52606D)"/>
+  <polyline points="385,280.0 410,280.0" fill="none" stroke="#52606D" stroke-width="1.8" marker-end="url(#a52606D)"/>
+  <polyline points="580,280.0 605,280.0" fill="none" stroke="#52606D" stroke-width="1.8" marker-end="url(#a52606D)"/>
+  <polyline points="775,280.0 800,280.0" fill="none" stroke="#52606D" stroke-width="1.8" marker-end="url(#a52606D)"/>
+</svg>

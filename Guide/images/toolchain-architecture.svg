@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 560" width="980" height="560" role="img" aria-labelledby="t d">
+  <title id="t">ソースコードの依存関係</title>
+  <desc id="d">E500Assembler.Core を CLI、逆アセンブラ、テストが参照し、VS Code 拡張は TypeScript に移植して golden vector で一致を確認している。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .lbl { font-size: 12px; fill: #52606D; paint-order: stroke; stroke: #FFFFFF; stroke-width: 4px; stroke-linejoin: round; }
+  </style>
+  <defs><marker id="a52606D" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#52606D"/></marker><marker id="a6B4FBB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#6B4FBB"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="559" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">ソースコードの依存関係</text>
+  <text x="24" y="55" class="sub">命令エンコーダ（InstructionEncoder）が全体の基準になる</text>
+  <rect x="20" y="72" width="610" height="300" rx="12" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="36" y="96" class="b">.NET 10（C#）</text>
+  <rect x="40" y="210" width="270" height="92" rx="8" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="2.4"/>
+  <text x="175.0" y="243.0" class="b" text-anchor="middle">E500Assembler.Core</text>
+  <text x="175.0" y="261.0" class="s" text-anchor="middle">Assembler.cs / Expression.cs</text>
+  <text x="175.0" y="279.0" class="s" text-anchor="middle">InstructionEncoder.cs</text>
+  <rect x="40" y="110" width="125" height="62" rx="8" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.5"/>
+  <text x="102.5" y="137.0" class="b" text-anchor="middle">Cli</text>
+  <text x="102.5" y="155.0" class="s" text-anchor="middle">e500asm.exe</text>
+  <rect x="185" y="110" width="125" height="62" rx="8" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.5"/>
+  <text x="247.5" y="137.0" class="b" text-anchor="middle">Tests</text>
+  <text x="247.5" y="155.0" class="s" text-anchor="middle">命令バイト列</text>
+  <rect x="350" y="210" width="260" height="92" rx="8" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="480.0" y="243.0" class="b" text-anchor="middle">E500Disassembler.Core</text>
+  <text x="480.0" y="261.0" class="s" text-anchor="middle">Decoder.cs / Disassembler.cs</text>
+  <text x="480.0" y="279.0" class="s" text-anchor="middle">InputImage.cs</text>
+  <rect x="350" y="110" width="80" height="62" rx="8" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.5"/>
+  <text x="390.0" y="137.0" class="b" text-anchor="middle">Cli</text>
+  <text x="390.0" y="155.0" class="ms" xml:space="preserve" text-anchor="middle">e500dasm</text>
+  <rect x="438" y="110" width="80" height="62" rx="8" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.5"/>
+  <text x="478.0" y="137.0" class="b" text-anchor="middle">Gui</text>
+  <text x="478.0" y="155.0" class="s" text-anchor="middle">WinForms</text>
+  <rect x="526" y="110" width="84" height="62" rx="8" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.5"/>
+  <text x="568.0" y="137.0" class="b" text-anchor="middle">Tests</text>
+  <text x="568.0" y="155.0" class="s" text-anchor="middle">全 256 op</text>
+  <polyline points="102,172 102,210" fill="none" stroke="#52606D" stroke-width="1.8" marker-end="url(#a52606D)"/>
+  <polyline points="247,172 247,210" fill="none" stroke="#52606D" stroke-width="1.8" marker-end="url(#a52606D)"/>
+  <polyline points="390,172 390,210" fill="none" stroke="#52606D" stroke-width="1.8" marker-end="url(#a52606D)"/>
+  <polyline points="478,172 478,210" fill="none" stroke="#52606D" stroke-width="1.8" marker-end="url(#a52606D)"/>
+  <polyline points="568,172 568,210" fill="none" stroke="#52606D" stroke-width="1.8" marker-end="url(#a52606D)"/>
+  <polyline points="350,256 310,256" fill="none" stroke="#52606D" stroke-width="1.8" marker-end="url(#a52606D)"/>
+  <text x="330" y="330" class="lbl" text-anchor="middle">Disassembler は Assembler.EncodeInstruction で 1 命令ずつ照合する</text>
+  <rect x="650" y="72" width="310" height="300" rx="12" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="666" y="96" class="b">VS Code 拡張（TypeScript）</text>
+  <rect x="670" y="110" width="270" height="62" rx="8" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.5"/>
+  <text x="805.0" y="137.0" class="b" text-anchor="middle">extension.ts</text>
+  <text x="805.0" y="155.0" class="s" text-anchor="middle">編集イベント → 診断の表示</text>
+  <rect x="670" y="210" width="130" height="92" rx="8" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="735.0" y="243.0" class="b" text-anchor="middle">linter/</text>
+  <text x="735.0" y="261.0" class="b" text-anchor="middle">dialects/</text>
+  <text x="735.0" y="279.0" class="s" text-anchor="middle">BASIC の診断</text>
+  <rect x="810" y="210" width="130" height="92" rx="8" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="875.0" y="243.0" class="b" text-anchor="middle">asm/</text>
+  <text x="875.0" y="261.0" class="s" text-anchor="middle">assembler.ts</text>
+  <text x="875.0" y="279.0" class="s" text-anchor="middle">encoder.ts</text>
+  <polyline points="735,172 735,210" fill="none" stroke="#52606D" stroke-width="1.8" marker-end="url(#a52606D)"/>
+  <polyline points="875,172 875,210" fill="none" stroke="#52606D" stroke-width="1.8" marker-end="url(#a52606D)"/>
+  <polyline points="175,302 175,410 875,410 875,302" fill="none" stroke="#6B4FBB" stroke-width="1.8" stroke-dasharray="6 4" marker-end="url(#a6B4FBB)"/>
+  <text x="525" y="404" class="lbl" text-anchor="middle">手作業で移植（命令表を変えたら encoder.ts にも反映）</text>
+  <rect x="40" y="440" width="270" height="92" rx="8" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.5"/>
+  <text x="175.0" y="473.0" class="b" text-anchor="middle">golden vector</text>
+  <text x="175.0" y="491.0" class="s" text-anchor="middle">全レジスタ・全 PRE 組合せ・拒否ケース</text>
+  <text x="175.0" y="509.0" class="s" text-anchor="middle">C# と TypeScript で同じ期待値</text>
+  <line x1="175" y1="440" x2="175" y2="410" stroke="#6B4FBB" stroke-width="1.8" stroke-dasharray="4 4"/>
+  <text x="188" y="430" class="lbl">同じ期待値で一致を確認</text>
+  <rect x="350" y="440" width="260" height="92" rx="8" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="480.0" y="473.0" class="b" text-anchor="middle">ce140conv.cpp</text>
+  <text x="480.0" y="491.0" class="s" text-anchor="middle">C++17 単一ソース・依存なし</text>
+  <text x="480.0" y="509.0" class="s" text-anchor="middle">charset_e500.tab を実行時に読む</text>
+  <rect x="650" y="440" width="310" height="92" rx="8" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.5"/>
+  <text x="805.0" y="473.0" class="b" text-anchor="middle">BASIC のキーワード定義</text>
+  <text x="805.0" y="491.0" class="s" text-anchor="middle">dialects/pcE500.ts</text>
+  <text x="805.0" y="509.0" class="s" text-anchor="middle">根拠は Analysis/BASIC_REFERENCE.md</text>
+  <polyline points="735,440 735,302" fill="none" stroke="#6B4FBB" stroke-width="1.8" stroke-dasharray="6 4" marker-end="url(#a6B4FBB)"/>
+  <line x1="24" y1="549" x2="54" y2="549" stroke="#52606D" stroke-width="1.8"/>
+  <text x="60" y="553" class="s">ProjectReference / import</text>
+  <line x1="250" y1="549" x2="280" y2="549" stroke="#6B4FBB" stroke-width="1.8" stroke-dasharray="6 4"/>
+  <text x="286" y="553" class="s">移植・同期・根拠資料</text>
+</svg>

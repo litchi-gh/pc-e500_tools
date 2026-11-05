@@ -11,6 +11,8 @@
 | `bas2bin`  | バイナリ(機械語)ファイル → 生バイナリ | — |
 | `info`     | SD カード上ファイルの内容確認 | — |
 
+使い方の流れは[開発の流れ](../Guide/workflows.md)、形式の詳しい説明は[ファイル形式](../Guide/file-formats.md)を参照してください。
+
 ## ビルド
 
 C++17 の単一ソース・依存ライブラリ無しです。
@@ -49,7 +51,8 @@ ce140conv info     <file>
 |---|---|
 | `--sjis` | PC テキストを Shift-JIS(CP932) として扱う（既定は UTF-8。Windows ビルドのみ） |
 | `--cr` | Sharp 側の改行を CR のみにする（既定は CR+LF） |
-| `--no-eof` | 末尾に EOF マーカ `0x1A` を付けない（`text2bas`） |
+| `--eof` | 末尾に EOF マーカ `0x1A` を付ける（`text2bas`。既定は付けない） |
+| `--no-eof` | 末尾に `0x1A` を付けない。既定と同じで、以前のコマンドのために残してある |
 | `--lf` | 出力の改行を LF にする（`bas2text`。既定は CR+LF） |
 | `--ascii` | 文字コード表を無視し ASCII のみ変換 |
 | `--charset <file>` | 使用する Sharp 文字コード表（既定は exe と同じ場所／カレントの `charset_e500.tab`） |
@@ -58,7 +61,7 @@ ce140conv info     <file>
 
 | オプション | 意味 |
 |---|---|
-| `--addr <n>` | `bin2bas` のロードアドレス（例: `--addr 0xB0000` / `--addr &HB0000`） |
+| `--addr <n>` | `bin2bas` のロードアドレス（例: `--addr 0xB0000` / `--addr &HB0000`）。接頭辞のない値は10進数で、`--addr B0000` はエラー |
 | `--header <file>` | ちょうど 16 バイトのヘッダを差し込む（`bin2bas`） |
 | `--save-header <f>` | 剥がした 16 バイトヘッダを保存（`bas2bin`） |
 
@@ -74,7 +77,7 @@ ce140conv text2bas --sjis KANA.TXT KANA.BAS
 rem SD 上の ASCII BASIC を読める形へ
 ce140conv bas2text PROG.BAS PROG.TXT
 
-rem 機械語イメージ → LOAD M 用（暫定ヘッダ）
+rem 機械語イメージ → LOAD M 用
 ce140conv bin2bas --addr 0xB0000 CODE.BIN CODE.BAS
 
 rem LOAD M 用ファイルから生バイナリを取り出し、ヘッダも保存
@@ -86,8 +89,12 @@ ce140conv info CODE.BAS
 
 ## ファイル形式の要点
 
-- **ASCII ファイル（LOAD）**: プレーンテキスト。行区切りは CR+LF（`SAVE` の出力に合わせる）、
-  末尾に EOF `0x1A`。エミュレータは先頭バイトが `0xFF` 以外なら ASCII と判定します。
+![SD カード上の 2 つの形式](../Guide/images/file-formats.svg)
+
+- **ASCII ファイル（LOAD）**: プレーンテキスト。行区切りは CR+LF（`SAVE` の出力に合わせる）。最後の行に改行がなければ補います。入力の末尾の `0x1A` は捨てます。
+  末尾に `0x1A` は付けません。`Sharp_ce140f_emul` はファイルの終わりで自分で `0x1A` を送るので、
+  ファイルにもあるとポケコンに 2 回届いて I/O エラーになります。
+  エミュレータは先頭バイトが `0xFF` 以外なら ASCII と判定します。
 - **バイナリファイル（LOAD M）**: `先頭 16 バイトのヘッダ（ポケコンが生成） + 本体`。
   先頭バイトが `0xFF`。16 バイトを剥がせば生イメージ、付け直せば `LOAD M` で読めます。
 
@@ -127,5 +134,4 @@ Sharp バイト ↔ Unicode の対応表で、実行時に読み込みます（�
 - その他の記号（ギリシャ文字・数式記号など）: 判明分を追記していく方針
 
 **表に無いバイトは Unicode 私用領域（`0xHH ↔ U+E000+HH`）を経由して無損失で往復**するため、
-未マッピングの字があっても `bas2text → text2bas` はバイト完全一致になります。
-```
+未マッピングの字があっても `bas2text → text2bas` はバイト完全一致になります（元のファイルの末尾に `0x1A` があるときは、`text2bas --eof` で一致します。元のファイルの最後の行に改行がないときは、改行が補われた分だけ違います）。

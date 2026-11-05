@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 780" width="980" height="780" role="img" aria-labelledby="t d">
+  <title id="t">外部メモリマップ（PC-E650 ROM 8.5）</title>
+  <desc id="d">1 MB の外部メモリ空間の割当てを比率どおりに描き、LCD、内蔵 RAM、公開入口の 3 か所を拡大した図。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .lbl { font-size: 12px; fill: #52606D; paint-order: stroke; stroke: #FFFFFF; stroke-width: 4px; stroke-linejoin: round; }
+  </style>
+  <defs><marker id="a2F6DB5" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2F6DB5"/></marker><marker id="a2F855A" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2F855A"/></marker><marker id="aB7791F" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#B7791F"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="779" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">外部メモリマップ（1 MB）</text>
+  <text x="24" y="55" class="sub">PC-E650、ROM 8.5、内蔵 RAM 64 KB の割当て。左の帯は比率どおり</text>
+  <rect x="110" y="80.0" width="200" height="20.0" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="210.0" y="95.0" class="s" text-anchor="middle">LCD ドライバの窓</text>
+  <text x="102" y="84.0" class="m" xml:space="preserve" text-anchor="end">00000h</text>
+  <rect x="110" y="100.0" width="200" height="60.0" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.2"/>
+  <text x="210.0" y="135.0" class="s" text-anchor="middle">資料に記載なし</text>
+  <text x="102" y="104.0" class="m" xml:space="preserve" text-anchor="end">08000h</text>
+  <rect x="110" y="160.0" width="200" height="80.0" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="210.0" y="196.5" class="b" text-anchor="middle">拡張 ROM 128 KB</text>
+  <text x="210.0" y="213.5" class="s" text-anchor="middle">構造化 BASIC など</text>
+  <text x="102" y="164.0" class="m" xml:space="preserve" text-anchor="end">20000h</text>
+  <rect x="110" y="240.0" width="200" height="160.0" rx="0" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="210.0" y="316.5" class="b" text-anchor="middle">RAM カード（S2:）</text>
+  <text x="210.0" y="333.5" class="s" text-anchor="middle">未装着なら空き</text>
+  <text x="102" y="244.0" class="m" xml:space="preserve" text-anchor="end">40000h</text>
+  <rect x="110" y="400.0" width="200" height="120.0" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="210.0" y="456.5" class="b" text-anchor="middle">内蔵 RAM の窓</text>
+  <text x="210.0" y="473.5" class="s" text-anchor="middle">B0000h 以降のミラー</text>
+  <text x="102" y="404.0" class="m" xml:space="preserve" text-anchor="end">80000h</text>
+  <rect x="110" y="520.0" width="200" height="40.0" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="210.0" y="545.0" class="b" text-anchor="middle">内蔵 RAM 実体 64 KB</text>
+  <text x="102" y="524.0" class="m" xml:space="preserve" text-anchor="end">B0000h</text>
+  <rect x="110" y="560.0" width="200" height="80.0" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="210.0" y="596.5" class="b" text-anchor="middle">本体 ROM 前半</text>
+  <text x="210.0" y="613.5" class="s" text-anchor="middle">G: の ROM ディスク</text>
+  <text x="102" y="564.0" class="m" xml:space="preserve" text-anchor="end">C0000h</text>
+  <rect x="110" y="640.0" width="200" height="80.0" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="210.0" y="676.5" class="b" text-anchor="middle">本体 ROM 後半</text>
+  <text x="210.0" y="693.5" class="s" text-anchor="middle">IOCS・BASIC など主なコード</text>
+  <text x="102" y="644.0" class="m" xml:space="preserve" text-anchor="end">E0000h</text>
+  <text x="102" y="724.0" class="m" xml:space="preserve" text-anchor="end">FFFFFh</text>
+  <rect x="400" y="80" width="556" height="118" rx="8" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+  <text x="410" y="104.0" class="b">LCD コントローラのアドレス（機械語から直接書く場合）</text>
+  <text x="410" y="124.0" class="m" xml:space="preserve">2000h 全体へ命令    2002h 全体へデータ書込み</text>
+  <text x="410" y="144.0" class="m" xml:space="preserve">2004h 両端へ命令    2006h 書込み  2005h 状態  2007h 読出し</text>
+  <text x="410" y="164.0" class="m" xml:space="preserve">2008h 中央へ命令    200Ah 書込み  2009h 状態  200Bh 読出し</text>
+  <text x="410" y="184.0" class="s">通常は IOCS を使う。詳しくは「LCD の構成」の図</text>
+  <polyline points="310,90.0 360,90.0 360,139 400,139" fill="none" stroke="#2F855A" stroke-width="1.8" marker-end="url(#a2F855A)"/>
+  <text x="400" y="220" class="b">内蔵 RAM の拡大（機械語エリアは確保すると現れる）</text>
+  <rect x="466" y="226" width="490" height="48" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="711.0" y="255.0" class="b" text-anchor="middle">BASIC プログラム・変数（低い番地から伸びる）</text>
+  <text x="460" y="240" class="ms" xml:space="preserve" text-anchor="end">B0000h</text>
+  <rect x="466" y="274" width="490" height="34" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.2"/>
+  <text x="711.0" y="296.0" class="s" text-anchor="middle">空き</text>
+  <rect x="466" y="308" width="490" height="54" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="711.0" y="331.0" class="b" text-anchor="middle">作業領域（U / S スタック、BASIC、IOCS）</text>
+  <text x="711.0" y="349.0" class="s" text-anchor="middle">ポインタ表 BFCDEh–BFD1Ch が先頭番地を持つ</text>
+  <rect x="466" y="362" width="490" height="54" rx="0" fill="#FDECEA" stroke="#C0392B" stroke-width="1.2"/>
+  <text x="711.0" y="385.0" class="b" text-anchor="middle">機械語エリア（1000h バイト確保した例）</text>
+  <text x="711.0" y="403.0" class="s" text-anchor="middle">ここまで BFBFFh。[BFD1Ah] が先頭番地</text>
+  <text x="460" y="376" class="ms" xml:space="preserve" text-anchor="end">BEC00h</text>
+  <rect x="466" y="416" width="490" height="54" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="711.0" y="439.0" class="b" text-anchor="middle">システム領域</text>
+  <text x="711.0" y="457.0" class="s" text-anchor="middle">BFCA2h IOCS ヘッダ先頭、BFE03h 確保パラメータ</text>
+  <text x="460" y="430" class="ms" xml:space="preserve" text-anchor="end">BFC00h</text>
+  <polyline points="310,540.0 370,540.0 370,340 466,340" fill="none" stroke="#2F6DB5" stroke-width="1.8" marker-end="url(#a2F6DB5)"/>
+  <text x="400" y="494" class="b">ROM 末尾の公開入口とベクタ</text>
+  <rect x="400" y="500" width="556" height="28" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1"/>
+  <text x="408" y="519" class="m" xml:space="preserve">FFFD8h</text>
+  <text x="474" y="519" class="s">JPF</text>
+  <text x="534" y="519">作業領域の再構成（機械語エリアの確保に使う）</text>
+  <rect x="400" y="528" width="556" height="28" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1"/>
+  <text x="408" y="547" class="m" xml:space="preserve">FFFDCh</text>
+  <text x="474" y="547" class="s">JPF</text>
+  <text x="534" y="547">公開補助入口</text>
+  <rect x="400" y="556" width="556" height="28" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1"/>
+  <text x="408" y="575" class="m" xml:space="preserve">FFFE4h</text>
+  <text x="474" y="575" class="s">JPF</text>
+  <text x="534" y="575">FCS（ファイル制御）</text>
+  <rect x="400" y="584" width="556" height="28" rx="0" fill="#FDECEA" stroke="#C0392B" stroke-width="1"/>
+  <text x="408" y="603" class="m" xml:space="preserve">FFFE8h</text>
+  <text x="474" y="603" class="s">JPF</text>
+  <text x="534" y="603">IOCS（入出力）— CALLF で呼ぶのはここ</text>
+  <rect x="400" y="612" width="556" height="28" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1"/>
+  <text x="408" y="631" class="m" xml:space="preserve">FFFF0h</text>
+  <text x="474" y="631" class="s">2 バイト</text>
+  <text x="534" y="631">ROM の版番号（例: 08 05 = 8.5）</text>
+  <rect x="400" y="640" width="556" height="28" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1"/>
+  <text x="408" y="659" class="m" xml:space="preserve">FFFFAh</text>
+  <text x="474" y="659" class="s">3 バイト</text>
+  <text x="534" y="659">割込みベクタ</text>
+  <rect x="400" y="668" width="556" height="28" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1"/>
+  <text x="408" y="687" class="m" xml:space="preserve">FFFFDh</text>
+  <text x="474" y="687" class="s">3 バイト</text>
+  <text x="534" y="687">リセットベクタ</text>
+  <polyline points="310,717.5 380,717.5 380,598 400,598" fill="none" stroke="#B7791F" stroke-width="1.8" marker-end="url(#aB7791F)"/>
+  <text x="24" y="762" class="sub">ほかの機種: 拡張 ROM があるのは 8.x（PC-U6000、PC-E650）だけ。PC-1480U の ROM は E0000h–FFFFFh のみ。</text>
+</svg>

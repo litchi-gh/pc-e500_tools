@@ -1,31 +1,63 @@
 # PockeCom PC-E500 Tools
 
-SHARP ポケットコンピュータ PC-E500 シリーズ（PC-E500 / PC-E550 / PC-E650 / PC-1480U など、CPU に SC62015〔ESR-L〕を搭載した機種）向けの開発ツールと解析資料をまとめたリポジトリです。
+SHARP ポケットコンピュータ PC-E500 シリーズ（PC-E500 / PC-E550 / PC-E650 / PC-1480U など、CPU に SC62015〔ESR-L〕を搭載した機種）の解析結果と、アセンブラ、逆アセンブラ、便利なツール群をまとめたプロジェクトです。
 
-現代の PC 上で機械語・BASIC プログラムを書き、[Sharp_ce140f_emul](https://github.com/ffxx68/Sharp_ce140f_emul)（CE-140F ディスクドライブエミュレータ）の SD カード経由で実機へ転送するまでの一連の作業を対象にしています。
+![全体像](Guide/images/overview.svg)
+
+## ドキュメント
+
+図を使った説明は [Guide/](Guide/) にまとめています。初めての方は「はじめに」から読んでください。
+
+| 文書 | 内容 |
+|---|---|
+| [はじめに](Guide/getting-started.md) | 導入から、サンプルを実機で動かすまで |
+| [開発の流れ](Guide/workflows.md) | 機械語と BASIC の往路・復路、番地の書き方、コマンド早見表 |
+| [ファイル形式](Guide/file-formats.md) | SD カード上の形式、16 バイトヘッダ、出力ファイルの中身 |
+| [機械語の基礎](Guide/machine-language-primer.md) | レジスタ、メモリマップ、PRE、IOCS、CALL、LCD、ROM の版 |
+| [トラブルシューティング](Guide/troubleshooting.md) | エラーメッセージと症状ごとの対処 |
+| [ツールの内部構造](Guide/architecture.md) | ソースの依存関係、処理の流れ、テスト、変更時に直す場所 |
+
+## クイックスタート
+
+[Releases](https://github.com/litchi-gh/pc-e500_tools/releases) から `e500asm.exe` を取得して `Assembler/app/` に置くと、リポジトリ直下で次のように実行できます。
+
+```powershell
+# サンプルをアセンブルし、LOAD M 用のファイルにする
+.\Assembler\e500asm.cmd Analysis\asm_samples\hello.asm -o hello.bin
+.\FileConverter\ce140conv.exe bin2bas --addr 0xBEC00 hello.bin HELLO.BAS
+```
+
+`HELLO.BAS` は CE-140F の形式のファイルです。CE-140F 互換の装置（例: 別プロジェクトの [Sharp_ce140f_emul](https://github.com/ffxx68/Sharp_ce140f_emul)）で実機へ渡し、機械語エリアを確保してから読み込みます（1 行目は最初の 1 回だけ。実行後に `BASIC` キーで戻ります）。
+
+```basic
+POKE &HBFE03,&H1A,&HFD,&H0B,&H00,&H10,&H00:CALL &HFFFD8
+LOAD M "X:HELLO.BAS"
+CLS : CALL &HBEC00
+```
 
 ## 収録内容
 
 | フォルダ | 内容 |
 |---|---|
-| [Assembler/](Assembler/) | SC62015 用クロスアセンブラ `e500asm`（C# / .NET、Windows x64 用 EXE 同梱） |
+| [Assembler/](Assembler/) | SC62015 用クロスアセンブラ `e500asm`（C# / .NET。Windows x64 用 EXE は Releases で配布） |
 | [DisAssembler/](DisAssembler/) | SC62015 用逆アセンブラ `e500dasm`（CLI）と `E500Disassembler`（GUI） |
 | [FileConverter/](FileConverter/) | CE-140F エミュレータ用ファイルコンバータ `ce140conv`（C++17 単一ソース） |
 | [VSCodeExtensions/](VSCodeExtensions/) | VS Code 拡張 `Pocket BASIC / ASM Linter`（PC-E500 BASIC と `e500asm` 用 ASM の構文チェック・シンタックスハイライト） |
 | [Analysis/](Analysis/) | ROM 8.5 解析結果および技術資料（BASIC 命令、IOCS、ハードウェア、CPU 命令セットなど） |
+| [Guide/](Guide/) | 図を使った解説（使い方、ファイル形式、機械語の基礎、内部構造） |
 
 ## ワークフロー
 
-```text
-  .asm ──(e500asm)──▶ .bin ──(ce140conv bin2bas)──▶ .bas(LOAD M 用) ──▶ SD カード ──▶ 実機で LOAD M
-  .txt ──────────────────(ce140conv text2bas)──────▶ .bas(LOAD 用)   ──▶ SD カード ──▶ 実機で LOAD
-  .bin ◀─(ce140conv bas2bin)── SAVE M したファイル ──(e500dasm --format ce140f)──▶ .asm
-```
+![機械語の流れ](Guide/images/workflow-machine-code.svg)
+
+![BASIC の流れ](Guide/images/workflow-basic.svg)
 
 1. **機械語を書く**: [Analysis/PC-E650_ASSEMBLER_MANUAL.md](Analysis/PC-E650_ASSEMBLER_MANUAL.md) と [Analysis/IOCS_REFERENCE.md](Analysis/IOCS_REFERENCE.md) を参照しながら ASM ソースを書き（VS Code に `Pocket BASIC / ASM Linter` を入れると編集中に `e500asm` と同じエラーが表示されます）、`Assembler/e500asm.cmd` でアセンブルします。
 2. **転送用ファイルにする**: `FileConverter/ce140conv.exe bin2bas --addr <ロードアドレス>` で 16 バイトヘッダ付きの `LOAD M` 用ファイルに変換し、CE-140F エミュレータの SD カードへ置きます。
 3. **BASIC を書く**: VS Code に `Pocket BASIC / ASM Linter` を入れて編集し、`ce140conv text2bas` で `LOAD` 用ファイルに変換します。
 4. **実機のデータを読む**: `SAVE M` したファイルは `DisAssembler/e500dasm.cmd --format ce140f` でそのまま逆アセンブルできます。出力は `e500asm` で再アセンブルするとバイト単位で元に戻ります。
+
+詳しくは [開発の流れ](Guide/workflows.md) を参照してください。
 
 ## 各フォルダの詳細
 
@@ -104,7 +136,7 @@ PC-E500 シリーズの BASIC と、`e500asm` 用の SC62015 アセンブリソ�
 
 | パス | 内容 |
 |---|---|
-| `pocket-basic-linter/pocket-basic-linter-0.2.0.vsix` | インストール用パッケージ（VS Code の「VSIX からのインストール」で導入） |
+| `pocket-basic-linter-0.2.1.vsix` | インストール用パッケージ。[Releases](https://github.com/litchi-gh/pc-e500_tools/releases) から取得するか、`npm run package` で生成し、VS Code の「VSIX からのインストール」で導入 |
 | `pocket-basic-linter/src/` | 拡張本体（TypeScript）。`dialects/` に BASIC の機種別定義、`asm/` にアセンブラの移植 |
 | `pocket-basic-linter/syntaxes/` | TextMate 文法（BASIC / ASM のシンタックスハイライト） |
 | `pocket-basic-linter/examples/sample.e500`, `sample.asm` | サンプルソース |
@@ -122,6 +154,10 @@ PC-E500 / PC-E650 の ROM 8.5 解析と一次資料から整理した、機械�
 | [IOCS_REFERENCE.md](Analysis/IOCS_REFERENCE.md) | IOCS / FCS の呼び出し方（`CALLF FFFE8h`）、コマンド番号、ROM 上の入口表 |
 | [HARDWARE_REFERENCE.md](Analysis/HARDWARE_REFERENCE.md) | メモリマップ、I/O ポート、LCD コントローラ、キーボード、コネクタなどのハードウェア情報 |
 | [BASIC_REFERENCE.md](Analysis/BASIC_REFERENCE.md) | BASIC 全 168 キーワードの索引（中間コード token、分類、ROM 処理入口）と各命令の書式・引数 |
+| [ROM_VERSIONS_BASIC.md](Analysis/ROM_VERSIONS_BASIC.md) | ROM 版（2.1〜8.5、11 本）ごとの BASIC の違い。版番号の読み方、改訂ごとの修正点、修正の有無の早見表 |
+| [ROM_VERSIONS_DRIVERS.md](Analysis/ROM_VERSIONS_DRIVERS.md) | 同じく E8000h〜EBFFFh 帯（行列演算、CAS・PRN・COM・X:Y: のドライバ、プリンタの文字変換、エラーメッセージ表）の違い |
+| [ROM_VERSIONS_MODELS.md](Analysis/ROM_VERSIONS_MODELS.md) | 同じく機種ごとの言語・カナ入力・文字セット・メインメニュー・添付ソフト（エンジニアソフト、GRAPH、TIMER、G: のソフト集）の違い |
+| [ROM_VERSIONS_SYSTEM.md](Analysis/ROM_VERSIONS_SYSTEM.md) | 同じく IOCS・FCS（E0000h〜E4FFFh）と表示・キー入力・行エディタ・フォント（F0000h〜F4FFFh）の違い |
 | [CHARACTER_FONT.md](Analysis/CHARACTER_FONT.md) | キャラクタフォント（6×8 ドット）の ROM 上の格納形式とポインタ |
 | [PC-E650_ROM_MAP.md](Analysis/PC-E650_ROM_MAP.md) | ROM イメージのファイルオフセットと CPU アドレスの対応、主要入口 |
 | [PC-E650_GDRIVE.md](Analysis/PC-E650_GDRIVE.md) | G: ドライブ（ROM 内蔵エンジニアソフト）のファイルシステム構造 |
@@ -132,7 +168,7 @@ PC-E500 / PC-E650 の ROM 8.5 解析と一次資料から整理した、機械�
 ## 動作環境
 
 - ビルド済みの実行ファイル（`e500asm.exe`, `e500dasm.exe`, `E500Disassembler.exe`, `ce140conv.exe`）は Windows x64 用で、追加ランタイムは不要です。
-- .NET 製の 3 つの EXE（`e500asm.exe`, `e500dasm.exe`, `E500Disassembler.exe`）は自己完結型で 1 ファイル 70〜120 MB あり GitHub の上限を超えるため、リポジトリには含めていません。[Releases](https://github.com/litchi-gh/pc-e500_tools/releases) からダウンロードして `Assembler/app/`、`DisAssembler/app/` に置くか、各フォルダの `build.cmd` でビルドしてください（`app/` に生成されます）。`ce140conv.exe` と VSIX はリポジトリに含まれています。
+- .NET 製の 3 つの EXE（`e500asm.exe`, `e500dasm.exe`, `E500Disassembler.exe`）は自己完結型で 1 ファイル 70〜120 MB あり GitHub の上限を超えるため、リポジトリには含めていません。[Releases](https://github.com/litchi-gh/pc-e500_tools/releases) からダウンロードして `Assembler/app/`、`DisAssembler/app/` に置くか、各フォルダの `build.cmd` でビルドしてください（`app/` に生成されます）。リポジトリに含まれている実行ファイルは `ce140conv.exe` だけです。VSIX も Releases から取得できます。
 - ソースからビルドする場合:
   - Assembler / DisAssembler: .NET 10 SDK
   - FileConverter: C++17 対応コンパイラ（MSVC / MinGW-w64 / LLVM のいずれか）
@@ -142,4 +178,14 @@ PC-E500 / PC-E650 の ROM 8.5 解析と一次資料から整理した、機械�
 ## 参考資料
 
 - [Sharp_ce140f_emul](https://github.com/ffxx68/Sharp_ce140f_emul) — CE-140F ディスクドライブエミュレータ
-  
+
+## ライセンス
+
+[MIT License](LICENSE) です（`VSCodeExtensions/pocket-basic-linter` も同じ MIT で、著作権表示は同フォルダの [LICENSE](VSCodeExtensions/pocket-basic-linter/LICENSE) のとおりです）。
+
+次のものは、このライセンスの対象ではありません。
+
+- **ROM とマニュアル:** ROM の中身とシャープの資料の権利は、それぞれの権利者のものです。このリポジトリに ROM イメージは含めていません。吸い出した ROM は、公開や配布をしないでください。
+- **参考資料の内容:** [Analysis/](Analysis/) はマニュアル、書籍、公開プロジェクトなどを参考にしています（出典は各文書にあります）。元の資料の権利は、それぞれの権利者のものです。
+- **製品名:** SHARP、PC-E500 などの名称は、それぞれの権利者の商標または製品名です。このプロジェクトはシャープとは関係ありません。
+- **自己完結型の実行ファイル:** .NET ランタイムを含み、.NET のライセンス（MIT）とその第三者通知に従います。

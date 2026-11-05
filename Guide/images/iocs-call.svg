@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 590" width="980" height="590" role="img" aria-labelledby="t d">
+  <title id="t">IOCS の呼び出しの流れ</title>
+  <desc id="d">内部 RAM にデバイスとドライブ、IL にコマンドを入れて CALLF FFFE8h を呼ぶと、ヘッダの連結リストをたどって各ドライバへ分岐する。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .lbl { font-size: 12px; fill: #52606D; paint-order: stroke; stroke: #FFFFFF; stroke-width: 4px; stroke-linejoin: round; }
+  </style>
+  <defs><marker id="a2F855A" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2F855A"/></marker><marker id="a52606D" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#52606D"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="589" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">IOCS の呼び出し</text>
+  <text x="24" y="55" class="sub">番地は ROM 8.5 の値。ドライバの入口は ROM の版で変わるので、公開入口 FFFE8h から呼ぶ</text>
+  <rect x="24" y="78" width="340" height="150" rx="8" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="34" y="110.0" class="b">1. 引数を設定する</text>
+  <text x="34" y="134.0" class="m" xml:space="preserve">MV ($D6),device   ; 内部 RAM</text>
+  <text x="34" y="158.0" class="m" xml:space="preserve">MV ($D7),drive    ; 内部 RAM</text>
+  <text x="34" y="182.0" class="m" xml:space="preserve">MV IL,command</text>
+  <text x="34" y="206.0" class="s">A / BA / I / X / Y、(D4h)、(D5h) はコマンドごと</text>
+  <rect x="24" y="256" width="340" height="62" rx="8" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="194.0" y="283.0" class="b" text-anchor="middle">2. 呼び出す</text>
+  <text x="194.0" y="301.0" class="m" xml:space="preserve" text-anchor="middle">CALLF $FFFE8</text>
+  <polyline points="194,228 194,256" fill="none" stroke="#52606D" stroke-width="1.8" marker-end="url(#a52606D)"/>
+  <rect x="24" y="346" width="340" height="62" rx="8" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="194.0" y="373.0" class="b" text-anchor="middle">3. 公開入口から本体へ</text>
+  <text x="194.0" y="391.0" class="m" xml:space="preserve" text-anchor="middle">FFFE8h: JPF E0000h</text>
+  <polyline points="194,318 194,346" fill="none" stroke="#52606D" stroke-width="1.8" marker-end="url(#a52606D)"/>
+  <rect x="24" y="436" width="340" height="92" rx="8" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+  <text x="34" y="465.0" class="b">5. 結果を確認する</text>
+  <text x="34" y="487.0" class="m" xml:space="preserve">C=0 成功</text>
+  <text x="34" y="509.0" class="m" xml:space="preserve">C=1 失敗、A にエラー番号</text>
+  <text x="420" y="88" class="b">4. BFCA2h から始まるヘッダの連結リストをたどる</text>
+  <text x="442" y="113" class="s" text-anchor="middle">dev</text>
+  <text x="472" y="113" class="s">ドライブ名</text>
+  <text x="600" y="113" class="s">用途</text>
+  <text x="792" y="113" class="s">入口</text>
+  <rect x="420" y="120" width="440" height="28" rx="4" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.1"/>
+  <text x="442" y="139" class="m" xml:space="preserve" text-anchor="middle">0</text>
+  <text x="472" y="139" class="m" xml:space="preserve">STDO: SCRN:</text>
+  <text x="600" y="139">画面</text>
+  <text x="792" y="139" class="m" xml:space="preserve">F223Fh</text>
+  <polyline points="428,148 428,154" fill="none" stroke="#52606D" stroke-width="1" marker-end="url(#a52606D)"/>
+  <rect x="420" y="154" width="440" height="28" rx="4" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.1"/>
+  <text x="442" y="173" class="m" xml:space="preserve" text-anchor="middle">1</text>
+  <text x="472" y="173" class="m" xml:space="preserve">STDI: KYBD:</text>
+  <text x="600" y="173">キーボード</text>
+  <text x="792" y="173" class="m" xml:space="preserve">F16F5h</text>
+  <polyline points="428,182 428,188" fill="none" stroke="#52606D" stroke-width="1" marker-end="url(#a52606D)"/>
+  <rect x="420" y="188" width="440" height="28" rx="4" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.1"/>
+  <text x="442" y="207" class="m" xml:space="preserve" text-anchor="middle">2</text>
+  <text x="472" y="207" class="m" xml:space="preserve">COM:</text>
+  <text x="600" y="207">シリアル</text>
+  <text x="792" y="207" class="m" xml:space="preserve">EAA86h</text>
+  <polyline points="428,216 428,222" fill="none" stroke="#52606D" stroke-width="1" marker-end="url(#a52606D)"/>
+  <rect x="420" y="222" width="440" height="28" rx="4" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.1"/>
+  <text x="442" y="241" class="m" xml:space="preserve" text-anchor="middle">3</text>
+  <text x="472" y="241" class="m" xml:space="preserve">STDL: PRN:</text>
+  <text x="600" y="241">プリンタ</text>
+  <text x="792" y="241" class="m" xml:space="preserve">EA4B3h</text>
+  <polyline points="428,250 428,256" fill="none" stroke="#52606D" stroke-width="1" marker-end="url(#a52606D)"/>
+  <rect x="420" y="256" width="440" height="28" rx="4" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.1"/>
+  <text x="442" y="275" class="m" xml:space="preserve" text-anchor="middle">4</text>
+  <text x="472" y="275" class="m" xml:space="preserve">CAS:</text>
+  <text x="600" y="275">カセット</text>
+  <text x="792" y="275" class="m" xml:space="preserve">E96DEh</text>
+  <polyline points="428,284 428,290" fill="none" stroke="#52606D" stroke-width="1" marker-end="url(#a52606D)"/>
+  <rect x="420" y="290" width="440" height="28" rx="4" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.1"/>
+  <text x="442" y="309" class="m" xml:space="preserve" text-anchor="middle">6</text>
+  <text x="472" y="309" class="m" xml:space="preserve">S1: S2: S3:</text>
+  <text x="600" y="309">メモリカード</text>
+  <text x="792" y="309" class="m" xml:space="preserve">F0000h</text>
+  <polyline points="428,318 428,324" fill="none" stroke="#52606D" stroke-width="1" marker-end="url(#a52606D)"/>
+  <rect x="420" y="324" width="440" height="28" rx="4" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.1"/>
+  <text x="442" y="343" class="m" xml:space="preserve" text-anchor="middle">5</text>
+  <text x="472" y="343" class="m" xml:space="preserve">E: F: G:</text>
+  <text x="600" y="343">RAM / ROM ディスク</text>
+  <text x="792" y="343" class="m" xml:space="preserve">E493Ah</text>
+  <polyline points="428,352 428,358" fill="none" stroke="#52606D" stroke-width="1" marker-end="url(#a52606D)"/>
+  <rect x="420" y="358" width="440" height="28" rx="4" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.1"/>
+  <text x="442" y="377" class="m" xml:space="preserve" text-anchor="middle">9</text>
+  <text x="472" y="377" class="m" xml:space="preserve">（名前なし）</text>
+  <text x="600" y="377">Function ドライバ</text>
+  <text x="792" y="377" class="m" xml:space="preserve">EF03Eh</text>
+  <polyline points="428,386 428,392" fill="none" stroke="#52606D" stroke-width="1" marker-end="url(#a52606D)"/>
+  <rect x="420" y="392" width="440" height="28" rx="4" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.1"/>
+  <text x="442" y="411" class="m" xml:space="preserve" text-anchor="middle">7</text>
+  <text x="472" y="411" class="m" xml:space="preserve">X: Y:</text>
+  <text x="600" y="411">ディスク（CE-140F）</text>
+  <text x="792" y="411" class="m" xml:space="preserve">EB681h</text>
+  <polyline points="428,420 428,426" fill="none" stroke="#52606D" stroke-width="1" marker-end="url(#a52606D)"/>
+  <rect x="420" y="426" width="440" height="28" rx="4" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.1"/>
+  <text x="442" y="445" class="m" xml:space="preserve" text-anchor="middle">8</text>
+  <text x="472" y="445" class="m" xml:space="preserve">SYSTM:</text>
+  <text x="600" y="445">システム</text>
+  <text x="792" y="445" class="m" xml:space="preserve">E0183h</text>
+  <polyline points="364,377 392,377 392,134 420,134" fill="none" stroke="#52606D" stroke-width="1.8" marker-end="url(#a52606D)"/>
+  <polyline points="860,440 890,440 890,500 480,500 392,500 364,500" fill="none" stroke="#2F855A" stroke-width="1.8" stroke-dasharray="6 4" marker-end="url(#a2F855A)"/>
+  <text x="622" y="494" class="lbl" text-anchor="middle">戻る</text>
+  <text x="420" y="522" class="b">コマンド番号の区分</text>
+  <rect x="420" y="530" width="62" height="44" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1"/>
+  <text x="451.0" y="549.0" class="ms" xml:space="preserve" text-anchor="middle">00–07</text>
+  <text x="451.0" y="565.0" class="s" text-anchor="middle">主処理</text>
+  <rect x="482" y="530" width="60" height="44" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="512.0" y="549.0" class="ms" xml:space="preserve" text-anchor="middle">08–0F</text>
+  <text x="512.0" y="565.0" class="s" text-anchor="middle">文字</text>
+  <rect x="542" y="530" width="78" height="44" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="581.0" y="549.0" class="ms" xml:space="preserve" text-anchor="middle">10–1F</text>
+  <text x="581.0" y="565.0" class="s" text-anchor="middle">ブロック</text>
+  <rect x="620" y="530" width="60" height="44" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="650.0" y="549.0" class="ms" xml:space="preserve" text-anchor="middle">20–3F</text>
+  <text x="650.0" y="565.0" class="s" text-anchor="middle">特殊</text>
+  <rect x="680" y="530" width="62" height="44" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1"/>
+  <text x="711.0" y="549.0" class="ms" xml:space="preserve" text-anchor="middle">40</text>
+  <text x="711.0" y="565.0" class="s" text-anchor="middle">初期化</text>
+  <rect x="742" y="530" width="60" height="44" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="1"/>
+  <text x="772.0" y="549.0" class="ms" xml:space="preserve" text-anchor="middle">41–7F</text>
+  <text x="772.0" y="565.0" class="s" text-anchor="middle">固有</text>
+  <rect x="802" y="530" width="58" height="44" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1"/>
+  <text x="831.0" y="549.0" class="ms" xml:space="preserve" text-anchor="middle">80–FF</text>
+  <text x="831.0" y="565.0" class="s" text-anchor="middle">予約</text>
+  <text x="24" y="572" class="sub">同じ 41h でも、デバイスが違えば別の機能になる。</text>
+</svg>

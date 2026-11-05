@@ -2,8 +2,10 @@
 
 SC62015（ESR-L）用のコマンドライン・クロスアセンブラです。
 Windows x64用の実行ファイル `app/e500asm.exe` は、自己完結型で約70 MBあるためリポジトリには含めていません。
-[GitHub Releases](https://github.com/litchi-gh/pc-e500_tools/releases) からダウンロードして `app/` に置くか、`.uild.cmd`（.NET 10 SDKが必要）でビルドすると `app/` に生成されます。
+[GitHub Releases](https://github.com/litchi-gh/pc-e500_tools/releases) からダウンロードして `app/` に置くか、`.\build.cmd`（.NET 10 SDKが必要）でビルドすると `app/` に生成されます。
 配布済みEXEの実行時の.NET・Pythonインストールは不要です。
+
+全体の流れは[開発の流れ](../Guide/workflows.md)、エラーの対処は[トラブルシューティング](../Guide/troubleshooting.md)を参照してください。
 
 ## 最短の使い方
 
@@ -47,7 +49,7 @@ e500asm 入力.asm [オプション]
 | `-f bin\|hex`, `--format bin\|hex` | いいえ | 出力形式。`bin` はヘッダなし生バイナリ、`hex` はIntel HEX。既定は `bin` |
 | `-l PATH`, `--listing PATH` | いいえ | アドレス、生成バイト、元ソースを記載したリストを別ファイルへ出力 |
 | `-s PATH`, `--symbols PATH` | いいえ | シンボル表を別ファイルへ出力 |
-| `--org VALUE` | いいえ | ソースに `ORG` がない場合の初期配置アドレス。既定は0。ソース内の `ORG` が優先 |
+| `--org ADDRESS` | いいえ | ソースに `ORG` がない場合の初期配置アドレス。常に16進数。既定は0。ソース内の `ORG` が優先 |
 | `--fill VALUE` | いいえ | `DS`、`ALIGN`、複数の `ORG` 間の空きを埋める1バイト値。既定は0、範囲は0～255 |
 | `--encoding NAME` | いいえ | ソース文字コード。既定は `utf-8`。Shift-JISは `shift_jis` |
 | `-I DIRECTORY` | いいえ | `INCLUDE` / `INCBIN` の検索先を追加。複数回指定可能 |
@@ -55,7 +57,8 @@ e500asm 入力.asm [オプション]
 | `-h`, `--help` | いいえ | ヘルプを表示して終了 |
 | `--version` | いいえ | バージョンを表示して終了 |
 
-`VALUE` には10進数のほか、`$B8000`、`&B8000`、`0xB8000`、`0B8000h` の16進数、`0b1010` の2進数を指定できます。
+`ADDRESS` は常に16進数で、`e500dasm` の `--org` と同じです。`B8000`、`$B8000`、`&B8000`、`0xB8000`、`0B8000h` の形式を使えます。`--org 8000` は8000hです。
+`VALUE` には10進数のほか、`$FF`、`&FF`、`0xFF`、`0FFh` の16進数、`0b1010` の2進数を指定できます。
 PowerShellでは `$` が変数記号、`&` が演算子なので、コマンドライン上では `--org B8000` または `--org 0xB8000` が簡単です。
 
 ### 指定例
@@ -116,7 +119,7 @@ loop:   ADD A,IL
 |---|---|
 | `123` | 10進数 |
 | `&B8000`, `$B8000`, `0xB8000`, `0B8000h` | 16進数（h形式は数字から開始） |
-| `0b101010` | 2進数 |
+| `0b101010` | 2進数（末尾に `h` が付くと16進数） |
 | `'A'` | 1バイト文字定数 |
 | `$`, `*` | 現在の行の配置アドレス |
 | `LOW(式)`, `HIGH(式)`, `BANK(式)` | 下位8ビット、次の8ビット、上位4ビット |
@@ -195,6 +198,10 @@ INCLUDE/INCBINの引用符内のパスには `/` を使うと簡単です。Wind
 アセンブル失敗時は既存の出力ファイルを更新しません。正常終了コード0、エラー1です。
 
 ## 構成・ビルド・テスト
+
+![e500asm の処理の流れ](../Guide/images/assembler-passes.svg)
+
+ソースの依存関係と変更時に合わせて直す場所は、[ツールの内部構造](../Guide/architecture.md)を参照してください。
 
 - `src/E500Assembler.Core/`：アセンブラ本体。GUI等から再利用可能なC#ライブラリ。
 - `src/E500Assembler.Cli/`：CLI、出力保存。

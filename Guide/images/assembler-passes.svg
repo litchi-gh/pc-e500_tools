@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 470" width="980" height="470" role="img" aria-labelledby="t d">
+  <title id="t">e500asm の処理の流れ</title>
+  <desc id="d">ソースを読み、配置が収束するまで繰り返し、最終パスでエラーを確定してから出力する。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .lbl { font-size: 12px; fill: #52606D; paint-order: stroke; stroke: #FFFFFF; stroke-width: 4px; stroke-linejoin: round; }
+  </style>
+  <defs><marker id="a52606D" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#52606D"/></marker><marker id="aC0392B" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#C0392B"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="469" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">e500asm の処理の流れ</text>
+  <text x="24" y="55" class="sub">前方参照を解決するため、配置が変わらなくなるまで同じ処理を繰り返す</text>
+  <rect x="24" y="80" width="190" height="96" rx="8" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="119.0" y="106.0" class="b" text-anchor="middle">1. 読み込み</text>
+  <text x="119.0" y="124.0" class="s" text-anchor="middle">INCLUDE をその場で展開</text>
+  <text x="119.0" y="142.0" class="s" text-anchor="middle">END で入力終了</text>
+  <text x="119.0" y="160.0" class="s" text-anchor="middle">1 行ずつ文へ分解</text>
+  <rect x="24" y="200" width="190" height="76" rx="8" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.5"/>
+  <text x="119.0" y="225.0" class="b" text-anchor="middle">2. 名前の事前確認</text>
+  <text x="119.0" y="243.0" class="s" text-anchor="middle">シンボルの重複</text>
+  <text x="119.0" y="261.0" class="s" text-anchor="middle">ラベルなしの EQU</text>
+  <polyline points="119,176 119,200" fill="none" stroke="#52606D" stroke-width="1.8" marker-end="url(#a52606D)"/>
+  <rect x="250" y="76" width="400" height="290" rx="12" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="266" y="100" class="b">3. パスの繰り返し（最大 64 回）</text>
+  <rect x="270" y="114" width="360" height="78" rx="8" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="450.0" y="140.0" class="b" text-anchor="middle">緩いパス</text>
+  <text x="450.0" y="158.0" class="s" text-anchor="middle">未定義は 0、値の範囲外も仮の値で続行</text>
+  <text x="450.0" y="176.0" class="s" text-anchor="middle">各文のアドレスとサイズ、シンボル値を記録</text>
+  <rect x="330" y="214" width="240" height="50" rx="25" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="450.0" y="244.0" class="b" text-anchor="middle">前のパスと同じ配置・値か？</text>
+  <polyline points="450,192 450,214" fill="none" stroke="#52606D" stroke-width="1.8" marker-end="url(#a52606D)"/>
+  <polyline points="570,239 620,239 620,205 640,205 640,153 630,153" fill="none" stroke="#52606D" stroke-width="1.8" marker-end="url(#a52606D)"/>
+  <text x="600" y="232" class="lbl" text-anchor="middle">違う</text>
+  <rect x="270" y="286" width="360" height="66" rx="8" fill="#FDECEA" stroke="#C0392B" stroke-width="1.5"/>
+  <text x="450.0" y="315.0" class="b" text-anchor="middle">最終パス（厳密）</text>
+  <text x="450.0" y="333.0" class="s" text-anchor="middle">未定義、範囲外、ASSERT、64 KiB 跨ぎをエラーにする</text>
+  <polyline points="450,264 450,286" fill="none" stroke="#52606D" stroke-width="1.8" marker-end="url(#a52606D)"/>
+  <text x="470" y="280" class="lbl" text-anchor="middle">同じ</text>
+  <polyline points="214,238 232,238 232,153 270,153" fill="none" stroke="#52606D" stroke-width="1.8" marker-end="url(#a52606D)"/>
+  <rect x="690" y="76" width="266" height="96" rx="8" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="823.0" y="102.0" class="b" text-anchor="middle">4. イメージを作る</text>
+  <text x="823.0" y="120.0" class="s" text-anchor="middle">最小〜最大アドレスを 1 枚にまとめる</text>
+  <text x="823.0" y="138.0" class="s" text-anchor="middle">空きは --fill（既定 0）で埋める</text>
+  <text x="823.0" y="156.0" class="s" text-anchor="middle">領域の重複はエラー</text>
+  <polyline points="630,320 668,320 668,124 690,124" fill="none" stroke="#52606D" stroke-width="1.8" marker-end="url(#a52606D)"/>
+  <rect x="690" y="200" width="266" height="104" rx="8" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="716" y="221.0" class="b">5. 出力</text>
+  <text x="716" y="239.0" class="m" xml:space="preserve">.bin  ヘッダなし生バイナリ</text>
+  <text x="716" y="257.0" class="m" xml:space="preserve">.hex  Intel HEX（-f hex）</text>
+  <text x="716" y="275.0" class="m" xml:space="preserve">.lst  リスト（-l）</text>
+  <text x="716" y="293.0" class="m" xml:space="preserve">.sym  シンボル表（-s）</text>
+  <polyline points="823,172 823,200" fill="none" stroke="#52606D" stroke-width="1.8" marker-end="url(#a52606D)"/>
+  <rect x="690" y="322" width="266" height="44" rx="8" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+  <text x="823.0" y="349.0" class="b" text-anchor="middle">正常終了  終了コード 0</text>
+  <polyline points="823,304 823,322" fill="none" stroke="#52606D" stroke-width="1.8" marker-end="url(#a52606D)"/>
+  <rect x="24" y="392" width="932" height="58" rx="8" fill="#FDECEA" stroke="#C0392B" stroke-width="1.5"/>
+  <text x="490.0" y="417.0" class="b" text-anchor="middle">エラーのとき: 最初の 1 件で止まり、既存の出力ファイルは更新しない（終了コード 1）</text>
+  <text x="490.0" y="435.0" class="m" xml:space="preserve" text-anchor="middle">hello.asm(2): error: Unsupported instruction or operands: MV A, IL</text>
+  <polyline points="450,352 450,392" fill="none" stroke="#C0392B" stroke-width="1.8" marker-end="url(#aC0392B)"/>
+  <text x="470" y="378" class="lbl" text-anchor="middle">エラー</text>
+</svg>

@@ -1,7 +1,7 @@
 # PC-E500シリーズ用逆アセンブラ
 
 SC62015（ESR-L）の機械語を、同じプロジェクトの `Assembler` で再アセンブル可能なソースへ変換します。
-Windows x64用GUIとCLI（`app/E500Disassembler.exe`、`app/e500dasm.exe`）は、自己完結型で1ファイル70〜120 MBあるためリポジトリには含めていません。[GitHub Releases](https://github.com/litchi-gh/pc-e500_tools/releases) からダウンロードして `app/` に置くか、`.uild.cmd`（.NET 10 SDKが必要）でビルドすると `app/` に生成されます。配布済みEXEの実行に.NETやPythonは不要です。
+Windows x64用GUIとCLI（`app/E500Disassembler.exe`、`app/e500dasm.exe`）は、自己完結型で1ファイル70〜120 MBあるためリポジトリには含めていません。[GitHub Releases](https://github.com/litchi-gh/pc-e500_tools/releases) からダウンロードして `app/` に置くか、`.\build.cmd`（.NET 10 SDKが必要）でビルドすると `app/` に生成されます。配布済みEXEの実行に.NETやPythonは不要です。
 
 ## どちらを使うか
 
@@ -107,6 +107,8 @@ PowerShellでは `$` が変数記号、`&` が演算子なので、`--org B8000`
 出力ASMにはヘッダをコメントとして残します。Assemblerが生成するのはヘッダを除いたRAW本体です。SAVE M形式へ戻す場合は、`FileConverter\ce140conv.exe bin2bas --addr ...` を使用してください。
 
 ## 出力方針
+
+![e500dasm が往復一致を保証するしくみ](../Guide/images/disassembler-verify.svg)
 
 - ファイル先頭から末尾まで線形に解析します。コードとデータを自動判別する再帰解析ではありません。
 - JP/JPF/CALL/CALLF/JR系の分岐先が命令行の先頭なら `Lxxxxx` ラベルを生成します。
