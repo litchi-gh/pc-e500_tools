@@ -288,7 +288,7 @@ static Bytes buildHeader(uint32_t addr, uint32_t length) {
 struct Options {
     bool sjis        = false;   // treat PC text as Shift-JIS (CP932) instead of UTF-8
     bool sharpCR     = false;   // Sharp line terminator: CR only (default CR+LF)
-    bool noEof       = false;   // do not append 0x1A EOF marker
+    bool eof         = false;   // append a 0x1A EOF marker (the emulator sends its own at end of file)
     bool hostLF      = false;   // bas2text: output LF only (default CR+LF)
     bool asciiOnly   = false;   // ignore charset table, ASCII identity only
     uint32_t addr    = 0;       // bin2bas load address
@@ -322,16 +322,23 @@ static int text2bas(const std::string& in, const std::string& out,
                     const Charset& cs, const Options& o) {
     Bytes raw = readFile(in);
     std::vector<uint32_t> cps = decodePcText(raw, o);
+    // a trailing EOF marker is not part of the program (bas2text drops it too)
+    while (!cps.empty() && cps.back() == 0x1A) cps.pop_back();
+    if (cps.empty())
+        std::cerr << "ce140conv: warning: " << in << " has no text, so the output is empty\n";
 
     Bytes result;
     size_t warnUnmapped = 0;
+    auto endLine = [&] {
+        result.push_back(0x0D);
+        if (!o.sharpCR) result.push_back(0x0A);
+    };
     for (size_t i = 0; i < cps.size(); i++) {
         uint32_t cp = cps[i];
         // normalise any of CRLF / CR / LF into the Sharp line terminator
         if (cp == 0x0D || cp == 0x0A) {
             if (cp == 0x0D && i + 1 < cps.size() && cps[i + 1] == 0x0A) i++; // eat CRLF pair
-            result.push_back(0x0D);
-            if (!o.sharpCR) result.push_back(0x0A);
+            endLine();
             continue;
         }
         uint8_t b;
@@ -347,7 +354,9 @@ static int text2bas(const std::string& in, const std::string& out,
         }
         result.push_back(b);
     }
-    if (!o.noEof) result.push_back(0x1A); // end-of-file marker
+    // LOAD reads a line up to 0x0D, so the last line needs its terminator too
+    if (!cps.empty() && cps.back() != 0x0D && cps.back() != 0x0A) endLine();
+    if (o.eof) result.push_back(0x1A); // end-of-file marker
 
     writeFile(out, result);
     if (warnUnmapped)
@@ -525,7 +534,9 @@ static void usage() {
 "Text options:\n"
 "  --sjis            PC text is Shift-JIS (CP932) instead of UTF-8 (Windows)\n"
 "  --cr              Sharp line terminator = CR only (default CR+LF)\n"
-"  --no-eof          do not append the 0x1A end-of-file marker (text2bas)\n"
+"  --eof             append a 0x1A end-of-file marker (text2bas). Sharp_ce140f_emul\n"
+"                    sends its own at end of file, and two give an I/O error\n"
+"  --no-eof          do not append the marker (the default; kept for old scripts)\n"
 "  --lf              output LF line endings (bas2text; default CR+LF)\n"
 "  --ascii           ignore the charset table, map ASCII only\n"
 "  --charset <file>  use this Sharp charset table (default: charset_e500.tab\n"
@@ -567,7 +578,8 @@ int main(int argc, char** argv) {
         };
         if      (a == "--sjis")   o.sjis = true;
         else if (a == "--cr")     o.sharpCR = true;
-        else if (a == "--no-eof") o.noEof = true;
+        else if (a == "--eof") o.eof = true;
+        else if (a == "--no-eof") o.eof = false;
         else if (a == "--lf")     o.hostLF = true;
         else if (a == "--ascii")  o.asciiOnly = true;
         else if (a == "--addr")   { o.addr = parseUint(need("--addr")); o.haveAddr = true; }
