@@ -1,5 +1,5 @@
-using System.Globalization;
 using System.Text;
+using E500Assembler;
 using E500Disassembler;
 
 Console.OutputEncoding = new UTF8Encoding(false);
@@ -47,11 +47,8 @@ static int Run(string[] args)
 
 static int Number(string text)
 {
-    string n = text.Trim().Replace("_", ""); int radix = 16;
-    if (n.StartsWith('$') || n.StartsWith('&')) n = n[1..];
-    else if (n.StartsWith("0x", StringComparison.OrdinalIgnoreCase)) { n = n[2..]; radix = 16; }
-    else if (n.EndsWith('h') || n.EndsWith('H')) { n = n[..^1]; radix = 16; }
-    try { return Convert.ToInt32(n, radix); } catch { throw new DisassemblyException($"Invalid number: {text}"); }
+    try { return Assembler.ParseAddress(text); }
+    catch (AssemblyException e) { throw new DisassemblyException(e.Message); }
 }
 
 static void Help() => Console.WriteLine("""

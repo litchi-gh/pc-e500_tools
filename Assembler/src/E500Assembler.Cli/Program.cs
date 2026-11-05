@@ -17,12 +17,12 @@ static int Run(string[] args)
         switch (args[i])
         {
             case "--help": case "-h": Help(); return 0;
-            case "--version": Console.WriteLine("e500asm 0.1.0 (SC62015)"); return 0;
+            case "--version": Console.WriteLine("e500asm 0.2.0 (SC62015)"); return 0;
             case "-o": case "--output": output = Next(); break;
             case "-f": case "--format": format = Next().ToLowerInvariant(); break;
             case "-l": case "--listing": listing = Next(); break;
             case "-s": case "--symbols": symbols = Next(); break;
-            case "--org": origin = checked((int)Assembler.EvaluateExpression(Next())); break;
+            case "--org": origin = Assembler.ParseAddress(Next()); break;
             case "--fill": fill = checked((int)Assembler.EvaluateExpression(Next())); break;
             case "--encoding": encoding = Next(); break;
             case "-I": includes.Add(Next()); break;
@@ -67,19 +67,20 @@ static int Run(string[] args)
 }
 
 static void Help() => Console.WriteLine("""
-e500asm 0.1.0 - SHARP PC-E500 series / SC62015 cross assembler
+e500asm 0.2.0 - SHARP PC-E500 series / SC62015 cross assembler
 Usage: e500asm source.asm [options]
   -o, --output PATH     Output path (default: source.bin / source.hex)
   -f, --format bin|hex  Raw binary or Intel HEX (default: bin)
   -l, --listing PATH    Address / bytes / source listing
   -s, --symbols PATH    Symbol table
-  --org VALUE          Initial origin (default: 0; source ORG takes precedence)
+  --org ADDRESS        Initial origin, hexadecimal (default: 0; source ORG takes precedence)
   --fill VALUE         Fill gaps and reserved space (default: 0)
   --encoding NAME      Source encoding: utf-8 (default), shift_jis, etc.
   -I DIRECTORY         INCLUDE / INCBIN search path (repeatable)
   -D NAME=VALUE        Define a constant (repeatable; default value: 1)
   -h, --help           Show this help
   --version            Show version
-Numbers: decimal, $hex, &hex, 0xhex, 0FFh, 0bbinary.
+ADDRESS is hexadecimal: B8000, $B8000, &B8000, 0xB8000 or 0B8000h.
+VALUE and source numbers: decimal, $hex, &hex, 0xhex, 0FFh, 0bbinary.
 Exit code: 0 = success/help, 1 = error. Source defaults to UTF-8.
 """);

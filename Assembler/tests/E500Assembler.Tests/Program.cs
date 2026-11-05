@@ -141,6 +141,17 @@ var options = new AssemblerOptions { Origin=0xB8000, Fill=0xff, Defines=new Dict
 Check(Convert.ToHexString(assembler.AssembleText("DB VALUE\nORG $B8003\nDB 1",options).Binary)=="2AFFFF01","options");
 
 // INCLUDE, INCBIN, Japanese paths and source locations.
+// Hexadecimal with an h suffix wins over the 0b prefix; without the suffix 0b stays binary.
+Golden("MV X,0B8000h","0C 00 80 0B"); Golden("MV X,0BEC00H","0C 00 EC 0B"); Golden("MV A,0B8H","08 B8"); Golden("DW 0b101h","01 B1");
+Golden("DB 0b1010","0A"); Golden("DW 0C000h","00 C0"); Reject("DB 0b102","Invalid number");
+// Command-line addresses are always hexadecimal.
+foreach (string text in new[] { "B8000", "$B8000", "&B8000", "0xB8000", "0B8000h", "0b8000H" }) Check(Assembler.ParseAddress(text)==0xB8000,$"address {text}");
+Check(Assembler.ParseAddress("8000")==0x8000,"address without prefix is hexadecimal");
+foreach (string text in new[] { "", "XYZ", "-1", "123456789" })
+{
+    try { Assembler.ParseAddress(text); throw new Exception($"address accepted: {text}"); } catch (AssemblyException e) { Check(e.Message.Contains("Invalid address"),"address message"); }
+}
+
 string temp = Path.Combine(Path.GetTempPath(), "e500asm-test-"+Guid.NewGuid().ToString("N")); Directory.CreateDirectory(temp);
 try
 {
@@ -148,6 +159,8 @@ try
     File.WriteAllText(include,"VALUE EQU 42\n"); File.WriteAllBytes(Path.Combine(temp,"data.bin"),[1,2,3,4]);
     File.WriteAllText(input,"INCLUDE \"定数.inc\"\nDB VALUE\nINCBIN \"data.bin\",1,2");
     Check(Convert.ToHexString(assembler.AssembleFile(input).Binary)=="2A0203","includes and binary slices");
+    string listingText = assembler.AssembleFile(input).ListingText();
+    Check(listingText.Contains("日本語.asm(2)") && !listingText.Contains(temp,StringComparison.OrdinalIgnoreCase),"listing shows the file name, not the path");
     File.WriteAllText(include,"INCLUDE \"日本語.asm\"");
     try { assembler.AssembleFile(input); throw new Exception("recursive include accepted"); } catch(AssemblyException e) { Check(e.Message.Contains("Recursive INCLUDE") && e.Message.Contains("(1)"),"include diagnostic"); }
 }
