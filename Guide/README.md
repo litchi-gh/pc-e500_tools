@@ -27,6 +27,12 @@
 | 画面、キー、ファイルを機械語から使う | [IOCS_REFERENCE.md](../Analysis/IOCS_REFERENCE.md) |
 | LCD、キーボード、ポートを直接操作する | [HARDWARE_REFERENCE.md](../Analysis/HARDWARE_REFERENCE.md) |
 | CE-140F の通信手順を調べる | [CE-140F_PROTOCOL.md](../Analysis/CE-140F_PROTOCOL.md) |
+| メモリ、ファイル、RAM ディスクの構造を調べる | [MEMORY_AND_FILES.md](../Analysis/MEMORY_AND_FILES.md) |
+| 変数やプログラムの内部形式を調べる | [BASIC_INTERNALS.md](../Analysis/BASIC_INTERNALS.md) |
+| 起動、割込み、タイマ、音を調べる | [SYSTEM_INTERNALS.md](../Analysis/SYSTEM_INTERNALS.md) |
+| 回路やピンの割り当てを調べる | [CIRCUIT_AND_SERVICE.md](../Analysis/CIRCUIT_AND_SERVICE.md) |
+| 外部の資料やツールを探す | [EXTERNAL_RESOURCES.md](../Analysis/EXTERNAL_RESOURCES.md) |
+| 周辺機器と RAM カードの仕様を調べる | [PERIPHERALS.md](../Analysis/PERIPHERALS.md) |
 | CE-515P へ送るコマンドを調べる | [CE-515P_PLOTTER.md](../Analysis/CE-515P_PLOTTER.md) |
 | テープのデータの形を調べる | [TAPE_FORMAT.md](../Analysis/TAPE_FORMAT.md) |
 | シリアルポートの設定と通信を調べる | [SERIAL_PORT.md](../Analysis/SERIAL_PORT.md) |
