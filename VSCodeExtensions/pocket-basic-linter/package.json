@@ -135,7 +135,7 @@
           "pocketAsm.assemblerPath": {
             "type": "string",
             "default": "",
-            "description": "Path to e500asm.exe (or e500asm.cmd) used by the 'e500asm でアセンブル' command. Empty disables the command."
+            "description": "Path to e500asm (e500asm.exe or e500asm.cmd on Windows) used by the 'e500asm でアセンブル' command. Empty disables the command."
           }
         }
       }

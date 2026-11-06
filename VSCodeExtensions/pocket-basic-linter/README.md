@@ -19,7 +19,7 @@ PC-E500 には `IF ... THEN` だけでなく、解析済み内蔵プログラム
 
 ## ASM のチェック項目
 
-`Assembler/README.md` と `Analysis/PC-E650_ASSEMBLER_MANUAL.md` の記法をそのまま受け付けます。
+`Assembler/README.md` と `Analysis/ASSEMBLER_MANUAL.md` の記法をそのまま受け付けます。
 
 | コード | 内容 |
 |---|---|
@@ -49,7 +49,7 @@ PC-E500 には `IF ... THEN` だけでなく、解析済み内蔵プログラム
 
 - **Pocket BASIC: Pocket BASIC として開く** — 任意のファイルを BASIC として開く（エクスプローラー／エディタタブの右クリックにもあります）
 - **Pocket ASM: PC-E500 アセンブリとして開く** — 任意のファイルを ASM として開く
-- **Pocket ASM: e500asm でアセンブル** — 設定 `pocketAsm.assemblerPath` の `e500asm.exe` を現在のファイルで実行し、結果を出力パネル「Pocket ASM」に表示（ASM エディタの右クリックにもあります）
+- **Pocket ASM: e500asm でアセンブル** — 設定 `pocketAsm.assemblerPath` の `e500asm` を現在のファイルで実行し、結果を出力パネル「Pocket ASM」に表示（ASM エディタの右クリックにもあります）
 
 ## 設定
 
@@ -60,7 +60,7 @@ PC-E500 には `IF ... THEN` だけでなく、解析済み内蔵プログラム
 | `pocketBasic.checkMissingTargets` | `true` | 静的な分岐先を確認する |
 | `pocketAsm.includeDirectories` | `[]` | `INCLUDE` / `INCBIN` の追加検索先（`e500asm -I` 相当。相対パスはワークスペース基準） |
 | `pocketAsm.defines` | `{}` | 事前定義シンボル（`e500asm -D NAME=VALUE` 相当。例: `{"MODEL": 500}`） |
-| `pocketAsm.assemblerPath` | `""` | `e500asm.exe` または `e500asm.cmd` のパス（例: `Assembler/app/e500asm.exe`） |
+| `pocketAsm.assemblerPath` | `""` | `e500asm` のパス（例: Windows は `Assembler/app/e500asm.exe`、Linux / macOS は `Assembler/app/e500asm`） |
 
 ## 開発と実行
 

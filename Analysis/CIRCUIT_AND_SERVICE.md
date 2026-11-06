@@ -76,7 +76,7 @@ PC-E500S のサービスマニュアルの表です（OCR の列がずれてい�
 | 67 | CE1 | `40000h`〜`7FFFFh` | RAM カード |
 | 68 | CE0 | `80000h`〜`BFFFFh` | 内蔵 RAM |
 
-CE3、CE4、CE7 は未使用です。`20000h`〜`3FFFFh`（CE3）は PC-E650 と PC-U6000 の拡張 ROM が使います（[PC-E650_ROM_MAP.md](PC-E650_ROM_MAP.md)）。
+CE3、CE4、CE7 は未使用です。`20000h`〜`3FFFFh`（CE3）は PC-E650 と PC-U6000 の拡張 ROM が使います（[ROM_VERSIONS_MAP.md](ROM_VERSIONS_MAP.md)）。
 
 ### 3.3 E ポートとキーの出力
 

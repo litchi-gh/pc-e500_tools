@@ -1,8 +1,8 @@
 # 機械語の基礎
 
-PC-E500 シリーズで機械語を書くために、最初に知っておきたいことを図で説明します。全命令や細かい規約は [PC-E650_ASSEMBLER_MANUAL.md](../Analysis/PC-E650_ASSEMBLER_MANUAL.md) と [HARDWARE_REFERENCE.md](../Analysis/HARDWARE_REFERENCE.md) にあります。
+PC-E500 シリーズで機械語を書くために、最初に知っておきたいことを図で説明します。CPU の全命令は [SC62015.md](../Analysis/SC62015.md)、細かい規約は [ASSEMBLER_MANUAL.md](../Analysis/ASSEMBLER_MANUAL.md) と [HARDWARE_REFERENCE.md](../Analysis/HARDWARE_REFERENCE.md) にあります。
 
-番地は PC-E650、ROM 8.5、内蔵 RAM 64 KB のものです。ほかの機種については[機種と ROM の版](#機種と-rom-の版)を参照してください。
+CPU は全機種で同じです。公開入口と機械語エリアの確保の手順も全機種で同じです（全 11 本の ROM をエミュレータで確かめました）。図の番地は、PC-E650（ROM 8.5、内蔵 RAM 64 KB）の例です。機種による違いは[機種と ROM の版](#機種と-rom-の版)を参照してください。
 
 [ガイドの目次へ戻る](README.md)
 
@@ -44,7 +44,7 @@ SC62015 には別々のメモリ空間が 2 つあり、書き方で区別しま
 
 ![内部 RAM マップ](images/memory-map-internal.svg)
 
-使うときの注意は図のとおり、**入口で退避して出口で戻す**ことです。[PC-E650_ASSEMBLER_MANUAL.md §8.3](../Analysis/PC-E650_ASSEMBLER_MANUAL.md) に、`MVL` で 16 バイトを退避する実例があります。
+使うときの注意は図のとおり、**入口で退避して出口で戻す**ことです。[ASSEMBLER_MANUAL.md §4.3](../Analysis/ASSEMBLER_MANUAL.md) に、`MVL` で 16 バイトを退避する実例があります。
 
 ## PRE バイト
 
@@ -121,7 +121,7 @@ POKE &HBED00,3,4 : CALL &HBEC00 : PRINT PEEK &HBED02
 
 ## タイミング
 
-システムクロックは 2.304 MHz で、1 サイクルは約 1.30 µs です。命令のサイクル数は [オペコード表](../Analysis/PC-E650_ASSEMBLER_MANUAL.md) に載っています。
+システムクロックは 2.304 MHz で、1 サイクルは約 1.30 µs です。命令のサイクル数は [オペコード表](../Analysis/SC62015.md#15-オペコード表00hffh) に載っています。
 
 1 命令の実行中は割込みが入らないので、大きな `I` で `MVL` や `WAIT` を実行すると、その間はキー入力やタイマが止まります。
 
@@ -139,6 +139,7 @@ PRINT PEEK &HFFFF0;PEEK &HFFFF1
 
 | 資料 | 内容 |
 |---|---|
+| [ROM_VERSIONS_MAP.md](../Analysis/ROM_VERSIONS_MAP.md) | ROM の配置と主な番地 |
 | [ROM_VERSIONS_BASIC.md](../Analysis/ROM_VERSIONS_BASIC.md) | BASIC の修正点 |
 | [ROM_VERSIONS_SYSTEM.md](../Analysis/ROM_VERSIONS_SYSTEM.md) | IOCS、FCS、表示、キー入力 |
 | [ROM_VERSIONS_DRIVERS.md](../Analysis/ROM_VERSIONS_DRIVERS.md) | 行列演算、装置ドライバ、メッセージ表 |

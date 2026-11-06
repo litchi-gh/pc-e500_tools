@@ -116,7 +116,7 @@ export function activate(context: vscode.ExtensionContext): void {
     const config = vscode.workspace.getConfiguration("pocketAsm", document.uri);
     const assembler = config.get<string>("assemblerPath", "").trim();
     if (!assembler) {
-      const choice = await vscode.window.showWarningMessage("設定 pocketAsm.assemblerPath に e500asm.exe のパスを指定してください。", "設定を開く");
+      const choice = await vscode.window.showWarningMessage("設定 pocketAsm.assemblerPath に e500asm のパスを指定してください。", "設定を開く");
       if (choice) void vscode.commands.executeCommand("workbench.action.openSettings", "pocketAsm.assemblerPath");
       return;
     }

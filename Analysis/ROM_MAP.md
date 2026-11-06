@@ -1,4 +1,6 @@
-# ROMマップと主要入口
+# ROM マップと主要入口（ROM 8.5 の例）
+
+この資料の番地は PC-E650 の ROM 8.5 のものです。領域の構成は全機種でほぼ共通で、番地が版によって変わります。全 11 本の比較は [ROM_VERSIONS_MAP.md](ROM_VERSIONS_MAP.md) にあります。
 
 ## 対象と物理配置
 
@@ -6,7 +8,7 @@
 
 | file offset | CPUアドレス | 長さ | 内容 |
 |---|---|---|---|
-| 00000h-1FFFFh | 20000h-3FFFFh | 128 KiB | PC-E650拡張ROM |
+| 00000h-1FFFFh | 20000h-3FFFFh | 128 KiB | 拡張ROM（8.4、8.5 だけ） |
 | 20000h-5FFFFh | C0000h-FFFFFh | 256 KiB | 本体ROM |
 
 

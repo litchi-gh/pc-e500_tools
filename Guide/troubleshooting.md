@@ -11,7 +11,7 @@ e500asm は最初のエラーで止まり、既存の出力ファイルは更新
 | メッセージ | 原因 | 対処 |
 |---|---|---|
 | `Unsupported instruction or operands: MV A, IL` | その組み合わせの命令がない | `MV A,IL` / `MV IL,A` は CPU にない。内部 RAM を経由する |
-| `Unsupported instruction or operands: FOO A` | 命令名の誤り | [命令リファレンス](../Analysis/PC-E650_ASSEMBLER_MANUAL.md)で確かめる |
+| `Unsupported instruction or operands: FOO A` | 命令名の誤り | [命令リファレンス](../Analysis/SC62015.md#14-命令リファレンス)で確かめる |
 | `Invalid number: 0b102` | 数字が基数に合わない | `h` なしの `0b` は 2 進数。16 進数なら `0B102h` と書く |
 | `Undefined symbol: BEC00h` | 英字で始まる数値をシンボルと読んだ | `$BEC00` に書き換える。`h` 形式は数字で始める |
 | `Undefined symbol: nowhere` | ラベルが未定義 | 綴りを確かめる。大文字小文字は区別しない |
@@ -64,13 +64,23 @@ e500asm は最初のエラーで止まり、既存の出力ファイルは更新
 | キーが効かない、時計が止まる | `IMR` を戻していない、または長い `MVL` / `WAIT` | `PUSHU IMR` と `POPU IMR` を対にする |
 | 確保した機械語エリアが消えた | オールリセットした | もう一度確保する |
 | `SHR` で上位に 1 が入る | `C` が回り込む 9 ビット回転 | 先に `RC` を置く |
-| `ADCL` と `DADL` で結果が逆になる | 進む方向が違う（2 進は上へ、10 進は下へ） | [§4.2](../Analysis/PC-E650_ASSEMBLER_MANUAL.md) を確かめる |
+| `ADCL` と `DADL` で結果が逆になる | 進む方向が違う（2 進は上へ、10 進は下へ） | [SC62015.md §14.2](../Analysis/SC62015.md#142-算術) を確かめる |
+
+## Linux / macOS
+
+| 症状・メッセージ | 原因 | 対処 |
+|---|---|---|
+| `build.sh` が `Permission denied` になる | ZIP で取得するなどして実行権限が消えた | `sh build.sh` で実行するか、`chmod +x build.sh` を実行する |
+| `INCLUDE` や `INCBIN` で `File not found` | Linux はファイル名の大文字小文字を区別する | ソースの綴りを実際のファイル名に合わせる |
+| `note: no charset_e500.tab found` | `ce140conv` と同じ場所にも、カレントにも表がない | `charset_e500.tab` を実行ファイルと同じ場所に置く |
+| `this system's iconv cannot convert` | その環境の iconv に CP932 がない | `--sjis` を使わず、テキストを UTF-8 に変換してから渡す |
+| `.lst`、`.sym`、`.hex`、逆アセンブル結果の改行が Windows と違う | 改行はその環境の形式で出力する | 内容は同じ。バイナリの出力は環境によらず同じ |
 
 ## VS Code 拡張
 
 | 症状 | 原因 | 対処 |
 |---|---|---|
 | 診断が出ない | 拡張子が対象外 | 右クリックの「Pocket BASIC として開く」「PC-E500 アセンブリとして開く」を使う |
-| 「e500asm でアセンブル」が動かない | EXE の場所が未設定 | `pocketAsm.assemblerPath` を設定する |
+| 「e500asm でアセンブル」が動かない | 実行ファイルの場所が未設定 | `pocketAsm.assemblerPath` を設定する |
 | `INCLUDE` で `ASM060` の警告が出る | 未保存のファイルでは解決しない | ファイルを保存する |
 | e500asm の結果とアドレスが違う | 拡張は `--org` と `--fill` を使わない | ソースに `ORG` を書く |

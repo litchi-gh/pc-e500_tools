@@ -144,6 +144,8 @@ public sealed class Assembler
     }
     private static string FindFile(string path, string source, AssemblerOptions options)
     {
+        // Windows で書いたソースの "inc\\defs.inc" も、ほかの OS で開けるようにする
+        if (Path.DirectorySeparatorChar == '/') path = path.Replace('\\', '/');
         var candidates = new[] { Path.Combine(Path.GetDirectoryName(source) ?? ".", path) }.Concat(options.IncludeDirectories.Select(d => Path.Combine(d, path)));
         return candidates.FirstOrDefault(File.Exists) is string result ? Path.GetFullPath(result) : throw new AssemblyException($"File not found: {path}");
     }

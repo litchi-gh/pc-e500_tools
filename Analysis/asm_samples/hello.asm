@@ -14,6 +14,6 @@ start:  MV   (CL),0            ; device 0 = LCD
         MV   Y,msg_end-msg     ; 長さ
         CALLF IOCS             ; C=1 なら A にエラー番号
         RETF                   ; C と A をそのまま BASIC へ返す
-msg:    DB   "HELLO, PC-E650!"
+msg:    DB   "HELLO, PC-E500!"
 msg_end:
         END

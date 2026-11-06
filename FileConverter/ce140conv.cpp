@@ -26,7 +26,8 @@
 //   - info dumps and decodes the header of any binary file
 //
 // Standard C++17, single translation unit, no third-party dependencies.
-// Optional Shift-JIS support on the PC-text side uses the Win32 API (_WIN32).
+// Optional Shift-JIS support on the PC-text side uses the Win32 API on Windows
+// and iconv elsewhere (macOS links with -liconv; see build.sh).
 // -----------------------------------------------------------------------------
 
 #include <cctype>
@@ -49,6 +50,12 @@
 #define NOMINMAX   // keep <windows.h> from defining min/max macros
 #endif
 #include <windows.h>
+#else
+#include <cerrno>
+#include <iconv.h>
+#endif
+#ifdef __APPLE__
+#include <mach-o/dyld.h>
 #endif
 
 // ----------------------------------------------------------------------------
@@ -89,6 +96,21 @@ static void rejectSameFile(const std::string& output, const std::string& other) 
 static std::string dirOf(const std::string& path) {
     size_t p = path.find_last_of("/\\");
     return (p == std::string::npos) ? std::string() : path.substr(0, p + 1);
+}
+
+// directory of this program. argv[0] has no directory when the shell found the
+// program through PATH, so ask the system on Linux and macOS.
+static std::string exeDirOf(const char* argv0) {
+#if defined(__linux__)
+    std::error_code ec;
+    auto self = std::filesystem::read_symlink("/proc/self/exe", ec);
+    if (!ec) return self.parent_path().string() + "/";
+#elif defined(__APPLE__)
+    char buffer[4096];
+    uint32_t size = sizeof buffer;
+    if (_NSGetExecutablePath(buffer, &size) == 0) return dirOf(buffer);
+#endif
+    return dirOf(argv0);
 }
 
 // ----------------------------------------------------------------------------
@@ -177,6 +199,71 @@ static Bytes codepointsToSjis(const std::vector<uint32_t>& cps) {
     if (n) WideCharToMultiByte(932, 0, w.c_str(), (int)w.size(),
                                reinterpret_cast<char*>(out.data()), n,
                                nullptr, nullptr);
+    return out;
+}
+#else
+// Shift-JIS (CP932) <-> Unicode code points through iconv
+class Iconv {
+public:
+    Iconv(const char* to, const char* from) : handle(iconv_open(to, from)) {
+        if (handle == reinterpret_cast<iconv_t>(-1))
+            die(std::string("this system's iconv cannot convert ") + from + " to " + to);
+    }
+    ~Iconv() { iconv_close(handle); }
+    Iconv(const Iconv&) = delete;
+    Iconv& operator=(const Iconv&) = delete;
+    size_t convert(char** in, size_t* inLeft, char** out, size_t* outLeft) {
+        return iconv(handle, in, inLeft, out, outLeft);
+    }
+private:
+    iconv_t handle;
+};
+
+static std::vector<uint32_t> sjisToCodepoints(const Bytes& in) {
+    std::vector<uint32_t> out;
+    Iconv cd("UTF-32LE", "CP932");
+    char* from = const_cast<char*>(reinterpret_cast<const char*>(in.data()));
+    size_t left = in.size();
+    while (left > 0) {
+        unsigned char units[64];
+        char* to = reinterpret_cast<char*>(units);
+        size_t room = sizeof units;
+        size_t result = cd.convert(&from, &left, &to, &room);
+        int error = result == static_cast<size_t>(-1) ? errno : 0;
+        for (size_t i = 0; i + 4 <= sizeof units - room; i += 4)
+            out.push_back(units[i] | units[i + 1] << 8 | units[i + 2] << 16 |
+                          static_cast<uint32_t>(units[i + 3]) << 24);
+        if (error == EILSEQ || error == EINVAL) {   // not CP932
+            // An unassigned double-byte code is one bad character, as on Windows.
+            unsigned char lead = static_cast<unsigned char>(from[0]);
+            unsigned char trail = left > 1 ? static_cast<unsigned char>(from[1]) : 0;
+            bool isLead = (lead >= 0x81 && lead <= 0x9F) || (lead >= 0xE0 && lead <= 0xFC);
+            bool isTrail = (trail >= 0x40 && trail <= 0x7E) || (trail >= 0x80 && trail <= 0xFC);
+            size_t bad = isLead && isTrail ? 2 : 1;
+            out.push_back(0xFFFD);
+            from += bad;
+            left -= bad;
+        }
+    }
+    return out;
+}
+static Bytes codepointsToSjis(const std::vector<uint32_t>& cps) {
+    Bytes out;
+    Iconv cd("CP932", "UTF-32LE");
+    for (uint32_t cp : cps) {
+        unsigned char unit[4] = { static_cast<unsigned char>(cp), static_cast<unsigned char>(cp >> 8),
+                                  static_cast<unsigned char>(cp >> 16), static_cast<unsigned char>(cp >> 24) };
+        char* from = reinterpret_cast<char*>(unit);
+        size_t left = sizeof unit;
+        char bytes[8];
+        char* to = bytes;
+        size_t room = sizeof bytes;
+        if (cd.convert(&from, &left, &to, &room) == static_cast<size_t>(-1)) {
+            out.push_back('?');   // no CP932 form: the same mark as the Windows build
+            continue;
+        }
+        out.insert(out.end(), bytes, to);
+    }
     return out;
 }
 #endif
@@ -310,20 +397,12 @@ struct Options {
 };
 
 static std::vector<uint32_t> decodePcText(const Bytes& in, const Options& o) {
-#ifdef _WIN32
     if (o.sjis) return sjisToCodepoints(in);
-#else
-    if (o.sjis) die("Shift-JIS (--sjis) is only supported on the Windows build");
-#endif
     return utf8ToCodepoints(in);
 }
 
 static Bytes encodePcText(const std::vector<uint32_t>& cps, const Options& o) {
-#ifdef _WIN32
     if (o.sjis) return codepointsToSjis(cps);
-#else
-    if (o.sjis) die("Shift-JIS (--sjis) is only supported on the Windows build");
-#endif
     Bytes out;
     for (uint32_t cp : cps) appendUtf8(out, cp);
     return out;
@@ -469,7 +548,7 @@ static int bas2bin(const std::string& in, const std::string& out,
 static void hexDump(const Bytes& d, size_t count) {
     size_t n = std::min(count, d.size());
     for (size_t i = 0; i < n; i += 16) {
-        char buf[8];
+        char buf[24];
         std::snprintf(buf, sizeof(buf), "%04zx  ", i);
         std::cout << buf;
         for (size_t j = 0; j < 16; j++) {
@@ -542,7 +621,7 @@ static void usage() {
 "  ce140conv info     <file>                          inspect a stored file\n"
 "\n"
 "Text options:\n"
-"  --sjis            PC text is Shift-JIS (CP932) instead of UTF-8 (Windows)\n"
+"  --sjis            PC text is Shift-JIS (CP932) instead of UTF-8\n"
 "  --cr              Sharp line terminator = CR only (default CR+LF)\n"
 "  --eof             append a 0x1A end-of-file marker (text2bas). Sharp_ce140f_emul\n"
 "                    sends its own at end of file, and two give an I/O error\n"
@@ -613,7 +692,7 @@ int main(int argc, char** argv) {
         std::string path = o.charsetFile;
         if (path.empty()) {
             // try next to the exe, then current dir
-            std::string exeDir = dirOf(argv[0]);
+            std::string exeDir = exeDirOf(argv[0]);
             std::string cand1 = exeDir + "charset_e500.tab";
             std::ifstream t1(cand1);
             if (t1) path = cand1;

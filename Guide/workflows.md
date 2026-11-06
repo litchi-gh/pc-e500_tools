@@ -108,7 +108,7 @@ SAVE "X:PROG.BAS",A
 
 ASM ソースでは、`h` で終わる数値は 16 進数、`h` なしの `0b1010` は 2 進数です。`--fill` と `-D` の値は ASM ソースの数値と同じ規則で読みます。
 
-PowerShell では `$` が変数記号、`&` が演算子なので、コマンドラインでは `BEC00` か `0xBEC00` が簡単です。
+PowerShell や Linux / macOS のシェルでは `$` が変数記号、`&` が演算子なので、コマンドラインでは `BEC00` か `0xBEC00` が簡単です。
 
 ## コマンド早見表
 
@@ -125,4 +125,4 @@ PowerShell では `$` が変数記号、`&` が演算子なので、コマンド
 | `SAVE M` のファイルを逆アセンブル | `e500dasm CODE.BAS --format ce140f -o code.asm` |
 | 生バイナリを逆アセンブル | `e500dasm code.bin --format raw --org BEC00 -o code.asm` |
 
-e500asm と e500dasm は、`Assembler\e500asm.cmd`、`DisAssembler\e500dasm.cmd` のラッパー経由でも、`app\` の EXE を直接でも実行できます。
+e500asm と e500dasm は、`Assembler\e500asm.cmd`、`DisAssembler\e500dasm.cmd` のラッパー経由でも、`app\` の EXE を直接でも実行できます。Linux / macOS では `Assembler/app/e500asm`、`DisAssembler/app/e500dasm`、`FileConverter/ce140conv` を直接実行します。

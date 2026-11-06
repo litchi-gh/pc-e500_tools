@@ -3,6 +3,8 @@
 SC62015（ESR-L）の機械語を、同じプロジェクトの `Assembler` で再アセンブル可能なソースへ変換します。
 Windows x64用GUIとCLI（`app/E500Disassembler.exe`、`app/e500dasm.exe`）は、自己完結型で1ファイル70〜120 MBあるためリポジトリには含めていません。[GitHub Releases](https://github.com/litchi-gh/pc-e500_tools/releases) からダウンロードして `app/` に置くか、`.\build.cmd`（.NET 10 SDKが必要）でビルドすると `app/` に生成されます。配布済みEXEの実行に.NETやPythonは不要です。
 
+Linux / macOSではCLIだけを使えます。`./build.sh` でビルドすると `app/e500dasm` が生成されます（[手順](../Guide/getting-started.md#linux--macos-の場合)）。GUIはWindows Forms製のためWindows専用です。
+
 ## どちらを使うか
 
 - 画面でファイルを選んで実行する場合：`E500Disassembler.cmd`（GUI）
@@ -126,6 +128,8 @@ PowerShellでは `$` が変数記号、`&` が演算子なので、`--org B8000`
 .\build.cmd
 .\build.cmd -TestOnly
 ```
+
+Linux / macOSでは `./build.sh`、テストのみは `./build.sh --test-only` です。
 
 テストでは全256オペコード、決定的な32KiBの任意バイト列、途中で切れた命令、全PRE形式、RAW、CE-140Fヘッダ、ラベル生成を確認します。逆アセンブル出力をAssemblerのCore APIで再アセンブルし、開始アドレスと全バイトの一致を検証します。既存Assemblerのテストも同時に実行します。
 

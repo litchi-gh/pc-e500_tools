@@ -15,10 +15,16 @@
 
 ## ビルド
 
-C++17 の単一ソース・依存ライブラリ無しです。
+C++17 の単一ソース・依存ライブラリ無しです（Linux / macOS の `--sjis` だけ iconv を使います）。
 
 ```bat
 build.bat
+```
+
+Linux / macOS では次のコマンドで `ce140conv` ができます。`$CXX`、`g++`、`clang++`、`c++` の順に探します。
+
+```sh
+./build.sh
 ```
 
 `build.bat` は `cl`(MSVC) → `g++`(MinGW) → `clang++` の順に探します。
@@ -49,7 +55,7 @@ ce140conv info     <file>
 
 | オプション | 意味 |
 |---|---|
-| `--sjis` | PC テキストを Shift-JIS(CP932) として扱う（既定は UTF-8。Windows ビルドのみ） |
+| `--sjis` | PC テキストを Shift-JIS(CP932) として扱う（既定は UTF-8） |
 | `--cr` | Sharp 側の改行を CR のみにする（既定は CR+LF） |
 | `--eof` | 末尾に EOF マーカ `0x1A` を付ける（`text2bas`。既定は付けない） |
 | `--no-eof` | 末尾に `0x1A` を付けない。既定と同じで、以前のコマンドのために残してある |
