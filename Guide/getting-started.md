@@ -8,7 +8,7 @@
 
 | 用途 | 必要なもの |
 |---|---|
-| ツールを動かす | Windows x64。追加のランタイムは不要 |
+| ツールを動かす | Windows x64 なら追加のランタイムは不要。Linux / macOS はソースからビルドする（[手順](#linux--macos-の場合)） |
 | 実機へ転送する | CE-140F、または互換の装置（例: 別プロジェクトの [Sharp_ce140f_emul](https://github.com/ffxx68/Sharp_ce140f_emul)） |
 | 編集中にエラーを見る | VS Code（任意） |
 | ソースからビルドする | .NET 10 SDK（アセンブラと逆アセンブラ）、C++17 コンパイラ（ce140conv）、Node.js（VS Code 拡張） |
@@ -46,6 +46,37 @@ cd pc-e500_tools
 .\Assembler\e500asm.cmd --version       # e500asm 0.2.0 (SC62015)
 .\DisAssembler\e500dasm.cmd --version   # e500dasm 0.1.0 (SC62015)
 ```
+
+### Linux / macOS の場合
+
+Releases の実行ファイルは Windows 用なので、ソースからビルドします。.NET 10 SDK と C++17 コンパイラ（g++ か clang++）を入れてから、次を実行します。
+
+```sh
+git clone https://github.com/litchi-gh/pc-e500_tools.git
+cd pc-e500_tools
+Assembler/build.sh
+DisAssembler/build.sh
+FileConverter/build.sh
+```
+
+実行ファイルは .NET ランタイムなしで動きます。動くか確かめます。
+
+```sh
+Assembler/app/e500asm --version         # e500asm 0.2.0 (SC62015)
+DisAssembler/app/e500dasm --version     # e500dasm 0.1.0 (SC62015)
+```
+
+この先の説明は Windows のコマンドで書いてあるので、次のように読み替えます。
+
+| Windows | Linux / macOS |
+|---|---|
+| `.\Assembler\e500asm.cmd` | `Assembler/app/e500asm` |
+| `.\DisAssembler\e500dasm.cmd` | `DisAssembler/app/e500dasm` |
+| `.\FileConverter\ce140conv.exe` | `FileConverter/ce140conv` |
+| `fc.exe /b a.bin b.bin` | `cmp a.bin b.bin` |
+| パスの `\` | `/` |
+
+GUI の `E500Disassembler` は Windows 専用です。Linux x64 は Ubuntu（WSL）で確かめました。macOS と Linux arm64 は、スクリプトは対応していますが実機では試していません。
 
 ## 3. サンプルをアセンブルする
 
@@ -90,7 +121,7 @@ address    : 0xBEC00-0xBEC2D
 
 ## 5. 実機で動かす
 
-BASIC モードで順に入力します。ここからは PC-E650（ROM 8.5）で確認された手順です。
+BASIC モードで順に入力します。手順は全機種で同じです（全 11 本の ROM をエミュレータで確かめました）。
 
 **機械語エリアを確保します。** 実行するとメインメニューに戻るので、`BASIC` キーで戻ります。確保は 1 度だけで、オールリセットするまで残ります。
 
@@ -107,7 +138,7 @@ LOAD M "X:HELLO.BAS"
 CLS : CALL &HBEC00
 ```
 
-4 行目に `HELLO, PC-E650!` と表示されれば成功です。
+4 行目に `HELLO, PC-E500!` と表示されれば成功です。
 
 ## 6. BASIC を送ってみる
 
@@ -143,13 +174,13 @@ fc.exe /b hello.bin rebuilt.bin
 
 `fc.exe` が相違なしと報告すれば、バイト単位で一致しています。PowerShell では `fc` だけだと別のコマンドになるので、`.exe` まで書きます。
 
-`hello_dis.asm` の末尾を見ると、文字列 `HELLO, PC-E650!` が命令として読まれています。逆アセンブラはコードとデータを自動では判別しないためです。詳しくは[ツールの内部構造](architecture.md#e500dasm-の処理)を参照してください。
+`hello_dis.asm` の末尾を見ると、文字列 `HELLO, PC-E500!` が命令として読まれています。逆アセンブラはコードとデータを自動では判別しないためです。詳しくは[ツールの内部構造](architecture.md#e500dasm-の処理)を参照してください。
 
 ## 8. VS Code で編集する（任意）
 
 VSIX を入れると、編集中にエラーが表示されます。拡張子 `.asm` / `.inc` / `.e500asm` は ASM、`.bas` / `.basic` / `.e500` は BASIC として扱います。ほかの拡張子のファイルは、右クリックの「Pocket BASIC として開く」「PC-E500 アセンブリとして開く」で開けます。
 
-右クリックの「e500asm でアセンブル」も使うには、設定に EXE の場所を指定します。
+右クリックの「e500asm でアセンブル」も使うには、設定に実行ファイルの場所を指定します。Linux / macOS では `Assembler/app/e500asm` です。
 
 ```json
 {

@@ -15,7 +15,7 @@ PC-E500 シリーズについて、ネットで公開されている解析資料
 | [Andrew Woods の命令表](http://www.andrewwoods3d.com/pce500/insttabl.html) | ESR-L の命令表（アーカイブ）。OZ-7000、IQ-7000 にも同じ CPU が使われているとある。下に比較の結果 |
 | [tmizuno 氏のライブラリ](http://www.kt.rim.or.jp/~tmizuno/pocket/library/sharp01.html) | ESR-L の逆アセンブラ DISASM12.LZH、SC62015 のクロスアセンブラ XASM など、Lisp インタプリタ（アーカイブ）。DB-Z、PV-F1、ZAURUS の ESR-P は ESR-L の拡張とある |
 
-Andrew Woods の表の 256 命令を [PC-E650_ASSEMBLER_MANUAL.md](PC-E650_ASSEMBLER_MANUAL.md) の表と比べると、254 個のニーモニックが同じで、違いは次の 2 つでした。
+Andrew Woods の表の 256 命令を [SC62015.md](SC62015.md) §15 の表と比べると、254 個のニーモニックが同じで、違いは次の 2 つでした。
 
 | 命令 | Andrew Woods | 本リポジトリ | 判断 |
 |---|---|---|---|

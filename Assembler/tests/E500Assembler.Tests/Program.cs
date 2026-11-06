@@ -167,6 +167,9 @@ try
 {
     string include = Path.Combine(temp,"定数.inc"), input = Path.Combine(temp,"日本語.asm");
     File.WriteAllText(include,"VALUE EQU 42\n"); File.WriteAllBytes(Path.Combine(temp,"data.bin"),[1,2,3,4]);
+    Directory.CreateDirectory(Path.Combine(temp,"sub")); File.WriteAllText(Path.Combine(temp,"sub","both.inc"),"DB 7\n");
+    File.WriteAllText(input,"INCLUDE \"sub/both.inc\"\nINCLUDE \"sub\\\\both.inc\"");
+    Check(Convert.ToHexString(assembler.AssembleFile(input).Binary)=="0707","both path separators in INCLUDE");
     File.WriteAllText(input,"INCLUDE \"定数.inc\"\nDB VALUE\nINCBIN \"data.bin\",1,2");
     Check(Convert.ToHexString(assembler.AssembleFile(input).Binary)=="2A0203","includes and binary slices");
     string listingText = assembler.AssembleFile(input).ListingText();

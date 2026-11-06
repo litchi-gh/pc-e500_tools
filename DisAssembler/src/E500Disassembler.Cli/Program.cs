@@ -35,7 +35,9 @@ static int Run(string[] args)
     if (format == null) throw new DisassemblyException("Select input format with --format raw or --format ce140f");
     output ??= Path.ChangeExtension(input, ".asm");
     string inputPath = Path.GetFullPath(input), outputPath = Path.GetFullPath(output);
-    if (string.Equals(inputPath, outputPath, StringComparison.OrdinalIgnoreCase)) throw new DisassemblyException("Output would overwrite the input file");
+    // Windows と macOS の標準のファイルシステムは大文字小文字を区別しない。Linux では a.asm と A.ASM は別のファイル
+    StringComparison pathComparison = OperatingSystem.IsWindows() || OperatingSystem.IsMacOS() ? StringComparison.OrdinalIgnoreCase : StringComparison.Ordinal;
+    if (string.Equals(inputPath, outputPath, pathComparison)) throw new DisassemblyException("Output would overwrite the input file");
     var result = new Disassembler().DisassembleFile(inputPath, format.Value, origin, new() { GenerateLabels = labels, ShowAddresses = addresses, ShowBytes = bytes });
     Directory.CreateDirectory(Path.GetDirectoryName(outputPath)!);
     string temp = outputPath + "." + Guid.NewGuid().ToString("N") + ".tmp";

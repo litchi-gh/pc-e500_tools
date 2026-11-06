@@ -1,12 +1,13 @@
-"""Windows EXE integration checks. Optional existing emulator DLL, no device ROM needed."""
+"""Integration checks of the built program. Optional existing emulator DLL (Windows), no device ROM needed."""
 from pathlib import Path
 import ctypes
 import subprocess
+import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "tests" / "output"
 OUT.mkdir(parents=True, exist_ok=True)
-EXE = ROOT / "app" / "e500asm.exe"
+EXE = ROOT / "app" / ("e500asm.exe" if sys.platform == "win32" else "e500asm")
 checks = 0
 
 

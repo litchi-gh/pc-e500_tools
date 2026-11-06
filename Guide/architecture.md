@@ -13,7 +13,7 @@
 | `Assembler/src/E500Assembler.Core/` | C# | `Assembler.cs`（パス処理と疑似命令）、`Expression.cs`（式）、`InstructionEncoder.cs`（命令の符号化） |
 | `Assembler/src/E500Assembler.Cli/` | C# | コマンドライン、ファイルの保存 |
 | `DisAssembler/src/E500Disassembler.Core/` | C# | `Decoder.cs`（1 命令の解読）、`Disassembler.cs`（ラベルと出力）、`InputImage.cs`（入力形式） |
-| `DisAssembler/src/E500Disassembler.Cli/`、`.Gui/` | C# | CLI と Windows Forms の GUI |
+| `DisAssembler/src/E500Disassembler.Cli/`、`.Gui/` | C# | CLI と Windows Forms の GUI（GUI は Windows 専用） |
 | `FileConverter/ce140conv.cpp` | C++17 | 単一ソースの変換ツール。他のツールに依存しない |
 | `VSCodeExtensions/pocket-basic-linter/src/` | TypeScript | VS Code 拡張 |
 
@@ -69,10 +69,10 @@ e500asm は最初のエラーで止まりますが、拡張はエラーのある
 
 | 対象 | コマンド | 確かめる内容 |
 |---|---|---|
-| アセンブラ | `Assembler\build.cmd`（`-TestOnly` でテストのみ） | 命令のバイト列、PRE の全組み合わせ、前方参照、Intel HEX など |
-| アセンブラの EXE | `python Assembler\tests\cli_smoke.py` | EXE の統合テスト（Python 3） |
-| 逆アセンブラ | `DisAssembler\build.cmd`（`-TestOnly` でテストのみ） | 全 256 オペコード、任意のバイト列、途切れた命令、往復一致 |
-| ce140conv | `FileConverter\build.bat` | 自動テストはない |
+| アセンブラ | `Assembler\build.cmd`（`-TestOnly` でテストのみ）。Linux / macOS は `Assembler/build.sh`（`--test-only`） | 命令のバイト列、PRE の全組み合わせ、前方参照、Intel HEX など |
+| アセンブラの実行ファイル | `python Assembler\tests\cli_smoke.py` | 実行ファイルの統合テスト（Python 3） |
+| 逆アセンブラ | `DisAssembler\build.cmd`（`-TestOnly` でテストのみ）。Linux / macOS は `DisAssembler/build.sh`（`--test-only`） | 全 256 オペコード、任意のバイト列、途切れた命令、往復一致 |
+| ce140conv | `FileConverter\build.bat`。Linux / macOS は `FileConverter/build.sh` | 自動テストはない |
 | VS Code 拡張 | `npm test`（`VSCodeExtensions/pocket-basic-linter` で実行） | BASIC の診断と、アセンブラと同じ golden vector |
 | VSIX の作成 | `npm run package` | `.vsix` を生成 |
 
@@ -80,7 +80,7 @@ e500asm は最初のエラーで止まりますが、拡張はエラーのある
 
 | 変更 | 合わせて直す場所 |
 |---|---|
-| 命令表や符号化（`InstructionEncoder.cs`） | `src/asm/encoder.ts`、双方のテストの golden vector、[アセンブラマニュアル](../Analysis/PC-E650_ASSEMBLER_MANUAL.md) |
+| 命令表や符号化（`InstructionEncoder.cs`） | `src/asm/encoder.ts`、双方のテストの golden vector、[SC62015.md](../Analysis/SC62015.md) |
 | 式や数値の書式（`Expression.cs`） | `src/asm/expression.ts`、[番地の書き方の比較](workflows.md#番地の書き方はツールごとに違う) |
 | `--org` の書式（`Assembler.ParseAddress`） | e500asm と e500dasm が共用。`--help` の文面と[番地の書き方の比較](workflows.md#番地の書き方はツールごとに違う) |
 | パス処理や診断（`Assembler.cs`） | `src/asm/assembler.ts`、拡張の診断コードの表 |
@@ -99,6 +99,15 @@ e500asm は最初のエラーで止まりますが、拡張はエラーのある
 | `E500Disassembler-<版>-win-x64.zip` | `E500Disassembler.exe` |
 | `ce140conv-<版>-win-x64.zip` | `ce140conv.exe` と `charset_e500.tab` |
 | `pocket-basic-linter-<版>.vsix` | VS Code 拡張 |
+
+ほかの環境の実行ファイルも作れますが、今は配布していません。
+
+| 環境 | 作り方 | 出力先 |
+|---|---|---|
+| Linux | Windows で `Assembler\build.cmd -Runtime linux-x64`、`DisAssembler\build.cmd -Runtime linux-x64`（`linux-arm64` も同様）。または Linux で `build.sh` | `app/<環境>/`（`build.sh` は `app/`） |
+| macOS | macOS で `build.sh`。実行ファイルに署名が要るので、ほかの OS で作ったものは Apple シリコンの Mac では動きません | `app/` |
+
+`ce140conv` は .NET ではないので、その環境の `FileConverter/build.sh` で作ります。
 
 ## 図を編集する
 

@@ -67,5 +67,5 @@
   <text x="450.0" y="410.0" class="b" text-anchor="middle">確保の持続</text>
   <text x="450.0" y="430.0" text-anchor="middle">RAM が保持される限り残る</text>
   <text x="450.0" y="450.0" text-anchor="middle">オールリセットで消える。重要なプログラムは先に保存</text>
-  <text x="24" y="482" class="sub">確認環境は PC-E650 ROM 8.5。ほかの ROM 版では番地を確かめてから使う。</text>
+  <text x="24" y="482" class="sub">全 11 本の ROM をエミュレータで確認。実機では PC-E650 で使われている手順。</text>
 </svg>

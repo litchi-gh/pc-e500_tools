@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 560" width="980" height="560" role="img" aria-labelledby="t d">
+  <title id="t">SC62015 の内部構成</title>
+  <desc id="d">CPU コア、内部 RAM、UART、タイマ、割込み制御、各ポートとバスの関係を示すブロック図。ESR-L Instruction Manual p.3 を元に描き直した。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+  </style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#52606D"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="559" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">SC62015 の内部構成</text>
+  <text x="24" y="55" class="sub">ESR-L Instruction Manual p.3 のブロック図を整理したもの</text>
+  <rect x="24" y="74" width="932" height="400" rx="10" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="40" y="96" class="b">SC62015（ESR-L）</text>
+  <rect x="44" y="110" width="200" height="118" rx="6" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="144.0" y="131" class="b" text-anchor="middle">レジスタ</text>
+  <text x="144.0" y="150" class="s" text-anchor="middle">BA, I（16 bit）</text>
+  <text x="144.0" y="166" class="s" text-anchor="middle">X, Y, U, S（20 bit）</text>
+  <text x="144.0" y="182" class="s" text-anchor="middle">PC（16 bit）+ PS（4 bit）</text>
+  <rect x="44" y="244" width="200" height="96" rx="6" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="144.0" y="265" class="b" text-anchor="middle">ALU</text>
+  <text x="144.0" y="284" class="s" text-anchor="middle">加減算、10 進補正、論理、</text>
+  <text x="144.0" y="300" class="s" text-anchor="middle">シフト、ローテート</text>
+  <text x="144.0" y="316" class="s" text-anchor="middle">フラグ C と Z</text>
+  <rect x="44" y="356" width="200" height="96" rx="6" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="144.0" y="377" class="b" text-anchor="middle">命令デコーダ</text>
+  <text x="144.0" y="396" class="s" text-anchor="middle">命令を実行する制御回路</text>
+  <text x="144.0" y="412" class="s" text-anchor="middle">マイクロ ROM（F-ROM）</text>
+  <rect x="280" y="110" width="200" height="118" rx="6" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="380.0" y="131" class="b" text-anchor="middle">内部 RAM 256 バイト</text>
+  <text x="380.0" y="150" class="s" text-anchor="middle">00h〜EBh: RAM</text>
+  <text x="380.0" y="166" class="s" text-anchor="middle">ECh〜EFh: BP, PX, PY, AMC</text>
+  <text x="380.0" y="182" class="s" text-anchor="middle">F0h〜FFh: 周辺のレジスタ</text>
+  <rect x="280" y="244" width="200" height="96" rx="6" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="380.0" y="265" class="b" text-anchor="middle">割込み制御</text>
+  <text x="380.0" y="284" class="s" text-anchor="middle">7 要因</text>
+  <text x="380.0" y="300" class="s" text-anchor="middle">ISR（FCh）、IMR（FBh）</text>
+  <rect x="280" y="356" width="200" height="96" rx="6" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="380.0" y="377" class="b" text-anchor="middle">システム制御</text>
+  <text x="380.0" y="396" class="s" text-anchor="middle">クロック、タイマ 2 本</text>
+  <text x="380.0" y="412" class="s" text-anchor="middle">HALT、OFF、リセット</text>
+  <text x="380.0" y="428" class="s" text-anchor="middle">SCR、LCC、SSR</text>
+  <rect x="516" y="110" width="200" height="56" rx="6" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="616.0" y="131" class="b" text-anchor="middle">UART</text>
+  <text x="616.0" y="150" class="s" text-anchor="middle">F7h〜FAh</text>
+  <rect x="516" y="176" width="200" height="52" rx="6" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="616.0" y="197" class="b" text-anchor="middle">E ポート</text>
+  <text x="616.0" y="216" class="s" text-anchor="middle">F3h〜F6h</text>
+  <rect x="516" y="244" width="200" height="96" rx="6" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="616.0" y="265" class="b" text-anchor="middle">KO / KI ポート</text>
+  <text x="616.0" y="284" class="s" text-anchor="middle">KOL, KOH（F0h, F1h）</text>
+  <text x="616.0" y="300" class="s" text-anchor="middle">KI（F2h）</text>
+  <rect x="516" y="356" width="200" height="96" rx="6" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="616.0" y="377" class="b" text-anchor="middle">カセットと LCD の制御</text>
+  <text x="616.0" y="396" class="s" text-anchor="middle">CI, CO（SCR と SSR）</text>
+  <text x="616.0" y="412" class="s" text-anchor="middle">コモン信号、コントラスト（LCC）</text>
+  <rect x="752" y="110" width="184" height="118" rx="6" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="844.0" y="131" class="b" text-anchor="middle">アドレスとチップセレクト</text>
+  <text x="844.0" y="150" class="s" text-anchor="middle">A0〜A18、CE0〜CE7</text>
+  <text x="844.0" y="166" class="s" text-anchor="middle">AMC による連続化</text>
+  <rect x="752" y="244" width="184" height="96" rx="6" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="844.0" y="265" class="b" text-anchor="middle">データバス</text>
+  <text x="844.0" y="284" class="s" text-anchor="middle">DIO0〜DIO7</text>
+  <rect x="752" y="356" width="184" height="96" rx="6" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="844.0" y="377" class="b" text-anchor="middle">メモリ制御</text>
+  <text x="844.0" y="396" class="s" text-anchor="middle">MRQ, RD, WR</text>
+  <line x1="244" y1="169" x2="280" y2="169" stroke="#52606D" stroke-width="1.2"/>
+  <line x1="244" y1="292" x2="280" y2="292" stroke="#52606D" stroke-width="1.2"/>
+  <line x1="244" y1="404" x2="280" y2="404" stroke="#52606D" stroke-width="1.2"/>
+  <line x1="480" y1="138" x2="516" y2="138" stroke="#52606D" stroke-width="1.2"/>
+  <line x1="480" y1="292" x2="516" y2="292" stroke="#52606D" stroke-width="1.2"/>
+  <line x1="480" y1="404" x2="516" y2="404" stroke="#52606D" stroke-width="1.2"/>
+  <line x1="716" y1="169" x2="752" y2="169" stroke="#52606D" stroke-width="1.2"/>
+  <line x1="716" y1="292" x2="752" y2="292" stroke="#52606D" stroke-width="1.2"/>
+  <line x1="716" y1="404" x2="752" y2="404" stroke="#52606D" stroke-width="1.2"/>
+  <text x="40" y="500" class="b">ピン:</text>
+  <text x="90" y="500" class="ms" xml:space="preserve">TXD, RXD</text>
+  <text x="190" y="500" class="ms" xml:space="preserve">E0〜E15</text>
+  <text x="290" y="500" class="ms" xml:space="preserve">KO0〜15, KI0〜7</text>
+  <text x="440" y="500" class="ms" xml:space="preserve">CI, CO</text>
+  <text x="520" y="500" class="ms" xml:space="preserve">ON, IRQ, RESET, TEST</text>
+  <text x="700" y="500" class="ms" xml:space="preserve">X1〜X4（発振）</text>
+  <text x="830" y="500" class="ms" xml:space="preserve">VDD, VGG, GND</text>
+  <text x="24" y="532" class="sub">どのピンを何に使うかは、製造時に PLA で選びます（例: コモン信号と KO、CE の兼用）。機種ごとの実際の接続は CIRCUIT_AND_SERVICE.md にあります。</text>
+</svg>

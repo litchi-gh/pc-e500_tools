@@ -261,7 +261,7 @@ ENG のソフトは、実行のときだけ `G:` の BASIC プログラムを RA
 | 空きが足りないとき | `Out of memory in program`。最大は放射性同位体の表で 16700 バイト |
 | 解放 | `BREAK` でメニューへ戻ると解放される |
 
-統計と行列の計算には専用の領域はありません。単精度の配列として変数の領域に置かれます（手引書）。`G:` のファイルの一覧は [PC-E650_GDRIVE.md](PC-E650_GDRIVE.md) にあります。
+統計と行列の計算には専用の領域はありません。単精度の配列として変数の領域に置かれます（手引書）。`G:` のファイルの一覧は [GDRIVE.md](GDRIVE.md) にあります。
 
 ## 5. マニュアルに載っていない機能
 
@@ -273,7 +273,7 @@ ENG のソフトは、実行のときだけ `G:` の BASIC プログラムを RA
 | `RLINE -(x,y)` | マニュアルでは省略不可の最初の座標を省く形（[CE-515P_PLOTTER.md](CE-515P_PLOTTER.md) §4） | 実験 |
 | `BTEXT$`、`BDATA$` | 書式は未確認（[BASIC_REFERENCE.md](BASIC_REFERENCE.md)）。ROM 3.2 の辞書にもある（`F5B3Fh`）。中間コード 0Bh、0Ch は手引書の表と同じ | コード |
 | `POKE`、`PEEK` | メモリの読み書き。動作を確かめた（`POKE &BFCBC,&78,0` のあと `PEEK &BFCBC` が 120） | 実験、手引書 |
-| `CALL` | 機械語の呼び出し（[PC-E650_ASSEMBLER_MANUAL.md](PC-E650_ASSEMBLER_MANUAL.md)） | 手引書 |
+| `CALL` | 機械語の呼び出し（[ASSEMBLER_MANUAL.md](ASSEMBLER_MANUAL.md)） | 手引書 |
 | `EVAL` | 文字列を式として計算する。`EVAL "1+2"` は 3、`A$="3*4":EVAL A$` は 12 | 実験、手引書 |
 | `NAME` | ファイル名の変更。`NAME "E:OLD.BAS" AS "NEW.BAS"` で変わった | 実験、手引書 |
 | `RCP` | 逆数の関数 | [BASIC_REFERENCE.md](BASIC_REFERENCE.md) |

@@ -32,4 +32,11 @@ node_modules/
 /Assembler/app/*.exe
 /DisAssembler/app/*.exe
 
+# Linux / macOS 用の実行ファイル（build.sh や build.ps1 -Runtime で生成する）
+/Assembler/app/e500asm
+/DisAssembler/app/e500dasm
+/Assembler/app/*/
+/DisAssembler/app/*/
+/FileConverter/ce140conv
+
 # ce140conv.exe は小さいので同梱する。VSIX は GitHub Releases で配布する

@@ -3,6 +3,7 @@
 SC62015（ESR-L）用のコマンドライン・クロスアセンブラです。
 Windows x64用の実行ファイル `app/e500asm.exe` は、自己完結型で約70 MBあるためリポジトリには含めていません。
 [GitHub Releases](https://github.com/litchi-gh/pc-e500_tools/releases) からダウンロードして `app/` に置くか、`.\build.cmd`（.NET 10 SDKが必要）でビルドすると `app/` に生成されます。
+Linux / macOSでは `./build.sh` でビルドすると `app/e500asm` が生成されます（[手順](../Guide/getting-started.md#linux--macos-の場合)）。
 配布済みEXEの実行時の.NET・Pythonインストールは不要です。
 
 全体の流れは[開発の流れ](../Guide/workflows.md)、エラーの対処は[トラブルシューティング](../Guide/troubleshooting.md)を参照してください。
@@ -191,7 +192,7 @@ DB/DW/DPおよび即値は、それぞれの幅の符号付き負数も許容し
 DWに20ビットラベルを格納するときは `DW label & $FFFF` と明示してください。
 DBの文字列は0..255の文字値を直接出力し、PC-E500独自文字コードへの変換は行いません。
 日本語ソースのコメントは使用できます。ソースの標準文字コードはUTF-8で、Shift-JISの場合は `--encoding shift_jis` を指定します。
-INCLUDE/INCBINの引用符内のパスには `/` を使うと簡単です。Windowsの `\` を使う場合は、文字列エスケープとして `\\` と記述します。
+INCLUDE/INCBINの引用符内のパスには `/` を使うと簡単です。Windowsの `\` を使う場合は、文字列エスケープとして `\\` と記述します。`\\` で書いたパスはLinux / macOSでも開けます。Linuxではファイル名の大文字小文字が区別されます。
 
 複数ORGの間の空きも含め、最小出力アドレスから最大出力アドレスまでを一つのイメージとして出力します。
 空きは `--fill`（標準0）で埋め、Intel HEXにも含めます。重複領域は値が同一でもエラーです。
@@ -218,6 +219,14 @@ INCLUDE/INCBINの引用符内のパスには `/` を使うと簡単です。Wind
 .\build.cmd -TestOnly
 # EXE生成後の統合確認（Python 3が必要）
 python tests\cli_smoke.py
+```
+
+Linux / macOSでは次のとおりです。
+
+```sh
+./build.sh
+./build.sh --test-only
+python3 tests/cli_smoke.py
 ```
 
 Core APIの基本形は `new Assembler().AssembleFile(path)` または `AssembleText(text)` です。

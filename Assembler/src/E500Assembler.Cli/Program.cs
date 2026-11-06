@@ -41,11 +41,13 @@ static int Run(string[] args)
     if (fill is < 0 or > 255) throw new AssemblyException("Fill must be 0..255");
     output ??= Path.ChangeExtension(input, format == "bin" ? ".bin" : ".hex");
     var paths = new[] { output, listing, symbols }.Where(p => p != null).Select(p => Path.GetFullPath(p!)).ToArray();
-    if (paths.Distinct(StringComparer.OrdinalIgnoreCase).Count() != paths.Length) throw new AssemblyException("Output, listing and symbols must have different paths");
-    if (paths.Contains(Path.GetFullPath(input), StringComparer.OrdinalIgnoreCase)) throw new AssemblyException("Output would overwrite the input source");
+    // Windows と macOS の標準のファイルシステムは大文字小文字を区別しない。Linux では a.bin と A.BIN は別のファイル
+    StringComparer pathComparer = OperatingSystem.IsWindows() || OperatingSystem.IsMacOS() ? StringComparer.OrdinalIgnoreCase : StringComparer.Ordinal;
+    if (paths.Distinct(pathComparer).Count() != paths.Length) throw new AssemblyException("Output, listing and symbols must have different paths");
+    if (paths.Contains(Path.GetFullPath(input), pathComparer)) throw new AssemblyException("Output would overwrite the input source");
     Encoding sourceEncoding = Encoding.GetEncoding(encoding, EncoderFallback.ExceptionFallback, DecoderFallback.ExceptionFallback);
     var result = new Assembler().AssembleFile(input, new AssemblerOptions { Origin = origin, Fill = (byte)fill, SourceEncoding = sourceEncoding, IncludeDirectories = includes, Defines = defines });
-    var sources = result.InputFiles.ToHashSet(StringComparer.OrdinalIgnoreCase);
+    var sources = result.InputFiles.ToHashSet(pathComparer);
     if (paths.Any(sources.Contains)) throw new AssemblyException("Output would overwrite an included source");
     var outputs = new List<(string Path, byte[] Data)> { (output, format == "bin" ? result.Binary : Encoding.ASCII.GetBytes(result.IntelHex())) };
     if (listing != null) outputs.Add((listing, Encoding.UTF8.GetBytes(result.ListingText())));

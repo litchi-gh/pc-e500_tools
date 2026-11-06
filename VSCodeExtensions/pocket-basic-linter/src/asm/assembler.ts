@@ -102,9 +102,11 @@ function parseStatement(raw: string, file: string, where: string, line: number, 
   };
 }
 
-function findFile(name: string, sourceFile: string, options: AsmOptions): string | undefined {
+function findFile(givenName: string, sourceFile: string, options: AsmOptions): string | undefined {
   const host = options.host;
   if (!host) return undefined;
+  // Windows で書いたソースの "inc\\defs.inc" も、ほかの OS で開けるようにする（e500asm と同じ）
+  const name = path.sep === "/" ? givenName.replace(/\\/g, "/") : givenName;
   const candidates = [path.join(path.dirname(sourceFile), name), ...(options.includeDirectories ?? []).map(dir => path.join(dir, name))];
   for (const candidate of candidates) {
     if (host.readText(candidate) !== undefined) return path.resolve(candidate);
