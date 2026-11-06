@@ -161,25 +161,27 @@ PC-E500 シリーズの ROM の解析と一次資料から整理した、機械�
 | [SC62015.md](Analysis/SC62015.md) | CPU の解説。レジスタ、フラグ、メモリ空間、内部 RAM、ポート、UART、タイマ、割込み、アドレッシング、全命令、オペコード表 |
 | [ASSEMBLER_MANUAL.md](Analysis/ASSEMBLER_MANUAL.md) | `e500asm` の記法、機械語の配置と呼び出し手順、サンプル、よくある落とし穴 |
 | [IOCS_REFERENCE.md](Analysis/IOCS_REFERENCE.md) | IOCS / FCS の呼び出し方（`CALLF FFFE8h`）、コマンド番号、ROM 上の入口表 |
-| [HARDWARE_REFERENCE.md](Analysis/HARDWARE_REFERENCE.md) | メモリマップ、I/O ポート、LCD コントローラ、キーボード、コネクタなどのハードウェア情報 |
+| [HARDWARE_REFERENCE.md](Analysis/HARDWARE_REFERENCE.md) | ハードウェアの全体像と各資料の案内、キーボード |
 | [CE-140F_PROTOCOL.md](Analysis/CE-140F_PROTOCOL.md) | CE-140F ディスクドライブの通信手順。デバイスコード、4 ビット転送、コマンドと応答、`SAVE M` のヘッダ |
-| [MEMORY_AND_FILES.md](Analysis/MEMORY_AND_FILES.md) | スロット、メモリブロック、作業域、RAM ディスク（FAT12）の構造 |
+| [MEMORY.md](Analysis/MEMORY.md) | メモリマップ、内部 RAM、スロット、メモリブロック、作業域、RAM ディスク（FAT12）の構造 |
+| [PORT_15PIN.md](Analysis/PORT_15PIN.md) | 15 ピンのピン配置とシリアルポート。`COM:` の信号線、設定、文字の変換、フロー制御 |
+| [PORT_11PIN.md](Analysis/PORT_11PIN.md) | 11 ピンのピン配置とテープ。`CSAVE`、`CLOAD`、`CSAVE M`、`CLOAD M` の信号、ブロック、ヘッダ、本体の形 |
+| [CARD_SLOT.md](Analysis/CARD_SLOT.md) | カードスロットの解析。33 本のピンと両端のバネ、番地、カバーのスイッチ、カードの認識、`MEM$` と AMC、書込み保護、`RESET.KEY`、ROM カード |
+| [LCD.md](Analysis/LCD.md) | LCD の配線、コントローラの番地と命令、表示 RAM、インジケータ、作業域、操作例 |
 | [BASIC_INTERNALS.md](Analysis/BASIC_INTERNALS.md) | 数値、変数、文字列、配列、プログラムの内部形式 |
 | [SYSTEM_INTERNALS.md](Analysis/SYSTEM_INTERNALS.md) | リセット、割込み、タイマ、BEEP、自動電源オフ、電池の検出 |
 | [CIRCUIT_AND_SERVICE.md](Analysis/CIRCUIT_AND_SERVICE.md) | 部品、CPU のピン、消費電流、サービス用の検査ソフト |
 | [EXTERNAL_RESOURCES.md](Analysis/EXTERNAL_RESOURCES.md) | 外部の解析資料とツールの一覧 |
-| [PERIPHERALS.md](Analysis/PERIPHERALS.md) | 周辺機器と RAM カードの仕様。プリンタ、ディスク、カセット、レベルコンバータ、接続口のピン配置 |
+| [PERIPHERALS.md](Analysis/PERIPHERALS.md) | 周辺機器の仕様。プリンタ、ディスク、カセット、レベルコンバータ |
 | [CE-515P_PLOTTER.md](Analysis/CE-515P_PLOTTER.md) | CE-515P カラープロッタの解析。`GRAPH`、`LLINE`、`CIRCLE`、`PAINT` などが送るコマンド、円の計算、網掛けの模様 |
-| [TAPE_FORMAT.md](Analysis/TAPE_FORMAT.md) | テープの解析。`CSAVE`、`CLOAD`、`CSAVE M`、`CLOAD M` の信号、ブロック、ヘッダ、本体の形 |
-| [SERIAL_PORT.md](Analysis/SERIAL_PORT.md) | シリアルポートの解析。`COM:` の信号線、設定、文字の変換、フロー制御 |
 | [BASIC_REFERENCE.md](Analysis/BASIC_REFERENCE.md) | BASIC 全 168 キーワードの索引（中間コード token、分類、ROM 処理入口）と各命令の書式・引数 |
 | [ROM_VERSIONS_BASIC.md](Analysis/ROM_VERSIONS_BASIC.md) | ROM 版（2.1〜8.5、11 本）ごとの BASIC の違い。版番号の読み方、改訂ごとの修正点、修正の有無の早見表 |
 | [ROM_VERSIONS_DRIVERS.md](Analysis/ROM_VERSIONS_DRIVERS.md) | 同じく E8000h〜EBFFFh 帯（行列演算、CAS・PRN・COM・X:Y: のドライバ、プリンタの文字変換、エラーメッセージ表）の違い |
-| [ROM_VERSIONS_MAP.md](Analysis/ROM_VERSIONS_MAP.md) | 同じく ROM の配置、公開入口、IOCS の入口、フォント、拡張 ROM、G: の番地の比較 |
+| [ROM_VERSIONS_MAP.md](Analysis/ROM_VERSIONS_MAP.md) | 同じく ROM の配置、公開入口、IOCS の入口、フォント、拡張 ROM、G: の番地、カードの処理の比較 |
 | [ROM_VERSIONS_MODELS.md](Analysis/ROM_VERSIONS_MODELS.md) | 同じく機種ごとの言語・カナ入力・文字セット・メインメニュー・添付ソフト（エンジニアソフト、GRAPH、TIMER、G: のソフト集）の違い |
 | [ROM_VERSIONS_SYSTEM.md](Analysis/ROM_VERSIONS_SYSTEM.md) | 同じく IOCS・FCS（E0000h〜E4FFFh）と表示・キー入力・行エディタ・フォント（F0000h〜F4FFFh）の違い |
 | [CHARACTER_FONT.md](Analysis/CHARACTER_FONT.md) | キャラクタフォント（6×8 ドット）の ROM 上の格納形式とポインタ |
-| [ROM_MAP.md](Analysis/ROM_MAP.md) | ROM 8.5 を例にした領域の説明（ファイルオフセットと CPU アドレスの対応、主要入口） |
+| [ROM_MAP.md](Analysis/ROM_MAP.md) | ROM 全 11 本の領域の説明（ファイルオフセットと CPU アドレスの対応、固定入口、システムと BASIC の領域） |
 | [GDRIVE.md](Analysis/GDRIVE.md) | G: ドライブ（ROM 内蔵エンジニアソフト）のファイルシステム構造 |
 | `asm_samples/` | `e500asm` でアセンブルできる小さなサンプル（`hello.asm`: IOCS で文字列表示、`add.asm`: メモリ加算、`bcd.asm`: DADL による BCD 加算） |
 

@@ -1,6 +1,6 @@
 # BASIC の内部形式
 
-BASIC の数値、変数、文字列、プログラムがメモリの中でどう表されているかをまとめた資料です。命令の書式は [BASIC_REFERENCE.md](BASIC_REFERENCE.md)、ブロックの構造は [MEMORY_AND_FILES.md](MEMORY_AND_FILES.md) を参照してください。
+BASIC の数値、変数、文字列、プログラムがメモリの中でどう表されているかをまとめた資料です。命令の書式は [BASIC_REFERENCE.md](BASIC_REFERENCE.md)、ブロックの構造は [MEMORY.md](MEMORY.md) を参照してください。
 
 ## 情報源と確度
 
@@ -267,8 +267,8 @@ ENG のソフトは、実行のときだけ `G:` の BASIC プログラムを RA
 
 | 機能 | 内容 | 確度 |
 |---|---|---|
-| `CSAVE M` / `CLOAD M` | メモリの保存と読み込み（[TAPE_FORMAT.md](TAPE_FORMAT.md)） | 実験 |
-| `CLOAD @` | 旧形式のテープ（[TAPE_FORMAT.md](TAPE_FORMAT.md) §6） | コード |
+| `CSAVE M` / `CLOAD M` | メモリの保存と読み込み（[PORT_11PIN.md](PORT_11PIN.md)） | 実験 |
+| `CLOAD @` | 旧形式のテープ（[PORT_11PIN.md](PORT_11PIN.md) §6） | コード |
 | `CSIZE n,K` | 文字サイズの別指定（[CE-515P_PLOTTER.md](CE-515P_PLOTTER.md) §3.2） | 実験 |
 | `RLINE -(x,y)` | マニュアルでは省略不可の最初の座標を省く形（[CE-515P_PLOTTER.md](CE-515P_PLOTTER.md) §4） | 実験 |
 | `BTEXT$`、`BDATA$` | 書式は未確認（[BASIC_REFERENCE.md](BASIC_REFERENCE.md)）。ROM 3.2 の辞書にもある（`F5B3Fh`）。中間コード 0Bh、0Ch は手引書の表と同じ | コード |

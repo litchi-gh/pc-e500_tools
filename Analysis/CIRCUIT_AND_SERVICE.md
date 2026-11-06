@@ -70,10 +70,10 @@ PC-E500S のサービスマニュアルの表です（OCR の列がずれてい�
 
 | ピン | 信号 | 範囲 | 内容 |
 |---|---|---|---|
-| 62 | CE6 | `10000h`〜`1FFFFh` | ROM カード（Active High） |
-| 63 | CE5 | `00000h`〜`03FFFh` など | 表示チップ（Active High） |
+| 62 | CE6 | `10000h`〜`1FFFFh` | ROM カード（Active High）。[CARD_SLOT.md](CARD_SLOT.md) |
+| 63 | CE5 | `00000h`〜`03FFFh`、`08000h`〜`0BFFFh` | 表示チップ（Active High）。[LCD.md](LCD.md) §2 |
 | 66 | CE2 | `C0000h`〜`FFFFFh` | 内蔵 ROM |
-| 67 | CE1 | `40000h`〜`7FFFFh` | RAM カード |
+| 67 | CE1 | `40000h`〜`7FFFFh` | RAM カード。[CARD_SLOT.md](CARD_SLOT.md) |
 | 68 | CE0 | `80000h`〜`BFFFFh` | 内蔵 RAM |
 
 CE3、CE4、CE7 は未使用です。`20000h`〜`3FFFFh`（CE3）は PC-E650 と PC-U6000 の拡張 ROM が使います（[ROM_VERSIONS_MAP.md](ROM_VERSIONS_MAP.md)）。
@@ -102,7 +102,7 @@ CE3、CE4、CE7 は未使用です。`20000h`〜`3FFFFh`（CE3）は PC-E650 と
 | KO12 | 4 | シリアル RS |
 | KO0〜KO11 | | キーストローブ |
 
-`F1h` のビットは ROM のシリアルの処理（[SERIAL_PORT.md](SERIAL_PORT.md) §3）と合います。
+`F1h` のビットは ROM のシリアルの処理（[PORT_15PIN.md](PORT_15PIN.md) §3）と合います。コネクタの配線は [PORT_11PIN.md](PORT_11PIN.md) と [PORT_15PIN.md](PORT_15PIN.md) にあります。
 
 ## 4. 消費電流
 

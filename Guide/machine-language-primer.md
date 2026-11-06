@@ -1,6 +1,6 @@
 # 機械語の基礎
 
-PC-E500 シリーズで機械語を書くために、最初に知っておきたいことを図で説明します。CPU の全命令は [SC62015.md](../Analysis/SC62015.md)、細かい規約は [ASSEMBLER_MANUAL.md](../Analysis/ASSEMBLER_MANUAL.md) と [HARDWARE_REFERENCE.md](../Analysis/HARDWARE_REFERENCE.md) にあります。
+PC-E500 シリーズで機械語を書くために、最初に知っておきたいことを図で説明します。CPU の全命令は [SC62015.md](../Analysis/SC62015.md)、細かい規約は [ASSEMBLER_MANUAL.md](../Analysis/ASSEMBLER_MANUAL.md) と [MEMORY.md](../Analysis/MEMORY.md) にあります。
 
 CPU は全機種で同じです。公開入口と機械語エリアの確保の手順も全機種で同じです（全 11 本の ROM をエミュレータで確かめました）。図の番地は、PC-E650（ROM 8.5、内蔵 RAM 64 KB）の例です。機種による違いは[機種と ROM の版](#機種と-rom-の版)を参照してください。
 
@@ -117,7 +117,7 @@ POKE &HBED00,3,4 : CALL &HBEC00 : PRINT PEEK &HBED02
 
 表示開始ラインは BASIC の動作後に 0 とは限りません。位置を固定して描くときは、先に `C0h` を書いて 0 に戻します。
 
-機械語で 64 ドットぶん書く例や、インジケータの割当ては [HARDWARE_REFERENCE.md](../Analysis/HARDWARE_REFERENCE.md) にあります。
+機械語で 64 ドットぶん書く例や、インジケータの割当ては [LCD.md](../Analysis/LCD.md) にあります。
 
 ## タイミング
 

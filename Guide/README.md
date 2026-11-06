@@ -26,17 +26,19 @@
 | CPU、命令の動作、オペコード表を調べる | [SC62015.md](../Analysis/SC62015.md) |
 | 機械語の書き方、呼び出し方、サンプルを調べる | [ASSEMBLER_MANUAL.md](../Analysis/ASSEMBLER_MANUAL.md) |
 | 画面、キー、ファイルを機械語から使う | [IOCS_REFERENCE.md](../Analysis/IOCS_REFERENCE.md) |
-| LCD、キーボード、ポートを直接操作する | [HARDWARE_REFERENCE.md](../Analysis/HARDWARE_REFERENCE.md) |
+| ハードウェアの全体像とキーボードを調べる | [HARDWARE_REFERENCE.md](../Analysis/HARDWARE_REFERENCE.md) |
+| LCD を直接操作する | [LCD.md](../Analysis/LCD.md) |
 | CE-140F の通信手順を調べる | [CE-140F_PROTOCOL.md](../Analysis/CE-140F_PROTOCOL.md) |
-| メモリ、ファイル、RAM ディスクの構造を調べる | [MEMORY_AND_FILES.md](../Analysis/MEMORY_AND_FILES.md) |
+| メモリ、ファイル、RAM ディスクの構造を調べる | [MEMORY.md](../Analysis/MEMORY.md) |
+| RAM カード、ROM カード、`MEM$` を調べる | [CARD_SLOT.md](../Analysis/CARD_SLOT.md) |
 | 変数やプログラムの内部形式を調べる | [BASIC_INTERNALS.md](../Analysis/BASIC_INTERNALS.md) |
 | 起動、割込み、タイマ、音を調べる | [SYSTEM_INTERNALS.md](../Analysis/SYSTEM_INTERNALS.md) |
 | 回路やピンの割り当てを調べる | [CIRCUIT_AND_SERVICE.md](../Analysis/CIRCUIT_AND_SERVICE.md) |
 | 外部の資料やツールを探す | [EXTERNAL_RESOURCES.md](../Analysis/EXTERNAL_RESOURCES.md) |
-| 周辺機器と RAM カードの仕様を調べる | [PERIPHERALS.md](../Analysis/PERIPHERALS.md) |
+| 周辺機器の仕様を調べる | [PERIPHERALS.md](../Analysis/PERIPHERALS.md) |
 | CE-515P へ送るコマンドを調べる | [CE-515P_PLOTTER.md](../Analysis/CE-515P_PLOTTER.md) |
-| テープのデータの形を調べる | [TAPE_FORMAT.md](../Analysis/TAPE_FORMAT.md) |
-| シリアルポートの設定と通信を調べる | [SERIAL_PORT.md](../Analysis/SERIAL_PORT.md) |
+| 11 ピンのピン配置、テープのデータの形を調べる | [PORT_11PIN.md](../Analysis/PORT_11PIN.md) |
+| 15 ピンのピン配置、シリアルの設定と通信を調べる | [PORT_15PIN.md](../Analysis/PORT_15PIN.md) |
 | 文字のドットパターンを調べる | [CHARACTER_FONT.md](../Analysis/CHARACTER_FONT.md) |
 | BASIC の命令の書式を調べる | [BASIC_REFERENCE.md](../Analysis/BASIC_REFERENCE.md) |
 | ROM の中を読む | [ROM_VERSIONS_MAP.md](../Analysis/ROM_VERSIONS_MAP.md)、[ROM_MAP.md](../Analysis/ROM_MAP.md)、[GDRIVE.md](../Analysis/GDRIVE.md) |
@@ -55,6 +57,7 @@
 | [PRE バイト](images/pre-byte.svg)、[IOCS の呼び出し](images/iocs-call.svg) | 同上 |
 | [機械語エリアの確保](images/ml-area.svg)、[CALL 文の動き](images/basic-call.svg) | 同上 |
 | [LCD の構成](images/lcd-layout.svg)、[ROM 版番号の読み方](images/rom-versions.svg) | 同上 |
+| [カードスロットの 33 ピンと両端のバネ](images/card-slot-pins.svg)、[カードの判定](images/card-boot-flow.svg)、[MEM$="B" と AMC](images/card-amc.svg) | [CARD_SLOT.md](../Analysis/CARD_SLOT.md) |
 | [依存関係](images/toolchain-architecture.svg)、[e500asm の処理](images/assembler-passes.svg) | [ツールの内部構造](architecture.md) |
 | [e500dasm の照合](images/disassembler-verify.svg)、[VS Code 拡張の動き](images/vscode-diagnostics.svg) | 同上 |
 

@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 720" width="980" height="720" role="img" aria-labelledby="t d">
+  <title id="t">電源を入れたときのカードの判定</title>
+  <desc id="d">ROM が 40000h の書込みテストとヘッダでカードの状態を判定する流れ。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .lbl { font-size: 12px; fill: #52606D; paint-order: stroke; stroke: #FFFFFF; stroke-width: 4px; stroke-linejoin: round; }
+  </style>
+  <defs><marker id="a52606D" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#52606D"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="719" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">電源を入れたときのカードの判定</text>
+  <text x="24" y="55" class="sub">番地は ROM 5.3。カードの中身はヘッダの先頭 6 バイトで見分ける</text>
+  <rect x="360" y="76" width="260" height="56" rx="8" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="490.0" y="100.0" class="b" text-anchor="middle">書込みテスト 40000h</text>
+  <text x="490.0" y="118.0" class="s" text-anchor="middle">55h AAh を書いて読み返す（F0C11h）</text>
+  <rect x="40" y="170" width="250" height="72" rx="8" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="165.0" y="193.0" class="b" text-anchor="middle">カードなしとして扱う</text>
+  <text x="165.0" y="211.0" class="s" text-anchor="middle">読み返しが違い、中身が 10 12 でない</text>
+  <text x="165.0" y="229.0" class="s" text-anchor="middle">空のカードで書込み保護のときも同じ</text>
+  <polyline points="360,104 165,104 165,170" fill="none" stroke="#52606D" stroke-width="1.8" marker-end="url(#a52606D)"/>
+  <text x="255" y="96" class="lbl" text-anchor="middle">一致せず、10 12 でもない</text>
+  <rect x="360" y="170" width="260" height="56" rx="8" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="490.0" y="194.0" class="b" text-anchor="middle">先頭 2 バイトを調べる</text>
+  <text x="490.0" y="212.0" class="s" text-anchor="middle">書けた、または中身が 10 12</text>
+  <polyline points="490,132 490,170" fill="none" stroke="#52606D" stroke-width="1.8" marker-end="url(#a52606D)"/>
+  <rect x="700" y="170" width="240" height="72" rx="8" fill="#FDECEA" stroke="#C0392B" stroke-width="1.5"/>
+  <text x="820.0" y="202.0" class="b" text-anchor="middle">S2:NEW CARD</text>
+  <text x="820.0" y="220.0" class="s" text-anchor="middle">PF1 初期化、PF2 使わない</text>
+  <polyline points="620,198 700,198" fill="none" stroke="#52606D" stroke-width="1.8" marker-end="url(#a52606D)"/>
+  <text x="660" y="190" class="lbl" text-anchor="middle">ほかの値</text>
+  <rect x="700" y="270" width="240" height="72" rx="8" fill="#FDECEA" stroke="#C0392B" stroke-width="1.5"/>
+  <text x="820.0" y="293.0" class="b" text-anchor="middle">S2:WRONG CARD</text>
+  <text x="820.0" y="311.0" class="s" text-anchor="middle">20 21、A0 A1 は「他の機種」</text>
+  <text x="820.0" y="329.0" class="s" text-anchor="middle">+04 が 0 でないときも同じ</text>
+  <polyline points="560,226 560,306 700,306" fill="none" stroke="#52606D" stroke-width="1.8" marker-end="url(#a52606D)"/>
+  <text x="628" y="298" class="lbl" text-anchor="middle">20 21、A0 A1</text>
+  <rect x="360" y="270" width="180" height="56" rx="8" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="450.0" y="294.0" class="b" text-anchor="middle">10 12</text>
+  <text x="450.0" y="312.0" class="s" text-anchor="middle">+04=0、容量が 0 でない</text>
+  <polyline points="450,226 450,270" fill="none" stroke="#52606D" stroke-width="1.8" marker-end="url(#a52606D)"/>
+  <rect x="360" y="376" width="180" height="56" rx="8" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="450.0" y="409.0" class="b" text-anchor="middle">+05 のビット 1 を調べる</text>
+  <polyline points="450,326 450,376" fill="none" stroke="#52606D" stroke-width="1.8" marker-end="url(#a52606D)"/>
+  <rect x="40" y="366" width="250" height="76" rx="8" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+  <text x="165.0" y="391.0" class="b" text-anchor="middle">S2: として登録</text>
+  <text x="165.0" y="409.0" class="s" text-anchor="middle">RESET.KEY を探す（F1077h）</text>
+  <text x="165.0" y="427.0" class="s" text-anchor="middle">ビット 7 があれば確認を省く</text>
+  <polyline points="360,404 290,404" fill="none" stroke="#52606D" stroke-width="1.8" marker-end="url(#a52606D)"/>
+  <text x="325" y="396" class="lbl" text-anchor="middle">0（単独）</text>
+  <rect x="620" y="366" width="320" height="76" rx="8" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.5"/>
+  <text x="780.0" y="391.0" class="b" text-anchor="middle">MEM$="B" の相方を確かめる</text>
+  <text x="780.0" y="409.0" class="s" text-anchor="middle">内蔵 RAM の先頭が 10 12 なら相方ではない</text>
+  <text x="780.0" y="427.0" class="s" text-anchor="middle">AMC を設定してブロックをたどる</text>
+  <polyline points="540,404 620,404" fill="none" stroke="#52606D" stroke-width="1.8" marker-end="url(#a52606D)"/>
+  <text x="580" y="396" class="lbl" text-anchor="middle">1（ペア）</text>
+  <rect x="620" y="480" width="320" height="72" rx="8" fill="#FDECEA" stroke="#C0392B" stroke-width="1.5"/>
+  <text x="780.0" y="503.0" class="b" text-anchor="middle">S2:PAIR MISMATCH</text>
+  <text x="780.0" y="521.0" class="s" text-anchor="middle">PF1 単独のカードに変換</text>
+  <text x="780.0" y="539.0" class="s" text-anchor="middle">PF2 使わない</text>
+  <polyline points="780,442 780,480" fill="none" stroke="#52606D" stroke-width="1.8" marker-end="url(#a52606D)"/>
+  <text x="840" y="466" class="lbl" text-anchor="middle">たどれない</text>
+  <rect x="280" y="480" width="280" height="72" rx="8" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+  <text x="420.0" y="512.0" class="b" text-anchor="middle">S1: + S2: を 1 つの S1: として登録</text>
+  <text x="420.0" y="530.0" class="s" text-anchor="middle">AMC を有効のまま MEM$="B" で起動</text>
+  <polyline points="650,442 650,462 420,462 420,480" fill="none" stroke="#52606D" stroke-width="1.8" marker-end="url(#a52606D)"/>
+  <text x="540" y="456" class="lbl" text-anchor="middle">たどれた</text>
+  <rect x="40" y="590" width="900" height="96" rx="8" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.5"/>
+  <text x="60" y="613.0" class="b">初期化（PF1）</text>
+  <text x="60" y="633.0" class="s">1. 2 KB ごとに 5C 0A を書き、読み返しと先頭のミラーを見て容量を測る（F0EE0h）。最大 128 回で 256 KB まで</text>
+  <text x="60" y="653.0" class="s">2. 全体を 9Fh で埋めて、もう一度測る</text>
+  <text x="60" y="673.0" class="s">3. 先頭に 10 12、容量（2 KB 単位）、00 01、…、20 18 00 00 00 を書き、+18h に FFh を置く</text>
+</svg>

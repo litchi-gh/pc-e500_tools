@@ -1,0 +1,181 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 560" width="980" height="560" role="img" aria-labelledby="t d">
+  <title id="t">カードスロットの 33 ピンと両端のバネ</title>
+  <desc id="d">カードスロットの 33 本のピンと両端のバネ 2 個の信号、本体側の配線。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .lbl { font-size: 12px; fill: #52606D; paint-order: stroke; stroke: #FFFFFF; stroke-width: 4px; stroke-linejoin: round; }
+  </style>
+  <defs><marker id="a52606D" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#52606D"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="559" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">カードスロットの 33 ピンと両端のバネ</text>
+  <text x="24" y="55" class="sub">信号名はサービスマニュアルの回路図。番号は公開されている自作カードの設計の番号</text>
+  <text x="52.5" y="79" class="s" text-anchor="middle">バネ</text>
+  <text x="936.5" y="79" class="s" text-anchor="middle">バネ</text>
+  <rect x="40" y="86" width="25" height="72" rx="2" fill="#FDECEA" stroke="#C0392B" stroke-width="2" stroke-dasharray="5 3"/>
+  <text x="52.0" y="104" class="s" text-anchor="middle">1</text>
+  <text x="57.0" y="152" class="ms" transform="rotate(-90 57.0 152)">VCC</text>
+  <rect x="66" y="86" width="25" height="72" rx="2" fill="#FDECEA" stroke="#C0392B" stroke-width="1"/>
+  <text x="78.0" y="104" class="s" text-anchor="middle">2</text>
+  <text x="83.0" y="152" class="ms" transform="rotate(-90 83.0 152)">VCC</text>
+  <rect x="92" y="86" width="25" height="72" rx="2" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1"/>
+  <text x="104.0" y="104" class="s" text-anchor="middle">3</text>
+  <text x="109.0" y="152" class="ms" transform="rotate(-90 109.0 152)">R/W</text>
+  <rect x="118" y="86" width="25" height="72" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="130.0" y="104" class="s" text-anchor="middle">4</text>
+  <text x="135.0" y="152" class="ms" transform="rotate(-90 135.0 152)">A0</text>
+  <rect x="144" y="86" width="25" height="72" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="156.0" y="104" class="s" text-anchor="middle">5</text>
+  <text x="161.0" y="152" class="ms" transform="rotate(-90 161.0 152)">A1</text>
+  <rect x="170" y="86" width="25" height="72" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="182.0" y="104" class="s" text-anchor="middle">6</text>
+  <text x="187.0" y="152" class="ms" transform="rotate(-90 187.0 152)">A2</text>
+  <rect x="196" y="86" width="25" height="72" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="208.0" y="104" class="s" text-anchor="middle">7</text>
+  <text x="213.0" y="152" class="ms" transform="rotate(-90 213.0 152)">A3</text>
+  <rect x="222" y="86" width="25" height="72" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="234.0" y="104" class="s" text-anchor="middle">8</text>
+  <text x="239.0" y="152" class="ms" transform="rotate(-90 239.0 152)">A4</text>
+  <rect x="248" y="86" width="25" height="72" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="260.0" y="104" class="s" text-anchor="middle">9</text>
+  <text x="265.0" y="152" class="ms" transform="rotate(-90 265.0 152)">A5</text>
+  <rect x="274" y="86" width="25" height="72" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="286.0" y="104" class="s" text-anchor="middle">10</text>
+  <text x="291.0" y="152" class="ms" transform="rotate(-90 291.0 152)">A6</text>
+  <rect x="300" y="86" width="25" height="72" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="312.0" y="104" class="s" text-anchor="middle">11</text>
+  <text x="317.0" y="152" class="ms" transform="rotate(-90 317.0 152)">A7</text>
+  <rect x="326" y="86" width="25" height="72" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="338.0" y="104" class="s" text-anchor="middle">12</text>
+  <text x="343.0" y="152" class="ms" transform="rotate(-90 343.0 152)">A8</text>
+  <rect x="352" y="86" width="25" height="72" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="364.0" y="104" class="s" text-anchor="middle">13</text>
+  <text x="369.0" y="152" class="ms" transform="rotate(-90 369.0 152)">A9</text>
+  <rect x="378" y="86" width="25" height="72" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="390.0" y="104" class="s" text-anchor="middle">14</text>
+  <text x="395.0" y="152" class="ms" transform="rotate(-90 395.0 152)">A10</text>
+  <rect x="404" y="86" width="25" height="72" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="416.0" y="104" class="s" text-anchor="middle">15</text>
+  <text x="421.0" y="152" class="ms" transform="rotate(-90 421.0 152)">A11</text>
+  <rect x="430" y="86" width="25" height="72" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="442.0" y="104" class="s" text-anchor="middle">16</text>
+  <text x="447.0" y="152" class="ms" transform="rotate(-90 447.0 152)">A12</text>
+  <rect x="456" y="86" width="25" height="72" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="468.0" y="104" class="s" text-anchor="middle">17</text>
+  <text x="473.0" y="152" class="ms" transform="rotate(-90 473.0 152)">A13</text>
+  <rect x="482" y="86" width="25" height="72" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="494.0" y="104" class="s" text-anchor="middle">18</text>
+  <text x="499.0" y="152" class="ms" transform="rotate(-90 499.0 152)">A14</text>
+  <rect x="508" y="86" width="25" height="72" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="520.0" y="104" class="s" text-anchor="middle">19</text>
+  <text x="525.0" y="152" class="ms" transform="rotate(-90 525.0 152)">A15</text>
+  <rect x="534" y="86" width="25" height="72" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="546.0" y="104" class="s" text-anchor="middle">20</text>
+  <text x="551.0" y="152" class="ms" transform="rotate(-90 551.0 152)">A16</text>
+  <rect x="560" y="86" width="25" height="72" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="572.0" y="104" class="s" text-anchor="middle">21</text>
+  <text x="577.0" y="152" class="ms" transform="rotate(-90 577.0 152)">A17</text>
+  <rect x="586" y="86" width="25" height="72" rx="2" fill="#FDECEA" stroke="#C0392B" stroke-width="1"/>
+  <text x="598.0" y="104" class="s" text-anchor="middle">22</text>
+  <text x="603.0" y="152" class="ms" transform="rotate(-90 603.0 152)">VCC</text>
+  <rect x="612" y="86" width="25" height="72" rx="2" fill="#FFF5DF" stroke="#B7791F" stroke-width="1"/>
+  <text x="624.0" y="104" class="s" text-anchor="middle">23</text>
+  <text x="629.0" y="152" class="ms" transform="rotate(-90 629.0 152)">D0</text>
+  <rect x="638" y="86" width="25" height="72" rx="2" fill="#FFF5DF" stroke="#B7791F" stroke-width="1"/>
+  <text x="650.0" y="104" class="s" text-anchor="middle">24</text>
+  <text x="655.0" y="152" class="ms" transform="rotate(-90 655.0 152)">D1</text>
+  <rect x="664" y="86" width="25" height="72" rx="2" fill="#FFF5DF" stroke="#B7791F" stroke-width="1"/>
+  <text x="676.0" y="104" class="s" text-anchor="middle">25</text>
+  <text x="681.0" y="152" class="ms" transform="rotate(-90 681.0 152)">D2</text>
+  <rect x="690" y="86" width="25" height="72" rx="2" fill="#FFF5DF" stroke="#B7791F" stroke-width="1"/>
+  <text x="702.0" y="104" class="s" text-anchor="middle">26</text>
+  <text x="707.0" y="152" class="ms" transform="rotate(-90 707.0 152)">D3</text>
+  <rect x="716" y="86" width="25" height="72" rx="2" fill="#FFF5DF" stroke="#B7791F" stroke-width="1"/>
+  <text x="728.0" y="104" class="s" text-anchor="middle">27</text>
+  <text x="733.0" y="152" class="ms" transform="rotate(-90 733.0 152)">D4</text>
+  <rect x="742" y="86" width="25" height="72" rx="2" fill="#FFF5DF" stroke="#B7791F" stroke-width="1"/>
+  <text x="754.0" y="104" class="s" text-anchor="middle">28</text>
+  <text x="759.0" y="152" class="ms" transform="rotate(-90 759.0 152)">D5</text>
+  <rect x="768" y="86" width="25" height="72" rx="2" fill="#FFF5DF" stroke="#B7791F" stroke-width="1"/>
+  <text x="780.0" y="104" class="s" text-anchor="middle">29</text>
+  <text x="785.0" y="152" class="ms" transform="rotate(-90 785.0 152)">D6</text>
+  <rect x="794" y="86" width="25" height="72" rx="2" fill="#FFF5DF" stroke="#B7791F" stroke-width="1"/>
+  <text x="806.0" y="104" class="s" text-anchor="middle">30</text>
+  <text x="811.0" y="152" class="ms" transform="rotate(-90 811.0 152)">D7</text>
+  <rect x="820" y="86" width="25" height="72" rx="2" fill="#E6F6EC" stroke="#2F855A" stroke-width="1"/>
+  <text x="832.0" y="104" class="s" text-anchor="middle">31</text>
+  <text x="837.0" y="152" class="ms" transform="rotate(-90 837.0 152)">CERAM</text>
+  <rect x="846" y="86" width="25" height="72" rx="2" fill="#E6F6EC" stroke="#2F855A" stroke-width="1"/>
+  <text x="858.0" y="104" class="s" text-anchor="middle">32</text>
+  <text x="863.0" y="152" class="ms" transform="rotate(-90 863.0 152)">CE</text>
+  <rect x="872" y="86" width="25" height="72" rx="2" fill="#F3F5F8" stroke="#7B8794" stroke-width="1"/>
+  <text x="884.0" y="104" class="s" text-anchor="middle">33</text>
+  <text x="889.0" y="152" class="ms" transform="rotate(-90 889.0 152)">NC</text>
+  <rect x="898" y="86" width="25" height="72" rx="2" fill="#F3F5F8" stroke="#7B8794" stroke-width="1"/>
+  <text x="910.0" y="104" class="s" text-anchor="middle">34</text>
+  <text x="915.0" y="152" class="ms" transform="rotate(-90 915.0 152)">OE</text>
+  <rect x="924" y="86" width="25" height="72" rx="2" fill="#F3F5F8" stroke="#7B8794" stroke-width="2" stroke-dasharray="5 3"/>
+  <text x="936.0" y="104" class="s" text-anchor="middle">35</text>
+  <text x="941.0" y="152" class="ms" transform="rotate(-90 941.0 152)">GND</text>
+  <rect x="40" y="173" width="14" height="14" rx="3" fill="#FDECEA" stroke="#C0392B" stroke-width="1.2"/>
+  <text x="60" y="184" class="s">電源</text>
+  <rect x="106.0" y="173" width="14" height="14" rx="3" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="126.0" y="184" class="s">書込み</text>
+  <rect x="184.0" y="173" width="14" height="14" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="204.0" y="184" class="s">番地</text>
+  <rect x="250.0" y="173" width="14" height="14" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="270.0" y="184" class="s">データ</text>
+  <rect x="328.0" y="173" width="14" height="14" rx="3" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="348.0" y="184" class="s">チップセレクト</text>
+  <rect x="454.0" y="173" width="14" height="14" rx="3" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="474.0" y="184" class="s">GND 側につながる</text>
+  <rect x="610.0" y="173" width="14" height="14" rx="3" fill="#FFFFFF" stroke="#52606D" stroke-width="1.5" stroke-dasharray="3 2"/>
+  <text x="630.0" y="184" class="s">破線はバネの接点。ほかはピン</text>
+  <rect x="40" y="214" width="200" height="62" rx="8" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="140.0" y="241.0" class="b" text-anchor="middle">A0〜A17、D0〜D7、R/W</text>
+  <text x="140.0" y="259.0" class="s" text-anchor="middle">バスに直結。A18 は来ない</text>
+  <rect x="40" y="300" width="200" height="62" rx="8" fill="#FDECEA" stroke="#C0392B" stroke-width="1.5"/>
+  <text x="140.0" y="327.0" class="b" text-anchor="middle">VCC</text>
+  <text x="140.0" y="345.0" class="s" text-anchor="middle">本体の電池。CR2016 は通らない</text>
+  <rect x="40" y="386" width="200" height="72" rx="8" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="140.0" y="409.0" class="b" text-anchor="middle">GND、NC、OE</text>
+  <text x="140.0" y="427.0" class="s" text-anchor="middle">3 本はつながっていて、D12 を</text>
+  <text x="140.0" y="445.0" class="s" text-anchor="middle">通って本体の GND へ</text>
+  <rect x="330" y="214" width="160" height="62" rx="8" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+  <text x="410.0" y="241.0" class="b" text-anchor="middle">CE1</text>
+  <text x="410.0" y="259.0" class="s" text-anchor="middle">40000h〜7FFFFh</text>
+  <rect x="560" y="214" width="150" height="62" rx="8" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+  <text x="635.0" y="241.0" class="b" text-anchor="middle">IC10 TC4S66F</text>
+  <text x="635.0" y="259.0" class="s" text-anchor="middle">アナログスイッチ</text>
+  <rect x="800" y="214" width="140" height="62" rx="8" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+  <text x="870.0" y="241.0" class="b" text-anchor="middle">CERAM（31）</text>
+  <text x="870.0" y="259.0" class="s" text-anchor="middle">RAM カードを選ぶ</text>
+  <polyline points="490,245 560,245" fill="none" stroke="#52606D" stroke-width="1.8" marker-end="url(#a52606D)"/>
+  <polyline points="710,245 800,245" fill="none" stroke="#52606D" stroke-width="1.8" marker-end="url(#a52606D)"/>
+  <rect x="560" y="300" width="150" height="62" rx="8" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+  <text x="635.0" y="327.0" class="b" text-anchor="middle">IC9 TC7S04F</text>
+  <text x="635.0" y="345.0" class="s" text-anchor="middle">インバータ</text>
+  <polyline points="635,300 635,276" fill="none" stroke="#52606D" stroke-width="1.8" marker-end="url(#a52606D)"/>
+  <text x="690" y="292" class="lbl" text-anchor="middle">H で導通</text>
+  <rect x="330" y="300" width="160" height="62" rx="8" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+  <text x="410.0" y="327.0" class="b" text-anchor="middle">CPU の VDD</text>
+  <text x="410.0" y="345.0" class="s" text-anchor="middle">動作中 Low、OFF で High</text>
+  <polyline points="490,331 560,331" fill="none" stroke="#52606D" stroke-width="1.8" marker-end="url(#a52606D)"/>
+  <text x="740" y="325" class="s">電源を切ると CERAM が切り離される</text>
+  <text x="740" y="343" class="s">（R22 100 kΩ で High に引く。推定）</text>
+  <rect x="330" y="386" width="160" height="72" rx="8" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+  <text x="410.0" y="409.0" class="b" text-anchor="middle">CE6</text>
+  <text x="410.0" y="427.0" class="s" text-anchor="middle">10000h〜1FFFFh</text>
+  <text x="410.0" y="445.0" class="s" text-anchor="middle">アクティブ High（公式）</text>
+  <rect x="800" y="386" width="140" height="72" rx="8" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+  <text x="870.0" y="418.0" class="b" text-anchor="middle">CE（32）</text>
+  <text x="870.0" y="436.0" class="s" text-anchor="middle">ROM カードを選ぶ</text>
+  <polyline points="490,422 800,422" fill="none" stroke="#52606D" stroke-width="1.8" marker-end="url(#a52606D)"/>
+  <rect x="40" y="482" width="900" height="54" rx="8" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.5"/>
+  <text x="490.0" y="514.0" text-anchor="middle">アドレス線が A17 までなので、CE1 の範囲（256 KB）を超えるカードは、カードの中で切り替えるしかない</text>
+</svg>

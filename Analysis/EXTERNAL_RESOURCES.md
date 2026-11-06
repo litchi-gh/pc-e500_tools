@@ -38,7 +38,7 @@ sc62015-opcode-reference の実装メモには次の記述があります。
 |---|---|
 | [Robert-van-Engelen/Forth500](https://github.com/Robert-van-Engelen/Forth500) | PC-E500(S) 用の Forth 2012。ソースに詳しい注釈がある。SC62015 のアセンブラ XASM を同梱 |
 | [Forth500 の resources](https://github.com/Robert-van-Engelen/Forth500/tree/main/resources) | ESR-L CPU technical manual、PC-E500 manual、Systemhandbuch、technical manual の PDF |
-| Systemhandbuch（上の resources） | ドイツ語の解析書（Fischel GmbH）。シャープの資料ではない。周辺機器、メモリ、変数、中間コード、RAM ディスク、FUNCKEY、AER、ENG、システム番地、文字セット、CPU の命令表。内容は [MEMORY_AND_FILES.md](MEMORY_AND_FILES.md)、[BASIC_INTERNALS.md](BASIC_INTERNALS.md) に取り込み、実験で確かめた項目はその旨を書きました。読んでいないページは下の「読めなかった資料」にあります |
+| Systemhandbuch（上の resources） | ドイツ語の解析書（Fischel GmbH）。シャープの資料ではない。周辺機器、メモリ、変数、中間コード、RAM ディスク、FUNCKEY、AER、ENG、システム番地、文字セット、CPU の命令表。内容は [MEMORY.md](MEMORY.md)、[BASIC_INTERNALS.md](BASIC_INTERNALS.md) に取り込み、実験で確かめた項目はその旨を書きました。読んでいないページは下の「読めなかった資料」にあります |
 
 Forth500 のソースから分かることです。
 
@@ -57,7 +57,7 @@ Forth500 のソースから分かることです。
 |---|---|
 | [PocketTools](https://www.peil-partner.de/ifhe.de/sharp/) | シャープのポケコンのテープ用ツール（アーカイブ。v2.1.1、2022 年）。Wav2bin、Bin2wav、Bas2img。`CSAVE`、ASCII、`OPEN CAS`、`CSAVE M` を読む。`TstE5Inv` は PC-E500 で `-dINV` が必要かを調べるプログラム。Forth500 の説明に `bin2wav --pc=E500 --type=bin` の例がある |
 
-テープの形式は [TAPE_FORMAT.md](TAPE_FORMAT.md) にあります。
+テープの形式は [PORT_11PIN.md](PORT_11PIN.md) にあります。
 
 ## 音
 
@@ -70,7 +70,7 @@ Forth500 のソースから分かることです。
 
 | 資料 | 内容 |
 |---|---|
-| [cazacov/PocketComputers](https://github.com/cazacov/PocketComputers/tree/main/sharp-e500) | 内蔵 RAM の 128 KB 化と 256 KB RAM カードの自作。回路図と KiCad のデータ |
+| [cazacov/PocketComputers](https://github.com/cazacov/PocketComputers/tree/main/sharp-e500) | 内蔵 RAM の 128 KB 化と 256 KB RAM カードの自作。回路図と KiCad のデータ。カードの端子は [CARD_SLOT.md](CARD_SLOT.md) §2 で使いました |
 | [内蔵 RAM の増設（OIT）](https://www.oit.ac.jp/rd/labs/kobayashi-lab/~yagshi/old_web/misc/pocketcom/memup/index.html) | 62256 を 628128 に交換。PC-U6000 での作業 |
 | [PC-E500 のメモリが 1 MB に迫る勢い](https://g-shoes.net/blog/index.php/view/229) | 空き番地に SRAM を追加して 704 KB にした記録と、CE0〜CE7 の番地 |
 | [Arno Welzel 氏の PC-E500S](https://arnowelzel.de/en/projects/technology-museum/pocket-computers/sharp-pc-e500s) | PC-E500S の紹介と 256 KB 化 |
