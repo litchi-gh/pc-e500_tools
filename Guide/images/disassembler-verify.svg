@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 470" width="980" height="470" role="img" aria-labelledby="t d">
+  <title id="t">e500dasm が往復一致を保証するしくみ</title>
+  <desc id="d">1 命令ごとにデコードし、アセンブラのエンコーダで同じバイト列に戻るか確かめ、戻らなければ DB として出力する。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .lbl { font-size: 12px; fill: #52606D; paint-order: stroke; stroke: #FFFFFF; stroke-width: 4px; stroke-linejoin: round; }
+  </style>
+  <defs><marker id="a2F855A" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2F855A"/></marker><marker id="a52606D" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#52606D"/></marker><marker id="aC0392B" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#C0392B"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="469" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">e500dasm が往復一致を保証するしくみ</text>
+  <text x="24" y="55" class="sub">命令として出す前に、アセンブラで同じバイト列へ戻るか 1 命令ずつ確かめる</text>
+  <rect x="24" y="82" width="220" height="110" rx="8" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="134.0" y="106.0" class="b" text-anchor="middle">入力</text>
+  <text x="134.0" y="124.0" class="m" xml:space="preserve" text-anchor="middle">--format raw --org ADDR</text>
+  <text x="134.0" y="142.0" class="m" xml:space="preserve" text-anchor="middle">--format ce140f</text>
+  <text x="134.0" y="160.0" class="s" text-anchor="middle">ヘッダの署名・長さ・番地を検証</text>
+  <text x="134.0" y="178.0" class="s" text-anchor="middle">不一致はエラーで停止</text>
+  <rect x="290" y="82" width="200" height="62" rx="8" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="390.0" y="109.0" class="b" text-anchor="middle">Decoder</text>
+  <text x="390.0" y="127.0" class="s" text-anchor="middle">先頭から順に 1 命令デコード</text>
+  <polyline points="244,113 290,113" fill="none" stroke="#52606D" stroke-width="1.8" marker-end="url(#a52606D)"/>
+  <rect x="290" y="172" width="200" height="62" rx="8" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="390.0" y="199.0" class="b" text-anchor="middle">EncodeInstruction</text>
+  <text x="390.0" y="217.0" class="s" text-anchor="middle">アセンブラの本物の符号化</text>
+  <polyline points="390,144 390,172" fill="none" stroke="#52606D" stroke-width="1.8" marker-end="url(#a52606D)"/>
+  <text x="403" y="164" class="lbl">命令</text>
+  <rect x="300" y="262" width="180" height="50" rx="25" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="390.0" y="292.0" class="b" text-anchor="middle">同じバイト列？</text>
+  <polyline points="390,234 390,262" fill="none" stroke="#52606D" stroke-width="1.8" marker-end="url(#a52606D)"/>
+  <rect x="560" y="82" width="190" height="100" rx="8" fill="#FDECEA" stroke="#C0392B" stroke-width="1.5"/>
+  <text x="655.0" y="110.0" class="b" text-anchor="middle">DB として出力</text>
+  <text x="655.0" y="128.0" class="s" text-anchor="middle">予約命令 20h / BFh</text>
+  <text x="655.0" y="146.0" class="s" text-anchor="middle">末尾で途切れた命令</text>
+  <text x="655.0" y="164.0" class="s" text-anchor="middle">同じ符号にならない表現</text>
+  <polyline points="490,104 560,104" fill="none" stroke="#C0392B" stroke-width="1.8" stroke-dasharray="6 4" marker-end="url(#aC0392B)"/>
+  <text x="525" y="96" class="lbl" text-anchor="middle">デコード不能</text>
+  <polyline points="470,280 525,280 525,160 560,160" fill="none" stroke="#C0392B" stroke-width="1.8" marker-end="url(#aC0392B)"/>
+  <text x="525" y="222" class="lbl" text-anchor="middle">いいえ</text>
+  <rect x="560" y="256" width="190" height="62" rx="8" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+  <text x="655.0" y="292.0" class="b" text-anchor="middle">命令として出力</text>
+  <polyline points="470,298 560,298" fill="none" stroke="#2F855A" stroke-width="1.8" marker-end="url(#a2F855A)"/>
+  <text x="520" y="316" class="lbl" text-anchor="middle">はい</text>
+  <rect x="790" y="130" width="166" height="140" rx="8" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="873.0" y="178.0" class="b" text-anchor="middle">.asm</text>
+  <text x="873.0" y="196.0" class="s" text-anchor="middle">ラベル Lxxxxx を付け</text>
+  <text x="873.0" y="214.0" class="s" text-anchor="middle">各行に番地と</text>
+  <text x="873.0" y="232.0" class="s" text-anchor="middle">バイト列のコメント</text>
+  <polyline points="750,150 790,150" fill="none" stroke="#52606D" stroke-width="1.8" marker-end="url(#a52606D)"/>
+  <polyline points="750,262 790,262" fill="none" stroke="#52606D" stroke-width="1.8" marker-end="url(#a52606D)"/>
+  <text x="24" y="376" class="b">実際の出力の例（hello.asm の文字列部分）— コードとデータを自動判別しないので、文字列も命令として読まれる</text>
+  <rect x="24" y="388" width="932" height="68" rx="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="38" y="408" class="m" xml:space="preserve">SUB    A,$45      ; BEC1F | 48 45                 ← "HE" が命令に見えている</text>
+  <text x="38" y="427" class="m" xml:space="preserve">DB     $4C,$4C    ; BEC21 | 4C 4C | byte-preserving fallback; decoded: SUB X, X</text>
+  <text x="38" y="446" class="m" xml:space="preserve">DB     $20        ; BEC25 | 20 | reserved opcode</text>
+</svg>

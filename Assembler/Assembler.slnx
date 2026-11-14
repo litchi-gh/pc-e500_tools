@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="src/E500Assembler.Core/E500Assembler.Core.csproj" />
+  <Project Path="src/E500Assembler.Cli/E500Assembler.Cli.csproj" />
+  <Project Path="tests/E500Assembler.Tests/E500Assembler.Tests.csproj" />
+</Solution>

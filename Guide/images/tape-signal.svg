@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 500" width="980" height="500" role="img" aria-labelledby="t d">
+  <title id="t">テープの信号：周期と 1 バイト</title>
+  <desc id="d">短い周期が論理 0、長い周期が論理 1 で、1 バイトは開始の長い周期 1 個とデータ 8 個を上位ビットから並べる。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+  </style>
+  <rect x="0.5" y="0.5" width="979" height="499" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">テープの信号</text>
+  <text x="24" y="55" class="sub">1 周期が 1 ビットを表す。周期の長さが 2 種類ある</text>
+  <text x="48" y="92" class="b">論理 0（短い周期）</text>
+  <polyline points="230,114 240,114 240,74 266,74 266,114 292,114 312,114" fill="none" stroke="#2F6DB5" stroke-width="2" stroke-linejoin="round"/>
+  <text x="340" y="86" class="m">High 126 / Low 131 サイクル（計 257）</text>
+  <text x="340" y="106" class="s">実機で約 335 µs（約 3.0 kHz）。長さの設定は [BFD42h]=13h、[BFD43h]=0Dh</text>
+  <text x="48" y="172" class="b">論理 1（長い周期）</text>
+  <polyline points="230,194 240,194 240,154 304,154 304,194 368,194 388,194" fill="none" stroke="#2F6DB5" stroke-width="2" stroke-linejoin="round"/>
+  <text x="410" y="166" class="m">High 315 / Low 313 サイクル（計 628）</text>
+  <text x="410" y="186" class="s">実機で約 820 µs（約 1.2 kHz）。長さの設定は [BFD44h]=33h、[BFD45h]=2Dh</text>
+  <polyline points="24,222 956,222" fill="none" stroke="#D9E0E8" stroke-width="1" stroke-linejoin="round"/>
+  <text x="48" y="250" class="b">1 バイトの並び（例：A5h = 1010 0101）</text>
+  <rect x="48" y="330" width="136" height="30" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.1"/>
+  <text x="116.0" y="350.0" class="b" text-anchor="middle">開始</text>
+  <rect x="184" y="330" width="136" height="30" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.1"/>
+  <text x="252.0" y="350.0" class="m" text-anchor="middle">1</text>
+  <text x="252.0" y="376" class="ms" text-anchor="middle">D7</text>
+  <rect x="320" y="330" width="56" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.1"/>
+  <text x="348.0" y="350.0" class="m" text-anchor="middle">0</text>
+  <text x="348.0" y="376" class="ms" text-anchor="middle">D6</text>
+  <rect x="376" y="330" width="136" height="30" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.1"/>
+  <text x="444.0" y="350.0" class="m" text-anchor="middle">1</text>
+  <text x="444.0" y="376" class="ms" text-anchor="middle">D5</text>
+  <rect x="512" y="330" width="56" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.1"/>
+  <text x="540.0" y="350.0" class="m" text-anchor="middle">0</text>
+  <text x="540.0" y="376" class="ms" text-anchor="middle">D4</text>
+  <rect x="568" y="330" width="56" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.1"/>
+  <text x="596.0" y="350.0" class="m" text-anchor="middle">0</text>
+  <text x="596.0" y="376" class="ms" text-anchor="middle">D3</text>
+  <rect x="624" y="330" width="136" height="30" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.1"/>
+  <text x="692.0" y="350.0" class="m" text-anchor="middle">1</text>
+  <text x="692.0" y="376" class="ms" text-anchor="middle">D2</text>
+  <rect x="760" y="330" width="56" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.1"/>
+  <text x="788.0" y="350.0" class="m" text-anchor="middle">0</text>
+  <text x="788.0" y="376" class="ms" text-anchor="middle">D1</text>
+  <rect x="816" y="330" width="136" height="30" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.1"/>
+  <text x="884.0" y="350.0" class="m" text-anchor="middle">1</text>
+  <text x="884.0" y="376" class="ms" text-anchor="middle">D0</text>
+  <polyline points="48,318 48,268 116.0,268 116.0,318 184,318 184,268 252.0,268 252.0,318 320,318 320,268 348.0,268 348.0,318 376,318 376,268 444.0,268 444.0,318 512,318 512,268 540.0,268 540.0,318 568,318 568,268 596.0,268 596.0,318 624,318 624,268 692.0,268 692.0,318 760,318 760,268 788.0,268 788.0,318 816,318 816,268 884.0,268 884.0,318 952,318" fill="none" stroke="#1F2933" stroke-width="2" stroke-linejoin="round"/>
+  <text x="48" y="408">・開始の周期は必ず長い周期。読み込み側は開始の周期の長さを判定せず、次のバイトの区切りとして待つ</text>
+  <text x="48" y="430">・読み込みは、立ち上がりから立ち下がりまでの High の時間を数え、しきい値 [BFD46h]=11h と比べる</text>
+  <text x="48" y="452">・FFh は 1 バイト約 7.4 ms、00h は約 3.5 ms。データの中身で転送時間が変わる</text>
+  <text x="48" y="482" class="s">サイクル数はエミュレータの命令サイクル。µs は PC-U6000 実機の録音から求めた値（実効 約 0.77 MHz）</text>
+</svg>

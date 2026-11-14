@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 500" width="980" height="500" role="img" aria-labelledby="t d">
+  <title id="t">PRE バイトと内部 RAM アドレッシング</title>
+  <desc id="d">内部 RAM オペランドの書き方に応じて e500asm が付ける PRE バイトの例と、PRE の対応表。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .lbl { font-size: 12px; fill: #52606D; paint-order: stroke; stroke: #FFFFFF; stroke-width: 4px; stroke-linejoin: round; }
+  </style>
+  <defs></defs>
+  <rect x="0.5" y="0.5" width="979" height="499" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">PRE バイト</text>
+  <text x="24" y="55" class="sub">内部 RAM の指定方法を変える前置バイト。e500asm は書き方から自動で付ける</text>
+  <text x="24" y="98" class="m" xml:space="preserve">MV A,(&amp;20)</text>
+  <rect x="190" y="78" width="44" height="28" rx="2" fill="#FDECEA" stroke="#C0392B" stroke-width="1.1"/>
+  <text x="212.0" y="97.0" class="m" xml:space="preserve" text-anchor="middle">30</text>
+  <text x="212" y="118" class="s" text-anchor="middle">PRE</text>
+  <rect x="234" y="78" width="44" height="28" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.1"/>
+  <text x="256.0" y="97.0" class="m" xml:space="preserve" text-anchor="middle">80</text>
+  <text x="256" y="118" class="s" text-anchor="middle">命令</text>
+  <rect x="278" y="78" width="44" height="28" rx="2" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.1"/>
+  <text x="300.0" y="97.0" class="m" xml:space="preserve" text-anchor="middle">20</text>
+  <text x="300" y="118" class="s" text-anchor="middle">n</text>
+  <text x="390" y="98">絶対番地</text>
+  <text x="24" y="150" class="m" xml:space="preserve">MV A,(BP+&amp;20)</text>
+  <rect x="190" y="130" width="44" height="28" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.1"/>
+  <text x="212.0" y="149.0" class="m" xml:space="preserve" text-anchor="middle">80</text>
+  <text x="212" y="170" class="s" text-anchor="middle">命令</text>
+  <rect x="234" y="130" width="44" height="28" rx="2" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.1"/>
+  <text x="256.0" y="149.0" class="m" xml:space="preserve" text-anchor="middle">20</text>
+  <text x="256" y="170" class="s" text-anchor="middle">n</text>
+  <text x="390" y="150">BP 相対は既定なので PRE なし</text>
+  <text x="24" y="202" class="m" xml:space="preserve">MV A,(PX+2)</text>
+  <rect x="190" y="182" width="44" height="28" rx="2" fill="#FDECEA" stroke="#C0392B" stroke-width="1.1"/>
+  <text x="212.0" y="201.0" class="m" xml:space="preserve" text-anchor="middle">34</text>
+  <text x="212" y="222" class="s" text-anchor="middle">PRE</text>
+  <rect x="234" y="182" width="44" height="28" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.1"/>
+  <text x="256.0" y="201.0" class="m" xml:space="preserve" text-anchor="middle">80</text>
+  <text x="256" y="222" class="s" text-anchor="middle">命令</text>
+  <rect x="278" y="182" width="44" height="28" rx="2" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.1"/>
+  <text x="300.0" y="201.0" class="m" xml:space="preserve" text-anchor="middle">02</text>
+  <text x="300" y="222" class="s" text-anchor="middle">n</text>
+  <text x="390" y="202">PX 相対</text>
+  <text x="24" y="254" class="m" xml:space="preserve">MV (PX+2),(PY+3)</text>
+  <rect x="190" y="234" width="44" height="28" rx="2" fill="#FDECEA" stroke="#C0392B" stroke-width="1.1"/>
+  <text x="212.0" y="253.0" class="m" xml:space="preserve" text-anchor="middle">37</text>
+  <text x="212" y="274" class="s" text-anchor="middle">PRE</text>
+  <rect x="234" y="234" width="44" height="28" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.1"/>
+  <text x="256.0" y="253.0" class="m" xml:space="preserve" text-anchor="middle">C8</text>
+  <text x="256" y="274" class="s" text-anchor="middle">命令</text>
+  <rect x="278" y="234" width="44" height="28" rx="2" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.1"/>
+  <text x="300.0" y="253.0" class="m" xml:space="preserve" text-anchor="middle">02</text>
+  <text x="300" y="274" class="s" text-anchor="middle">n1</text>
+  <rect x="322" y="234" width="44" height="28" rx="2" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.1"/>
+  <text x="344.0" y="253.0" class="m" xml:space="preserve" text-anchor="middle">03</text>
+  <text x="344" y="274" class="s" text-anchor="middle">n2</text>
+  <text x="390" y="254">第 1 は PX、第 2 は PY（逆は不可）</text>
+  <text x="24" y="320" class="b">第 1 ＼ 第 2</text>
+  <rect x="150" y="300" width="90" height="30" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1"/>
+  <text x="195.0" y="320.0" class="m" xml:space="preserve" text-anchor="middle">(n)</text>
+  <rect x="240" y="300" width="90" height="30" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1"/>
+  <text x="285.0" y="320.0" class="m" xml:space="preserve" text-anchor="middle">(BP+n)</text>
+  <rect x="330" y="300" width="90" height="30" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1"/>
+  <text x="375.0" y="320.0" class="m" xml:space="preserve" text-anchor="middle">(PY+n)</text>
+  <rect x="420" y="300" width="90" height="30" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1"/>
+  <text x="465.0" y="320.0" class="m" xml:space="preserve" text-anchor="middle">(BP+PY)</text>
+  <rect x="54" y="330" width="96" height="30" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1"/>
+  <text x="102.0" y="350.0" class="m" xml:space="preserve" text-anchor="middle">(n)</text>
+  <rect x="150" y="330" width="90" height="30" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1"/>
+  <text x="195.0" y="350.0" class="m" xml:space="preserve" text-anchor="middle">32</text>
+  <rect x="240" y="330" width="90" height="30" rx="0" fill="#FDECEA" stroke="#C0392B" stroke-width="1"/>
+  <text x="285.0" y="350.0" class="m" xml:space="preserve" text-anchor="middle">30</text>
+  <rect x="330" y="330" width="90" height="30" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1"/>
+  <text x="375.0" y="350.0" class="m" xml:space="preserve" text-anchor="middle">33</text>
+  <rect x="420" y="330" width="90" height="30" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1"/>
+  <text x="465.0" y="350.0" class="m" xml:space="preserve" text-anchor="middle">31</text>
+  <rect x="54" y="360" width="96" height="30" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1"/>
+  <text x="102.0" y="380.0" class="m" xml:space="preserve" text-anchor="middle">(BP+n)</text>
+  <rect x="150" y="360" width="90" height="30" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1"/>
+  <text x="195.0" y="380.0" class="m" xml:space="preserve" text-anchor="middle">22</text>
+  <rect x="240" y="360" width="90" height="30" rx="0" fill="#FDECEA" stroke="#C0392B" stroke-width="1"/>
+  <text x="285.0" y="380.0" class="s" text-anchor="middle">なし（既定）</text>
+  <rect x="330" y="360" width="90" height="30" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1"/>
+  <text x="375.0" y="380.0" class="m" xml:space="preserve" text-anchor="middle">23</text>
+  <rect x="420" y="360" width="90" height="30" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1"/>
+  <text x="465.0" y="380.0" class="m" xml:space="preserve" text-anchor="middle">21</text>
+  <rect x="54" y="390" width="96" height="30" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1"/>
+  <text x="102.0" y="410.0" class="m" xml:space="preserve" text-anchor="middle">(PX+n)</text>
+  <rect x="150" y="390" width="90" height="30" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1"/>
+  <text x="195.0" y="410.0" class="m" xml:space="preserve" text-anchor="middle">36</text>
+  <rect x="240" y="390" width="90" height="30" rx="0" fill="#FDECEA" stroke="#C0392B" stroke-width="1"/>
+  <text x="285.0" y="410.0" class="m" xml:space="preserve" text-anchor="middle">34</text>
+  <rect x="330" y="390" width="90" height="30" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1"/>
+  <text x="375.0" y="410.0" class="m" xml:space="preserve" text-anchor="middle">37</text>
+  <rect x="420" y="390" width="90" height="30" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1"/>
+  <text x="465.0" y="410.0" class="m" xml:space="preserve" text-anchor="middle">35</text>
+  <rect x="54" y="420" width="96" height="30" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1"/>
+  <text x="102.0" y="440.0" class="m" xml:space="preserve" text-anchor="middle">(BP+PX)</text>
+  <rect x="150" y="420" width="90" height="30" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1"/>
+  <text x="195.0" y="440.0" class="m" xml:space="preserve" text-anchor="middle">26</text>
+  <rect x="240" y="420" width="90" height="30" rx="0" fill="#FDECEA" stroke="#C0392B" stroke-width="1"/>
+  <text x="285.0" y="440.0" class="m" xml:space="preserve" text-anchor="middle">24</text>
+  <rect x="330" y="420" width="90" height="30" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1"/>
+  <text x="375.0" y="440.0" class="m" xml:space="preserve" text-anchor="middle">27</text>
+  <rect x="420" y="420" width="90" height="30" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1"/>
+  <text x="465.0" y="440.0" class="m" xml:space="preserve" text-anchor="middle">25</text>
+  <text x="540" y="318" class="b">読み方</text>
+  <text x="540" y="339">内部 RAM オペランドが 2 つ: 行と列で引く。</text>
+  <text x="540" y="360">内部 RAM オペランドが 1 つ: 第 1 / 第 2 のどちらでも</text>
+  <text x="540" y="381">赤い (BP+n) の列を使う。</text>
+  <text x="540" y="402"></text>
+  <text x="540" y="423" class="s">例: MV A,(&amp;20) は 1 つで絶対番地 → 行 (n)、赤い列 → 30h</text>
+  <text x="540" y="444" class="s">PRE 付きの命令は (BP+n) 以外で 1 サイクル増える</text>
+</svg>

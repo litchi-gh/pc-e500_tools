@@ -1,0 +1,5 @@
+**/bin/
+**/obj/
+tmp/
+tests/output/
+app/*.pdb

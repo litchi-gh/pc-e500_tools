@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 380" width="980" height="380" role="img" aria-labelledby="t d">
+  <title id="t">VS Code 拡張の動き</title>
+  <desc id="d">編集イベントごとに言語に応じた診断エンジンを実行し問題パネルへ表示する。アセンブルコマンドは e500asm.exe を別プロセスで実行する。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .lbl { font-size: 12px; fill: #52606D; paint-order: stroke; stroke: #FFFFFF; stroke-width: 4px; stroke-linejoin: round; }
+  </style>
+  <defs><marker id="a52606D" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#52606D"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="379" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">VS Code 拡張の動き</text>
+  <text x="24" y="55" class="sub">診断はファイルを書き出さない。.bin を作るときだけ e500asm.exe を呼ぶ</text>
+  <rect x="24" y="90" width="180" height="110" rx="8" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="114.0" y="114.0" class="b" text-anchor="middle">イベント</text>
+  <text x="114.0" y="132.0" class="s" text-anchor="middle">ファイルを開く</text>
+  <text x="114.0" y="150.0" class="s" text-anchor="middle">編集する</text>
+  <text x="114.0" y="168.0" class="s" text-anchor="middle">保存する（ASM の再診断）</text>
+  <text x="114.0" y="186.0" class="s" text-anchor="middle">設定を変える</text>
+  <rect x="250" y="80" width="300" height="62" rx="8" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="400.0" y="107.0" class="b" text-anchor="middle">BASIC（pocket-basic）</text>
+  <text x="400.0" y="125.0" class="s" text-anchor="middle">.bas / .basic / .e500</text>
+  <rect x="250" y="158" width="300" height="62" rx="8" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="400.0" y="185.0" class="b" text-anchor="middle">ASM（pocket-asm）</text>
+  <text x="400.0" y="203.0" class="s" text-anchor="middle">.asm / .inc / .e500asm</text>
+  <polyline points="204,125 228,125 228,111 250,111" fill="none" stroke="#52606D" stroke-width="1.8" marker-end="url(#a52606D)"/>
+  <polyline points="204,165 228,165 228,189 250,189" fill="none" stroke="#52606D" stroke-width="1.8" marker-end="url(#a52606D)"/>
+  <rect x="590" y="80" width="180" height="62" rx="8" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="680.0" y="107.0" class="b" text-anchor="middle">linter/parser.ts</text>
+  <text x="680.0" y="125.0" class="s" text-anchor="middle">行・字句・構造・分岐先</text>
+  <rect x="590" y="158" width="180" height="62" rx="8" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="680.0" y="185.0" class="b" text-anchor="middle">asm/assembler.ts</text>
+  <text x="680.0" y="203.0" class="s" text-anchor="middle">全行を検査して収集</text>
+  <polyline points="550,111 590,111" fill="none" stroke="#52606D" stroke-width="1.8" marker-end="url(#a52606D)"/>
+  <polyline points="550,189 590,189" fill="none" stroke="#52606D" stroke-width="1.8" marker-end="url(#a52606D)"/>
+  <rect x="810" y="100" width="146" height="100" rx="8" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+  <text x="883.0" y="128.0" class="b" text-anchor="middle">問題パネル</text>
+  <text x="883.0" y="146.0" class="s" text-anchor="middle">赤波線</text>
+  <text x="883.0" y="164.0" class="s" text-anchor="middle">ASM020 などの</text>
+  <text x="883.0" y="182.0" class="s" text-anchor="middle">診断コード</text>
+  <polyline points="770,111 790,111 790,135 810,135" fill="none" stroke="#52606D" stroke-width="1.8" marker-end="url(#a52606D)"/>
+  <polyline points="770,189 790,189 790,165 810,165" fill="none" stroke="#52606D" stroke-width="1.8" marker-end="url(#a52606D)"/>
+  <rect x="250" y="262" width="300" height="62" rx="8" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.5"/>
+  <text x="400.0" y="289.0" class="b" text-anchor="middle">コマンド「e500asm でアセンブル」</text>
+  <text x="400.0" y="307.0" class="s" text-anchor="middle">ASM エディタの右クリック</text>
+  <rect x="590" y="262" width="180" height="62" rx="8" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="680.0" y="289.0" class="b" text-anchor="middle">e500asm.exe</text>
+  <text x="680.0" y="307.0" class="ms" xml:space="preserve" text-anchor="middle">pocketAsm.assemblerPath</text>
+  <rect x="810" y="262" width="146" height="62" rx="8" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="883.0" y="289.0" class="b" text-anchor="middle">.bin と</text>
+  <text x="883.0" y="307.0" class="b" text-anchor="middle">出力パネル</text>
+  <polyline points="550,293 590,293" fill="none" stroke="#52606D" stroke-width="1.8" marker-end="url(#a52606D)"/>
+  <polyline points="770,293 810,293" fill="none" stroke="#52606D" stroke-width="1.8" marker-end="url(#a52606D)"/>
+  <text x="24" y="358" class="sub">違い: e500asm は最初のエラーで止まるが、拡張は各行を独立に検査して問題をまとめて表示する。</text>
+</svg>

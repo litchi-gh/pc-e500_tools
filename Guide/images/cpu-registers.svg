@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 530" width="980" height="530" role="img" aria-labelledby="t d">
+  <title id="t">SC62015 のレジスタ</title>
+  <desc id="d">8、16、20 ビットのレジスタの幅と役割を、ビット位置をそろえて示した図。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .lbl { font-size: 12px; fill: #52606D; paint-order: stroke; stroke: #FFFFFF; stroke-width: 4px; stroke-linejoin: round; }
+  </style>
+  <defs></defs>
+  <rect x="0.5" y="0.5" width="979" height="529" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">SC62015 のレジスタ</text>
+  <text x="24" y="55" class="sub">幅をそろえて並べた図。外部メモリの番地が 20 ビットなので、ポインタも 20 ビットある</text>
+  <text x="656.0" y="86" class="s" text-anchor="middle">0</text>
+  <text x="560.0" y="86" class="s" text-anchor="middle">4</text>
+  <text x="464.0" y="86" class="s" text-anchor="middle">8</text>
+  <text x="368.0" y="86" class="s" text-anchor="middle">12</text>
+  <text x="272.0" y="86" class="s" text-anchor="middle">16</text>
+  <text x="200.0" y="86" class="s" text-anchor="middle">19</text>
+  <text x="174" y="86" class="s" text-anchor="end">bit</text>
+  <text x="174" y="116" class="b" text-anchor="end">BA</text>
+  <rect x="476" y="94" width="192" height="30" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="572.0" y="114.0" text-anchor="middle">A (8)</text>
+  <rect x="284" y="94" width="192" height="30" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="380.0" y="114.0" text-anchor="middle">B (8)</text>
+  <text x="684" y="116">A が演算の主役、B は補助</text>
+  <text x="174" y="152" class="b" text-anchor="end">I</text>
+  <rect x="476" y="130" width="192" height="30" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="572.0" y="150.0" text-anchor="middle">IL (8)</text>
+  <rect x="284" y="130" width="192" height="30" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="380.0" y="150.0" text-anchor="middle">IH (8)</text>
+  <text x="684" y="152">ループ回数。IL に書くと IH=0</text>
+  <text x="174" y="196" class="b" text-anchor="end">X</text>
+  <rect x="188" y="174" width="480" height="30" rx="3" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="428.0" y="194.0" text-anchor="middle">X (20)</text>
+  <text x="684" y="196">ポインタ。1 MB を直接指す</text>
+  <text x="174" y="232" class="b" text-anchor="end">Y</text>
+  <rect x="188" y="210" width="480" height="30" rx="3" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="428.0" y="230.0" text-anchor="middle">Y (20)</text>
+  <text x="684" y="232">X と同じ</text>
+  <text x="174" y="268" class="b" text-anchor="end">U</text>
+  <rect x="188" y="246" width="480" height="30" rx="3" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="428.0" y="266.0" text-anchor="middle">U (20)</text>
+  <text x="684" y="268">ユーザスタック PUSHU / POPU</text>
+  <text x="174" y="304" class="b" text-anchor="end">S</text>
+  <rect x="188" y="282" width="480" height="30" rx="3" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="428.0" y="302.0" text-anchor="middle">S (20)</text>
+  <text x="684" y="304">システムスタック CALL / RET</text>
+  <text x="174" y="348" class="b" text-anchor="end">PS : PC</text>
+  <rect x="284" y="326" width="384" height="30" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="476.0" y="346.0" text-anchor="middle">PC (16)</text>
+  <rect x="188" y="326" width="96" height="30" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="236.0" y="346.0" text-anchor="middle">PS (4)</text>
+  <text x="684" y="348">PC の桁上りで PS は変わらない</text>
+  <text x="174" y="392" class="b" text-anchor="end">F</text>
+  <rect x="644" y="370" width="24" height="30" rx="3" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="656.0" y="390.0" text-anchor="middle">C</text>
+  <rect x="620" y="370" width="24" height="30" rx="3" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="632.0" y="390.0" text-anchor="middle">Z</text>
+  <text x="684" y="392">C = 桁上げ、Z = 結果が 0</text>
+  <text x="174" y="428" class="b" text-anchor="end">IMR</text>
+  <rect x="476" y="406" width="192" height="30" rx="3" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="572.0" y="426.0" text-anchor="middle">IMR (8)</text>
+  <text x="684" y="428">割込みマスク（内部 RAM FBh）</text>
+  <text x="174" y="472" class="b" text-anchor="end">BP / PX / PY</text>
+  <rect x="476" y="450" width="192" height="30" rx="3" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="572.0" y="470.0" text-anchor="middle">(8)</text>
+  <text x="684" y="472">内部 RAM ECh / EDh / EEh</text>
+  <rect x="24" y="497" width="14" height="14" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="44" y="508" class="s">データ・カウンタ</text>
+  <rect x="162.0" y="497" width="14" height="14" rx="3" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="182.0" y="508" class="s">20 ビットポインタ</text>
+  <rect x="308.15999999999997" y="497" width="14" height="14" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="328.15999999999997" y="508" class="s">実行位置</text>
+  <rect x="398.15999999999997" y="497" width="14" height="14" rx="3" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="418.15999999999997" y="508" class="s">状態</text>
+  <rect x="464.15999999999997" y="497" width="14" height="14" rx="3" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="484.15999999999997" y="508" class="s">内部 RAM 上のポインタ</text>
+</svg>

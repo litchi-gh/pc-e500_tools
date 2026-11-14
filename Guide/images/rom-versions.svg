@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 470" width="980" height="470" role="img" aria-labelledby="t d">
+  <title id="t">ROM 版と機種の対応</title>
+  <desc id="d">版番号の上位桁は改訂番号、下位桁は機種コード。手元の ROM 11 本を表にしたもの。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .lbl { font-size: 12px; fill: #52606D; paint-order: stroke; stroke: #FFFFFF; stroke-width: 4px; stroke-linejoin: round; }
+  </style>
+  <defs></defs>
+  <rect x="0.5" y="0.5" width="979" height="469" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">ROM 版番号の読み方</text>
+  <text x="24" y="55" class="sub">版番号 8.5 = 改訂 8 + 機種コード 5。手元の ROM イメージ 11 本を並べた表</text>
+  <text x="100" y="106" class="s" text-anchor="end">機種コード →</text>
+  <rect x="120" y="76" width="166" height="50" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1"/>
+  <text x="203.0" y="97.5" class="b" text-anchor="middle">1: PC-1480U</text>
+  <text x="203.0" y="114.5" class="s" text-anchor="middle">日本語</text>
+  <rect x="286" y="76" width="166" height="50" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1"/>
+  <text x="369.0" y="97.5" class="b" text-anchor="middle">2: PC-E500</text>
+  <text x="369.0" y="114.5" class="s" text-anchor="middle">日本語</text>
+  <rect x="452" y="76" width="166" height="50" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1"/>
+  <text x="535.0" y="97.5" class="b" text-anchor="middle">3: PC-E500</text>
+  <text x="535.0" y="114.5" class="s" text-anchor="middle">英語</text>
+  <rect x="618" y="76" width="166" height="50" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1"/>
+  <text x="701.0" y="97.5" class="b" text-anchor="middle">4: 1490UII / U6000</text>
+  <text x="701.0" y="114.5" class="s" text-anchor="middle">日本語</text>
+  <rect x="784" y="76" width="166" height="50" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1"/>
+  <text x="867.0" y="97.5" class="b" text-anchor="middle">5: PC-E550 / E650</text>
+  <text x="867.0" y="114.5" class="s" text-anchor="middle">日本語</text>
+  <rect x="20" y="126" width="100" height="44" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1"/>
+  <text x="70.0" y="153.0" class="b" text-anchor="middle">改訂 2</text>
+  <rect x="120" y="126" width="166" height="44" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="1"/>
+  <text x="203.0" y="145.0" class="b" text-anchor="middle">2.1</text>
+  <text x="203.0" y="161.0" class="s" text-anchor="middle">PC-1480U</text>
+  <rect x="286" y="126" width="166" height="44" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="1"/>
+  <text x="369.0" y="145.0" class="b" text-anchor="middle">2.2</text>
+  <text x="369.0" y="161.0" class="s" text-anchor="middle">PC-E500</text>
+  <rect x="452" y="126" width="166" height="44" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.6"/>
+  <rect x="618" y="126" width="166" height="44" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.6"/>
+  <rect x="784" y="126" width="166" height="44" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.6"/>
+  <rect x="20" y="170" width="100" height="44" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1"/>
+  <text x="70.0" y="197.0" class="b" text-anchor="middle">改訂 3</text>
+  <rect x="120" y="170" width="166" height="44" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.6"/>
+  <rect x="286" y="170" width="166" height="44" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="1"/>
+  <text x="369.0" y="189.0" class="b" text-anchor="middle">3.2</text>
+  <text x="369.0" y="205.0" class="s" text-anchor="middle">PC-E500</text>
+  <rect x="452" y="170" width="166" height="44" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.6"/>
+  <rect x="618" y="170" width="166" height="44" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.6"/>
+  <rect x="784" y="170" width="166" height="44" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.6"/>
+  <rect x="20" y="214" width="100" height="44" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1"/>
+  <text x="70.0" y="241.0" class="b" text-anchor="middle">改訂 5</text>
+  <rect x="120" y="214" width="166" height="44" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.6"/>
+  <rect x="286" y="214" width="166" height="44" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.6"/>
+  <rect x="452" y="214" width="166" height="44" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1"/>
+  <text x="535.0" y="233.0" class="b" text-anchor="middle">5.3</text>
+  <text x="535.0" y="249.0" class="s" text-anchor="middle">PC-E500</text>
+  <rect x="618" y="214" width="166" height="44" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.6"/>
+  <rect x="784" y="214" width="166" height="44" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.6"/>
+  <rect x="20" y="258" width="100" height="44" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1"/>
+  <text x="70.0" y="285.0" class="b" text-anchor="middle">改訂 6</text>
+  <rect x="120" y="258" width="166" height="44" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.6"/>
+  <rect x="286" y="258" width="166" height="44" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="1"/>
+  <text x="369.0" y="277.0" class="b" text-anchor="middle">6.2</text>
+  <text x="369.0" y="293.0" class="s" text-anchor="middle">PC-E500PJ</text>
+  <rect x="452" y="258" width="166" height="44" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1"/>
+  <text x="535.0" y="277.0" class="b" text-anchor="middle">6.3</text>
+  <text x="535.0" y="293.0" class="s" text-anchor="middle">PC-E500</text>
+  <rect x="618" y="258" width="166" height="44" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="1"/>
+  <text x="701.0" y="277.0" class="b" text-anchor="middle">6.4</text>
+  <text x="701.0" y="293.0" class="s" text-anchor="middle">PC-1490UII</text>
+  <rect x="784" y="258" width="166" height="44" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.6"/>
+  <rect x="20" y="302" width="100" height="44" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1"/>
+  <text x="70.0" y="329.0" class="b" text-anchor="middle">改訂 7</text>
+  <rect x="120" y="302" width="166" height="44" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.6"/>
+  <rect x="286" y="302" width="166" height="44" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="1"/>
+  <text x="369.0" y="321.0" class="b" text-anchor="middle">7.2</text>
+  <text x="369.0" y="337.0" class="s" text-anchor="middle">PC-E500</text>
+  <rect x="452" y="302" width="166" height="44" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.6"/>
+  <rect x="618" y="302" width="166" height="44" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.6"/>
+  <rect x="784" y="302" width="166" height="44" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="1"/>
+  <text x="867.0" y="321.0" class="b" text-anchor="middle">7.5</text>
+  <text x="867.0" y="337.0" class="s" text-anchor="middle">PC-E550</text>
+  <rect x="20" y="346" width="100" height="44" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1"/>
+  <text x="70.0" y="373.0" class="b" text-anchor="middle">改訂 8</text>
+  <rect x="120" y="346" width="166" height="44" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.6"/>
+  <rect x="286" y="346" width="166" height="44" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.6"/>
+  <rect x="452" y="346" width="166" height="44" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.6"/>
+  <rect x="618" y="346" width="166" height="44" rx="0" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1"/>
+  <text x="701.0" y="365.0" class="b" text-anchor="middle">8.4</text>
+  <text x="701.0" y="381.0" class="s" text-anchor="middle">PC-U6000</text>
+  <rect x="784" y="346" width="166" height="44" rx="0" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1"/>
+  <text x="867.0" y="365.0" class="b" text-anchor="middle">8.5</text>
+  <text x="867.0" y="381.0" class="s" text-anchor="middle">PC-E650</text>
+  <rect x="24" y="405" width="14" height="14" rx="3" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="44" y="416" class="s">日本語・ROM 256 KB・キーワード 159</text>
+  <rect x="280.08" y="405" width="14" height="14" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="300.08" y="416" class="s">英語・欧文（カナなし）</text>
+  <rect x="454.08" y="405" width="14" height="14" rx="3" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="474.08" y="416" class="s">ROM 384 KB（拡張 ROM 付き）・キーワード 168</text>
+  <text x="24" y="440" class="s">同じ改訂なら BASIC の修正内容は共通（例: 改訂 6 の修正は 6.2・6.3・6.4 にすべて入る）。7.2 と 7.5 は版番号を除いてコードが同一。</text>
+  <text x="24" y="458" class="s">改訂 4 は手元にない。PC-1480U の ROM は実体 128 KB。機種名はファイル名に基づく。</text>
+</svg>

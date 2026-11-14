@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 480" width="980" height="480" role="img" aria-labelledby="t d">
+  <title id="t">PC-E500 Tools の全体像</title>
+  <desc id="d">PC-E500 シリーズの解析資料と、アセンブラ、逆アセンブラ、ファイル変換、VS Code 拡張のツール群の関係。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .lbl { font-size: 12px; fill: #52606D; paint-order: stroke; stroke: #FFFFFF; stroke-width: 4px; stroke-linejoin: round; }
+  </style>
+  <defs><marker id="a52606D" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#52606D"/></marker><marker id="a6B4FBB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#6B4FBB"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="479" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">全体像</text>
+  <text x="24" y="55" class="sub">PC-E500 シリーズの解析資料と、プログラムを作るためのツール群をまとめたプロジェクト</text>
+  <rect x="24" y="76" width="276" height="354" rx="8" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.5"/>
+  <text x="162.0" y="141.0" class="b" text-anchor="middle">Analysis/  解析資料</text>
+  <text x="162.0" y="167.0" class="s" text-anchor="middle">ROM 8.5 の解析と一次資料の整理</text>
+  <text x="162.0" y="193.0" text-anchor="middle"></text>
+  <text x="162.0" y="219.0" text-anchor="middle">CPU の命令セット</text>
+  <text x="162.0" y="245.0" text-anchor="middle">IOCS・FCS</text>
+  <text x="162.0" y="271.0" text-anchor="middle">ハードウェア</text>
+  <text x="162.0" y="297.0" text-anchor="middle">BASIC の命令</text>
+  <text x="162.0" y="323.0" text-anchor="middle">ROM マップ・G: ドライブ</text>
+  <text x="162.0" y="349.0" text-anchor="middle">文字フォント</text>
+  <text x="162.0" y="375.0" text-anchor="middle">ROM 版・機種ごとの違い</text>
+  <rect x="330" y="76" width="626" height="354" rx="12" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="346" y="100" class="b">ツール群（Windows x64）</text>
+  <rect x="350" y="112" width="586" height="58" rx="8" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="643.0" y="137.0" class="b" text-anchor="middle">VS Code 拡張  Pocket BASIC / ASM Linter</text>
+  <text x="643.0" y="155.0" text-anchor="middle">BASIC と ASM を編集しながらエラーを表示（e500asm と同じ判定）</text>
+  <rect x="350" y="206" width="270" height="62" rx="8" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="485.0" y="233.0" class="b" text-anchor="middle">e500asm</text>
+  <text x="485.0" y="251.0" text-anchor="middle">ASM → 機械語（.bin / .hex）</text>
+  <rect x="350" y="288" width="270" height="62" rx="8" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="485.0" y="315.0" class="b" text-anchor="middle">e500dasm / E500Disassembler</text>
+  <text x="485.0" y="333.0" text-anchor="middle">機械語 → 再アセンブルできる ASM</text>
+  <rect x="690" y="206" width="246" height="144" rx="8" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="813.0" y="238.0" class="b" text-anchor="middle">ce140conv</text>
+  <text x="813.0" y="256.0" text-anchor="middle">PC のファイル ⇔ 実機の形式</text>
+  <text x="813.0" y="274.0" text-anchor="middle"></text>
+  <text x="813.0" y="292.0" class="m" xml:space="preserve" text-anchor="middle">text2bas / bas2text</text>
+  <text x="813.0" y="310.0" class="m" xml:space="preserve" text-anchor="middle">bin2bas  / bas2bin</text>
+  <text x="813.0" y="328.0" class="m" xml:space="preserve" text-anchor="middle">info</text>
+  <polyline points="485,170 485,206" fill="none" stroke="#52606D" stroke-width="1.8" marker-end="url(#a52606D)"/>
+  <text x="498" y="192" class="lbl">.asm</text>
+  <polyline points="813,170 813,206" fill="none" stroke="#52606D" stroke-width="1.8" marker-end="url(#a52606D)"/>
+  <text x="826" y="192" class="lbl">BASIC のテキスト</text>
+  <polyline points="620,237 690,237" fill="none" stroke="#52606D" stroke-width="1.8" marker-end="url(#a52606D)"/>
+  <text x="655" y="230" class="lbl" text-anchor="middle">.bin</text>
+  <polyline points="690,319 620,319" fill="none" stroke="#52606D" stroke-width="1.8" marker-end="url(#a52606D)"/>
+  <text x="655" y="312" class="lbl" text-anchor="middle">.bin</text>
+  <rect x="350" y="372" width="586" height="44" rx="8" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="643.0" y="399.0" class="b" text-anchor="middle">できるファイル  .bin / .hex / .lst / .sym、LOAD 用 / LOAD M 用ファイル、.asm</text>
+  <polyline points="485,350 485,372" fill="none" stroke="#52606D" stroke-width="1.8" marker-end="url(#a52606D)"/>
+  <polyline points="813,350 813,372" fill="none" stroke="#52606D" stroke-width="1.8" marker-end="url(#a52606D)"/>
+  <polyline points="300,141 350,141" fill="none" stroke="#6B4FBB" stroke-width="1.8" stroke-dasharray="6 4" marker-end="url(#a6B4FBB)"/>
+  <text x="315" y="62" class="s"></text>
+  <rect x="24" y="449" width="14" height="14" rx="3" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="44" y="460" class="s">資料（コードを書くときに参照）</text>
+  <rect x="246.0" y="449" width="14" height="14" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="266.0" y="460" class="s">ツール</text>
+  <rect x="324.0" y="449" width="14" height="14" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="344.0" y="460" class="s">ファイル</text>
+</svg>

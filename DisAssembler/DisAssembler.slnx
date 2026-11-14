@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="src/E500Disassembler.Core/E500Disassembler.Core.csproj" />
+  <Project Path="src/E500Disassembler.Cli/E500Disassembler.Cli.csproj" />
+  <Project Path="src/E500Disassembler.Gui/E500Disassembler.Gui.csproj" />
+  <Project Path="tests/E500Disassembler.Tests/E500Disassembler.Tests.csproj" />
+</Solution>

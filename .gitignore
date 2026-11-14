@@ -1,0 +1,45 @@
+# 非公開フォルダ
+/.claude/
+/Emulator/
+/EPS32S3/
+/pc-e500_esp32s3_replicate/
+/Sharp_ce140f_emul/
+/CE-140F_Pico/
+/PicoPicoIF/
+/ROMDump/
+/CustomROM/
+/TETRIS/
+/BD900.BIN
+/docs/
+
+# 個人の環境（PC のパスを含む）
+/.vscode/
+
+# 作業用一時ファイル（マニュアルスキャン等を含むため公開しない）
+/Assembler/tmp/
+/DisAssembler/tmp/
+/Assembler/tests/output/
+/temp/
+
+# ビルド生成物
+bin/
+obj/
+*.obj
+*.user
+.vs/
+node_modules/
+/VSCodeExtensions/pocket-basic-linter/out/
+
+# .NET 製の自己完結型 EXE（各 70〜120 MB）は GitHub の 1 ファイル上限を超えるため同梱しない
+# → GitHub Releases から取得するか、各フォルダの build.cmd でビルドする（app/ に生成される）
+/Assembler/app/*.exe
+/DisAssembler/app/*.exe
+
+# Linux / macOS 用の実行ファイル（build.sh や build.ps1 -Runtime で生成する）
+/Assembler/app/e500asm
+/DisAssembler/app/e500dasm
+/Assembler/app/*/
+/DisAssembler/app/*/
+/FileConverter/ce140conv
+
+# ce140conv.exe は小さいので同梱する。VSIX は GitHub Releases で配布する

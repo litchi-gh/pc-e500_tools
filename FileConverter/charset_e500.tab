@@ -1,0 +1,195 @@
+# charset_e500.tab
+# -----------------------------------------------------------------------------
+# Sharp pocket-computer (E500 family) character byte  <->  Unicode code point.
+# Loaded at run time by ce140conv for text2bas / bas2text.
+#
+# Format (one mapping per line):
+#     HH   U+XXXX      # Sharp byte HH maps to Unicode code point XXXX
+#     HH   =           # explicitly undefined (keep the PUA round-trip fallback)
+# '#' or ';' begins a comment. Blank lines are ignored.
+#
+# Any byte NOT listed here round-trips losslessly through the Private Use Area
+# (byte 0xHH  <->  U+E000+HH), so bas2text -> text2bas stays byte-perfect even
+# for glyphs still marked (verify) below.
+#
+# STATUS OF THIS TABLE
+#   * 0x20-0x7E ASCII : CONFIRMED (handled in code, repeated here for clarity).
+#   * 0xA1-0xDF katakana : the JIS X 0201 half-width layout. This is the common
+#     convention for Sharp pocket computers but has NOT been byte-verified
+#     against the E500 character-generator ROM. Marked (verify).
+#   * 0x80-0xA0 / 0xE0-0xFF specials (Greek, math, box) : mostly left undefined.
+#     Add rows here as you confirm them from the E500 ROM / manual.
+# Correct any line and re-run; no recompile needed.
+# -----------------------------------------------------------------------------
+
+# --- ASCII (confirmed) -------------------------------------------------------
+20 U+0020   # space
+21 U+0021   # !
+22 U+0022   # "
+23 U+0023   # #
+24 U+0024   # $
+25 U+0025   # %
+26 U+0026   # &
+27 U+0027   # '
+28 U+0028   # (
+29 U+0029   # )
+2A U+002A   # *
+2B U+002B   # +
+2C U+002C   # ,
+2D U+002D   # -
+2E U+002E   # .
+2F U+002F   # /
+30 U+0030
+31 U+0031
+32 U+0032
+33 U+0033
+34 U+0034
+35 U+0035
+36 U+0036
+37 U+0037
+38 U+0038
+39 U+0039
+3A U+003A   # :
+3B U+003B   # ;
+3C U+003C   # <
+3D U+003D   # =
+3E U+003E   # >
+3F U+003F   # ?
+40 U+0040   # @
+41 U+0041
+42 U+0042
+43 U+0043
+44 U+0044
+45 U+0045
+46 U+0046
+47 U+0047
+48 U+0048
+49 U+0049
+4A U+004A
+4B U+004B
+4C U+004C
+4D U+004D
+4E U+004E
+4F U+004F
+50 U+0050
+51 U+0051
+52 U+0052
+53 U+0053
+54 U+0054
+55 U+0055
+56 U+0056
+57 U+0057
+58 U+0058
+59 U+0059
+5A U+005A
+5B U+005B   # [
+5C U+005C   # backslash  (some Sharp models show this as YEN U+00A5 - verify)
+5D U+005D   # ]
+5E U+005E   # ^
+5F U+005F   # _
+60 U+0060   # `
+61 U+0061
+62 U+0062
+63 U+0063
+64 U+0064
+65 U+0065
+66 U+0066
+67 U+0067
+68 U+0068
+69 U+0069
+6A U+006A
+6B U+006B
+6C U+006C
+6D U+006D
+6E U+006E
+6F U+006F
+70 U+0070
+71 U+0071
+72 U+0072
+73 U+0073
+74 U+0074
+75 U+0075
+76 U+0076
+77 U+0077
+78 U+0078
+79 U+0079
+7A U+007A
+7B U+007B   # {
+7C U+007C   # |
+7D U+007D   # }
+7E U+007E   # ~
+
+# --- half-width katakana : JIS X 0201 layout (verify against E500 ROM) -------
+A1 U+FF61   # (verify) HALFWIDTH IDEOGRAPHIC FULL STOP
+A2 U+FF62   # (verify) HALFWIDTH LEFT CORNER BRACKET
+A3 U+FF63   # (verify) HALFWIDTH RIGHT CORNER BRACKET
+A4 U+FF64   # (verify) HALFWIDTH IDEOGRAPHIC COMMA
+A5 U+FF65   # (verify) HALFWIDTH KATAKANA MIDDLE DOT
+A6 U+FF66   # (verify) WO
+A7 U+FF67   # (verify) small A
+A8 U+FF68   # (verify) small I
+A9 U+FF69   # (verify) small U
+AA U+FF6A   # (verify) small E
+AB U+FF6B   # (verify) small O
+AC U+FF6C   # (verify) small YA
+AD U+FF6D   # (verify) small YU
+AE U+FF6E   # (verify) small YO
+AF U+FF6F   # (verify) small TU
+B0 U+FF70   # (verify) prolonged sound mark
+B1 U+FF71   # (verify) A
+B2 U+FF72   # (verify) I
+B3 U+FF73   # (verify) U
+B4 U+FF74   # (verify) E
+B5 U+FF75   # (verify) O
+B6 U+FF76   # (verify) KA
+B7 U+FF77   # (verify) KI
+B8 U+FF78   # (verify) KU
+B9 U+FF79   # (verify) KE
+BA U+FF7A   # (verify) KO
+BB U+FF7B   # (verify) SA
+BC U+FF7C   # (verify) SI
+BD U+FF7D   # (verify) SU
+BE U+FF7E   # (verify) SE
+BF U+FF7F   # (verify) SO
+C0 U+FF80   # (verify) TA
+C1 U+FF81   # (verify) TI
+C2 U+FF82   # (verify) TU
+C3 U+FF83   # (verify) TE
+C4 U+FF84   # (verify) TO
+C5 U+FF85   # (verify) NA
+C6 U+FF86   # (verify) NI
+C7 U+FF87   # (verify) NU
+C8 U+FF88   # (verify) NE
+C9 U+FF89   # (verify) NO
+CA U+FF8A   # (verify) HA
+CB U+FF8B   # (verify) HI
+CC U+FF8C   # (verify) HU
+CD U+FF8D   # (verify) HE
+CE U+FF8E   # (verify) HO
+CF U+FF8F   # (verify) MA
+D0 U+FF90   # (verify) MI
+D1 U+FF91   # (verify) MU
+D2 U+FF92   # (verify) ME
+D3 U+FF93   # (verify) MO
+D4 U+FF94   # (verify) YA
+D5 U+FF95   # (verify) YU
+D6 U+FF96   # (verify) YO
+D7 U+FF97   # (verify) RA
+D8 U+FF98   # (verify) RI
+D9 U+FF99   # (verify) RU
+DA U+FF9A   # (verify) RE
+DB U+FF9B   # (verify) RO
+DC U+FF9C   # (verify) WA
+DD U+FF9D   # (verify) N
+DE U+FF9E   # (verify) voiced sound mark
+DF U+FF9F   # (verify) semi-voiced sound mark
+
+# --- common symbols often present on Sharp PCs (verify positions) ------------
+# Uncomment / adjust once confirmed from the E500 character ROM or manual.
+# 5C U+00A5   # YEN SIGN (if this model uses 0x5C for yen)
+# E0 U+03B1   # (verify) small alpha
+# E1 U+00E4   # (verify)
+# EB U+221A   # (verify) SQUARE ROOT
+# EF U+03C0   # (verify) PI
+# F1 U+00B0   # (verify) DEGREE SIGN
+# FD U+00F7   # (verify) DIVISION SIGN

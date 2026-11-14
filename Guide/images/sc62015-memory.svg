@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 520" width="980" height="520" role="img" aria-labelledby="t d">
+  <title id="t">SC62015 の 2 つのメモリ空間</title>
+  <desc id="d">256 バイトの内部 RAM 空間と 1 MB の外部メモリ空間は別の空間であること、CPU が決めている番地を示す図。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+  </style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#52606D"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="519" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">2 つのメモリ空間</text>
+  <text x="24" y="55" class="sub">CPU が決めているのは、番地の幅、内部 RAM の配置、LCD 用の窓、ベクタだけ。残りの割当ては機種の設計で決まる</text>
+  <text x="60" y="92" class="b">内部メモリ（256 バイト）</text>
+  <text x="60" y="110" class="s">(n) で指す。8 bit の番地</text>
+  <rect x="110" y="124" width="230" height="150" rx="6" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="225.0" y="145" class="b" text-anchor="middle">RAM 236 バイト</text>
+  <text x="225.0" y="164" class="s" text-anchor="middle">CPU にとってはただの RAM</text>
+  <text x="102" y="140" class="m" xml:space="preserve" text-anchor="end">00h</text>
+  <rect x="110" y="274" width="230" height="66" rx="6" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="225.0" y="295" class="b" text-anchor="middle">BP, PX, PY, AMC</text>
+  <text x="225.0" y="314" class="s" text-anchor="middle">番地の指定に使うポインタ</text>
+  <text x="102" y="290" class="m" xml:space="preserve" text-anchor="end">ECh</text>
+  <rect x="110" y="340" width="230" height="140" rx="6" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="225.0" y="361" class="b" text-anchor="middle">周辺のレジスタ</text>
+  <text x="225.0" y="380" class="s" text-anchor="middle">ポート、UART、割込み、システム</text>
+  <text x="102" y="356" class="m" xml:space="preserve" text-anchor="end">F0h</text>
+  <text x="102" y="478" class="m" xml:space="preserve" text-anchor="end">FFh</text>
+  <text x="600" y="92" class="b">外部メモリ（1 MB）</text>
+  <text x="600" y="110" class="s">[...] で指す。20 bit の番地。プログラムも置く</text>
+  <rect x="620" y="124" width="300" height="56" rx="6" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="770.0" y="145" class="b" text-anchor="middle">SH-26 系 LCD の窓</text>
+  <text x="770.0" y="164" class="s" text-anchor="middle">1 回のアクセスが 7 ステート</text>
+  <text x="612" y="140" class="m" xml:space="preserve" text-anchor="end">00000h</text>
+  <rect x="620" y="180" width="300" height="56" rx="6" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="770.0" y="201" class="b" text-anchor="middle">新しい LCD ドライバの窓</text>
+  <text x="770.0" y="220" class="s" text-anchor="middle">1 回のアクセスが 2 ステート</text>
+  <text x="612" y="196" class="m" xml:space="preserve" text-anchor="end">04000h</text>
+  <rect x="620" y="236" width="300" height="170" rx="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="770.0" y="257" class="b" text-anchor="middle">機種の設計で決まる</text>
+  <text x="770.0" y="276" class="s" text-anchor="middle">RAM、ROM、カード（CE0〜CE7 で選ぶ）</text>
+  <text x="612" y="252" class="m" xml:space="preserve" text-anchor="end">08000h</text>
+  <rect x="620" y="406" width="300" height="46" rx="6" fill="#FDECEA" stroke="#C0392B" stroke-width="1.2"/>
+  <text x="770.0" y="427" class="b" text-anchor="middle">割込みベクタ 3 バイト</text>
+  <text x="612" y="422" class="m" xml:space="preserve" text-anchor="end">FFFFAh</text>
+  <rect x="620" y="452" width="300" height="46" rx="6" fill="#FDECEA" stroke="#C0392B" stroke-width="1.2"/>
+  <text x="770.0" y="473" class="b" text-anchor="middle">リセットベクタ 3 バイト</text>
+  <text x="612" y="468" class="m" xml:space="preserve" text-anchor="end">FFFFDh</text>
+  <text x="612" y="496" class="m" xml:space="preserve" text-anchor="end">FFFFFh</text>
+  <text x="360" y="300" class="b">別の空間</text>
+  <line x1="352" y1="310" x2="430" y2="310" stroke="#52606D" stroke-width="1.2"/>
+  <text x="360" y="330" class="s">(10h) と [00010h] は</text>
+  <text x="360" y="348" class="s">別の場所</text>
+  <text x="24" y="502" class="sub">外部メモリの機種ごとの割当ては ROM_VERSIONS_MAP.md にあります。</text>
+</svg>

@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 450" width="980" height="450" role="img" aria-labelledby="t d">
+  <title id="t">スタックの積み方</title>
+  <desc id="d">PUSHU、CALL、CALLF、割込みと IR のそれぞれで、スタックに積まれるバイトの並びを示す図。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+  </style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#52606D"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="449" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">スタックの積み方</text>
+  <text x="24" y="55" class="sub">どれも番地の小さい方へ伸び、多バイトの値は下位バイトが小さい番地に入る。図の上が小さい番地</text>
+  <text x="124" y="96" class="b" text-anchor="middle">PUSHU X</text>
+  <text x="44" y="137" class="m" xml:space="preserve">U →</text>
+  <rect x="84" y="118" width="120" height="28" rx="2" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="144" y="137" text-anchor="middle">X 下位</text>
+  <rect x="84" y="146" width="120" height="28" rx="2" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="144" y="165" text-anchor="middle">X 中位</text>
+  <rect x="84" y="174" width="120" height="28" rx="2" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="144" y="193" text-anchor="middle">X 上位 4 bit</text>
+  <text x="144" y="282" class="s" text-anchor="middle">上位 4 bit は 0</text>
+  <text x="310" y="96" class="b" text-anchor="middle">CALL mn</text>
+  <text x="230" y="137" class="m" xml:space="preserve">S →</text>
+  <rect x="270" y="118" width="120" height="28" rx="2" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="330" y="137" text-anchor="middle">PC 下位</text>
+  <rect x="270" y="146" width="120" height="28" rx="2" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="330" y="165" text-anchor="middle">PC 上位</text>
+  <text x="330" y="282" class="s" text-anchor="middle">次の命令の PC</text>
+  <text x="330" y="299" class="s" text-anchor="middle">PS は積まない</text>
+  <text x="496" y="96" class="b" text-anchor="middle">CALLF lmn</text>
+  <text x="416" y="137" class="m" xml:space="preserve">S →</text>
+  <rect x="456" y="118" width="120" height="28" rx="2" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="516" y="137" text-anchor="middle">PC 下位</text>
+  <rect x="456" y="146" width="120" height="28" rx="2" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="516" y="165" text-anchor="middle">PC 上位</text>
+  <rect x="456" y="174" width="120" height="28" rx="2" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="516" y="193" text-anchor="middle">PS</text>
+  <text x="516" y="282" class="s" text-anchor="middle">次の命令の番地</text>
+  <text x="516" y="299" class="s" text-anchor="middle">上位 4 bit は 0</text>
+  <text x="682" y="96" class="b" text-anchor="middle">割込み、IR</text>
+  <text x="602" y="137" class="m" xml:space="preserve">S →</text>
+  <rect x="642" y="118" width="120" height="28" rx="2" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="702" y="137" text-anchor="middle">IMR</text>
+  <rect x="642" y="146" width="120" height="28" rx="2" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="702" y="165" text-anchor="middle">F</text>
+  <rect x="642" y="174" width="120" height="28" rx="2" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="702" y="193" text-anchor="middle">PC 下位</text>
+  <rect x="642" y="202" width="120" height="28" rx="2" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="702" y="221" text-anchor="middle">PC 上位</text>
+  <rect x="642" y="230" width="120" height="28" rx="2" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="702" y="249" text-anchor="middle">PS</text>
+  <text x="702" y="282" class="s" text-anchor="middle">積んだ後で IRM を 0 に</text>
+  <text x="702" y="299" class="s" text-anchor="middle">IR は自分の番地を積む</text>
+  <text x="788" y="137" class="ms" xml:space="preserve">[S]</text>
+  <text x="788" y="165" class="ms" xml:space="preserve">[S+1]</text>
+  <text x="788" y="193" class="ms" xml:space="preserve">[S+2]</text>
+  <text x="788" y="221" class="ms" xml:space="preserve">[S+3]</text>
+  <text x="788" y="249" class="ms" xml:space="preserve">[S+4]</text>
+  <text x="24" y="345" class="sub">PUSHU A は 1 バイト、PUSHU BA は 2 バイト、PUSHU F は 1 バイト（ビット 0 が C、ビット 1 が Z、残りは 0）です。</text>
+  <text x="24" y="367" class="sub">S スタックへ汎用レジスタを積む専用の命令はなく、MV [--S],X と MV X,[S++] を使います（PUSHS、POPS があるのは F だけ）。</text>
+  <text x="24" y="389" class="sub">RET は 2 バイト、RETF は 3 バイト、RETI は 5 バイトを取り出します。CALLF を RET で戻ると、S が 1 バイトずれます。</text>
+  <text x="24" y="411" class="sub">フレームの形は公式の p.71、ROM の割込み処理（[S+2] から戻り番地を読む）、エミュレータの実験で確かめました。</text>
+</svg>

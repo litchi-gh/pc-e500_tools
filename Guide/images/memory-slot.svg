@@ -1,0 +1,149 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 710" width="980" height="710" role="img" aria-labelledby="t d">
+  <title id="t">スロットとメモリブロック</title>
+  <desc id="d">スロットの中にメモリブロックが並び、各ブロックは 34 バイトのヘッダで始まる。RAMFILE ブロックの中は FAT12 のディスクになっている。ヘッダとディレクトリエントリは、各項目の位置とバイト数を示す。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+  </style>
+  <rect x="0.5" y="0.5" width="979" height="709" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">スロットとメモリブロック</text>
+  <text x="24" y="55" class="sub">内蔵 RAM、RAM カード、ROM の G: 領域は同じ構造。ROM 3.2、32 KB の実データ</text>
+  <text x="40" y="88" class="b">スロット S1:（B8000h〜）</text>
+  <rect x="40" y="100" width="70" height="56" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.1"/>
+  <text x="75.0" y="124" class="s" text-anchor="middle">ヘッダ</text>
+  <text x="75.0" y="144" class="s" text-anchor="middle">18h バイト</text>
+  <rect x="110" y="100" width="120" height="56" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.1"/>
+  <text x="170.0" y="124" class="b" text-anchor="middle">RAMFILE</text>
+  <text x="170.0" y="144" class="s" text-anchor="middle">INIT で作る</text>
+  <rect x="230" y="100" width="280" height="56" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.1"/>
+  <text x="370.0" y="124" class="b" text-anchor="middle">DATA.BAS</text>
+  <text x="370.0" y="144" class="s" text-anchor="middle">変数 + 空き</text>
+  <rect x="510" y="100" width="130" height="56" rx="0" fill="#F1ECFA" stroke="#6B46C1" stroke-width="1.1"/>
+  <text x="575.0" y="124" class="b" text-anchor="middle">TEXT.BAS</text>
+  <text x="575.0" y="144" class="s" text-anchor="middle">プログラム</text>
+  <rect x="640" y="100" width="90" height="56" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.1"/>
+  <text x="685.0" y="124" class="b" text-anchor="middle">FUNCKEY</text>
+  <rect x="730" y="100" width="70" height="56" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.1"/>
+  <text x="765.0" y="124" class="s" text-anchor="middle">AER</text>
+  <rect x="800" y="100" width="60" height="56" rx="0" fill="#FDECEA" stroke="#C0392B" stroke-width="1.1"/>
+  <text x="830.0" y="124" class="s" text-anchor="middle">FF</text>
+  <text x="830.0" y="144" class="s" text-anchor="middle">終わり</text>
+  <polyline points="24,176 956,176" fill="none" stroke="#D9E0E8" stroke-width="1" stroke-linejoin="round"/>
+  <text x="40" y="204" class="b">メモリブロックのヘッダ：全部で 34 バイト（22h）</text>
+  <text x="40" y="224" class="sub">枠の幅は 1 バイトごとに同じ。上の +00 はブロックの先頭からの位置、枠の中の数字はバイト数</text>
+  <text x="40" y="251" class="ms">+00</text>
+  <rect x="40" y="258" width="26" height="52" rx="0" fill="#FDECEA" stroke="#C0392B" stroke-width="1.1"/>
+  <text x="53.0" y="279" class="s" text-anchor="middle">FB</text>
+  <text x="53.0" y="299" class="b" text-anchor="middle">1</text>
+  <text x="66" y="251" class="ms">+01</text>
+  <rect x="66" y="258" width="208" height="52" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.1"/>
+  <text x="170.0" y="279" class="s" text-anchor="middle">名前</text>
+  <text x="170.0" y="299" class="b" text-anchor="middle">8 バイト</text>
+  <text x="274" y="251" class="ms">+09</text>
+  <rect x="274" y="258" width="78" height="52" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.1"/>
+  <text x="313.0" y="279" class="s" text-anchor="middle">拡張子</text>
+  <text x="313.0" y="299" class="b" text-anchor="middle">3 バイト</text>
+  <text x="352" y="251" class="ms">+0C</text>
+  <rect x="352" y="258" width="26" height="52" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.1"/>
+  <text x="365.0" y="279" class="s" text-anchor="middle">属性</text>
+  <text x="365.0" y="299" class="b" text-anchor="middle">1</text>
+  <text x="378" y="251" class="ms">+0D</text>
+  <rect x="378" y="258" width="52" height="52" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.1"/>
+  <text x="404.0" y="279" class="s" text-anchor="middle">時刻</text>
+  <text x="404.0" y="299" class="b" text-anchor="middle">2 バイト</text>
+  <text x="430" y="251" class="ms">+0F</text>
+  <rect x="430" y="258" width="52" height="52" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.1"/>
+  <text x="456.0" y="279" class="s" text-anchor="middle">日付</text>
+  <text x="456.0" y="299" class="b" text-anchor="middle">2 バイト</text>
+  <text x="482" y="251" class="ms">+11</text>
+  <rect x="482" y="258" width="78" height="52" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.1"/>
+  <text x="521.0" y="279" class="s" text-anchor="middle">長さ</text>
+  <text x="521.0" y="299" class="b" text-anchor="middle">3 バイト</text>
+  <text x="560" y="251" class="ms">+14</text>
+  <rect x="560" y="258" width="52" height="52" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.1"/>
+  <text x="586.0" y="279" class="s" text-anchor="middle">00</text>
+  <text x="586.0" y="299" class="b" text-anchor="middle">2 バイト</text>
+  <text x="612" y="251" class="ms">+16</text>
+  <rect x="612" y="258" width="78" height="52" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.1"/>
+  <text x="651.0" y="279" class="s" text-anchor="middle">ファイル長</text>
+  <text x="651.0" y="299" class="b" text-anchor="middle">3 バイト</text>
+  <text x="690" y="251" class="ms">+19</text>
+  <rect x="690" y="258" width="78" height="52" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.1"/>
+  <text x="729.0" y="279" class="s" text-anchor="middle">ポインタ 0</text>
+  <text x="729.0" y="299" class="b" text-anchor="middle">3 バイト</text>
+  <text x="768" y="251" class="ms">+1C</text>
+  <rect x="768" y="258" width="78" height="52" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.1"/>
+  <text x="807.0" y="279" class="s" text-anchor="middle">ポインタ 1</text>
+  <text x="807.0" y="299" class="b" text-anchor="middle">3 バイト</text>
+  <text x="846" y="251" class="ms">+1F</text>
+  <rect x="846" y="258" width="78" height="52" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.1"/>
+  <text x="885.0" y="279" class="s" text-anchor="middle">同上</text>
+  <text x="885.0" y="299" class="b" text-anchor="middle">3 バイト</text>
+  <polyline points="690,316 690,322 924,322 924,316" fill="none" stroke="#7B8794" stroke-width="1"/>
+  <text x="807" y="338" class="s" text-anchor="middle">空き領域のポインタ（9 バイト）</text>
+  <text x="40" y="338" class="s">長さ（+11）は次のブロックまで、空きを含む。ファイル長（+16）はヘッダを含む中身の長さ</text>
+  <text x="40" y="366" class="b">ヘッダの後ろ（+22 から）が中身：先頭の 4 バイトで種類が分かる</text>
+  <rect x="40" y="376" width="26" height="30" rx="0" fill="#FDECEA" stroke="#C0392B" stroke-width="1.1"/>
+  <text x="53.0" y="396" class="ms" text-anchor="middle">FF</text>
+  <rect x="66" y="376" width="26" height="30" rx="0" fill="#FDECEA" stroke="#C0392B" stroke-width="1.1"/>
+  <text x="79.0" y="396" class="ms" text-anchor="middle">00</text>
+  <rect x="92" y="376" width="26" height="30" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.1"/>
+  <text x="105.0" y="396" class="ms" text-anchor="middle">xx</text>
+  <rect x="118" y="376" width="26" height="30" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.1"/>
+  <text x="131.0" y="396" class="ms" text-anchor="middle">xx</text>
+  <text x="156" y="396" class="m">TEXT は FF 00 00 00、DATA は FF 00 01 00、SAVE M のファイルは FF 00 06 01</text>
+  <polyline points="24,424 956,424" fill="none" stroke="#D9E0E8" stroke-width="1" stroke-linejoin="round"/>
+  <text x="40" y="452" class="b">RAMFILE の中（E:16K の例）。1 セクタ 256 バイトの FAT12</text>
+  <rect x="40" y="464" width="150" height="56" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.1"/>
+  <text x="115.0" y="488" class="b" text-anchor="middle">セクタ 0</text>
+  <text x="115.0" y="508" class="s" text-anchor="middle">ヘッダ + 情報</text>
+  <rect x="190" y="464" width="110" height="56" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.1"/>
+  <text x="245.0" y="488" class="b" text-anchor="middle">セクタ 1</text>
+  <text x="245.0" y="508" class="s" text-anchor="middle">FAT</text>
+  <rect x="300" y="464" width="220" height="56" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.1"/>
+  <text x="410.0" y="488" class="b" text-anchor="middle">セクタ 2〜5</text>
+  <text x="410.0" y="508" class="s" text-anchor="middle">ディレクトリ 32 個</text>
+  <rect x="520" y="464" width="400" height="56" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.1"/>
+  <text x="720.0" y="488" class="b" text-anchor="middle">セクタ 6〜</text>
+  <text x="720.0" y="508" class="s" text-anchor="middle">データ（クラスタ 2〜3Bh）</text>
+  <text x="40" y="550" class="b">ディレクトリの 1 エントリ：全部で 32 バイト。MS-DOS と同じ並び</text>
+  <text x="40" y="576" class="ms">+00</text>
+  <rect x="40" y="583" width="208" height="52" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.1"/>
+  <text x="144.0" y="604" class="s" text-anchor="middle">名前</text>
+  <text x="144.0" y="624" class="b" text-anchor="middle">8 バイト</text>
+  <text x="248" y="576" class="ms">+08</text>
+  <rect x="248" y="583" width="78" height="52" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.1"/>
+  <text x="287.0" y="604" class="s" text-anchor="middle">拡張子</text>
+  <text x="287.0" y="624" class="b" text-anchor="middle">3 バイト</text>
+  <text x="326" y="576" class="ms">+0B</text>
+  <rect x="326" y="583" width="26" height="52" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.1"/>
+  <text x="339.0" y="604" class="s" text-anchor="middle">属性</text>
+  <text x="339.0" y="624" class="b" text-anchor="middle">1</text>
+  <text x="352" y="576" class="ms">+0C</text>
+  <rect x="352" y="583" width="260" height="52" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.1"/>
+  <text x="482.0" y="604" class="s" text-anchor="middle">予約</text>
+  <text x="482.0" y="624" class="b" text-anchor="middle">10 バイト</text>
+  <text x="612" y="576" class="ms">+16</text>
+  <rect x="612" y="583" width="52" height="52" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.1"/>
+  <text x="638.0" y="604" class="s" text-anchor="middle">時刻</text>
+  <text x="638.0" y="624" class="b" text-anchor="middle">2 バイト</text>
+  <text x="664" y="576" class="ms">+18</text>
+  <rect x="664" y="583" width="52" height="52" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.1"/>
+  <text x="690.0" y="604" class="s" text-anchor="middle">日付</text>
+  <text x="690.0" y="624" class="b" text-anchor="middle">2 バイト</text>
+  <text x="716" y="576" class="ms">+1A</text>
+  <rect x="716" y="583" width="52" height="52" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.1"/>
+  <text x="742.0" y="604" class="s" text-anchor="middle">クラスタ</text>
+  <text x="742.0" y="624" class="b" text-anchor="middle">2 バイト</text>
+  <text x="768" y="576" class="ms">+1C</text>
+  <rect x="768" y="583" width="104" height="52" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.1"/>
+  <text x="820.0" y="604" class="s" text-anchor="middle">長さ</text>
+  <text x="820.0" y="624" class="b" text-anchor="middle">4 バイト</text>
+  <text x="40" y="660" class="m">FAT は 12 ビット。例：F4 00 00 03 40 00 F0 0F 00 は、クラスタ 2 → 3 → 4 → 終わり（FF0h）</text>
+  <text x="40" y="686" class="s">削除したファイルは名前の先頭が E5h。書込み禁止の属性は 21h</text>
+</svg>

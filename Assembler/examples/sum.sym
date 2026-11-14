@@ -1,0 +1,3 @@
+COUNT EQU $A
+loop EQU $B8004
+start EQU $B8000
