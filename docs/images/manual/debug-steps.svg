@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 360" width="980" height="360" role="img" aria-labelledby="t d">
+  <title id="t">4 つの進め方</title>
+  <desc id="d">ステップイン、ステップオーバー、ステップアウト、続けるが、それぞれどの命令の前で止まるかを示す。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 14px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 12px; }
+  </style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#52606D"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="359" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+
+  <text x="24" y="34" class="h" text-anchor="start" xml:space="preserve">4 つの進め方</text>
+  <rect x="24" y="60" width="400" height="230" rx="10" fill="#F3F5F8" stroke="#7B8794"/>
+  <text x="40" y="84" class="b" text-anchor="start" xml:space="preserve">呼び出し元</text>
+  <text x="52" y="124" class="m" text-anchor="start" xml:space="preserve">start:</text>
+  <text x="130" y="124" class="m" text-anchor="start" xml:space="preserve">MV    A,3</text>
+  <rect x="40" y="140" width="368" height="30" rx="6" fill="#FFF5DF" stroke="#B7791F"/>
+  <text x="52" y="160" class="m" text-anchor="start" xml:space="preserve"></text>
+  <text x="130" y="160" class="m" text-anchor="start" xml:space="preserve">CALL  twice</text>
+  <text x="398" y="160" class="s" text-anchor="end" xml:space="preserve">今ここ</text>
+  <rect x="40" y="176" width="368" height="30" rx="6" fill="#E8F1FC" stroke="#2F6DB5"/>
+  <text x="52" y="196" class="m" text-anchor="start" xml:space="preserve"></text>
+  <text x="130" y="196" class="m" text-anchor="start" xml:space="preserve">MV    [ANS],A</text>
+  <text x="52" y="232" class="m" text-anchor="start" xml:space="preserve"></text>
+  <text x="130" y="232" class="m" text-anchor="start" xml:space="preserve">RC</text>
+  <rect x="40" y="248" width="368" height="30" rx="6" fill="#FDECEA" stroke="#C0392B"/>
+  <text x="52" y="268" class="m" text-anchor="start" xml:space="preserve"></text>
+  <text x="130" y="268" class="m" text-anchor="start" xml:space="preserve">RETF</text>
+  <text x="398" y="268" class="s" text-anchor="end" xml:space="preserve">ブレークポイント</text>
+  <rect x="600" y="60" width="356" height="120" rx="10" fill="#F3F5F8" stroke="#7B8794"/>
+  <text x="616" y="84" class="b" text-anchor="start" xml:space="preserve">呼び出し先</text>
+  <rect x="616" y="104" width="324" height="30" rx="6" fill="#E6F6EC" stroke="#2F855A"/>
+  <text x="628" y="124" class="m" text-anchor="start" xml:space="preserve">twice:</text>
+  <text x="706" y="124" class="m" text-anchor="start" xml:space="preserve">ADD   A,A</text>
+  <text x="628" y="160" class="m" text-anchor="start" xml:space="preserve"></text>
+  <text x="706" y="160" class="m" text-anchor="start" xml:space="preserve">RET</text>
+  <path d="M412,155 L500,155 L500,119 L612,119" fill="none" stroke="#2F855A" stroke-width="1.6" marker-end="url(#a)"/>
+  <text x="428" y="108" class="s" text-anchor="start" xml:space="preserve" style="fill:#2F855A">F11 ステップイン</text>
+  <path d="M612,150 L560,150 L560,191 L412,191" fill="none" stroke="#6B4FBB" stroke-width="1.6" marker-end="url(#a)"/>
+  <text x="566" y="206" class="s" text-anchor="start" xml:space="preserve" style="fill:#6B4FBB">Shift+F11 ステップアウト（twice の中から）</text>
+  <path d="M30,160 L14,160 L14,191 L36,191" fill="none" stroke="#2F6DB5" stroke-width="1.6" marker-end="url(#a)"/>
+  <path d="M412,162 L470,162 L470,263 L412,263" fill="none" stroke="#C0392B" stroke-width="1.6" marker-end="url(#a)"/>
+  <text x="478" y="250" class="s" text-anchor="start" xml:space="preserve" style="fill:#C0392B">F5 続ける</text>
+  <rect x="24" y="306" width="932" height="36" rx="6" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <rect x="36" y="314" width="20" height="20" rx="3" fill="#FFF5DF" stroke="#B7791F"/>
+  <text x="62" y="329" class="s" text-anchor="start" xml:space="preserve">次に実行する</text>
+  <rect x="160" y="314" width="20" height="20" rx="3" fill="#E6F6EC" stroke="#2F855A"/>
+  <text x="186" y="329" class="s" text-anchor="start" xml:space="preserve">ステップインの止まる所</text>
+  <rect x="360" y="314" width="20" height="20" rx="3" fill="#E8F1FC" stroke="#2F6DB5"/>
+  <text x="386" y="329" class="s" text-anchor="start" xml:space="preserve">ステップオーバー（F10）とステップアウトの止まる所</text>
+  <rect x="720" y="314" width="20" height="20" rx="3" fill="#FDECEA" stroke="#C0392B"/>
+  <text x="746" y="329" class="s" text-anchor="start" xml:space="preserve">続けたときの止まる所</text>
+</svg>

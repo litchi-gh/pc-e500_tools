@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 360" width="980" height="360" role="img" aria-labelledby="t d">
+  <title id="t">G: ドライブの配置（形式 A、バージョン 7.5 と 8.5）</title>
+  <desc id="d">C0018h から DFFFFh までの領域を、管理の部分とデータの部分に分けて示した図。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .lbl { font-size: 12px; fill: #52606D; paint-order: stroke; stroke: #FFFFFF; stroke-width: 4px; stroke-linejoin: round; }
+  </style>
+  <defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#52606D"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="359" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">G: ドライブの配置（形式 A、バージョン 7.5 と 8.5）</text>
+  <text x="24" y="55" class="sub">ブロックの先頭から順に、ヘッダ、媒体の情報、FAT、ディレクトリ、データが並ぶ</text>
+  <rect x="40" y="84" width="90" height="64" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1"/>
+  <text x="85" y="112.5" class="b" text-anchor="middle">管理情報</text>
+  <text x="85" y="129.5" class="s" text-anchor="middle">24 バイト</text>
+  <rect x="130" y="84" width="110" height="64" rx="0" fill="#FDECEA" stroke="#C0392B" stroke-width="1"/>
+  <text x="185" y="112.5" class="b" text-anchor="middle">ヘッダなど</text>
+  <text x="185" y="129.5" class="s" text-anchor="middle">42 バイト</text>
+  <rect x="240" y="84" width="130" height="64" rx="0" fill="#FDECEA" stroke="#C0392B" stroke-width="1"/>
+  <text x="305" y="112.5" class="b" text-anchor="middle">媒体の情報</text>
+  <text x="305" y="129.5" class="s" text-anchor="middle">22 バイト</text>
+  <rect x="370" y="84" width="170" height="64" rx="0" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1"/>
+  <text x="455" y="112.5" class="b" text-anchor="middle">FAT</text>
+  <text x="455" y="129.5" class="s" text-anchor="middle">2,944 バイト</text>
+  <rect x="540" y="84" width="180" height="64" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="630" y="112.5" class="b" text-anchor="middle">ルートディレクトリ</text>
+  <text x="630" y="129.5" class="s" text-anchor="middle">70 件 × 32</text>
+  <rect x="720" y="84" width="220" height="64" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1"/>
+  <text x="830" y="112.5" class="b" text-anchor="middle">データ域</text>
+  <text x="830" y="129.5" class="s" text-anchor="middle">使うのは 1,925 クラスタ</text>
+  <text x="40" y="168" class="m" xml:space="preserve">C0000h</text>
+  <text x="130" y="168" class="m" xml:space="preserve">C0018h</text>
+  <text x="240" y="168" class="m" xml:space="preserve">C0042h</text>
+  <text x="370" y="168" class="m" xml:space="preserve">C0058h</text>
+  <text x="540" y="168" class="m" xml:space="preserve">C0BD8h</text>
+  <text x="720" y="168" class="m" xml:space="preserve">C1498h</text>
+  <text x="940" y="168" class="m" xml:space="preserve" text-anchor="end">DF5D7h</text>
+  <text x="40" y="190" class="s">上の図は幅を変えて描いたもの。実際の大きさの割合は下の棒になる</text>
+  <rect x="40" y="206" width="1" height="44" rx="0" fill="#FDECEA" stroke="#C0392B" stroke-width="0.6"/>
+  <rect x="40.6042" y="206" width="20.2148" height="44" rx="0" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="0.6"/>
+  <rect x="60.8191" y="206" width="15.3809" height="44" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.6"/>
+  <rect x="76.2" y="206" width="845.947" height="44" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.6"/>
+  <rect x="922.147" y="206" width="3.79028" height="44" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.6"/>
+  <rect x="925.938" y="206" width="14.0625" height="44" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="0.6"/>
+  <text x="490" y="233" class="b" text-anchor="middle">データ域　C1498h〜DF5D7h</text>
+  <text x="40" y="268" class="ms" xml:space="preserve">C0000h</text>
+  <text x="940" y="268" class="ms" xml:space="preserve" text-anchor="end">DFFFFh</text>
+  <polyline points="931.938,252 931.938,284 880,284" fill="none" stroke="#7B8794" stroke-width="1" stroke-linejoin="round"/>
+  <text x="874" y="289" class="s" text-anchor="end">DF820h〜 IOCS ヘッダ、第 2 のドット群</text>
+  <rect x="40" y="323" width="14" height="14" rx="3" fill="#FDECEA" stroke="#C0392B" stroke-width="1.2"/>
+  <text x="60" y="334" class="s">ヘッダなど</text>
+  <rect x="144" y="323" width="14" height="14" rx="3" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="164" y="334" class="s">FAT</text>
+  <rect x="207.8" y="323" width="14" height="14" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="227.8" y="334" class="s">ディレクトリ</text>
+  <rect x="323.8" y="323" width="14" height="14" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="343.8" y="334" class="s">ファイルの中身</text>
+  <rect x="451.8" y="323" width="14" height="14" rx="3" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="471.8" y="334" class="s">G: の外</text>
+</svg>

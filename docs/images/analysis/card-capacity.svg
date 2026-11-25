@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 430" width="980" height="430" role="img" aria-labelledby="t d">
+  <title id="t">カードの容量の測り方（8 KB のカードの例）</title>
+  <desc id="d">先頭に A0 F5、2 KB ごとに 5C 0A を書き、ミラーで先頭が変わったところで止まる様子。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .lbl { font-size: 12px; fill: #52606D; paint-order: stroke; stroke: #FFFFFF; stroke-width: 4px; stroke-linejoin: round; }
+  </style>
+  <defs><marker id="a52606D" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#52606D"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="429" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">カードの容量の測り方（8 KB のカードの例）</text>
+  <text x="24" y="55" class="sub">容量より上のアドレスには、同じ内容が繰り返し見える。ROM（F0EE0h）はこれを使って終わりを見つける</text>
+  <rect x="60" y="120" width="108" height="60" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="62" y="112" class="ms" xml:space="preserve">40000h</text>
+  <text x="114" y="146" class="s" text-anchor="middle">カードの</text>
+  <text x="114" y="166" class="s" text-anchor="middle">0〜2 KB</text>
+  <rect x="168" y="120" width="108" height="60" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="170" y="112" class="ms" xml:space="preserve">40800h</text>
+  <text x="222" y="146" class="s" text-anchor="middle">カードの</text>
+  <text x="222" y="166" class="s" text-anchor="middle">2〜4 KB</text>
+  <rect x="276" y="120" width="108" height="60" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="278" y="112" class="ms" xml:space="preserve">41000h</text>
+  <text x="330" y="146" class="s" text-anchor="middle">カードの</text>
+  <text x="330" y="166" class="s" text-anchor="middle">4〜6 KB</text>
+  <rect x="384" y="120" width="108" height="60" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="386" y="112" class="ms" xml:space="preserve">41800h</text>
+  <text x="438" y="146" class="s" text-anchor="middle">カードの</text>
+  <text x="438" y="166" class="s" text-anchor="middle">6〜8 KB</text>
+  <rect x="492" y="120" width="108" height="60" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <text x="494" y="112" class="ms" xml:space="preserve">42000h</text>
+  <text x="546" y="146" class="s" text-anchor="middle">ミラー</text>
+  <text x="546" y="166" class="s" text-anchor="middle">（0〜2 KB）</text>
+  <rect x="600" y="120" width="108" height="60" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <text x="602" y="112" class="ms" xml:space="preserve">42800h</text>
+  <text x="654" y="146" class="s" text-anchor="middle">ミラー</text>
+  <text x="654" y="166" class="s" text-anchor="middle">（2〜4 KB）</text>
+  <rect x="708" y="120" width="108" height="60" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <text x="710" y="112" class="ms" xml:space="preserve">43000h</text>
+  <text x="762" y="146" class="s" text-anchor="middle">ミラー</text>
+  <text x="762" y="166" class="s" text-anchor="middle">（4〜6 KB）</text>
+  <rect x="816" y="120" width="108" height="60" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <text x="818" y="112" class="ms" xml:space="preserve">43800h</text>
+  <text x="870" y="146" class="s" text-anchor="middle">ミラー</text>
+  <text x="870" y="166" class="s" text-anchor="middle">（6〜8 KB）</text>
+  <text x="932" y="152" class="b">…</text>
+  <polyline points="60,182 60,190 492,190 492,182" fill="none" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="276" y="206" class="s" text-anchor="middle">本物の 8 KB</text>
+  <polyline points="492,182 492,190 924,190 924,182" fill="none" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="708" y="206" class="s" text-anchor="middle">42000h から先は、また先頭の内容が見える</text>
+  <rect x="60" y="246" width="200" height="70" rx="6" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="160" y="277" class="b" text-anchor="middle">1. 40000h に A0 F5 を書く</text>
+  <text x="160" y="295" class="s" text-anchor="middle">先頭の目印</text>
+  <polyline points="260,281 281,281" fill="none" stroke="#52606D" stroke-width="1.8" marker-end="url(#a52606D)"/>
+  <rect x="282" y="246" width="200" height="70" rx="6" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="382" y="277" class="b" text-anchor="middle">2. 40800h に 5C 0A を書く</text>
+  <text x="382" y="295" class="s" text-anchor="middle">読み返しは正しい。先頭も A0 F5</text>
+  <polyline points="482,281 503,281" fill="none" stroke="#52606D" stroke-width="1.8" marker-end="url(#a52606D)"/>
+  <rect x="504" y="246" width="200" height="70" rx="6" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="604" y="277" class="b" text-anchor="middle">3. 41000h、41800h も同じ</text>
+  <text x="604" y="295" class="s" text-anchor="middle">読み返しは正しい。先頭も A0 F5</text>
+  <polyline points="704,281 725,281" fill="none" stroke="#52606D" stroke-width="1.8" marker-end="url(#a52606D)"/>
+  <rect x="726" y="246" width="200" height="70" rx="6" fill="#FDECEA" stroke="#C0392B" stroke-width="1.5"/>
+  <text x="826" y="277" class="b" text-anchor="middle">4. 42000h に 5C 0A を書く</text>
+  <text x="826" y="295" class="s" text-anchor="middle">先頭が 5C 0A に変わった → ここで止める</text>
+  <rect x="60" y="344" width="864" height="64" rx="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="492" y="372" class="b" text-anchor="middle">先頭から 4 区画 × 2 KB = 8 KB。ヘッダの容量は 04h</text>
+  <text x="492" y="390" class="s" text-anchor="middle">最大 128 回（128 × 2 KB = 256 KB）まで調べる。測ったあとは、書いた場所を元に戻す</text>
+</svg>

@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 640" width="980" height="640" role="img" aria-labelledby="t d">
+  <title id="t">本体 ROM マップ（バージョン 3.2）</title>
+  <desc id="d">C、D、E、F の 4 つのセグメントを横棒で表し、G: ドライブ、IOCS、ドライバ、BASIC などの位置をアドレスつきで示した図。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .lbl { font-size: 12px; fill: #52606D; paint-order: stroke; stroke: #FFFFFF; stroke-width: 4px; stroke-linejoin: round; }
+  </style>
+  <defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#52606D"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="639" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">本体 ROM マップ（バージョン 3.2）</text>
+  <text x="24" y="55" class="sub">1 段が 1 セグメント（64 KB）。アドレスは 3.2 の値で、ほかのバージョンでは前後する</text>
+  <text x="60" y="117" class="h" text-anchor="end">C</text>
+  <rect x="70" y="92" width="880" height="40" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1"/>
+  <text x="60" y="235" class="h" text-anchor="end">D</text>
+  <rect x="70" y="210" width="880" height="40" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1"/>
+  <text x="60" y="353" class="h" text-anchor="end">E</text>
+  <rect x="70" y="328" width="880" height="40" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1"/>
+  <text x="60" y="495" class="h" text-anchor="end">F</text>
+  <rect x="70" y="470" width="880" height="40" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1"/>
+  <rect x="70.3223" y="92" width="879.678" height="40" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.8"/>
+  <text x="510.161" y="117" class="s" text-anchor="middle">G: ドライブ（RAMFILE）</text>
+  <rect x="70" y="210" width="845.088" height="40" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.8"/>
+  <text x="492.544" y="235" class="s" text-anchor="middle">G: ドライブの続き</text>
+  <polyline points="70.3223,132 70.3223,144" fill="none" stroke="#7B8794" stroke-width="1" stroke-linejoin="round"/>
+  <polyline points="140.791,132 140.791,160" fill="none" stroke="#7B8794" stroke-width="1" stroke-linejoin="round"/>
+  <polyline points="70,132 70,176" fill="none" stroke="#7B8794" stroke-width="1" stroke-linejoin="round"/>
+  <rect x="922.93" y="210" width="2.05444" height="40" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.8"/>
+  <rect x="939.688" y="210" width="10.3125" height="40" rx="0" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="0.8"/>
+  <polyline points="915.074,250 915.074,262" fill="none" stroke="#7B8794" stroke-width="1" stroke-linejoin="round"/>
+  <polyline points="922.93,250 922.93,278" fill="none" stroke="#7B8794" stroke-width="1" stroke-linejoin="round"/>
+  <polyline points="939.688,250 939.688,294" fill="none" stroke="#7B8794" stroke-width="1" stroke-linejoin="round"/>
+  <rect x="70" y="328" width="251.716" height="40" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.8"/>
+  <text x="195.858" y="353" class="s" text-anchor="middle">IOCS・FCS</text>
+  <rect x="321.716" y="328" width="10.957" height="40" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.8"/>
+  <rect x="332.673" y="328" width="183.221" height="40" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="0.8"/>
+  <text x="424.284" y="353" class="s" text-anchor="middle">AER・BASIC の処理</text>
+  <rect x="515.895" y="328" width="82.6477" height="40" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.8"/>
+  <text x="557.219" y="353" class="s" text-anchor="middle">行列演算</text>
+  <rect x="598.542" y="328" width="131.458" height="40" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.8"/>
+  <text x="664.271" y="353" class="s" text-anchor="middle">デバイスドライバ</text>
+  <rect x="730" y="328" width="220" height="40" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="0.8"/>
+  <text x="840" y="353" class="s" text-anchor="middle">BASIC の演算・Function</text>
+  <polyline points="70,368 70,380" fill="none" stroke="#7B8794" stroke-width="1" stroke-linejoin="round"/>
+  <polyline points="93.1897,368 93.1897,396" fill="none" stroke="#7B8794" stroke-width="1" stroke-linejoin="round"/>
+  <polyline points="321.716,368 321.716,380" fill="none" stroke="#7B8794" stroke-width="1" stroke-linejoin="round"/>
+  <polyline points="515.895,368 515.895,380" fill="none" stroke="#7B8794" stroke-width="1" stroke-linejoin="round"/>
+  <polyline points="587.277,368 587.277,396" fill="none" stroke="#7B8794" stroke-width="1" stroke-linejoin="round"/>
+  <polyline points="598.542,368 598.542,412" fill="none" stroke="#7B8794" stroke-width="1" stroke-linejoin="round"/>
+  <polyline points="646.09,368 646.09,428" fill="none" stroke="#7B8794" stroke-width="1" stroke-linejoin="round"/>
+  <polyline points="666.111,368 666.111,444" fill="none" stroke="#7B8794" stroke-width="1" stroke-linejoin="round"/>
+  <polyline points="707.294,368 707.294,380" fill="none" stroke="#7B8794" stroke-width="1" stroke-linejoin="round"/>
+  <polyline points="905.071,368 905.071,380" fill="none" stroke="#7B8794" stroke-width="1" stroke-linejoin="round"/>
+  <rect x="70" y="470" width="57.5378" height="40" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.8"/>
+  <rect x="127.538" y="470" width="58.1152" height="40" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.8"/>
+  <rect x="185.653" y="470" width="20.625" height="40" rx="0" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="0.8"/>
+  <rect x="206.278" y="470" width="43.6267" height="40" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.8"/>
+  <rect x="249.905" y="470" width="87.7234" height="40" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.8"/>
+  <text x="293.766" y="495" class="s" text-anchor="middle">行エディタ</text>
+  <rect x="337.628" y="470" width="27.3657" height="40" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="0.8"/>
+  <rect x="364.994" y="470" width="30.7764" height="40" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.8"/>
+  <text x="380.382" y="495" class="s" text-anchor="middle">語の表</text>
+  <rect x="395.77" y="470" width="553.693" height="40" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="0.8"/>
+  <text x="672.617" y="495" class="s" text-anchor="middle">BASIC（中間コードの処理ほか）</text>
+  <rect x="949.463" y="470" width="0.537109" height="40" rx="0" fill="#FDECEA" stroke="#C0392B" stroke-width="0.8"/>
+  <polyline points="70,510 70,522" fill="none" stroke="#7B8794" stroke-width="1" stroke-linejoin="round"/>
+  <polyline points="127.538,510 127.538,538" fill="none" stroke="#7B8794" stroke-width="1" stroke-linejoin="round"/>
+  <polyline points="146.901,510 146.901,554" fill="none" stroke="#7B8794" stroke-width="1" stroke-linejoin="round"/>
+  <polyline points="180.067,510 180.067,570" fill="none" stroke="#7B8794" stroke-width="1" stroke-linejoin="round"/>
+  <polyline points="185.653,510 185.653,586" fill="none" stroke="#7B8794" stroke-width="1" stroke-linejoin="round"/>
+  <polyline points="211.918,510 211.918,602" fill="none" stroke="#7B8794" stroke-width="1" stroke-linejoin="round"/>
+  <polyline points="249.905,510 249.905,522" fill="none" stroke="#7B8794" stroke-width="1" stroke-linejoin="round"/>
+  <polyline points="364.994,510 364.994,522" fill="none" stroke="#7B8794" stroke-width="1" stroke-linejoin="round"/>
+  <polyline points="395.77,510 395.77,538" fill="none" stroke="#7B8794" stroke-width="1" stroke-linejoin="round"/>
+  <polyline points="949.463,510 949.463,522" fill="none" stroke="#7B8794" stroke-width="1" stroke-linejoin="round"/>
+  <text x="73.3223" y="148" class="lbl">C0018h G: の先頭</text>
+  <text x="143.791" y="164" class="lbl">C1498h データ域</text>
+  <text x="73" y="180" class="lbl">C0000h スロットの管理情報</text>
+  <text x="912.074" y="266" class="lbl" text-anchor="end">DF5D7h G: で使う最後</text>
+  <text x="919.93" y="282" class="lbl" text-anchor="end">DF820h IOCS ヘッダ</text>
+  <text x="936.688" y="298" class="lbl" text-anchor="end">DFD00h 第 2 のドット群</text>
+  <text x="73" y="384" class="lbl">E0000h IOCS</text>
+  <text x="96.1897" y="400" class="lbl">E06BFh FCS</text>
+  <text x="324.716" y="384" class="lbl">E493Ah RAM ディスク</text>
+  <text x="518.895" y="384" class="lbl">E81B7h 行列演算</text>
+  <text x="590.277" y="400" class="lbl">E967Bh エラーメッセージ</text>
+  <text x="601.542" y="416" class="lbl">E99C2h CAS:</text>
+  <text x="649.09" y="432" class="lbl">EA797h PRN:</text>
+  <text x="669.111" y="448" class="lbl">EAD6Ah COM:</text>
+  <text x="710.294" y="384" class="lbl">EB965h X:Y:</text>
+  <text x="902.071" y="384" class="lbl" text-anchor="end">EF2EEh Function</text>
+  <text x="73" y="526" class="lbl">F0000h S1:S2:S3:</text>
+  <text x="130.538" y="542" class="lbl">F10BDh リセット</text>
+  <text x="149.901" y="558" class="lbl">F165Fh キーボード</text>
+  <text x="183.067" y="574" class="lbl">F2005h 割り込み</text>
+  <text x="188.653" y="590" class="lbl">F21A5h 文字 256 字</text>
+  <text x="214.918" y="606" class="lbl">F2949h 画面</text>
+  <text x="252.905" y="526" class="lbl">F3456h 行エディタ</text>
+  <text x="367.994" y="526" class="lbl">F55D1h トークン逆引き</text>
+  <text x="398.77" y="542" class="lbl">F5EC5h 中間コードの処理</text>
+  <text x="946.463" y="526" class="lbl" text-anchor="end">FFFD8h 公開エントリとベクタ</text>
+  <rect x="70" y="615" width="14" height="14" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="90" y="626" class="s">データ（ファイル、表）</text>
+  <rect x="246" y="615" width="14" height="14" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="266" y="626" class="s">IOCS・起動・表示の処理</text>
+  <rect x="424.4" y="615" width="14" height="14" rx="3" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="444.4" y="626" class="s">記憶・演算の処理</text>
+  <rect x="564.4" y="615" width="14" height="14" rx="3" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="584.4" y="626" class="s">文字の形</text>
+  <rect x="656.4" y="615" width="14" height="14" rx="3" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="676.4" y="626" class="s">BASIC など</text>
+  <rect x="764" y="615" width="14" height="14" rx="3" fill="#FDECEA" stroke="#C0392B" stroke-width="1.2"/>
+  <text x="784" y="626" class="s">固定のエントリ</text>
+</svg>

@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 380" width="980" height="380" role="img" aria-labelledby="t d">
+  <title id="t">CSAVE の 1 本のテープの上の時間</title>
+  <desc id="d">保存の初めから終わりまでの無音、搬送音、データと、モーターの動きを時間の順に並べた図。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+  </style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#52606D"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="379" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h" text-anchor="start" xml:space="preserve">CSAVE の 1 本のテープの上の時間</text>
+  <text x="24" y="56" class="s" text-anchor="start" xml:space="preserve">エミュレータで測った値（7.2、16 バイトほどのプログラム）。横の長さは時間に比例</text>
+  <rect x="30.0" y="110" width="338.1" height="60" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.3"/>
+  <text x="199.05901287553647" y="137" class="b" text-anchor="middle" xml:space="preserve">無音</text>
+  <text x="199.05901287553647" y="157" class="s" text-anchor="middle" xml:space="preserve">8.61 秒</text>
+  <rect x="368.1" y="110" width="131.6" height="60" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.3"/>
+  <text x="433.8959227467811" y="137" class="b" text-anchor="middle" xml:space="preserve">搬送音</text>
+  <text x="433.8959227467811" y="157" class="s" text-anchor="middle" xml:space="preserve">3.35 秒</text>
+  <rect x="499.7" y="110" width="15.7" height="60" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.3"/>
+  <text x="507.52789699570815" y="92" class="s" text-anchor="middle" xml:space="preserve">ヘッダ</text>
+  <line x1="507.52789699570815" y1="96" x2="507.52789699570815" y2="110" stroke="#7B8794" stroke-width="1"/>
+  <rect x="515.4" y="110" width="78.5" height="60" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.3"/>
+  <text x="554.6523605150214" y="137" class="b" text-anchor="middle" xml:space="preserve">無音</text>
+  <text x="554.6523605150214" y="157" class="s" text-anchor="middle" xml:space="preserve">2.00 秒</text>
+  <rect x="593.9" y="110" width="38.1" height="60" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.3"/>
+  <text x="612.9688841201717" y="92" class="s" text-anchor="middle" xml:space="preserve">停止と再開</text>
+  <line x1="612.9688841201717" y1="96" x2="612.9688841201717" y2="110" stroke="#7B8794" stroke-width="1"/>
+  <rect x="632.0" y="110" width="144.5" height="60" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.3"/>
+  <text x="704.2725321888412" y="137" class="b" text-anchor="middle" xml:space="preserve">搬送音</text>
+  <text x="704.2725321888412" y="157" class="s" text-anchor="middle" xml:space="preserve">3.68 秒</text>
+  <rect x="776.5" y="110" width="11.8" height="60" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.3"/>
+  <text x="782.4206008583691" y="92" class="s" text-anchor="middle" xml:space="preserve">本体</text>
+  <line x1="782.4206008583691" y1="96" x2="782.4206008583691" y2="110" stroke="#7B8794" stroke-width="1"/>
+  <rect x="788.3" y="110" width="156.7" height="60" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.3"/>
+  <text x="866.6555793991416" y="137" class="b" text-anchor="middle" xml:space="preserve">無音</text>
+  <text x="866.6555793991416" y="157" class="s" text-anchor="middle" xml:space="preserve">3.99 秒</text>
+  <text x="30" y="205" class="b" text-anchor="start" xml:space="preserve">モーター（CE-126P）</text>
+  <path d="M 30.0 250 V 222 H 575.8583690987125 V 250 H 592.3519313304721 V 222 H 925.3648068669528 V 250 H 945.0" fill="none" stroke="#2F855A" stroke-width="2.5"/>
+  <text x="226.3519313304721" y="242" class="s" text-anchor="middle" xml:space="preserve">動く（0〜13.9 秒）</text>
+  <text x="760.4291845493563" y="242" class="s" text-anchor="middle" xml:space="preserve">動く（14.3〜22.8 秒）</text>
+  <line x1="30.0" y1="275" x2="30.0" y2="282" stroke="#7B8794" stroke-width="1"/>
+  <text x="30.0" y="298" class="ms" text-anchor="middle" xml:space="preserve">0</text>
+  <line x1="108.54077253218884" y1="275" x2="108.54077253218884" y2="282" stroke="#7B8794" stroke-width="1"/>
+  <text x="108.54077253218884" y="298" class="ms" text-anchor="middle" xml:space="preserve">2</text>
+  <line x1="187.08154506437768" y1="275" x2="187.08154506437768" y2="282" stroke="#7B8794" stroke-width="1"/>
+  <text x="187.08154506437768" y="298" class="ms" text-anchor="middle" xml:space="preserve">4</text>
+  <line x1="265.6223175965665" y1="275" x2="265.6223175965665" y2="282" stroke="#7B8794" stroke-width="1"/>
+  <text x="265.6223175965665" y="298" class="ms" text-anchor="middle" xml:space="preserve">6</text>
+  <line x1="344.16309012875536" y1="275" x2="344.16309012875536" y2="282" stroke="#7B8794" stroke-width="1"/>
+  <text x="344.16309012875536" y="298" class="ms" text-anchor="middle" xml:space="preserve">8</text>
+  <line x1="422.7038626609442" y1="275" x2="422.7038626609442" y2="282" stroke="#7B8794" stroke-width="1"/>
+  <text x="422.7038626609442" y="298" class="ms" text-anchor="middle" xml:space="preserve">10</text>
+  <line x1="501.24463519313304" y1="275" x2="501.24463519313304" y2="282" stroke="#7B8794" stroke-width="1"/>
+  <text x="501.24463519313304" y="298" class="ms" text-anchor="middle" xml:space="preserve">12</text>
+  <line x1="579.7854077253219" y1="275" x2="579.7854077253219" y2="282" stroke="#7B8794" stroke-width="1"/>
+  <text x="579.7854077253219" y="298" class="ms" text-anchor="middle" xml:space="preserve">14</text>
+  <line x1="658.3261802575107" y1="275" x2="658.3261802575107" y2="282" stroke="#7B8794" stroke-width="1"/>
+  <text x="658.3261802575107" y="298" class="ms" text-anchor="middle" xml:space="preserve">16</text>
+  <line x1="736.8669527896996" y1="275" x2="736.8669527896996" y2="282" stroke="#7B8794" stroke-width="1"/>
+  <text x="736.8669527896996" y="298" class="ms" text-anchor="middle" xml:space="preserve">18</text>
+  <line x1="815.4077253218884" y1="275" x2="815.4077253218884" y2="282" stroke="#7B8794" stroke-width="1"/>
+  <text x="815.4077253218884" y="298" class="ms" text-anchor="middle" xml:space="preserve">20</text>
+  <line x1="893.9484978540772" y1="275" x2="893.9484978540772" y2="282" stroke="#7B8794" stroke-width="1"/>
+  <text x="893.9484978540772" y="298" class="ms" text-anchor="middle" xml:space="preserve">22</text>
+  <line x1="30" y1="275" x2="945" y2="275" stroke="#7B8794" stroke-width="1"/>
+  <text x="945" y="318" class="s" text-anchor="end" xml:space="preserve">秒</text>
+  <text x="30" y="340" class="s" text-anchor="start" xml:space="preserve">ヘッダは 48 バイトと検査値、本体はプログラムと検査値。プログラムが長くなると、黄色の「本体」だけが伸びる。</text>
+  <text x="30" y="360" class="s" text-anchor="start" xml:space="preserve">紫の所で、モーターを止める合図と動かす合図を送る。CE-126P がなくても、待つ時間はほぼ同じだけかかる。</text>
+</svg>

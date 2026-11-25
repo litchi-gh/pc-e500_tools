@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 400" width="980" height="400" role="img" aria-labelledby="t d">
+  <title id="t">デバイスコード 41h の送信（XOUT = High）</title>
+  <desc id="d">XOUT、DOUT、BUSY、ACK の波形。最初に XOUT と DOUT を 40 ms 以上 High にし、ACK が High になってから 8 ビットを送る。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+  </style>
+  <defs></defs>
+  <rect x="0.5" y="0.5" width="979" height="399" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">デバイスコード 41h の送信（XOUT = High）</text>
+  <text x="24" y="55" class="sub">LSB から 1 ビットずつ。1 ビットごとに BUSY と ACK で確かめ合う。時間の比率は模式的</text>
+  <text x="24" y="118" class="b">XOUT</text>
+  <text x="24" y="182" class="b">DOUT</text>
+  <text x="24" y="246" class="b">BUSY</text>
+  <text x="24" y="310" class="b">ACK</text>
+  <text x="72" y="118" class="s">本体 →</text>
+  <text x="72" y="182" class="s">本体 →</text>
+  <text x="72" y="246" class="s">本体 →</text>
+  <text x="72" y="310" class="s">← 機器</text>
+  <polyline points="120,126 134,126 134,96 956,96" fill="none" stroke="#2F6DB5" stroke-width="2"/>
+  <polyline points="120,190 134,190 134,160 270,160 270,160 354.5,160 354.5,190 439,190 439,190 523.5,190 523.5,190 608,190 608,190 692.5,190 692.5,190 777,190 777,160 861.5,160 861.5,190 946,190 946,190 956,190" fill="none" stroke="#B7791F" stroke-width="2"/>
+  <polyline points="120,254 270,254 270,254 293.66,254 293.66,224 325.77,224 325.77,254 354.5,254 354.5,254 378.16,254 378.16,224 410.27,224 410.27,254 439,254 439,254 462.66,254 462.66,224 494.77,224 494.77,254 523.5,254 523.5,254 547.16,254 547.16,224 579.27,224 579.27,254 608,254 608,254 631.66,254 631.66,224 663.77,224 663.77,254 692.5,254 692.5,254 716.16,254 716.16,224 748.27,224 748.27,254 777,254 777,254 800.66,254 800.66,224 832.77,224 832.77,254 861.5,254 861.5,254 885.16,254 885.16,224 917.27,224 917.27,254 946,254 946,254 956,254" fill="none" stroke="#2F6DB5" stroke-width="2"/>
+  <polyline points="120,318 220,318 220,288 308.87,288 308.87,318 340.98,318 340.98,288 393.37,288 393.37,318 425.48,318 425.48,288 477.87,288 477.87,318 509.98,318 509.98,288 562.37,288 562.37,318 594.48,318 594.48,288 646.87,288 646.87,318 678.98,318 678.98,288 731.37,288 731.37,318 763.48,318 763.48,288 815.87,288 815.87,318 847.98,318 847.98,288 900.37,288 900.37,318 932.48,318 932.48,288 956,288" fill="none" stroke="#2F855A" stroke-width="2"/>
+  <text x="312.25" y="150" class="ms" xml:space="preserve" text-anchor="middle">bit0 = 1</text>
+  <polyline points="270,92 270,322" fill="none" stroke="#D9E0E8" stroke-width="1" stroke-dasharray="3 3"/>
+  <text x="396.75" y="150" class="ms" xml:space="preserve" text-anchor="middle">bit1 = 0</text>
+  <polyline points="354.5,92 354.5,322" fill="none" stroke="#D9E0E8" stroke-width="1" stroke-dasharray="3 3"/>
+  <text x="481.25" y="150" class="ms" xml:space="preserve" text-anchor="middle">bit2 = 0</text>
+  <polyline points="439,92 439,322" fill="none" stroke="#D9E0E8" stroke-width="1" stroke-dasharray="3 3"/>
+  <text x="565.75" y="150" class="ms" xml:space="preserve" text-anchor="middle">bit3 = 0</text>
+  <polyline points="523.5,92 523.5,322" fill="none" stroke="#D9E0E8" stroke-width="1" stroke-dasharray="3 3"/>
+  <text x="650.25" y="150" class="ms" xml:space="preserve" text-anchor="middle">bit4 = 0</text>
+  <polyline points="608,92 608,322" fill="none" stroke="#D9E0E8" stroke-width="1" stroke-dasharray="3 3"/>
+  <text x="734.75" y="150" class="ms" xml:space="preserve" text-anchor="middle">bit5 = 0</text>
+  <polyline points="692.5,92 692.5,322" fill="none" stroke="#D9E0E8" stroke-width="1" stroke-dasharray="3 3"/>
+  <text x="819.25" y="150" class="ms" xml:space="preserve" text-anchor="middle">bit6 = 1</text>
+  <polyline points="777,92 777,322" fill="none" stroke="#D9E0E8" stroke-width="1" stroke-dasharray="3 3"/>
+  <text x="903.75" y="150" class="ms" xml:space="preserve" text-anchor="middle">bit7 = 0</text>
+  <polyline points="861.5,92 861.5,322" fill="none" stroke="#D9E0E8" stroke-width="1" stroke-dasharray="3 3"/>
+  <polyline points="134,336 270,336" fill="none" stroke="#52606D" stroke-width="1.2"/>
+  <text x="134" y="354" class="s">40 ms 以上 High</text>
+  <text x="276" y="354" class="s">ここから 1 ビットの手順を 8 回繰り返す（ACK の Low が「受け取った」の合図）</text>
+  <text x="24" y="384" class="s">41h = 0100 0001。LSB から送るので 1、0、0、0、0、0、1、0 の順になる。</text>
+</svg>

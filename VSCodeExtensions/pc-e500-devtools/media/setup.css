@@ -1,0 +1,29 @@
+body { margin: 0 auto; max-width: 980px; padding: 16px 20px 32px; font-family: var(--vscode-font-family); font-size: var(--vscode-font-size); color: var(--vscode-foreground); background: var(--vscode-editor-background); }
+header { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; }
+header img { width: 48px; height: 48px; }
+header > div { flex: 1 1 260px; }
+h1 { margin: 0; font-size: 1.5em; font-weight: 600; }
+h2 { margin: 24px 0 8px; font-size: 1.1em; font-weight: 600; }
+p { margin: 4px 0 0; }
+#summary.ok { color: var(--vscode-testing-iconPassed, #73c991); }
+#summary.error { color: var(--vscode-errorForeground, #f48771); }
+.list { border: 1px solid var(--vscode-panel-border, #8884); border-radius: 4px; }
+.row { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 4px 12px; padding: 10px 12px; }
+.row + .row { border-top: 1px solid var(--vscode-panel-border, #8884); }
+.mark { flex: 0 0 20px; width: 20px; height: 20px; line-height: 20px; border-radius: 50%; text-align: center; font-weight: 700; font-size: 12px; color: var(--vscode-editor-background); background: var(--vscode-descriptionForeground, #999); }
+.ok .mark { background: var(--vscode-testing-iconPassed, #73c991); }
+.error .mark { background: var(--vscode-errorForeground, #f48771); }
+.warn .mark { background: var(--vscode-editorWarning-foreground, #cca700); }
+.text { flex: 1 1 320px; min-width: 0; }
+.title { font-weight: 600; line-height: 20px; }
+.said { margin-left: 10px; font-weight: 400; font-size: 0.9em; color: var(--vscode-descriptionForeground); }
+.error .said { color: var(--vscode-errorForeground, #f48771); }
+.line { overflow-wrap: anywhere; line-height: 1.5; color: var(--vscode-descriptionForeground); }
+.buttons { display: inline-flex; flex-wrap: wrap; gap: 6px; }
+button { font: inherit; padding: 3px 10px; border: 1px solid var(--vscode-button-border, transparent); border-radius: 2px; cursor: pointer; color: var(--vscode-button-secondaryForeground); background: var(--vscode-button-secondaryBackground); }
+button:hover:not(:disabled) { background: var(--vscode-button-secondaryHoverBackground); }
+button.main { color: var(--vscode-button-foreground); background: var(--vscode-button-background); }
+button.main:hover:not(:disabled) { background: var(--vscode-button-hoverBackground); }
+button:focus-visible { outline: 1px solid var(--vscode-focusBorder); outline-offset: 2px; }
+button:disabled { opacity: 0.5; cursor: default; }
+.busy .list { opacity: 0.55; }

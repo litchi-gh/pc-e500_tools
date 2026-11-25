@@ -1,0 +1,6 @@
+{
+  "program": "06_string.asm",
+  "tests": [
+    { "name": "大文字と長さ", "call": "start", "expect": { "memory": { "TEXT": "HELLO, PC-E500!", "LENGTH": [15] } } }
+  ]
+}

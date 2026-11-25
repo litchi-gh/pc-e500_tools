@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 552" width="980" height="552" role="img" aria-labelledby="t d">
+  <title id="t">S スタックの前と後</title>
+  <desc id="d">CALL、CALLF、割り込みの前後で S スタックの中身と S の値がどう変わるかをアドレスつきで示した図。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .mb { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; font-weight: 700; }
+  </style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#52606D"/></marker><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#C0392B"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="551" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h" xml:space="preserve">S スタックの前と後</text>
+  <text x="24" y="55" class="sub" xml:space="preserve">命令は BEC10h にあり、実行前の S は BE900h。上が小さいアドレス</text>
+  <rect x="24" y="74" width="300" height="456" rx="10" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="38" y="98" class="b" xml:space="preserve">CALL 0EC40h</text>
+  <text x="38" y="118" class="s" xml:space="preserve">3 バイトの命令。戻り先は BEC13h</text>
+  <text x="86" y="164" class="ms" xml:space="preserve">BE8FAh</text>
+  <rect x="144" y="140" width="60" height="36" rx="2" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.2"/>
+  <text x="86" y="204" class="ms" xml:space="preserve">BE8FBh</text>
+  <rect x="144" y="180" width="60" height="36" rx="2" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.2"/>
+  <text x="86" y="244" class="ms" xml:space="preserve">BE8FCh</text>
+  <rect x="144" y="220" width="60" height="36" rx="2" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.2"/>
+  <text x="86" y="284" class="ms" xml:space="preserve">BE8FDh</text>
+  <rect x="144" y="260" width="60" height="36" rx="2" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.2"/>
+  <text x="86" y="324" class="ms" xml:space="preserve">BE8FEh</text>
+  <rect x="144" y="300" width="60" height="36" rx="2" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="174" y="323" class="mb" xml:space="preserve" text-anchor="middle">13</text>
+  <text x="214" y="323" class="s" xml:space="preserve" style="fill:#1F2933">PC 下位</text>
+  <text x="36" y="324" class="s" xml:space="preserve" style="fill:#C0392B">後 S→</text>
+  <text x="86" y="364" class="ms" xml:space="preserve">BE8FFh</text>
+  <rect x="144" y="340" width="60" height="36" rx="2" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="174" y="363" class="mb" xml:space="preserve" text-anchor="middle">EC</text>
+  <text x="214" y="363" class="s" xml:space="preserve" style="fill:#1F2933">PC 上位</text>
+  <text x="86" y="404" class="ms" xml:space="preserve">BE900h</text>
+  <rect x="144" y="380" width="60" height="36" rx="2" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.2"/>
+  <text x="36" y="404" class="s" xml:space="preserve">前 S→</text>
+  <text x="174" y="403" class="m" xml:space="preserve" text-anchor="middle">…</text>
+  <text x="38" y="456" xml:space="preserve">PC = EC40h、PS はそのまま</text>
+  <text x="38" y="482" xml:space="preserve">RET が 2 バイト取り出す</text>
+  <rect x="340" y="74" width="300" height="456" rx="10" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="354" y="98" class="b" xml:space="preserve">CALLF 0FFFE8h</text>
+  <text x="354" y="118" class="s" xml:space="preserve">4 バイトの命令。戻り先は BEC14h</text>
+  <text x="402" y="164" class="ms" xml:space="preserve">BE8FAh</text>
+  <rect x="460" y="140" width="60" height="36" rx="2" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.2"/>
+  <text x="402" y="204" class="ms" xml:space="preserve">BE8FBh</text>
+  <rect x="460" y="180" width="60" height="36" rx="2" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.2"/>
+  <text x="402" y="244" class="ms" xml:space="preserve">BE8FCh</text>
+  <rect x="460" y="220" width="60" height="36" rx="2" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.2"/>
+  <text x="402" y="284" class="ms" xml:space="preserve">BE8FDh</text>
+  <rect x="460" y="260" width="60" height="36" rx="2" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="490" y="283" class="mb" xml:space="preserve" text-anchor="middle">14</text>
+  <text x="530" y="283" class="s" xml:space="preserve" style="fill:#1F2933">PC 下位</text>
+  <text x="352" y="284" class="s" xml:space="preserve" style="fill:#C0392B">後 S→</text>
+  <text x="402" y="324" class="ms" xml:space="preserve">BE8FEh</text>
+  <rect x="460" y="300" width="60" height="36" rx="2" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="490" y="323" class="mb" xml:space="preserve" text-anchor="middle">EC</text>
+  <text x="530" y="323" class="s" xml:space="preserve" style="fill:#1F2933">PC 上位</text>
+  <text x="402" y="364" class="ms" xml:space="preserve">BE8FFh</text>
+  <rect x="460" y="340" width="60" height="36" rx="2" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="490" y="363" class="mb" xml:space="preserve" text-anchor="middle">0B</text>
+  <text x="530" y="363" class="s" xml:space="preserve" style="fill:#1F2933">PS</text>
+  <text x="402" y="404" class="ms" xml:space="preserve">BE900h</text>
+  <rect x="460" y="380" width="60" height="36" rx="2" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.2"/>
+  <text x="352" y="404" class="s" xml:space="preserve">前 S→</text>
+  <text x="490" y="403" class="m" xml:space="preserve" text-anchor="middle">…</text>
+  <text x="354" y="456" xml:space="preserve">PC = FFE8h、PS = Fh</text>
+  <text x="354" y="482" xml:space="preserve">RETF が 3 バイト取り出す</text>
+  <rect x="656" y="74" width="300" height="456" rx="10" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="670" y="98" class="b" xml:space="preserve">割り込み</text>
+  <text x="670" y="118" class="s" xml:space="preserve">BEC10h の命令の前。IMR = 83h、C = 1</text>
+  <text x="718" y="164" class="ms" xml:space="preserve">BE8FAh</text>
+  <rect x="776" y="140" width="60" height="36" rx="2" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.2"/>
+  <text x="718" y="204" class="ms" xml:space="preserve">BE8FBh</text>
+  <rect x="776" y="180" width="60" height="36" rx="2" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="806" y="203" class="mb" xml:space="preserve" text-anchor="middle">83</text>
+  <text x="846" y="203" class="s" xml:space="preserve" style="fill:#1F2933">IMR</text>
+  <text x="668" y="204" class="s" xml:space="preserve" style="fill:#C0392B">後 S→</text>
+  <text x="718" y="244" class="ms" xml:space="preserve">BE8FCh</text>
+  <rect x="776" y="220" width="60" height="36" rx="2" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="806" y="243" class="mb" xml:space="preserve" text-anchor="middle">01</text>
+  <text x="846" y="243" class="s" xml:space="preserve" style="fill:#1F2933">F</text>
+  <text x="718" y="284" class="ms" xml:space="preserve">BE8FDh</text>
+  <rect x="776" y="260" width="60" height="36" rx="2" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="806" y="283" class="mb" xml:space="preserve" text-anchor="middle">10</text>
+  <text x="846" y="283" class="s" xml:space="preserve" style="fill:#1F2933">PC 下位</text>
+  <text x="718" y="324" class="ms" xml:space="preserve">BE8FEh</text>
+  <rect x="776" y="300" width="60" height="36" rx="2" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="806" y="323" class="mb" xml:space="preserve" text-anchor="middle">EC</text>
+  <text x="846" y="323" class="s" xml:space="preserve" style="fill:#1F2933">PC 上位</text>
+  <text x="718" y="364" class="ms" xml:space="preserve">BE8FFh</text>
+  <rect x="776" y="340" width="60" height="36" rx="2" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="806" y="363" class="mb" xml:space="preserve" text-anchor="middle">0B</text>
+  <text x="846" y="363" class="s" xml:space="preserve" style="fill:#1F2933">PS</text>
+  <text x="718" y="404" class="ms" xml:space="preserve">BE900h</text>
+  <rect x="776" y="380" width="60" height="36" rx="2" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.2"/>
+  <text x="668" y="404" class="s" xml:space="preserve">前 S→</text>
+  <text x="806" y="403" class="m" xml:space="preserve" text-anchor="middle">…</text>
+  <text x="670" y="456" xml:space="preserve">IMR = 03h（IRM が 0）</text>
+  <text x="670" y="482" xml:space="preserve">PC と PS は FFFFAh から</text>
+  <text x="670" y="508" xml:space="preserve">RETI が 5 バイト取り出す</text>
+</svg>

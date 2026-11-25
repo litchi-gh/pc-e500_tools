@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 430" width="980" height="430" role="img" aria-labelledby="t d">
+  <title id="t">動作時の電流（PC-E500、実際の使い方での最大値）</title>
+  <desc id="d">CPU 4.2 mA、ROM 4.59 mA、RAM 1.29 mA、HD61203 1.0 mA、HD61202 2 個 0.5 mA を横棒で比べた図。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .mb { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; font-weight: 700; }
+  </style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#52606D"/></marker><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#C0392B"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="429" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h" xml:space="preserve">動作時の電流（PC-E500、実際の使い方での最大値）</text>
+  <text x="24" y="55" class="sub" xml:space="preserve">仕様の最大値の表から。ROM と RAM は、実際に読み書きする速さに直した値</text>
+  <text x="24" y="106" class="b" xml:space="preserve">CPU  SC62015B01</text>
+  <rect x="230" y="84" width="378" height="32" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="618" y="105" class="s" xml:space="preserve" style="fill:#1F2933">4.2 mA（2304 kHz）</text>
+  <text x="24" y="158" class="b" xml:space="preserve">ROM  LH5320</text>
+  <rect x="230" y="136" width="413.1" height="32" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="653.1" y="157" class="s" xml:space="preserve" style="fill:#1F2933">4.59 mA（306 kHz。tRC 120 ns なら 70 mA）</text>
+  <text x="24" y="210" class="b" xml:space="preserve">RAM  HM62256LFP-12SLT</text>
+  <rect x="230" y="188" width="116.1" height="32" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="356.1" y="209" class="s" xml:space="preserve" style="fill:#1F2933">1.29 mA（153 kHz。tRC 120 ns なら 70 mA）</text>
+  <text x="24" y="262" class="b" xml:space="preserve">HD61203</text>
+  <rect x="230" y="240" width="90" height="32" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="330" y="261" class="s" xml:space="preserve" style="fill:#1F2933">1.0 mA（600 kHz）</text>
+  <text x="24" y="314" class="b" xml:space="preserve">HD61202（2 個）</text>
+  <rect x="230" y="292" width="45" height="32" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="285" y="313" class="s" xml:space="preserve" style="fill:#1F2933">500 µA（アクセス中）</text>
+  <path d="M230 346L230 352" fill="none" stroke="#52606D" stroke-width="1.6"/>
+  <text x="230" y="368" class="ms" xml:space="preserve" text-anchor="middle">0</text>
+  <path d="M320 346L320 352" fill="none" stroke="#52606D" stroke-width="1.6"/>
+  <text x="320" y="368" class="ms" xml:space="preserve" text-anchor="middle">1</text>
+  <path d="M410 346L410 352" fill="none" stroke="#52606D" stroke-width="1.6"/>
+  <text x="410" y="368" class="ms" xml:space="preserve" text-anchor="middle">2</text>
+  <path d="M500 346L500 352" fill="none" stroke="#52606D" stroke-width="1.6"/>
+  <text x="500" y="368" class="ms" xml:space="preserve" text-anchor="middle">3</text>
+  <path d="M590 346L590 352" fill="none" stroke="#52606D" stroke-width="1.6"/>
+  <text x="590" y="368" class="ms" xml:space="preserve" text-anchor="middle">4</text>
+  <path d="M680 346L680 352" fill="none" stroke="#52606D" stroke-width="1.6"/>
+  <text x="680" y="368" class="ms" xml:space="preserve" text-anchor="middle">5</text>
+  <path d="M230 346L680 346" fill="none" stroke="#52606D" stroke-width="1.6"/>
+  <text x="692" y="368" class="ms" xml:space="preserve">mA</text>
+  <rect x="24" y="384" width="932" height="34" rx="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="36" y="405" class="s" xml:space="preserve" style="fill:#1F2933">CMOS の IC は、動く回数が少ないほど電流が減ります。ROM と RAM の 70 mA は、120 ns ごとに休まず読む場合の値です。</text>
+</svg>

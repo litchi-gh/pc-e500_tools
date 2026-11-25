@@ -1,0 +1,8 @@
+{
+  "program": "meteor.asm",
+  "tests": [
+    { "name": "タイトル", "basic": "CALL &HBD800", "expect": { "screen": ["M E T E O R", "PUSH SPACE KEY"] }, "maxCycles": 2000000 },
+    { "name": "動かさなければ終わる", "basic": "CALL &HBD800", "keys": ["SPACE", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A"], "expect": { "screen": "GAME OVER" }, "maxCycles": 2000000 },
+    { "name": "ON/BRK で戻る", "basic": "CALL &HBD800", "keys": ["SPACE", "ON/BRK"], "expect": { "screen": ">" }, "maxCycles": 2000000 }
+  ]
+}

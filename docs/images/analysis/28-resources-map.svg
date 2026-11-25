@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 420" width="980" height="420" role="img" aria-labelledby="t d">
+  <title id="t">外部資料の見取り図</title>
+  <desc id="d">目的ごとに、外部資料の節と本リポジトリの章を対応させた図。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .lbl { font-size: 12px; fill: #52606D; paint-order: stroke; stroke: #FFFFFF; stroke-width: 4px; stroke-linejoin: round; }
+  </style>
+  <defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#52606D"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="419" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">外部資料の見取り図</text>
+  <text x="24" y="55" class="sub">知りたいことから、この章の節と、先に読む本リポジトリの章をたどる</text>
+  <text x="130" y="88" class="b" text-anchor="middle">知りたいこと</text>
+  <text x="490" y="88" class="b" text-anchor="middle">この章の節と主な資料</text>
+  <text x="850" y="88" class="b" text-anchor="middle">先に読む章</text>
+  <rect x="30" y="102" width="200" height="34" rx="6" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="130" y="124" class="b" text-anchor="middle">命令と CPU</text>
+  <rect x="300" y="102" width="380" height="34" rx="6" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1"/>
+  <text x="490" y="124" class="s" text-anchor="middle">27.1　命令表、ESR-L の資料</text>
+  <rect x="750" y="102" width="200" height="34" rx="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1"/>
+  <text x="850" y="124" class="s" text-anchor="middle">02 CPU</text>
+  <polyline points="230,119 298,119" fill="none" stroke="#7B8794" stroke-width="1.2" stroke-linejoin="round" marker-end="url(#ar)"/>
+  <polyline points="748,119 682,119" fill="none" stroke="#7B8794" stroke-width="1.2" stroke-linejoin="round" stroke-dasharray="4 3"/>
+  <rect x="30" y="145" width="200" height="34" rx="6" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="130" y="167" class="b" text-anchor="middle">プログラムを書く</text>
+  <rect x="300" y="145" width="380" height="34" rx="6" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1"/>
+  <text x="490" y="167" class="s" text-anchor="middle">27.2　Forth500、Systemhandbuch</text>
+  <rect x="750" y="145" width="200" height="34" rx="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1"/>
+  <text x="850" y="167" class="s" text-anchor="middle">12 機械語を実機で動かす</text>
+  <polyline points="230,162 298,162" fill="none" stroke="#7B8794" stroke-width="1.2" stroke-linejoin="round" marker-end="url(#ar)"/>
+  <polyline points="748,162 682,162" fill="none" stroke="#7B8794" stroke-width="1.2" stroke-linejoin="round" stroke-dasharray="4 3"/>
+  <rect x="30" y="188" width="200" height="34" rx="6" fill="#E6F6EC" stroke="#2F855A" stroke-width="1"/>
+  <text x="130" y="210" class="b" text-anchor="middle">データを移す</text>
+  <rect x="300" y="188" width="380" height="34" rx="6" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1"/>
+  <text x="490" y="210" class="s" text-anchor="middle">27.3　PocketTools</text>
+  <rect x="750" y="188" width="200" height="34" rx="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1"/>
+  <text x="850" y="210" class="s" text-anchor="middle">06 11 ピン</text>
+  <polyline points="230,205 298,205" fill="none" stroke="#7B8794" stroke-width="1.2" stroke-linejoin="round" marker-end="url(#ar)"/>
+  <polyline points="748,205 682,205" fill="none" stroke="#7B8794" stroke-width="1.2" stroke-linejoin="round" stroke-dasharray="4 3"/>
+  <rect x="30" y="231" width="200" height="34" rx="6" fill="#E6F6EC" stroke="#2F855A" stroke-width="1"/>
+  <text x="130" y="253" class="b" text-anchor="middle">音を鳴らす</text>
+  <rect x="300" y="231" width="380" height="34" rx="6" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1"/>
+  <text x="490" y="253" class="s" text-anchor="middle">27.4　PLAY3-Archive</text>
+  <rect x="750" y="231" width="200" height="34" rx="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1"/>
+  <text x="850" y="253" class="s" text-anchor="middle">10 起動、割り込み、タイマ、音</text>
+  <polyline points="230,248 298,248" fill="none" stroke="#7B8794" stroke-width="1.2" stroke-linejoin="round" marker-end="url(#ar)"/>
+  <polyline points="748,248 682,248" fill="none" stroke="#7B8794" stroke-width="1.2" stroke-linejoin="round" stroke-dasharray="4 3"/>
+  <rect x="30" y="274" width="200" height="34" rx="6" fill="#FFF5DF" stroke="#B7791F" stroke-width="1"/>
+  <text x="130" y="296" class="b" text-anchor="middle">直す・増設する</text>
+  <rect x="300" y="274" width="380" height="34" rx="6" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1"/>
+  <text x="490" y="296" class="s" text-anchor="middle">27.5　RAM 増設、クロック改造</text>
+  <rect x="750" y="274" width="200" height="34" rx="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1"/>
+  <text x="850" y="296" class="s" text-anchor="middle">05 カードスロット、09 回路</text>
+  <polyline points="230,291 298,291" fill="none" stroke="#7B8794" stroke-width="1.2" stroke-linejoin="round" marker-end="url(#ar)"/>
+  <polyline points="748,291 682,291" fill="none" stroke="#7B8794" stroke-width="1.2" stroke-linejoin="round" stroke-dasharray="4 3"/>
+  <rect x="30" y="317" width="200" height="34" rx="6" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1"/>
+  <text x="130" y="339" class="b" text-anchor="middle">機種を見分ける</text>
+  <rect x="300" y="317" width="380" height="34" rx="6" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1"/>
+  <text x="490" y="339" class="s" text-anchor="middle">27.6　機種の一覧</text>
+  <rect x="750" y="317" width="200" height="34" rx="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1"/>
+  <text x="850" y="339" class="s" text-anchor="middle">26 ROM バージョンの違い: 機種</text>
+  <polyline points="230,334 298,334" fill="none" stroke="#7B8794" stroke-width="1.2" stroke-linejoin="round" marker-end="url(#ar)"/>
+  <polyline points="748,334 682,334" fill="none" stroke="#7B8794" stroke-width="1.2" stroke-linejoin="round" stroke-dasharray="4 3"/>
+  <rect x="30" y="360" width="200" height="34" rx="6" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1"/>
+  <text x="130" y="382" class="b" text-anchor="middle">パソコンで動かす</text>
+  <rect x="300" y="360" width="380" height="34" rx="6" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1"/>
+  <text x="490" y="382" class="s" text-anchor="middle">27.7　MAME、PockEmul</text>
+  <rect x="750" y="360" width="200" height="34" rx="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1"/>
+  <text x="850" y="382" class="s" text-anchor="middle">02 CPU、11 IOCS と FCS</text>
+  <polyline points="230,377 298,377" fill="none" stroke="#7B8794" stroke-width="1.2" stroke-linejoin="round" marker-end="url(#ar)"/>
+  <polyline points="748,377 682,377" fill="none" stroke="#7B8794" stroke-width="1.2" stroke-linejoin="round" stroke-dasharray="4 3"/>
+</svg>

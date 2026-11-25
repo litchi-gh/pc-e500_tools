@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 470" width="980" height="470" role="img" aria-labelledby="t d">
+  <title id="t">多バイト演算の進む向き</title>
+  <desc id="d">ADCL と DADL で、指定するアドレスと、進む向き、桁上げの伝わる向きの違いを数の例で示した図。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .mb { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; font-weight: 700; }
+  </style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#52606D"/></marker><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#C0392B"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="469" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h" xml:space="preserve">多バイト演算の進む向き</text>
+  <text x="24" y="55" class="sub" xml:space="preserve">2 進（ADCL）はアドレスを増やしながら、10 進（DADL）はアドレスを減らしながら進む</text>
+  <rect x="24" y="74" width="932" height="180" rx="10" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.2"/>
+  <text x="40" y="100" class="mb" xml:space="preserve">ADCL (m),(n)   I = 2   1234h + 00FFh = 1333h</text>
+  <text x="40" y="120" class="s" xml:space="preserve">下位バイトを小さいアドレスに置く</text>
+  <text x="250" y="158" class="b" xml:space="preserve" text-anchor="end">(m)</text>
+  <rect x="270" y="138" width="110" height="30" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="325" y="158" class="mb" xml:space="preserve" text-anchor="middle">34</text>
+  <rect x="390" y="138" width="110" height="30" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="445" y="158" class="mb" xml:space="preserve" text-anchor="middle">12</text>
+  <text x="250" y="194" class="b" xml:space="preserve" text-anchor="end">(n)</text>
+  <rect x="270" y="174" width="110" height="30" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="325" y="194" class="mb" xml:space="preserve" text-anchor="middle">FF</text>
+  <rect x="390" y="174" width="110" height="30" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="445" y="194" class="mb" xml:space="preserve" text-anchor="middle">00</text>
+  <text x="250" y="230" class="b" xml:space="preserve" text-anchor="end">結果 (m)</text>
+  <rect x="270" y="210" width="110" height="30" rx="3" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="325" y="230" class="mb" xml:space="preserve" text-anchor="middle">33</text>
+  <rect x="390" y="210" width="110" height="30" rx="3" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="445" y="230" class="mb" xml:space="preserve" text-anchor="middle">13</text>
+  <text x="325" y="132" class="ms" xml:space="preserve" text-anchor="middle">m</text>
+  <text x="445" y="132" class="ms" xml:space="preserve" text-anchor="middle">m+1</text>
+  <path d="M300 248L470 248" fill="none" stroke="#C0392B" stroke-width="2" marker-end="url(#ar)"/>
+  <text x="540" y="154" xml:space="preserve">m、n には最下位バイト（小さいアドレス）を書く</text>
+  <text x="540" y="180" xml:space="preserve">34h + FFh = 133h → 33h、C = 1</text>
+  <text x="540" y="206" xml:space="preserve">12h + 00h + 1 = 13h</text>
+  <rect x="24" y="270" width="932" height="180" rx="10" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.2"/>
+  <text x="40" y="296" class="mb" xml:space="preserve">DADL (m),(n)   I = 2   1234 + 0099 = 1333（10 進）</text>
+  <text x="40" y="316" class="s" xml:space="preserve">上位の桁を小さいアドレスに置く</text>
+  <text x="250" y="354" class="b" xml:space="preserve" text-anchor="end">(m)</text>
+  <rect x="270" y="334" width="110" height="30" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="325" y="354" class="mb" xml:space="preserve" text-anchor="middle">12</text>
+  <rect x="390" y="334" width="110" height="30" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="445" y="354" class="mb" xml:space="preserve" text-anchor="middle">34</text>
+  <text x="250" y="390" class="b" xml:space="preserve" text-anchor="end">(n)</text>
+  <rect x="270" y="370" width="110" height="30" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="325" y="390" class="mb" xml:space="preserve" text-anchor="middle">00</text>
+  <rect x="390" y="370" width="110" height="30" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="445" y="390" class="mb" xml:space="preserve" text-anchor="middle">99</text>
+  <text x="250" y="426" class="b" xml:space="preserve" text-anchor="end">結果 (m)</text>
+  <rect x="270" y="406" width="110" height="30" rx="3" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="325" y="426" class="mb" xml:space="preserve" text-anchor="middle">13</text>
+  <rect x="390" y="406" width="110" height="30" rx="3" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="445" y="426" class="mb" xml:space="preserve" text-anchor="middle">33</text>
+  <text x="325" y="328" class="ms" xml:space="preserve" text-anchor="middle">m−1</text>
+  <text x="445" y="328" class="ms" xml:space="preserve" text-anchor="middle">m</text>
+  <path d="M470 444L300 444" fill="none" stroke="#C0392B" stroke-width="2" marker-end="url(#ar)"/>
+  <text x="540" y="350" xml:space="preserve">m、n には最下位バイト（大きいアドレス）を書く</text>
+  <text x="540" y="376" xml:space="preserve">34 + 99 = 133 → 33、C = 1（実行前は C = 0）</text>
+  <text x="540" y="402" xml:space="preserve">12 + 00 + 1 = 13</text>
+</svg>

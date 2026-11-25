@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 420" width="980" height="420" role="img" aria-labelledby="t d">
+  <title id="t">画面のシンボル</title>
+  <desc id="d">液晶の上のステータス行の記号と、4 行 40 文字の表示の場所。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .xs { font-size: 11px; fill: #52606D; }
+    .r { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; fill: #B7791F; font-weight: 700; }
+    .j { font-size: 10px; fill: #B7791F; font-weight: 700; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .lcd { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 14px; font-weight: 700; fill: #24351D; }
+  </style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#7B8794"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="419" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">画面のシンボル</text>
+  <text x="24" y="56" class="sub">上の 1 行がシンボル、下が 4 行 × 40 文字（1 文字は 5 × 7 ドット）</text>
+  <rect x="60" y="120" width="860" height="200" rx="8" fill="#BDD08B" stroke="#4A5A2A" stroke-width="1.2"/>
+  <text x="90" y="158" class="ms" xml:space="preserve">BUSY</text>
+  <text x="150" y="158" class="ms" xml:space="preserve">DBL</text>
+  <text x="200" y="158" class="ms" xml:space="preserve">RUN</text>
+  <text x="250" y="158" class="ms" xml:space="preserve">PRO</text>
+  <text x="430" y="140" class="ms" xml:space="preserve">DE</text>
+  <text x="450" y="140" class="ms" xml:space="preserve">G</text>
+  <text x="459" y="140" class="ms" xml:space="preserve">RAD</text>
+  <text x="510" y="140" class="ms" xml:space="preserve">HYP</text>
+  <text x="450" y="158" class="ms" xml:space="preserve">2ndF</text>
+  <text x="510" y="158" class="ms" xml:space="preserve">CAPS</text>
+  <text x="640" y="140" class="ms" xml:space="preserve">PRINT</text>
+  <text x="640" y="158" class="ms" xml:space="preserve">カナ</text>
+  <text x="680" y="158" class="ms" xml:space="preserve">小文字</text>
+  <text x="760" y="158" class="ms" xml:space="preserve">E</text>
+  <text x="800" y="158" class="ms" xml:space="preserve">BATT</text>
+  <rect x="80" y="172" width="820" height="30" rx="3" fill="#C9DA9C" stroke="#4A5A2A" stroke-width="1.2"/>
+  <text x="94" y="192" class="s">1 行目（40 文字）</text>
+  <rect x="80" y="207" width="820" height="30" rx="3" fill="#C9DA9C" stroke="#4A5A2A" stroke-width="1.2"/>
+  <text x="94" y="227" class="s">2 行目（40 文字）</text>
+  <rect x="80" y="242" width="820" height="30" rx="3" fill="#C9DA9C" stroke="#4A5A2A" stroke-width="1.2"/>
+  <text x="94" y="262" class="s">3 行目（40 文字）</text>
+  <rect x="80" y="277" width="820" height="30" rx="3" fill="#C9DA9C" stroke="#4A5A2A" stroke-width="1.2"/>
+  <text x="94" y="297" class="s">4 行目（40 文字）</text>
+  <line x1="190" y1="128" x2="190" y2="104" stroke="#7B8794" stroke-width="1.4"/>
+  <rect x="60" y="78" width="240" height="26" rx="6" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="70" y="96" class="s">実行中、倍精度、RUN、PRO</text>
+  <line x1="480" y1="128" x2="480" y2="104" stroke="#7B8794" stroke-width="1.4"/>
+  <rect x="370" y="78" width="230" height="26" rx="6" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="380" y="96" class="s">角度、双曲線、2nd F、大文字</text>
+  <line x1="660" y1="128" x2="660" y2="104" stroke="#7B8794" stroke-width="1.4"/>
+  <rect x="630" y="78" width="118" height="26" rx="6" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="640" y="96" class="s">印刷、カナ入力</text>
+  <line x1="790" y1="128" x2="790" y2="104" stroke="#7B8794" stroke-width="1.4"/>
+  <rect x="760" y="78" width="140" height="26" rx="6" fill="#FDECEA" stroke="#C0392B" stroke-width="1.2"/>
+  <text x="770" y="96" class="s">エラー、電池</text>
+  <text x="60" y="352" class="s">DEG と GRAD はシンボルの組み合わせで表示される: DE + G = DEG、G + RAD = GRAD</text>
+  <text x="60" y="376" class="s">「カナ」「小文字」は E の左に並ぶ</text>
+</svg>

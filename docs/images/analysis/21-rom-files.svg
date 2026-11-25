@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 520" width="980" height="520" role="img" aria-labelledby="t d">
+  <title id="t">ROM ファイルの位置と CPU のアドレス</title>
+  <desc id="d">256 KB のイメージ 2 通りと 384 KB のイメージについて、ファイルの位置と CPU のアドレスの対応を線で結んだ図。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .lbl { font-size: 12px; fill: #52606D; paint-order: stroke; stroke: #FFFFFF; stroke-width: 4px; stroke-linejoin: round; }
+  </style>
+  <defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#52606D"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="519" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">ROM ファイルの位置と CPU のアドレス</text>
+  <text x="24" y="55" class="sub">左がファイルの中の位置、右が CPU から見たアドレス。形は 3 通り</text>
+  <text x="160" y="90" class="b" text-anchor="middle">128 KB を 2 回並べた形</text>
+  <text x="160" y="108" class="s" text-anchor="middle">2.1（PC-1480U）</text>
+  <text x="70" y="132" class="s" text-anchor="middle">ファイル</text>
+  <text x="250" y="132" class="s" text-anchor="middle">CPU</text>
+  <rect x="30" y="142" width="80" height="102.4" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1"/>
+  <rect x="210" y="142" width="80" height="102.4" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1"/>
+  <text x="70" y="198.2" class="b" text-anchor="middle">128 KB</text>
+  <text x="250" y="190.2" class="s" text-anchor="middle">コピーし</text>
+  <text x="250" y="206.2" class="s" text-anchor="middle">(同じ中身)</text>
+  <text x="114" y="153" class="ms" xml:space="preserve">00000h</text>
+  <text x="206" y="153" class="ms" xml:space="preserve" text-anchor="end">C0000h</text>
+  <polyline points="114,193.2 206,193.2" fill="none" stroke="#7B8794" stroke-width="1.2" stroke-linejoin="round" marker-end="url(#ar)"/>
+  <rect x="30" y="244.4" width="80" height="102.4" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="1"/>
+  <rect x="210" y="244.4" width="80" height="102.4" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="1"/>
+  <text x="70" y="300.6" class="b" text-anchor="middle">128 KB</text>
+  <text x="250" y="300.6" class="s" text-anchor="middle">実体</text>
+  <text x="114" y="255.4" class="ms" xml:space="preserve">20000h</text>
+  <text x="206" y="255.4" class="ms" xml:space="preserve" text-anchor="end">E0000h</text>
+  <polyline points="114,295.6 206,295.6" fill="none" stroke="#7B8794" stroke-width="1.2" stroke-linejoin="round" marker-end="url(#ar)"/>
+  <text x="490" y="90" class="b" text-anchor="middle">本体 ROM だけ</text>
+  <text x="490" y="108" class="s" text-anchor="middle">2.2〜7.5（2.1 と 8.x 以外）</text>
+  <text x="400" y="132" class="s" text-anchor="middle">ファイル</text>
+  <text x="580" y="132" class="s" text-anchor="middle">CPU</text>
+  <rect x="360" y="142" width="80" height="204.8" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="1"/>
+  <rect x="540" y="142" width="80" height="204.8" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="1"/>
+  <text x="400" y="249.4" class="b" text-anchor="middle">256 KB</text>
+  <text x="580" y="249.4" class="s" text-anchor="middle">本体 ROM</text>
+  <text x="444" y="153" class="ms" xml:space="preserve">00000h</text>
+  <text x="536" y="153" class="ms" xml:space="preserve" text-anchor="end">C0000h</text>
+  <polyline points="444,244.4 536,244.4" fill="none" stroke="#7B8794" stroke-width="1.2" stroke-linejoin="round" marker-end="url(#ar)"/>
+  <text x="820" y="90" class="b" text-anchor="middle">拡張 ROM + 本体 ROM</text>
+  <text x="820" y="108" class="s" text-anchor="middle">8.3、8.4、8.5</text>
+  <text x="730" y="132" class="s" text-anchor="middle">ファイル</text>
+  <text x="910" y="132" class="s" text-anchor="middle">CPU</text>
+  <rect x="690" y="142" width="80" height="102.4" rx="0" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1"/>
+  <rect x="870" y="142" width="80" height="102.4" rx="0" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1"/>
+  <text x="730" y="198.2" class="b" text-anchor="middle">128 KB</text>
+  <text x="910" y="198.2" class="s" text-anchor="middle">拡張 ROM</text>
+  <text x="774" y="153" class="ms" xml:space="preserve">00000h</text>
+  <text x="866" y="153" class="ms" xml:space="preserve" text-anchor="end">20000h</text>
+  <polyline points="774,193.2 866,193.2" fill="none" stroke="#7B8794" stroke-width="1.2" stroke-linejoin="round" marker-end="url(#ar)"/>
+  <rect x="690" y="244.4" width="80" height="204.8" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="1"/>
+  <rect x="870" y="256.4" width="80" height="204.8" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="1"/>
+  <text x="730" y="351.8" class="b" text-anchor="middle">256 KB</text>
+  <text x="910" y="363.8" class="s" text-anchor="middle">本体 ROM</text>
+  <text x="774" y="255.4" class="ms" xml:space="preserve">20000h</text>
+  <text x="866" y="267.4" class="ms" xml:space="preserve" text-anchor="end">C0000h</text>
+  <polyline points="774,346.8 866,358.8" fill="none" stroke="#7B8794" stroke-width="1.2" stroke-linejoin="round" marker-end="url(#ar)"/>
+  <text x="64" y="490" class="m" xml:space="preserve">アドレス = 位置 + C0000h</text>
+  <text x="394" y="490" class="m" xml:space="preserve">アドレス = 位置 + C0000h</text>
+  <text x="690" y="490" class="m" xml:space="preserve">拡張 : アドレス = 位置 + 20000h</text>
+  <text x="690" y="508" class="m" xml:space="preserve">本体 : アドレス = 位置 + A0000h</text>
+</svg>

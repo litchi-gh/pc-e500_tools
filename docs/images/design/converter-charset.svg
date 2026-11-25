@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 296" width="980" height="296" role="img" aria-labelledby="t d">
+  <title id="t">本体の文字と Unicode の対応</title>
+  <desc id="d">バイト 00h から FFh と Unicode の対応の帯</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .lbl { font-size: 12px; fill: #52606D; paint-order: stroke; stroke: #FFFFFF; stroke-width: 4px; stroke-linejoin: round; }
+  </style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#52606D"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="295" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">本体の文字と Unicode の対応</text>
+  <text x="24" y="55" class="sub">表にないバイトも私用領域に移すので、往復で失われない</text>
+  <rect x="30" y="80" width="115" height="56" rx="2" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="87.5" y="113" class="m" xml:space="preserve" text-anchor="middle">00–1Fh</text>
+  <path d="M87.5 136L87.5 162" fill="none" stroke="#52606D" stroke-width="1.5" marker-end="url(#a)"/>
+  <text x="87.5" y="180" class="ms" xml:space="preserve" text-anchor="middle">U+E000 + HH</text>
+  <text x="87.5" y="200" class="s" text-anchor="middle">私用領域 *</text>
+  <rect x="145" y="80" width="341.406" height="56" rx="2" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="315.703" y="113" class="m" xml:space="preserve" text-anchor="middle">20–7Eh</text>
+  <path d="M315.703 136L315.703 162" fill="none" stroke="#52606D" stroke-width="1.5" marker-end="url(#a)"/>
+  <text x="315.703" y="180" class="ms" xml:space="preserve" text-anchor="middle">U+0020–007E</text>
+  <text x="315.703" y="200" class="s" text-anchor="middle">ASCII</text>
+  <rect x="486.406" y="80" width="122.188" height="56" rx="2" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="547.5" y="113" class="m" xml:space="preserve" text-anchor="middle">7F–A0h</text>
+  <path d="M547.5 136L547.5 162" fill="none" stroke="#52606D" stroke-width="1.5" marker-end="url(#a)"/>
+  <text x="547.5" y="180" class="ms" xml:space="preserve" text-anchor="middle">U+E000 + HH</text>
+  <text x="547.5" y="200" class="s" text-anchor="middle">私用領域</text>
+  <rect x="608.594" y="80" width="226.406" height="56" rx="2" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="721.797" y="113" class="m" xml:space="preserve" text-anchor="middle">A1–DFh</text>
+  <path d="M721.797 136L721.797 162" fill="none" stroke="#52606D" stroke-width="1.5" marker-end="url(#a)"/>
+  <text x="721.797" y="180" class="ms" xml:space="preserve" text-anchor="middle">U+FF61–FF9F</text>
+  <text x="721.797" y="200" class="s" text-anchor="middle">半角カナ（表）</text>
+  <rect x="835" y="80" width="115" height="56" rx="2" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="892.5" y="113" class="m" xml:space="preserve" text-anchor="middle">E0–FFh</text>
+  <path d="M892.5 136L892.5 162" fill="none" stroke="#52606D" stroke-width="1.5" marker-end="url(#a)"/>
+  <text x="892.5" y="180" class="ms" xml:space="preserve" text-anchor="middle">U+E000 + HH</text>
+  <text x="892.5" y="200" class="s" text-anchor="middle">私用領域</text>
+  <text x="30" y="228" class="s">* 09h（タブ）、0Ah、0Dh（改行）は、そのまま U+0009、U+000A、U+000D に対応させる</text>
+  <text x="30" y="250" class="s">bas2text: バイト → toUni[256] → コードポイント → UTF-8 か CP932</text>
+  <text x="30" y="270" class="s">text2bas: コードポイント → U+E000–E0FF ならバイトに戻す → それ以外は toSharp の表 → なければ ? と警告</text>
+</svg>

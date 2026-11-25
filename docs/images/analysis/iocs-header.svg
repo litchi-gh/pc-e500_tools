@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 360" width="980" height="360" role="img" aria-labelledby="t d">
+  <title id="t">IOCS ヘッダの 1 つを読む（DF820h、画面）</title>
+  <desc id="d">ROM 8.5 の DF820h のヘッダ 19 バイトを、次のヘッダ、デバイス番号、属性、エントリ、ドライブ名に区切り、属性 A2h をビットに分けた図。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+  </style>
+  <defs></defs>
+  <rect x="0.5" y="0.5" width="979" height="359" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">IOCS ヘッダの 1 つを読む（DF820h、画面）</text>
+  <text x="24" y="55" class="sub">[next:3][device:1][attribute:1][entry:3][NUL 終端ドライブ名]。3 バイトのアドレスは下位のバイトから並ぶ</text>
+  <text x="46" y="88" class="ms" xml:space="preserve" text-anchor="middle">+00</text>
+  <rect x="24" y="96" width="45" height="36" rx="4" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.5"/>
+  <text x="46.5" y="118.68" class="m" xml:space="preserve" text-anchor="middle">33</text>
+  <text x="95" y="88" class="ms" xml:space="preserve" text-anchor="middle">+01</text>
+  <rect x="73" y="96" width="45" height="36" rx="4" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.5"/>
+  <text x="95.5" y="118.68" class="m" xml:space="preserve" text-anchor="middle">F8</text>
+  <text x="144" y="88" class="ms" xml:space="preserve" text-anchor="middle">+02</text>
+  <rect x="122" y="96" width="45" height="36" rx="4" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.5"/>
+  <text x="144.5" y="118.68" class="m" xml:space="preserve" text-anchor="middle">0D</text>
+  <text x="193" y="88" class="ms" xml:space="preserve" text-anchor="middle">+03</text>
+  <rect x="171" y="96" width="45" height="36" rx="4" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+  <text x="193.5" y="118.68" class="m" xml:space="preserve" text-anchor="middle">00</text>
+  <text x="242" y="88" class="ms" xml:space="preserve" text-anchor="middle">+04</text>
+  <rect x="220" y="96" width="45" height="36" rx="4" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="242.5" y="118.68" class="m" xml:space="preserve" text-anchor="middle">A2</text>
+  <text x="291" y="88" class="ms" xml:space="preserve" text-anchor="middle">+05</text>
+  <rect x="269" y="96" width="45" height="36" rx="4" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="291.5" y="118.68" class="m" xml:space="preserve" text-anchor="middle">3F</text>
+  <text x="340" y="88" class="ms" xml:space="preserve" text-anchor="middle">+06</text>
+  <rect x="318" y="96" width="45" height="36" rx="4" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="340.5" y="118.68" class="m" xml:space="preserve" text-anchor="middle">22</text>
+  <text x="389" y="88" class="ms" xml:space="preserve" text-anchor="middle">+07</text>
+  <rect x="367" y="96" width="45" height="36" rx="4" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="389.5" y="118.68" class="m" xml:space="preserve" text-anchor="middle">0F</text>
+  <text x="438" y="88" class="ms" xml:space="preserve" text-anchor="middle">+08</text>
+  <rect x="416" y="96" width="45" height="36" rx="4" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="438.5" y="118.68" class="m" xml:space="preserve" text-anchor="middle">53</text>
+  <text x="438" y="150" class="m" xml:space="preserve" text-anchor="middle">S</text>
+  <text x="487" y="88" class="ms" xml:space="preserve" text-anchor="middle">+09</text>
+  <rect x="465" y="96" width="45" height="36" rx="4" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="487.5" y="118.68" class="m" xml:space="preserve" text-anchor="middle">54</text>
+  <text x="487" y="150" class="m" xml:space="preserve" text-anchor="middle">T</text>
+  <text x="536" y="88" class="ms" xml:space="preserve" text-anchor="middle">+0A</text>
+  <rect x="514" y="96" width="45" height="36" rx="4" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="536.5" y="118.68" class="m" xml:space="preserve" text-anchor="middle">44</text>
+  <text x="536" y="150" class="m" xml:space="preserve" text-anchor="middle">D</text>
+  <text x="585" y="88" class="ms" xml:space="preserve" text-anchor="middle">+0B</text>
+  <rect x="563" y="96" width="45" height="36" rx="4" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="585.5" y="118.68" class="m" xml:space="preserve" text-anchor="middle">4F</text>
+  <text x="585" y="150" class="m" xml:space="preserve" text-anchor="middle">O</text>
+  <text x="634" y="88" class="ms" xml:space="preserve" text-anchor="middle">+0C</text>
+  <rect x="612" y="96" width="45" height="36" rx="4" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="634.5" y="118.68" class="m" xml:space="preserve" text-anchor="middle">3A</text>
+  <text x="634" y="150" class="m" xml:space="preserve" text-anchor="middle">:</text>
+  <text x="683" y="88" class="ms" xml:space="preserve" text-anchor="middle">+0D</text>
+  <rect x="661" y="96" width="45" height="36" rx="4" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="683.5" y="118.68" class="m" xml:space="preserve" text-anchor="middle">53</text>
+  <text x="683" y="150" class="m" xml:space="preserve" text-anchor="middle">S</text>
+  <text x="732" y="88" class="ms" xml:space="preserve" text-anchor="middle">+0E</text>
+  <rect x="710" y="96" width="45" height="36" rx="4" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="732.5" y="118.68" class="m" xml:space="preserve" text-anchor="middle">43</text>
+  <text x="732" y="150" class="m" xml:space="preserve" text-anchor="middle">C</text>
+  <text x="781" y="88" class="ms" xml:space="preserve" text-anchor="middle">+0F</text>
+  <rect x="759" y="96" width="45" height="36" rx="4" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="781.5" y="118.68" class="m" xml:space="preserve" text-anchor="middle">52</text>
+  <text x="781" y="150" class="m" xml:space="preserve" text-anchor="middle">R</text>
+  <text x="830" y="88" class="ms" xml:space="preserve" text-anchor="middle">+10</text>
+  <rect x="808" y="96" width="45" height="36" rx="4" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="830.5" y="118.68" class="m" xml:space="preserve" text-anchor="middle">4E</text>
+  <text x="830" y="150" class="m" xml:space="preserve" text-anchor="middle">N</text>
+  <text x="879" y="88" class="ms" xml:space="preserve" text-anchor="middle">+11</text>
+  <rect x="857" y="96" width="45" height="36" rx="4" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="879.5" y="118.68" class="m" xml:space="preserve" text-anchor="middle">3A</text>
+  <text x="879" y="150" class="m" xml:space="preserve" text-anchor="middle">:</text>
+  <text x="928" y="88" class="ms" xml:space="preserve" text-anchor="middle">+12</text>
+  <rect x="906" y="96" width="45" height="36" rx="4" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="928.5" y="118.68" class="m" xml:space="preserve" text-anchor="middle">00</text>
+  <polyline points="24,162 24,168 167,168 167,162" fill="none" stroke="#52606D" stroke-width="1.2"/>
+  <text x="95.5" y="186" class="s" text-anchor="middle">次 = DF833h</text>
+  <polyline points="171,162 171,168 216,168 216,162" fill="none" stroke="#52606D" stroke-width="1.2"/>
+  <text x="193.5" y="186" class="s" text-anchor="middle">デバイス 0</text>
+  <polyline points="220,162 220,168 265,168 265,162" fill="none" stroke="#52606D" stroke-width="1.2"/>
+  <text x="242.5" y="186" class="s" text-anchor="middle">属性</text>
+  <polyline points="269,162 269,168 412,168 412,162" fill="none" stroke="#52606D" stroke-width="1.2"/>
+  <text x="340.5" y="186" class="s" text-anchor="middle">エントリ = F223Fh</text>
+  <polyline points="416,162 416,168 951,168 951,162" fill="none" stroke="#52606D" stroke-width="1.2"/>
+  <text x="683.5" y="186" class="s" text-anchor="middle">ドライブ名（00h で終わる）</text>
+  <text x="24" y="236" class="b">属性 A2h = 1010 0010</text>
+  <text x="80" y="258" class="ms" xml:space="preserve" text-anchor="middle">bit 7</text>
+  <rect x="24" y="266" width="112" height="60" rx="6" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+  <text x="80" y="292.18" class="m" xml:space="preserve" text-anchor="middle">1</text>
+  <text x="80" y="309.32" class="s" text-anchor="middle">file-control 可</text>
+  <text x="197" y="258" class="ms" xml:space="preserve" text-anchor="middle">bit 6</text>
+  <rect x="141" y="266" width="112" height="60" rx="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="197" y="292.18" class="m" xml:space="preserve" text-anchor="middle">0</text>
+  <text x="197" y="309.32" class="s" text-anchor="middle">特殊ファイル</text>
+  <text x="314" y="258" class="ms" xml:space="preserve" text-anchor="middle">bit 5</text>
+  <rect x="258" y="266" width="112" height="60" rx="6" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+  <text x="314" y="292.18" class="m" xml:space="preserve" text-anchor="middle">1</text>
+  <text x="314" y="309.32" class="s" text-anchor="middle">block/character</text>
+  <text x="431" y="258" class="ms" xml:space="preserve" text-anchor="middle">bit 4</text>
+  <rect x="375" y="266" width="112" height="60" rx="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="431" y="292.18" class="m" xml:space="preserve" text-anchor="middle">0</text>
+  <text x="431" y="309.32" class="s" text-anchor="middle">ASCII 既定</text>
+  <text x="548" y="258" class="ms" xml:space="preserve" text-anchor="middle">bit 3</text>
+  <rect x="492" y="266" width="112" height="60" rx="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="548" y="300.68" class="m" xml:space="preserve" text-anchor="middle">0</text>
+  <text x="665" y="258" class="ms" xml:space="preserve" text-anchor="middle">bit 2</text>
+  <rect x="609" y="266" width="112" height="60" rx="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="665" y="292.18" class="m" xml:space="preserve" text-anchor="middle">0</text>
+  <text x="665" y="309.32" class="s" text-anchor="middle">同時の読み書き不可</text>
+  <text x="782" y="258" class="ms" xml:space="preserve" text-anchor="middle">bit 1</text>
+  <rect x="726" y="266" width="112" height="60" rx="6" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+  <text x="782" y="292.18" class="m" xml:space="preserve" text-anchor="middle">1</text>
+  <text x="782" y="309.32" class="s" text-anchor="middle">write</text>
+  <text x="899" y="258" class="ms" xml:space="preserve" text-anchor="middle">bit 0</text>
+  <rect x="843" y="266" width="112" height="60" rx="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="899" y="292.18" class="m" xml:space="preserve" text-anchor="middle">0</text>
+  <text x="899" y="309.32" class="s" text-anchor="middle">read</text>
+</svg>

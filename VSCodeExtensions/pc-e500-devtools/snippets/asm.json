@@ -1,0 +1,156 @@
+{
+  "IOCS puts": {
+    "prefix": "iocs-puts",
+    "description": "文字列を表示 / Show a string (iocs.inc)",
+    "body": [
+      "MVW   (CX),DEV_SCRN",
+      "MV    (BL),${1:0}",
+      "MV    (BH),${2:0}",
+      "MV    X,${3:message}",
+      "MV    Y,${4:length}",
+      "MV    IL,SCRN_PUTS",
+      "CALLF IOCS",
+      "$0"
+    ]
+  },
+  "IOCS putc": {
+    "prefix": "iocs-putc",
+    "description": "1 文字表示 / Show a character (iocs.inc)",
+    "body": [
+      "MVW   (CX),DEV_SCRN",
+      "MV    (BL),${1:0}",
+      "MV    (BH),${2:0}",
+      "MV    A,${3:'A'}",
+      "MV    IL,SCRN_PUTC",
+      "CALLF IOCS",
+      "$0"
+    ]
+  },
+  "IOCS clear": {
+    "prefix": "iocs-cls",
+    "description": "画面を消す / Clear the screen (iocs.inc)",
+    "body": [
+      "MVW   (CX),DEV_SCRN",
+      "MV    IL,SCRN_CLEAR",
+      "CALLF IOCS",
+      "$0"
+    ]
+  },
+  "IOCS pset": {
+    "prefix": "iocs-pset",
+    "description": "点を打つ / Set a dot (iocs.inc)",
+    "body": [
+      "MVW   (CX),DEV_SCRN",
+      "MV    X,${1:0}",
+      "MV    Y,${2:0}",
+      "MV    A,${3|0,1,2|}             ; 0: 点灯 1: 消灯 2: 反転",
+      "MV    IL,SCRN_PSET",
+      "CALLF IOCS",
+      "$0"
+    ]
+  },
+  "IOCS line": {
+    "prefix": "iocs-line",
+    "description": "線を引く / Draw a line (iocs.inc, hardware.inc)",
+    "body": [
+      "MV    A,0",
+      "MV    [DOTSOP],A",
+      "MV    BA,\\$FFFF",
+      "MV    [LINPTN],BA",
+      "MVW   (CX),DEV_SCRN",
+      "MV    X,${1:0}",
+      "MV    Y,${2:0}",
+      "MVW   (BX),${3:239}",
+      "MVW   (DX),${4:31}",
+      "MV    IL,SCRN_LINE",
+      "CALLF IOCS",
+      "$0"
+    ]
+  },
+  "IOCS box": {
+    "prefix": "iocs-box",
+    "description": "四角を塗る / Fill a box (iocs.inc, hardware.inc)",
+    "body": [
+      "MV    A,0",
+      "MV    [DOTSOP],A",
+      "MV    BA,\\$FFFF",
+      "MV    [LINPTN],BA",
+      "MVW   (CX),DEV_SCRN",
+      "MV    X,${1:0}",
+      "MV    Y,${2:0}",
+      "MVW   (BX),${3:239}",
+      "MVW   (DX),${4:31}",
+      "MV    IL,SCRN_BOX",
+      "CALLF IOCS",
+      "$0"
+    ]
+  },
+  "IOCS key wait": {
+    "prefix": "iocs-key",
+    "description": "キーを待って読む / Wait for a key (iocs.inc)",
+    "body": [
+      "MVW   (CX),DEV_KYBD",
+      "MV    A,\\$80             ; ビット 7 = 1: 待つ",
+      "MV    IL,KYBD_READ",
+      "CALLF IOCS              ; A = 文字",
+      "$0"
+    ]
+  },
+  "IOCS key": {
+    "prefix": "iocs-inkey",
+    "description": "キーを読む（待たない） / Read a key (iocs.inc)",
+    "body": [
+      "MVW   (CX),DEV_KYBD",
+      "MV    A,0               ; 待たない",
+      "MV    IL,KYBD_READ",
+      "CALLF IOCS              ; IL = 1 なら A = 文字",
+      "$0"
+    ]
+  },
+  "IOCS": {
+    "prefix": "iocs",
+    "description": "IOCS を呼ぶ / Call IOCS (iocs.inc)",
+    "body": [
+      "MVW   (CX),${1|DEV_SCRN,DEV_KYBD,DEV_COM,DEV_PRN,DEV_CAS,DEV_RAMDISK,DEV_MEM,DEV_SYSTM|}",
+      "MV    IL,$2",
+      "CALLF IOCS",
+      "$0"
+    ]
+  },
+  "Sprite": {
+    "prefix": "sprite",
+    "description": "キャラクタを描く / Draw a sprite (sprite.inc)",
+    "body": [
+      "MVW   (sprite_x),${1:100}",
+      "MV    (sprite_y),${2:8}",
+      "MV    X,${3:player}",
+      "MV    A,${4:0}",
+      "CALL  sprite_draw",
+      "$0"
+    ]
+  },
+  "Game loop": {
+    "prefix": "game-loop",
+    "description": "ゲームの骨組み / Skeleton of a game",
+    "body": [
+      "INCLUDE \"hardware.inc\"",
+      "",
+      "start:  CALL  game_start",
+      "loop:   CALL  screen_restore",
+      "        $0",
+      "        CALL  screen_show",
+      "        CALL  pad_read",
+      "        TEST  A,PAD_BREAK",
+      "        JRZ   loop",
+      "        CALL  game_end",
+      "        RC",
+      "        RETF",
+      "",
+      "        INCLUDE \"game.inc\"",
+      "        INCLUDE \"screen.inc\"",
+      "        INCLUDE \"sprite.inc\"",
+      "        INCLUDE \"pad.inc\"",
+      "        INCLUDE \"text.inc\""
+    ]
+  }
+}

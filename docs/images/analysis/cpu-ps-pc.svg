@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 430" width="980" height="430" role="img" aria-labelledby="t d">
+  <title id="t">PS と PC から実行アドレスを作る</title>
+  <desc id="d">PS と PC を並べて 20 ビットの実行アドレスを作る様子と、PC が FFFFh から 0000h に戻るときに PS が変わらない様子の図。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .mb { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; font-weight: 700; }
+  </style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#52606D"/></marker><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#C0392B"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="429" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h" xml:space="preserve">PS と PC から実行アドレスを作る</text>
+  <text x="24" y="55" class="sub" xml:space="preserve">PS（4 ビット）が 64 KB のセグメントを選び、PC（16 ビット）がその中を動く</text>
+  <text x="24" y="92" class="b" xml:space="preserve">例 1  ふつうのアドレス</text>
+  <text x="80" y="127" class="b" xml:space="preserve" text-anchor="end">PS</text>
+  <rect x="90" y="104" width="34" height="34" rx="2" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="107" y="126" class="mb" xml:space="preserve" text-anchor="middle">C</text>
+  <text x="196" y="127" class="b" xml:space="preserve" text-anchor="end">PC</text>
+  <rect x="206" y="104" width="34" height="34" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="223" y="126" class="mb" xml:space="preserve" text-anchor="middle">1</text>
+  <rect x="240" y="104" width="34" height="34" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="257" y="126" class="mb" xml:space="preserve" text-anchor="middle">2</text>
+  <rect x="274" y="104" width="34" height="34" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="291" y="126" class="mb" xml:space="preserve" text-anchor="middle">3</text>
+  <rect x="308" y="104" width="34" height="34" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="325" y="126" class="mb" xml:space="preserve" text-anchor="middle">4</text>
+  <path d="M352 121L400 121" fill="none" stroke="#52606D" stroke-width="1.6" marker-end="url(#a)"/>
+  <text x="410" y="94" class="s" xml:space="preserve">実行アドレス（20 ビット）</text>
+  <rect x="410" y="104" width="34" height="34" rx="2" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="427" y="126" class="mb" xml:space="preserve" text-anchor="middle">C</text>
+  <rect x="444" y="104" width="34" height="34" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="461" y="126" class="mb" xml:space="preserve" text-anchor="middle">1</text>
+  <rect x="478" y="104" width="34" height="34" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="495" y="126" class="mb" xml:space="preserve" text-anchor="middle">2</text>
+  <rect x="512" y="104" width="34" height="34" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="529" y="126" class="mb" xml:space="preserve" text-anchor="middle">3</text>
+  <rect x="546" y="104" width="34" height="34" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="563" y="126" class="mb" xml:space="preserve" text-anchor="middle">4</text>
+  <text x="624" y="127" class="mb" xml:space="preserve">C1234h</text>
+  <text x="24" y="190" class="b" xml:space="preserve">例 2  64 KB の境界</text>
+  <text x="80" y="225" class="b" xml:space="preserve" text-anchor="end">PS</text>
+  <rect x="90" y="202" width="34" height="34" rx="2" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="107" y="224" class="mb" xml:space="preserve" text-anchor="middle">C</text>
+  <text x="196" y="225" class="b" xml:space="preserve" text-anchor="end">PC</text>
+  <rect x="206" y="202" width="34" height="34" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="223" y="224" class="mb" xml:space="preserve" text-anchor="middle">F</text>
+  <rect x="240" y="202" width="34" height="34" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="257" y="224" class="mb" xml:space="preserve" text-anchor="middle">F</text>
+  <rect x="274" y="202" width="34" height="34" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="291" y="224" class="mb" xml:space="preserve" text-anchor="middle">F</text>
+  <rect x="308" y="202" width="34" height="34" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="325" y="224" class="mb" xml:space="preserve" text-anchor="middle">F</text>
+  <path d="M352 219L400 219" fill="none" stroke="#52606D" stroke-width="1.6" marker-end="url(#a)"/>
+  <text x="354" y="208" class="ms" xml:space="preserve">NOP</text>
+  <rect x="410" y="202" width="34" height="34" rx="2" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="427" y="224" class="mb" xml:space="preserve" text-anchor="middle">C</text>
+  <rect x="444" y="202" width="34" height="34" rx="2" fill="#FDECEA" stroke="#C0392B" stroke-width="1.2"/>
+  <text x="461" y="224" class="mb" xml:space="preserve" text-anchor="middle">0</text>
+  <rect x="478" y="202" width="34" height="34" rx="2" fill="#FDECEA" stroke="#C0392B" stroke-width="1.2"/>
+  <text x="495" y="224" class="mb" xml:space="preserve" text-anchor="middle">0</text>
+  <rect x="512" y="202" width="34" height="34" rx="2" fill="#FDECEA" stroke="#C0392B" stroke-width="1.2"/>
+  <text x="529" y="224" class="mb" xml:space="preserve" text-anchor="middle">0</text>
+  <rect x="546" y="202" width="34" height="34" rx="2" fill="#FDECEA" stroke="#C0392B" stroke-width="1.2"/>
+  <text x="563" y="224" class="mb" xml:space="preserve" text-anchor="middle">0</text>
+  <text x="624" y="225" class="b" xml:space="preserve">C0000h（D0000h ではない）</text>
+  <text x="24" y="290" class="b" xml:space="preserve">外部メモリ 1 MB = 16 セグメント</text>
+  <rect x="24" y="304" width="54" height="40" rx="3" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="51" y="329" class="m" xml:space="preserve" text-anchor="middle">0xxxx</text>
+  <rect x="82" y="304" width="54" height="40" rx="3" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="109" y="329" class="m" xml:space="preserve" text-anchor="middle">1xxxx</text>
+  <rect x="140" y="304" width="54" height="40" rx="3" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="167" y="329" class="m" xml:space="preserve" text-anchor="middle">2xxxx</text>
+  <rect x="198" y="304" width="54" height="40" rx="3" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="225" y="329" class="m" xml:space="preserve" text-anchor="middle">3xxxx</text>
+  <rect x="256" y="304" width="54" height="40" rx="3" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="283" y="329" class="m" xml:space="preserve" text-anchor="middle">4xxxx</text>
+  <rect x="314" y="304" width="54" height="40" rx="3" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="341" y="329" class="m" xml:space="preserve" text-anchor="middle">5xxxx</text>
+  <rect x="372" y="304" width="54" height="40" rx="3" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="399" y="329" class="m" xml:space="preserve" text-anchor="middle">6xxxx</text>
+  <rect x="430" y="304" width="54" height="40" rx="3" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="457" y="329" class="m" xml:space="preserve" text-anchor="middle">7xxxx</text>
+  <rect x="488" y="304" width="54" height="40" rx="3" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="515" y="329" class="m" xml:space="preserve" text-anchor="middle">8xxxx</text>
+  <rect x="546" y="304" width="54" height="40" rx="3" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="573" y="329" class="m" xml:space="preserve" text-anchor="middle">9xxxx</text>
+  <rect x="604" y="304" width="54" height="40" rx="3" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="631" y="329" class="m" xml:space="preserve" text-anchor="middle">Axxxx</text>
+  <rect x="662" y="304" width="54" height="40" rx="3" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="689" y="329" class="m" xml:space="preserve" text-anchor="middle">Bxxxx</text>
+  <rect x="720" y="304" width="54" height="40" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="747" y="329" class="m" xml:space="preserve" text-anchor="middle">Cxxxx</text>
+  <rect x="778" y="304" width="54" height="40" rx="3" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="805" y="329" class="m" xml:space="preserve" text-anchor="middle">Dxxxx</text>
+  <rect x="836" y="304" width="54" height="40" rx="3" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="863" y="329" class="m" xml:space="preserve" text-anchor="middle">Exxxx</text>
+  <rect x="894" y="304" width="54" height="40" rx="3" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="921" y="329" class="m" xml:space="preserve" text-anchor="middle">Fxxxx</text>
+  <path d="M776 350 C776 384 728 384 728 350" fill="none" stroke="#C0392B" stroke-width="2" marker-end="url(#ar)"/>
+  <text x="792" y="374" class="s" xml:space="preserve">PC はこの中で回る</text>
+  <text x="24" y="412" class="s" xml:space="preserve" style="fill:#1F2933">PS を変えるのは JPF、CALLF、RETF、JP r3、JP (n)、RETI、割り込み、リセットだけ。</text>
+</svg>

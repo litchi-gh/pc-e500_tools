@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 600" width="980" height="600" role="img" aria-labelledby="t d">
+  <title id="t">作業域のポインタが指す場所</title>
+  <desc id="d">BFCDEh からのポインタ表の値が、内蔵 RAM の上端のどこを区切るかを示す図。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .lbl { font-size: 12px; fill: #52606D; paint-order: stroke; stroke: #FFFFFF; stroke-width: 4px; stroke-linejoin: round; }
+  </style>
+  <defs><marker id="a2F6DB5" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2F6DB5"/></marker><marker id="a2F855A" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2F855A"/></marker><marker id="a6B4FBB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#6B4FBB"/></marker><marker id="aC0392B" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#C0392B"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="599" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">作業域のポインタが指す場所</text>
+  <text x="24" y="55" class="sub">ROM 3.2、32 KB の起動直後。各領域は「自分のポインタの値」から「次のポインタの値」まで</text>
+  <text x="40" y="88" class="b">ポインタ表（外部 RAM）</text>
+  <text x="40" y="106" class="s">3 バイトずつ 21 個</text>
+  <rect x="40" y="124" width="290" height="40" rx="4" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="52" y="149" class="m" xml:space="preserve">BFCDEh</text>
+  <text x="128" y="149" class="b">U スタック</text>
+  <text x="318" y="149" class="m" xml:space="preserve" text-anchor="end">BF21Bh</text>
+  <rect x="40" y="174" width="290" height="40" rx="4" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="52" y="199" class="m" xml:space="preserve">BFCE1h</text>
+  <text x="128" y="199" class="b">S スタック</text>
+  <text x="318" y="199" class="m" xml:space="preserve" text-anchor="end">BF6A0h</text>
+  <rect x="40" y="224" width="290" height="40" rx="4" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="52" y="249" class="m" xml:space="preserve">BFCE4h〜</text>
+  <text x="128" y="249" class="s">予約（14 個）</text>
+  <text x="318" y="249" class="m" xml:space="preserve" text-anchor="end">BF858h</text>
+  <rect x="40" y="274" width="290" height="40" rx="4" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.5"/>
+  <text x="52" y="299" class="m" xml:space="preserve">BFD0Eh</text>
+  <text x="128" y="299" class="b">BASIC の作業域</text>
+  <text x="318" y="299" class="m" xml:space="preserve" text-anchor="end">BF858h</text>
+  <rect x="40" y="324" width="290" height="40" rx="4" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="52" y="349" class="m" xml:space="preserve">BFD11h〜</text>
+  <text x="128" y="349" class="s">予約（2 個）</text>
+  <text x="318" y="349" class="m" xml:space="preserve" text-anchor="end">BF9B4h</text>
+  <rect x="40" y="374" width="290" height="40" rx="4" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+  <text x="52" y="399" class="m" xml:space="preserve">BFD17h</text>
+  <text x="128" y="399" class="b">IOCS の作業域</text>
+  <text x="318" y="399" class="m" xml:space="preserve" text-anchor="end">BF9B4h</text>
+  <rect x="40" y="424" width="290" height="40" rx="4" fill="#FDECEA" stroke="#C0392B" stroke-width="1.5"/>
+  <text x="52" y="449" class="m" xml:space="preserve">BFD1Ah</text>
+  <text x="128" y="449" class="b">機械語エリア</text>
+  <text x="318" y="449" class="m" xml:space="preserve" text-anchor="end">BFC00h</text>
+  <text x="560" y="88" class="b">内蔵 RAM の上端</text>
+  <text x="560" y="106" class="s">下へ行くほどアドレスが大きい</text>
+  <rect x="560" y="124" width="300" height="64" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="710" y="153" class="b" text-anchor="middle">S1: のメモリブロック</text>
+  <text x="710" y="173" class="s" text-anchor="middle">DATA、TEXT、FUNCKEY、AER</text>
+  <text x="868" y="129" class="m" xml:space="preserve">B8018h</text>
+  <rect x="560" y="188" width="300" height="62" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="710" y="216" class="b" text-anchor="middle">U スタック</text>
+  <text x="710" y="236" class="s" text-anchor="middle">485h バイト</text>
+  <text x="868" y="193" class="m" xml:space="preserve">BF21Bh</text>
+  <rect x="560" y="250" width="300" height="62" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="710" y="278" class="b" text-anchor="middle">S スタック</text>
+  <text x="710" y="298" class="s" text-anchor="middle">1B8h バイト</text>
+  <text x="868" y="255" class="m" xml:space="preserve">BF6A0h</text>
+  <rect x="560" y="312" width="300" height="62" rx="0" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.5"/>
+  <text x="710" y="340" class="b" text-anchor="middle">BASIC の作業域</text>
+  <text x="710" y="360" class="s" text-anchor="middle">15Ch バイト</text>
+  <text x="868" y="317" class="m" xml:space="preserve">BF858h</text>
+  <rect x="560" y="374" width="300" height="62" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+  <text x="710" y="402" class="b" text-anchor="middle">IOCS の作業域</text>
+  <text x="710" y="422" class="s" text-anchor="middle">24Ch バイト</text>
+  <text x="868" y="379" class="m" xml:space="preserve">BF9B4h</text>
+  <rect x="560" y="436" width="300" height="72" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="710" y="469" class="b" text-anchor="middle">システムアドレス</text>
+  <text x="710" y="489" class="s" text-anchor="middle">BFC00h〜BFFFFh</text>
+  <text x="868" y="441" class="m" xml:space="preserve">BFC00h</text>
+  <text x="868" y="513" class="m" xml:space="preserve">C0000h</text>
+  <polyline points="330,144 490,144 490,188 559,188" fill="none" stroke="#2F6DB5" stroke-width="1.8" marker-end="url(#a2F6DB5)"/>
+  <polyline points="330,194 460,194 460,250 559,250" fill="none" stroke="#2F6DB5" stroke-width="1.8" marker-end="url(#a2F6DB5)"/>
+  <polyline points="330,294 430,294 430,312 559,312" fill="none" stroke="#6B4FBB" stroke-width="1.8" marker-end="url(#a6B4FBB)"/>
+  <polyline points="330,394 430,394 430,374 559,374" fill="none" stroke="#2F855A" stroke-width="1.8" marker-end="url(#a2F855A)"/>
+  <polyline points="330,444 460,444 460,436 559,436" fill="none" stroke="#C0392B" stroke-width="1.8" marker-end="url(#aC0392B)"/>
+  <rect x="40" y="530" width="900" height="50" rx="6" fill="#FDECEA" stroke="#C0392B" stroke-width="1.5"/>
+  <text x="490" y="551" class="b" text-anchor="middle">機械語エリアは、起動直後は 0 バイト（BFC00h から BFC00h まで）</text>
+  <text x="490" y="569" class="s" text-anchor="middle">確保すると BFD1Ah の値が小さくなり、そのアドレスから BFBFFh までが機械語エリアになる</text>
+</svg>

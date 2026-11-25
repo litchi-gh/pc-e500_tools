@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 250" width="980" height="250" role="img" aria-labelledby="t d">
+  <title id="t">BIN ファイルの中身</title>
+  <desc id="d">16 バイトのヘッダーは、固定の 5 バイト、長さ 3 バイト、アドレス 3 バイト、固定の 5 バイトで、その後に機械語が続く。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 14px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 12px; }
+  </style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#52606D"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="249" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+
+  <text x="24" y="34" class="h" text-anchor="start" xml:space="preserve">BIN ファイルの中身</text>
+  <rect x="24" y="70" width="42" height="40" rx="4" fill="#F3F5F8" stroke="#7B8794"/>
+  <text x="45" y="95" class="m" text-anchor="middle" xml:space="preserve">FF</text>
+  <text x="45" y="62" class="s" text-anchor="middle" xml:space="preserve">0</text>
+  <rect x="68" y="70" width="42" height="40" rx="4" fill="#F3F5F8" stroke="#7B8794"/>
+  <text x="89" y="95" class="m" text-anchor="middle" xml:space="preserve">00</text>
+  <text x="89" y="62" class="s" text-anchor="middle" xml:space="preserve">1</text>
+  <rect x="112" y="70" width="42" height="40" rx="4" fill="#F3F5F8" stroke="#7B8794"/>
+  <text x="133" y="95" class="m" text-anchor="middle" xml:space="preserve">06</text>
+  <text x="133" y="62" class="s" text-anchor="middle" xml:space="preserve">2</text>
+  <rect x="156" y="70" width="42" height="40" rx="4" fill="#F3F5F8" stroke="#7B8794"/>
+  <text x="177" y="95" class="m" text-anchor="middle" xml:space="preserve">01</text>
+  <text x="177" y="62" class="s" text-anchor="middle" xml:space="preserve">3</text>
+  <rect x="200" y="70" width="42" height="40" rx="4" fill="#F3F5F8" stroke="#7B8794"/>
+  <text x="221" y="95" class="m" text-anchor="middle" xml:space="preserve">10</text>
+  <text x="221" y="62" class="s" text-anchor="middle" xml:space="preserve">4</text>
+  <rect x="244" y="70" width="42" height="40" rx="4" fill="#FFF5DF" stroke="#B7791F"/>
+  <text x="265" y="95" class="m" text-anchor="middle" xml:space="preserve">2E</text>
+  <text x="265" y="62" class="s" text-anchor="middle" xml:space="preserve">5</text>
+  <rect x="288" y="70" width="42" height="40" rx="4" fill="#FFF5DF" stroke="#B7791F"/>
+  <text x="309" y="95" class="m" text-anchor="middle" xml:space="preserve">00</text>
+  <text x="309" y="62" class="s" text-anchor="middle" xml:space="preserve">6</text>
+  <rect x="332" y="70" width="42" height="40" rx="4" fill="#FFF5DF" stroke="#B7791F"/>
+  <text x="353" y="95" class="m" text-anchor="middle" xml:space="preserve">00</text>
+  <text x="353" y="62" class="s" text-anchor="middle" xml:space="preserve">7</text>
+  <rect x="376" y="70" width="42" height="40" rx="4" fill="#E8F1FC" stroke="#2F6DB5"/>
+  <text x="397" y="95" class="m" text-anchor="middle" xml:space="preserve">00</text>
+  <text x="397" y="62" class="s" text-anchor="middle" xml:space="preserve">8</text>
+  <rect x="420" y="70" width="42" height="40" rx="4" fill="#E8F1FC" stroke="#2F6DB5"/>
+  <text x="441" y="95" class="m" text-anchor="middle" xml:space="preserve">EC</text>
+  <text x="441" y="62" class="s" text-anchor="middle" xml:space="preserve">9</text>
+  <rect x="464" y="70" width="42" height="40" rx="4" fill="#E8F1FC" stroke="#2F6DB5"/>
+  <text x="485" y="95" class="m" text-anchor="middle" xml:space="preserve">0B</text>
+  <text x="485" y="62" class="s" text-anchor="middle" xml:space="preserve">10</text>
+  <rect x="508" y="70" width="42" height="40" rx="4" fill="#F3F5F8" stroke="#7B8794"/>
+  <text x="529" y="95" class="m" text-anchor="middle" xml:space="preserve">FF</text>
+  <text x="529" y="62" class="s" text-anchor="middle" xml:space="preserve">11</text>
+  <rect x="552" y="70" width="42" height="40" rx="4" fill="#F3F5F8" stroke="#7B8794"/>
+  <text x="573" y="95" class="m" text-anchor="middle" xml:space="preserve">FF</text>
+  <text x="573" y="62" class="s" text-anchor="middle" xml:space="preserve">12</text>
+  <rect x="596" y="70" width="42" height="40" rx="4" fill="#F3F5F8" stroke="#7B8794"/>
+  <text x="617" y="95" class="m" text-anchor="middle" xml:space="preserve">FF</text>
+  <text x="617" y="62" class="s" text-anchor="middle" xml:space="preserve">13</text>
+  <rect x="640" y="70" width="42" height="40" rx="4" fill="#F3F5F8" stroke="#7B8794"/>
+  <text x="661" y="95" class="m" text-anchor="middle" xml:space="preserve">00</text>
+  <text x="661" y="62" class="s" text-anchor="middle" xml:space="preserve">14</text>
+  <rect x="684" y="70" width="42" height="40" rx="4" fill="#F3F5F8" stroke="#7B8794"/>
+  <text x="705" y="95" class="m" text-anchor="middle" xml:space="preserve">0F</text>
+  <text x="705" y="62" class="s" text-anchor="middle" xml:space="preserve">15</text>
+  <rect x="728" y="70" width="224" height="40" rx="4" fill="#E6F6EC" stroke="#2F855A"/>
+  <text x="840" y="95" class="m" text-anchor="middle" xml:space="preserve">30 CC D6 00 …</text>
+  <path d="M24,118 L24,126 L242,126 L242,118" fill="none" stroke="#7B8794" stroke-width="1.6"/>
+  <text x="133.0" y="146" class="" text-anchor="middle" xml:space="preserve">固定</text>
+  <text x="133.0" y="166" class="s" text-anchor="middle" xml:space="preserve">機械語のしるし</text>
+  <path d="M244,118 L244,126 L374,126 L374,118" fill="none" stroke="#7B8794" stroke-width="1.6"/>
+  <text x="309.0" y="146" class="" text-anchor="middle" xml:space="preserve">長さ（下位から）</text>
+  <text x="309.0" y="166" class="s" text-anchor="middle" xml:space="preserve">00002Eh = 46 バイト</text>
+  <path d="M376,118 L376,126 L506,126 L506,118" fill="none" stroke="#7B8794" stroke-width="1.6"/>
+  <text x="441.0" y="146" class="" text-anchor="middle" xml:space="preserve">アドレス（下位から）</text>
+  <text x="441.0" y="166" class="s" text-anchor="middle" xml:space="preserve">0BEC00h</text>
+  <path d="M508,118 L508,126 L726,126 L726,118" fill="none" stroke="#7B8794" stroke-width="1.6"/>
+  <text x="617.0" y="146" class="" text-anchor="middle" xml:space="preserve">固定</text>
+  <text x="617.0" y="166" class="s" text-anchor="middle" xml:space="preserve"></text>
+  <text x="840" y="146" class="" text-anchor="middle" xml:space="preserve">機械語 46 バイト</text>
+  <text x="840" y="166" class="s" text-anchor="middle" xml:space="preserve">ソースの ORG から</text>
+  <rect x="24" y="186" width="928" height="44" rx="6" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="40" y="213" class="" text-anchor="start" xml:space="preserve">LOAD M "X:HELLO.BIN" は、ヘッダーを読んで、機械語だけを BEC00h から順に書き込みます。CALL &amp;HBEC00 で始まります。</text>
+</svg>

@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 470" width="980" height="470" role="img" aria-labelledby="t d">
+  <title id="t">キャラクタの 1 桁を描く</title>
+  <desc id="d">マスクと絵を 3 ドットずらして画面の 2 バイトに描くようす</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .lbl { font-size: 12px; fill: #52606D; paint-order: stroke; stroke: #FFFFFF; stroke-width: 4px; stroke-linejoin: round; }
+  </style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#52606D"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="469" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">キャラクタの 1 桁を描く</text>
+  <text x="24" y="55" class="sub">y の下 3 ビットだけ縦にずらし、上の行と下の行の 2 バイトに分けて合成する</text>
+  <rect x="40" y="108" width="26" height="18" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="0.8"/>
+  <rect x="40" y="126" width="26" height="18" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.8"/>
+  <rect x="40" y="144" width="26" height="18" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.8"/>
+  <rect x="40" y="162" width="26" height="18" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.8"/>
+  <rect x="40" y="180" width="26" height="18" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.8"/>
+  <rect x="40" y="198" width="26" height="18" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.8"/>
+  <rect x="40" y="216" width="26" height="18" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.8"/>
+  <rect x="40" y="234" width="26" height="18" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="0.8"/>
+  <text x="53" y="101" class="s" text-anchor="middle">マスク 7Eh</text>
+  <rect x="130" y="108" width="26" height="18" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="0.8"/>
+  <rect x="130" y="126" width="26" height="18" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="0.8"/>
+  <rect x="130" y="144" width="26" height="18" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.8"/>
+  <rect x="130" y="162" width="26" height="18" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="0.8"/>
+  <rect x="130" y="180" width="26" height="18" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="0.8"/>
+  <rect x="130" y="198" width="26" height="18" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.8"/>
+  <rect x="130" y="216" width="26" height="18" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="0.8"/>
+  <rect x="130" y="234" width="26" height="18" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="0.8"/>
+  <text x="143" y="101" class="s" text-anchor="middle">絵 24h</text>
+  <text x="24" y="80" class="b">.spr の 2 バイト（ビット 0 が上）</text>
+  <rect x="200" y="130" width="170" height="100" rx="6" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="285" y="155" class="b" text-anchor="middle">3 ドットずらす</text>
+  <text x="285" y="175" class="s" text-anchor="middle">BA に入れて</text>
+  <text x="285" y="195" class="s" text-anchor="middle">ADD BA,BA を 3 回</text>
+  <text x="285" y="215" class="s" text-anchor="middle">= 3 ビット左へ</text>
+  <path d="M160 180L200 180" fill="none" stroke="#52606D" stroke-width="1.5" marker-end="url(#a)"/>
+  <rect x="410" y="108" width="26" height="18" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="0.8"/>
+  <rect x="410" y="126" width="26" height="18" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="0.8"/>
+  <rect x="410" y="144" width="26" height="18" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="0.8"/>
+  <rect x="410" y="162" width="26" height="18" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="0.8"/>
+  <rect x="410" y="180" width="26" height="18" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.8"/>
+  <rect x="410" y="198" width="26" height="18" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.8"/>
+  <rect x="410" y="216" width="26" height="18" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.8"/>
+  <rect x="410" y="234" width="26" height="18" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.8"/>
+  <text x="423" y="101" class="s" text-anchor="middle">A = F0h</text>
+  <rect x="410" y="260" width="26" height="18" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.8"/>
+  <rect x="410" y="278" width="26" height="18" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.8"/>
+  <rect x="410" y="296" width="26" height="18" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="0.8"/>
+  <rect x="410" y="314" width="26" height="18" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="0.8"/>
+  <rect x="410" y="332" width="26" height="18" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="0.8"/>
+  <rect x="410" y="350" width="26" height="18" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="0.8"/>
+  <rect x="410" y="368" width="26" height="18" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="0.8"/>
+  <rect x="410" y="386" width="26" height="18" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="0.8"/>
+  <text x="423" y="420" class="s" text-anchor="middle">B = 03h</text>
+  <rect x="490" y="108" width="26" height="18" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="0.8"/>
+  <rect x="490" y="126" width="26" height="18" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="0.8"/>
+  <rect x="490" y="144" width="26" height="18" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="0.8"/>
+  <rect x="490" y="162" width="26" height="18" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="0.8"/>
+  <rect x="490" y="180" width="26" height="18" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="0.8"/>
+  <rect x="490" y="198" width="26" height="18" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.8"/>
+  <rect x="490" y="216" width="26" height="18" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="0.8"/>
+  <rect x="490" y="234" width="26" height="18" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="0.8"/>
+  <text x="503" y="101" class="s" text-anchor="middle">A = 20h</text>
+  <rect x="490" y="260" width="26" height="18" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.8"/>
+  <rect x="490" y="278" width="26" height="18" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="0.8"/>
+  <rect x="490" y="296" width="26" height="18" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="0.8"/>
+  <rect x="490" y="314" width="26" height="18" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="0.8"/>
+  <rect x="490" y="332" width="26" height="18" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="0.8"/>
+  <rect x="490" y="350" width="26" height="18" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="0.8"/>
+  <rect x="490" y="368" width="26" height="18" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="0.8"/>
+  <rect x="490" y="386" width="26" height="18" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="0.8"/>
+  <text x="503" y="420" class="s" text-anchor="middle">B = 01h</text>
+  <path d="M370 180L410 180" fill="none" stroke="#52606D" stroke-width="1.5" marker-end="url(#a)"/>
+  <rect x="590" y="108" width="26" height="18" rx="0" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="0.8"/>
+  <rect x="590" y="126" width="26" height="18" rx="0" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="0.8"/>
+  <rect x="590" y="144" width="26" height="18" rx="0" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="0.8"/>
+  <rect x="590" y="162" width="26" height="18" rx="0" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="0.8"/>
+  <rect x="590" y="180" width="26" height="18" rx="0" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="0.8"/>
+  <rect x="590" y="198" width="26" height="18" rx="0" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="0.8"/>
+  <rect x="590" y="216" width="26" height="18" rx="0" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="0.8"/>
+  <rect x="590" y="234" width="26" height="18" rx="0" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="0.8"/>
+  <text x="603" y="101" class="s" text-anchor="middle">画面（前）</text>
+  <rect x="590" y="260" width="26" height="18" rx="0" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="0.8"/>
+  <rect x="590" y="278" width="26" height="18" rx="0" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="0.8"/>
+  <rect x="590" y="296" width="26" height="18" rx="0" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="0.8"/>
+  <rect x="590" y="314" width="26" height="18" rx="0" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="0.8"/>
+  <rect x="590" y="332" width="26" height="18" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="0.8"/>
+  <rect x="590" y="350" width="26" height="18" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="0.8"/>
+  <rect x="590" y="368" width="26" height="18" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="0.8"/>
+  <rect x="590" y="386" width="26" height="18" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="0.8"/>
+  <rect x="700" y="108" width="26" height="18" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.8"/>
+  <rect x="700" y="126" width="26" height="18" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.8"/>
+  <rect x="700" y="144" width="26" height="18" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.8"/>
+  <rect x="700" y="162" width="26" height="18" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.8"/>
+  <rect x="700" y="180" width="26" height="18" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="0.8"/>
+  <rect x="700" y="198" width="26" height="18" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.8"/>
+  <rect x="700" y="216" width="26" height="18" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="0.8"/>
+  <rect x="700" y="234" width="26" height="18" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="0.8"/>
+  <text x="713" y="101" class="s" text-anchor="middle">画面（後）</text>
+  <rect x="700" y="260" width="26" height="18" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.8"/>
+  <rect x="700" y="278" width="26" height="18" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="0.8"/>
+  <rect x="700" y="296" width="26" height="18" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.8"/>
+  <rect x="700" y="314" width="26" height="18" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.8"/>
+  <rect x="700" y="332" width="26" height="18" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="0.8"/>
+  <rect x="700" y="350" width="26" height="18" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="0.8"/>
+  <rect x="700" y="368" width="26" height="18" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="0.8"/>
+  <rect x="700" y="386" width="26" height="18" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="0.8"/>
+  <path d="M516 180L590 180" fill="none" stroke="#52606D" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <path d="M616 180L700 180" fill="none" stroke="#52606D" stroke-width="1.5" marker-end="url(#a)"/>
+  <text x="650" y="100" class="s"></text>
+  <text x="760" y="170" class="b">上の行 = [Y]</text>
+  <text x="760" y="192" class="m" xml:space="preserve">FFh → 2Fh</text>
+  <text x="760" y="324" class="b">下の行 = [Y+240]</text>
+  <text x="760" y="346" class="m" xml:space="preserve">0Fh → 0Dh</text>
+  <text x="760" y="226" class="ms" xml:space="preserve">OR A,マスク</text>
+  <text x="760" y="244" class="ms" xml:space="preserve">XOR A,マスク → そこが 0</text>
+  <text x="760" y="262" class="ms" xml:space="preserve">OR A,絵</text>
+  <rect x="200" y="280" width="170" height="96" rx="6" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="285" y="303" class="b" text-anchor="middle">エントリ = shift7 + 2×(7−n)</text>
+  <text x="285" y="323" class="s" text-anchor="middle">先頭から飛び込むと 7 回</text>
+  <text x="285" y="343" class="s" text-anchor="middle">n = 3 なら</text>
+  <text x="285" y="363" class="s" text-anchor="middle">8 バイト先 → 3 回</text>
+  <path d="M285 280L285 230" fill="none" stroke="#52606D" stroke-width="1.5" marker-end="url(#a)"/>
+  <text x="24" y="446" class="s">例: y = 3（y AND 7 = 3）、画面の前の値は FFh と 0Fh。マスクが 1 の所だけが、絵の値に置き換わる。</text>
+</svg>

@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 340" width="980" height="340" role="img" aria-labelledby="t d">
+  <title id="t">GOTO と GOSUB / RETURN</title>
+  <desc id="d">GOTO は行ったきり、GOSUB は RETURN で呼び出した文の次へ戻ることを、プログラムの行と矢印で示した図。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .mb { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 15px; font-weight: 700; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .lbl { font-size: 12px; fill: #52606D; paint-order: stroke; stroke: #FFFFFF; stroke-width: 4px; stroke-linejoin: round; }
+  </style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#52606D"/></marker><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#C0392B"/></marker><marker id="ab" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2F6DB5"/></marker><marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2F855A"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="339" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h" xml:space="preserve">GOTO と GOSUB / RETURN</text>
+  <text x="24" y="55" class="sub" xml:space="preserve">左: GOTO はジャンプ先へ移るだけ　右: GOSUB は RETURN で呼び出した文の次へ戻る</text>
+  <rect x="60" y="80" width="300" height="196" rx="8" fill="#F3F5F8" stroke="#7B8794" stroke-width="1"/>
+  <text x="78" y="108" class="m" xml:space="preserve">10 PRINT "A"</text>
+  <rect x="66" y="120" width="288" height="26" rx="4" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="78" y="138" class="m" xml:space="preserve">20 GOTO 50</text>
+  <text x="78" y="168" class="m" xml:space="preserve">30 PRINT "B"</text>
+  <text x="78" y="198" class="m" xml:space="preserve">40 PRINT "C"</text>
+  <rect x="66" y="210" width="288" height="26" rx="4" fill="#E6F6EC" stroke="#2F855A" stroke-width="1"/>
+  <text x="78" y="228" class="m" xml:space="preserve">50 PRINT "D"</text>
+  <text x="78" y="258" class="m" xml:space="preserve">60 END</text>
+  <path d="M362,133 C430,133 430,223 364,223" fill="none" stroke="#2F6DB5" stroke-width="2" marker-end="url(#ab)"/>
+  <text x="424" y="183" style="fill:#2F6DB5;" xml:space="preserve">飛ぶ</text>
+  <text x="60" y="306" xml:space="preserve">30 行と 40 行は実行されない。表示は A、D</text>
+  <text x="60" y="326" class="s" xml:space="preserve">戻る場所はどこにも覚えていない</text>
+  <rect x="520" y="80" width="290" height="136" rx="8" fill="#F3F5F8" stroke="#7B8794" stroke-width="1"/>
+  <rect x="526" y="90" width="278" height="26" rx="4" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="538" y="108" class="m" xml:space="preserve">100 GOSUB 500: PRINT A</text>
+  <text x="538" y="138" class="m" xml:space="preserve">110 END</text>
+  <rect x="526" y="150" width="278" height="26" rx="4" fill="#E6F6EC" stroke="#2F855A" stroke-width="1"/>
+  <text x="538" y="168" class="m" xml:space="preserve">500 A=A+1</text>
+  <rect x="526" y="180" width="278" height="26" rx="4" fill="#FFF5DF" stroke="#B7791F" stroke-width="1"/>
+  <text x="538" y="198" class="m" xml:space="preserve">620 RETURN</text>
+  <path d="M812,97 C880,97 880,163 814,163" fill="none" stroke="#2F6DB5" stroke-width="2" marker-end="url(#ab)"/>
+  <text x="868" y="136" style="fill:#2F6DB5;" xml:space="preserve">① 呼ぶ</text>
+  <path d="M518,193 C460,193 460,107 516,107" fill="none" stroke="#B7791F" stroke-width="2" marker-end="url(#a)"/>
+  <text x="470" y="249" style="fill:#B7791F;" xml:space="preserve">② RETURN で、GOSUB の次の文 PRINT A へ戻る</text>
+  <text x="520" y="296" class="s" xml:space="preserve">サブルーチンの中からさらに GOSUB できる（最大 36 段）</text>
+  <text x="520" y="318" class="s" xml:space="preserve">本文の終わりに END を置かないと、110 行から 500 行へ進んでしまう</text>
+</svg>

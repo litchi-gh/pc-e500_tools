@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 230" width="980" height="230" role="img" aria-labelledby="t d">
+  <title id="t">連立方程式と行列</title>
+  <desc id="d">三元連立方程式を行列 X と Y に分け、EQU で解くまでの図</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+  </style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#52606D"/></marker></defs>
+
+  <rect width="980" height="230" fill="#FFFFFF"/>
+  <text x="40.0" y="92.0" class="m" text-anchor="start" xml:space="preserve">2x +  y −  z =  1</text>
+  <text x="40.0" y="128.0" class="m" text-anchor="start" xml:space="preserve"> x + 3y + 2z = 13</text>
+  <text x="40.0" y="164.0" class="m" text-anchor="start" xml:space="preserve"> x −  y +  z =  5</text>
+  <text x="40.0" y="48.0" class="b" text-anchor="start" xml:space="preserve">方程式</text>
+  <line x1="210.0" y1="122.0" x2="262.0" y2="122.0" stroke="#52606D" stroke-width="1.2" marker-end="url(#a)"/>
+  <path d="M298.0 64.0 L286.0 64.0 L286.0 184.0 L298.0 184.0" fill="none" stroke="#1F2933" stroke-width="2"/>
+  <path d="M450.0 64.0 L462.0 64.0 L462.0 184.0 L450.0 184.0" fill="none" stroke="#1F2933" stroke-width="2"/>
+  <rect x="294.0" y="73.0" width="48.0" height="30.0" rx="4" fill="#E8F1FC" stroke="#2F6DB5"/>
+  <text x="318.0" y="93.0" class="m" text-anchor="middle" xml:space="preserve">2</text>
+  <rect x="350.0" y="73.0" width="48.0" height="30.0" rx="4" fill="#E8F1FC" stroke="#2F6DB5"/>
+  <text x="374.0" y="93.0" class="m" text-anchor="middle" xml:space="preserve">1</text>
+  <rect x="406.0" y="73.0" width="48.0" height="30.0" rx="4" fill="#E8F1FC" stroke="#2F6DB5"/>
+  <text x="430.0" y="93.0" class="m" text-anchor="middle" xml:space="preserve">-1</text>
+  <rect x="294.0" y="109.0" width="48.0" height="30.0" rx="4" fill="#E8F1FC" stroke="#2F6DB5"/>
+  <text x="318.0" y="129.0" class="m" text-anchor="middle" xml:space="preserve">1</text>
+  <rect x="350.0" y="109.0" width="48.0" height="30.0" rx="4" fill="#E8F1FC" stroke="#2F6DB5"/>
+  <text x="374.0" y="129.0" class="m" text-anchor="middle" xml:space="preserve">3</text>
+  <rect x="406.0" y="109.0" width="48.0" height="30.0" rx="4" fill="#E8F1FC" stroke="#2F6DB5"/>
+  <text x="430.0" y="129.0" class="m" text-anchor="middle" xml:space="preserve">2</text>
+  <rect x="294.0" y="145.0" width="48.0" height="30.0" rx="4" fill="#E8F1FC" stroke="#2F6DB5"/>
+  <text x="318.0" y="165.0" class="m" text-anchor="middle" xml:space="preserve">1</text>
+  <rect x="350.0" y="145.0" width="48.0" height="30.0" rx="4" fill="#E8F1FC" stroke="#2F6DB5"/>
+  <text x="374.0" y="165.0" class="m" text-anchor="middle" xml:space="preserve">-1</text>
+  <rect x="406.0" y="145.0" width="48.0" height="30.0" rx="4" fill="#E8F1FC" stroke="#2F6DB5"/>
+  <text x="430.0" y="165.0" class="m" text-anchor="middle" xml:space="preserve">1</text>
+  <text x="374.0" y="48.0" class="b" text-anchor="middle" xml:space="preserve">X（係数）</text>
+  <path d="M508.0 64.0 L496.0 64.0 L496.0 184.0 L508.0 184.0" fill="none" stroke="#1F2933" stroke-width="2"/>
+  <path d="M548.0 64.0 L560.0 64.0 L560.0 184.0 L548.0 184.0" fill="none" stroke="#1F2933" stroke-width="2"/>
+  <rect x="504.0" y="73.0" width="48.0" height="30.0" rx="4" fill="#FFF5DF" stroke="#B7791F"/>
+  <text x="528.0" y="93.0" class="m" text-anchor="middle" xml:space="preserve">1</text>
+  <rect x="504.0" y="109.0" width="48.0" height="30.0" rx="4" fill="#FFF5DF" stroke="#B7791F"/>
+  <text x="528.0" y="129.0" class="m" text-anchor="middle" xml:space="preserve">13</text>
+  <rect x="504.0" y="145.0" width="48.0" height="30.0" rx="4" fill="#FFF5DF" stroke="#B7791F"/>
+  <text x="528.0" y="165.0" class="m" text-anchor="middle" xml:space="preserve">5</text>
+  <text x="528.0" y="48.0" class="b" text-anchor="middle" xml:space="preserve">Y（右辺）</text>
+  <line x1="575.0" y1="122.0" x2="655.0" y2="122.0" stroke="#52606D" stroke-width="1.2" marker-end="url(#a)"/>
+  <text x="615.0" y="112.0" class="m" text-anchor="middle" xml:space="preserve">[EQU]</text>
+  <path d="M688.0 64.0 L676.0 64.0 L676.0 184.0 L688.0 184.0" fill="none" stroke="#1F2933" stroke-width="2"/>
+  <path d="M782.0 64.0 L794.0 64.0 L794.0 184.0 L782.0 184.0" fill="none" stroke="#1F2933" stroke-width="2"/>
+  <rect x="684.0" y="73.0" width="102.0" height="30.0" rx="4" fill="#E6F6EC" stroke="#2F855A"/>
+  <text x="735.0" y="93.0" class="m" text-anchor="middle" xml:space="preserve">x = 2</text>
+  <rect x="684.0" y="109.0" width="102.0" height="30.0" rx="4" fill="#E6F6EC" stroke="#2F855A"/>
+  <text x="735.0" y="129.0" class="m" text-anchor="middle" xml:space="preserve">y = 1</text>
+  <rect x="684.0" y="145.0" width="102.0" height="30.0" rx="4" fill="#E6F6EC" stroke="#2F855A"/>
+  <text x="735.0" y="165.0" class="m" text-anchor="middle" xml:space="preserve">z = 4</text>
+  <text x="735.0" y="48.0" class="b" text-anchor="middle" xml:space="preserve">X（答え）</text>
+  <text x="820.0" y="100.0" class="s" text-anchor="start" xml:space="preserve">係数は M に残る</text>
+  <text x="40.0" y="212.0" class="s" text-anchor="start" xml:space="preserve">EQU がすること: X を M にコピーし、X⁻¹ × Y を計算して X に入れる。</text>
+</svg>

@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 360" width="980" height="360" role="img" aria-labelledby="t d">
+  <title id="t">カードの CE1 を切る条件</title>
+  <desc id="d">PC-E500 は VDD だけ、PC-E500S などは VDD とメモリ保護スイッチ S2 の両方でカードの選択を切る図。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+  </style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#52606D"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="359" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h" text-anchor="start" xml:space="preserve">カードの CE1 を切る条件</text>
+  <text x="24" y="56" class="s" text-anchor="start" xml:space="preserve">回路図（PC-E500 p.12、PC-E500S p.17）から</text>
+  <text x="30" y="86" class="b" text-anchor="start" xml:space="preserve">PC-E500</text>
+  <rect x="30" y="102" width="200" height="36" rx="8" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.3"/>
+  <text x="130.0" y="125.0" class="b" text-anchor="middle" xml:space="preserve">VDD（Low で動作中）</text>
+  <line x1="230" y1="120" x2="330" y2="140" stroke="#52606D" stroke-width="1.6" marker-end="url(#a)"/>
+  <rect x="332" y="116" width="120" height="50" rx="8" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.3"/>
+  <text x="392.0" y="146.0" class="b" text-anchor="middle" xml:space="preserve">IC9 反転</text>
+  <line x1="452" y1="141" x2="548" y2="141" stroke="#52606D" stroke-width="1.6" marker-end="url(#a)"/>
+  <rect x="550" y="116" width="130" height="50" rx="8" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.3"/>
+  <text x="615.0" y="136.5" class="b" text-anchor="middle" xml:space="preserve">IC10 スイッチ</text>
+  <text x="615.0" y="155.5" class="s" text-anchor="middle" xml:space="preserve">High でつながる</text>
+  <line x1="680" y1="141" x2="778" y2="141" stroke="#52606D" stroke-width="1.6" marker-end="url(#a)"/>
+  <rect x="780" y="116" width="170" height="50" rx="8" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.3"/>
+  <text x="865.0" y="146.0" class="b" text-anchor="middle" xml:space="preserve">カードの CERAM</text>
+  <rect x="570" y="76" width="90" height="28" rx="8" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.3"/>
+  <text x="615.0" y="95.0" class="s" text-anchor="middle" xml:space="preserve">CPU の CE1</text>
+  <line x1="615" y1="104" x2="615" y2="114" stroke="#52606D" stroke-width="1.6" marker-end="url(#a)"/>
+  <text x="30" y="216" class="b" text-anchor="start" xml:space="preserve">PC-E500S、PC-E650、PC-U6000</text>
+  <rect x="30" y="232" width="200" height="36" rx="8" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.3"/>
+  <text x="130.0" y="255.0" class="b" text-anchor="middle" xml:space="preserve">VDD（Low で動作中）</text>
+  <line x1="230" y1="250" x2="330" y2="270" stroke="#52606D" stroke-width="1.6" marker-end="url(#a)"/>
+  <rect x="30" y="276" width="200" height="36" rx="8" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.3"/>
+  <text x="130.0" y="299.0" class="b" text-anchor="middle" xml:space="preserve">S2（B で High）</text>
+  <line x1="230" y1="294" x2="330" y2="270" stroke="#52606D" stroke-width="1.6" marker-end="url(#a)"/>
+  <rect x="332" y="246" width="120" height="50" rx="8" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.3"/>
+  <text x="392.0" y="276.0" class="b" text-anchor="middle" xml:space="preserve">IC9 NOR</text>
+  <line x1="452" y1="271" x2="548" y2="271" stroke="#52606D" stroke-width="1.6" marker-end="url(#a)"/>
+  <rect x="550" y="246" width="130" height="50" rx="8" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.3"/>
+  <text x="615.0" y="266.5" class="b" text-anchor="middle" xml:space="preserve">IC10 スイッチ</text>
+  <text x="615.0" y="285.5" class="s" text-anchor="middle" xml:space="preserve">High でつながる</text>
+  <line x1="680" y1="271" x2="778" y2="271" stroke="#52606D" stroke-width="1.6" marker-end="url(#a)"/>
+  <rect x="780" y="246" width="170" height="50" rx="8" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.3"/>
+  <text x="865.0" y="276.0" class="b" text-anchor="middle" xml:space="preserve">カードの CERAM</text>
+  <rect x="570" y="206" width="90" height="28" rx="8" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.3"/>
+  <text x="615.0" y="225.0" class="s" text-anchor="middle" xml:space="preserve">CPU の CE1</text>
+  <line x1="615" y1="234" x2="615" y2="244" stroke="#52606D" stroke-width="1.6" marker-end="url(#a)"/>
+  <text x="30" y="330" class="b" text-anchor="start" xml:space="preserve">PC-E500 では S2 はカードに関係しない。PC-E500S などでは、S2 を B にするとカードも選ばれなくなる。</text>
+</svg>

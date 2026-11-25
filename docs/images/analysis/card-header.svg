@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 360" width="980" height="360" role="img" aria-labelledby="t d">
+  <title id="t">カードのヘッダ（初期化の直後）</title>
+  <desc id="d">64 KB のカードを初期化した直後のヘッダ 24 バイトと、その次の FFh をバイトごとに示す図。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .lbl { font-size: 12px; fill: #52606D; paint-order: stroke; stroke: #FFFFFF; stroke-width: 4px; stroke-linejoin: round; }
+  </style>
+  <defs></defs>
+  <rect x="0.5" y="0.5" width="979" height="359" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">カードのヘッダ（初期化の直後）</text>
+  <text x="24" y="55" class="sub">64 KB のカードの例（容量 20h × 2 KB）。容量（+02、+03）だけがカードによって変わる</text>
+  <text x="146" y="92" class="ms" xml:space="preserve" text-anchor="middle">+0</text>
+  <text x="198" y="92" class="ms" xml:space="preserve" text-anchor="middle">+1</text>
+  <text x="250" y="92" class="ms" xml:space="preserve" text-anchor="middle">+2</text>
+  <text x="302" y="92" class="ms" xml:space="preserve" text-anchor="middle">+3</text>
+  <text x="354" y="92" class="ms" xml:space="preserve" text-anchor="middle">+4</text>
+  <text x="406" y="92" class="ms" xml:space="preserve" text-anchor="middle">+5</text>
+  <text x="458" y="92" class="ms" xml:space="preserve" text-anchor="middle">+6</text>
+  <text x="510" y="92" class="ms" xml:space="preserve" text-anchor="middle">+7</text>
+  <text x="562" y="92" class="ms" xml:space="preserve" text-anchor="middle">+8</text>
+  <text x="614" y="92" class="ms" xml:space="preserve" text-anchor="middle">+9</text>
+  <text x="666" y="92" class="ms" xml:space="preserve" text-anchor="middle">+A</text>
+  <text x="718" y="92" class="ms" xml:space="preserve" text-anchor="middle">+B</text>
+  <text x="770" y="92" class="ms" xml:space="preserve" text-anchor="middle">+C</text>
+  <text x="822" y="92" class="ms" xml:space="preserve" text-anchor="middle">+D</text>
+  <text x="874" y="92" class="ms" xml:space="preserve" text-anchor="middle">+E</text>
+  <text x="926" y="92" class="ms" xml:space="preserve" text-anchor="middle">+F</text>
+  <text x="110" y="124" class="m" xml:space="preserve" text-anchor="end">+00</text>
+  <rect x="120" y="100" width="52" height="36" rx="0" fill="#FDECEA" stroke="#C0392B" stroke-width="1.5"/>
+  <text x="146" y="123" class="m" xml:space="preserve" text-anchor="middle">10</text>
+  <rect x="172" y="100" width="52" height="36" rx="0" fill="#FDECEA" stroke="#C0392B" stroke-width="1.5"/>
+  <text x="198" y="123" class="m" xml:space="preserve" text-anchor="middle">12</text>
+  <rect x="224" y="100" width="52" height="36" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+  <text x="250" y="123" class="m" xml:space="preserve" text-anchor="middle">20</text>
+  <rect x="276" y="100" width="52" height="36" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+  <text x="302" y="123" class="m" xml:space="preserve" text-anchor="middle">00</text>
+  <rect x="328" y="100" width="52" height="36" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="354" y="123" class="m" xml:space="preserve" text-anchor="middle">00</text>
+  <rect x="380" y="100" width="52" height="36" rx="0" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.5"/>
+  <text x="406" y="123" class="m" xml:space="preserve" text-anchor="middle">01</text>
+  <rect x="432" y="100" width="52" height="36" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="458" y="123" class="m" xml:space="preserve" text-anchor="middle">00</text>
+  <rect x="484" y="100" width="52" height="36" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="510" y="123" class="m" xml:space="preserve" text-anchor="middle">00</text>
+  <rect x="536" y="100" width="52" height="36" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="562" y="123" class="m" xml:space="preserve" text-anchor="middle">00</text>
+  <rect x="588" y="100" width="52" height="36" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="614" y="123" class="m" xml:space="preserve" text-anchor="middle">00</text>
+  <rect x="640" y="100" width="52" height="36" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="666" y="123" class="m" xml:space="preserve" text-anchor="middle">00</text>
+  <rect x="692" y="100" width="52" height="36" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="718" y="123" class="m" xml:space="preserve" text-anchor="middle">00</text>
+  <rect x="744" y="100" width="52" height="36" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="770" y="123" class="m" xml:space="preserve" text-anchor="middle">00</text>
+  <rect x="796" y="100" width="52" height="36" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="822" y="123" class="m" xml:space="preserve" text-anchor="middle">00</text>
+  <rect x="848" y="100" width="52" height="36" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="874" y="123" class="m" xml:space="preserve" text-anchor="middle">00</text>
+  <rect x="900" y="100" width="52" height="36" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="926" y="123" class="m" xml:space="preserve" text-anchor="middle">00</text>
+  <text x="110" y="204" class="m" xml:space="preserve" text-anchor="end">+10</text>
+  <rect x="120" y="180" width="52" height="36" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="146" y="203" class="m" xml:space="preserve" text-anchor="middle">00</text>
+  <rect x="172" y="180" width="52" height="36" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="198" y="203" class="m" xml:space="preserve" text-anchor="middle">20</text>
+  <rect x="224" y="180" width="52" height="36" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="250" y="203" class="m" xml:space="preserve" text-anchor="middle">18</text>
+  <rect x="276" y="180" width="52" height="36" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="302" y="203" class="m" xml:space="preserve" text-anchor="middle">00</text>
+  <rect x="328" y="180" width="52" height="36" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="354" y="203" class="m" xml:space="preserve" text-anchor="middle">00</text>
+  <rect x="380" y="180" width="52" height="36" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="406" y="203" class="m" xml:space="preserve" text-anchor="middle">00</text>
+  <rect x="432" y="180" width="52" height="36" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="458" y="203" class="m" xml:space="preserve" text-anchor="middle">00</text>
+  <rect x="484" y="180" width="52" height="36" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="510" y="203" class="m" xml:space="preserve" text-anchor="middle">00</text>
+  <rect x="536" y="180" width="52" height="36" rx="0" fill="#FDECEA" stroke="#C0392B" stroke-width="1.5"/>
+  <text x="562" y="203" class="m" xml:space="preserve" text-anchor="middle">FF</text>
+  <rect x="588" y="180" width="52" height="36" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="614" y="203" class="m" xml:space="preserve" text-anchor="middle">9F</text>
+  <rect x="640" y="180" width="52" height="36" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="666" y="203" class="m" xml:space="preserve" text-anchor="middle">9F</text>
+  <rect x="692" y="180" width="52" height="36" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="718" y="203" class="m" xml:space="preserve" text-anchor="middle">9F</text>
+  <rect x="744" y="180" width="52" height="36" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="770" y="203" class="m" xml:space="preserve" text-anchor="middle">9F</text>
+  <rect x="796" y="180" width="52" height="36" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="822" y="203" class="m" xml:space="preserve" text-anchor="middle">9F</text>
+  <rect x="848" y="180" width="52" height="36" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="874" y="203" class="m" xml:space="preserve" text-anchor="middle">9F</text>
+  <rect x="900" y="180" width="52" height="36" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="926" y="203" class="m" xml:space="preserve" text-anchor="middle">9F</text>
+  <text x="172" y="154" class="s" text-anchor="middle">印</text>
+  <text x="276" y="154" class="s" text-anchor="middle">容量</text>
+  <text x="354" y="154" class="s" text-anchor="middle">0 が正常</text>
+  <text x="406" y="168" class="s" text-anchor="middle">単独/ペア</text>
+  <text x="198" y="234" class="s" text-anchor="middle">保護の印</text>
+  <text x="302" y="248" class="s" text-anchor="middle">最初のブロック</text>
+  <text x="562" y="234" class="s" text-anchor="middle">終わり</text>
+  <text x="770" y="234" class="s" text-anchor="middle">9Fh で埋めた領域</text>
+  <rect x="40" y="284" width="900" height="56" rx="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="490" y="308" class="b" text-anchor="middle">+12 の 18 00 00 は「先頭から 18h」。初めはブロックがないので、そこに終わりの FFh がある</text>
+  <text x="490" y="326" class="s" text-anchor="middle">INIT で RAMFILE を作ったり、MEM$="S2" で DATA と TEXT が移ったりすると、この場所からブロックが並ぶ</text>
+</svg>

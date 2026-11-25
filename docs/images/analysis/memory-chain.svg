@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 520" width="980" height="520" role="img" aria-labelledby="t d">
+  <title id="t">メモリブロックの鎖</title>
+  <desc id="d">スロット S1 の先頭から +11 の長さをたどり、DATA、TEXT、FUNCKEY、AER、終わりの FFh に着く様子。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .lbl { font-size: 12px; fill: #52606D; paint-order: stroke; stroke: #FFFFFF; stroke-width: 4px; stroke-linejoin: round; }
+  </style>
+  <defs><marker id="a6B4FBB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#6B4FBB"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="519" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">メモリブロックの鎖</text>
+  <text x="24" y="55" class="sub">起動直後の S1:（ROM 3.2、32 KB）。+11 は「次のブロックまでの長さ」なので、足していくと次の先頭が分かる。幅は比率どおりではない</text>
+  <rect x="40" y="120" width="100" height="64" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="90" y="148" class="b" text-anchor="middle">ヘッダ</text>
+  <text x="90" y="170" class="m" xml:space="preserve" text-anchor="middle">18h</text>
+  <polyline points="40,120 40,104" fill="none" stroke="#7B8794" stroke-width="1"/>
+  <text x="38" y="98" class="ms" xml:space="preserve">B8000h</text>
+  <rect x="140" y="120" width="360" height="64" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="320" y="148" class="b" text-anchor="middle">DATA.BAS</text>
+  <text x="320" y="170" class="m" xml:space="preserve" text-anchor="middle">713Ch</text>
+  <polyline points="140,120 140,104" fill="none" stroke="#7B8794" stroke-width="1"/>
+  <text x="138" y="98" class="ms" xml:space="preserve">B8018h</text>
+  <rect x="500" y="120" width="130" height="64" rx="0" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.5"/>
+  <text x="565" y="148" class="b" text-anchor="middle">TEXT.BAS</text>
+  <text x="565" y="170" class="m" xml:space="preserve" text-anchor="middle">36h</text>
+  <polyline points="500,120 500,104" fill="none" stroke="#7B8794" stroke-width="1"/>
+  <text x="498" y="98" class="ms" xml:space="preserve">BF154h</text>
+  <rect x="630" y="120" width="120" height="64" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="690" y="148" class="b" text-anchor="middle">FUNCKEY</text>
+  <text x="690" y="170" class="m" xml:space="preserve" text-anchor="middle">69h</text>
+  <polyline points="630,120 630,104" fill="none" stroke="#7B8794" stroke-width="1"/>
+  <text x="628" y="98" class="ms" xml:space="preserve">BF18Ah</text>
+  <rect x="750" y="120" width="100" height="64" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="800" y="148" class="b" text-anchor="middle">AER</text>
+  <text x="800" y="170" class="m" xml:space="preserve" text-anchor="middle">27h</text>
+  <polyline points="750,120 750,104" fill="none" stroke="#7B8794" stroke-width="1"/>
+  <text x="748" y="98" class="ms" xml:space="preserve">BF1F3h</text>
+  <rect x="850" y="120" width="70" height="64" rx="0" fill="#FDECEA" stroke="#C0392B" stroke-width="1.5"/>
+  <text x="885" y="148" class="b" text-anchor="middle">FFh</text>
+  <text x="885" y="170" class="s" text-anchor="middle">終わり</text>
+  <polyline points="850,120 850,104" fill="none" stroke="#7B8794" stroke-width="1"/>
+  <text x="848" y="98" class="ms" xml:space="preserve">BF21Ah</text>
+  <polyline points="54,186 54,208 146,208 146,187" fill="none" stroke="#6B4FBB" stroke-width="1.6" marker-end="url(#a6B4FBB)"/>
+  <polyline points="154,186 154,208 506,208 506,187" fill="none" stroke="#6B4FBB" stroke-width="1.6" marker-end="url(#a6B4FBB)"/>
+  <polyline points="514,186 514,208 636,208 636,187" fill="none" stroke="#6B4FBB" stroke-width="1.6" marker-end="url(#a6B4FBB)"/>
+  <polyline points="644,186 644,208 756,208 756,187" fill="none" stroke="#6B4FBB" stroke-width="1.6" marker-end="url(#a6B4FBB)"/>
+  <polyline points="764,186 764,208 856,208 856,187" fill="none" stroke="#6B4FBB" stroke-width="1.6" marker-end="url(#a6B4FBB)"/>
+  <text x="90" y="225" class="ms" xml:space="preserve" text-anchor="middle">+12 = 18h</text>
+  <text x="320" y="225" class="ms" xml:space="preserve" text-anchor="middle">+11 = 713Ch</text>
+  <text x="565" y="225" class="ms" xml:space="preserve" text-anchor="middle">+11 = 36h</text>
+  <text x="690" y="225" class="ms" xml:space="preserve" text-anchor="middle">+11 = 69h</text>
+  <text x="800" y="225" class="ms" xml:space="preserve" text-anchor="middle">+11 = 27h</text>
+  <text x="40" y="266" class="b">足し算で確かめる</text>
+  <text x="56" y="290" class="m" xml:space="preserve">B8000h + 18h   = B8018h   DATA</text>
+  <text x="56" y="310" class="m" xml:space="preserve">B8018h + 713Ch = BF154h   TEXT</text>
+  <text x="56" y="330" class="m" xml:space="preserve">BF154h + 36h   = BF18Ah   FUNCKEY</text>
+  <text x="56" y="350" class="m" xml:space="preserve">BF18Ah + 69h   = BF1F3h   AER</text>
+  <text x="56" y="370" class="m" xml:space="preserve">BF1F3h + 27h   = BF21Ah   FFh（ここで終わり）</text>
+  <rect x="520" y="252" width="420" height="124" rx="8" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="538" y="276" class="b">ブロックの長さと、空き領域</text>
+  <text x="538" y="300" class="m" xml:space="preserve">DATA の +11（次のブロックまで） 713Ch</text>
+  <text x="538" y="320" class="m" xml:space="preserve">DATA の +16（使っている長さ）  0184h</text>
+  <text x="538" y="340" class="m" xml:space="preserve">差 = 6FB8h = 28600 バイトが空き</text>
+  <text x="538" y="362" class="s">カードなしの S1 の使える量 28600（第 5 章 §5.7.2）と同じ値</text>
+  <polyline points="24,400 956,400" fill="none" stroke="#D9E0E8" stroke-width="1"/>
+  <text x="40" y="424" class="b">TEXT ブロックのヘッダのうち、表から値が決まる部分（BF154h から）</text>
+  <rect x="40" y="452" width="31" height="30" rx="0" fill="#FDECEA" stroke="#C0392B" stroke-width="1.5"/>
+  <text x="55.5" y="471" class="ms" xml:space="preserve" text-anchor="middle">FB</text>
+  <text x="41" y="446" class="ms" xml:space="preserve">+00</text>
+  <text x="55.5" y="500" class="s" text-anchor="middle">印</text>
+  <rect x="71" y="452" width="248" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="195" y="471" class="ms" xml:space="preserve" text-anchor="middle">54 45 58 54 20 20 20 20</text>
+  <text x="72" y="446" class="ms" xml:space="preserve">+01</text>
+  <text x="195" y="500" class="s" text-anchor="middle">TEXT（余りは 20h）</text>
+  <rect x="319" y="452" width="93" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="365.5" y="471" class="ms" xml:space="preserve" text-anchor="middle">42 41 53</text>
+  <text x="320" y="446" class="ms" xml:space="preserve">+09</text>
+  <text x="365.5" y="500" class="s" text-anchor="middle">BAS</text>
+  <rect x="412" y="452" width="31" height="30" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="427.5" y="471" class="ms" xml:space="preserve" text-anchor="middle">20</text>
+  <text x="413" y="446" class="ms" xml:space="preserve">+0C</text>
+  <text x="427.5" y="500" class="s" text-anchor="middle">属性</text>
+  <rect x="443" y="452" width="62" height="30" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="474" y="471" class="ms" xml:space="preserve" text-anchor="middle">00 00</text>
+  <text x="444" y="446" class="ms" xml:space="preserve">+0D</text>
+  <text x="474" y="500" class="s" text-anchor="middle">時刻</text>
+  <rect x="505" y="452" width="62" height="30" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="536" y="471" class="ms" xml:space="preserve" text-anchor="middle">00 00</text>
+  <text x="506" y="446" class="ms" xml:space="preserve">+0F</text>
+  <text x="536" y="500" class="s" text-anchor="middle">日付</text>
+  <rect x="567" y="452" width="93" height="30" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+  <text x="613.5" y="471" class="ms" xml:space="preserve" text-anchor="middle">36 00 00</text>
+  <text x="568" y="446" class="ms" xml:space="preserve">+11</text>
+  <text x="613.5" y="500" class="s" text-anchor="middle">次まで</text>
+  <rect x="660" y="452" width="62" height="30" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="691" y="471" class="ms" xml:space="preserve" text-anchor="middle">00 00</text>
+  <text x="661" y="446" class="ms" xml:space="preserve">+14</text>
+  <text x="691" y="500" class="s" text-anchor="middle"></text>
+  <rect x="722" y="452" width="93" height="30" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+  <text x="768.5" y="471" class="ms" xml:space="preserve" text-anchor="middle">36 00 00</text>
+  <text x="723" y="446" class="ms" xml:space="preserve">+16</text>
+  <text x="768.5" y="500" class="s" text-anchor="middle">ファイル長</text>
+  <rect x="815" y="452" width="93" height="30" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="861.5" y="471" class="ms" xml:space="preserve" text-anchor="middle">36 00 00</text>
+  <text x="816" y="446" class="ms" xml:space="preserve">+19</text>
+  <text x="861.5" y="500" class="s" text-anchor="middle">ポインタ 0</text>
+  <text x="916" y="471" class="m" xml:space="preserve">…</text>
+</svg>

@@ -1,0 +1,4 @@
+#!/bin/sh
+# The extension from a command line. Runs on Node.js.
+here=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+exec node "$here/../out/cli/main.js" "$@"

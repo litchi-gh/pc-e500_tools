@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 426" width="980" height="426" role="img" aria-labelledby="t d">
+  <title id="t">1 命令の符号化（例）</title>
+  <desc id="d">オペランドの種類分け、符号化の順、PRE の挿入</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .lbl { font-size: 12px; fill: #52606D; paint-order: stroke; stroke: #FFFFFF; stroke-width: 4px; stroke-linejoin: round; }
+  </style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#52606D"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="425" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">1 命令の符号化（例）</text>
+  <text x="24" y="55" class="sub">MVW [($23)+4],($45) が 6 バイトになるまで</text>
+  <text x="24" y="93" class="m" xml:space="preserve">MVW</text>
+  <rect x="80" y="74" width="130" height="28" rx="3" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="145" y="93" class="m" xml:space="preserve" text-anchor="middle">[($23)+4]</text>
+  <rect x="226" y="74" width="90" height="28" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="271" y="93" class="m" xml:space="preserve" text-anchor="middle">($45)</text>
+  <rect x="24" y="130" width="452" height="92" rx="6" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="250" y="163" class="b" text-anchor="middle">1 つ目: Kind = EI（内部 RAM の間接）</text>
+  <text x="250" y="181" class="s" text-anchor="middle">Inner = M、Mode 0（絶対）、Text "$23"</text>
+  <text x="250" y="199" class="s" text-anchor="middle">Index = 80h（+ の変位）、Offset = "+4"</text>
+  <rect x="504" y="130" width="452" height="92" rx="6" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="730" y="163" class="b" text-anchor="middle">2 つ目: Kind = M（内部 RAM）</text>
+  <text x="730" y="181" class="s" text-anchor="middle">Mode 0（絶対）、Text = "$45"</text>
+  <text x="730" y="199" class="s" text-anchor="middle">Index = 0（PX も PY も使わない）</text>
+  <path d="M145 102L145 130" fill="none" stroke="#52606D" stroke-width="1.5" marker-end="url(#a)"/>
+  <path d="M271 102L271 116L728 116L728 130" fill="none" stroke="#52606D" stroke-width="1.5" marker-end="url(#a)"/>
+  <text x="24" y="256" class="s">Binary: 2 つ目が M、1 つ目が E で始まる → 書き込み。操作コード = F8h + 幅 1 = F9h。モードの後は「間接のアドレス、値、変位」の順に出す</text>
+  <text x="135" y="280" class="ms" xml:space="preserve" text-anchor="middle">+0</text>
+  <rect x="75" y="286" width="120" height="40" rx="2" fill="#FDECEA" stroke="#C0392B" stroke-width="1"/>
+  <text x="135" y="311" class="m" xml:space="preserve" text-anchor="middle">32</text>
+  <text x="135" y="346" class="b" text-anchor="middle">PRE</text>
+  <text x="135" y="365" class="s" text-anchor="middle">(n) と (n) の組</text>
+  <text x="275" y="280" class="ms" xml:space="preserve" text-anchor="middle">+1</text>
+  <rect x="215" y="286" width="120" height="40" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="275" y="311" class="m" xml:space="preserve" text-anchor="middle">F9</text>
+  <text x="275" y="346" class="b" text-anchor="middle">操作コード</text>
+  <text x="275" y="365" class="s" text-anchor="middle">F8h + 幅 1</text>
+  <text x="415" y="280" class="ms" xml:space="preserve" text-anchor="middle">+2</text>
+  <rect x="355" y="286" width="120" height="40" rx="2" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1"/>
+  <text x="415" y="311" class="m" xml:space="preserve" text-anchor="middle">80</text>
+  <text x="415" y="346" class="b" text-anchor="middle">モード</text>
+  <text x="415" y="365" class="s" text-anchor="middle">+ の変位</text>
+  <text x="555" y="280" class="ms" xml:space="preserve" text-anchor="middle">+3</text>
+  <rect x="495" y="286" width="120" height="40" rx="2" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1"/>
+  <text x="555" y="311" class="m" xml:space="preserve" text-anchor="middle">23</text>
+  <text x="555" y="346" class="b" text-anchor="middle">間接のアドレス</text>
+  <text x="555" y="365" class="s" text-anchor="middle">($23)</text>
+  <text x="695" y="280" class="ms" xml:space="preserve" text-anchor="middle">+4</text>
+  <rect x="635" y="286" width="120" height="40" rx="2" fill="#FFF5DF" stroke="#B7791F" stroke-width="1"/>
+  <text x="695" y="311" class="m" xml:space="preserve" text-anchor="middle">45</text>
+  <text x="695" y="346" class="b" text-anchor="middle">値</text>
+  <text x="695" y="365" class="s" text-anchor="middle">($45)</text>
+  <text x="835" y="280" class="ms" xml:space="preserve" text-anchor="middle">+5</text>
+  <rect x="775" y="286" width="120" height="40" rx="2" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1"/>
+  <text x="835" y="311" class="m" xml:space="preserve" text-anchor="middle">04</text>
+  <text x="835" y="346" class="b" text-anchor="middle">変位</text>
+  <text x="835" y="365" class="s" text-anchor="middle">+4</text>
+  <text x="24" y="402" class="s">PRE は最後に決めます。Mem() が呼ばれた順に internalOperands に並んだのは ($23)、($45)。Mode は 0 と 0 なので、表の 32h を先頭に挿します。</text>
+</svg>

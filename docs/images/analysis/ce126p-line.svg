@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 260" width="980" height="260" role="img" aria-labelledby="t d">
+  <title id="t">1 行を印字するときに送るもの（EAA0Dh）</title>
+  <desc id="d">デバイスコード 20h、データ 24 バイト、0Dh、ACK の Low を待つ、0Eh の並び。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+  </style>
+  <defs></defs>
+  <rect x="0.5" y="0.5" width="979" height="259" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">1 行を印字するときに送るもの（EAA0Dh）</text>
+  <text x="24" y="55" class="sub">行が短くても、いつも 24 桁ぶんを送る。残りは空白で埋める</text>
+  <rect x="24" y="90" width="96" height="60" rx="6" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.5"/>
+  <text x="72" y="116.18" class="m" xml:space="preserve" text-anchor="middle">20h</text>
+  <text x="72" y="133.32" class="s" text-anchor="middle">コード</text>
+  <rect x="134" y="90" width="22" height="60" rx="2" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="145" y="124.68" class="m" xml:space="preserve" text-anchor="middle">H</text>
+  <rect x="158" y="90" width="22" height="60" rx="2" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="169" y="124.68" class="m" xml:space="preserve" text-anchor="middle">E</text>
+  <rect x="182" y="90" width="22" height="60" rx="2" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="193" y="124.68" class="m" xml:space="preserve" text-anchor="middle">L</text>
+  <rect x="206" y="90" width="22" height="60" rx="2" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="217" y="124.68" class="m" xml:space="preserve" text-anchor="middle">L</text>
+  <rect x="230" y="90" width="22" height="60" rx="2" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="241" y="124.68" class="m" xml:space="preserve" text-anchor="middle">O</text>
+  <rect x="254" y="90" width="22" height="60" rx="2" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="265" y="124.68" class="m" xml:space="preserve" text-anchor="middle">·</text>
+  <rect x="278" y="90" width="22" height="60" rx="2" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="289" y="124.68" class="m" xml:space="preserve" text-anchor="middle">·</text>
+  <rect x="302" y="90" width="22" height="60" rx="2" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="313" y="124.68" class="m" xml:space="preserve" text-anchor="middle">·</text>
+  <rect x="326" y="90" width="22" height="60" rx="2" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="337" y="124.68" class="m" xml:space="preserve" text-anchor="middle">·</text>
+  <rect x="350" y="90" width="22" height="60" rx="2" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="361" y="124.68" class="m" xml:space="preserve" text-anchor="middle">·</text>
+  <rect x="374" y="90" width="22" height="60" rx="2" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="385" y="124.68" class="m" xml:space="preserve" text-anchor="middle">·</text>
+  <rect x="398" y="90" width="22" height="60" rx="2" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="409" y="124.68" class="m" xml:space="preserve" text-anchor="middle">·</text>
+  <rect x="422" y="90" width="22" height="60" rx="2" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="433" y="124.68" class="m" xml:space="preserve" text-anchor="middle">·</text>
+  <rect x="446" y="90" width="22" height="60" rx="2" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="457" y="124.68" class="m" xml:space="preserve" text-anchor="middle">·</text>
+  <rect x="470" y="90" width="22" height="60" rx="2" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="481" y="124.68" class="m" xml:space="preserve" text-anchor="middle">·</text>
+  <rect x="494" y="90" width="22" height="60" rx="2" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="505" y="124.68" class="m" xml:space="preserve" text-anchor="middle">·</text>
+  <rect x="518" y="90" width="22" height="60" rx="2" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="529" y="124.68" class="m" xml:space="preserve" text-anchor="middle">·</text>
+  <rect x="542" y="90" width="22" height="60" rx="2" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="553" y="124.68" class="m" xml:space="preserve" text-anchor="middle">·</text>
+  <rect x="566" y="90" width="22" height="60" rx="2" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="577" y="124.68" class="m" xml:space="preserve" text-anchor="middle">·</text>
+  <rect x="590" y="90" width="22" height="60" rx="2" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="601" y="124.68" class="m" xml:space="preserve" text-anchor="middle">·</text>
+  <rect x="614" y="90" width="22" height="60" rx="2" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="625" y="124.68" class="m" xml:space="preserve" text-anchor="middle">·</text>
+  <rect x="638" y="90" width="22" height="60" rx="2" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="649" y="124.68" class="m" xml:space="preserve" text-anchor="middle">·</text>
+  <rect x="662" y="90" width="22" height="60" rx="2" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="673" y="124.68" class="m" xml:space="preserve" text-anchor="middle">·</text>
+  <rect x="686" y="90" width="22" height="60" rx="2" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="697" y="124.68" class="m" xml:space="preserve" text-anchor="middle">·</text>
+  <rect x="722" y="90" width="62" height="60" rx="6" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="753" y="116.18" class="m" xml:space="preserve" text-anchor="middle">0Dh</text>
+  <text x="753" y="133.32" class="s" text-anchor="middle">データ</text>
+  <rect x="796" y="90" width="92" height="60" rx="6" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+  <text x="842" y="115.46" class="ms" xml:space="preserve" text-anchor="middle">ACK = Low</text>
+  <text x="842" y="132.32" class="s" text-anchor="middle">を待つ</text>
+  <rect x="900" y="90" width="62" height="60" rx="6" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="931" y="116.18" class="m" xml:space="preserve" text-anchor="middle">0Eh</text>
+  <text x="931" y="133.32" class="s" text-anchor="middle">データ</text>
+  <polyline points="134,160 134,166 708,166 708,160" fill="none" stroke="#52606D" stroke-width="1.2"/>
+  <text x="421" y="186" class="s" text-anchor="middle">データ 24 バイト（HELLO と空白 19 個。変換前の文字で示した）</text>
+  <text x="842" y="186" class="s" text-anchor="middle">印字が終わる</text>
+  <text x="24" y="232" class="s">紫はデバイスコード（XOUT = High）、ほかはデータ（XOUT = Low）。待ち時間は省いた。</text>
+</svg>

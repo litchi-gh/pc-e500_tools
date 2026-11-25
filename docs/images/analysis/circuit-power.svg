@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 420" width="980" height="420" role="img" aria-labelledby="t d">
+  <title id="t">電源の流れ</title>
+  <desc id="d">乾電池からダイオード、VCC、表示の電源、液晶の負の電圧へ流れる経路と、11 ピンと CR2016 の位置の図。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+  </style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#52606D"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="419" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h" text-anchor="start" xml:space="preserve">電源の流れ</text>
+  <text x="24" y="56" class="s" text-anchor="start" xml:space="preserve">PC-E500 の回路図（p.11〜12）から。PC-E500S も同じ作り</text>
+  <rect x="30" y="100" width="130" height="70" rx="8" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.3"/>
+  <text x="95.0" y="130.5" class="b" text-anchor="middle" xml:space="preserve">乾電池</text>
+  <text x="95.0" y="149.5" class="s" text-anchor="middle" xml:space="preserve">単 4 形 4 本、6 V</text>
+  <rect x="200" y="100" width="130" height="70" rx="8" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.3"/>
+  <text x="265.0" y="130.5" class="b" text-anchor="middle" xml:space="preserve">R13、D1</text>
+  <text x="265.0" y="149.5" class="s" text-anchor="middle" xml:space="preserve">4.7 Ω</text>
+  <rect x="370" y="100" width="130" height="70" rx="8" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.3"/>
+  <text x="435.0" y="130.5" class="b" text-anchor="middle" xml:space="preserve">VCC</text>
+  <text x="435.0" y="149.5" class="s" text-anchor="middle" xml:space="preserve">C12 220 µF</text>
+  <rect x="560" y="70" width="180" height="56" rx="8" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.3"/>
+  <text x="650.0" y="93.5" class="b" text-anchor="middle" xml:space="preserve">CPU、ROM、LCD IC</text>
+  <text x="650.0" y="112.5" class="s" text-anchor="middle" xml:space="preserve">カードスロット</text>
+  <rect x="560" y="145" width="180" height="56" rx="8" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.3"/>
+  <text x="650.0" y="168.5" class="b" text-anchor="middle" xml:space="preserve">Q3（VDD で開閉）</text>
+  <text x="650.0" y="187.5" class="s" text-anchor="middle" xml:space="preserve">VCC'</text>
+  <rect x="790" y="145" width="160" height="56" rx="8" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.3"/>
+  <text x="870.0" y="168.5" class="b" text-anchor="middle" xml:space="preserve">T1、Q1、D2、D7</text>
+  <text x="870.0" y="187.5" class="s" text-anchor="middle" xml:space="preserve">VEE を作る</text>
+  <rect x="790" y="230" width="160" height="66" rx="8" fill="#FDECEA" stroke="#C0392B" stroke-width="1.3"/>
+  <text x="870.0" y="258.5" class="b" text-anchor="middle" xml:space="preserve">VR1、R17〜R20、R10</text>
+  <text x="870.0" y="277.5" class="s" text-anchor="middle" xml:space="preserve">V1〜V6（液晶）</text>
+  <rect x="370" y="240" width="130" height="60" rx="8" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.3"/>
+  <text x="435.0" y="265.5" class="b" text-anchor="middle" xml:space="preserve">11 ピンの 2 番</text>
+  <text x="435.0" y="284.5" class="s" text-anchor="middle" xml:space="preserve">外から給電できる</text>
+  <rect x="560" y="250" width="180" height="56" rx="8" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.3"/>
+  <text x="650.0" y="273.5" class="b" text-anchor="middle" xml:space="preserve">D9</text>
+  <text x="650.0" y="292.5" class="s" text-anchor="middle" xml:space="preserve">逆流を止める</text>
+  <rect x="560" y="335" width="180" height="56" rx="8" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.3"/>
+  <text x="650.0" y="358.5" class="b" text-anchor="middle" xml:space="preserve">内蔵 RAM</text>
+  <text x="650.0" y="377.5" class="s" text-anchor="middle" xml:space="preserve">バックアップの線</text>
+  <rect x="200" y="335" width="130" height="56" rx="8" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.3"/>
+  <text x="265.0" y="358.5" class="b" text-anchor="middle" xml:space="preserve">CR2016</text>
+  <text x="265.0" y="377.5" class="s" text-anchor="middle" xml:space="preserve">3 V</text>
+  <rect x="370" y="335" width="130" height="56" rx="8" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.3"/>
+  <text x="435.0" y="368.0" class="b" text-anchor="middle" xml:space="preserve">D10</text>
+  <line x1="160" y1="135" x2="198" y2="135" stroke="#52606D" stroke-width="1.6" marker-end="url(#a)"/>
+  <line x1="330" y1="135" x2="368" y2="135" stroke="#52606D" stroke-width="1.6" marker-end="url(#a)"/>
+  <line x1="500" y1="120" x2="558" y2="98" stroke="#52606D" stroke-width="1.6" marker-end="url(#a)"/>
+  <line x1="500" y1="150" x2="558" y2="173" stroke="#52606D" stroke-width="1.6" marker-end="url(#a)"/>
+  <line x1="740" y1="173" x2="788" y2="173" stroke="#52606D" stroke-width="1.6" marker-end="url(#a)"/>
+  <line x1="870" y1="201" x2="870" y2="228" stroke="#52606D" stroke-width="1.6" marker-end="url(#a)"/>
+  <line x1="435" y1="240" x2="435" y2="172" stroke="#52606D" stroke-width="1.6" marker-end="url(#a)"/>
+  <line x1="475" y1="172" x2="558" y2="270" stroke="#52606D" stroke-width="1.6" marker-end="url(#a)"/>
+  <line x1="650" y1="306" x2="650" y2="333" stroke="#52606D" stroke-width="1.6" marker-end="url(#a)"/>
+  <line x1="330" y1="363" x2="368" y2="363" stroke="#52606D" stroke-width="1.6" marker-end="url(#a)"/>
+  <line x1="500" y1="363" x2="558" y2="363" stroke="#52606D" stroke-width="1.6" marker-end="url(#a)"/>
+</svg>

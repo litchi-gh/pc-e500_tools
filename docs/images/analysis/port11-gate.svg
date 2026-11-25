@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 400" width="980" height="400" role="img" aria-labelledby="t d">
+  <title id="t">4 本のデータの線と、ACK の門</title>
+  <desc id="d">E8 から E11 の出力と、ダイオードとトランジスタを通した E12 から E15 の読み返しの回路を簡単にした図。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+  </style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#52606D"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="399" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h" text-anchor="start" xml:space="preserve">4 本のデータの線と、ACK の門</text>
+  <text x="24" y="56" class="s" text-anchor="start" xml:space="preserve">PC-E500 の Q4〜Q7、D3〜D6。PC-E500S も同じ作り（回路図を簡略にした）</text>
+  <rect x="40" y="95" width="110" height="44" rx="4" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.3"/>
+  <text x="95.0" y="122.0" class="b" text-anchor="middle" xml:space="preserve">5 番 DOUT</text>
+  <line x1="150" y1="117" x2="300" y2="117" stroke="#2F6DB5" stroke-width="2"/>
+  <rect x="300" y="99" width="70" height="36" rx="4" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.3"/>
+  <text x="335.0" y="122.0" class="s" text-anchor="middle" xml:space="preserve">ダイオード</text>
+  <line x1="370" y1="117" x2="470" y2="117" stroke="#2F6DB5" stroke-width="2"/>
+  <rect x="470" y="95" width="130" height="44" rx="4" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.3"/>
+  <text x="535.0" y="112.5" class="b" text-anchor="middle" xml:space="preserve">Q4（PNP）</text>
+  <text x="535.0" y="131.5" class="s" text-anchor="middle" xml:space="preserve">門</text>
+  <line x1="600" y1="117" x2="740" y2="117" stroke="#2F6DB5" stroke-width="2" marker-end="url(#a)"/>
+  <text x="750" y="122" class="b" text-anchor="start" xml:space="preserve">E14 で読む</text>
+  <text x="225" y="109" class="s" text-anchor="middle" xml:space="preserve">E10 が High を出す</text>
+  <rect x="40" y="157" width="110" height="44" rx="4" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.3"/>
+  <text x="95.0" y="184.0" class="b" text-anchor="middle" xml:space="preserve">10 番 IO2</text>
+  <line x1="150" y1="179" x2="300" y2="179" stroke="#2F6DB5" stroke-width="2"/>
+  <rect x="300" y="161" width="70" height="36" rx="4" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.3"/>
+  <text x="335.0" y="184.0" class="s" text-anchor="middle" xml:space="preserve">ダイオード</text>
+  <line x1="370" y1="179" x2="470" y2="179" stroke="#2F6DB5" stroke-width="2"/>
+  <rect x="470" y="157" width="130" height="44" rx="4" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.3"/>
+  <text x="535.0" y="174.5" class="b" text-anchor="middle" xml:space="preserve">Q5（PNP）</text>
+  <text x="535.0" y="193.5" class="s" text-anchor="middle" xml:space="preserve">門</text>
+  <line x1="600" y1="179" x2="740" y2="179" stroke="#2F6DB5" stroke-width="2" marker-end="url(#a)"/>
+  <text x="750" y="184" class="b" text-anchor="start" xml:space="preserve">E13 で読む</text>
+  <text x="225" y="171" class="s" text-anchor="middle" xml:space="preserve">E9 が High を出す</text>
+  <rect x="40" y="219" width="110" height="44" rx="4" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.3"/>
+  <text x="95.0" y="246.0" class="b" text-anchor="middle" xml:space="preserve">11 番 IO1</text>
+  <line x1="150" y1="241" x2="300" y2="241" stroke="#2F6DB5" stroke-width="2"/>
+  <rect x="300" y="223" width="70" height="36" rx="4" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.3"/>
+  <text x="335.0" y="246.0" class="s" text-anchor="middle" xml:space="preserve">ダイオード</text>
+  <line x1="370" y1="241" x2="470" y2="241" stroke="#2F6DB5" stroke-width="2"/>
+  <rect x="470" y="219" width="130" height="44" rx="4" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.3"/>
+  <text x="535.0" y="236.5" class="b" text-anchor="middle" xml:space="preserve">Q6（PNP）</text>
+  <text x="535.0" y="255.5" class="s" text-anchor="middle" xml:space="preserve">門</text>
+  <line x1="600" y1="241" x2="740" y2="241" stroke="#2F6DB5" stroke-width="2" marker-end="url(#a)"/>
+  <text x="750" y="246" class="b" text-anchor="start" xml:space="preserve">E12 で読む</text>
+  <text x="225" y="233" class="s" text-anchor="middle" xml:space="preserve">E8 が High を出す</text>
+  <rect x="40" y="281" width="110" height="44" rx="4" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.3"/>
+  <text x="95.0" y="308.0" class="b" text-anchor="middle" xml:space="preserve">8 番 DIN</text>
+  <line x1="150" y1="303" x2="300" y2="303" stroke="#2F855A" stroke-width="2"/>
+  <rect x="300" y="285" width="70" height="36" rx="4" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.3"/>
+  <text x="335.0" y="308.0" class="s" text-anchor="middle" xml:space="preserve">ダイオード</text>
+  <line x1="370" y1="303" x2="740" y2="303" stroke="#2F855A" stroke-width="2" marker-end="url(#a)"/>
+  <text x="750" y="308" class="b" text-anchor="start" xml:space="preserve">E15 で読む</text>
+  <text x="225" y="295" class="s" text-anchor="middle" xml:space="preserve">E11 が High を出す</text>
+  <text x="540" y="295" class="s" text-anchor="middle" xml:space="preserve">門はない</text>
+  <rect x="40" y="345" width="110" height="40" rx="4" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.3"/>
+  <text x="95.0" y="370.0" class="b" text-anchor="middle" xml:space="preserve">9 番 ACK</text>
+  <line x1="150" y1="365" x2="470" y2="365" stroke="#C0392B" stroke-width="2"/>
+  <rect x="470" y="345" width="130" height="40" rx="4" fill="#FDECEA" stroke="#C0392B" stroke-width="1.3"/>
+  <text x="535.0" y="370.0" class="b" text-anchor="middle" xml:space="preserve">Q7（NPN）</text>
+  <line x1="650" y1="365" x2="650" y2="117" stroke="#C0392B" stroke-width="2"/>
+  <line x1="600" y1="365" x2="650" y2="365" stroke="#C0392B" stroke-width="2"/>
+  <line x1="650" y1="129" x2="602" y2="129" stroke="#C0392B" stroke-width="1.6" marker-end="url(#a)"/>
+  <line x1="650" y1="191" x2="602" y2="191" stroke="#C0392B" stroke-width="1.6" marker-end="url(#a)"/>
+  <line x1="650" y1="253" x2="602" y2="253" stroke="#C0392B" stroke-width="1.6" marker-end="url(#a)"/>
+  <text x="662" y="360" class="s" text-anchor="start" xml:space="preserve">ACK が High の間だけ</text>
+  <text x="662" y="378" class="s" text-anchor="start" xml:space="preserve">3 本の門が開く</text>
+</svg>

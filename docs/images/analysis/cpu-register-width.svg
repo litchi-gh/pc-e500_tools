@@ -1,0 +1,214 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 560" width="980" height="560" role="img" aria-labelledby="t d">
+  <title id="t">幅の違う値を移すとどうなるか</title>
+  <desc id="d">レジスタへの書き込みと、幅の違うレジスタやメモリの間の転送で、上位の桁がどうなるかを例で示した図。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .mb { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; font-weight: 700; }
+  </style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#52606D"/></marker><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#C0392B"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="559" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h" xml:space="preserve">幅の違う値を移すとどうなるか</text>
+  <text x="24" y="55" class="sub" xml:space="preserve">灰色は変わらない部分、赤は 0 になる部分。値は例</text>
+  <rect x="24" y="76" width="452" height="106" rx="8" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.2"/>
+  <text x="38" y="100" class="b" xml:space="preserve">MV IL,56h</text>
+  <text x="38" y="170" class="s" xml:space="preserve">IH が 0 になる</text>
+  <text x="66" y="138" class="b" xml:space="preserve" text-anchor="end">I</text>
+  <rect x="74" y="118" width="26" height="28" rx="2" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="87" y="137" class="mb" xml:space="preserve" text-anchor="middle">1</text>
+  <rect x="100" y="118" width="26" height="28" rx="2" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="113" y="137" class="mb" xml:space="preserve" text-anchor="middle">2</text>
+  <rect x="126" y="118" width="26" height="28" rx="2" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="139" y="137" class="mb" xml:space="preserve" text-anchor="middle">3</text>
+  <rect x="152" y="118" width="26" height="28" rx="2" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="165" y="137" class="mb" xml:space="preserve" text-anchor="middle">4</text>
+  <path d="M194 132L234 132" fill="none" stroke="#52606D" stroke-width="1.6" marker-end="url(#a)"/>
+  <rect x="244" y="118" width="26" height="28" rx="2" fill="#FDECEA" stroke="#C0392B" stroke-width="1.2"/>
+  <text x="257" y="137" class="mb" xml:space="preserve" text-anchor="middle">0</text>
+  <rect x="270" y="118" width="26" height="28" rx="2" fill="#FDECEA" stroke="#C0392B" stroke-width="1.2"/>
+  <text x="283" y="137" class="mb" xml:space="preserve" text-anchor="middle">0</text>
+  <rect x="296" y="118" width="26" height="28" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="309" y="137" class="mb" xml:space="preserve" text-anchor="middle">5</text>
+  <rect x="322" y="118" width="26" height="28" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="335" y="137" class="mb" xml:space="preserve" text-anchor="middle">6</text>
+  <rect x="504" y="76" width="452" height="106" rx="8" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.2"/>
+  <text x="518" y="100" class="b" xml:space="preserve">MV A,56h</text>
+  <text x="518" y="170" class="s" xml:space="preserve">B は変わらない</text>
+  <text x="546" y="138" class="b" xml:space="preserve" text-anchor="end">BA</text>
+  <rect x="554" y="118" width="26" height="28" rx="2" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="567" y="137" class="mb" xml:space="preserve" text-anchor="middle">1</text>
+  <rect x="580" y="118" width="26" height="28" rx="2" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="593" y="137" class="mb" xml:space="preserve" text-anchor="middle">2</text>
+  <rect x="606" y="118" width="26" height="28" rx="2" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="619" y="137" class="mb" xml:space="preserve" text-anchor="middle">3</text>
+  <rect x="632" y="118" width="26" height="28" rx="2" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="645" y="137" class="mb" xml:space="preserve" text-anchor="middle">4</text>
+  <path d="M674 132L714 132" fill="none" stroke="#52606D" stroke-width="1.6" marker-end="url(#a)"/>
+  <rect x="724" y="118" width="26" height="28" rx="2" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="737" y="137" class="mb" xml:space="preserve" text-anchor="middle">1</text>
+  <rect x="750" y="118" width="26" height="28" rx="2" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="763" y="137" class="mb" xml:space="preserve" text-anchor="middle">2</text>
+  <rect x="776" y="118" width="26" height="28" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="789" y="137" class="mb" xml:space="preserve" text-anchor="middle">5</text>
+  <rect x="802" y="118" width="26" height="28" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="815" y="137" class="mb" xml:space="preserve" text-anchor="middle">6</text>
+  <rect x="24" y="196" width="452" height="106" rx="8" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.2"/>
+  <text x="38" y="220" class="b" xml:space="preserve">MV BA,X</text>
+  <text x="38" y="290" class="s" xml:space="preserve">20 → 16 ビット: 下位 16 ビットだけが入る</text>
+  <text x="66" y="258" class="b" xml:space="preserve" text-anchor="end">X</text>
+  <rect x="74" y="238" width="26" height="28" rx="2" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="87" y="257" class="mb" xml:space="preserve" text-anchor="middle">A</text>
+  <rect x="100" y="238" width="26" height="28" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="113" y="257" class="mb" xml:space="preserve" text-anchor="middle">B</text>
+  <rect x="126" y="238" width="26" height="28" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="139" y="257" class="mb" xml:space="preserve" text-anchor="middle">C</text>
+  <rect x="152" y="238" width="26" height="28" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="165" y="257" class="mb" xml:space="preserve" text-anchor="middle">D</text>
+  <rect x="178" y="238" width="26" height="28" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="191" y="257" class="mb" xml:space="preserve" text-anchor="middle">E</text>
+  <path d="M220 252L260 252" fill="none" stroke="#52606D" stroke-width="1.6" marker-end="url(#a)"/>
+  <text x="288" y="258" class="b" xml:space="preserve" text-anchor="end">BA</text>
+  <rect x="296" y="238" width="26" height="28" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="309" y="257" class="mb" xml:space="preserve" text-anchor="middle">B</text>
+  <rect x="322" y="238" width="26" height="28" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="335" y="257" class="mb" xml:space="preserve" text-anchor="middle">C</text>
+  <rect x="348" y="238" width="26" height="28" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="361" y="257" class="mb" xml:space="preserve" text-anchor="middle">D</text>
+  <rect x="374" y="238" width="26" height="28" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="387" y="257" class="mb" xml:space="preserve" text-anchor="middle">E</text>
+  <rect x="504" y="196" width="452" height="106" rx="8" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.2"/>
+  <text x="518" y="220" class="b" xml:space="preserve">MV X,BA</text>
+  <text x="518" y="290" class="s" xml:space="preserve">16 → 20 ビット: 上位 4 ビットは 0 になる</text>
+  <text x="546" y="258" class="b" xml:space="preserve" text-anchor="end">BA</text>
+  <rect x="554" y="238" width="26" height="28" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="567" y="257" class="mb" xml:space="preserve" text-anchor="middle">1</text>
+  <rect x="580" y="238" width="26" height="28" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="593" y="257" class="mb" xml:space="preserve" text-anchor="middle">2</text>
+  <rect x="606" y="238" width="26" height="28" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="619" y="257" class="mb" xml:space="preserve" text-anchor="middle">3</text>
+  <rect x="632" y="238" width="26" height="28" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="645" y="257" class="mb" xml:space="preserve" text-anchor="middle">4</text>
+  <path d="M674 252L714 252" fill="none" stroke="#52606D" stroke-width="1.6" marker-end="url(#a)"/>
+  <text x="742" y="258" class="b" xml:space="preserve" text-anchor="end">X</text>
+  <rect x="750" y="238" width="26" height="28" rx="2" fill="#FDECEA" stroke="#C0392B" stroke-width="1.2"/>
+  <text x="763" y="257" class="mb" xml:space="preserve" text-anchor="middle">0</text>
+  <rect x="776" y="238" width="26" height="28" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="789" y="257" class="mb" xml:space="preserve" text-anchor="middle">1</text>
+  <rect x="802" y="238" width="26" height="28" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="815" y="257" class="mb" xml:space="preserve" text-anchor="middle">2</text>
+  <rect x="828" y="238" width="26" height="28" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="841" y="257" class="mb" xml:space="preserve" text-anchor="middle">3</text>
+  <rect x="854" y="238" width="26" height="28" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="867" y="257" class="mb" xml:space="preserve" text-anchor="middle">4</text>
+  <rect x="24" y="316" width="452" height="106" rx="8" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.2"/>
+  <text x="38" y="340" class="b" xml:space="preserve">MV [B8000h],X（X = BCDEFh）</text>
+  <text x="38" y="410" class="s" xml:space="preserve">20 ビットは 3 バイト。下位が先、最後の上位 4 ビットは 0</text>
+  <rect x="74" y="358" width="92" height="28" rx="2" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="80" y="376" class="ms" xml:space="preserve">B8000h</text>
+  <text x="138" y="377" class="mb" xml:space="preserve">EF</text>
+  <rect x="174" y="358" width="92" height="28" rx="2" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="180" y="376" class="ms" xml:space="preserve">B8001h</text>
+  <text x="238" y="377" class="mb" xml:space="preserve">CD</text>
+  <rect x="274" y="358" width="92" height="28" rx="2" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="280" y="376" class="ms" xml:space="preserve">B8002h</text>
+  <text x="338" y="377" class="mb" xml:space="preserve">0B</text>
+  <rect x="504" y="316" width="452" height="106" rx="8" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.2"/>
+  <text x="518" y="340" class="b" xml:space="preserve">MV X,[B8000h]（EF CD FB が入っている）</text>
+  <text x="518" y="410" class="s" xml:space="preserve">読むとき 3 バイト目の上位 4 ビット（F）は無視: X = BCDEFh</text>
+  <rect x="524" y="358" width="86" height="28" rx="2" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="529" y="376" class="ms" xml:space="preserve">B8000h</text>
+  <text x="582" y="377" class="mb" xml:space="preserve">EF</text>
+  <rect x="616" y="358" width="86" height="28" rx="2" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="621" y="376" class="ms" xml:space="preserve">B8001h</text>
+  <text x="674" y="377" class="mb" xml:space="preserve">CD</text>
+  <rect x="708" y="358" width="86" height="28" rx="2" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="713" y="376" class="ms" xml:space="preserve">B8002h</text>
+  <text x="766" y="377" class="mb" xml:space="preserve">FB</text>
+  <path d="M800 372L812 372" fill="none" stroke="#52606D" stroke-width="1.6" marker-end="url(#a)"/>
+  <rect x="816" y="358" width="26" height="28" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="829" y="377" class="mb" xml:space="preserve" text-anchor="middle">B</text>
+  <rect x="842" y="358" width="26" height="28" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="855" y="377" class="mb" xml:space="preserve" text-anchor="middle">C</text>
+  <rect x="868" y="358" width="26" height="28" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="881" y="377" class="mb" xml:space="preserve" text-anchor="middle">D</text>
+  <rect x="894" y="358" width="26" height="28" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="907" y="377" class="mb" xml:space="preserve" text-anchor="middle">E</text>
+  <rect x="920" y="358" width="26" height="28" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="933" y="377" class="mb" xml:space="preserve" text-anchor="middle">F</text>
+  <rect x="24" y="436" width="452" height="106" rx="8" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.2"/>
+  <text x="38" y="460" class="b" xml:space="preserve">EX BA,X</text>
+  <text x="38" y="530" class="s" xml:space="preserve">BA に X の下位 16 ビット、X に BA。X の上位 4 ビットは 0</text>
+  <text x="56" y="498" class="b" xml:space="preserve" text-anchor="end">BA</text>
+  <rect x="64" y="478" width="20" height="28" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="74" y="497" class="mb" xml:space="preserve" text-anchor="middle">1</text>
+  <rect x="84" y="478" width="20" height="28" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="94" y="497" class="mb" xml:space="preserve" text-anchor="middle">2</text>
+  <rect x="104" y="478" width="20" height="28" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="114" y="497" class="mb" xml:space="preserve" text-anchor="middle">3</text>
+  <rect x="124" y="478" width="20" height="28" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="134" y="497" class="mb" xml:space="preserve" text-anchor="middle">4</text>
+  <text x="166" y="498" class="b" xml:space="preserve" text-anchor="end">X</text>
+  <rect x="174" y="478" width="20" height="28" rx="2" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="184" y="497" class="mb" xml:space="preserve" text-anchor="middle">F</text>
+  <rect x="194" y="478" width="20" height="28" rx="2" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="204" y="497" class="mb" xml:space="preserve" text-anchor="middle">F</text>
+  <rect x="214" y="478" width="20" height="28" rx="2" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="224" y="497" class="mb" xml:space="preserve" text-anchor="middle">F</text>
+  <rect x="234" y="478" width="20" height="28" rx="2" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="244" y="497" class="mb" xml:space="preserve" text-anchor="middle">F</text>
+  <rect x="254" y="478" width="20" height="28" rx="2" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="264" y="497" class="mb" xml:space="preserve" text-anchor="middle">F</text>
+  <path d="M280 492L294 492" fill="none" stroke="#52606D" stroke-width="1.6" marker-end="url(#a)"/>
+  <rect x="300" y="478" width="18" height="28" rx="2" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="309" y="497" class="mb" xml:space="preserve" text-anchor="middle">F</text>
+  <rect x="318" y="478" width="18" height="28" rx="2" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="327" y="497" class="mb" xml:space="preserve" text-anchor="middle">F</text>
+  <rect x="336" y="478" width="18" height="28" rx="2" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="345" y="497" class="mb" xml:space="preserve" text-anchor="middle">F</text>
+  <rect x="354" y="478" width="18" height="28" rx="2" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="363" y="497" class="mb" xml:space="preserve" text-anchor="middle">F</text>
+  <rect x="378" y="478" width="18" height="28" rx="2" fill="#FDECEA" stroke="#C0392B" stroke-width="1.2"/>
+  <text x="387" y="497" class="mb" xml:space="preserve" text-anchor="middle">0</text>
+  <rect x="396" y="478" width="18" height="28" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="405" y="497" class="mb" xml:space="preserve" text-anchor="middle">1</text>
+  <rect x="414" y="478" width="18" height="28" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="423" y="497" class="mb" xml:space="preserve" text-anchor="middle">2</text>
+  <rect x="432" y="478" width="18" height="28" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="441" y="497" class="mb" xml:space="preserve" text-anchor="middle">3</text>
+  <rect x="450" y="478" width="18" height="28" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="459" y="497" class="mb" xml:space="preserve" text-anchor="middle">4</text>
+  <rect x="504" y="436" width="452" height="106" rx="8" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.2"/>
+  <text x="518" y="460" class="b" xml:space="preserve">ADD X,BA（X = FFFFFh、BA = 0001h）</text>
+  <text x="518" y="530" class="s" xml:space="preserve">桁上げは転送先の最上位（X なら bit 19）から出る: C = 1、Z = 1</text>
+  <text x="546" y="498" class="b" xml:space="preserve" text-anchor="end">X</text>
+  <rect x="554" y="478" width="26" height="28" rx="2" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="567" y="497" class="mb" xml:space="preserve" text-anchor="middle">F</text>
+  <rect x="580" y="478" width="26" height="28" rx="2" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="593" y="497" class="mb" xml:space="preserve" text-anchor="middle">F</text>
+  <rect x="606" y="478" width="26" height="28" rx="2" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="619" y="497" class="mb" xml:space="preserve" text-anchor="middle">F</text>
+  <rect x="632" y="478" width="26" height="28" rx="2" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="645" y="497" class="mb" xml:space="preserve" text-anchor="middle">F</text>
+  <rect x="658" y="478" width="26" height="28" rx="2" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="671" y="497" class="mb" xml:space="preserve" text-anchor="middle">F</text>
+  <path d="M694 492L730 492" fill="none" stroke="#52606D" stroke-width="1.6" marker-end="url(#a)"/>
+  <rect x="740" y="478" width="26" height="28" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="753" y="497" class="mb" xml:space="preserve" text-anchor="middle">0</text>
+  <rect x="766" y="478" width="26" height="28" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="779" y="497" class="mb" xml:space="preserve" text-anchor="middle">0</text>
+  <rect x="792" y="478" width="26" height="28" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="805" y="497" class="mb" xml:space="preserve" text-anchor="middle">0</text>
+  <rect x="818" y="478" width="26" height="28" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="831" y="497" class="mb" xml:space="preserve" text-anchor="middle">0</text>
+  <rect x="844" y="478" width="26" height="28" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="857" y="497" class="mb" xml:space="preserve" text-anchor="middle">0</text>
+  <rect x="882" y="478" width="30" height="28" rx="2" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="897" y="497" class="mb" xml:space="preserve" text-anchor="middle">C</text>
+  <rect x="914" y="478" width="30" height="28" rx="2" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="929" y="497" class="mb" xml:space="preserve" text-anchor="middle">Z</text>
+</svg>

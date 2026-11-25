@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 470" width="980" height="470" role="img" aria-labelledby="t d">
+  <title id="t">ISR、IMR と割り込みの条件</title>
+  <desc id="d">ISR と IMR のビット配置を上下に並べ、ビットごとの AND と IRM の AND で割り込み要求になることを示した図。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .mb { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; font-weight: 700; }
+  </style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#52606D"/></marker><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#C0392B"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="469" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h" xml:space="preserve">ISR、IMR と割り込みの条件</text>
+  <text x="24" y="55" class="sub" xml:space="preserve">同じビットどうしを AND し、どれかが 1 で IRM も 1 なら割り込む</text>
+  <text x="24" y="130" class="b" xml:space="preserve">ISR（FCh）</text>
+  <text x="24" y="147" class="s" xml:space="preserve">要因が起きた</text>
+  <text x="24" y="182" class="b" xml:space="preserve">IMR（FBh）</text>
+  <text x="24" y="199" class="s" xml:space="preserve">許可する</text>
+  <text x="180" y="78" class="s" xml:space="preserve" text-anchor="middle">ビット 7</text>
+  <rect x="130" y="106" width="100" height="46" rx="2" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="180" y="134" class="mb" xml:space="preserve" text-anchor="middle"></text>
+  <rect x="130" y="160" width="100" height="46" rx="2" fill="#FDECEA" stroke="#C0392B" stroke-width="1.2"/>
+  <text x="180" y="188" class="mb" xml:space="preserve" text-anchor="middle">IRM</text>
+  <text x="280" y="78" class="s" xml:space="preserve" text-anchor="middle">ビット 6</text>
+  <text x="280" y="97" class="s" xml:space="preserve" text-anchor="middle">IRQピン</text>
+  <rect x="230" y="106" width="100" height="46" rx="2" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="280" y="134" class="mb" xml:space="preserve" text-anchor="middle">EXI</text>
+  <rect x="230" y="160" width="100" height="46" rx="2" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="280" y="188" class="mb" xml:space="preserve" text-anchor="middle">EXM</text>
+  <path d="M280 206L280 230" fill="none" stroke="#52606D" stroke-width="1.6" marker-end="url(#a)"/>
+  <rect x="256" y="232" width="48" height="28" rx="14" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.2"/>
+  <text x="280" y="250" class="ms" xml:space="preserve" text-anchor="middle">AND</text>
+  <path d="M280 260L280 296" fill="none" stroke="#52606D" stroke-width="1.6" marker-end="url(#a)"/>
+  <text x="380" y="78" class="s" xml:space="preserve" text-anchor="middle">ビット 5</text>
+  <text x="380" y="97" class="s" xml:space="preserve" text-anchor="middle">UART受信完了</text>
+  <rect x="330" y="106" width="100" height="46" rx="2" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="380" y="134" class="mb" xml:space="preserve" text-anchor="middle">RXRI</text>
+  <rect x="330" y="160" width="100" height="46" rx="2" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="380" y="188" class="mb" xml:space="preserve" text-anchor="middle">RXRM</text>
+  <path d="M380 206L380 230" fill="none" stroke="#52606D" stroke-width="1.6" marker-end="url(#a)"/>
+  <rect x="356" y="232" width="48" height="28" rx="14" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.2"/>
+  <text x="380" y="250" class="ms" xml:space="preserve" text-anchor="middle">AND</text>
+  <path d="M380 260L380 296" fill="none" stroke="#52606D" stroke-width="1.6" marker-end="url(#a)"/>
+  <text x="480" y="78" class="s" xml:space="preserve" text-anchor="middle">ビット 4</text>
+  <text x="480" y="97" class="s" xml:space="preserve" text-anchor="middle">UART送信の空き</text>
+  <rect x="430" y="106" width="100" height="46" rx="2" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="480" y="134" class="mb" xml:space="preserve" text-anchor="middle">TXRI</text>
+  <rect x="430" y="160" width="100" height="46" rx="2" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="480" y="188" class="mb" xml:space="preserve" text-anchor="middle">TXRM</text>
+  <path d="M480 206L480 230" fill="none" stroke="#52606D" stroke-width="1.6" marker-end="url(#a)"/>
+  <rect x="456" y="232" width="48" height="28" rx="14" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.2"/>
+  <text x="480" y="250" class="ms" xml:space="preserve" text-anchor="middle">AND</text>
+  <path d="M480 260L480 296" fill="none" stroke="#52606D" stroke-width="1.6" marker-end="url(#a)"/>
+  <text x="580" y="78" class="s" xml:space="preserve" text-anchor="middle">ビット 3</text>
+  <text x="580" y="97" class="s" xml:space="preserve" text-anchor="middle">ON ピンHigh</text>
+  <rect x="530" y="106" width="100" height="46" rx="2" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="580" y="134" class="mb" xml:space="preserve" text-anchor="middle">ONKI</text>
+  <rect x="530" y="160" width="100" height="46" rx="2" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="580" y="188" class="mb" xml:space="preserve" text-anchor="middle">ONKM</text>
+  <path d="M580 206L580 230" fill="none" stroke="#52606D" stroke-width="1.6" marker-end="url(#a)"/>
+  <rect x="556" y="232" width="48" height="28" rx="14" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.2"/>
+  <text x="580" y="250" class="ms" xml:space="preserve" text-anchor="middle">AND</text>
+  <path d="M580 260L580 296" fill="none" stroke="#52606D" stroke-width="1.6" marker-end="url(#a)"/>
+  <text x="680" y="78" class="s" xml:space="preserve" text-anchor="middle">ビット 2</text>
+  <text x="680" y="97" class="s" xml:space="preserve" text-anchor="middle">KI ピンHigh</text>
+  <rect x="630" y="106" width="100" height="46" rx="2" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="680" y="134" class="mb" xml:space="preserve" text-anchor="middle">KEYI</text>
+  <rect x="630" y="160" width="100" height="46" rx="2" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="680" y="188" class="mb" xml:space="preserve" text-anchor="middle">KEYM</text>
+  <path d="M680 206L680 230" fill="none" stroke="#52606D" stroke-width="1.6" marker-end="url(#a)"/>
+  <rect x="656" y="232" width="48" height="28" rx="14" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.2"/>
+  <text x="680" y="250" class="ms" xml:space="preserve" text-anchor="middle">AND</text>
+  <path d="M680 260L680 296" fill="none" stroke="#52606D" stroke-width="1.6" marker-end="url(#a)"/>
+  <text x="780" y="78" class="s" xml:space="preserve" text-anchor="middle">ビット 1</text>
+  <text x="780" y="97" class="s" xml:space="preserve" text-anchor="middle">サブのタイマ</text>
+  <rect x="730" y="106" width="100" height="46" rx="2" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="780" y="134" class="mb" xml:space="preserve" text-anchor="middle">STI</text>
+  <rect x="730" y="160" width="100" height="46" rx="2" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="780" y="188" class="mb" xml:space="preserve" text-anchor="middle">STM</text>
+  <path d="M780 206L780 230" fill="none" stroke="#52606D" stroke-width="1.6" marker-end="url(#a)"/>
+  <rect x="756" y="232" width="48" height="28" rx="14" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.2"/>
+  <text x="780" y="250" class="ms" xml:space="preserve" text-anchor="middle">AND</text>
+  <path d="M780 260L780 296" fill="none" stroke="#52606D" stroke-width="1.6" marker-end="url(#a)"/>
+  <text x="880" y="78" class="s" xml:space="preserve" text-anchor="middle">ビット 0</text>
+  <text x="880" y="97" class="s" xml:space="preserve" text-anchor="middle">主のタイマ</text>
+  <rect x="830" y="106" width="100" height="46" rx="2" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="880" y="134" class="mb" xml:space="preserve" text-anchor="middle">MTI</text>
+  <rect x="830" y="160" width="100" height="46" rx="2" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="880" y="188" class="mb" xml:space="preserve" text-anchor="middle">MTM</text>
+  <path d="M880 206L880 230" fill="none" stroke="#52606D" stroke-width="1.6" marker-end="url(#a)"/>
+  <rect x="856" y="232" width="48" height="28" rx="14" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.2"/>
+  <text x="880" y="250" class="ms" xml:space="preserve" text-anchor="middle">AND</text>
+  <path d="M880 260L880 296" fill="none" stroke="#52606D" stroke-width="1.6" marker-end="url(#a)"/>
+  <text x="180" y="97" class="s" xml:space="preserve" text-anchor="middle">全体の許可</text>
+  <rect x="230" y="298" width="700" height="36" rx="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="580" y="321" class="b" xml:space="preserve" text-anchor="middle">7 組のうち、どれかが 1 か（OR）</text>
+  <rect x="230" y="364" width="700" height="36" rx="6" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="580" y="387" class="b" xml:space="preserve" text-anchor="middle">IRM も 1 か（AND）→ 次の命令の前に割り込み</text>
+  <path d="M580 334L580 363" fill="none" stroke="#52606D" stroke-width="1.6" marker-end="url(#a)"/>
+  <path d="M180 206 L180 382 L228 382" fill="none" stroke="#C0392B" stroke-width="1.6" marker-end="url(#ar)"/>
+  <rect x="24" y="418" width="932" height="34" rx="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="36" y="439" class="s" xml:space="preserve" style="fill:#1F2933">ISR のビットは要因が消えても残ります。ソフトウェアが 0 を書いて消します。</text>
+</svg>

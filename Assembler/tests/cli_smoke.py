@@ -58,7 +58,7 @@ assert (OUT / "sum.bin").read_bytes().hex() == "0800090a46017c011b0606"
 
 # This harness only uses read-only exports of a separate in-memory machine.
 # The live emulator, its ROMs, state files and configuration are never touched.
-dll_path = ROOT.parent / "Emulator" / "app" / "e500core.dll"
+dll_path = ROOT.parents[1] / "Emulator" / "app" / "e500core.dll"
 if dll_path.exists():
     program = OUT / "cpu-smoke.asm"
     program.write_text("""

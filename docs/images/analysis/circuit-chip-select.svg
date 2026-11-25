@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 560" width="980" height="560" role="img" aria-labelledby="t d">
+  <title id="t">チップセレクトと外部メモリ</title>
+  <desc id="d">外部メモリ 1 MB のうち、CE0〜CE7 が受け持つ範囲を帯で示した図。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .mb { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; font-weight: 700; }
+  </style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#52606D"/></marker><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#C0392B"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="559" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h" xml:space="preserve">チップセレクトと外部メモリ</text>
+  <text x="24" y="55" class="sub" xml:space="preserve">左の帯は 1 MB を比率どおりに描いた。PC-E500 で使うのは CE0、CE1、CE2、CE5、CE6</text>
+  <rect x="120" y="86" width="200" height="440" rx="2" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <rect x="120" y="86" width="200" height="6.875" rx="1" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <path d="M322 89.4375L400 92" fill="none" stroke="#9AA5B1" stroke-width="1.2"/>
+  <text x="408" y="97" class="mb" xml:space="preserve">CE5</text>
+  <text x="450" y="97" class="m" xml:space="preserve">00000h〜03FFFh</text>
+  <text x="580" y="97" xml:space="preserve">表示チップ（Active High）</text>
+  <text x="956" y="97" class="s" xml:space="preserve" text-anchor="end">ピン 63</text>
+  <rect x="120" y="99.75" width="200" height="6.875" rx="1" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <path d="M322 103.188L400 128" fill="none" stroke="#9AA5B1" stroke-width="1.2"/>
+  <text x="408" y="133" class="mb" xml:space="preserve">CE5</text>
+  <text x="450" y="133" class="m" xml:space="preserve">08000h〜0BFFFh</text>
+  <text x="580" y="133" xml:space="preserve">表示チップ（Active High）</text>
+  <text x="956" y="133" class="s" xml:space="preserve" text-anchor="end">ピン 63</text>
+  <rect x="120" y="113.5" width="200" height="27.5" rx="1" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <path d="M322 127.25L400 164" fill="none" stroke="#9AA5B1" stroke-width="1.2"/>
+  <text x="408" y="169" class="mb" xml:space="preserve">CE6</text>
+  <text x="450" y="169" class="m" xml:space="preserve">10000h〜1FFFFh</text>
+  <text x="580" y="169" xml:space="preserve">ROM カード（Active High）</text>
+  <text x="956" y="169" class="s" xml:space="preserve" text-anchor="end">ピン 62</text>
+  <rect x="120" y="141" width="200" height="55" rx="1" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.2"/>
+  <path d="M322 168.5L400 200" fill="none" stroke="#9AA5B1" stroke-width="1.2"/>
+  <text x="408" y="205" class="mb" xml:space="preserve">CE3</text>
+  <text x="450" y="205" class="m" xml:space="preserve">20000h〜3FFFFh</text>
+  <text x="580" y="205" xml:space="preserve">拡張 ROM（PC-E500S、E650、U6000）</text>
+  <text x="956" y="205" class="s" xml:space="preserve" text-anchor="end">ピン 65</text>
+  <rect x="120" y="196" width="200" height="110" rx="1" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <path d="M322 251L400 270" fill="none" stroke="#9AA5B1" stroke-width="1.2"/>
+  <text x="408" y="275" class="mb" xml:space="preserve">CE1</text>
+  <text x="450" y="275" class="m" xml:space="preserve">40000h〜7FFFFh</text>
+  <text x="580" y="275" xml:space="preserve">RAM カード</text>
+  <text x="956" y="275" class="s" xml:space="preserve" text-anchor="end">ピン 67</text>
+  <rect x="120" y="306" width="200" height="110" rx="1" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <path d="M322 361L400 370" fill="none" stroke="#9AA5B1" stroke-width="1.2"/>
+  <text x="408" y="375" class="mb" xml:space="preserve">CE0</text>
+  <text x="450" y="375" class="m" xml:space="preserve">80000h〜BFFFFh</text>
+  <text x="580" y="375" xml:space="preserve">内蔵 RAM</text>
+  <text x="956" y="375" class="s" xml:space="preserve" text-anchor="end">ピン 68</text>
+  <rect x="120" y="416" width="200" height="110" rx="1" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <path d="M322 471L400 470" fill="none" stroke="#9AA5B1" stroke-width="1.2"/>
+  <text x="408" y="475" class="mb" xml:space="preserve">CE2</text>
+  <text x="450" y="475" class="m" xml:space="preserve">C0000h〜FFFFFh</text>
+  <text x="580" y="475" xml:space="preserve">内蔵 ROM</text>
+  <text x="956" y="475" class="s" xml:space="preserve" text-anchor="end">ピン 66</text>
+  <text x="112" y="91" class="ms" xml:space="preserve" text-anchor="end">00000h</text>
+  <text x="112" y="146" class="ms" xml:space="preserve" text-anchor="end">20000h</text>
+  <text x="112" y="201" class="ms" xml:space="preserve" text-anchor="end">40000h</text>
+  <text x="112" y="311" class="ms" xml:space="preserve" text-anchor="end">80000h</text>
+  <text x="112" y="421" class="ms" xml:space="preserve" text-anchor="end">C0000h</text>
+  <text x="112" y="526" class="ms" xml:space="preserve" text-anchor="end">FFFFFh</text>
+  <text x="112" y="118.5" class="ms" xml:space="preserve" text-anchor="end">10000h</text>
+  <text x="120" y="550" class="s" xml:space="preserve">PC-E500 では CE3、CE4、CE7 は未使用。PC-E500S、E650、U6000 の基板では CE2 と CE3 が同じ ROM につながる。</text>
+</svg>

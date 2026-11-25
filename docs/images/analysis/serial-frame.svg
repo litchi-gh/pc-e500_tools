@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 400" width="980" height="400" role="img" aria-labelledby="t d">
+  <title id="t">1 文字のビットの並びと時間</title>
+  <desc id="d">8N1 と 7E2 で文字 A を送るときの、スタート、データ、パリティ、ストップの並び。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .lbl { font-size: 12px; fill: #52606D; paint-order: stroke; stroke: #FFFFFF; stroke-width: 4px; stroke-linejoin: round; }
+  </style>
+  <defs></defs>
+  <rect x="0.5" y="0.5" width="979" height="399" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">1 文字のビットの並びと時間</text>
+  <text x="24" y="55" class="sub">文字 A（41h）の例。データは下位ビットから送る。箱は論理の値で、線の電圧の向きではない</text>
+  <text x="40" y="106" class="b">1200,N,8,1</text>
+  <text x="40" y="126" class="s">1 + 8 + 1 = 10 ビット</text>
+  <rect x="250" y="92" width="56" height="36" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="278" y="115" class="m" xml:space="preserve" text-anchor="middle">開始</text>
+  <text x="278" y="146" class="ms" xml:space="preserve" text-anchor="middle"></text>
+  <rect x="306" y="92" width="56" height="36" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="334" y="115" class="m" xml:space="preserve" text-anchor="middle">1</text>
+  <text x="334" y="146" class="ms" xml:space="preserve" text-anchor="middle">D0</text>
+  <rect x="362" y="92" width="56" height="36" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="390" y="115" class="m" xml:space="preserve" text-anchor="middle">0</text>
+  <text x="390" y="146" class="ms" xml:space="preserve" text-anchor="middle">D1</text>
+  <rect x="418" y="92" width="56" height="36" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="446" y="115" class="m" xml:space="preserve" text-anchor="middle">0</text>
+  <text x="446" y="146" class="ms" xml:space="preserve" text-anchor="middle">D2</text>
+  <rect x="474" y="92" width="56" height="36" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="502" y="115" class="m" xml:space="preserve" text-anchor="middle">0</text>
+  <text x="502" y="146" class="ms" xml:space="preserve" text-anchor="middle">D3</text>
+  <rect x="530" y="92" width="56" height="36" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="558" y="115" class="m" xml:space="preserve" text-anchor="middle">0</text>
+  <text x="558" y="146" class="ms" xml:space="preserve" text-anchor="middle">D4</text>
+  <rect x="586" y="92" width="56" height="36" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="614" y="115" class="m" xml:space="preserve" text-anchor="middle">0</text>
+  <text x="614" y="146" class="ms" xml:space="preserve" text-anchor="middle">D5</text>
+  <rect x="642" y="92" width="56" height="36" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="670" y="115" class="m" xml:space="preserve" text-anchor="middle">1</text>
+  <text x="670" y="146" class="ms" xml:space="preserve" text-anchor="middle">D6</text>
+  <rect x="698" y="92" width="56" height="36" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="726" y="115" class="m" xml:space="preserve" text-anchor="middle">0</text>
+  <text x="726" y="146" class="ms" xml:space="preserve" text-anchor="middle">D7</text>
+  <rect x="754" y="92" width="56" height="36" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="782" y="115" class="m" xml:space="preserve" text-anchor="middle">停止</text>
+  <text x="782" y="146" class="ms" xml:space="preserve" text-anchor="middle"></text>
+  <polyline points="250,154 250,162 810,162 810,154" fill="none" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="530" y="178" class="s" text-anchor="middle">10 ビット ÷ 1200 bps = 8.33 ms</text>
+  <text x="40" y="226" class="b">300,E,7,2</text>
+  <text x="40" y="246" class="s">1 + 7 + 1 + 2 = 11 ビット</text>
+  <rect x="250" y="212" width="56" height="36" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="278" y="235" class="m" xml:space="preserve" text-anchor="middle">開始</text>
+  <text x="278" y="266" class="ms" xml:space="preserve" text-anchor="middle"></text>
+  <rect x="306" y="212" width="56" height="36" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="334" y="235" class="m" xml:space="preserve" text-anchor="middle">1</text>
+  <text x="334" y="266" class="ms" xml:space="preserve" text-anchor="middle">D0</text>
+  <rect x="362" y="212" width="56" height="36" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="390" y="235" class="m" xml:space="preserve" text-anchor="middle">0</text>
+  <text x="390" y="266" class="ms" xml:space="preserve" text-anchor="middle">D1</text>
+  <rect x="418" y="212" width="56" height="36" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="446" y="235" class="m" xml:space="preserve" text-anchor="middle">0</text>
+  <text x="446" y="266" class="ms" xml:space="preserve" text-anchor="middle">D2</text>
+  <rect x="474" y="212" width="56" height="36" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="502" y="235" class="m" xml:space="preserve" text-anchor="middle">0</text>
+  <text x="502" y="266" class="ms" xml:space="preserve" text-anchor="middle">D3</text>
+  <rect x="530" y="212" width="56" height="36" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="558" y="235" class="m" xml:space="preserve" text-anchor="middle">0</text>
+  <text x="558" y="266" class="ms" xml:space="preserve" text-anchor="middle">D4</text>
+  <rect x="586" y="212" width="56" height="36" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="614" y="235" class="m" xml:space="preserve" text-anchor="middle">0</text>
+  <text x="614" y="266" class="ms" xml:space="preserve" text-anchor="middle">D5</text>
+  <rect x="642" y="212" width="56" height="36" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="670" y="235" class="m" xml:space="preserve" text-anchor="middle">1</text>
+  <text x="670" y="266" class="ms" xml:space="preserve" text-anchor="middle">D6</text>
+  <rect x="698" y="212" width="56" height="36" rx="0" fill="#FDECEA" stroke="#C0392B" stroke-width="1.5"/>
+  <text x="726" y="235" class="m" xml:space="preserve" text-anchor="middle">0</text>
+  <text x="726" y="266" class="ms" xml:space="preserve" text-anchor="middle">P</text>
+  <rect x="754" y="212" width="56" height="36" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="782" y="235" class="m" xml:space="preserve" text-anchor="middle">停止</text>
+  <text x="782" y="266" class="ms" xml:space="preserve" text-anchor="middle"></text>
+  <rect x="810" y="212" width="56" height="36" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="838" y="235" class="m" xml:space="preserve" text-anchor="middle">停止</text>
+  <text x="838" y="266" class="ms" xml:space="preserve" text-anchor="middle"></text>
+  <polyline points="250,274 250,282 866,282 866,274" fill="none" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="558" y="298" class="s" text-anchor="middle">11 ビット ÷ 300 bps = 36.7 ms</text>
+  <rect x="40" y="330" width="900" height="52" rx="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="490" y="352" class="b" text-anchor="middle">偶数パリティは、データとパリティを合わせた 1 の個数を偶数にする</text>
+  <text x="490" y="370" class="s" text-anchor="middle">41h = 100 0001b の 1 は 2 個（偶数）なので P = 0。1 ビット化けると個数が奇数になり、誤りと分かる</text>
+</svg>

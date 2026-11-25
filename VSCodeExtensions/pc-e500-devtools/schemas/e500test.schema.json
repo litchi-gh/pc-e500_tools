@@ -1,0 +1,68 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "PC-E500 エミュレータのテスト",
+  "type": "object",
+  "required": ["program", "tests"],
+  "allowTrailingCommas": true,
+  "allowComments": true,
+  "definitions": {
+    "value": {
+      "description": "数値、または &HBEC00・$BEC00・0xBEC00・BEC00h・ラベル・式",
+      "type": ["number", "string"]
+    },
+    "registers": {
+      "type": "object",
+      "description": "レジスタ A, IL, BA, I, X, Y, U, S, P, F とフラグ C, Z",
+      "propertyNames": { "enum": ["A", "IL", "BA", "I", "X", "Y", "U", "S", "P", "F", "C", "Z"] },
+      "additionalProperties": { "$ref": "#/definitions/value" }
+    },
+    "memory": {
+      "type": "object",
+      "description": "アドレス（ラベル・式・数値。(名前) は内部 RAM）→ バイトの配列、または文字列（文字コード）",
+      "additionalProperties": {
+        "oneOf": [
+          { "type": "array", "items": { "type": "integer", "minimum": 0, "maximum": 255 } },
+          { "type": "string" }
+        ]
+      }
+    }
+  },
+  "properties": {
+    "program": { "type": "string", "description": "テストするアセンブリのソース（このファイルからの相対パス）" },
+    "tests": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name"],
+        "properties": {
+          "name": { "type": "string", "description": "テストの名前（ファイルの中で重ならないもの）" },
+          "call": { "type": "string", "description": "呼び出すルーチン（ラベルまたはアドレス）。省略時は START、MAIN、先頭" },
+          "return": { "enum": ["far", "near"], "default": "far", "description": "ルーチンの戻り方：far = RETF（BASIC の CALL と同じ）、near = RET" },
+          "basic": { "type": "string", "description": "ルーチンを呼ぶ代わりに、BASIC のプロンプトで打つ行（改行で複数行）" },
+          "keys": {
+            "type": "array",
+            "description": "BASIC の行を打った後に 1 つずつ押すキー（SPACE、ENTER、UP、DOWN、LEFT、RIGHT、ON/BRK、A など）",
+            "items": { "type": "string" }
+          },
+          "registers": { "$ref": "#/definitions/registers", "description": "呼び出す前に設定するレジスタ" },
+          "memory": { "$ref": "#/definitions/memory", "description": "呼び出す前に書き込むメモリ" },
+          "expect": {
+            "type": "object",
+            "properties": {
+              "registers": { "$ref": "#/definitions/registers", "description": "戻ったときのレジスタ" },
+              "memory": { "$ref": "#/definitions/memory", "description": "終わったときのメモリ" },
+              "screen": {
+                "description": "LCD に出ているはずの文字（配列ならすべて）",
+                "oneOf": [{ "type": "string" }, { "type": "array", "items": { "type": "string" } }]
+              },
+              "picture": { "type": "string", "description": "LCD の全ドットが同じはずの .lcd か .pixels のファイル（このファイルからの相対パス）" }
+            },
+            "additionalProperties": false
+          },
+          "maxCycles": { "type": "integer", "minimum": 1, "default": 3840000, "description": "使ってよい CPU サイクル（1 秒 = 768000）" }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

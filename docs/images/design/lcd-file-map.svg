@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 484" width="980" height="484" role="img" aria-labelledby="t d">
+  <title id="t">.lcd のファイルと画面の点</title>
+  <desc id="d">画面の 4 区画が 1024 バイトのファイルのどこにあるか</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .lbl { font-size: 12px; fill: #52606D; paint-order: stroke; stroke: #FFFFFF; stroke-width: 4px; stroke-linejoin: round; }
+  </style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#52606D"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="483" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">.lcd のファイルと画面の点</text>
+  <text x="24" y="55" class="sub">画面は 4 つの区画に分かれ、右半分は桁が逆向き。1 バイトが縦 8 ドット（ビット 0 が上）</text>
+  <text x="24" y="90" class="b">画面（240 × 32 ドット）</text>
+  <rect x="24" y="100" width="248.32" height="110" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="148.16" y="202" class="s" text-anchor="middle">コントローラ B、ページ 0–3、桁 →</text>
+  <rect x="272.32" y="100" width="217.28" height="110" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="380.96" y="202" class="s" text-anchor="middle">コントローラ A、ページ 0–3、桁 →</text>
+  <rect x="489.6" y="100" width="217.28" height="110" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="598.24" y="202" class="s" text-anchor="middle">コントローラ A、ページ 4–7、桁 ←</text>
+  <rect x="706.88" y="100" width="248.32" height="110" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="831.04" y="202" class="s" text-anchor="middle">コントローラ B、ページ 4–7、桁 ←</text>
+  <text x="24" y="226" class="ms" xml:space="preserve" text-anchor="start">x = 0</text>
+  <text x="272.32" y="226" class="ms" xml:space="preserve" text-anchor="middle">x = 64</text>
+  <text x="489.6" y="226" class="ms" xml:space="preserve" text-anchor="middle">x = 120</text>
+  <text x="706.88" y="226" class="ms" xml:space="preserve" text-anchor="middle">x = 176</text>
+  <text x="955.2" y="226" class="ms" xml:space="preserve" text-anchor="end">x = 239</text>
+  <circle cx="297.54" cy="136.094" r="5" fill="#C0392B"/>
+  <text x="306.54" y="141.094" class="b" style="fill:#C0392B">①</text>
+  <circle cx="530.34" cy="170.469" r="5" fill="#C0392B"/>
+  <text x="539.34" y="175.469" class="b" style="fill:#C0392B">②</text>
+  <circle cx="801.94" cy="132.656" r="5" fill="#C0392B"/>
+  <text x="810.94" y="137.656" class="b" style="fill:#C0392B">③</text>
+  <text x="24" y="262" class="b">ファイル（1024 バイト）</text>
+  <rect x="24" y="272" width="58.25" height="44" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.8"/>
+  <text x="53.125" y="299" class="m" xml:space="preserve" text-anchor="middle">A0</text>
+  <rect x="82.25" y="272" width="58.25" height="44" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.8"/>
+  <text x="111.375" y="299" class="m" xml:space="preserve" text-anchor="middle">A1</text>
+  <rect x="140.5" y="272" width="58.25" height="44" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.8"/>
+  <text x="169.625" y="299" class="m" xml:space="preserve" text-anchor="middle">A2</text>
+  <rect x="198.75" y="272" width="58.25" height="44" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.8"/>
+  <text x="227.875" y="299" class="m" xml:space="preserve" text-anchor="middle">A3</text>
+  <rect x="257" y="272" width="58.25" height="44" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.8"/>
+  <text x="286.125" y="299" class="m" xml:space="preserve" text-anchor="middle">A4</text>
+  <rect x="315.25" y="272" width="58.25" height="44" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.8"/>
+  <text x="344.375" y="299" class="m" xml:space="preserve" text-anchor="middle">A5</text>
+  <rect x="373.5" y="272" width="58.25" height="44" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.8"/>
+  <text x="402.625" y="299" class="m" xml:space="preserve" text-anchor="middle">A6</text>
+  <rect x="431.75" y="272" width="58.25" height="44" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.8"/>
+  <text x="460.875" y="299" class="m" xml:space="preserve" text-anchor="middle">A7</text>
+  <rect x="490" y="272" width="58.25" height="44" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.8"/>
+  <text x="519.125" y="299" class="m" xml:space="preserve" text-anchor="middle">B0</text>
+  <rect x="548.25" y="272" width="58.25" height="44" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.8"/>
+  <text x="577.375" y="299" class="m" xml:space="preserve" text-anchor="middle">B1</text>
+  <rect x="606.5" y="272" width="58.25" height="44" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.8"/>
+  <text x="635.625" y="299" class="m" xml:space="preserve" text-anchor="middle">B2</text>
+  <rect x="664.75" y="272" width="58.25" height="44" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.8"/>
+  <text x="693.875" y="299" class="m" xml:space="preserve" text-anchor="middle">B3</text>
+  <rect x="723" y="272" width="58.25" height="44" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.8"/>
+  <text x="752.125" y="299" class="m" xml:space="preserve" text-anchor="middle">B4</text>
+  <rect x="781.25" y="272" width="58.25" height="44" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.8"/>
+  <text x="810.375" y="299" class="m" xml:space="preserve" text-anchor="middle">B5</text>
+  <rect x="839.5" y="272" width="58.25" height="44" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.8"/>
+  <text x="868.625" y="299" class="m" xml:space="preserve" text-anchor="middle">B6</text>
+  <rect x="897.75" y="272" width="58.25" height="44" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.8"/>
+  <text x="926.875" y="299" class="m" xml:space="preserve" text-anchor="middle">B7</text>
+  <text x="24" y="332" class="ms" xml:space="preserve" text-anchor="start">+000h</text>
+  <text x="257" y="332" class="ms" xml:space="preserve" text-anchor="middle">+100h</text>
+  <text x="490" y="332" class="ms" xml:space="preserve" text-anchor="middle">+200h</text>
+  <text x="723" y="332" class="ms" xml:space="preserve" text-anchor="middle">+300h</text>
+  <text x="956" y="332" class="ms" xml:space="preserve" text-anchor="end">+400h</text>
+  <text x="24" y="356" class="s">コントローラ A（0 番）のページ 0–7 が先、B（1 番）が後。1 つの枠が 1 ページ = 64 桁 = 64 バイト。A で画面の点になるのは桁 0–55 だけ。</text>
+  <text x="24" y="390" class="b">点</text>
+  <text x="70" y="390" class="b">(x, y)</text>
+  <text x="190" y="390" class="b">コントローラ</text>
+  <text x="310" y="390" class="b">ページ</text>
+  <text x="390" y="390" class="b">桁</text>
+  <text x="460" y="390" class="b">ビット</text>
+  <text x="540" y="390" class="b">オフセット</text>
+  <text x="660" y="390" class="b">計算</text>
+  <text x="24" y="414">①</text>
+  <text x="70" y="414" class="m" xml:space="preserve">(70, 10)</text>
+  <text x="190" y="414" class="m" xml:space="preserve">A</text>
+  <text x="310" y="414" class="m" xml:space="preserve">1</text>
+  <text x="390" y="414" class="m" xml:space="preserve">6</text>
+  <text x="460" y="414" class="m" xml:space="preserve">2</text>
+  <text x="540" y="414" class="m" xml:space="preserve">+046h</text>
+  <text x="660" y="414" class="m" xml:space="preserve">1 × 64 + 6 = 70</text>
+  <text x="24" y="436">②</text>
+  <text x="70" y="436" class="m" xml:space="preserve">(130, 20)</text>
+  <text x="190" y="436" class="m" xml:space="preserve">A</text>
+  <text x="310" y="436" class="m" xml:space="preserve">6</text>
+  <text x="390" y="436" class="m" xml:space="preserve">45</text>
+  <text x="460" y="436" class="m" xml:space="preserve">4</text>
+  <text x="540" y="436" class="m" xml:space="preserve">+1ADh</text>
+  <text x="660" y="436" class="m" xml:space="preserve">6 × 64 + 45 = 429</text>
+  <text x="24" y="458">③</text>
+  <text x="70" y="458" class="m" xml:space="preserve">(200, 9)</text>
+  <text x="190" y="458" class="m" xml:space="preserve">B</text>
+  <text x="310" y="458" class="m" xml:space="preserve">5</text>
+  <text x="390" y="458" class="m" xml:space="preserve">39</text>
+  <text x="460" y="458" class="m" xml:space="preserve">1</text>
+  <text x="540" y="458" class="m" xml:space="preserve">+367h</text>
+  <text x="660" y="458" class="m" xml:space="preserve">512 + 5 × 64 + 39 = 871</text>
+</svg>

@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 360" width="980" height="360" role="img" aria-labelledby="t d">
+  <title id="t">読み込みのビットの判定</title>
+  <desc id="d">入力の High の時間を数え、しきい値と比べて 0 と 1 を分ける様子。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .lbl { font-size: 12px; fill: #52606D; paint-order: stroke; stroke: #FFFFFF; stroke-width: 4px; stroke-linejoin: round; }
+  </style>
+  <defs></defs>
+  <rect x="0.5" y="0.5" width="979" height="359" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">読み込みのビットの判定</text>
+  <text x="24" y="55" class="sub">立ち上がりから立ち下がりまでを数えて、しきい値 [BFD46h]（11h）と比べる。Low の時間は使わない</text>
+  <polyline points="60,160 60,100 138,100 138,160 216,160 216,100 248,100 248,160 280,160 280,100 312,100 312,160 344,160 344,100 422,100 422,160 500,160 500,100 532,100 532,160 564,160 564,100 642,100 642,160 720,160" fill="none" stroke="#1F2933" stroke-width="2"/>
+  <rect x="60" y="172" width="78" height="22" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+  <polyline points="112,90 112,166" fill="none" stroke="#C0392B" stroke-width="1.2" stroke-dasharray="5 4"/>
+  <text x="99" y="188" class="m" xml:space="preserve" text-anchor="middle">1</text>
+  <rect x="138" y="172" width="78" height="22" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <rect x="216" y="172" width="32" height="22" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <polyline points="268,90 268,166" fill="none" stroke="#C0392B" stroke-width="1.2" stroke-dasharray="5 4"/>
+  <text x="232" y="188" class="m" xml:space="preserve" text-anchor="middle">0</text>
+  <rect x="248" y="172" width="32" height="22" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <rect x="280" y="172" width="32" height="22" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <polyline points="332,90 332,166" fill="none" stroke="#C0392B" stroke-width="1.2" stroke-dasharray="5 4"/>
+  <text x="296" y="188" class="m" xml:space="preserve" text-anchor="middle">0</text>
+  <rect x="312" y="172" width="32" height="22" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <rect x="344" y="172" width="78" height="22" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+  <polyline points="396,90 396,166" fill="none" stroke="#C0392B" stroke-width="1.2" stroke-dasharray="5 4"/>
+  <text x="383" y="188" class="m" xml:space="preserve" text-anchor="middle">1</text>
+  <rect x="422" y="172" width="78" height="22" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <rect x="500" y="172" width="32" height="22" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <polyline points="552,90 552,166" fill="none" stroke="#C0392B" stroke-width="1.2" stroke-dasharray="5 4"/>
+  <text x="516" y="188" class="m" xml:space="preserve" text-anchor="middle">0</text>
+  <rect x="532" y="172" width="32" height="22" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <rect x="564" y="172" width="78" height="22" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+  <polyline points="616,90 616,166" fill="none" stroke="#C0392B" stroke-width="1.2" stroke-dasharray="5 4"/>
+  <text x="603" y="188" class="m" xml:space="preserve" text-anchor="middle">1</text>
+  <rect x="642" y="172" width="78" height="22" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="60" y="224" class="s">色の部分（High）だけを数える。灰色の部分（Low）の長さは見ない</text>
+  <text x="60" y="246" class="s">赤い点線：数えた値がしきい値になる位置（図の位置はおおよそ）。点線より前に下がれば 0、後なら 1</text>
+  <rect x="60" y="270" width="420" height="68" rx="6" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="270" y="300" class="b" text-anchor="middle">短い High（保存側は 126 サイクル）</text>
+  <text x="270" y="318" class="s" text-anchor="middle">点線より前に Low になる → 論理 0</text>
+  <rect x="500" y="270" width="420" height="68" rx="6" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+  <text x="710" y="300" class="b" text-anchor="middle">長い High（保存側は 315 サイクル）</text>
+  <text x="710" y="318" class="s" text-anchor="middle">点線より後で Low になる → 論理 1</text>
+</svg>

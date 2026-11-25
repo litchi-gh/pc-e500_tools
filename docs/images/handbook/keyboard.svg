@@ -1,0 +1,280 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 640" width="980" height="640" role="img" aria-labelledby="t d">
+  <title id="t">キーボードの配置（PC-E500）</title>
+  <desc id="d">日本の PC-E500 の 89 個のキーの配置と、キーの上に印字された 2 番目の働き。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .xs { font-size: 11px; fill: #52606D; }
+    .r { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; fill: #B7791F; font-weight: 700; }
+    .j { font-size: 10px; fill: #B7791F; font-weight: 700; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .lcd { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 14px; font-weight: 700; fill: #24351D; }
+  </style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#7B8794"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="639" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">キーボードの配置（PC-E500）</text>
+  <text x="24" y="56" class="sub">キーの上の文字（茶色）は 2nd F または SHIFT で使う働き。右下の小さな記号は、カナ入力のときの文字</text>
+  <rect x="24" y="74" width="929.475" height="502.32000000000005" rx="14" fill="#FBFBFC" stroke="#52606D" stroke-width="2"/>
+  <rect x="66.075" y="115.4" width="552.33" height="165.6" rx="8" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <rect x="111.97500000000001" y="131.04" width="457.47" height="134.32" rx="6" fill="#BDD08B" stroke="#4A5A2A" stroke-width="1.2"/>
+  <line x1="632.94" y1="110.80000000000001" x2="632.94" y2="538.6" stroke="#7B8794" stroke-width="1.4"/>
+  <rect x="639.8" y="145.8" width="41.3" height="29.4" rx="4" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="660.5" y="165.0" class="ms" xml:space="preserve" text-anchor="middle">hyp</text>
+  <text x="660.5" y="142.8" class="r" text-anchor="middle">archyp</text>
+  <rect x="689.6" y="145.8" width="41.3" height="29.4" rx="4" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="710.2" y="165.0" class="ms" xml:space="preserve" text-anchor="middle">sin</text>
+  <text x="710.2" y="142.8" class="r" text-anchor="middle">sin⁻¹</text>
+  <rect x="739.3" y="145.8" width="41.3" height="29.4" rx="4" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="759.9" y="165.0" class="ms" xml:space="preserve" text-anchor="middle">cos</text>
+  <text x="759.9" y="142.8" class="r" text-anchor="middle">cos⁻¹</text>
+  <rect x="788.2" y="145.8" width="41.3" height="29.4" rx="4" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="808.9" y="165.0" class="ms" xml:space="preserve" text-anchor="middle">tan</text>
+  <text x="808.9" y="142.8" class="r" text-anchor="middle">tan⁻¹</text>
+  <rect x="837.2" y="145.8" width="41.3" height="29.4" rx="4" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="857.9" y="165.0" class="ms" xml:space="preserve" text-anchor="middle">FSE</text>
+  <text x="857.9" y="142.8" class="r" text-anchor="middle">TAB</text>
+  <rect x="888.5" y="145.8" width="41.3" height="29.4" rx="4" fill="#FDECEA" stroke="#C0392B" stroke-width="1.2"/>
+  <text x="909.1" y="165.0" class="ms" xml:space="preserve" text-anchor="middle">C·CE</text>
+  <text x="909.1" y="142.8" class="r" text-anchor="middle">CA</text>
+  <rect x="639.8" y="204.6" width="41.3" height="29.4" rx="4" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="660.5" y="223.9" class="ms" xml:space="preserve" text-anchor="middle">→HEX</text>
+  <text x="660.5" y="201.6" class="r" text-anchor="middle">→DEC</text>
+  <rect x="689.6" y="204.6" width="41.3" height="29.4" rx="4" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="710.2" y="223.9" class="ms" xml:space="preserve" text-anchor="middle">→DEG</text>
+  <text x="710.2" y="201.6" class="r" text-anchor="middle">→D.MS</text>
+  <rect x="739.3" y="204.6" width="41.3" height="29.4" rx="4" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="759.9" y="223.9" class="ms" xml:space="preserve" text-anchor="middle">ln</text>
+  <text x="759.9" y="201.6" class="r" text-anchor="middle">eˣ</text>
+  <rect x="788.2" y="204.6" width="41.3" height="29.4" rx="4" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="808.9" y="223.9" class="ms" xml:space="preserve" text-anchor="middle">log</text>
+  <text x="808.9" y="201.6" class="r" text-anchor="middle">10ˣ</text>
+  <rect x="837.2" y="204.6" width="41.3" height="29.4" rx="4" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="857.9" y="223.9" class="ms" xml:space="preserve" text-anchor="middle">1/x</text>
+  <text x="857.9" y="201.6" class="r" text-anchor="middle">→rθ</text>
+  <rect x="888.5" y="204.6" width="41.3" height="29.4" rx="4" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="909.1" y="223.9" class="ms" xml:space="preserve" text-anchor="middle">↕</text>
+  <text x="909.1" y="201.6" class="r" text-anchor="middle">TITLE</text>
+  <rect x="639.8" y="263.5" width="41.3" height="29.4" rx="4" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="660.5" y="282.7" class="ms" xml:space="preserve" text-anchor="middle">EXP</text>
+  <text x="660.5" y="260.5" class="r" text-anchor="middle">π</text>
+  <rect x="689.6" y="263.5" width="41.3" height="29.4" rx="4" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="710.2" y="282.7" class="ms" xml:space="preserve" text-anchor="middle">yˣ</text>
+  <text x="710.2" y="260.5" class="r" text-anchor="middle">ˣ√y</text>
+  <rect x="739.3" y="263.5" width="41.3" height="29.4" rx="4" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="759.9" y="282.7" class="ms" xml:space="preserve" text-anchor="middle">√</text>
+  <text x="759.9" y="260.5" class="r" text-anchor="middle">³√</text>
+  <rect x="788.2" y="263.5" width="41.3" height="29.4" rx="4" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="808.9" y="282.7" class="ms" xml:space="preserve" text-anchor="middle">x²</text>
+  <text x="808.9" y="260.5" class="r" text-anchor="middle">%</text>
+  <rect x="837.2" y="263.5" width="41.3" height="29.4" rx="4" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="857.9" y="282.7" class="ms" xml:space="preserve" text-anchor="middle">(</text>
+  <text x="857.9" y="260.5" class="r" text-anchor="middle">→xy</text>
+  <rect x="888.5" y="263.5" width="41.3" height="29.4" rx="4" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="909.1" y="282.7" class="ms" xml:space="preserve" text-anchor="middle">)</text>
+  <text x="909.1" y="260.5" class="r" text-anchor="middle">n!</text>
+  <rect x="641.4" y="334.4" width="47.4" height="35.0" rx="4" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="665.1" y="356.3" class="ms" xml:space="preserve" text-anchor="middle">7</text>
+  <rect x="701.0" y="334.4" width="47.4" height="35.0" rx="4" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="724.7" y="356.3" class="ms" xml:space="preserve" text-anchor="middle">8</text>
+  <rect x="760.7" y="334.4" width="47.4" height="35.0" rx="4" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="784.4" y="356.3" class="ms" xml:space="preserve" text-anchor="middle">9</text>
+  <rect x="821.1" y="334.4" width="47.4" height="35.0" rx="4" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="844.8" y="356.3" class="ms" xml:space="preserve" text-anchor="middle">÷/</text>
+  <rect x="881.6" y="334.4" width="47.4" height="35.0" rx="4" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="905.3" y="356.3" class="ms" xml:space="preserve" text-anchor="middle">DEL</text>
+  <text x="905.3" y="331.4" class="r" text-anchor="middle">X→M</text>
+  <rect x="641.4" y="391.4" width="47.4" height="35.0" rx="4" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="665.1" y="413.4" class="ms" xml:space="preserve" text-anchor="middle">4</text>
+  <rect x="701.0" y="391.4" width="47.4" height="35.0" rx="4" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="724.7" y="413.4" class="ms" xml:space="preserve" text-anchor="middle">5</text>
+  <rect x="760.7" y="391.4" width="47.4" height="35.0" rx="4" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="784.4" y="413.4" class="ms" xml:space="preserve" text-anchor="middle">6</text>
+  <rect x="821.1" y="391.4" width="47.4" height="35.0" rx="4" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="844.8" y="413.4" class="ms" xml:space="preserve" text-anchor="middle">×∗</text>
+  <rect x="881.6" y="391.4" width="47.4" height="35.0" rx="4" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="905.3" y="413.4" class="ms" xml:space="preserve" text-anchor="middle">BS</text>
+  <text x="905.3" y="388.4" class="r" text-anchor="middle">RM</text>
+  <rect x="641.4" y="448.4" width="47.4" height="35.0" rx="4" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="665.1" y="470.4" class="ms" xml:space="preserve" text-anchor="middle">1</text>
+  <rect x="701.0" y="448.4" width="47.4" height="35.0" rx="4" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="724.7" y="470.4" class="ms" xml:space="preserve" text-anchor="middle">2</text>
+  <rect x="760.7" y="448.4" width="47.4" height="35.0" rx="4" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="784.4" y="470.4" class="ms" xml:space="preserve" text-anchor="middle">3</text>
+  <rect x="821.1" y="448.4" width="47.4" height="35.0" rx="4" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="844.8" y="470.4" class="ms" xml:space="preserve" text-anchor="middle">−</text>
+  <rect x="881.6" y="448.4" width="47.4" height="35.0" rx="4" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="905.3" y="470.4" class="ms" xml:space="preserve" text-anchor="middle">INS</text>
+  <text x="905.3" y="445.4" class="r" text-anchor="middle">M+</text>
+  <rect x="641.4" y="505.5" width="47.4" height="35.0" rx="4" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="665.1" y="527.5" class="ms" xml:space="preserve" text-anchor="middle">0</text>
+  <rect x="701.0" y="505.5" width="47.4" height="35.0" rx="4" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="724.7" y="527.5" class="ms" xml:space="preserve" text-anchor="middle">+/−</text>
+  <rect x="760.7" y="505.5" width="47.4" height="35.0" rx="4" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="784.4" y="527.5" class="ms" xml:space="preserve" text-anchor="middle">.</text>
+  <text x="784.4" y="502.5" class="r" text-anchor="middle">DRG</text>
+  <rect x="821.1" y="505.5" width="47.4" height="35.0" rx="4" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="844.8" y="527.5" class="ms" xml:space="preserve" text-anchor="middle">+</text>
+  <rect x="881.6" y="505.5" width="47.4" height="35.0" rx="4" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="905.3" y="527.5" class="ms" xml:space="preserve" text-anchor="middle">=</text>
+  <rect x="48.5" y="318.7" width="39.8" height="25.8" rx="4" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="68.4" y="336.1" class="ms" xml:space="preserve" text-anchor="middle">▲▼</text>
+  <rect x="112.0" y="318.7" width="79.6" height="25.8" rx="4" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="151.8" y="336.1" class="ms" xml:space="preserve" text-anchor="middle">PF1</text>
+  <text x="151.8" y="315.7" class="r" text-anchor="middle">BASIC</text>
+  <rect x="206.1" y="318.7" width="79.6" height="25.8" rx="4" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="245.8" y="336.1" class="ms" xml:space="preserve" text-anchor="middle">PF2</text>
+  <text x="245.8" y="315.7" class="j" text-anchor="middle">電卓</text>
+  <rect x="300.2" y="318.7" width="79.6" height="25.8" rx="4" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="339.9" y="336.1" class="ms" xml:space="preserve" text-anchor="middle">PF3</text>
+  <text x="339.9" y="315.7" class="j" text-anchor="middle">行列</text>
+  <rect x="393.5" y="318.7" width="79.6" height="25.8" rx="4" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="433.3" y="336.1" class="ms" xml:space="preserve" text-anchor="middle">PF4</text>
+  <text x="433.3" y="315.7" class="j" text-anchor="middle">統計</text>
+  <rect x="486.8" y="318.7" width="79.6" height="25.8" rx="4" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="526.6" y="336.1" class="ms" xml:space="preserve" text-anchor="middle">PF5</text>
+  <text x="526.6" y="315.7" class="j" text-anchor="middle">エンジニアソフトウェア</text>
+  <rect x="577.1" y="318.7" width="39.8" height="25.8" rx="4" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="597.0" y="336.1" class="ms" xml:space="preserve" text-anchor="middle">2ndF</text>
+  <rect x="47.7" y="367.5" width="41.3" height="29.4" rx="4" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="68.4" y="386.7" class="ms" xml:space="preserve" text-anchor="middle">MENU</text>
+  <text x="68.4" y="364.5" class="r" text-anchor="middle">CAL</text>
+  <rect x="109.7" y="367.5" width="38.2" height="29.4" rx="4" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="128.8" y="386.7" class="ms" xml:space="preserve" text-anchor="middle">Q</text>
+  <text x="128.8" y="364.5" class="r" text-anchor="middle">!</text>
+  <rect x="156.4" y="367.5" width="38.2" height="29.4" rx="4" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="175.5" y="386.7" class="ms" xml:space="preserve" text-anchor="middle">W</text>
+  <text x="175.5" y="364.5" class="r" text-anchor="middle">"</text>
+  <rect x="203.2" y="367.5" width="38.2" height="29.4" rx="4" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="222.3" y="386.7" class="ms" xml:space="preserve" text-anchor="middle">E</text>
+  <text x="222.3" y="364.5" class="r" text-anchor="middle">#</text>
+  <rect x="249.9" y="367.5" width="38.2" height="29.4" rx="4" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="269.0" y="386.7" class="ms" xml:space="preserve" text-anchor="middle">R</text>
+  <text x="269.0" y="364.5" class="r" text-anchor="middle">$</text>
+  <rect x="296.6" y="367.5" width="38.2" height="29.4" rx="4" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="315.8" y="386.7" class="ms" xml:space="preserve" text-anchor="middle">T</text>
+  <text x="315.8" y="364.5" class="r" text-anchor="middle">%</text>
+  <rect x="343.4" y="367.5" width="38.2" height="29.4" rx="4" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="362.5" y="386.7" class="ms" xml:space="preserve" text-anchor="middle">Y</text>
+  <text x="362.5" y="364.5" class="r" text-anchor="middle">&amp;</text>
+  <rect x="390.1" y="367.5" width="38.2" height="29.4" rx="4" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="409.3" y="386.7" class="ms" xml:space="preserve" text-anchor="middle">U</text>
+  <text x="409.3" y="364.5" class="r" text-anchor="middle">'</text>
+  <rect x="436.9" y="367.5" width="38.2" height="29.4" rx="4" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="456.0" y="386.7" class="ms" xml:space="preserve" text-anchor="middle">I</text>
+  <text x="456.0" y="364.5" class="r" text-anchor="middle">&lt;</text>
+  <rect x="483.6" y="367.5" width="38.2" height="29.4" rx="4" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="502.7" y="386.7" class="ms" xml:space="preserve" text-anchor="middle">O</text>
+  <text x="502.7" y="364.5" class="r" text-anchor="middle">&gt;</text>
+  <rect x="530.4" y="367.5" width="38.2" height="29.4" rx="4" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="549.5" y="386.7" class="ms" xml:space="preserve" text-anchor="middle">P</text>
+  <text x="549.5" y="364.5" class="r" text-anchor="middle">@</text>
+  <rect x="577.1" y="367.5" width="39.8" height="29.4" rx="4" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="597.0" y="386.7" class="ms" xml:space="preserve" text-anchor="middle">STO</text>
+  <rect x="47.7" y="416.2" width="41.3" height="29.4" rx="4" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="68.4" y="435.5" class="ms" xml:space="preserve" text-anchor="middle">BASIC</text>
+  <text x="68.4" y="413.2" class="r" text-anchor="middle">AER</text>
+  <rect x="121.2" y="416.2" width="38.2" height="29.4" rx="4" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="140.3" y="435.5" class="ms" xml:space="preserve" text-anchor="middle">A</text>
+  <text x="140.3" y="413.2" class="r" text-anchor="middle">[</text>
+  <rect x="167.9" y="416.2" width="38.2" height="29.4" rx="4" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="187.0" y="435.5" class="ms" xml:space="preserve" text-anchor="middle">S</text>
+  <text x="187.0" y="413.2" class="r" text-anchor="middle">]</text>
+  <rect x="214.6" y="416.2" width="38.2" height="29.4" rx="4" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="233.8" y="435.5" class="ms" xml:space="preserve" text-anchor="middle">D</text>
+  <text x="233.8" y="413.2" class="r" text-anchor="middle">{</text>
+  <rect x="261.4" y="416.2" width="38.2" height="29.4" rx="4" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="280.5" y="435.5" class="ms" xml:space="preserve" text-anchor="middle">F</text>
+  <text x="280.5" y="413.2" class="r" text-anchor="middle">}</text>
+  <rect x="308.1" y="416.2" width="38.2" height="29.4" rx="4" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="327.2" y="435.5" class="ms" xml:space="preserve" text-anchor="middle">G</text>
+  <text x="327.2" y="413.2" class="r" text-anchor="middle">¥</text>
+  <rect x="354.9" y="416.2" width="38.2" height="29.4" rx="4" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="374.0" y="435.5" class="ms" xml:space="preserve" text-anchor="middle">H</text>
+  <text x="374.0" y="413.2" class="r" text-anchor="middle">|</text>
+  <rect x="401.6" y="416.2" width="38.2" height="29.4" rx="4" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="420.7" y="435.5" class="ms" xml:space="preserve" text-anchor="middle">J</text>
+  <text x="420.7" y="413.2" class="r" text-anchor="middle">~</text>
+  <rect x="448.3" y="416.2" width="38.2" height="29.4" rx="4" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="467.5" y="435.5" class="ms" xml:space="preserve" text-anchor="middle">K</text>
+  <text x="467.5" y="413.2" class="r" text-anchor="middle">_</text>
+  <rect x="495.1" y="416.2" width="38.2" height="29.4" rx="4" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="514.2" y="435.5" class="ms" xml:space="preserve" text-anchor="middle">L</text>
+  <text x="514.2" y="413.2" class="r" text-anchor="middle">^</text>
+  <rect x="567.9" y="416.2" width="45.9" height="29.4" rx="4" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="590.9" y="435.5" class="ms" xml:space="preserve" text-anchor="middle">RCL</text>
+  <text x="590.9" y="413.2" class="r" text-anchor="middle">ANS</text>
+  <rect x="48.5" y="465.0" width="39.8" height="29.4" rx="4" fill="#FDECEA" stroke="#C0392B" stroke-width="1.2"/>
+  <text x="68.4" y="484.2" class="ms" xml:space="preserve" text-anchor="middle">OFF</text>
+  <rect x="97.4" y="465.0" width="39.8" height="29.4" rx="4" fill="#FDECEA" stroke="#C0392B" stroke-width="1.2"/>
+  <text x="117.3" y="484.2" class="ms" xml:space="preserve" text-anchor="middle">ON</text>
+  <text x="117.3" y="462.0" class="r" text-anchor="middle">BREAK</text>
+  <rect x="144.9" y="465.0" width="38.2" height="29.4" rx="4" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="164.0" y="484.2" class="ms" xml:space="preserve" text-anchor="middle">Z</text>
+  <rect x="191.6" y="465.0" width="38.2" height="29.4" rx="4" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="210.7" y="484.2" class="ms" xml:space="preserve" text-anchor="middle">X</text>
+  <rect x="238.4" y="465.0" width="38.2" height="29.4" rx="4" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="257.5" y="484.2" class="ms" xml:space="preserve" text-anchor="middle">C</text>
+  <rect x="285.1" y="465.0" width="38.2" height="29.4" rx="4" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="304.2" y="484.2" class="ms" xml:space="preserve" text-anchor="middle">V</text>
+  <rect x="331.8" y="465.0" width="38.2" height="29.4" rx="4" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="351.0" y="484.2" class="ms" xml:space="preserve" text-anchor="middle">B</text>
+  <rect x="378.6" y="465.0" width="38.2" height="29.4" rx="4" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="397.7" y="484.2" class="ms" xml:space="preserve" text-anchor="middle">N</text>
+  <rect x="425.3" y="465.0" width="38.2" height="29.4" rx="4" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="444.4" y="484.2" class="ms" xml:space="preserve" text-anchor="middle">M</text>
+  <rect x="472.3" y="465.0" width="38.2" height="29.4" rx="4" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="491.4" y="484.2" class="ms" xml:space="preserve" text-anchor="middle">,</text>
+  <text x="491.4" y="462.0" class="r" text-anchor="middle">?</text>
+  <rect x="518.2" y="465.0" width="38.2" height="29.4" rx="4" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="537.3" y="484.2" class="ms" xml:space="preserve" text-anchor="middle">;</text>
+  <text x="537.3" y="462.0" class="r" text-anchor="middle">:</text>
+  <rect x="567.9" y="464.1" width="45.9" height="77.3" rx="4" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="590.9" y="507.2" class="ms" xml:space="preserve" text-anchor="middle">⏎</text>
+  <text x="590.9" y="461.1" class="r" text-anchor="middle">P↔NP</text>
+  <rect x="50.0" y="514.7" width="50.5" height="29.4" rx="4" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="75.3" y="533.9" class="ms" xml:space="preserve" text-anchor="middle">SHIFT</text>
+  <rect x="138.0" y="514.7" width="42.8" height="29.4" rx="4" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="159.4" y="533.9" class="ms" xml:space="preserve" text-anchor="middle">CTRL</text>
+  <rect x="190.0" y="514.7" width="41.3" height="29.4" rx="4" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="210.7" y="533.9" class="ms" xml:space="preserve" text-anchor="middle">CAPS</text>
+  <text x="210.7" y="511.7" class="j" text-anchor="middle">小文字</text>
+  <rect x="236.7" y="514.7" width="41.3" height="29.4" rx="4" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="257.3" y="533.9" class="ms" xml:space="preserve" text-anchor="middle">カナ</text>
+  <text x="257.3" y="511.7" class="j" text-anchor="middle">ー</text>
+  <rect x="287.2" y="514.7" width="82.6" height="29.4" rx="4" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="328.5" y="533.9" class="ms" xml:space="preserve" text-anchor="middle">SPACE</text>
+  <rect x="378.2" y="514.7" width="38.2" height="29.4" rx="4" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="397.3" y="533.9" class="ms" xml:space="preserve" text-anchor="middle">↓</text>
+  <rect x="425.6" y="514.7" width="38.2" height="29.4" rx="4" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="444.8" y="533.9" class="ms" xml:space="preserve" text-anchor="middle">↑</text>
+  <rect x="472.3" y="514.7" width="38.2" height="29.4" rx="4" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="491.4" y="533.9" class="ms" xml:space="preserve" text-anchor="middle">◀</text>
+  <text x="513.4" y="511.7" class="r" text-anchor="middle">PLAY BACK</text>
+  <rect x="518.2" y="514.7" width="38.2" height="29.4" rx="4" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="537.3" y="533.9" class="ms" xml:space="preserve" text-anchor="middle">▶</text>
+  <text x="873.9" y="289.2" class="xs" text-anchor="middle">｢</text>
+  <text x="925.1" y="289.2" class="xs" text-anchor="middle">｣</text>
+  <text x="507.4" y="490.7" class="xs" text-anchor="middle">､</text>
+  <text x="800.4" y="537.0" class="xs" text-anchor="middle">｡</text>
+  <text x="860.8" y="537.0" class="xs" text-anchor="middle">･</text>
+  <circle cx="105.09" cy="429.12" r="5" fill="#FDECEA" stroke="#C0392B" stroke-width="1.2"/>
+  <text x="105.09" y="419.12" class="xs" text-anchor="middle">RESET</text>
+  <rect x="24" y="600" width="16" height="16" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="46" y="613" class="s">修飾キー</text>
+  <rect x="184" y="600" width="16" height="16" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="206" y="613" class="s">モード</text>
+  <rect x="274" y="600" width="16" height="16" rx="3" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="296" y="613" class="s">PF キー</text>
+  <rect x="374" y="600" width="16" height="16" rx="3" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="396" y="613" class="s">関数</text>
+  <rect x="454" y="600" width="16" height="16" rx="3" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="476" y="613" class="s">編集、⏎</text>
+  <rect x="564" y="600" width="16" height="16" rx="3" fill="#FDECEA" stroke="#C0392B" stroke-width="1.2"/>
+  <text x="586" y="613" class="s">電源、消去</text>
+  <rect x="684" y="600" width="16" height="16" rx="3" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="706" y="613" class="s">文字、数字</text>
+</svg>

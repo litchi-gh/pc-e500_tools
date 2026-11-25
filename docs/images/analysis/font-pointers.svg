@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 500" width="980" height="500" role="img" aria-labelledby="t d">
+  <title id="t">文字コード帯とフォントのポインタ</title>
+  <desc id="d">BFC84h から並ぶ 6 個の 3 バイトのポインタと、30000h〜305FFh のフォントの帯の対応。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .mb { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 15px; font-weight: 700; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .lbl { font-size: 12px; fill: #52606D; paint-order: stroke; stroke: #FFFFFF; stroke-width: 4px; stroke-linejoin: round; }
+  </style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#52606D"/></marker><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#C0392B"/></marker><marker id="ab" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2F6DB5"/></marker><marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2F855A"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="499" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h" xml:space="preserve">文字コード帯とフォントのポインタ</text>
+  <text x="24" y="55" class="sub" xml:space="preserve">左: RAM のポインタ表（BFC84h〜BFC95h、3 バイト × 6）　右: ROM のフォント（30000h〜305FFh、6 バイト × 256）</text>
+  <rect x="600" y="86" width="200" height="54" rx="0" fill="#E6F6EC" stroke="#7B8794" stroke-width="1"/>
+  <text x="700" y="118" class="b" text-anchor="middle" xml:space="preserve">00h〜1Fh（32 文字）</text>
+  <text x="592" y="102" class="m" text-anchor="end" xml:space="preserve">30000h</text>
+  <text x="812" y="118" class="s" xml:space="preserve">C0h（192）バイト</text>
+  <rect x="600" y="140" width="200" height="104" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="1"/>
+  <text x="700" y="197" class="b" text-anchor="middle" xml:space="preserve">20h〜7Fh（96 文字）</text>
+  <text x="592" y="156" class="m" text-anchor="end" xml:space="preserve">300C0h</text>
+  <text x="812" y="197" class="s" xml:space="preserve">240h（576）バイト</text>
+  <rect x="600" y="244" width="200" height="54" rx="0" fill="#F1ECFB" stroke="#7B8794" stroke-width="1"/>
+  <text x="700" y="276" class="b" text-anchor="middle" xml:space="preserve">80h〜9Fh（32 文字）</text>
+  <text x="592" y="260" class="m" text-anchor="end" xml:space="preserve">30300h</text>
+  <text x="812" y="276" class="s" xml:space="preserve">C0h（192）バイト</text>
+  <rect x="600" y="298" width="200" height="80" rx="0" fill="#FFF5DF" stroke="#7B8794" stroke-width="1"/>
+  <text x="700" y="343" class="b" text-anchor="middle" xml:space="preserve">A0h〜DFh（64 文字）</text>
+  <text x="592" y="314" class="m" text-anchor="end" xml:space="preserve">303C0h</text>
+  <text x="812" y="343" class="s" xml:space="preserve">180h（384）バイト</text>
+  <rect x="600" y="378" width="200" height="54" rx="0" fill="#E8F1FC" stroke="#7B8794" stroke-width="1"/>
+  <text x="700" y="410" class="b" text-anchor="middle" xml:space="preserve">E0h〜FFh（32 文字）</text>
+  <text x="592" y="394" class="m" text-anchor="end" xml:space="preserve">30540h</text>
+  <text x="812" y="410" class="s" xml:space="preserve">C0h（192）バイト</text>
+  <text x="592" y="430" class="m" text-anchor="end" xml:space="preserve">305FFh</text>
+  <rect x="120" y="96" width="110" height="40" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1"/>
+  <rect x="230" y="96" width="110" height="40" rx="0" fill="#FFFFFF" stroke="#B8C2CC" stroke-width="1"/>
+  <text x="175" y="121" text-anchor="middle" style="font-size:13px;" xml:space="preserve">制御/代替</text>
+  <text x="285" y="121" class="m" text-anchor="middle" xml:space="preserve">30798h</text>
+  <text x="110" y="121" class="m" text-anchor="end" xml:space="preserve">BFC84h</text>
+  <text x="350" y="121" class="s" xml:space="preserve">用途詳細未確定</text>
+  <rect x="120" y="146" width="110" height="40" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="1"/>
+  <rect x="230" y="146" width="110" height="40" rx="0" fill="#FFFFFF" stroke="#B8C2CC" stroke-width="1"/>
+  <text x="175" y="171" text-anchor="middle" style="font-size:13px;" xml:space="preserve">00h〜1Fh</text>
+  <text x="285" y="171" class="m" text-anchor="middle" xml:space="preserve">30000h</text>
+  <text x="110" y="171" class="m" text-anchor="end" xml:space="preserve">BFC87h</text>
+  <path d="M340,166 C430,166 440,97 534,97" fill="none" stroke="#52606D" stroke-width="1.5" marker-end="url(#a)"/>
+  <rect x="120" y="196" width="110" height="40" rx="0" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1"/>
+  <rect x="230" y="196" width="110" height="40" rx="0" fill="#FFFFFF" stroke="#B8C2CC" stroke-width="1"/>
+  <text x="175" y="221" text-anchor="middle" style="font-size:13px;" xml:space="preserve">80h〜9Fh</text>
+  <text x="285" y="221" class="m" text-anchor="middle" xml:space="preserve">30300h</text>
+  <text x="110" y="221" class="m" text-anchor="end" xml:space="preserve">BFC8Ah</text>
+  <path d="M340,216 C430,216 440,255 534,255" fill="none" stroke="#52606D" stroke-width="1.5" marker-end="url(#a)"/>
+  <rect x="120" y="246" width="110" height="40" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <rect x="230" y="246" width="110" height="40" rx="0" fill="#FFFFFF" stroke="#B8C2CC" stroke-width="1"/>
+  <text x="175" y="271" text-anchor="middle" style="font-size:13px;" xml:space="preserve">E0h〜FFh</text>
+  <text x="285" y="271" class="m" text-anchor="middle" xml:space="preserve">30540h</text>
+  <text x="110" y="271" class="m" text-anchor="end" xml:space="preserve">BFC8Dh</text>
+  <path d="M340,266 C430,266 440,389 534,389" fill="none" stroke="#52606D" stroke-width="1.5" marker-end="url(#a)"/>
+  <rect x="120" y="296" width="110" height="40" rx="0" fill="#FFFFFF" stroke="#B8C2CC" stroke-width="1"/>
+  <rect x="230" y="296" width="110" height="40" rx="0" fill="#FFFFFF" stroke="#B8C2CC" stroke-width="1"/>
+  <text x="175" y="321" text-anchor="middle" style="font-size:13px;" xml:space="preserve">20h〜7Fh</text>
+  <text x="285" y="321" class="m" text-anchor="middle" xml:space="preserve">300C0h</text>
+  <text x="110" y="321" class="m" text-anchor="end" xml:space="preserve">BFC90h</text>
+  <path d="M340,316 C430,316 440,151 534,151" fill="none" stroke="#52606D" stroke-width="1.5" marker-end="url(#a)"/>
+  <rect x="120" y="346" width="110" height="40" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1"/>
+  <rect x="230" y="346" width="110" height="40" rx="0" fill="#FFFFFF" stroke="#B8C2CC" stroke-width="1"/>
+  <text x="175" y="371" text-anchor="middle" style="font-size:13px;" xml:space="preserve">A0h〜DFh</text>
+  <text x="285" y="371" class="m" text-anchor="middle" xml:space="preserve">303C0h</text>
+  <text x="110" y="371" class="m" text-anchor="end" xml:space="preserve">BFC93h</text>
+  <path d="M340,366 C430,366 440,309 534,309" fill="none" stroke="#52606D" stroke-width="1.5" marker-end="url(#a)"/>
+  <text x="120" y="88" class="s" xml:space="preserve">文字コード帯</text>
+  <text x="232" y="88" class="s" xml:space="preserve">値</text>
+  <text x="24" y="478" xml:space="preserve">どの帯も「値 −（帯の最初のコード × 6）」が 30000h になります。だから 1 つの式 30000h + c × 6 で求まります。</text>
+</svg>

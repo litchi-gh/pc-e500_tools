@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 560" width="980" height="560" role="img" aria-labelledby="t d">
+  <title id="t">BUSY と ACK の 3 つの形</title>
+  <desc id="d">デバイスコード、ポケコンから CE-140F、CE-140F からポケコンの 3 つの場合の BUSY と ACK の上げ下げの図。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+  </style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#52606D"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="559" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h" text-anchor="start" xml:space="preserve">BUSY と ACK の 3 つの形</text>
+  <text x="24" y="56" class="s" text-anchor="start" xml:space="preserve">CE-140F サービスマニュアル p.4 の図と、ROM（8.5 EC03Bh、EC0E6h、EC1A1h）が一致した形</text>
+  <text x="30" y="90" class="b" text-anchor="start" xml:space="preserve">デバイスコード（XOUT = High）</text>
+  <text x="40" y="124" class="m" text-anchor="start" xml:space="preserve">BUSY</text>
+  <path d="M 130 130 V 130 H 193.33333333333334 V 130 H 256.6666666666667 V 104 H 320.0 V 104 H 383.33333333333337 V 130 H 446.6666666666667 V 130 H 510.0 V 104 H 573.3333333333334 V 104 H 636.6666666666667 V 130 H 700.0 V 130 H 763.3333333333334 V 130 H 826.6666666666667 V 130 H 890.0" fill="none" stroke="#2F6DB5" stroke-width="2"/>
+  <text x="40" y="164" class="m" text-anchor="start" xml:space="preserve">ACK</text>
+  <path d="M 130 170 V 170 H 193.33333333333334 V 144 H 256.6666666666667 V 144 H 320.0 V 170 H 383.33333333333337 V 170 H 446.6666666666667 V 144 H 510.0 V 144 H 573.3333333333334 V 170 H 636.6666666666667 V 170 H 700.0 V 170 H 763.3333333333334 V 144 H 826.6666666666667 V 170 H 890.0" fill="none" stroke="#C0392B" stroke-width="2"/>
+  <text x="40" y="204" class="m" text-anchor="start" xml:space="preserve">XOUT</text>
+  <path d="M 130 184 V 184 H 193.33333333333334 V 184 H 256.6666666666667 V 184 H 320.0 V 184 H 383.33333333333337 V 184 H 446.6666666666667 V 184 H 510.0 V 184 H 573.3333333333334 V 184 H 636.6666666666667 V 184 H 700.0 V 210 H 763.3333333333334 V 210 H 826.6666666666667 V 210 H 890.0" fill="none" stroke="#7B8794" stroke-width="2"/>
+  <text x="30" y="240" class="s" text-anchor="start" xml:space="preserve">ACK = High で「どうぞ」。BUSY の High で 1 ビットを読み、ACK を Low にする。最後に XOUT が Low になると、呼ばれた機器だけが ACK を 1 回上げる。</text>
+  <text x="30" y="270" class="b" text-anchor="start" xml:space="preserve">ポケコン → CE-140F</text>
+  <text x="40" y="304" class="m" text-anchor="start" xml:space="preserve">BUSY</text>
+  <path d="M 130 310 V 310 H 206.0 V 284 H 282.0 V 284 H 358.0 V 310 H 434.0 V 310 H 510.0 V 284 H 586.0 V 284 H 662.0 V 310 H 738.0 V 310 H 814.0 V 310 H 890.0" fill="none" stroke="#2F6DB5" stroke-width="2"/>
+  <text x="40" y="344" class="m" text-anchor="start" xml:space="preserve">ACK</text>
+  <path d="M 130 350 V 350 H 206.0 V 350 H 282.0 V 324 H 358.0 V 324 H 434.0 V 350 H 510.0 V 350 H 586.0 V 324 H 662.0 V 324 H 738.0 V 350 H 814.0 V 350 H 890.0" fill="none" stroke="#C0392B" stroke-width="2"/>
+  <text x="30" y="380" class="s" text-anchor="start" xml:space="preserve">ACK = Low で「どうぞ」。BUSY の High で 4 ビットを読み、ACK を High にする。BUSY が Low になったら ACK も Low に戻す。</text>
+  <text x="30" y="420" class="b" text-anchor="start" xml:space="preserve">CE-140F → ポケコン</text>
+  <text x="40" y="454" class="m" text-anchor="start" xml:space="preserve">BUSY</text>
+  <path d="M 130 460 V 460 H 206.0 V 460 H 282.0 V 434 H 358.0 V 434 H 434.0 V 460 H 510.0 V 460 H 586.0 V 434 H 662.0 V 434 H 738.0 V 460 H 814.0 V 460 H 890.0" fill="none" stroke="#2F6DB5" stroke-width="2"/>
+  <text x="40" y="494" class="m" text-anchor="start" xml:space="preserve">ACK</text>
+  <path d="M 130 500 V 500 H 206.0 V 474 H 282.0 V 474 H 358.0 V 500 H 434.0 V 500 H 510.0 V 474 H 586.0 V 474 H 662.0 V 500 H 738.0 V 500 H 814.0 V 500 H 890.0" fill="none" stroke="#C0392B" stroke-width="2"/>
+  <text x="30" y="530" class="s" text-anchor="start" xml:space="preserve">CE-140F がデータを出して ACK を High。ポケコンが読んで BUSY を High。CE-140F が ACK を Low、ポケコンが BUSY を Low。</text>
+</svg>

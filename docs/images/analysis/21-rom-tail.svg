@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 330" width="980" height="330" role="img" aria-labelledby="t d">
+  <title id="t">ROM の末尾 40 バイト（FFFD8h〜FFFFFh）</title>
+  <desc id="d">FFFD8h から FFFFFh の 40 バイトをマスで並べ、公開エントリ、バージョン番号、ベクタの位置と 8.5 のジャンプ先を示した図。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .lbl { font-size: 12px; fill: #52606D; paint-order: stroke; stroke: #FFFFFF; stroke-width: 4px; stroke-linejoin: round; }
+  </style>
+  <defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#52606D"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="329" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">ROM の末尾 40 バイト（FFFD8h〜FFFFFh）</text>
+  <text x="24" y="55" class="sub">エントリのアドレスは全バージョンで同じ。ジャンプ先（下段は 8.5 の値）がバージョンで変わる</text>
+  <rect x="30" y="110" width="23" height="34" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.8"/>
+  <rect x="53" y="110" width="23" height="34" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.8"/>
+  <rect x="76" y="110" width="23" height="34" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.8"/>
+  <rect x="99" y="110" width="23" height="34" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.8"/>
+  <text x="30" y="102" class="ms" xml:space="preserve">FFFD8h</text>
+  <text x="76" y="132" class="lbl" text-anchor="middle">4</text>
+  <text x="76" y="168" class="b" text-anchor="middle">作業域</text>
+  <polyline points="76,176 76,202" fill="none" stroke="#7B8794" stroke-width="1.2" stroke-linejoin="round" marker-end="url(#ar)"/>
+  <text x="76" y="218" class="ms" xml:space="preserve" text-anchor="middle">F96C8h</text>
+  <rect x="122" y="110" width="23" height="34" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.8"/>
+  <rect x="145" y="110" width="23" height="34" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.8"/>
+  <rect x="168" y="110" width="23" height="34" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.8"/>
+  <rect x="191" y="110" width="23" height="34" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.8"/>
+  <text x="122" y="86" class="ms" xml:space="preserve">FFFDCh</text>
+  <polyline points="122,110 122,90" fill="none" stroke="#7B8794" stroke-width="0.8" stroke-linejoin="round"/>
+  <text x="168" y="132" class="lbl" text-anchor="middle">4</text>
+  <text x="168" y="168" class="b" text-anchor="middle">BASIC 用</text>
+  <polyline points="168,176 168,202" fill="none" stroke="#7B8794" stroke-width="1.2" stroke-linejoin="round" marker-end="url(#ar)"/>
+  <text x="168" y="218" class="ms" xml:space="preserve" text-anchor="middle">EF02Fh</text>
+  <rect x="214" y="110" width="23" height="34" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="0.8"/>
+  <rect x="237" y="110" width="23" height="34" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="0.8"/>
+  <rect x="260" y="110" width="23" height="34" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="0.8"/>
+  <rect x="283" y="110" width="23" height="34" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="0.8"/>
+  <text x="214" y="102" class="ms" xml:space="preserve">FFFE0h</text>
+  <text x="260" y="132" class="lbl" text-anchor="middle">4</text>
+  <text x="260" y="168" class="s" text-anchor="middle">使わない</text>
+  <rect x="306" y="110" width="23" height="34" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.8"/>
+  <rect x="329" y="110" width="23" height="34" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.8"/>
+  <rect x="352" y="110" width="23" height="34" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.8"/>
+  <rect x="375" y="110" width="23" height="34" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.8"/>
+  <text x="306" y="86" class="ms" xml:space="preserve">FFFE4h</text>
+  <polyline points="306,110 306,90" fill="none" stroke="#7B8794" stroke-width="0.8" stroke-linejoin="round"/>
+  <text x="352" y="132" class="lbl" text-anchor="middle">4</text>
+  <text x="352" y="168" class="b" text-anchor="middle">FCS</text>
+  <polyline points="352,176 352,202" fill="none" stroke="#7B8794" stroke-width="1.2" stroke-linejoin="round" marker-end="url(#ar)"/>
+  <text x="352" y="218" class="ms" xml:space="preserve" text-anchor="middle">E06BFh</text>
+  <rect x="398" y="110" width="23" height="34" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.8"/>
+  <rect x="421" y="110" width="23" height="34" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.8"/>
+  <rect x="444" y="110" width="23" height="34" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.8"/>
+  <rect x="467" y="110" width="23" height="34" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.8"/>
+  <text x="398" y="102" class="ms" xml:space="preserve">FFFE8h</text>
+  <text x="444" y="132" class="lbl" text-anchor="middle">4</text>
+  <text x="444" y="168" class="b" text-anchor="middle">IOCS</text>
+  <polyline points="444,176 444,202" fill="none" stroke="#7B8794" stroke-width="1.2" stroke-linejoin="round" marker-end="url(#ar)"/>
+  <text x="444" y="218" class="ms" xml:space="preserve" text-anchor="middle">E0000h</text>
+  <rect x="490" y="110" width="23" height="34" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="0.8"/>
+  <rect x="513" y="110" width="23" height="34" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="0.8"/>
+  <rect x="536" y="110" width="23" height="34" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="0.8"/>
+  <rect x="559" y="110" width="23" height="34" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="0.8"/>
+  <text x="490" y="86" class="ms" xml:space="preserve">FFFECh</text>
+  <polyline points="490,110 490,90" fill="none" stroke="#7B8794" stroke-width="0.8" stroke-linejoin="round"/>
+  <text x="536" y="132" class="lbl" text-anchor="middle">4</text>
+  <text x="536" y="168" class="s" text-anchor="middle">使わない</text>
+  <rect x="582" y="110" width="23" height="34" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.8"/>
+  <rect x="605" y="110" width="23" height="34" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.8"/>
+  <text x="582" y="102" class="ms" xml:space="preserve">FFFF0h</text>
+  <text x="605" y="132" class="lbl" text-anchor="middle">2</text>
+  <text x="605" y="168" class="b" text-anchor="middle">バージョン番号</text>
+  <polyline points="605,176 605,202" fill="none" stroke="#7B8794" stroke-width="1.2" stroke-linejoin="round" marker-end="url(#ar)"/>
+  <text x="605" y="218" class="ms" xml:space="preserve" text-anchor="middle">08 05</text>
+  <rect x="628" y="110" width="23" height="34" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="0.8"/>
+  <rect x="651" y="110" width="23" height="34" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="0.8"/>
+  <rect x="674" y="110" width="23" height="34" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="0.8"/>
+  <rect x="697" y="110" width="23" height="34" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="0.8"/>
+  <rect x="720" y="110" width="23" height="34" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="0.8"/>
+  <rect x="743" y="110" width="23" height="34" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="0.8"/>
+  <rect x="766" y="110" width="23" height="34" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="0.8"/>
+  <rect x="789" y="110" width="23" height="34" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="0.8"/>
+  <text x="628" y="86" class="ms" xml:space="preserve">FFFF2h</text>
+  <polyline points="628,110 628,90" fill="none" stroke="#7B8794" stroke-width="0.8" stroke-linejoin="round"/>
+  <text x="720" y="132" class="lbl" text-anchor="middle">8</text>
+  <text x="720" y="168" class="s" text-anchor="middle">使わない</text>
+  <rect x="812" y="110" width="23" height="34" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.8"/>
+  <rect x="835" y="110" width="23" height="34" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.8"/>
+  <rect x="858" y="110" width="23" height="34" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.8"/>
+  <text x="812" y="102" class="ms" xml:space="preserve">FFFFAh</text>
+  <text x="846.5" y="132" class="lbl" text-anchor="middle">3</text>
+  <text x="838.5" y="168" class="b" text-anchor="middle">割り込み</text>
+  <polyline points="838.5,176 838.5,202" fill="none" stroke="#7B8794" stroke-width="1.2" stroke-linejoin="round" marker-end="url(#ar)"/>
+  <text x="838.5" y="218" class="ms" xml:space="preserve" text-anchor="middle">F209Bh</text>
+  <rect x="881" y="110" width="23" height="34" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.8"/>
+  <rect x="904" y="110" width="23" height="34" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.8"/>
+  <rect x="927" y="110" width="23" height="34" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.8"/>
+  <text x="881" y="86" class="ms" xml:space="preserve">FFFFDh</text>
+  <polyline points="881,110 881,90" fill="none" stroke="#7B8794" stroke-width="0.8" stroke-linejoin="round"/>
+  <text x="915.5" y="132" class="lbl" text-anchor="middle">3</text>
+  <text x="921.5" y="168" class="b" text-anchor="middle">リセット</text>
+  <polyline points="921.5,176 921.5,202" fill="none" stroke="#7B8794" stroke-width="1.2" stroke-linejoin="round" marker-end="url(#ar)"/>
+  <text x="921.5" y="218" class="ms" xml:space="preserve" text-anchor="middle">F10BEh</text>
+  <text x="30" y="262" class="s">マスの中の数字はバイト数。エントリは JPF（03h）+ 3 バイトのアドレスで 4 バイト、ベクタはアドレスだけの 3 バイト。</text>
+  <rect x="30" y="285" width="14" height="14" rx="3" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="50" y="296" class="s">公開エントリ（JPF が置いてある）</text>
+  <rect x="244.4" y="285" width="14" height="14" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="264.4" y="296" class="s">ベクタ（アドレスが置いてある）</text>
+  <rect x="444.4" y="285" width="14" height="14" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="464.4" y="296" class="s">バージョン番号</text>
+  <rect x="524.4" y="285" width="14" height="14" rx="3" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="544.4" y="296" class="s">使わないバイト（埋め方はバージョンで違う）</text>
+</svg>

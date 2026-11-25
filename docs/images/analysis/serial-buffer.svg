@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 380" width="980" height="380" role="img" aria-labelledby="t d">
+  <title id="t">受信バッファ（既定の大きさ）</title>
+  <desc id="d">20 バイトのリングバッファに、状態とデータの 2 バイトを 1 組として 10 文字分入る。12 バイトで RR を下げる。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .lbl { font-size: 12px; fill: #52606D; paint-order: stroke; stroke: #FFFFFF; stroke-width: 4px; stroke-linejoin: round; }
+  </style>
+  <defs><marker id="a6B4FBB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#6B4FBB"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="379" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">受信バッファ（既定の大きさ）</text>
+  <text x="24" y="55" class="sub">14h = 20 バイト。1 文字につき「状態、データ」の 2 バイトを使うので、10 文字分</text>
+  <rect x="70" y="104" width="40" height="40" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <rect x="110" y="104" width="44" height="40" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+  <text x="90" y="129" class="s" text-anchor="middle">状態</text>
+  <text x="132" y="129" class="s" text-anchor="middle">データ</text>
+  <text x="112" y="98" class="s" text-anchor="middle">1 文字目</text>
+  <rect x="154" y="104" width="40" height="40" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <rect x="194" y="104" width="44" height="40" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+  <text x="174" y="129" class="s" text-anchor="middle">状態</text>
+  <text x="216" y="129" class="s" text-anchor="middle">データ</text>
+  <text x="196" y="98" class="s" text-anchor="middle">2 文字目</text>
+  <rect x="238" y="104" width="40" height="40" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <rect x="278" y="104" width="44" height="40" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+  <text x="258" y="129" class="s" text-anchor="middle">状態</text>
+  <text x="300" y="129" class="s" text-anchor="middle">データ</text>
+  <text x="280" y="98" class="s" text-anchor="middle">3 文字目</text>
+  <rect x="322" y="104" width="40" height="40" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <rect x="362" y="104" width="44" height="40" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+  <text x="342" y="129" class="s" text-anchor="middle">状態</text>
+  <text x="384" y="129" class="s" text-anchor="middle">データ</text>
+  <text x="364" y="98" class="s" text-anchor="middle">4 文字目</text>
+  <rect x="406" y="104" width="40" height="40" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <rect x="446" y="104" width="44" height="40" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+  <text x="426" y="129" class="s" text-anchor="middle">状態</text>
+  <text x="468" y="129" class="s" text-anchor="middle">データ</text>
+  <text x="448" y="98" class="s" text-anchor="middle">5 文字目</text>
+  <rect x="490" y="104" width="40" height="40" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <rect x="530" y="104" width="44" height="40" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+  <text x="510" y="129" class="s" text-anchor="middle">状態</text>
+  <text x="552" y="129" class="s" text-anchor="middle">データ</text>
+  <text x="532" y="98" class="s" text-anchor="middle">6 文字目</text>
+  <rect x="574" y="104" width="40" height="40" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <rect x="614" y="104" width="44" height="40" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="594" y="129" class="s" text-anchor="middle">状態</text>
+  <text x="636" y="129" class="s" text-anchor="middle">データ</text>
+  <text x="616" y="98" class="s" text-anchor="middle">7 文字目</text>
+  <rect x="658" y="104" width="40" height="40" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <rect x="698" y="104" width="44" height="40" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="678" y="129" class="s" text-anchor="middle">状態</text>
+  <text x="720" y="129" class="s" text-anchor="middle">データ</text>
+  <text x="700" y="98" class="s" text-anchor="middle">8 文字目</text>
+  <rect x="742" y="104" width="40" height="40" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <rect x="782" y="104" width="44" height="40" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="762" y="129" class="s" text-anchor="middle">状態</text>
+  <text x="804" y="129" class="s" text-anchor="middle">データ</text>
+  <text x="784" y="98" class="s" text-anchor="middle">9 文字目</text>
+  <rect x="826" y="104" width="40" height="40" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <rect x="866" y="104" width="44" height="40" rx="0" fill="#FDECEA" stroke="#C0392B" stroke-width="1.5"/>
+  <text x="846" y="129" class="s" text-anchor="middle">状態</text>
+  <text x="888" y="129" class="s" text-anchor="middle">データ</text>
+  <text x="868" y="98" class="s" text-anchor="middle">10 文字目</text>
+  <polyline points="70,148 70,156 574,156 574,148" fill="none" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="322" y="172" class="s" text-anchor="middle">6 文字（0Ch = 12 バイト）でしきい値。RR を Low、XON 指定なら 13h を送る</text>
+  <polyline points="574,148 574,156 910,156 910,148" fill="none" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="742" y="172" class="s" text-anchor="middle">相手が止まるまでの余裕は 4 文字</text>
+  <polyline points="910,124 936,124 936,82 44,82 44,124 69,124" fill="none" stroke="#6B4FBB" stroke-width="1.4" marker-end="url(#a6B4FBB)"/>
+  <text x="490" y="78" class="lbl" text-anchor="middle">終わりまで行ったら先頭に戻る（リング）</text>
+  <rect x="70" y="210" width="260" height="60" rx="6" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="200" y="236" class="b" text-anchor="middle">受信割り込み（8.5 の F5A2Fh）</text>
+  <text x="200" y="254" class="s" text-anchor="middle">状態とデータを 1 組にして入れる</text>
+  <rect x="360" y="210" width="260" height="60" rx="6" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+  <text x="490" y="236" class="b" text-anchor="middle">プログラムが読む</text>
+  <text x="490" y="254" class="s" text-anchor="middle">空になると RR を High、XON 指定なら 11h</text>
+  <rect x="650" y="210" width="260" height="60" rx="6" fill="#FDECEA" stroke="#C0392B" stroke-width="1.5"/>
+  <text x="780" y="236" class="b" text-anchor="middle">読むのが間に合わない</text>
+  <text x="780" y="254" class="s" text-anchor="middle">あふれて、受信したデータを失う</text>
+  <rect x="70" y="296" width="840" height="60" rx="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="490" y="322" class="b" text-anchor="middle">1200 bps（8N1）なら 1 文字 8.33 ms。6 文字まで 50 ms、あふれるまで 83 ms</text>
+  <text x="490" y="340" class="s" text-anchor="middle">何も読まない場合の計算。相手に止まってもらうか、作業域を広げてバッファを大きくする</text>
+</svg>

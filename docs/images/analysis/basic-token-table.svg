@@ -1,0 +1,166 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 470" width="980" height="470" role="img" aria-labelledby="t d">
+  <title id="t">キーワードから処理エントリまで</title>
+  <desc id="d">キーワード PRINT が辞書で token 60h になり、処理レコード表の F5149h の 3 バイトを分解してエントリ FB979h に着くまでの図。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .mb { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 15px; font-weight: 700; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .lbl { font-size: 12px; fill: #52606D; paint-order: stroke; stroke: #FFFFFF; stroke-width: 4px; stroke-linejoin: round; }
+  </style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#52606D"/></marker><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#C0392B"/></marker><marker id="ab" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2F6DB5"/></marker><marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2F855A"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="469" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h" xml:space="preserve">キーワードから処理エントリまで</text>
+  <text x="24" y="55" class="sub" xml:space="preserve">例: 文の PRINT と、関数の ASC（ROM 8.5）</text>
+  <rect x="30" y="80" width="150" height="60" rx="8" fill="#FFF5DF" stroke="#B7791F" stroke-width="1"/>
+  <text x="105" y="105" class="mb" text-anchor="middle" xml:space="preserve">PRINT</text>
+  <text x="105" y="126" class="s" text-anchor="middle" xml:space="preserve">辞書 F55F9h</text>
+  <path d="M181,110 L218,110" fill="none" stroke="#52606D" stroke-width="1.5" marker-end="url(#a)"/>
+  <rect x="220" y="80" width="150" height="60" rx="8" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1"/>
+  <text x="295" y="105" class="mb" text-anchor="middle" xml:space="preserve">token 60h</text>
+  <text x="295" y="126" class="s" text-anchor="middle" xml:space="preserve">中間コード FE 60</text>
+  <path d="M371,110 L408,110" fill="none" stroke="#52606D" stroke-width="1.5" marker-end="url(#a)"/>
+  <rect x="410" y="80" width="230" height="60" rx="8" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="525" y="105" class="m" text-anchor="middle" xml:space="preserve">F5029h + 60h × 3</text>
+  <text x="525" y="126" class="m" text-anchor="middle" xml:space="preserve">= F5149h（表アドレス）</text>
+  <path d="M641,110 L678,110" fill="none" stroke="#52606D" stroke-width="1.5" marker-end="url(#a)"/>
+  <rect x="680" y="80" width="110" height="60" rx="8" fill="#F3F5F8" stroke="#7B8794" stroke-width="1"/>
+  <text x="735" y="105" class="mb" text-anchor="middle" xml:space="preserve">8FB979h</text>
+  <text x="735" y="126" class="s" text-anchor="middle" xml:space="preserve">raw</text>
+  <path d="M791,110 L828,110" fill="none" stroke="#52606D" stroke-width="1.5" marker-end="url(#a)"/>
+  <rect x="830" y="80" width="120" height="60" rx="8" fill="#E6F6EC" stroke="#2F855A" stroke-width="1"/>
+  <text x="890" y="105" class="mb" text-anchor="middle" xml:space="preserve">FB979h</text>
+  <text x="890" y="126" class="s" text-anchor="middle" xml:space="preserve">文の処理エントリ</text>
+  <rect x="30" y="170" width="150" height="60" rx="8" fill="#FFF5DF" stroke="#B7791F" stroke-width="1"/>
+  <text x="105" y="195" class="mb" text-anchor="middle" xml:space="preserve">ASC</text>
+  <text x="105" y="216" class="s" text-anchor="middle" xml:space="preserve">辞書 F5334h</text>
+  <path d="M181,200 L218,200" fill="none" stroke="#52606D" stroke-width="1.5" marker-end="url(#a)"/>
+  <rect x="220" y="170" width="150" height="60" rx="8" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1"/>
+  <text x="295" y="195" class="mb" text-anchor="middle" xml:space="preserve">token D0h</text>
+  <text x="295" y="216" class="s" text-anchor="middle" xml:space="preserve">中間コード FE D0</text>
+  <path d="M371,200 L408,200" fill="none" stroke="#52606D" stroke-width="1.5" marker-end="url(#a)"/>
+  <rect x="410" y="170" width="230" height="60" rx="8" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="525" y="195" class="m" text-anchor="middle" xml:space="preserve">F5029h + D0h × 3</text>
+  <text x="525" y="216" class="m" text-anchor="middle" xml:space="preserve">= F5299h（表アドレス）</text>
+  <path d="M641,200 L678,200" fill="none" stroke="#52606D" stroke-width="1.5" marker-end="url(#a)"/>
+  <rect x="680" y="170" width="110" height="60" rx="8" fill="#F3F5F8" stroke="#7B8794" stroke-width="1"/>
+  <text x="735" y="195" class="mb" text-anchor="middle" xml:space="preserve">4FD701h</text>
+  <text x="735" y="216" class="s" text-anchor="middle" xml:space="preserve">raw</text>
+  <path d="M791,200 L828,200" fill="none" stroke="#52606D" stroke-width="1.5" marker-end="url(#a)"/>
+  <rect x="830" y="170" width="120" height="60" rx="8" fill="#E6F6EC" stroke="#2F855A" stroke-width="1"/>
+  <text x="890" y="195" class="mb" text-anchor="middle" xml:space="preserve">FD704h</text>
+  <text x="890" y="216" class="s" text-anchor="middle" xml:space="preserve">関数の処理エントリ</text>
+  <text x="30" y="270" class="b" xml:space="preserve">raw（24 ビット）の分解</text>
+  <rect x="30" y="290" width="26" height="28" rx="0" fill="#FDECEA" stroke="#C0392B" stroke-width="1"/>
+  <text x="43" y="309" class="m" text-anchor="middle" xml:space="preserve">1</text>
+  <rect x="56" y="290" width="26" height="28" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1"/>
+  <text x="69" y="309" class="m" text-anchor="middle" xml:space="preserve">0</text>
+  <rect x="82" y="290" width="26" height="28" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1"/>
+  <text x="95" y="309" class="m" text-anchor="middle" xml:space="preserve">0</text>
+  <rect x="108" y="290" width="26" height="28" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1"/>
+  <text x="121" y="309" class="m" text-anchor="middle" xml:space="preserve">0</text>
+  <rect x="134" y="290" width="26" height="28" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="147" y="309" class="m" text-anchor="middle" xml:space="preserve">1</text>
+  <rect x="160" y="290" width="26" height="28" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="173" y="309" class="m" text-anchor="middle" xml:space="preserve">1</text>
+  <rect x="186" y="290" width="26" height="28" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="199" y="309" class="m" text-anchor="middle" xml:space="preserve">1</text>
+  <rect x="212" y="290" width="26" height="28" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="225" y="309" class="m" text-anchor="middle" xml:space="preserve">1</text>
+  <rect x="238" y="290" width="26" height="28" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="251" y="309" class="m" text-anchor="middle" xml:space="preserve">1</text>
+  <rect x="264" y="290" width="26" height="28" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="277" y="309" class="m" text-anchor="middle" xml:space="preserve">0</text>
+  <rect x="290" y="290" width="26" height="28" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="303" y="309" class="m" text-anchor="middle" xml:space="preserve">1</text>
+  <rect x="316" y="290" width="26" height="28" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="329" y="309" class="m" text-anchor="middle" xml:space="preserve">1</text>
+  <rect x="342" y="290" width="26" height="28" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="355" y="309" class="m" text-anchor="middle" xml:space="preserve">1</text>
+  <rect x="368" y="290" width="26" height="28" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="381" y="309" class="m" text-anchor="middle" xml:space="preserve">0</text>
+  <rect x="394" y="290" width="26" height="28" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="407" y="309" class="m" text-anchor="middle" xml:space="preserve">0</text>
+  <rect x="420" y="290" width="26" height="28" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="433" y="309" class="m" text-anchor="middle" xml:space="preserve">1</text>
+  <rect x="446" y="290" width="26" height="28" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="459" y="309" class="m" text-anchor="middle" xml:space="preserve">0</text>
+  <rect x="472" y="290" width="26" height="28" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="485" y="309" class="m" text-anchor="middle" xml:space="preserve">1</text>
+  <rect x="498" y="290" width="26" height="28" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="511" y="309" class="m" text-anchor="middle" xml:space="preserve">1</text>
+  <rect x="524" y="290" width="26" height="28" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="537" y="309" class="m" text-anchor="middle" xml:space="preserve">1</text>
+  <rect x="550" y="290" width="26" height="28" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="563" y="309" class="m" text-anchor="middle" xml:space="preserve">1</text>
+  <rect x="576" y="290" width="26" height="28" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="589" y="309" class="m" text-anchor="middle" xml:space="preserve">0</text>
+  <rect x="602" y="290" width="26" height="28" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="615" y="309" class="m" text-anchor="middle" xml:space="preserve">0</text>
+  <rect x="628" y="290" width="26" height="28" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="641" y="309" class="m" text-anchor="middle" xml:space="preserve">1</text>
+  <path d="M32,322 v6 H132 v-6" fill="none" stroke="#52606D" stroke-width="1.2"/>
+  <text x="82" y="344" class="s" text-anchor="middle" style="fill:#52606D;" xml:space="preserve">上位 4 ビット（種別）</text>
+  <path d="M136,322 v6 H652 v-6" fill="none" stroke="#52606D" stroke-width="1.2"/>
+  <text x="394" y="344" class="s" text-anchor="middle" style="fill:#52606D;" xml:space="preserve">下位 20 ビット = FB979h</text>
+  <text x="668" y="304" class="s" xml:space="preserve">文: bit 23 が 1。</text>
+  <text x="668" y="322" class="s" style="font-size:12px;" xml:space="preserve">下位 20 ビットがそのままエントリ</text>
+  <rect x="30" y="376" width="26" height="28" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1"/>
+  <text x="43" y="395" class="m" text-anchor="middle" xml:space="preserve">0</text>
+  <rect x="56" y="376" width="26" height="28" rx="0" fill="#FDECEA" stroke="#C0392B" stroke-width="1"/>
+  <text x="69" y="395" class="m" text-anchor="middle" xml:space="preserve">1</text>
+  <rect x="82" y="376" width="26" height="28" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1"/>
+  <text x="95" y="395" class="m" text-anchor="middle" xml:space="preserve">0</text>
+  <rect x="108" y="376" width="26" height="28" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1"/>
+  <text x="121" y="395" class="m" text-anchor="middle" xml:space="preserve">0</text>
+  <rect x="134" y="376" width="26" height="28" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="147" y="395" class="m" text-anchor="middle" xml:space="preserve">1</text>
+  <rect x="160" y="376" width="26" height="28" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="173" y="395" class="m" text-anchor="middle" xml:space="preserve">1</text>
+  <rect x="186" y="376" width="26" height="28" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="199" y="395" class="m" text-anchor="middle" xml:space="preserve">1</text>
+  <rect x="212" y="376" width="26" height="28" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="225" y="395" class="m" text-anchor="middle" xml:space="preserve">1</text>
+  <rect x="238" y="376" width="26" height="28" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="251" y="395" class="m" text-anchor="middle" xml:space="preserve">1</text>
+  <rect x="264" y="376" width="26" height="28" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="277" y="395" class="m" text-anchor="middle" xml:space="preserve">1</text>
+  <rect x="290" y="376" width="26" height="28" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="303" y="395" class="m" text-anchor="middle" xml:space="preserve">0</text>
+  <rect x="316" y="376" width="26" height="28" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="329" y="395" class="m" text-anchor="middle" xml:space="preserve">1</text>
+  <rect x="342" y="376" width="26" height="28" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="355" y="395" class="m" text-anchor="middle" xml:space="preserve">0</text>
+  <rect x="368" y="376" width="26" height="28" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="381" y="395" class="m" text-anchor="middle" xml:space="preserve">1</text>
+  <rect x="394" y="376" width="26" height="28" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="407" y="395" class="m" text-anchor="middle" xml:space="preserve">1</text>
+  <rect x="420" y="376" width="26" height="28" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="433" y="395" class="m" text-anchor="middle" xml:space="preserve">1</text>
+  <rect x="446" y="376" width="26" height="28" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="459" y="395" class="m" text-anchor="middle" xml:space="preserve">0</text>
+  <rect x="472" y="376" width="26" height="28" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="485" y="395" class="m" text-anchor="middle" xml:space="preserve">0</text>
+  <rect x="498" y="376" width="26" height="28" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="511" y="395" class="m" text-anchor="middle" xml:space="preserve">0</text>
+  <rect x="524" y="376" width="26" height="28" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="537" y="395" class="m" text-anchor="middle" xml:space="preserve">0</text>
+  <rect x="550" y="376" width="26" height="28" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="563" y="395" class="m" text-anchor="middle" xml:space="preserve">0</text>
+  <rect x="576" y="376" width="26" height="28" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="589" y="395" class="m" text-anchor="middle" xml:space="preserve">0</text>
+  <rect x="602" y="376" width="26" height="28" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="615" y="395" class="m" text-anchor="middle" xml:space="preserve">0</text>
+  <rect x="628" y="376" width="26" height="28" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="641" y="395" class="m" text-anchor="middle" xml:space="preserve">1</text>
+  <path d="M32,408 v6 H132 v-6" fill="none" stroke="#52606D" stroke-width="1.2"/>
+  <text x="82" y="430" class="s" text-anchor="middle" style="fill:#52606D;" xml:space="preserve">上位 4 ビット（種別）</text>
+  <path d="M136,408 v6 H652 v-6" fill="none" stroke="#52606D" stroke-width="1.2"/>
+  <text x="394" y="430" class="s" text-anchor="middle" style="fill:#52606D;" xml:space="preserve">下位 20 ビット = FD701h</text>
+  <text x="668" y="390" class="s" xml:space="preserve">関数: bit 22 が 1。</text>
+  <text x="668" y="408" class="s" style="font-size:11px;" xml:space="preserve">下位 20 ビットは 3 バイトの前置レコードを指し、エントリはその +3</text>
+</svg>

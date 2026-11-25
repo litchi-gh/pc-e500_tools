@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 400" width="980" height="400" role="img" aria-labelledby="t d">
+  <title id="t">読み込みで 0 と 1 に分かれる長さ</title>
+  <desc id="d">High の長さ 0 から 420 サイクルまでの軸に、論理 0 と 1 の標準の値と、読めた範囲を並べた図。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+  </style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#52606D"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="399" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h" text-anchor="start" xml:space="preserve">読み込みで 0 と 1 に分かれる長さ</text>
+  <text x="24" y="56" class="s" text-anchor="start" xml:space="preserve">エミュレータの ROM 7.2 に、長さを変えた波形を読ませて調べた（1 サイクル = 1.30 µs）</text>
+  <rect x="88.0" y="95" width="416.0" height="60" rx="8" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.3"/>
+  <text x="296.0" y="120.5" class="b" text-anchor="middle" xml:space="preserve">0 と読む</text>
+  <text x="296.0" y="139.5" class="s" text-anchor="middle" xml:space="preserve">14〜222 サイクル（18〜289 µs）</text>
+  <rect x="528.0" y="95" width="372.0" height="60" rx="8" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.3"/>
+  <text x="714.0" y="120.5" class="b" text-anchor="middle" xml:space="preserve">1 と読む</text>
+  <text x="714.0" y="139.5" class="s" text-anchor="middle" xml:space="preserve">234 サイクル以上（305 µs 以上）</text>
+  <rect x="504.0" y="95" width="24.0" height="60" rx="8" fill="#FDECEA" stroke="#C0392B" stroke-width="1.3"/>
+  <line x1="312.0" y1="155" x2="312.0" y2="190" stroke="#C0392B" stroke-width="2" marker-start="url(#a)"/>
+  <text x="312.0" y="206" class="b" text-anchor="middle" xml:space="preserve">標準の 0 126</text>
+  <line x1="690.0" y1="155" x2="690.0" y2="190" stroke="#C0392B" stroke-width="2" marker-start="url(#a)"/>
+  <text x="690.0" y="206" class="b" text-anchor="middle" xml:space="preserve">標準の 1 315</text>
+  <line x1="60" y1="230" x2="920.0" y2="230" stroke="#7B8794" stroke-width="1.2"/>
+  <line x1="60.0" y1="230" x2="60.0" y2="236" stroke="#7B8794" stroke-width="1"/>
+  <text x="60.0" y="252" class="ms" text-anchor="middle" xml:space="preserve">0</text>
+  <line x1="160.0" y1="230" x2="160.0" y2="236" stroke="#7B8794" stroke-width="1"/>
+  <text x="160.0" y="252" class="ms" text-anchor="middle" xml:space="preserve">50</text>
+  <line x1="260.0" y1="230" x2="260.0" y2="236" stroke="#7B8794" stroke-width="1"/>
+  <text x="260.0" y="252" class="ms" text-anchor="middle" xml:space="preserve">100</text>
+  <line x1="360.0" y1="230" x2="360.0" y2="236" stroke="#7B8794" stroke-width="1"/>
+  <text x="360.0" y="252" class="ms" text-anchor="middle" xml:space="preserve">150</text>
+  <line x1="460.0" y1="230" x2="460.0" y2="236" stroke="#7B8794" stroke-width="1"/>
+  <text x="460.0" y="252" class="ms" text-anchor="middle" xml:space="preserve">200</text>
+  <line x1="560.0" y1="230" x2="560.0" y2="236" stroke="#7B8794" stroke-width="1"/>
+  <text x="560.0" y="252" class="ms" text-anchor="middle" xml:space="preserve">250</text>
+  <line x1="660.0" y1="230" x2="660.0" y2="236" stroke="#7B8794" stroke-width="1"/>
+  <text x="660.0" y="252" class="ms" text-anchor="middle" xml:space="preserve">300</text>
+  <line x1="760.0" y1="230" x2="760.0" y2="236" stroke="#7B8794" stroke-width="1"/>
+  <text x="760.0" y="252" class="ms" text-anchor="middle" xml:space="preserve">350</text>
+  <line x1="860.0" y1="230" x2="860.0" y2="236" stroke="#7B8794" stroke-width="1"/>
+  <text x="860.0" y="252" class="ms" text-anchor="middle" xml:space="preserve">400</text>
+  <text x="920.0" y="270" class="s" text-anchor="end" xml:space="preserve">High の長さ（サイクル）</text>
+  <text x="30" y="300" class="b" text-anchor="start" xml:space="preserve">境目 = BFD46h の値 11h（17）× 約 13 サイクル = 約 221 サイクル</text>
+  <text x="30" y="326" class="s" text-anchor="start" xml:space="preserve">Low の長さは判定に使われないが、短すぎると次の High に間に合わない。0 の Low は約 93 サイクル以上、1 の Low は約 142 サイクル以上が必要。</text>
+  <text x="30" y="348" class="s" text-anchor="start" xml:space="preserve">搬送音の中では、Low が約 248 サイクルを超える周期は短い周期と認められない。</text>
+  <text x="30" y="370" class="s" text-anchor="start" xml:space="preserve">全体を同じ割合で伸び縮みさせると、0.79 倍から 1.30 倍まで読めた。</text>
+</svg>

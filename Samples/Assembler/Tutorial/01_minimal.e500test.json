@@ -1,0 +1,6 @@
+{
+  "program": "01_minimal.asm",
+  "tests": [
+    { "name": "戻る", "call": "start", "expect": { "registers": { "C": 0 } } }
+  ]
+}

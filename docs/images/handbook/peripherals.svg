@@ -1,0 +1,252 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 700" width="980" height="700" role="img" aria-labelledby="t d">
+  <title id="t">本体につなげる周辺機器</title>
+  <desc id="d">中央に本体、左に 11 ピンのプリンタ、カセットインターフェース、ディスク、右に 15 ピンのプロッタとパソコン、裏に RAM カード。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; font-size: 15px; }
+    .h { font-weight: 700; font-size: 18px; }
+    .s { font-size: 12px; fill: #52606D; }
+    .k { font-size: 13px; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+  </style>
+  <defs>
+    <linearGradient id="body" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8E8A7E"/><stop offset="1" stop-color="#6F6B60"/></linearGradient>
+    <linearGradient id="dark" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4A4E54"/><stop offset="1" stop-color="#2E3237"/></linearGradient>
+    <linearGradient id="grey" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#B9BDC2"/><stop offset="1" stop-color="#8F949A"/></linearGradient>
+    <linearGradient id="ivory" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#EFEBDF"/><stop offset="1" stop-color="#D2CCBA"/></linearGradient>
+    <linearGradient id="lcd" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C6D796"/><stop offset="1" stop-color="#AFC47A"/></linearGradient>
+    <filter id="sh" x="-10%" y="-10%" width="130%" height="140%"><feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#1F2933" flood-opacity="0.25"/></filter>
+  </defs>
+  <rect x="0.5" y="0.5" width="979" height="699" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+
+  <text x="24" y="36" class="h" text-anchor="start" xml:space="preserve">本体につなげる周辺機器</text>
+  <path d="M232,170 C290,170 290,320 338,322" fill="none" stroke="#33373C" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M150,372 C230,372 260,340 338,334" fill="none" stroke="#33373C" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M232,570 C290,570 300,470 296,420 C293,380 300,350 338,346" fill="none" stroke="#33373C" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M680,330 C730,330 720,170 762,166" fill="none" stroke="#33373C" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M680,344 C740,344 720,540 776,540" fill="none" stroke="#33373C" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+  <rect x="330" y="250" width="350" height="186.667" rx="10" fill="url(#body)" stroke="#4C4940" stroke-width="1.2" filter="url(#sh)"/>
+  <rect x="340.606" y="260.606" width="218.485" height="63.6364" rx="4" fill="#26282B" stroke="none" stroke-width="1" />
+  <rect x="351.212" y="268.03" width="197.273" height="48.7879" rx="2" fill="url(#lcd)" stroke="none" stroke-width="1" />
+  <text x="357.576" y="282.879" style="font-family:Consolas,monospace;font-size:11.6667px;fill:#24351D" xml:space="preserve">RUN MODE</text>
+  <text x="357.576" y="297.727" style="font-family:Consolas,monospace;font-size:11.6667px;fill:#24351D" xml:space="preserve">&gt;CSAVE "PRG1"</text>
+  <rect x="361.818" y="331.667" width="31.8182" height="9.54545" rx="1.5" fill="#2E3237" stroke="none" stroke-width="1" />
+  <rect x="400" y="331.667" width="31.8182" height="9.54545" rx="1.5" fill="#2E3237" stroke="none" stroke-width="1" />
+  <rect x="438.182" y="331.667" width="31.8182" height="9.54545" rx="1.5" fill="#2E3237" stroke="none" stroke-width="1" />
+  <rect x="476.364" y="331.667" width="31.8182" height="9.54545" rx="1.5" fill="#2E3237" stroke="none" stroke-width="1" />
+  <rect x="514.545" y="331.667" width="31.8182" height="9.54545" rx="1.5" fill="#2E3237" stroke="none" stroke-width="1" />
+  <rect x="340.606" y="331.667" width="14.8485" height="9.54545" rx="1.5" fill="#2E3237" stroke="none" stroke-width="1" />
+  <rect x="554.848" y="331.667" width="14.8485" height="9.54545" rx="1.5" fill="#E7C27A" stroke="none" stroke-width="1" />
+  <rect x="340.606" y="349.697" width="13.7879" height="12.7273" rx="2" fill="#3E8E7E" stroke="none" stroke-width="1" />
+  <rect x="359.909" y="349.697" width="13.7879" height="12.7273" rx="2" fill="#2E3237" stroke="none" stroke-width="1" />
+  <rect x="379.212" y="349.697" width="13.7879" height="12.7273" rx="2" fill="#2E3237" stroke="none" stroke-width="1" />
+  <rect x="398.515" y="349.697" width="13.7879" height="12.7273" rx="2" fill="#2E3237" stroke="none" stroke-width="1" />
+  <rect x="417.818" y="349.697" width="13.7879" height="12.7273" rx="2" fill="#2E3237" stroke="none" stroke-width="1" />
+  <rect x="437.121" y="349.697" width="13.7879" height="12.7273" rx="2" fill="#2E3237" stroke="none" stroke-width="1" />
+  <rect x="456.424" y="349.697" width="13.7879" height="12.7273" rx="2" fill="#2E3237" stroke="none" stroke-width="1" />
+  <rect x="475.727" y="349.697" width="13.7879" height="12.7273" rx="2" fill="#2E3237" stroke="none" stroke-width="1" />
+  <rect x="495.03" y="349.697" width="13.7879" height="12.7273" rx="2" fill="#2E3237" stroke="none" stroke-width="1" />
+  <rect x="514.333" y="349.697" width="13.7879" height="12.7273" rx="2" fill="#2E3237" stroke="none" stroke-width="1" />
+  <rect x="533.636" y="349.697" width="13.7879" height="12.7273" rx="2" fill="#2E3237" stroke="none" stroke-width="1" />
+  <rect x="552.939" y="349.697" width="13.7879" height="12.7273" rx="2" fill="#2E3237" stroke="none" stroke-width="1" />
+  <rect x="340.606" y="369.848" width="13.7879" height="12.7273" rx="2" fill="#3E8E7E" stroke="none" stroke-width="1" />
+  <rect x="359.909" y="369.848" width="13.7879" height="12.7273" rx="2" fill="#2E3237" stroke="none" stroke-width="1" />
+  <rect x="379.212" y="369.848" width="13.7879" height="12.7273" rx="2" fill="#2E3237" stroke="none" stroke-width="1" />
+  <rect x="398.515" y="369.848" width="13.7879" height="12.7273" rx="2" fill="#2E3237" stroke="none" stroke-width="1" />
+  <rect x="417.818" y="369.848" width="13.7879" height="12.7273" rx="2" fill="#2E3237" stroke="none" stroke-width="1" />
+  <rect x="437.121" y="369.848" width="13.7879" height="12.7273" rx="2" fill="#2E3237" stroke="none" stroke-width="1" />
+  <rect x="456.424" y="369.848" width="13.7879" height="12.7273" rx="2" fill="#2E3237" stroke="none" stroke-width="1" />
+  <rect x="475.727" y="369.848" width="13.7879" height="12.7273" rx="2" fill="#2E3237" stroke="none" stroke-width="1" />
+  <rect x="495.03" y="369.848" width="13.7879" height="12.7273" rx="2" fill="#2E3237" stroke="none" stroke-width="1" />
+  <rect x="514.333" y="369.848" width="13.7879" height="12.7273" rx="2" fill="#2E3237" stroke="none" stroke-width="1" />
+  <rect x="533.636" y="369.848" width="13.7879" height="12.7273" rx="2" fill="#2E3237" stroke="none" stroke-width="1" />
+  <rect x="552.939" y="369.848" width="13.7879" height="12.7273" rx="2" fill="#2E3237" stroke="none" stroke-width="1" />
+  <rect x="340.606" y="390" width="13.7879" height="12.7273" rx="2" fill="#2E3237" stroke="none" stroke-width="1" />
+  <rect x="359.909" y="390" width="13.7879" height="12.7273" rx="2" fill="#2E3237" stroke="none" stroke-width="1" />
+  <rect x="379.212" y="390" width="13.7879" height="12.7273" rx="2" fill="#2E3237" stroke="none" stroke-width="1" />
+  <rect x="398.515" y="390" width="13.7879" height="12.7273" rx="2" fill="#2E3237" stroke="none" stroke-width="1" />
+  <rect x="417.818" y="390" width="13.7879" height="12.7273" rx="2" fill="#2E3237" stroke="none" stroke-width="1" />
+  <rect x="437.121" y="390" width="13.7879" height="12.7273" rx="2" fill="#2E3237" stroke="none" stroke-width="1" />
+  <rect x="456.424" y="390" width="13.7879" height="12.7273" rx="2" fill="#2E3237" stroke="none" stroke-width="1" />
+  <rect x="475.727" y="390" width="13.7879" height="12.7273" rx="2" fill="#2E3237" stroke="none" stroke-width="1" />
+  <rect x="495.03" y="390" width="13.7879" height="12.7273" rx="2" fill="#2E3237" stroke="none" stroke-width="1" />
+  <rect x="514.333" y="390" width="13.7879" height="12.7273" rx="2" fill="#2E3237" stroke="none" stroke-width="1" />
+  <rect x="533.636" y="390" width="13.7879" height="12.7273" rx="2" fill="#2E3237" stroke="none" stroke-width="1" />
+  <rect x="340.606" y="410.152" width="13.7879" height="12.7273" rx="2" fill="#E7C27A" stroke="none" stroke-width="1" />
+  <rect x="359.909" y="410.152" width="13.7879" height="12.7273" rx="2" fill="#2E3237" stroke="none" stroke-width="1" />
+  <rect x="379.212" y="410.152" width="13.7879" height="12.7273" rx="2" fill="#2E3237" stroke="none" stroke-width="1" />
+  <rect x="398.515" y="410.152" width="13.7879" height="12.7273" rx="2" fill="#2E3237" stroke="none" stroke-width="1" />
+  <rect x="417.818" y="410.152" width="36.0606" height="12.7273" rx="2" fill="#2E3237" stroke="none" stroke-width="1" />
+  <rect x="459.394" y="410.152" width="13.7879" height="12.7273" rx="2" fill="#2E3237" stroke="none" stroke-width="1" />
+  <rect x="478.697" y="410.152" width="13.7879" height="12.7273" rx="2" fill="#2E3237" stroke="none" stroke-width="1" />
+  <rect x="498" y="410.152" width="13.7879" height="12.7273" rx="2" fill="#2E3237" stroke="none" stroke-width="1" />
+  <rect x="517.303" y="410.152" width="13.7879" height="12.7273" rx="2" fill="#2E3237" stroke="none" stroke-width="1" />
+  <rect x="580.303" y="264.848" width="12.7273" height="10.6061" rx="1.5" fill="#2E3237" stroke="none" stroke-width="1" />
+  <rect x="596.212" y="264.848" width="12.7273" height="10.6061" rx="1.5" fill="#2E3237" stroke="none" stroke-width="1" />
+  <rect x="612.121" y="264.848" width="12.7273" height="10.6061" rx="1.5" fill="#2E3237" stroke="none" stroke-width="1" />
+  <rect x="628.03" y="264.848" width="12.7273" height="10.6061" rx="1.5" fill="#2E3237" stroke="none" stroke-width="1" />
+  <rect x="643.939" y="264.848" width="12.7273" height="10.6061" rx="1.5" fill="#2E3237" stroke="none" stroke-width="1" />
+  <rect x="659.848" y="264.848" width="12.7273" height="10.6061" rx="1.5" fill="#B0493F" stroke="none" stroke-width="1" />
+  <rect x="580.303" y="282.879" width="12.7273" height="10.6061" rx="1.5" fill="#2E3237" stroke="none" stroke-width="1" />
+  <rect x="596.212" y="282.879" width="12.7273" height="10.6061" rx="1.5" fill="#2E3237" stroke="none" stroke-width="1" />
+  <rect x="612.121" y="282.879" width="12.7273" height="10.6061" rx="1.5" fill="#2E3237" stroke="none" stroke-width="1" />
+  <rect x="628.03" y="282.879" width="12.7273" height="10.6061" rx="1.5" fill="#2E3237" stroke="none" stroke-width="1" />
+  <rect x="643.939" y="282.879" width="12.7273" height="10.6061" rx="1.5" fill="#2E3237" stroke="none" stroke-width="1" />
+  <rect x="659.848" y="282.879" width="12.7273" height="10.6061" rx="1.5" fill="#2E3237" stroke="none" stroke-width="1" />
+  <rect x="580.303" y="300.909" width="12.7273" height="10.6061" rx="1.5" fill="#2E3237" stroke="none" stroke-width="1" />
+  <rect x="596.212" y="300.909" width="12.7273" height="10.6061" rx="1.5" fill="#2E3237" stroke="none" stroke-width="1" />
+  <rect x="612.121" y="300.909" width="12.7273" height="10.6061" rx="1.5" fill="#2E3237" stroke="none" stroke-width="1" />
+  <rect x="628.03" y="300.909" width="12.7273" height="10.6061" rx="1.5" fill="#2E3237" stroke="none" stroke-width="1" />
+  <rect x="643.939" y="300.909" width="12.7273" height="10.6061" rx="1.5" fill="#2E3237" stroke="none" stroke-width="1" />
+  <rect x="659.848" y="300.909" width="12.7273" height="10.6061" rx="1.5" fill="#2E3237" stroke="none" stroke-width="1" />
+  <rect x="580.303" y="334.848" width="15.9091" height="15.9091" rx="2" fill="#2E3237" stroke="none" stroke-width="1" />
+  <rect x="599.394" y="334.848" width="15.9091" height="15.9091" rx="2" fill="#2E3237" stroke="none" stroke-width="1" />
+  <rect x="618.485" y="334.848" width="15.9091" height="15.9091" rx="2" fill="#2E3237" stroke="none" stroke-width="1" />
+  <rect x="637.576" y="334.848" width="15.9091" height="15.9091" rx="2" fill="#2E3237" stroke="none" stroke-width="1" />
+  <rect x="656.667" y="334.848" width="15.9091" height="15.9091" rx="2" fill="#2E3237" stroke="none" stroke-width="1" />
+  <rect x="580.303" y="358.182" width="15.9091" height="15.9091" rx="2" fill="#2E3237" stroke="none" stroke-width="1" />
+  <rect x="599.394" y="358.182" width="15.9091" height="15.9091" rx="2" fill="#2E3237" stroke="none" stroke-width="1" />
+  <rect x="618.485" y="358.182" width="15.9091" height="15.9091" rx="2" fill="#2E3237" stroke="none" stroke-width="1" />
+  <rect x="637.576" y="358.182" width="15.9091" height="15.9091" rx="2" fill="#2E3237" stroke="none" stroke-width="1" />
+  <rect x="656.667" y="358.182" width="15.9091" height="15.9091" rx="2" fill="#2E3237" stroke="none" stroke-width="1" />
+  <rect x="580.303" y="381.515" width="15.9091" height="15.9091" rx="2" fill="#2E3237" stroke="none" stroke-width="1" />
+  <rect x="599.394" y="381.515" width="15.9091" height="15.9091" rx="2" fill="#2E3237" stroke="none" stroke-width="1" />
+  <rect x="618.485" y="381.515" width="15.9091" height="15.9091" rx="2" fill="#2E3237" stroke="none" stroke-width="1" />
+  <rect x="637.576" y="381.515" width="15.9091" height="15.9091" rx="2" fill="#2E3237" stroke="none" stroke-width="1" />
+  <rect x="656.667" y="381.515" width="15.9091" height="15.9091" rx="2" fill="#2E3237" stroke="none" stroke-width="1" />
+  <rect x="580.303" y="404.848" width="15.9091" height="15.9091" rx="2" fill="#2E3237" stroke="none" stroke-width="1" />
+  <rect x="599.394" y="404.848" width="15.9091" height="15.9091" rx="2" fill="#2E3237" stroke="none" stroke-width="1" />
+  <rect x="618.485" y="404.848" width="15.9091" height="15.9091" rx="2" fill="#2E3237" stroke="none" stroke-width="1" />
+  <rect x="637.576" y="404.848" width="15.9091" height="15.9091" rx="2" fill="#2E3237" stroke="none" stroke-width="1" />
+  <rect x="656.667" y="404.848" width="15.9091" height="15.9091" rx="2" fill="#2E3237" stroke="none" stroke-width="1" />
+  <rect x="322" y="312" width="12" height="48" rx="2" fill="#D9B45A" stroke="#7A5E1E" stroke-width="1" />
+  <rect x="676" y="320" width="12" height="40" rx="2" fill="#D9B45A" stroke="#7A5E1E" stroke-width="1" />
+  <text x="334" y="240" class="k" text-anchor="start" xml:space="preserve" style="fill:#B7791F">11 ピン</text>
+  <text x="676" y="240" class="k" text-anchor="end" xml:space="preserve" style="fill:#B7791F">15 ピン</text>
+  <text x="505" y="462" class="b" text-anchor="middle" xml:space="preserve">PC-E500</text>
+  <path d="M88,118 L88,62 q0,-10 10,-10 L170,52 q10,0 10,10 L180,118 Z" fill="#FFFDF6" stroke="#B8B3A4" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M98,66 h60" fill="none" stroke="#8A8676" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M98,76 h44" fill="none" stroke="#8A8676" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M98,86 h66" fill="none" stroke="#8A8676" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M98,96 h30" fill="none" stroke="#8A8676" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M98,106 h52" fill="none" stroke="#8A8676" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+  <rect x="42" y="100" width="190" height="112" rx="12" fill="url(#grey)" stroke="#63686E" stroke-width="1.2" filter="url(#sh)"/>
+  <rect x="76" y="110" width="118" height="16" rx="3" fill="#33373C" stroke="none" stroke-width="1" />
+  <path d="M78,125 l4,4 l4,-4 l4,4 l4,-4 l4,4 l4,-4 l4,4 l4,-4 l4,4 l4,-4 l4,4 l4,-4 l4,4 l4,-4 l4,4 l4,-4 l4,4 l4,-4 l4,4 l4,-4 l4,4 l4,-4 l4,4 l4,-4 l4,4 l4,-4 l4,4 l4,-4" fill="none" stroke="#D9DCE0" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+  <rect x="56" y="140" width="162" height="42" rx="6" fill="#A4A9AF" stroke="#7B8187" stroke-width="1" />
+  <rect x="66" y="190" width="34" height="10" rx="4" fill="#33373C" stroke="none" stroke-width="1" />
+  <rect x="82" y="188" width="16" height="14" rx="4" fill="#D9DCE0" stroke="none" stroke-width="1" />
+  <circle cx="142" cy="195" r="6" fill="#33373C" stroke="none" stroke-width="1"/>
+  <circle cx="164" cy="195" r="6" fill="#33373C" stroke="none" stroke-width="1"/>
+  <text x="137" y="166" text-anchor="middle" style="font-size:12px;fill:#3A3F45">感熱プリンタ</text>
+  <text x="137" y="236" class="b" text-anchor="middle" xml:space="preserve">CE-126P プリンタ</text>
+  <text x="137" y="254" class="s" text-anchor="middle" xml:space="preserve">24 桁の感熱印刷、カセットもつなげる</text>
+  <rect x="56" y="346" width="96" height="52" rx="8" fill="url(#dark)" stroke="#1D2023" stroke-width="1.2" filter="url(#sh)"/>
+  <rect x="68" y="358" width="72" height="28" rx="4" fill="#3B4046" stroke="none" stroke-width="1" />
+  <text x="104" y="377" text-anchor="middle" style="font-size:11px;fill:#E6E9ED">CE-124</text>
+  <text x="104" y="420" class="b" text-anchor="middle" xml:space="preserve">CE-124</text>
+  <text x="104" y="438" class="s" text-anchor="middle" xml:space="preserve">カセットインターフェース</text>
+  <rect x="42" y="520" width="190" height="84" rx="8" fill="url(#grey)" stroke="#63686E" stroke-width="1.2" filter="url(#sh)"/>
+  <rect x="60" y="538" width="120" height="10" rx="2" fill="#23272B" stroke="none" stroke-width="1" />
+  <g transform="translate(92,490)"><rect width="62" height="54" rx="3" fill="#33373C" stroke="#15181A"/><rect x="14" y="0" width="34" height="16" fill="#C9CDD2"/><rect x="36" y="3" width="8" height="10" fill="#33373C"/><rect x="8" y="24" width="46" height="26" fill="#F3F0E6"/><path d="M14,32 h30 M14,39 h22" stroke="#8A8676" stroke-width="1.4"/></g>
+  <rect x="42" y="544" width="190" height="60" rx="8" fill="url(#grey)" stroke="#63686E" stroke-width="1.2" />
+  <circle cx="202" cy="564" r="5" fill="#5CBF60" stroke="#2F855A" stroke-width="1"/>
+  <rect x="62" y="582" width="60" height="8" rx="3" fill="#7B8187" stroke="none" stroke-width="1" />
+  <text x="137" y="570" text-anchor="middle" style="font-size:12px;fill:#2A2F34">2.5 インチ ディスク</text>
+  <text x="137" y="626" class="b" text-anchor="middle" xml:space="preserve">CE-140F ポケットディスク</text>
+  <text x="137" y="644" class="s" text-anchor="middle" xml:space="preserve">2.5 インチ、電池で動く</text>
+  <rect x="420" y="500" width="170" height="113.333" rx="12" fill="url(#dark)" stroke="#1D2023" stroke-width="1.2" filter="url(#sh)"/>
+  <rect x="432.952" y="512.952" width="100.381" height="63.1429" rx="6" fill="#1B1E21" stroke="#5B6066" stroke-width="1" />
+  <rect x="441.048" y="521.048" width="84.1905" height="46.9524" rx="4" fill="#E3DCC8" stroke="none" stroke-width="1" />
+  <rect x="447.524" y="525.905" width="71.2381" height="12.9524" rx="2" fill="#FFFFFF" stroke="none" stroke-width="1" />
+  <path d="M452.3809523809524,532.3809523809524 h48.57142857142857" fill="none" stroke="#8A8676" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+  <rect x="457.238" y="543.714" width="51.8095" height="17.8095" rx="8" fill="#3A332A" stroke="none" stroke-width="1" />
+  <circle cx="466.952" cy="552.619" r="6.47619" fill="#F4F1E8" stroke="#1F2933" stroke-width="1"/>
+  <circle cx="466.952" cy="552.619" r="2.42857" fill="#1F2933" stroke="none" stroke-width="1"/>
+  <circle cx="499.333" cy="552.619" r="6.47619" fill="#F4F1E8" stroke="#1F2933" stroke-width="1"/>
+  <circle cx="499.333" cy="552.619" r="2.42857" fill="#1F2933" stroke="none" stroke-width="1"/>
+  <circle cx="546.286" cy="519.429" r="1.94286" fill="#15181A" stroke="none" stroke-width="1"/>
+  <circle cx="556" cy="519.429" r="1.94286" fill="#15181A" stroke="none" stroke-width="1"/>
+  <circle cx="565.714" cy="519.429" r="1.94286" fill="#15181A" stroke="none" stroke-width="1"/>
+  <circle cx="575.429" cy="519.429" r="1.94286" fill="#15181A" stroke="none" stroke-width="1"/>
+  <circle cx="546.286" cy="529.143" r="1.94286" fill="#15181A" stroke="none" stroke-width="1"/>
+  <circle cx="556" cy="529.143" r="1.94286" fill="#15181A" stroke="none" stroke-width="1"/>
+  <circle cx="565.714" cy="529.143" r="1.94286" fill="#15181A" stroke="none" stroke-width="1"/>
+  <circle cx="575.429" cy="529.143" r="1.94286" fill="#15181A" stroke="none" stroke-width="1"/>
+  <circle cx="546.286" cy="538.857" r="1.94286" fill="#15181A" stroke="none" stroke-width="1"/>
+  <circle cx="556" cy="538.857" r="1.94286" fill="#15181A" stroke="none" stroke-width="1"/>
+  <circle cx="565.714" cy="538.857" r="1.94286" fill="#15181A" stroke="none" stroke-width="1"/>
+  <circle cx="575.429" cy="538.857" r="1.94286" fill="#15181A" stroke="none" stroke-width="1"/>
+  <circle cx="546.286" cy="548.571" r="1.94286" fill="#15181A" stroke="none" stroke-width="1"/>
+  <circle cx="556" cy="548.571" r="1.94286" fill="#15181A" stroke="none" stroke-width="1"/>
+  <circle cx="565.714" cy="548.571" r="1.94286" fill="#15181A" stroke="none" stroke-width="1"/>
+  <circle cx="575.429" cy="548.571" r="1.94286" fill="#15181A" stroke="none" stroke-width="1"/>
+  <circle cx="546.286" cy="558.286" r="1.94286" fill="#15181A" stroke="none" stroke-width="1"/>
+  <circle cx="556" cy="558.286" r="1.94286" fill="#15181A" stroke="none" stroke-width="1"/>
+  <circle cx="565.714" cy="558.286" r="1.94286" fill="#15181A" stroke="none" stroke-width="1"/>
+  <circle cx="575.429" cy="558.286" r="1.94286" fill="#15181A" stroke="none" stroke-width="1"/>
+  <circle cx="546.286" cy="568" r="1.94286" fill="#15181A" stroke="none" stroke-width="1"/>
+  <circle cx="556" cy="568" r="1.94286" fill="#15181A" stroke="none" stroke-width="1"/>
+  <circle cx="565.714" cy="568" r="1.94286" fill="#15181A" stroke="none" stroke-width="1"/>
+  <circle cx="575.429" cy="568" r="1.94286" fill="#15181A" stroke="none" stroke-width="1"/>
+  <rect x="432.952" y="585.81" width="21.0476" height="17.8095" rx="3" fill="#C0392B" stroke="#7B8187" stroke-width="1" />
+  <rect x="457.238" y="585.81" width="21.0476" height="17.8095" rx="3" fill="#C9CDD2" stroke="#7B8187" stroke-width="1" />
+  <rect x="481.524" y="585.81" width="21.0476" height="17.8095" rx="3" fill="#C9CDD2" stroke="#7B8187" stroke-width="1" />
+  <rect x="505.81" y="585.81" width="21.0476" height="17.8095" rx="3" fill="#C9CDD2" stroke="#7B8187" stroke-width="1" />
+  <rect x="530.095" y="585.81" width="21.0476" height="17.8095" rx="3" fill="#C9CDD2" stroke="#7B8187" stroke-width="1" />
+  <rect x="554.381" y="585.81" width="21.0476" height="17.8095" rx="3" fill="#C9CDD2" stroke="#7B8187" stroke-width="1" />
+  <circle cx="443.476" cy="594.714" r="3.2381" fill="#FFFFFF" stroke="none" stroke-width="1"/>
+  <path d="M465.3333333333333,590.6666666666666 l8,5 l-8,5 z" fill="#3A3F45" stroke="#3A3F45" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
+  <text x="505" y="634" class="b" text-anchor="middle" xml:space="preserve">カセットレコーダ</text>
+  <text x="505" y="652" class="s" text-anchor="middle" xml:space="preserve">赤と灰のプラグ（CE-126P では黒も使う）</text>
+  <path d="M152,364 C250,400 320,500 420,524" fill="none" stroke="#C0392B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M152,371 C250,410 320,522 420,546" fill="none" stroke="#8F949A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" />
+  <rect x="792" y="84" width="130" height="70" rx="2" fill="#FFFDF6" stroke="#B8B3A4" stroke-width="1.2" />
+  <path d="M806,126 q18,-40 36,-14 t36,-10 t30,-8" fill="none" stroke="#2F6DB5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M806,100 l100,18" fill="none" stroke="#C0392B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+  <circle cx="857" cy="112" r="13" fill="none" stroke="#2F855A" stroke-width="2"/>
+  <rect x="762" y="130" width="190" height="90" rx="10" fill="url(#ivory)" stroke="#A39C86" stroke-width="1.2" filter="url(#sh)"/>
+  <rect x="778" y="140" width="158" height="22" rx="4" fill="#4A4E54" stroke="none" stroke-width="1" />
+  <rect x="840" y="134" width="8" height="30" rx="2" fill="#1F2933" stroke="none" stroke-width="1" />
+  <path d="M841,164 l3,7 l3,-7 z" fill="#1F2933" stroke="#1F2933" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round" />
+  <rect x="850" y="134" width="8" height="30" rx="2" fill="#2F6DB5" stroke="none" stroke-width="1" />
+  <path d="M851,164 l3,7 l3,-7 z" fill="#2F6DB5" stroke="#2F6DB5" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round" />
+  <rect x="860" y="134" width="8" height="30" rx="2" fill="#2F855A" stroke="none" stroke-width="1" />
+  <path d="M861,164 l3,7 l3,-7 z" fill="#2F855A" stroke="#2F855A" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round" />
+  <rect x="870" y="134" width="8" height="30" rx="2" fill="#C0392B" stroke="none" stroke-width="1" />
+  <path d="M871,164 l3,7 l3,-7 z" fill="#C0392B" stroke="#C0392B" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round" />
+  <rect x="782" y="186" width="46" height="20" rx="4" fill="#8F949A" stroke="none" stroke-width="1" />
+  <rect x="882" y="186" width="50" height="20" rx="4" fill="#8F949A" stroke="none" stroke-width="1" />
+  <text x="857" y="202" text-anchor="middle" style="font-size:12px;fill:#3A3527">4 色</text>
+  <text x="857" y="246" class="b" text-anchor="middle" xml:space="preserve">CE-515P カラープロッタ</text>
+  <text x="857" y="264" class="s" text-anchor="middle" xml:space="preserve">CE-516L ケーブルを使う</text>
+  <rect x="784" y="462" width="152" height="96" rx="8" fill="#33373C" stroke="#15181A" stroke-width="1.2" filter="url(#sh)"/>
+  <rect x="792" y="470" width="136" height="78" rx="3" fill="#DCE9F7" stroke="none" stroke-width="1" />
+  <rect x="800" y="478" width="60" height="8" rx="2" fill="#2F6DB5" stroke="none" stroke-width="1" />
+  <path d="M800,496 h90" fill="none" stroke="#8FA9C6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M800,506 h70" fill="none" stroke="#8FA9C6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M800,516 h104" fill="none" stroke="#8FA9C6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M800,526 h50" fill="none" stroke="#8FA9C6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M800,536 h84" fill="none" stroke="#8FA9C6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M770,574 L784,558 H936 L950,574 Z" fill="#B9BDC2" stroke="#5B6066" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+  <text x="860" y="600" class="b" text-anchor="middle" xml:space="preserve">パソコンなど</text>
+  <text x="860" y="618" class="s" text-anchor="middle" xml:space="preserve">CE-130T（レベルコンバータ）を使う</text>
+  <rect x="700" y="528" width="60" height="26" rx="5" fill="#4A4E54" stroke="#15181A" stroke-width="1" />
+  <text x="730" y="545" text-anchor="middle" style="font-size:10px;fill:#E6E9ED">CE-130T</text>
+  <rect x="463" y="96" width="84" height="54" rx="5" fill="#3A3F45" stroke="#15181A" stroke-width="1.2" filter="url(#sh)"/>
+  <rect x="471" y="105" width="68" height="22" rx="2" fill="#E7C27A" stroke="none" stroke-width="1" />
+  <text x="505" y="121" text-anchor="middle" style="font-size:11px;fill:#3A2F10">RAM カード</text>
+  <rect x="471" y="138" width="4" height="12" rx="0" fill="#D9B45A" stroke="none" stroke-width="1" />
+  <rect x="478" y="138" width="4" height="12" rx="0" fill="#D9B45A" stroke="none" stroke-width="1" />
+  <rect x="485" y="138" width="4" height="12" rx="0" fill="#D9B45A" stroke="none" stroke-width="1" />
+  <rect x="492" y="138" width="4" height="12" rx="0" fill="#D9B45A" stroke="none" stroke-width="1" />
+  <rect x="499" y="138" width="4" height="12" rx="0" fill="#D9B45A" stroke="none" stroke-width="1" />
+  <rect x="506" y="138" width="4" height="12" rx="0" fill="#D9B45A" stroke="none" stroke-width="1" />
+  <rect x="513" y="138" width="4" height="12" rx="0" fill="#D9B45A" stroke="none" stroke-width="1" />
+  <rect x="520" y="138" width="4" height="12" rx="0" fill="#D9B45A" stroke="none" stroke-width="1" />
+  <rect x="527" y="138" width="4" height="12" rx="0" fill="#D9B45A" stroke="none" stroke-width="1" />
+  <rect x="534" y="138" width="4" height="12" rx="0" fill="#D9B45A" stroke="none" stroke-width="1" />
+  <path d="M505,160 L505,236" fill="none" stroke="#2F855A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="6 6"/>
+  <path d="M498,226 L505,240 L512,226" fill="none" stroke="#2F855A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+  <text x="505" y="84" class="b" text-anchor="middle" xml:space="preserve">裏のカードスロットへ</text>
+</svg>

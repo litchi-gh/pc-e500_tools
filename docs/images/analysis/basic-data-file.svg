@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 600" width="980" height="600" role="img" aria-labelledby="t d">
+  <title id="t">DATA.BAS の並び</title>
+  <desc id="d">ファイルの先頭の FF 00 01 00 と 10 個の 3 バイトの位置が、後ろの区画を指す図。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .mb { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 15px; font-weight: 700; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .lbl { font-size: 12px; fill: #52606D; paint-order: stroke; stroke: #FFFFFF; stroke-width: 4px; stroke-linejoin: round; }
+  </style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#52606D"/></marker><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#C0392B"/></marker><marker id="ab" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2F6DB5"/></marker><marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2F855A"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="599" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h" xml:space="preserve">DATA.BAS の並び</text>
+  <text x="24" y="55" class="sub" xml:space="preserve">左: ファイルの先頭　右: 区画の並び（番号の順に後ろへ続く。番号 2 と 7 は次の番号と同じ位置）</text>
+  <rect x="40" y="86" width="220" height="36" rx="0" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1"/>
+  <text x="150" y="109" class="mb" text-anchor="middle" xml:space="preserve">FF 00 01 00</text>
+  <text x="270" y="109" class="s" xml:space="preserve">種類</text>
+  <rect x="560" y="86" width="280" height="52" rx="0" fill="#FFF5DF" stroke="#7B8794" stroke-width="1"/>
+  <text x="700" y="117" class="b" text-anchor="middle" xml:space="preserve">単精度の配列</text>
+  <rect x="560" y="138" width="280" height="40" rx="0" fill="#FFF5DF" stroke="#7B8794" stroke-width="1"/>
+  <text x="700" y="163" class="b" text-anchor="middle" xml:space="preserve">倍精度の配列</text>
+  <rect x="560" y="178" width="280" height="52" rx="0" fill="#FFF5DF" stroke="#7B8794" stroke-width="1"/>
+  <text x="700" y="209" class="b" text-anchor="middle" xml:space="preserve">文字列の配列</text>
+  <rect x="560" y="230" width="280" height="70" rx="0" fill="#E6F6EC" stroke="#7B8794" stroke-width="1"/>
+  <text x="700" y="270" class="b" text-anchor="middle" xml:space="preserve">固定変数 A〜Z</text>
+  <text x="852" y="270" class="s" xml:space="preserve">12 バイト × 26</text>
+  <text x="852" y="288" class="s" xml:space="preserve">= 312 バイト</text>
+  <rect x="560" y="300" width="280" height="50" rx="0" fill="#E8F1FC" stroke="#7B8794" stroke-width="1"/>
+  <text x="700" y="330" class="b" text-anchor="middle" xml:space="preserve">そのほかの単精度の変数</text>
+  <rect x="560" y="350" width="280" height="40" rx="0" fill="#E8F1FC" stroke="#7B8794" stroke-width="1"/>
+  <text x="700" y="375" class="b" text-anchor="middle" xml:space="preserve">倍精度の変数</text>
+  <rect x="560" y="390" width="280" height="50" rx="0" fill="#E8F1FC" stroke="#7B8794" stroke-width="1"/>
+  <text x="700" y="420" class="b" text-anchor="middle" xml:space="preserve">文字列の変数</text>
+  <rect x="560" y="440" width="280" height="70" rx="0" fill="#F1ECFB" stroke="#7B8794" stroke-width="1"/>
+  <text x="700" y="480" class="b" text-anchor="middle" xml:space="preserve">文字列の本体</text>
+  <text x="700" y="534" class="s" text-anchor="middle" xml:space="preserve">ヘッダの +16（ファイルの長さ）が全体の終わり</text>
+  <rect x="40" y="122" width="220" height="40" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1"/>
+  <text x="52" y="147" class="m" xml:space="preserve">番号 0</text>
+  <text x="250" y="147" class="s" text-anchor="end" xml:space="preserve">位置 3 バイト</text>
+  <path d="M260,142 C400,142 420,98 556,98" fill="none" stroke="#52606D" stroke-width="1.5" marker-end="url(#a)"/>
+  <rect x="40" y="162" width="220" height="40" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1"/>
+  <text x="52" y="187" class="m" xml:space="preserve">番号 1</text>
+  <text x="250" y="187" class="s" text-anchor="end" xml:space="preserve">位置 3 バイト</text>
+  <path d="M260,182 C400,182 420,150 556,150" fill="none" stroke="#52606D" stroke-width="1.5" marker-end="url(#a)"/>
+  <rect x="40" y="202" width="220" height="40" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1"/>
+  <text x="52" y="227" class="m" xml:space="preserve">番号 2</text>
+  <text x="250" y="227" class="s" text-anchor="end" xml:space="preserve">位置 3 バイト</text>
+  <path d="M260,222 C400,222 420,190 556,190" fill="none" stroke="#7B8794" stroke-width="1.5" marker-end="url(#a)" stroke-dasharray="4 3"/>
+  <rect x="40" y="242" width="220" height="40" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1"/>
+  <text x="52" y="267" class="m" xml:space="preserve">番号 3</text>
+  <text x="250" y="267" class="s" text-anchor="end" xml:space="preserve">位置 3 バイト</text>
+  <path d="M260,262 C400,262 420,190 556,190" fill="none" stroke="#52606D" stroke-width="1.5" marker-end="url(#a)"/>
+  <rect x="40" y="282" width="220" height="40" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="1"/>
+  <text x="52" y="307" class="m" xml:space="preserve">番号 4</text>
+  <text x="250" y="307" class="s" text-anchor="end" xml:space="preserve">位置 3 バイト</text>
+  <path d="M260,302 C400,302 420,242 556,242" fill="none" stroke="#52606D" stroke-width="1.5" marker-end="url(#a)"/>
+  <rect x="40" y="322" width="220" height="40" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="52" y="347" class="m" xml:space="preserve">番号 5</text>
+  <text x="250" y="347" class="s" text-anchor="end" xml:space="preserve">位置 3 バイト</text>
+  <path d="M260,342 C400,342 420,312 556,312" fill="none" stroke="#52606D" stroke-width="1.5" marker-end="url(#a)"/>
+  <rect x="40" y="362" width="220" height="40" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="52" y="387" class="m" xml:space="preserve">番号 6</text>
+  <text x="250" y="387" class="s" text-anchor="end" xml:space="preserve">位置 3 バイト</text>
+  <path d="M260,382 C400,382 420,362 556,362" fill="none" stroke="#52606D" stroke-width="1.5" marker-end="url(#a)"/>
+  <rect x="40" y="402" width="220" height="40" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1"/>
+  <text x="52" y="427" class="m" xml:space="preserve">番号 7</text>
+  <text x="250" y="427" class="s" text-anchor="end" xml:space="preserve">位置 3 バイト</text>
+  <path d="M260,422 C400,422 420,402 556,402" fill="none" stroke="#7B8794" stroke-width="1.5" marker-end="url(#a)" stroke-dasharray="4 3"/>
+  <rect x="40" y="442" width="220" height="40" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="52" y="467" class="m" xml:space="preserve">番号 8</text>
+  <text x="250" y="467" class="s" text-anchor="end" xml:space="preserve">位置 3 バイト</text>
+  <path d="M260,462 C400,462 420,402 556,402" fill="none" stroke="#52606D" stroke-width="1.5" marker-end="url(#a)"/>
+  <rect x="40" y="482" width="220" height="40" rx="0" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1"/>
+  <text x="52" y="507" class="m" xml:space="preserve">番号 9</text>
+  <text x="250" y="507" class="s" text-anchor="end" xml:space="preserve">位置 3 バイト</text>
+  <path d="M260,502 C400,502 420,452 556,452" fill="none" stroke="#52606D" stroke-width="1.5" marker-end="url(#a)"/>
+  <text x="40" y="552" xml:space="preserve">位置はブロックの先頭から数えます。</text>
+  <text x="40" y="576" xml:space="preserve">配列を作ると区画 4 より後ろがその分だけずれますが、固定変数の 312 バイトはいつもあります。</text>
+</svg>

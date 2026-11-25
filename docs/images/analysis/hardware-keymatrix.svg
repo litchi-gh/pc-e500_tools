@@ -1,0 +1,286 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 630" width="980" height="630" role="img" aria-labelledby="t d">
+  <title id="t">キーマトリクス</title>
+  <desc id="d">KO10 から KO0 までの 11 本の縦線と、KI0 から KI7 までの 8 本の横線の交点にキーを置いた図。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .mb { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; font-weight: 700; }
+  </style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#52606D"/></marker><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#C0392B"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="629" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h" xml:space="preserve">キーマトリクス</text>
+  <text x="24" y="55" class="sub" xml:space="preserve">縦の線 KO に 1 を出し、横の線 KI を読む。交点のキーが押されていると、縦の 1 が横へ伝わる</text>
+  <text x="24" y="91" class="b" xml:space="preserve">出力 KO</text>
+  <text x="24" y="109" class="s" xml:space="preserve">アドレス.ビット</text>
+  <text x="24" y="126" class="s" xml:space="preserve">書く値</text>
+  <rect x="124" y="72" width="222" height="62" rx="8" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <rect x="349" y="72" width="597" height="62" rx="8" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="160" y="91" class="mb" xml:space="preserve" text-anchor="middle">KO10</text>
+  <text x="160" y="109" class="ms" xml:space="preserve" text-anchor="middle">F1.2</text>
+  <text x="160" y="126" class="ms" xml:space="preserve" text-anchor="middle">04h</text>
+  <path d="M160 134L160 518" fill="none" stroke="#B8C2CC" stroke-width="1.2"/>
+  <text x="235" y="91" class="mb" xml:space="preserve" text-anchor="middle">KO9</text>
+  <text x="235" y="109" class="ms" xml:space="preserve" text-anchor="middle">F1.1</text>
+  <text x="235" y="126" class="ms" xml:space="preserve" text-anchor="middle">02h</text>
+  <path d="M235 134L235 518" fill="none" stroke="#B8C2CC" stroke-width="1.2"/>
+  <text x="310" y="91" class="mb" xml:space="preserve" text-anchor="middle">KO8</text>
+  <text x="310" y="109" class="ms" xml:space="preserve" text-anchor="middle">F1.0</text>
+  <text x="310" y="126" class="ms" xml:space="preserve" text-anchor="middle">01h</text>
+  <path d="M310 134L310 518" fill="none" stroke="#B8C2CC" stroke-width="1.2"/>
+  <text x="385" y="91" class="mb" xml:space="preserve" text-anchor="middle">KO7</text>
+  <text x="385" y="109" class="ms" xml:space="preserve" text-anchor="middle">F0.7</text>
+  <text x="385" y="126" class="ms" xml:space="preserve" text-anchor="middle">80h</text>
+  <path d="M385 134L385 518" fill="none" stroke="#B8C2CC" stroke-width="1.2"/>
+  <text x="460" y="91" class="mb" xml:space="preserve" text-anchor="middle">KO6</text>
+  <text x="460" y="109" class="ms" xml:space="preserve" text-anchor="middle">F0.6</text>
+  <text x="460" y="126" class="ms" xml:space="preserve" text-anchor="middle">40h</text>
+  <path d="M460 134L460 518" fill="none" stroke="#B8C2CC" stroke-width="1.2"/>
+  <text x="535" y="91" class="mb" xml:space="preserve" text-anchor="middle">KO5</text>
+  <text x="535" y="109" class="ms" xml:space="preserve" text-anchor="middle">F0.5</text>
+  <text x="535" y="126" class="ms" xml:space="preserve" text-anchor="middle">20h</text>
+  <path d="M535 134L535 518" fill="none" stroke="#B8C2CC" stroke-width="1.2"/>
+  <text x="610" y="91" class="mb" xml:space="preserve" text-anchor="middle">KO4</text>
+  <text x="610" y="109" class="ms" xml:space="preserve" text-anchor="middle">F0.4</text>
+  <text x="610" y="126" class="ms" xml:space="preserve" text-anchor="middle">10h</text>
+  <path d="M610 134L610 518" fill="none" stroke="#B8C2CC" stroke-width="1.2"/>
+  <text x="685" y="91" class="mb" xml:space="preserve" text-anchor="middle">KO3</text>
+  <text x="685" y="109" class="ms" xml:space="preserve" text-anchor="middle">F0.3</text>
+  <text x="685" y="126" class="ms" xml:space="preserve" text-anchor="middle">08h</text>
+  <path d="M685 134L685 518" fill="none" stroke="#B8C2CC" stroke-width="1.2"/>
+  <text x="760" y="91" class="mb" xml:space="preserve" text-anchor="middle">KO2</text>
+  <text x="760" y="109" class="ms" xml:space="preserve" text-anchor="middle">F0.2</text>
+  <text x="760" y="126" class="ms" xml:space="preserve" text-anchor="middle">04h</text>
+  <path d="M760 134L760 518" fill="none" stroke="#B8C2CC" stroke-width="1.2"/>
+  <text x="835" y="91" class="mb" xml:space="preserve" text-anchor="middle">KO1</text>
+  <text x="835" y="109" class="ms" xml:space="preserve" text-anchor="middle">F0.1</text>
+  <text x="835" y="126" class="ms" xml:space="preserve" text-anchor="middle">02h</text>
+  <path d="M835 134L835 518" fill="none" stroke="#B8C2CC" stroke-width="1.2"/>
+  <text x="910" y="91" class="mb" xml:space="preserve" text-anchor="middle">KO0</text>
+  <text x="910" y="109" class="ms" xml:space="preserve" text-anchor="middle">F0.0</text>
+  <text x="910" y="126" class="ms" xml:space="preserve" text-anchor="middle">01h</text>
+  <path d="M910 134L910 518" fill="none" stroke="#B8C2CC" stroke-width="1.2"/>
+  <path d="M118 164L942 164" fill="none" stroke="#B8C2CC" stroke-width="1.2"/>
+  <text x="24" y="162" class="mb" xml:space="preserve">KI0</text>
+  <text x="24" y="177" class="ms" xml:space="preserve">F2.0 = 01h</text>
+  <path d="M124 164L106 164" fill="none" stroke="#52606D" stroke-width="1.6" marker-end="url(#a)"/>
+  <rect x="128" y="148" width="64" height="32" rx="6" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.2"/>
+  <text x="160" y="169" xml:space="preserve" text-anchor="middle" style="fill:#1F2933">P</text>
+  <rect x="203" y="148" width="64" height="32" rx="6" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.2"/>
+  <text x="235" y="169" xml:space="preserve" text-anchor="middle" style="fill:#1F2933">)</text>
+  <rect x="278" y="148" width="64" height="32" rx="6" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="310" y="169" xml:space="preserve" text-anchor="middle" style="fill:#1F2933">↕(左右)</text>
+  <rect x="353" y="148" width="64" height="32" rx="6" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="385" y="169" class="s" xml:space="preserve" text-anchor="middle" style="fill:#1F2933">CA/C.CE</text>
+  <rect x="428" y="148" width="64" height="32" rx="6" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="460" y="169" xml:space="preserve" text-anchor="middle" style="fill:#1F2933">STO</text>
+  <rect x="503" y="148" width="64" height="32" rx="6" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="535" y="169" xml:space="preserve" text-anchor="middle" style="fill:#1F2933">RCL</text>
+  <rect x="578" y="148" width="64" height="32" rx="6" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.2"/>
+  <text x="610" y="169" xml:space="preserve" text-anchor="middle" style="fill:#1F2933">I</text>
+  <rect x="653" y="148" width="64" height="32" rx="6" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.2"/>
+  <text x="685" y="169" xml:space="preserve" text-anchor="middle" style="fill:#1F2933">Y</text>
+  <rect x="728" y="148" width="64" height="32" rx="6" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.2"/>
+  <text x="760" y="169" xml:space="preserve" text-anchor="middle" style="fill:#1F2933">R</text>
+  <rect x="803" y="148" width="64" height="32" rx="6" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.2"/>
+  <text x="835" y="169" xml:space="preserve" text-anchor="middle" style="fill:#1F2933">W</text>
+  <rect x="878" y="148" width="64" height="32" rx="6" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="910" y="169" xml:space="preserve" text-anchor="middle" style="fill:#1F2933">▲▼</text>
+  <path d="M118 212L942 212" fill="none" stroke="#B8C2CC" stroke-width="1.2"/>
+  <text x="24" y="210" class="mb" xml:space="preserve">KI1</text>
+  <text x="24" y="225" class="ms" xml:space="preserve">F2.1 = 02h</text>
+  <path d="M124 212L106 212" fill="none" stroke="#52606D" stroke-width="1.6" marker-end="url(#a)"/>
+  <rect x="128" y="196" width="64" height="32" rx="6" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="160" y="217" xml:space="preserve" text-anchor="middle" style="fill:#1F2933">2ndF</text>
+  <rect x="203" y="196" width="64" height="32" rx="6" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="235" y="217" xml:space="preserve" text-anchor="middle" style="fill:#1F2933">FSE</text>
+  <rect x="278" y="196" width="64" height="32" rx="6" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="310" y="217" xml:space="preserve" text-anchor="middle" style="fill:#1F2933">tan</text>
+  <rect x="353" y="196" width="64" height="32" rx="6" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="385" y="217" xml:space="preserve" text-anchor="middle" style="fill:#1F2933">cos</text>
+  <rect x="428" y="196" width="64" height="32" rx="6" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="460" y="217" xml:space="preserve" text-anchor="middle" style="fill:#1F2933">sin</text>
+  <rect x="503" y="196" width="64" height="32" rx="6" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="535" y="217" xml:space="preserve" text-anchor="middle" style="fill:#1F2933">hyp</text>
+  <rect x="578" y="196" width="64" height="32" rx="6" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.2"/>
+  <text x="610" y="217" xml:space="preserve" text-anchor="middle" style="fill:#1F2933">O</text>
+  <rect x="653" y="196" width="64" height="32" rx="6" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.2"/>
+  <text x="685" y="217" xml:space="preserve" text-anchor="middle" style="fill:#1F2933">U</text>
+  <rect x="728" y="196" width="64" height="32" rx="6" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.2"/>
+  <text x="760" y="217" xml:space="preserve" text-anchor="middle" style="fill:#1F2933">T</text>
+  <rect x="803" y="196" width="64" height="32" rx="6" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.2"/>
+  <text x="835" y="217" xml:space="preserve" text-anchor="middle" style="fill:#1F2933">E</text>
+  <rect x="878" y="196" width="64" height="32" rx="6" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.2"/>
+  <text x="910" y="217" xml:space="preserve" text-anchor="middle" style="fill:#1F2933">Q</text>
+  <path d="M118 260L942 260" fill="none" stroke="#B8C2CC" stroke-width="1.2"/>
+  <text x="24" y="258" class="mb" xml:space="preserve">KI2</text>
+  <text x="24" y="273" class="ms" xml:space="preserve">F2.2 = 04h</text>
+  <path d="M124 260L106 260" fill="none" stroke="#52606D" stroke-width="1.6" marker-end="url(#a)"/>
+  <rect x="128" y="244" width="64" height="32" rx="6" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="160" y="265" xml:space="preserve" text-anchor="middle" style="fill:#1F2933">PF5</text>
+  <rect x="203" y="244" width="64" height="32" rx="6" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="235" y="265" xml:space="preserve" text-anchor="middle" style="fill:#1F2933">1/x</text>
+  <rect x="278" y="244" width="64" height="32" rx="6" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="310" y="265" xml:space="preserve" text-anchor="middle" style="fill:#1F2933">log</text>
+  <rect x="353" y="244" width="64" height="32" rx="6" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="385" y="265" xml:space="preserve" text-anchor="middle" style="fill:#1F2933">ln</text>
+  <rect x="428" y="244" width="64" height="32" rx="6" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="460" y="265" xml:space="preserve" text-anchor="middle" style="fill:#1F2933">→DEG</text>
+  <rect x="503" y="244" width="64" height="32" rx="6" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="535" y="265" xml:space="preserve" text-anchor="middle" style="fill:#1F2933">→HEX</text>
+  <rect x="578" y="244" width="64" height="32" rx="6" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.2"/>
+  <text x="610" y="265" xml:space="preserve" text-anchor="middle" style="fill:#1F2933">K</text>
+  <rect x="653" y="244" width="64" height="32" rx="6" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.2"/>
+  <text x="685" y="265" xml:space="preserve" text-anchor="middle" style="fill:#1F2933">H</text>
+  <rect x="728" y="244" width="64" height="32" rx="6" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.2"/>
+  <text x="760" y="265" xml:space="preserve" text-anchor="middle" style="fill:#1F2933">F</text>
+  <rect x="803" y="244" width="64" height="32" rx="6" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.2"/>
+  <text x="835" y="265" xml:space="preserve" text-anchor="middle" style="fill:#1F2933">S</text>
+  <rect x="878" y="244" width="64" height="32" rx="6" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="910" y="265" xml:space="preserve" text-anchor="middle" style="fill:#1F2933">MENU</text>
+  <path d="M118 308L942 308" fill="none" stroke="#B8C2CC" stroke-width="1.2"/>
+  <text x="24" y="306" class="mb" xml:space="preserve">KI3</text>
+  <text x="24" y="321" class="ms" xml:space="preserve">F2.3 = 08h</text>
+  <path d="M124 308L106 308" fill="none" stroke="#52606D" stroke-width="1.6" marker-end="url(#a)"/>
+  <rect x="128" y="292" width="64" height="32" rx="6" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="160" y="313" xml:space="preserve" text-anchor="middle" style="fill:#1F2933">PF4</text>
+  <rect x="203" y="292" width="64" height="32" rx="6" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.2"/>
+  <text x="235" y="313" xml:space="preserve" text-anchor="middle" style="fill:#1F2933">(</text>
+  <rect x="278" y="292" width="64" height="32" rx="6" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="310" y="313" xml:space="preserve" text-anchor="middle" style="fill:#1F2933">x²</text>
+  <rect x="353" y="292" width="64" height="32" rx="6" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="385" y="313" xml:space="preserve" text-anchor="middle" style="fill:#1F2933">√</text>
+  <rect x="428" y="292" width="64" height="32" rx="6" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="460" y="313" xml:space="preserve" text-anchor="middle" style="fill:#1F2933">yˣ</text>
+  <rect x="503" y="292" width="64" height="32" rx="6" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="535" y="313" xml:space="preserve" text-anchor="middle" style="fill:#1F2933">EXP</text>
+  <rect x="578" y="292" width="64" height="32" rx="6" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.2"/>
+  <text x="610" y="313" xml:space="preserve" text-anchor="middle" style="fill:#1F2933">L</text>
+  <rect x="653" y="292" width="64" height="32" rx="6" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.2"/>
+  <text x="685" y="313" xml:space="preserve" text-anchor="middle" style="fill:#1F2933">J</text>
+  <rect x="728" y="292" width="64" height="32" rx="6" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.2"/>
+  <text x="760" y="313" xml:space="preserve" text-anchor="middle" style="fill:#1F2933">G</text>
+  <rect x="803" y="292" width="64" height="32" rx="6" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.2"/>
+  <text x="835" y="313" xml:space="preserve" text-anchor="middle" style="fill:#1F2933">D</text>
+  <rect x="878" y="292" width="64" height="32" rx="6" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.2"/>
+  <text x="910" y="313" xml:space="preserve" text-anchor="middle" style="fill:#1F2933">A</text>
+  <path d="M118 356L942 356" fill="none" stroke="#B8C2CC" stroke-width="1.2"/>
+  <text x="24" y="354" class="mb" xml:space="preserve">KI4</text>
+  <text x="24" y="369" class="ms" xml:space="preserve">F2.4 = 10h</text>
+  <path d="M124 356L106 356" fill="none" stroke="#52606D" stroke-width="1.6" marker-end="url(#a)"/>
+  <rect x="128" y="340" width="64" height="32" rx="6" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="160" y="361" xml:space="preserve" text-anchor="middle" style="fill:#1F2933">PF3</text>
+  <rect x="203" y="340" width="64" height="32" rx="6" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="235" y="361" xml:space="preserve" text-anchor="middle" style="fill:#1F2933">DEL</text>
+  <rect x="278" y="340" width="64" height="32" rx="6" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="310" y="361" xml:space="preserve" text-anchor="middle" style="fill:#1F2933">÷</text>
+  <rect x="353" y="340" width="64" height="32" rx="6" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="385" y="361" xml:space="preserve" text-anchor="middle" style="fill:#1F2933">9</text>
+  <rect x="428" y="340" width="64" height="32" rx="6" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="460" y="361" xml:space="preserve" text-anchor="middle" style="fill:#1F2933">8</text>
+  <rect x="503" y="340" width="64" height="32" rx="6" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="535" y="361" xml:space="preserve" text-anchor="middle" style="fill:#1F2933">7</text>
+  <rect x="578" y="340" width="64" height="32" rx="6" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.2"/>
+  <text x="610" y="361" xml:space="preserve" text-anchor="middle" style="fill:#1F2933">,</text>
+  <rect x="653" y="340" width="64" height="32" rx="6" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.2"/>
+  <text x="685" y="361" xml:space="preserve" text-anchor="middle" style="fill:#1F2933">N</text>
+  <rect x="728" y="340" width="64" height="32" rx="6" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.2"/>
+  <text x="760" y="361" xml:space="preserve" text-anchor="middle" style="fill:#1F2933">V</text>
+  <rect x="803" y="340" width="64" height="32" rx="6" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.2"/>
+  <text x="835" y="361" xml:space="preserve" text-anchor="middle" style="fill:#1F2933">X</text>
+  <rect x="878" y="340" width="64" height="32" rx="6" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="910" y="361" xml:space="preserve" text-anchor="middle" style="fill:#1F2933">BASIC</text>
+  <path d="M118 404L942 404" fill="none" stroke="#B8C2CC" stroke-width="1.2"/>
+  <text x="24" y="402" class="mb" xml:space="preserve">KI5</text>
+  <text x="24" y="417" class="ms" xml:space="preserve">F2.5 = 20h</text>
+  <path d="M124 404L106 404" fill="none" stroke="#52606D" stroke-width="1.6" marker-end="url(#a)"/>
+  <rect x="128" y="388" width="64" height="32" rx="6" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="160" y="409" xml:space="preserve" text-anchor="middle" style="fill:#1F2933">PF2</text>
+  <rect x="203" y="388" width="64" height="32" rx="6" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="235" y="409" xml:space="preserve" text-anchor="middle" style="fill:#1F2933">BS</text>
+  <rect x="278" y="388" width="64" height="32" rx="6" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="310" y="409" xml:space="preserve" text-anchor="middle" style="fill:#1F2933">×</text>
+  <rect x="353" y="388" width="64" height="32" rx="6" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="385" y="409" xml:space="preserve" text-anchor="middle" style="fill:#1F2933">6</text>
+  <rect x="428" y="388" width="64" height="32" rx="6" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="460" y="409" xml:space="preserve" text-anchor="middle" style="fill:#1F2933">5</text>
+  <rect x="503" y="388" width="64" height="32" rx="6" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="535" y="409" xml:space="preserve" text-anchor="middle" style="fill:#1F2933">4</text>
+  <rect x="578" y="388" width="64" height="32" rx="6" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.2"/>
+  <text x="610" y="409" xml:space="preserve" text-anchor="middle" style="fill:#1F2933">;</text>
+  <rect x="653" y="388" width="64" height="32" rx="6" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.2"/>
+  <text x="685" y="409" xml:space="preserve" text-anchor="middle" style="fill:#1F2933">M</text>
+  <rect x="728" y="388" width="64" height="32" rx="6" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.2"/>
+  <text x="760" y="409" xml:space="preserve" text-anchor="middle" style="fill:#1F2933">B</text>
+  <rect x="803" y="388" width="64" height="32" rx="6" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.2"/>
+  <text x="835" y="409" xml:space="preserve" text-anchor="middle" style="fill:#1F2933">C</text>
+  <rect x="878" y="388" width="64" height="32" rx="6" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.2"/>
+  <text x="910" y="409" xml:space="preserve" text-anchor="middle" style="fill:#1F2933">Z</text>
+  <path d="M118 452L942 452" fill="none" stroke="#B8C2CC" stroke-width="1.2"/>
+  <text x="24" y="450" class="mb" xml:space="preserve">KI6</text>
+  <text x="24" y="465" class="ms" xml:space="preserve">F2.6 = 40h</text>
+  <path d="M124 452L106 452" fill="none" stroke="#52606D" stroke-width="1.6" marker-end="url(#a)"/>
+  <rect x="128" y="436" width="64" height="32" rx="6" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="160" y="457" xml:space="preserve" text-anchor="middle" style="fill:#1F2933">PF1</text>
+  <rect x="203" y="436" width="64" height="32" rx="6" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="235" y="457" xml:space="preserve" text-anchor="middle" style="fill:#1F2933">INS</text>
+  <rect x="278" y="436" width="64" height="32" rx="6" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="310" y="457" xml:space="preserve" text-anchor="middle" style="fill:#1F2933">−</text>
+  <rect x="353" y="436" width="64" height="32" rx="6" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="385" y="457" xml:space="preserve" text-anchor="middle" style="fill:#1F2933">3</text>
+  <rect x="428" y="436" width="64" height="32" rx="6" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="460" y="457" xml:space="preserve" text-anchor="middle" style="fill:#1F2933">2</text>
+  <rect x="503" y="436" width="64" height="32" rx="6" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="535" y="457" xml:space="preserve" text-anchor="middle" style="fill:#1F2933">1</text>
+  <rect x="578" y="436" width="64" height="32" rx="6" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="610" y="457" xml:space="preserve" text-anchor="middle" style="fill:#1F2933">▶</text>
+  <rect x="653" y="436" width="64" height="32" rx="6" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="685" y="457" xml:space="preserve" text-anchor="middle" style="fill:#1F2933">↑</text>
+  <rect x="728" y="436" width="64" height="32" rx="6" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="760" y="457" xml:space="preserve" text-anchor="middle" style="fill:#1F2933">SPACE</text>
+  <rect x="803" y="436" width="64" height="32" rx="6" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="835" y="457" xml:space="preserve" text-anchor="middle" style="fill:#1F2933">CAPS</text>
+  <rect x="878" y="436" width="64" height="32" rx="6" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="910" y="457" xml:space="preserve" text-anchor="middle" style="fill:#1F2933">SHIFT</text>
+  <path d="M118 500L942 500" fill="none" stroke="#B8C2CC" stroke-width="1.2"/>
+  <text x="24" y="498" class="mb" xml:space="preserve">KI7</text>
+  <text x="24" y="513" class="ms" xml:space="preserve">F2.7 = 80h</text>
+  <path d="M124 500L106 500" fill="none" stroke="#52606D" stroke-width="1.6" marker-end="url(#a)"/>
+  <text x="160" y="496" class="s" xml:space="preserve" text-anchor="middle">（空き）</text>
+  <rect x="203" y="484" width="64" height="32" rx="6" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="235" y="505" xml:space="preserve" text-anchor="middle" style="fill:#1F2933">=</text>
+  <rect x="278" y="484" width="64" height="32" rx="6" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="310" y="505" xml:space="preserve" text-anchor="middle" style="fill:#1F2933">+</text>
+  <rect x="353" y="484" width="64" height="32" rx="6" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="385" y="505" xml:space="preserve" text-anchor="middle" style="fill:#1F2933">.</text>
+  <rect x="428" y="484" width="64" height="32" rx="6" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="460" y="505" xml:space="preserve" text-anchor="middle" style="fill:#1F2933">+/−</text>
+  <rect x="503" y="484" width="64" height="32" rx="6" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="535" y="505" xml:space="preserve" text-anchor="middle" style="fill:#1F2933">0</text>
+  <rect x="578" y="484" width="64" height="32" rx="6" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="610" y="505" xml:space="preserve" text-anchor="middle" style="fill:#1F2933">⏎</text>
+  <rect x="653" y="484" width="64" height="32" rx="6" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="685" y="505" xml:space="preserve" text-anchor="middle" style="fill:#1F2933">◀</text>
+  <rect x="728" y="484" width="64" height="32" rx="6" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="760" y="505" xml:space="preserve" text-anchor="middle" style="fill:#1F2933">↓</text>
+  <rect x="803" y="484" width="64" height="32" rx="6" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="835" y="505" xml:space="preserve" text-anchor="middle" style="fill:#1F2933">カナ</text>
+  <rect x="878" y="484" width="64" height="32" rx="6" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="910" y="505" xml:space="preserve" text-anchor="middle" style="fill:#1F2933">CTRL</text>
+  <rect x="24" y="552" width="14" height="14" rx="3" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.2"/>
+  <text x="44" y="564" class="s" xml:space="preserve">文字、記号</text>
+  <rect x="144" y="552" width="14" height="14" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="164" y="564" class="s" xml:space="preserve">数字、四則</text>
+  <rect x="264" y="552" width="14" height="14" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="284" y="564" class="s" xml:space="preserve">関数</text>
+  <rect x="344" y="552" width="14" height="14" rx="3" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="364" y="564" class="s" xml:space="preserve">編集、カーソル（⏎ は RETURN）</text>
+  <rect x="574" y="552" width="14" height="14" rx="3" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="594" y="564" class="s" xml:space="preserve">PF、切り替え</text>
+  <rect x="24" y="582" width="932" height="34" rx="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="36" y="603" class="s" xml:space="preserve" style="fill:#1F2933">OFF キーはこの表の外で、KO11 と KI0 の間にあります。カードスロットのカバーのスイッチは、OFF キーと並列につながっています。</text>
+</svg>

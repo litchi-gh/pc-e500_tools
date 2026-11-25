@@ -9,7 +9,7 @@
 //   bas2bin  : binary/machine file -> raw binary
 //   info     : inspect a file stored for the emulator (ASCII vs binary, header)
 //
-// Design references (see ../Analysis and ../Sharp_ce140f_emul/commands.cpp):
+// Design references (see ../docs/analysis and ../Sharp_ce140f_emul/commands.cpp):
 //   * ASCII files are plain text lines. SAVE writes CR+LF line terminators and
 //     LOAD reads a line up to 0x0D. End-of-file is signalled with 0x1A.
 //   * A "binary" (non-ASCII) file is recognised by the emulator from its very
@@ -19,7 +19,7 @@
 //     16-byte header makes a raw image loadable with LOAD M.
 //
 // The header layout is CONFIRMED against real SAVE M captures taken from a
-// PC-E650 (../Emulator/rom/S3A.ROM, S3B.ROM, CE2FULL.ROM, CE2RAW.ROM and
+// PC-E650 (../../Emulator/rom/S3A.ROM, S3B.ROM, CE2FULL.ROM, CE2RAW.ROM and
 // GRAPHRAM.BIN - see buildHeader() below). Escape hatches remain available:
 //   - bas2bin can save the real 16 bytes it strips  (--save-header hdr.bin)
 //   - bin2bas can inject a real header file          (--header hdr.bin)
@@ -87,8 +87,14 @@ static void writeFile(const std::string& path, const Bytes& data) {
 // Stop before writing if an output is also a file this run reads or writes,
 // however the two names are spelled (case, ".\", relative or absolute).
 static void rejectSameFile(const std::string& output, const std::string& other) {
-    std::error_code ec;
-    if (output == other || std::filesystem::equivalent(output, other, ec))
+    std::error_code ec, e1, e2;
+    auto a = std::filesystem::weakly_canonical(output, e1), b = std::filesystem::weakly_canonical(other, e2);
+    std::string x = a.string(), y = b.string();
+#ifdef _WIN32
+    for (auto& c : x) c = (char)std::tolower((unsigned char)c);
+    for (auto& c : y) c = (char)std::tolower((unsigned char)c);
+#endif
+    if (output == other || std::filesystem::equivalent(output, other, ec) || (!e1 && !e2 && x == y))
         die("output would overwrite " + other + "; choose another output file");
 }
 
@@ -704,6 +710,7 @@ int main(int argc, char** argv) {
         if (!path.empty()) {
             std::string err;
             if (!cs.loadFile(path, &err)) die(err);
+            if (pos.size() >= 2) rejectSameFile(pos[1], path);
             std::cerr << "ce140conv: using charset table " << path << "\n";
         } else if (o.charsetFile.empty()) {
             std::cerr << "ce140conv: note: no charset_e500.tab found; using "

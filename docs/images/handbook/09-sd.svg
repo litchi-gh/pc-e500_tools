@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 220" width="980" height="220" role="img" aria-labelledby="t d">
+  <title id="t">平均と標準偏差</title>
+  <desc id="d">この章の例の d1 の 6 個の値を数直線に並べ、平均と標準偏差を示した図</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+  </style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#52606D"/></marker></defs>
+
+  <rect width="980" height="220" fill="#FFFFFF"/>
+  <text x="30.0" y="32.0" class="b" text-anchor="start" xml:space="preserve">d1 = 62、75、80、80、80、91</text>
+  <line x1="60.0" y1="150.0" x2="940.0" y2="150.0" stroke="#52606D" stroke-width="1.2"/>
+  <line x1="80.0" y1="146.0" x2="80.0" y2="154.0" stroke="#52606D" stroke-width="1.2"/>
+  <text x="80.0" y="172.0" class="s" text-anchor="middle" xml:space="preserve">50</text>
+  <line x1="154.5" y1="146.0" x2="154.5" y2="154.0" stroke="#52606D" stroke-width="1.2"/>
+  <text x="154.5" y="172.0" class="s" text-anchor="middle" xml:space="preserve">55</text>
+  <line x1="229.1" y1="146.0" x2="229.1" y2="154.0" stroke="#52606D" stroke-width="1.2"/>
+  <text x="229.1" y="172.0" class="s" text-anchor="middle" xml:space="preserve">60</text>
+  <line x1="303.6" y1="146.0" x2="303.6" y2="154.0" stroke="#52606D" stroke-width="1.2"/>
+  <text x="303.6" y="172.0" class="s" text-anchor="middle" xml:space="preserve">65</text>
+  <line x1="378.2" y1="146.0" x2="378.2" y2="154.0" stroke="#52606D" stroke-width="1.2"/>
+  <text x="378.2" y="172.0" class="s" text-anchor="middle" xml:space="preserve">70</text>
+  <line x1="452.7" y1="146.0" x2="452.7" y2="154.0" stroke="#52606D" stroke-width="1.2"/>
+  <text x="452.7" y="172.0" class="s" text-anchor="middle" xml:space="preserve">75</text>
+  <line x1="527.3" y1="146.0" x2="527.3" y2="154.0" stroke="#52606D" stroke-width="1.2"/>
+  <text x="527.3" y="172.0" class="s" text-anchor="middle" xml:space="preserve">80</text>
+  <line x1="601.8" y1="146.0" x2="601.8" y2="154.0" stroke="#52606D" stroke-width="1.2"/>
+  <text x="601.8" y="172.0" class="s" text-anchor="middle" xml:space="preserve">85</text>
+  <line x1="676.4" y1="146.0" x2="676.4" y2="154.0" stroke="#52606D" stroke-width="1.2"/>
+  <text x="676.4" y="172.0" class="s" text-anchor="middle" xml:space="preserve">90</text>
+  <line x1="750.9" y1="146.0" x2="750.9" y2="154.0" stroke="#52606D" stroke-width="1.2"/>
+  <text x="750.9" y="172.0" class="s" text-anchor="middle" xml:space="preserve">95</text>
+  <line x1="825.5" y1="146.0" x2="825.5" y2="154.0" stroke="#52606D" stroke-width="1.2"/>
+  <text x="825.5" y="172.0" class="s" text-anchor="middle" xml:space="preserve">100</text>
+  <line x1="900.0" y1="146.0" x2="900.0" y2="154.0" stroke="#52606D" stroke-width="1.2"/>
+  <text x="900.0" y="172.0" class="s" text-anchor="middle" xml:space="preserve">105</text>
+  <rect x="356.6" y="80.0" width="281.6" height="24.0" rx="4" fill="#E8F1FC" stroke="#2F6DB5"/>
+  <text x="648.3" y="96.0" class="s" text-anchor="start" xml:space="preserve">平均 ± sx（9.44）</text>
+  <rect x="368.9" y="108.0" width="257.1" height="12.0" rx="2" fill="#E6F6EC" stroke="#2F855A"/>
+  <text x="650.9" y="119.0" class="s" text-anchor="start" xml:space="preserve">平均 ± σx（8.62）</text>
+  <circle cx="258.9" cy="143.0" r="4.5" fill="#C0392B"/>
+  <circle cx="452.7" cy="143.0" r="4.5" fill="#C0392B"/>
+  <circle cx="527.3" cy="143.0" r="4.5" fill="#C0392B"/>
+  <circle cx="527.3" cy="132.0" r="4.5" fill="#C0392B"/>
+  <circle cx="527.3" cy="121.0" r="4.5" fill="#C0392B"/>
+  <circle cx="691.3" cy="143.0" r="4.5" fill="#C0392B"/>
+  <line x1="497.5" y1="60.0" x2="497.5" y2="150.0" stroke="#C0392B" stroke-width="2"/>
+  <text x="497.5" y="54.0" class="b" text-anchor="middle" xml:space="preserve">平均 78</text>
+  <text x="30.0" y="204.0" class="s" text-anchor="start" xml:space="preserve">sx は 5（n − 1）で、σx は 6（n）で割る。データが少ないほど 2 つの差は大きい。</text>
+</svg>

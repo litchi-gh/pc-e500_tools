@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 400" width="980" height="400" role="img" aria-labelledby="t d">
+  <title id="t">優先順位と保留中の計算</title>
+  <desc id="d">4 + 3 × 2 のべき乗 3 − 1 を順に押したときに、保留中の計算が積まれ、順に計算される様子。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .xs { font-size: 11px; fill: #52606D; }
+    .r { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; fill: #B7791F; font-weight: 700; }
+    .j { font-size: 10px; fill: #B7791F; font-weight: 700; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .lcd { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 14px; font-weight: 700; fill: #24351D; }
+  </style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#7B8794"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="399" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">優先順位と保留中の計算</text>
+  <text x="24" y="56" class="sub">例: 4 + 3 × 2³ − 1。優先順位の低いキーが押されるまで、計算は保留される</text>
+  <rect x="24" y="76" width="146" height="210" rx="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="97" y="100" class="s" text-anchor="middle">押したキー</text>
+  <rect x="54" y="108" width="86" height="26" rx="5" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="97.0" y="126.0" class="m" xml:space="preserve" text-anchor="middle">4 +</text>
+  <rect x="44" y="250" width="106" height="30" rx="6" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="97" y="270" class="m" xml:space="preserve" text-anchor="middle">4 +</text>
+  <rect x="34" y="300" width="126" height="30" rx="4" fill="#BDD08B" stroke="#4A5A2A" stroke-width="1.2"/>
+  <text x="150" y="320" class="lcd" xml:space="preserve" text-anchor="end">4.</text>
+  <rect x="182" y="76" width="146" height="210" rx="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="255" y="100" class="s" text-anchor="middle">押したキー</text>
+  <rect x="212" y="108" width="86" height="26" rx="5" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="255.0" y="126.0" class="m" xml:space="preserve" text-anchor="middle">3 ×</text>
+  <rect x="202" y="250" width="106" height="30" rx="6" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="255" y="270" class="m" xml:space="preserve" text-anchor="middle">4 +</text>
+  <rect x="202" y="214" width="106" height="30" rx="6" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="255" y="234" class="m" xml:space="preserve" text-anchor="middle">3 ×</text>
+  <rect x="192" y="300" width="126" height="30" rx="4" fill="#BDD08B" stroke="#4A5A2A" stroke-width="1.2"/>
+  <text x="308" y="320" class="lcd" xml:space="preserve" text-anchor="end">3.</text>
+  <rect x="340" y="76" width="146" height="210" rx="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="413" y="100" class="s" text-anchor="middle">押したキー</text>
+  <rect x="370" y="108" width="86" height="26" rx="5" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="413.0" y="126.0" class="m" xml:space="preserve" text-anchor="middle">2 yˣ</text>
+  <rect x="360" y="250" width="106" height="30" rx="6" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="413" y="270" class="m" xml:space="preserve" text-anchor="middle">4 +</text>
+  <rect x="360" y="214" width="106" height="30" rx="6" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="413" y="234" class="m" xml:space="preserve" text-anchor="middle">3 ×</text>
+  <rect x="360" y="178" width="106" height="30" rx="6" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="413" y="198" class="m" xml:space="preserve" text-anchor="middle">2 yˣ</text>
+  <rect x="350" y="300" width="126" height="30" rx="4" fill="#BDD08B" stroke="#4A5A2A" stroke-width="1.2"/>
+  <text x="466" y="320" class="lcd" xml:space="preserve" text-anchor="end">2.</text>
+  <rect x="498" y="76" width="146" height="210" rx="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="571" y="100" class="s" text-anchor="middle">押したキー</text>
+  <rect x="528" y="108" width="86" height="26" rx="5" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="571.0" y="126.0" class="m" xml:space="preserve" text-anchor="middle">3</text>
+  <rect x="518" y="250" width="106" height="30" rx="6" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="571" y="270" class="m" xml:space="preserve" text-anchor="middle">4 +</text>
+  <rect x="518" y="214" width="106" height="30" rx="6" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="571" y="234" class="m" xml:space="preserve" text-anchor="middle">3 ×</text>
+  <rect x="518" y="178" width="106" height="30" rx="6" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="571" y="198" class="m" xml:space="preserve" text-anchor="middle">2 yˣ</text>
+  <rect x="508" y="300" width="126" height="30" rx="4" fill="#BDD08B" stroke="#4A5A2A" stroke-width="1.2"/>
+  <text x="624" y="320" class="lcd" xml:space="preserve" text-anchor="end">3.</text>
+  <rect x="656" y="76" width="146" height="210" rx="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="729" y="100" class="s" text-anchor="middle">押したキー</text>
+  <rect x="686" y="108" width="86" height="26" rx="5" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="729.0" y="126.0" class="m" xml:space="preserve" text-anchor="middle">−</text>
+  <rect x="676" y="250" width="106" height="30" rx="6" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="729" y="270" class="m" xml:space="preserve" text-anchor="middle">28 −</text>
+  <rect x="666" y="300" width="126" height="30" rx="4" fill="#BDD08B" stroke="#4A5A2A" stroke-width="1.2"/>
+  <text x="782" y="320" class="lcd" xml:space="preserve" text-anchor="end">28.</text>
+  <rect x="814" y="76" width="146" height="210" rx="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="887" y="100" class="s" text-anchor="middle">押したキー</text>
+  <rect x="844" y="108" width="86" height="26" rx="5" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="887.0" y="126.0" class="m" xml:space="preserve" text-anchor="middle">1 =</text>
+  <rect x="824" y="300" width="126" height="30" rx="4" fill="#BDD08B" stroke="#4A5A2A" stroke-width="1.2"/>
+  <text x="940" y="320" class="lcd" xml:space="preserve" text-anchor="end">27.</text>
+  <text x="24" y="356" class="s">黄色は保留中の計算（下ほど先に入力したもの）。「−」を押すと 2³ = 8、3 × 8 = 24、4 + 24 = 28 の順に計算される</text>
+  <text x="24" y="378" class="s">保留できるのは、かっこがなければ 3 つまで（+、×、yˣ の 3 段）、かっこを使うと全部で 8 つまで</text>
+</svg>

@@ -70,12 +70,10 @@ internal sealed class MainForm : Form
     }
     private int RawOrigin()
     {
-        string text = origin.Text.Trim();
-        if (text.StartsWith("0x", StringComparison.OrdinalIgnoreCase)) text = text[2..];
-        if (text.StartsWith('$') || text.StartsWith('&')) text = text[1..];
-        if (text.EndsWith("h", StringComparison.OrdinalIgnoreCase)) text = text[..^1];
-        if (!int.TryParse(text, NumberStyles.HexNumber, CultureInfo.InvariantCulture, out int value) || value > 0xfffff)
-            throw new DisassemblyException("RAW開始アドレスは00000～FFFFFの16進数で指定してください");
+        // The same spellings as --org of the command line.
+        int value = -1;
+        try { value = E500Assembler.Assembler.ParseAddress(origin.Text); } catch (E500Assembler.AssemblyException) { }
+        if (value is < 0 or > 0xfffff) throw new DisassemblyException("RAW開始アドレスは00000～FFFFFの16進数で指定してください");
         return value;
     }
     private async Task ExecuteAsync()
@@ -84,7 +82,7 @@ internal sealed class MainForm : Form
         try
         {
             string inPath = Path.GetFullPath(input.Text), outPath = Path.GetFullPath(output.Text);
-            if (inPath == outPath) throw new DisassemblyException("出力先は入力ファイルと別の名前にしてください");
+            if (string.Equals(inPath, outPath, StringComparison.OrdinalIgnoreCase)) throw new DisassemblyException("出力先は入力ファイルと別の名前にしてください");
             InputFormat selected = format.SelectedIndex == 0 ? InputFormat.Raw : InputFormat.Ce140f;
             int? address = selected == InputFormat.Raw ? RawOrigin() : null;
             var settings = new DisassemblerOptions { GenerateLabels = labels.Checked, ShowAddresses = addresses.Checked, ShowBytes = bytes.Checked };

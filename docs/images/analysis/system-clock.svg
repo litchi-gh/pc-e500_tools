@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 330" width="980" height="330" role="img" aria-labelledby="t d">
+  <title id="t">2 つのクロックと 2 つのタイマ</title>
+  <desc id="d">メインクロック 2.304 MHz から 1 実行サイクルと速いタイマが、サブクロックから遅いタイマと表示クロックが作られる図。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+  </style>
+  <defs><marker id="a52606D" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#52606D"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="329" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">2 つのクロックと 2 つのタイマ</text>
+  <text x="24" y="55" class="sub">どのクロックから何が作られ、どの状態で止まるか</text>
+  <rect x="24" y="80" width="200" height="70" rx="6" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="124" y="111.54" class="b" text-anchor="middle">メインクロック</text>
+  <text x="124" y="128.82" class="s" text-anchor="middle">2.304 MHz（セラミック発振）</text>
+  <rect x="290" y="80" width="210" height="70" rx="6" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="395" y="111.54" class="b" text-anchor="middle">÷ 3 = 768 kHz</text>
+  <text x="395" y="128.82" class="s" text-anchor="middle">1 実行サイクル 1.30 µs</text>
+  <rect x="566" y="80" width="180" height="70" rx="6" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+  <text x="656" y="111.54" class="b" text-anchor="middle">命令の実行</text>
+  <text x="656" y="128.82" class="s" text-anchor="middle">サイクル数 × 1.30 µs</text>
+  <polyline points="224,115 288,115" fill="none" stroke="#52606D" stroke-width="1.5" marker-end="url(#a52606D)"/>
+  <polyline points="500,115 564,115" fill="none" stroke="#52606D" stroke-width="1.5" marker-end="url(#a52606D)"/>
+  <rect x="290" y="170" width="210" height="52" rx="6" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+  <text x="395" y="192.54" class="b" text-anchor="middle">速いタイマ</text>
+  <text x="395" y="209.82" class="s" text-anchor="middle">4 ms か 16 ms（通常 16 ms）</text>
+  <polyline points="124,150 124,196 288,196" fill="none" stroke="#52606D" stroke-width="1.5" marker-end="url(#a52606D)"/>
+  <rect x="24" y="245" width="200" height="60" rx="6" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="124" y="271.54" class="b" text-anchor="middle">サブクロック</text>
+  <text x="124" y="288.82" class="s" text-anchor="middle">CR 発振、標準 40 kHz</text>
+  <rect x="290" y="236" width="210" height="34" rx="6" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+  <text x="395" y="257.32" class="s" text-anchor="middle">遅いタイマ 約 0.5 秒か約 2 秒</text>
+  <rect x="290" y="278" width="210" height="34" rx="6" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.5"/>
+  <text x="395" y="299.32" class="s" text-anchor="middle">表示クロック</text>
+  <polyline points="224,275 256,275 256,253 288,253" fill="none" stroke="#52606D" stroke-width="1.5" marker-end="url(#a52606D)"/>
+  <polyline points="256,275 256,295 288,295" fill="none" stroke="#52606D" stroke-width="1.5" marker-end="url(#a52606D)"/>
+  <rect x="566" y="170" width="390" height="142" rx="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="582" y="194" class="b">止まるとき</text>
+  <text x="582" y="220" class="s"></text>
+  <text x="600" y="216"></text>
+  <text x="760" y="216" class="b" text-anchor="middle">HALT</text>
+  <text x="880" y="216" class="b" text-anchor="middle">OFF</text>
+  <text x="600" y="246" class="b">速いタイマ</text>
+  <text x="760" y="246" text-anchor="middle" style="fill:#C0392B">止まる</text>
+  <text x="880" y="246" text-anchor="middle" style="fill:#C0392B">止まる</text>
+  <text x="600" y="276" class="b">遅いタイマ</text>
+  <text x="760" y="276" text-anchor="middle">動く</text>
+  <text x="880" y="276" text-anchor="middle" style="fill:#C0392B">止まる</text>
+</svg>

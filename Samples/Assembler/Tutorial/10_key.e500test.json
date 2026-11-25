@@ -1,0 +1,6 @@
+{
+  "program": "10_key.asm",
+  "tests": [
+    { "name": "A を押す", "basic": "CLS:CALL &HBEC01:PRINT CHR$ PEEK &HBEC00", "keys": ["A"], "maxCycles": 2304000, "expect": { "memory": { "KEY": [65] }, "screen": "A" } }
+  ]
+}

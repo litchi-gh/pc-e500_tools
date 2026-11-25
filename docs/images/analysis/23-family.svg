@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 640" width="980" height="640" role="img" aria-labelledby="t d">
+  <title id="t">ROM バージョンの系統</title>
+  <desc id="d">13 本の ROM を改訂と機種コードの格子に置き、比べたバージョンの組を矢印で結び、右に改訂ごとの主な変更を書いた図。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .lbl { font-size: 12px; fill: #52606D; paint-order: stroke; stroke: #FFFFFF; stroke-width: 4px; stroke-linejoin: round; }
+  </style>
+  <defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#52606D"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="639" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">ROM バージョンの系統</text>
+  <text x="24" y="55" class="sub">横が機種コード、縦が改訂。矢印は、この資料で前後のバージョンとして比べた組</text>
+  <rect x="92" y="74" width="104" height="34" rx="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1"/>
+  <text x="144" y="96" class="b" text-anchor="middle">機種コード 1</text>
+  <rect x="218" y="74" width="104" height="34" rx="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1"/>
+  <text x="270" y="96" class="b" text-anchor="middle">機種コード 2</text>
+  <rect x="344" y="74" width="104" height="34" rx="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1"/>
+  <text x="396" y="96" class="b" text-anchor="middle">機種コード 3</text>
+  <rect x="470" y="74" width="104" height="34" rx="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1"/>
+  <text x="522" y="96" class="b" text-anchor="middle">機種コード 4</text>
+  <rect x="596" y="74" width="104" height="34" rx="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1"/>
+  <text x="648" y="96" class="b" text-anchor="middle">機種コード 5</text>
+  <text x="78" y="158" class="b" text-anchor="end">改訂 2</text>
+  <polyline points="732,128 732,176" fill="none" stroke="#6B4FBB" stroke-width="3" stroke-linejoin="round"/>
+  <text x="742" y="148" class="s">手元で最も古い改訂</text>
+  <text x="78" y="238" class="b" text-anchor="end">改訂 3</text>
+  <polyline points="732,208 732,256" fill="none" stroke="#6B4FBB" stroke-width="3" stroke-linejoin="round"/>
+  <text x="742" y="228" class="s">BASIC の修正 16 件</text>
+  <text x="742" y="246" class="s">キー走査、行エディタ</text>
+  <text x="78" y="318" class="b" text-anchor="end">改訂 5</text>
+  <polyline points="732,288 732,336" fill="none" stroke="#6B4FBB" stroke-width="3" stroke-linejoin="round"/>
+  <text x="742" y="308" class="s">行エディタ、INPUT</text>
+  <text x="742" y="326" class="s">手元では機種コード 3 の最初</text>
+  <text x="78" y="398" class="b" text-anchor="end">改訂 6</text>
+  <polyline points="732,368 732,416" fill="none" stroke="#6B4FBB" stroke-width="3" stroke-linejoin="round"/>
+  <text x="742" y="388" class="s">文字列の代入、式の評価</text>
+  <text x="742" y="406" class="s">行列のピボット選択</text>
+  <text x="78" y="478" class="b" text-anchor="end">改訂 7</text>
+  <polyline points="732,448 732,496" fill="none" stroke="#6B4FBB" stroke-width="3" stroke-linejoin="round"/>
+  <text x="742" y="468" class="s">AER の式入力だけ</text>
+  <text x="78" y="558" class="b" text-anchor="end">改訂 8</text>
+  <polyline points="732,528 732,576" fill="none" stroke="#6B4FBB" stroke-width="3" stroke-linejoin="round"/>
+  <text x="742" y="548" class="s">構造化構文 9 語、拡張 ROM</text>
+  <text x="742" y="566" class="s">診断メニュー</text>
+  <text x="742" y="96" class="b">主な変更</text>
+  <polyline points="270,176 270,206" fill="none" stroke="#7B8794" stroke-width="1.2" stroke-linejoin="round" marker-end="url(#ar)"/>
+  <polyline points="270,256 270,366" fill="none" stroke="#7B8794" stroke-width="1.2" stroke-linejoin="round" marker-end="url(#ar)"/>
+  <polyline points="270,416 270,446" fill="none" stroke="#7B8794" stroke-width="1.2" stroke-linejoin="round" marker-end="url(#ar)"/>
+  <polyline points="396,336 396,366" fill="none" stroke="#7B8794" stroke-width="1.2" stroke-linejoin="round" marker-end="url(#ar)"/>
+  <polyline points="396,416 396,446" fill="none" stroke="#7B8794" stroke-width="1.2" stroke-linejoin="round" marker-end="url(#ar)"/>
+  <polyline points="396,496 396,526" fill="none" stroke="#7B8794" stroke-width="1.2" stroke-linejoin="round" marker-end="url(#ar)"/>
+  <polyline points="522,416 522,526" fill="none" stroke="#7B8794" stroke-width="1.2" stroke-linejoin="round" marker-end="url(#ar)"/>
+  <polyline points="648,496 648,526" fill="none" stroke="#7B8794" stroke-width="1.2" stroke-linejoin="round" marker-end="url(#ar)"/>
+  <polyline points="322,232 396,232 396,286" fill="none" stroke="#7B8794" stroke-width="1.2" stroke-linejoin="round" marker-end="url(#ar)"/>
+  <polyline points="196,152 218,152" fill="none" stroke="#7B8794" stroke-width="1.2" stroke-linejoin="round" stroke-dasharray="4 3"/>
+  <polyline points="308,496 308,508 610,508 610,496" fill="none" stroke="#2F855A" stroke-width="1.6" stroke-linejoin="round" stroke-dasharray="4 3"/>
+  <rect x="92" y="128" width="104" height="48" rx="6" fill="#E6F6EC" stroke="#2F855A" stroke-width="1"/>
+  <text x="144" y="148.5" class="b" text-anchor="middle">2.1</text>
+  <text x="144" y="165.5" class="s" text-anchor="middle">PC-1480U</text>
+  <rect x="218" y="128" width="104" height="48" rx="6" fill="#E6F6EC" stroke="#2F855A" stroke-width="1"/>
+  <text x="270" y="148.5" class="b" text-anchor="middle">2.2</text>
+  <text x="270" y="165.5" class="s" text-anchor="middle">PC-E500</text>
+  <rect x="218" y="208" width="104" height="48" rx="6" fill="#E6F6EC" stroke="#2F855A" stroke-width="1"/>
+  <text x="270" y="228.5" class="b" text-anchor="middle">3.2</text>
+  <text x="270" y="245.5" class="s" text-anchor="middle">PC-E500</text>
+  <rect x="344" y="288" width="104" height="48" rx="6" fill="#FFF5DF" stroke="#B7791F" stroke-width="1"/>
+  <text x="396" y="308.5" class="b" text-anchor="middle">5.3</text>
+  <text x="396" y="325.5" class="s" text-anchor="middle">PC-E500</text>
+  <rect x="218" y="368" width="104" height="48" rx="6" fill="#E6F6EC" stroke="#2F855A" stroke-width="1"/>
+  <text x="270" y="388.5" class="b" text-anchor="middle">6.2</text>
+  <text x="270" y="405.5" class="s" text-anchor="middle">PC-E500PJ</text>
+  <rect x="344" y="368" width="104" height="48" rx="6" fill="#FFF5DF" stroke="#B7791F" stroke-width="1"/>
+  <text x="396" y="388.5" class="b" text-anchor="middle">6.3</text>
+  <text x="396" y="405.5" class="s" text-anchor="middle">PC-E500</text>
+  <rect x="470" y="368" width="104" height="48" rx="6" fill="#E6F6EC" stroke="#2F855A" stroke-width="1"/>
+  <text x="522" y="388.5" class="b" text-anchor="middle">6.4</text>
+  <text x="522" y="405.5" class="s" text-anchor="middle">PC-1490UII</text>
+  <rect x="218" y="448" width="104" height="48" rx="6" fill="#E6F6EC" stroke="#2F855A" stroke-width="1"/>
+  <text x="270" y="468.5" class="b" text-anchor="middle">7.2</text>
+  <text x="270" y="485.5" class="s" text-anchor="middle">PC-E500</text>
+  <rect x="344" y="448" width="104" height="48" rx="6" fill="#FFF5DF" stroke="#B7791F" stroke-width="1"/>
+  <text x="396" y="468.5" class="b" text-anchor="middle">7.3</text>
+  <text x="396" y="485.5" class="s" text-anchor="middle">PC-E500</text>
+  <rect x="596" y="448" width="104" height="48" rx="6" fill="#E6F6EC" stroke="#2F855A" stroke-width="1"/>
+  <text x="648" y="468.5" class="b" text-anchor="middle">7.5</text>
+  <text x="648" y="485.5" class="s" text-anchor="middle">PC-E550</text>
+  <rect x="344" y="528" width="104" height="48" rx="6" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1"/>
+  <text x="396" y="548.5" class="b" text-anchor="middle">8.3</text>
+  <text x="396" y="565.5" class="s" text-anchor="middle">PC-E500S</text>
+  <rect x="470" y="528" width="104" height="48" rx="6" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1"/>
+  <text x="522" y="548.5" class="b" text-anchor="middle">8.4</text>
+  <text x="522" y="565.5" class="s" text-anchor="middle">PC-U6000</text>
+  <rect x="596" y="528" width="104" height="48" rx="6" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1"/>
+  <text x="648" y="548.5" class="b" text-anchor="middle">8.5</text>
+  <text x="648" y="565.5" class="s" text-anchor="middle">PC-E650</text>
+  <text x="566" y="512" class="lbl" text-anchor="middle">7.2 = 7.5</text>
+  <rect x="24" y="595" width="14" height="14" rx="3" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="44" y="606" class="s">日本語、ROM 256 KB（2.1 は実体 128 KB）</text>
+  <rect x="314.6" y="595" width="14" height="14" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="334.6" y="606" class="s">英語</text>
+  <rect x="382.6" y="595" width="14" height="14" rx="3" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="402.6" y="606" class="s">ROM 384 KB（8.3 は英語）</text>
+  <text x="24" y="628" class="s">点線: 2.1 と 2.2 は同じ改訂。7.2 と 7.5 はバージョン番号を除いてコードが同じ。改訂 4 の ROM は手元にない</text>
+</svg>

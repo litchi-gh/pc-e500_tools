@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 290" width="980" height="290" role="img" aria-labelledby="t d">
+  <title id="t">CAL モードのシンボル</title>
+  <desc id="d">CAL モードの液晶の、数、かっこ、メモリ、表示の形、HEX、上の記号の位置。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .xs { font-size: 11px; fill: #52606D; }
+    .r { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; fill: #B7791F; font-weight: 700; }
+    .j { font-size: 10px; fill: #B7791F; font-weight: 700; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .lcd { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 14px; font-weight: 700; fill: #24351D; }
+  </style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#7B8794"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="289" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">CAL モードのシンボル</text>
+  <text x="24" y="56" class="sub">数値は右寄せで表示される。計算の状態は、数値の上と右のシンボルで分かる</text>
+  <rect x="60" y="90" width="640" height="150" rx="8" fill="#BDD08B" stroke="#4A5A2A" stroke-width="1.2"/>
+  <text x="330" y="112" class="ms" xml:space="preserve">DEG</text>
+  <text x="560" y="112" class="ms" xml:space="preserve">E</text>
+  <rect x="120" y="140" width="34" height="52" rx="2" fill="#BDD08B" stroke="#24351D" stroke-width="1.2"/>
+  <rect x="125" y="146" width="24" height="8" rx="1" fill="#24351D" stroke="#24351D" stroke-width="1.2"/>
+  <rect x="125" y="158" width="6" height="5" rx="1" fill="#24351D" stroke="#24351D" stroke-width="1.2"/>
+  <rect x="134" y="158" width="6" height="5" rx="1" fill="#24351D" stroke="#24351D" stroke-width="1.2"/>
+  <rect x="143" y="158" width="6" height="5" rx="1" fill="#24351D" stroke="#24351D" stroke-width="1.2"/>
+  <rect x="125" y="166" width="6" height="5" rx="1" fill="#24351D" stroke="#24351D" stroke-width="1.2"/>
+  <rect x="134" y="166" width="6" height="5" rx="1" fill="#24351D" stroke="#24351D" stroke-width="1.2"/>
+  <rect x="143" y="166" width="6" height="5" rx="1" fill="#24351D" stroke="#24351D" stroke-width="1.2"/>
+  <rect x="125" y="174" width="6" height="5" rx="1" fill="#24351D" stroke="#24351D" stroke-width="1.2"/>
+  <rect x="134" y="174" width="6" height="5" rx="1" fill="#24351D" stroke="#24351D" stroke-width="1.2"/>
+  <rect x="143" y="174" width="6" height="5" rx="1" fill="#24351D" stroke="#24351D" stroke-width="1.2"/>
+  <rect x="125" y="182" width="6" height="5" rx="1" fill="#24351D" stroke="#24351D" stroke-width="1.2"/>
+  <rect x="134" y="182" width="6" height="5" rx="1" fill="#24351D" stroke="#24351D" stroke-width="1.2"/>
+  <rect x="143" y="182" width="6" height="5" rx="1" fill="#24351D" stroke="#24351D" stroke-width="1.2"/>
+  <text x="137" y="208" class="ms" xml:space="preserve" text-anchor="middle">CAL</text>
+  <text x="470" y="140" class="lcd" xml:space="preserve">( )</text>
+  <rect x="516" y="127" width="18" height="17" rx="2" fill="#24351D" stroke="#24351D" stroke-width="1.2"/>
+  <text x="525" y="140" text-anchor="middle" style="fill:#BDD08B;font-size:12px;font-weight:700">M</text>
+  <text x="542" y="140" class="lcd" xml:space="preserve">FIX</text>
+  <text x="520" y="192" class="lcd" xml:space="preserve" text-anchor="end">3.000</text>
+  <text x="540" y="192" class="lcd" xml:space="preserve">HEX</text>
+  <line x1="575" y1="108" x2="722" y2="96" stroke="#7B8794" stroke-width="1.4"/>
+  <text x="730" y="100" class="s">角度の単位。E はエラー</text>
+  <line x1="482" y1="122" x2="722" y2="120" stroke="#7B8794" stroke-width="1.4"/>
+  <text x="730" y="124" class="s">かっこの中を計算中</text>
+  <line x1="526" y1="146" x2="722" y2="150" stroke="#7B8794" stroke-width="1.4"/>
+  <text x="730" y="154" class="s">メモリが 0 以外</text>
+  <line x1="575" y1="138" x2="722" y2="176" stroke="#7B8794" stroke-width="1.4"/>
+  <text x="730" y="180" class="s">表示形式（FIX / SCI / ENG）</text>
+  <line x1="576" y1="188" x2="722" y2="202" stroke="#7B8794" stroke-width="1.4"/>
+  <text x="730" y="206" class="s">16 進</text>
+  <text x="60" y="266" class="s">シンボルの位置をまとめて示した図。FIX と HEX のように、同時には表示されないものもある</text>
+</svg>

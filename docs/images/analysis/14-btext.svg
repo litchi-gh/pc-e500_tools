@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 330" width="980" height="330" role="img">
+<title>BTEXT$ と BDATA$</title><desc>本体メモリの中のブロックと、BASIC が今使うプログラムと変数</desc>
+<style>
+text{font-family:"Yu Gothic UI","Meiryo","Noto Sans CJK JP",sans-serif;fill:#1F2933}
+.b{font-size:17px;font-weight:700}.s{font-size:15px}.t{font-size:13px;fill:#52606D}
+.m{font-family:Consolas,"DejaVu Sans Mono",monospace;font-size:16px}.ms{font-family:Consolas,"DejaVu Sans Mono",monospace;font-size:14px}
+</style>
+<rect width="980" height="330" fill="#fff"/>
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#52606D"/></marker></defs>
+<text x="30" y="34" class="b" text-anchor="start" xml:space="preserve">本体のメモリ（S1:）の中のブロック</text>
+<rect x="30" y="56" width="145" height="76" rx="4" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+<text x="102" y="88" class="m" text-anchor="middle" xml:space="preserve">TEXT.BAS</text>
+<text x="102" y="114" class="t" text-anchor="middle" xml:space="preserve">ふだんのプログラム</text>
+<rect x="185" y="56" width="145" height="76" rx="4" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+<text x="257" y="88" class="m" text-anchor="middle" xml:space="preserve">TWO.BAS</text>
+<text x="257" y="114" class="t" text-anchor="middle" xml:space="preserve">もう 1 つのプログラム</text>
+<rect x="340" y="56" width="145" height="76" rx="4" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+<text x="412" y="88" class="m" text-anchor="middle" xml:space="preserve">DATA.BAS</text>
+<text x="412" y="114" class="t" text-anchor="middle" xml:space="preserve">ふだんの変数</text>
+<rect x="495" y="56" width="145" height="76" rx="4" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+<text x="567" y="88" class="m" text-anchor="middle" xml:space="preserve">D2.BAS</text>
+<text x="567" y="114" class="t" text-anchor="middle" xml:space="preserve">もう 1 組の変数</text>
+<rect x="650" y="56" width="145" height="76" rx="4" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+<text x="722" y="88" class="m" text-anchor="middle" xml:space="preserve">FUNCKEY</text>
+<text x="722" y="114" class="t" text-anchor="middle" xml:space="preserve">PF キー</text>
+<rect x="805" y="56" width="145" height="76" rx="4" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+<text x="877" y="88" class="m" text-anchor="middle" xml:space="preserve">AER</text>
+<text x="877" y="114" class="t" text-anchor="middle" xml:space="preserve">式の記憶</text>
+<rect x="80" y="210" width="340" height="84" rx="4" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+<text x="250" y="240" class="m" text-anchor="middle" xml:space="preserve">BTEXT$</text>
+<text x="250" y="266" class="s" text-anchor="middle" xml:space="preserve">RUN、LIST、行の入力の相手</text>
+<text x="250" y="286" class="ms" text-anchor="middle" xml:space="preserve">"S1:TWO.BAS"</text>
+<rect x="500" y="210" width="340" height="84" rx="4" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+<text x="670" y="240" class="m" text-anchor="middle" xml:space="preserve">BDATA$</text>
+<text x="670" y="266" class="s" text-anchor="middle" xml:space="preserve">変数（A〜Z も）と配列の置き場所</text>
+<text x="670" y="286" class="ms" text-anchor="middle" xml:space="preserve">"S1:DATA.BAS"</text>
+<line x1="250" y1="208" x2="257" y2="138" stroke="#52606D" stroke-width="1.6" marker-end="url(#a)"/>
+<line x1="660" y1="208" x2="420" y2="138" stroke="#52606D" stroke-width="1.6" marker-end="url(#a)"/>
+<text x="290" y="180" class="t" text-anchor="start" xml:space="preserve">代入すると切り替わる</text>
+<text x="590" y="180" class="t" text-anchor="start" xml:space="preserve">代入すると切り替わる</text>
+</svg>

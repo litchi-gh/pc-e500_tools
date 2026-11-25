@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 560" width="980" height="560" role="img" aria-labelledby="t d">
+  <title id="t">点の座標から書く場所を求める</title>
+  <desc id="d">画面の点 (100, 13) と (200, 22) について、コントローラ、ページ X、Y アドレス、ビットを求める例。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .lbl { font-size: 12px; fill: #52606D; paint-order: stroke; stroke: #FFFFFF; stroke-width: 4px; stroke-linejoin: round; }
+  </style>
+  <defs></defs>
+  <rect x="0.5" y="0.5" width="979" height="559" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">点の座標から書く場所を求める</text>
+  <text x="24" y="55" class="sub">表示開始ライン = 0 のとき。x は左から 0〜239、y は上から 0〜31</text>
+  <rect x="70" y="110" width="224" height="112" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+  <text x="72" y="102" class="ms" xml:space="preserve">x=0</text>
+  <text x="182" y="242" class="b" text-anchor="middle">コントローラ 2</text>
+  <text x="182" y="262" class="m" xml:space="preserve" text-anchor="middle">Y = x</text>
+  <text x="182" y="280" class="m" xml:space="preserve" text-anchor="middle">X = y÷8</text>
+  <polyline points="70,138 294,138" fill="none" stroke="#B8C2CC" stroke-width="0.8"/>
+  <polyline points="70,166 294,166" fill="none" stroke="#B8C2CC" stroke-width="0.8"/>
+  <polyline points="70,194 294,194" fill="none" stroke="#B8C2CC" stroke-width="0.8"/>
+  <rect x="294" y="110" width="196" height="112" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="296" y="102" class="ms" xml:space="preserve">x=64</text>
+  <text x="392" y="242" class="b" text-anchor="middle">コントローラ 1</text>
+  <text x="392" y="262" class="m" xml:space="preserve" text-anchor="middle">Y = x − 64</text>
+  <text x="392" y="280" class="m" xml:space="preserve" text-anchor="middle">X = y÷8</text>
+  <polyline points="294,138 490,138" fill="none" stroke="#B8C2CC" stroke-width="0.8"/>
+  <polyline points="294,166 490,166" fill="none" stroke="#B8C2CC" stroke-width="0.8"/>
+  <polyline points="294,194 490,194" fill="none" stroke="#B8C2CC" stroke-width="0.8"/>
+  <rect x="490" y="110" width="196" height="112" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="492" y="102" class="ms" xml:space="preserve">x=120</text>
+  <text x="588" y="242" class="b" text-anchor="middle">コントローラ 1</text>
+  <text x="588" y="262" class="m" xml:space="preserve" text-anchor="middle">Y = 175 − x</text>
+  <text x="588" y="280" class="m" xml:space="preserve" text-anchor="middle">X = 4 + y÷8</text>
+  <polyline points="490,138 686,138" fill="none" stroke="#B8C2CC" stroke-width="0.8"/>
+  <polyline points="490,166 686,166" fill="none" stroke="#B8C2CC" stroke-width="0.8"/>
+  <polyline points="490,194 686,194" fill="none" stroke="#B8C2CC" stroke-width="0.8"/>
+  <rect x="686" y="110" width="224" height="112" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+  <text x="688" y="102" class="ms" xml:space="preserve">x=176</text>
+  <text x="798" y="242" class="b" text-anchor="middle">コントローラ 2</text>
+  <text x="798" y="262" class="m" xml:space="preserve" text-anchor="middle">Y = 239 − x</text>
+  <text x="798" y="280" class="m" xml:space="preserve" text-anchor="middle">X = 4 + y÷8</text>
+  <polyline points="686,138 910,138" fill="none" stroke="#B8C2CC" stroke-width="0.8"/>
+  <polyline points="686,166 910,166" fill="none" stroke="#B8C2CC" stroke-width="0.8"/>
+  <polyline points="686,194 910,194" fill="none" stroke="#B8C2CC" stroke-width="0.8"/>
+  <text x="64" y="128" class="ms" xml:space="preserve" text-anchor="end">y=0〜</text>
+  <text x="64" y="156" class="ms" xml:space="preserve" text-anchor="end">y=8〜</text>
+  <text x="64" y="184" class="ms" xml:space="preserve" text-anchor="end">y=16〜</text>
+  <text x="64" y="212" class="ms" xml:space="preserve" text-anchor="end">y=24〜</text>
+  <circle cx="420" cy="155.5" r="5" fill="#C0392B"/>
+  <text x="320" y="160.5" class="m" xml:space="preserve">A (100, 13)</text>
+  <circle cx="770" cy="187" r="5" fill="#C0392B"/>
+  <text x="780" y="192" class="m" xml:space="preserve">B (200, 22)</text>
+  <polyline points="24,304 956,304" fill="none" stroke="#D9E0E8" stroke-width="1"/>
+  <rect x="40" y="322" width="440" height="130" rx="8" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="58" y="346" class="b">A (100, 13)</text>
+  <text x="58" y="370">x = 100 は 64〜119 → コントローラ 1（左の式）</text>
+  <text x="58" y="391">X = 13 ÷ 8 = 1（余り 5）</text>
+  <text x="58" y="412">Y = 100 − 64 = 36</text>
+  <text x="58" y="433">ビット = 余り 5 → 値は 20h</text>
+  <rect x="500" y="322" width="440" height="130" rx="8" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="518" y="346" class="b">B (200, 22)</text>
+  <text x="518" y="370">x = 200 は 176〜239 → コントローラ 2（右の式）</text>
+  <text x="518" y="391">X = 4 + 22 ÷ 8 = 4 + 2 = 6（余り 6）</text>
+  <text x="518" y="412">Y = 239 − 200 = 39</text>
+  <text x="518" y="433">ビット = 余り 6 → 値は 40h</text>
+  <rect x="40" y="466" width="440" height="76" rx="8" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="58" y="488" class="m" xml:space="preserve">2008h ← B9h（ページ 1）</text>
+  <text x="58" y="509" class="m" xml:space="preserve">2008h ← 64h（Y = 36）</text>
+  <text x="58" y="530" class="m" xml:space="preserve">200Ah ← 20h（bit5 を点ける）</text>
+  <rect x="500" y="466" width="440" height="76" rx="8" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+  <text x="518" y="488" class="m" xml:space="preserve">2004h ← BEh（ページ 6）</text>
+  <text x="518" y="509" class="m" xml:space="preserve">2004h ← 67h（Y = 39）</text>
+  <text x="518" y="530" class="m" xml:space="preserve">2006h ← 40h（bit6 を点ける）</text>
+</svg>

@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 360" width="980" height="360" role="img" aria-labelledby="t d">
+  <title id="t">E8000h〜EBFFFh の中身</title>
+  <desc id="d">バージョン 3.2 と 8.5 について、E8000h から EBFFFh までの行列演算、エラーメッセージ、カセット、プリンタ、RS-232C、CE-140F の位置を 2 本の帯で示した図。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .lbl { font-size: 12px; fill: #52606D; paint-order: stroke; stroke: #FFFFFF; stroke-width: 4px; stroke-linejoin: round; }
+  </style>
+  <defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#52606D"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="359" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">E8000h〜EBFFFh の中身</text>
+  <text x="24" y="55" class="sub">バージョン 3.2 と 8.5。8.5 はエラーメッセージの表が拡張 ROM へ移り、デバイスのアドレスが前へずれている</text>
+  <text x="76" y="126" class="h" text-anchor="end">3.2</text>
+  <rect x="90" y="96" width="22.7753" height="48" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1"/>
+  <rect x="112.775" y="96" width="275.793" height="48" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="1"/>
+  <text x="250.672" y="125" class="s" text-anchor="middle">行列演算（FUNC デバイス）</text>
+  <rect x="388.569" y="96" width="43.5272" height="48" rx="0" fill="#FDECEA" stroke="#C0392B" stroke-width="1"/>
+  <text x="410.332" y="125" class="s" text-anchor="middle">エラー文</text>
+  <rect x="432.096" y="96" width="183.707" height="48" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="523.949" y="125" class="s" text-anchor="middle">カセット CAS:</text>
+  <rect x="615.803" y="96" width="77.3529" height="48" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1"/>
+  <text x="654.479" y="125" class="s" text-anchor="middle">プリンタ PRN:</text>
+  <rect x="693.156" y="96" width="159.116" height="48" rx="0" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1"/>
+  <text x="772.713" y="125" class="s" text-anchor="middle">RS-232C COM:</text>
+  <rect x="852.271" y="96" width="87.7289" height="48" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1"/>
+  <text x="896.136" y="125" class="s" text-anchor="middle">CE-140F X:Y:</text>
+  <text x="76" y="250" class="h" text-anchor="end">8.5</text>
+  <rect x="90" y="220" width="303.705" height="48" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="1"/>
+  <text x="241.852" y="249" class="s" text-anchor="middle">行列演算（FUNC デバイス）</text>
+  <rect x="393.705" y="220" width="183.707" height="48" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="485.558" y="249" class="s" text-anchor="middle">カセット CAS:</text>
+  <rect x="577.411" y="220" width="77.3529" height="48" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1"/>
+  <text x="616.088" y="249" class="s" text-anchor="middle">プリンタ PRN:</text>
+  <rect x="654.764" y="220" width="159.116" height="48" rx="0" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1"/>
+  <text x="734.322" y="249" class="s" text-anchor="middle">RS-232C COM:</text>
+  <rect x="813.88" y="220" width="126.12" height="48" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1"/>
+  <text x="876.94" y="249" class="s" text-anchor="middle">CE-140F X:Y:</text>
+  <text x="112.775" y="160" class="ms" xml:space="preserve">E81B7h</text>
+  <text x="388.569" y="160" class="ms" xml:space="preserve">E967Bh</text>
+  <text x="432.096" y="160" class="ms" xml:space="preserve">E99C2h</text>
+  <text x="615.803" y="160" class="ms" xml:space="preserve">EA797h</text>
+  <text x="693.156" y="160" class="ms" xml:space="preserve">EAD6Ah</text>
+  <text x="852.271" y="160" class="ms" xml:space="preserve">EB965h</text>
+  <text x="90" y="284" class="ms" xml:space="preserve">E8000h</text>
+  <text x="393.705" y="284" class="ms" xml:space="preserve">E96DEh</text>
+  <text x="577.411" y="284" class="ms" xml:space="preserve">EA4B3h</text>
+  <text x="654.764" y="284" class="ms" xml:space="preserve">EAA86h</text>
+  <text x="813.88" y="284" class="ms" xml:space="preserve">EB681h</text>
+  <polyline points="432.096,168 393.705,218" fill="none" stroke="#7B8794" stroke-width="1.2" stroke-linejoin="round" marker-end="url(#ar)" stroke-dasharray="4 3"/>
+  <polyline points="615.803,168 577.411,218" fill="none" stroke="#7B8794" stroke-width="1.2" stroke-linejoin="round" marker-end="url(#ar)" stroke-dasharray="4 3"/>
+  <polyline points="693.156,168 654.764,218" fill="none" stroke="#7B8794" stroke-width="1.2" stroke-linejoin="round" marker-end="url(#ar)" stroke-dasharray="4 3"/>
+  <polyline points="852.271,168 813.88,218" fill="none" stroke="#7B8794" stroke-width="1.2" stroke-linejoin="round" marker-end="url(#ar)" stroke-dasharray="4 3"/>
+  <polyline points="412.569,168 412.569,190" fill="none" stroke="#C0392B" stroke-width="1" stroke-linejoin="round"/>
+  <text x="406.569" y="204" class="lbl" text-anchor="end" style="fill:#C0392B">拡張 ROM 30A4Ah へ</text>
+  <text x="90" y="320" class="s">1 つの区切りは、次のデバイスのエントリまでを同じ色で塗ったもの。CE-140F の後ろには、BASIC のファイル命令が使う処理が続く</text>
+  <text x="90" y="340" class="s">3.2 の E8000h〜E81B6h（白）と、区切りの細かい境目は、この章の表にない部分</text>
+</svg>

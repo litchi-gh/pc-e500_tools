@@ -1,0 +1,42 @@
+; keycode.inc: キーの番号に名前を付けたもの（ふつうの文字は 'A' のように書ける）
+
+; KYBD_READ の A（00h のときは B が拡張コード）
+KEY_BRK   EQU $03       ; ON/BRK
+KEY_BS    EQU $08       ; BS
+KEY_CLR   EQU $0C       ; C-CE
+KEY_ENTER EQU $0D       ; RETURN
+KEY_INS   EQU $12       ; INS
+KEY_RIGHT EQU $1C       ; 右
+KEY_LEFT  EQU $1D       ; 左
+KEY_UP    EQU $1E       ; 上
+KEY_DOWN  EQU $1F       ; 下
+KEY_SPACE EQU $20       ; SPACE
+KEY_DEL   EQU $7F       ; DEL
+
+; KYBD_MATRIX・KYBD_PEEK の行列コード（A のビット 0〜6）。数字は MTX_0 + n、英字は MTX_A + n
+MTX_SHIFT EQU $01
+MTX_CTRL  EQU $02
+MTX_BRK   EQU $03
+MTX_OFF   EQU $04
+MTX_BASIC EQU $05
+MTX_MENU  EQU $06
+MTX_KANA  EQU $07
+MTX_BS    EQU $08
+MTX_CAPS  EQU $09
+MTX_2NDF  EQU $0A
+MTX_DEL   EQU $0B
+MTX_CLR   EQU $0C
+MTX_ENTER EQU $0D
+MTX_INS   EQU $12
+MTX_F1    EQU $13
+MTX_F2    EQU $14
+MTX_F3    EQU $15
+MTX_F4    EQU $16
+MTX_F5    EQU $17
+MTX_RIGHT EQU $1C
+MTX_LEFT  EQU $1D
+MTX_UP    EQU $1E
+MTX_DOWN  EQU $1F
+MTX_0     EQU $20
+MTX_SPACE EQU $30
+MTX_A     EQU $31

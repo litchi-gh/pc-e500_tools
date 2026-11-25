@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 300" width="980" height="300" role="img" aria-labelledby="t d">
+  <title id="t">FCS のファイル名の形</title>
+  <desc id="d">FCS に渡すファイル名の桁を、E:NOTE.TXT の例で 1 バイトずつ示した図。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+  </style>
+  <defs></defs>
+  <rect x="0.5" y="0.5" width="979" height="299" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">FCS のファイル名の形</text>
+  <text x="24" y="55" class="sub">名前と拡張子は桁が決まっている。足りない桁は空白（20h）で埋める</text>
+  <rect x="60" y="96" width="50" height="40" rx="0" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.5"/>
+  <text x="85" y="121.04" class="b" text-anchor="middle">E</text>
+  <text x="85" y="152" class="ms" xml:space="preserve" text-anchor="middle">45</text>
+  <rect x="110" y="96" width="50" height="40" rx="0" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.5"/>
+  <text x="135" y="121.04" class="b" text-anchor="middle">:</text>
+  <text x="135" y="152" class="ms" xml:space="preserve" text-anchor="middle">3A</text>
+  <rect x="160" y="96" width="50" height="40" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="185" y="121.04" class="b" text-anchor="middle">N</text>
+  <text x="185" y="152" class="ms" xml:space="preserve" text-anchor="middle">4E</text>
+  <rect x="210" y="96" width="50" height="40" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="235" y="121.04" class="b" text-anchor="middle">O</text>
+  <text x="235" y="152" class="ms" xml:space="preserve" text-anchor="middle">4F</text>
+  <rect x="260" y="96" width="50" height="40" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="285" y="121.04" class="b" text-anchor="middle">T</text>
+  <text x="285" y="152" class="ms" xml:space="preserve" text-anchor="middle">54</text>
+  <rect x="310" y="96" width="50" height="40" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="335" y="121.04" class="b" text-anchor="middle">E</text>
+  <text x="335" y="152" class="ms" xml:space="preserve" text-anchor="middle">45</text>
+  <rect x="360" y="96" width="50" height="40" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="385" y="121.04" class="b" text-anchor="middle">␣</text>
+  <text x="385" y="152" class="ms" xml:space="preserve" text-anchor="middle">20</text>
+  <rect x="410" y="96" width="50" height="40" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="435" y="121.04" class="b" text-anchor="middle">␣</text>
+  <text x="435" y="152" class="ms" xml:space="preserve" text-anchor="middle">20</text>
+  <rect x="460" y="96" width="50" height="40" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="485" y="121.04" class="b" text-anchor="middle">␣</text>
+  <text x="485" y="152" class="ms" xml:space="preserve" text-anchor="middle">20</text>
+  <rect x="510" y="96" width="50" height="40" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="535" y="121.04" class="b" text-anchor="middle">␣</text>
+  <text x="535" y="152" class="ms" xml:space="preserve" text-anchor="middle">20</text>
+  <rect x="560" y="96" width="50" height="40" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="585" y="121.04" class="b" text-anchor="middle">.</text>
+  <text x="585" y="152" class="ms" xml:space="preserve" text-anchor="middle">2E</text>
+  <rect x="610" y="96" width="50" height="40" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+  <text x="635" y="121.04" class="b" text-anchor="middle">T</text>
+  <text x="635" y="152" class="ms" xml:space="preserve" text-anchor="middle">54</text>
+  <rect x="660" y="96" width="50" height="40" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+  <text x="685" y="121.04" class="b" text-anchor="middle">X</text>
+  <text x="685" y="152" class="ms" xml:space="preserve" text-anchor="middle">58</text>
+  <rect x="710" y="96" width="50" height="40" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+  <text x="735" y="121.04" class="b" text-anchor="middle">T</text>
+  <text x="735" y="152" class="ms" xml:space="preserve" text-anchor="middle">54</text>
+  <rect x="760" y="96" width="50" height="40" rx="0" fill="#FDECEA" stroke="#C0392B" stroke-width="1.5"/>
+  <text x="785" y="121.04" class="b" text-anchor="middle">00h</text>
+  <text x="785" y="152" class="ms" xml:space="preserve" text-anchor="middle">00</text>
+  <polyline points="62,168 158,168" fill="none" stroke="#52606D" stroke-width="1.2"/>
+  <text x="110" y="186" class="s" text-anchor="middle">ドライブ 1〜5 文字と :</text>
+  <polyline points="162,168 558,168" fill="none" stroke="#52606D" stroke-width="1.2"/>
+  <text x="360" y="186" class="s" text-anchor="middle">名前 8 文字</text>
+  <polyline points="612,168 758,168" fill="none" stroke="#52606D" stroke-width="1.2"/>
+  <text x="685" y="186" class="s" text-anchor="middle">拡張子 3 文字</text>
+  <polyline points="762,168 808,168" fill="none" stroke="#52606D" stroke-width="1.2"/>
+  <text x="785" y="186" class="s" text-anchor="middle">終わり</text>
+  <text x="585" y="186" class="s" text-anchor="middle"></text>
+  <rect x="60" y="206" width="750" height="34" rx="6" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="435" y="227.32" class="s" text-anchor="middle">? は任意の 1 文字（0Ch 検索と 0Eh 削除）。* は使えない。詰めずに書くと別の名前になる</text>
+  <rect x="60" y="248" width="750" height="34" rx="6" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.5"/>
+  <text x="435" y="269.32" class="s" text-anchor="middle">0Dh（名前変更）の Y は、ドライブを付けない 12 文字（NOTE␣␣␣␣.TXT）。0Fh（空き容量）は E: だけでよい</text>
+</svg>

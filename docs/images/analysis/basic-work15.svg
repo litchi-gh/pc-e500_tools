@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 330" width="980" height="330" role="img" aria-labelledby="t d">
+  <title id="t">計算中の 15 バイト</title>
+  <desc id="d">単精度、倍精度、文字列を計算中に入れる 15 バイトの枠の割り当て。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .mb { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 15px; font-weight: 700; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .lbl { font-size: 12px; fill: #52606D; paint-order: stroke; stroke: #FFFFFF; stroke-width: 4px; stroke-linejoin: round; }
+  </style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#52606D"/></marker><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#C0392B"/></marker><marker id="ab" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2F6DB5"/></marker><marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2F855A"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="329" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h" xml:space="preserve">計算中の 15 バイト</text>
+  <text x="24" y="55" class="sub" xml:space="preserve">(bp)〜(bp+14)。アドレスは内部 RAM の相対。単精度、倍精度は公式 p.83、文字列は公式 p.84</text>
+  <text x="196" y="84" class="ms" text-anchor="middle" xml:space="preserve">+0</text>
+  <text x="248" y="84" class="ms" text-anchor="middle" xml:space="preserve">+1</text>
+  <text x="300" y="84" class="ms" text-anchor="middle" xml:space="preserve">+2</text>
+  <text x="352" y="84" class="ms" text-anchor="middle" xml:space="preserve">+3</text>
+  <text x="404" y="84" class="ms" text-anchor="middle" xml:space="preserve">+4</text>
+  <text x="456" y="84" class="ms" text-anchor="middle" xml:space="preserve">+5</text>
+  <text x="508" y="84" class="ms" text-anchor="middle" xml:space="preserve">+6</text>
+  <text x="560" y="84" class="ms" text-anchor="middle" xml:space="preserve">+7</text>
+  <text x="612" y="84" class="ms" text-anchor="middle" xml:space="preserve">+8</text>
+  <text x="664" y="84" class="ms" text-anchor="middle" xml:space="preserve">+9</text>
+  <text x="716" y="84" class="ms" text-anchor="middle" xml:space="preserve">+10</text>
+  <text x="768" y="84" class="ms" text-anchor="middle" xml:space="preserve">+11</text>
+  <text x="820" y="84" class="ms" text-anchor="middle" xml:space="preserve">+12</text>
+  <text x="872" y="84" class="ms" text-anchor="middle" xml:space="preserve">+13</text>
+  <text x="924" y="84" class="ms" text-anchor="middle" xml:space="preserve">+14</text>
+  <text x="24" y="118" class="b" xml:space="preserve">単精度</text>
+  <rect x="170" y="94" width="52" height="38" rx="0" fill="#FDECEA" stroke="#C0392B" stroke-width="1"/>
+  <text x="196" y="118" text-anchor="middle" style="font-size:12px;" xml:space="preserve">符号</text>
+  <rect x="222" y="94" width="52" height="38" rx="0" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1"/>
+  <text x="248" y="118" text-anchor="middle" style="font-size:12px;" xml:space="preserve">指数</text>
+  <rect x="274" y="94" width="52" height="38" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1"/>
+  <text x="300" y="118" text-anchor="middle" style="font-size:12px;" xml:space="preserve">桁上がり</text>
+  <rect x="326" y="94" width="260" height="38" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1"/>
+  <text x="456" y="118" text-anchor="middle" style="font-size:13px;" xml:space="preserve">仮数 5 バイト（10 桁）</text>
+  <rect x="586" y="94" width="104" height="38" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="638" y="118" text-anchor="middle" style="font-size:12px;" xml:space="preserve">補正 2 バイト</text>
+  <rect x="690" y="94" width="260" height="38" rx="0" fill="#FFFFFF" stroke="#B8C2CC" stroke-width="1"/>
+  <text x="820" y="118" text-anchor="middle" style="font-size:13px;" xml:space="preserve">未使用</text>
+  <text x="24" y="178" class="b" xml:space="preserve">倍精度</text>
+  <rect x="170" y="154" width="52" height="38" rx="0" fill="#FDECEA" stroke="#C0392B" stroke-width="1"/>
+  <text x="196" y="178" text-anchor="middle" style="font-size:12px;" xml:space="preserve">符号</text>
+  <rect x="222" y="154" width="52" height="38" rx="0" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1"/>
+  <text x="248" y="178" text-anchor="middle" style="font-size:12px;" xml:space="preserve">指数</text>
+  <rect x="274" y="154" width="52" height="38" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1"/>
+  <text x="300" y="178" text-anchor="middle" style="font-size:12px;" xml:space="preserve">桁上がり</text>
+  <rect x="326" y="154" width="520" height="38" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1"/>
+  <text x="586" y="178" text-anchor="middle" style="font-size:13px;" xml:space="preserve">仮数 10 バイト（20 桁）</text>
+  <rect x="846" y="154" width="104" height="38" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="898" y="178" text-anchor="middle" style="font-size:12px;" xml:space="preserve">補正 2 バイト</text>
+  <text x="24" y="238" class="b" xml:space="preserve">文字列</text>
+  <rect x="170" y="214" width="52" height="38" rx="0" fill="#FDECEA" stroke="#C0392B" stroke-width="1"/>
+  <text x="196" y="238" text-anchor="middle" style="font-size:12px;" xml:space="preserve">80h</text>
+  <rect x="222" y="214" width="156" height="38" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="1"/>
+  <text x="300" y="238" text-anchor="middle" style="font-size:13px;" xml:space="preserve">アドレス（下位、上位、拡張）</text>
+  <rect x="378" y="214" width="52" height="38" rx="0" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1"/>
+  <text x="404" y="238" text-anchor="middle" style="font-size:12px;" xml:space="preserve">長さ</text>
+  <rect x="430" y="214" width="520" height="38" rx="0" fill="#FFFFFF" stroke="#B8C2CC" stroke-width="1"/>
+  <text x="690" y="238" text-anchor="middle" style="font-size:13px;" xml:space="preserve">未使用</text>
+  <text x="24" y="290" xml:space="preserve">桁上がりと補正は、計算の途中の桁あふれと丸めのための場所です。桁上がりは通常 0 です。</text>
+</svg>

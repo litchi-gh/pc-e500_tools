@@ -1,0 +1,8 @@
+{
+  "program": "03_add.asm",
+  "tests": [
+    { "name": "3 + 4", "call": "start", "memory": { "DATA": [3, 4] }, "expect": { "memory": { "SUM": [7, 0] } } },
+    { "name": "200 + 100", "call": "start", "memory": { "DATA": [200, 100] }, "expect": { "memory": { "SUM": [44, 1] } } },
+    { "name": "BASIC から", "basic": "CLS:POKE &HBEC00,200,100:CALL &HBEC04:PRINT PEEK &HBEC02+256*PEEK &HBEC03", "expect": { "screen": "300" } }
+  ]
+}

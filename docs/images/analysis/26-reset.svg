@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 430" width="980" height="430" role="img" aria-labelledby="t d">
+  <title id="t">リセット直後の判定（8.5）</title>
+  <desc id="d">リセットのあと、ON キーの判定と SHIFT とカンマの判定で D8h の値が 0、1、3 に分かれることを示した流れ図。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .lbl { font-size: 12px; fill: #52606D; paint-order: stroke; stroke: #FFFFFF; stroke-width: 4px; stroke-linejoin: round; }
+  </style>
+  <defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#52606D"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="429" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">リセット直後の判定（8.5）</text>
+  <text x="24" y="55" class="sub">まず ON、次にキーの組。どの道を通っても F115Fh の共通の初期化に着く</text>
+  <rect x="40" y="84" width="220" height="56" rx="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1"/>
+  <text x="150" y="108.5" class="b" text-anchor="middle">F10BEh リセット</text>
+  <text x="150" y="125.5" class="s" text-anchor="middle">($D8) = 1、割り込み禁止</text>
+  <rect x="340" y="84" width="250" height="56" rx="6" fill="#FFF5DF" stroke="#B7791F" stroke-width="1"/>
+  <text x="465" y="108.5" class="b" text-anchor="middle">ON を押しているか</text>
+  <text x="465" y="125.5" class="s" text-anchor="middle">F10D4h（10 ms おいて F10DEh）</text>
+  <rect x="690" y="84" width="250" height="56" rx="6" fill="#FDECEA" stroke="#C0392B" stroke-width="1"/>
+  <text x="815" y="108.5" class="b" text-anchor="middle">F1151h で見直す</text>
+  <text x="815" y="125.5" class="s" text-anchor="middle">押されていれば ($D8) = 0</text>
+  <rect x="340" y="186" width="250" height="56" rx="6" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="465" y="210.5" class="b" text-anchor="middle">KO0 と KO4 以外は 0 か</text>
+  <text x="465" y="227.5" class="s" text-anchor="middle">F10E4h</text>
+  <rect x="340" y="264" width="250" height="56" rx="6" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="465" y="288.5" class="b" text-anchor="middle">KO0 は 40h、KO4 は 10h か</text>
+  <text x="465" y="305.5" class="s" text-anchor="middle">F1105h、F1122h</text>
+  <rect x="40" y="264" width="220" height="56" rx="6" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1"/>
+  <text x="150" y="288.5" class="b" text-anchor="middle">($D8) = 3</text>
+  <text x="150" y="305.5" class="s" text-anchor="middle">F1144h（診断メニュー）</text>
+  <rect x="690" y="225" width="250" height="56" rx="6" fill="#E6F6EC" stroke="#2F855A" stroke-width="1"/>
+  <text x="815" y="249.5" class="b" text-anchor="middle">($D8) = 1 のまま</text>
+  <text x="815" y="266.5" class="s" text-anchor="middle">F114Ah（通常）</text>
+  <rect x="340" y="356" width="250" height="52" rx="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1"/>
+  <text x="465" y="378.5" class="b" text-anchor="middle">F115Fh 共通の初期化</text>
+  <text x="465" y="395.5" class="s" text-anchor="middle">FFFD8h の再起動もここへ</text>
+  <polyline points="260,112 338,112" fill="none" stroke="#7B8794" stroke-width="1.2" stroke-linejoin="round" marker-end="url(#ar)"/>
+  <polyline points="590,112 688,112" fill="none" stroke="#7B8794" stroke-width="1.2" stroke-linejoin="round" marker-end="url(#ar)"/>
+  <text x="606" y="104" class="s">押している</text>
+  <polyline points="465,140 465,184" fill="none" stroke="#7B8794" stroke-width="1.2" stroke-linejoin="round" marker-end="url(#ar)"/>
+  <text x="472" y="166" class="s">押していない</text>
+  <polyline points="465,242 465,262" fill="none" stroke="#7B8794" stroke-width="1.2" stroke-linejoin="round" marker-end="url(#ar)"/>
+  <polyline points="340,292 262,292" fill="none" stroke="#7B8794" stroke-width="1.2" stroke-linejoin="round" marker-end="url(#ar)"/>
+  <text x="285" y="284" class="s">はい</text>
+  <polyline points="590,214 640,214 640,253 688,253" fill="none" stroke="#7B8794" stroke-width="1.2" stroke-linejoin="round" marker-end="url(#ar)"/>
+  <polyline points="590,292 640,292 640,253" fill="none" stroke="#7B8794" stroke-width="1.2" stroke-linejoin="round"/>
+  <text x="598" y="206" class="s">いいえ</text>
+  <polyline points="150,320 150,382 338,382" fill="none" stroke="#7B8794" stroke-width="1.2" stroke-linejoin="round" marker-end="url(#ar)"/>
+  <polyline points="815,281 815,374 592,374" fill="none" stroke="#7B8794" stroke-width="1.2" stroke-linejoin="round" marker-end="url(#ar)"/>
+  <polyline points="950,112 960,112 960,392 592,392" fill="none" stroke="#7B8794" stroke-width="1.2" stroke-linejoin="round" marker-end="url(#ar)"/>
+  <polyline points="940,112 952,112" fill="none" stroke="#7B8794" stroke-width="1.2" stroke-linejoin="round"/>
+</svg>

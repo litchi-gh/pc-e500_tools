@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 330" width="980" height="330" role="img" aria-labelledby="t d">
+  <title id="t">1 バイトを送る時間（1200 bps、8N1）</title>
+  <desc id="d">ER と RS を上げ、2 ms 待ち、8.3 ms で 1 バイト送り、2 ms 待って下げる波形。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+  </style>
+  <defs></defs>
+  <rect x="0.5" y="0.5" width="979" height="329" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">1 バイトを送る時間（1200 bps、8N1）</text>
+  <text x="24" y="55" class="sub">信号を上げて待ち、1 バイト送り、待って下げる。1 バイトあたり約 12.3 ms</text>
+  <text x="24" y="112" class="b">ER、RS</text>
+  <text x="24" y="182" class="b">データ</text>
+  <polyline points="110,124 130,124 130,92 919.333,92 919.333,124 943.333,124" fill="none" stroke="#2F6DB5" stroke-width="2"/>
+  <polyline points="110,162 258,162" fill="none" stroke="#B7791F" stroke-width="2"/>
+  <polyline points="791.333,162 943.333,162" fill="none" stroke="#B7791F" stroke-width="2"/>
+  <rect x="258" y="162" width="53.3333" height="32" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="284.667" y="181.96" class="ms" xml:space="preserve" text-anchor="middle">開始</text>
+  <rect x="311.333" y="162" width="53.3333" height="32" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="338" y="181.96" class="ms" xml:space="preserve" text-anchor="middle">b0</text>
+  <rect x="364.667" y="162" width="53.3333" height="32" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="391.333" y="181.96" class="ms" xml:space="preserve" text-anchor="middle">b1</text>
+  <rect x="418" y="162" width="53.3333" height="32" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="444.667" y="181.96" class="ms" xml:space="preserve" text-anchor="middle">b2</text>
+  <rect x="471.333" y="162" width="53.3333" height="32" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="498" y="181.96" class="ms" xml:space="preserve" text-anchor="middle">b3</text>
+  <rect x="524.667" y="162" width="53.3333" height="32" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="551.333" y="181.96" class="ms" xml:space="preserve" text-anchor="middle">b4</text>
+  <rect x="578" y="162" width="53.3333" height="32" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="604.667" y="181.96" class="ms" xml:space="preserve" text-anchor="middle">b5</text>
+  <rect x="631.333" y="162" width="53.3333" height="32" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="658" y="181.96" class="ms" xml:space="preserve" text-anchor="middle">b6</text>
+  <rect x="684.667" y="162" width="53.3333" height="32" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="711.333" y="181.96" class="ms" xml:space="preserve" text-anchor="middle">b7</text>
+  <rect x="738" y="162" width="53.3333" height="32" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="764.667" y="181.96" class="ms" xml:space="preserve" text-anchor="middle">停止</text>
+  <polyline points="132,216 256,216" fill="none" stroke="#52606D" stroke-width="1.5"/>
+  <polyline points="132,210 132,222" fill="none" stroke="#52606D" stroke-width="1.5"/>
+  <polyline points="256,210 256,222" fill="none" stroke="#52606D" stroke-width="1.5"/>
+  <text x="194" y="240" class="s" text-anchor="middle">2 ms</text>
+  <polyline points="260,216 789.333,216" fill="none" stroke="#52606D" stroke-width="1.5"/>
+  <polyline points="260,210 260,222" fill="none" stroke="#52606D" stroke-width="1.5"/>
+  <polyline points="789.333,210 789.333,222" fill="none" stroke="#52606D" stroke-width="1.5"/>
+  <text x="524.667" y="240" class="s" text-anchor="middle">10 ビット ÷ 1200 = 8.3 ms</text>
+  <polyline points="793.333,216 917.333,216" fill="none" stroke="#52606D" stroke-width="1.5"/>
+  <polyline points="793.333,210 793.333,222" fill="none" stroke="#52606D" stroke-width="1.5"/>
+  <polyline points="917.333,210 917.333,222" fill="none" stroke="#52606D" stroke-width="1.5"/>
+  <text x="855.333" y="240" class="s" text-anchor="middle">2 ms</text>
+  <text x="24" y="284" class="s">合計 2 + 8.3 + 2 = 約 12.3 ms。待ちの 2 ms は BFD39h の既定値。CS が Low の間は、送る前に High になるまで待つ。</text>
+</svg>

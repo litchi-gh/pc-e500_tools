@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 600" width="980" height="600" role="img" aria-labelledby="t d">
+  <title id="t">外部メモリのアドレスの作り方</title>
+  <desc id="d">外部メモリのアドレッシングモードごとに、実効アドレスと、実行後の X の値を示した図。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .mb { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; font-weight: 700; }
+  </style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#52606D"/></marker><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#C0392B"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="599" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h" xml:space="preserve">外部メモリのアドレスの作り方</text>
+  <text x="24" y="55" class="sub" xml:space="preserve">例: X = B8000h、内部 RAM の 30h〜32h = 00 90 0B。転送は BA（2 バイト）</text>
+  <rect x="24" y="74" width="250" height="40" rx="6" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="38" y="99" class="b" xml:space="preserve">X</text>
+  <text x="66" y="99" class="mb" xml:space="preserve">B8000h</text>
+  <rect x="290" y="74" width="400" height="40" rx="6" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="304" y="99" class="b" xml:space="preserve">(30h) の 3 バイト</text>
+  <text x="440" y="99" class="mb" xml:space="preserve">00 90 0B  →  B9000h</text>
+  <text x="24" y="142" class="b" xml:space="preserve">書き方</text>
+  <text x="190" y="142" class="b" xml:space="preserve">アドレスの作り方</text>
+  <text x="520" y="142" class="b" xml:space="preserve">読む所（2 バイト）</text>
+  <text x="700" y="142" class="b" xml:space="preserve">実行後の X</text>
+  <path d="M24 150L956 150" fill="none" stroke="#D9E0E8" stroke-width="1.6"/>
+  <rect x="24" y="160" width="140" height="36" rx="4" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="36" y="183" class="mb" xml:space="preserve">[0BED00h]</text>
+  <text x="190" y="183" xml:space="preserve">命令の中の 3 バイト</text>
+  <path d="M470 178L506 178" fill="none" stroke="#52606D" stroke-width="1.6" marker-end="url(#a)"/>
+  <rect x="520" y="160" width="160" height="36" rx="4" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="600" y="183" class="m" xml:space="preserve" text-anchor="middle">BED00h〜BED01h</text>
+  <rect x="700" y="160" width="100" height="36" rx="4" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.2"/>
+  <text x="750" y="183" class="mb" xml:space="preserve" text-anchor="middle">B8000h</text>
+  <text x="814" y="183" class="s" xml:space="preserve">変わらない</text>
+  <rect x="24" y="206" width="140" height="36" rx="4" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="36" y="229" class="mb" xml:space="preserve">[X]</text>
+  <text x="190" y="229" xml:space="preserve">X</text>
+  <path d="M470 224L506 224" fill="none" stroke="#52606D" stroke-width="1.6" marker-end="url(#a)"/>
+  <rect x="520" y="206" width="160" height="36" rx="4" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="600" y="229" class="m" xml:space="preserve" text-anchor="middle">B8000h〜B8001h</text>
+  <rect x="700" y="206" width="100" height="36" rx="4" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.2"/>
+  <text x="750" y="229" class="mb" xml:space="preserve" text-anchor="middle">B8000h</text>
+  <text x="814" y="229" class="s" xml:space="preserve">変わらない</text>
+  <rect x="24" y="252" width="140" height="36" rx="4" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="36" y="275" class="mb" xml:space="preserve">[X+10h]</text>
+  <text x="190" y="275" xml:space="preserve">X + 10h</text>
+  <path d="M470 270L506 270" fill="none" stroke="#52606D" stroke-width="1.6" marker-end="url(#a)"/>
+  <rect x="520" y="252" width="160" height="36" rx="4" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="600" y="275" class="m" xml:space="preserve" text-anchor="middle">B8010h〜B8011h</text>
+  <rect x="700" y="252" width="100" height="36" rx="4" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.2"/>
+  <text x="750" y="275" class="mb" xml:space="preserve" text-anchor="middle">B8000h</text>
+  <text x="814" y="275" class="s" xml:space="preserve">変わらない</text>
+  <rect x="24" y="298" width="140" height="36" rx="4" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="36" y="321" class="mb" xml:space="preserve">[X-1]</text>
+  <text x="190" y="321" xml:space="preserve">X − 1</text>
+  <path d="M470 316L506 316" fill="none" stroke="#52606D" stroke-width="1.6" marker-end="url(#a)"/>
+  <rect x="520" y="298" width="160" height="36" rx="4" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="600" y="321" class="m" xml:space="preserve" text-anchor="middle">B7FFFh〜B8000h</text>
+  <rect x="700" y="298" width="100" height="36" rx="4" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.2"/>
+  <text x="750" y="321" class="mb" xml:space="preserve" text-anchor="middle">B8000h</text>
+  <text x="814" y="321" class="s" xml:space="preserve">変わらない</text>
+  <rect x="24" y="344" width="140" height="36" rx="4" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="36" y="367" class="mb" xml:space="preserve">[X++]</text>
+  <text x="190" y="367" xml:space="preserve">X を使ってから、幅の 2 を足す</text>
+  <path d="M470 362L506 362" fill="none" stroke="#52606D" stroke-width="1.6" marker-end="url(#a)"/>
+  <rect x="520" y="344" width="160" height="36" rx="4" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="600" y="367" class="m" xml:space="preserve" text-anchor="middle">B8000h〜B8001h</text>
+  <rect x="700" y="344" width="100" height="36" rx="4" fill="#FDECEA" stroke="#C0392B" stroke-width="1.2"/>
+  <text x="750" y="367" class="mb" xml:space="preserve" text-anchor="middle">B8002h</text>
+  <text x="814" y="367" class="s" xml:space="preserve">変わる</text>
+  <rect x="24" y="390" width="140" height="36" rx="4" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="36" y="413" class="mb" xml:space="preserve">[--X]</text>
+  <text x="190" y="413" xml:space="preserve">先に幅の 2 を引いてから使う</text>
+  <path d="M470 408L506 408" fill="none" stroke="#52606D" stroke-width="1.6" marker-end="url(#a)"/>
+  <rect x="520" y="390" width="160" height="36" rx="4" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="600" y="413" class="m" xml:space="preserve" text-anchor="middle">B7FFEh〜B7FFFh</text>
+  <rect x="700" y="390" width="100" height="36" rx="4" fill="#FDECEA" stroke="#C0392B" stroke-width="1.2"/>
+  <text x="750" y="413" class="mb" xml:space="preserve" text-anchor="middle">B7FFEh</text>
+  <text x="814" y="413" class="s" xml:space="preserve">変わる</text>
+  <rect x="24" y="436" width="140" height="36" rx="4" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="36" y="459" class="mb" xml:space="preserve">[(30h)]</text>
+  <text x="190" y="459" xml:space="preserve">(30h) のポインタ</text>
+  <path d="M470 454L506 454" fill="none" stroke="#52606D" stroke-width="1.6" marker-end="url(#a)"/>
+  <rect x="520" y="436" width="160" height="36" rx="4" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="600" y="459" class="m" xml:space="preserve" text-anchor="middle">B9000h〜B9001h</text>
+  <rect x="700" y="436" width="100" height="36" rx="4" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.2"/>
+  <text x="750" y="459" class="mb" xml:space="preserve" text-anchor="middle">B8000h</text>
+  <text x="814" y="459" class="s" xml:space="preserve">変わらない</text>
+  <rect x="24" y="482" width="140" height="36" rx="4" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="36" y="505" class="mb" xml:space="preserve">[(30h)+5]</text>
+  <text x="190" y="505" xml:space="preserve">(30h) のポインタ + 5</text>
+  <path d="M470 500L506 500" fill="none" stroke="#52606D" stroke-width="1.6" marker-end="url(#a)"/>
+  <rect x="520" y="482" width="160" height="36" rx="4" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="600" y="505" class="m" xml:space="preserve" text-anchor="middle">B9005h〜B9006h</text>
+  <rect x="700" y="482" width="100" height="36" rx="4" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.2"/>
+  <text x="750" y="505" class="mb" xml:space="preserve" text-anchor="middle">B8000h</text>
+  <text x="814" y="505" class="s" xml:space="preserve">変わらない</text>
+  <rect x="24" y="542" width="932" height="34" rx="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="36" y="563" class="s" xml:space="preserve" style="fill:#1F2933">[r3±n] と [(n)±m] の変位は 0〜255。ポインタの 3 バイトの上位 4 ビットは無視。動く幅は A と IL で 1、BA と I で 2、X、Y、U、S で 3。</text>
+</svg>

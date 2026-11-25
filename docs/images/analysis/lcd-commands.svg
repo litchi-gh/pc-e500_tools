@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 420" width="980" height="420" role="img" aria-labelledby="t d">
+  <title id="t">命令のビットの形</title>
+  <desc id="d">7 つの命令のうち、8 ビットの値で書く 4 つと、読み出す状態バイトのビットの割り当て。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .lbl { font-size: 12px; fill: #52606D; paint-order: stroke; stroke: #FFFFFF; stroke-width: 4px; stroke-linejoin: round; }
+  </style>
+  <defs></defs>
+  <rect x="0.5" y="0.5" width="979" height="419" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">命令のビットの形</text>
+  <text x="24" y="55" class="sub">上位のビットが命令の種類を表し、残りが値になる</text>
+  <text x="255" y="84" class="ms" xml:space="preserve" text-anchor="middle">DB7</text>
+  <text x="305" y="84" class="ms" xml:space="preserve" text-anchor="middle">DB6</text>
+  <text x="355" y="84" class="ms" xml:space="preserve" text-anchor="middle">DB5</text>
+  <text x="405" y="84" class="ms" xml:space="preserve" text-anchor="middle">DB4</text>
+  <text x="455" y="84" class="ms" xml:space="preserve" text-anchor="middle">DB3</text>
+  <text x="505" y="84" class="ms" xml:space="preserve" text-anchor="middle">DB2</text>
+  <text x="555" y="84" class="ms" xml:space="preserve" text-anchor="middle">DB1</text>
+  <text x="605" y="84" class="ms" xml:space="preserve" text-anchor="middle">DB0</text>
+  <text x="40" y="116" class="b">表示 ON/OFF</text>
+  <rect x="230" y="94" width="50" height="34" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="255" y="116" class="m" xml:space="preserve" text-anchor="middle">0</text>
+  <rect x="280" y="94" width="50" height="34" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="305" y="116" class="m" xml:space="preserve" text-anchor="middle">0</text>
+  <rect x="330" y="94" width="50" height="34" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="355" y="116" class="m" xml:space="preserve" text-anchor="middle">1</text>
+  <rect x="380" y="94" width="50" height="34" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="405" y="116" class="m" xml:space="preserve" text-anchor="middle">1</text>
+  <rect x="430" y="94" width="50" height="34" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="455" y="116" class="m" xml:space="preserve" text-anchor="middle">1</text>
+  <rect x="480" y="94" width="50" height="34" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="505" y="116" class="m" xml:space="preserve" text-anchor="middle">1</text>
+  <rect x="530" y="94" width="50" height="34" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="555" y="116" class="m" xml:space="preserve" text-anchor="middle">1</text>
+  <rect x="580" y="94" width="50" height="34" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+  <text x="605" y="116" class="m" xml:space="preserve" text-anchor="middle">1/0</text>
+  <text x="650" y="116" class="s">3Fh で ON、3Eh で OFF</text>
+  <text x="40" y="166" class="b">表示開始ライン</text>
+  <rect x="230" y="144" width="50" height="34" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="255" y="166" class="m" xml:space="preserve" text-anchor="middle">1</text>
+  <rect x="280" y="144" width="50" height="34" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="305" y="166" class="m" xml:space="preserve" text-anchor="middle">1</text>
+  <rect x="330" y="144" width="300" height="34" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="480" y="166" class="m" xml:space="preserve" text-anchor="middle">開始ライン L（0–63）</text>
+  <text x="650" y="166" class="s">C0h + L。例：L = 8 なら C8h</text>
+  <text x="40" y="216" class="b">ページセット</text>
+  <rect x="230" y="194" width="50" height="34" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="255" y="216" class="m" xml:space="preserve" text-anchor="middle">1</text>
+  <rect x="280" y="194" width="50" height="34" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="305" y="216" class="m" xml:space="preserve" text-anchor="middle">0</text>
+  <rect x="330" y="194" width="50" height="34" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="355" y="216" class="m" xml:space="preserve" text-anchor="middle">1</text>
+  <rect x="380" y="194" width="50" height="34" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="405" y="216" class="m" xml:space="preserve" text-anchor="middle">1</text>
+  <rect x="430" y="194" width="50" height="34" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="455" y="216" class="m" xml:space="preserve" text-anchor="middle">1</text>
+  <rect x="480" y="194" width="150" height="34" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="555" y="216" class="m" xml:space="preserve" text-anchor="middle">X（0–7）</text>
+  <text x="650" y="216" class="s">B8h + X。例：X = 5 なら BDh</text>
+  <text x="40" y="266" class="b">Y アドレスセット</text>
+  <rect x="230" y="244" width="50" height="34" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="255" y="266" class="m" xml:space="preserve" text-anchor="middle">0</text>
+  <rect x="280" y="244" width="50" height="34" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="305" y="266" class="m" xml:space="preserve" text-anchor="middle">1</text>
+  <rect x="330" y="244" width="300" height="34" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="480" y="266" class="m" xml:space="preserve" text-anchor="middle">Y（0–63）</text>
+  <text x="650" y="266" class="s">40h + Y。例：Y = 36 なら 64h</text>
+  <text x="40" y="326" class="b">ステータス（読む）</text>
+  <rect x="230" y="304" width="50" height="34" rx="0" fill="#FDECEA" stroke="#C0392B" stroke-width="1.5"/>
+  <text x="255" y="326" class="m" xml:space="preserve" text-anchor="middle">BUSY</text>
+  <rect x="280" y="304" width="50" height="34" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="305" y="326" class="m" xml:space="preserve" text-anchor="middle">0</text>
+  <rect x="330" y="304" width="50" height="34" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="355" y="326" class="m" xml:space="preserve" text-anchor="middle">ON/OFF</text>
+  <rect x="380" y="304" width="50" height="34" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="405" y="326" class="m" xml:space="preserve" text-anchor="middle">RESET</text>
+  <rect x="430" y="304" width="50" height="34" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="455" y="326" class="m" xml:space="preserve" text-anchor="middle">0</text>
+  <rect x="480" y="304" width="50" height="34" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="505" y="326" class="m" xml:space="preserve" text-anchor="middle">0</text>
+  <rect x="530" y="304" width="50" height="34" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="555" y="326" class="m" xml:space="preserve" text-anchor="middle">0</text>
+  <rect x="580" y="304" width="50" height="34" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="605" y="326" class="m" xml:space="preserve" text-anchor="middle">0</text>
+  <text x="650" y="326" class="s">BUSY = 1 の間の命令は無視される</text>
+  <text x="40" y="374">ON/OFF のビットは、1 が「表示 OFF」。命令の値（3Fh = ON）とは向きが逆になっている</text>
+  <text x="40" y="398" class="s">RESET のビットは、PC-E500 では常に 0</text>
+</svg>

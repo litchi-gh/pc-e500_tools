@@ -1,0 +1,7 @@
+{
+  "program": "04_loop.asm",
+  "tests": [
+    { "name": "1〜10", "call": "start", "expect": { "memory": { "SUM": [55, 0] } } },
+    { "name": "1〜100", "call": "start", "memory": { "N": [100] }, "expect": { "memory": { "SUM": [186, 19] } } }
+  ]
+}

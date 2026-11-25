@@ -1,0 +1,189 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 520" width="980" height="520" role="img" aria-labelledby="t d">
+  <title id="t">E ポートと KO のビット</title>
+  <desc id="d">E ポートの出力 F3h、F4h、入力 F5h、F6h と、KO の F1h のビットが、11 ピン、15 ピン、表示電源、電池の制御のどれにつながるかを示した図。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .mb { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; font-weight: 700; }
+  </style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#52606D"/></marker><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#C0392B"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="519" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h" xml:space="preserve">E ポートと KO のビット</text>
+  <text x="24" y="55" class="sub" xml:space="preserve">上の数字がビット番号。内部 RAM のアドレスごとに並べた</text>
+  <text x="24" y="118" class="b" xml:space="preserve">EOL（出力）</text>
+  <text x="24" y="136" class="s" xml:space="preserve">F3h</text>
+  <rect x="150" y="96" width="97" height="50" rx="3" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="198" y="91" class="ms" xml:space="preserve" text-anchor="middle">7</text>
+  <text x="198" y="116" class="mb" xml:space="preserve" text-anchor="middle">E7</text>
+  <text x="198" y="136" class="s" xml:space="preserve" text-anchor="middle"></text>
+  <rect x="251" y="96" width="97" height="50" rx="3" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="299" y="91" class="ms" xml:space="preserve" text-anchor="middle">6</text>
+  <text x="299" y="116" class="mb" xml:space="preserve" text-anchor="middle">E6</text>
+  <text x="299" y="136" class="s" xml:space="preserve" text-anchor="middle">11 ピン BUSY</text>
+  <rect x="352" y="96" width="97" height="50" rx="3" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="400" y="91" class="ms" xml:space="preserve" text-anchor="middle">5</text>
+  <text x="400" y="116" class="mb" xml:space="preserve" text-anchor="middle">E5</text>
+  <text x="400" y="136" class="s" xml:space="preserve" text-anchor="middle"></text>
+  <rect x="453" y="96" width="97" height="50" rx="3" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="501" y="91" class="ms" xml:space="preserve" text-anchor="middle">4</text>
+  <text x="501" y="116" class="mb" xml:space="preserve" text-anchor="middle">E4</text>
+  <text x="501" y="136" class="s" xml:space="preserve" text-anchor="middle">表示電源</text>
+  <rect x="554" y="96" width="97" height="50" rx="3" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="602" y="91" class="ms" xml:space="preserve" text-anchor="middle">3</text>
+  <text x="602" y="116" class="mb" xml:space="preserve" text-anchor="middle">E3</text>
+  <text x="602" y="136" class="s" xml:space="preserve" text-anchor="middle">電池電圧</text>
+  <rect x="655" y="96" width="97" height="50" rx="3" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="703" y="91" class="ms" xml:space="preserve" text-anchor="middle">2</text>
+  <text x="703" y="116" class="mb" xml:space="preserve" text-anchor="middle">E2</text>
+  <text x="703" y="136" class="s" xml:space="preserve" text-anchor="middle"></text>
+  <rect x="756" y="96" width="97" height="50" rx="3" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="804" y="91" class="ms" xml:space="preserve" text-anchor="middle">1</text>
+  <text x="804" y="116" class="mb" xml:space="preserve" text-anchor="middle">E1</text>
+  <text x="804" y="136" class="s" xml:space="preserve" text-anchor="middle"></text>
+  <rect x="857" y="96" width="97" height="50" rx="3" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="905" y="91" class="ms" xml:space="preserve" text-anchor="middle">0</text>
+  <text x="905" y="116" class="mb" xml:space="preserve" text-anchor="middle">E0</text>
+  <text x="905" y="136" class="s" xml:space="preserve" text-anchor="middle"></text>
+  <text x="24" y="198" class="b" xml:space="preserve">EOH（出力）</text>
+  <text x="24" y="216" class="s" xml:space="preserve">F4h</text>
+  <rect x="150" y="176" width="97" height="50" rx="3" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="198" y="171" class="ms" xml:space="preserve" text-anchor="middle">7</text>
+  <text x="198" y="196" class="mb" xml:space="preserve" text-anchor="middle">E15</text>
+  <text x="198" y="216" class="s" xml:space="preserve" text-anchor="middle"></text>
+  <rect x="251" y="176" width="97" height="50" rx="3" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="299" y="171" class="ms" xml:space="preserve" text-anchor="middle">6</text>
+  <text x="299" y="196" class="mb" xml:space="preserve" text-anchor="middle">E14</text>
+  <text x="299" y="216" class="s" xml:space="preserve" text-anchor="middle"></text>
+  <rect x="352" y="176" width="97" height="50" rx="3" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="400" y="171" class="ms" xml:space="preserve" text-anchor="middle">5</text>
+  <text x="400" y="196" class="mb" xml:space="preserve" text-anchor="middle">E13</text>
+  <text x="400" y="216" class="s" xml:space="preserve" text-anchor="middle"></text>
+  <rect x="453" y="176" width="97" height="50" rx="3" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="501" y="171" class="ms" xml:space="preserve" text-anchor="middle">4</text>
+  <text x="501" y="196" class="mb" xml:space="preserve" text-anchor="middle">E12</text>
+  <text x="501" y="216" class="s" xml:space="preserve" text-anchor="middle"></text>
+  <rect x="554" y="176" width="97" height="50" rx="3" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="602" y="171" class="ms" xml:space="preserve" text-anchor="middle">3</text>
+  <text x="602" y="196" class="mb" xml:space="preserve" text-anchor="middle">E11</text>
+  <text x="602" y="216" class="s" xml:space="preserve" text-anchor="middle">11 ピン DIN</text>
+  <rect x="655" y="176" width="97" height="50" rx="3" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="703" y="171" class="ms" xml:space="preserve" text-anchor="middle">2</text>
+  <text x="703" y="196" class="mb" xml:space="preserve" text-anchor="middle">E10</text>
+  <text x="703" y="216" class="s" xml:space="preserve" text-anchor="middle">11 ピン DOUT</text>
+  <rect x="756" y="176" width="97" height="50" rx="3" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="804" y="171" class="ms" xml:space="preserve" text-anchor="middle">1</text>
+  <text x="804" y="196" class="mb" xml:space="preserve" text-anchor="middle">E9</text>
+  <text x="804" y="216" class="s" xml:space="preserve" text-anchor="middle">11 ピン IO2</text>
+  <rect x="857" y="176" width="97" height="50" rx="3" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="905" y="171" class="ms" xml:space="preserve" text-anchor="middle">0</text>
+  <text x="905" y="196" class="mb" xml:space="preserve" text-anchor="middle">E8</text>
+  <text x="905" y="216" class="s" xml:space="preserve" text-anchor="middle">11 ピン IO1</text>
+  <text x="24" y="278" class="b" xml:space="preserve">EIL（入力）</text>
+  <text x="24" y="296" class="s" xml:space="preserve">F5h</text>
+  <rect x="150" y="256" width="97" height="50" rx="3" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="198" y="251" class="ms" xml:space="preserve" text-anchor="middle">7</text>
+  <text x="198" y="276" class="mb" xml:space="preserve" text-anchor="middle">E7</text>
+  <text x="198" y="296" class="s" xml:space="preserve" text-anchor="middle">11 ピン ACK</text>
+  <rect x="251" y="256" width="97" height="50" rx="3" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="299" y="251" class="ms" xml:space="preserve" text-anchor="middle">6</text>
+  <text x="299" y="276" class="mb" xml:space="preserve" text-anchor="middle">E6</text>
+  <text x="299" y="296" class="s" xml:space="preserve" text-anchor="middle"></text>
+  <rect x="352" y="256" width="97" height="50" rx="3" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="400" y="251" class="ms" xml:space="preserve" text-anchor="middle">5</text>
+  <text x="400" y="276" class="mb" xml:space="preserve" text-anchor="middle">E5</text>
+  <text x="400" y="296" class="s" xml:space="preserve" text-anchor="middle"></text>
+  <rect x="453" y="256" width="97" height="50" rx="3" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="501" y="251" class="ms" xml:space="preserve" text-anchor="middle">4</text>
+  <text x="501" y="276" class="mb" xml:space="preserve" text-anchor="middle">E4</text>
+  <text x="501" y="296" class="s" xml:space="preserve" text-anchor="middle"></text>
+  <rect x="554" y="256" width="97" height="50" rx="3" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="602" y="251" class="ms" xml:space="preserve" text-anchor="middle">3</text>
+  <text x="602" y="276" class="mb" xml:space="preserve" text-anchor="middle">E3</text>
+  <text x="602" y="296" class="s" xml:space="preserve" text-anchor="middle"></text>
+  <rect x="655" y="256" width="97" height="50" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="703" y="251" class="ms" xml:space="preserve" text-anchor="middle">2</text>
+  <text x="703" y="276" class="mb" xml:space="preserve" text-anchor="middle">E2</text>
+  <text x="703" y="296" class="s" xml:space="preserve" text-anchor="middle">シリアル CS</text>
+  <rect x="756" y="256" width="97" height="50" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="804" y="251" class="ms" xml:space="preserve" text-anchor="middle">1</text>
+  <text x="804" y="276" class="mb" xml:space="preserve" text-anchor="middle">E1</text>
+  <text x="804" y="296" class="s" xml:space="preserve" text-anchor="middle">シリアル CD</text>
+  <rect x="857" y="256" width="97" height="50" rx="3" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="905" y="251" class="ms" xml:space="preserve" text-anchor="middle">0</text>
+  <text x="905" y="276" class="mb" xml:space="preserve" text-anchor="middle">E0</text>
+  <text x="905" y="296" class="s" xml:space="preserve" text-anchor="middle"></text>
+  <text x="24" y="358" class="b" xml:space="preserve">EIH（入力）</text>
+  <text x="24" y="376" class="s" xml:space="preserve">F6h</text>
+  <rect x="150" y="336" width="97" height="50" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="198" y="331" class="ms" xml:space="preserve" text-anchor="middle">7</text>
+  <text x="198" y="356" class="mb" xml:space="preserve" text-anchor="middle">E15</text>
+  <text x="198" y="376" class="s" xml:space="preserve" text-anchor="middle">CE-140F 入力</text>
+  <rect x="251" y="336" width="97" height="50" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="299" y="331" class="ms" xml:space="preserve" text-anchor="middle">6</text>
+  <text x="299" y="356" class="mb" xml:space="preserve" text-anchor="middle">E14</text>
+  <text x="299" y="376" class="s" xml:space="preserve" text-anchor="middle">CE-140F 入力</text>
+  <rect x="352" y="336" width="97" height="50" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="400" y="331" class="ms" xml:space="preserve" text-anchor="middle">5</text>
+  <text x="400" y="356" class="mb" xml:space="preserve" text-anchor="middle">E13</text>
+  <text x="400" y="376" class="s" xml:space="preserve" text-anchor="middle">CE-140F 入力</text>
+  <rect x="453" y="336" width="97" height="50" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="501" y="331" class="ms" xml:space="preserve" text-anchor="middle">4</text>
+  <text x="501" y="356" class="mb" xml:space="preserve" text-anchor="middle">E12</text>
+  <text x="501" y="376" class="s" xml:space="preserve" text-anchor="middle">CE-140F 入力</text>
+  <rect x="554" y="336" width="97" height="50" rx="3" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="602" y="331" class="ms" xml:space="preserve" text-anchor="middle">3</text>
+  <text x="602" y="356" class="mb" xml:space="preserve" text-anchor="middle">E11</text>
+  <text x="602" y="376" class="s" xml:space="preserve" text-anchor="middle"></text>
+  <rect x="655" y="336" width="97" height="50" rx="3" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="703" y="331" class="ms" xml:space="preserve" text-anchor="middle">2</text>
+  <text x="703" y="356" class="mb" xml:space="preserve" text-anchor="middle">E10</text>
+  <text x="703" y="376" class="s" xml:space="preserve" text-anchor="middle"></text>
+  <rect x="756" y="336" width="97" height="50" rx="3" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="804" y="331" class="ms" xml:space="preserve" text-anchor="middle">1</text>
+  <text x="804" y="356" class="mb" xml:space="preserve" text-anchor="middle">E9</text>
+  <text x="804" y="376" class="s" xml:space="preserve" text-anchor="middle"></text>
+  <rect x="857" y="336" width="97" height="50" rx="3" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="905" y="331" class="ms" xml:space="preserve" text-anchor="middle">0</text>
+  <text x="905" y="356" class="mb" xml:space="preserve" text-anchor="middle">E8</text>
+  <text x="905" y="376" class="s" xml:space="preserve" text-anchor="middle"></text>
+  <text x="24" y="438" class="b" xml:space="preserve">KOH（出力）</text>
+  <text x="24" y="456" class="s" xml:space="preserve">F1h</text>
+  <rect x="150" y="416" width="97" height="50" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="198" y="411" class="ms" xml:space="preserve" text-anchor="middle">7</text>
+  <text x="198" y="436" class="mb" xml:space="preserve" text-anchor="middle">KO15</text>
+  <text x="198" y="456" class="s" xml:space="preserve" text-anchor="middle">PRQ（未使用）</text>
+  <rect x="251" y="416" width="97" height="50" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="299" y="411" class="ms" xml:space="preserve" text-anchor="middle">6</text>
+  <text x="299" y="436" class="mb" xml:space="preserve" text-anchor="middle">KO14</text>
+  <text x="299" y="456" class="s" xml:space="preserve" text-anchor="middle">ER</text>
+  <rect x="352" y="416" width="97" height="50" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="400" y="411" class="ms" xml:space="preserve" text-anchor="middle">5</text>
+  <text x="400" y="436" class="mb" xml:space="preserve" text-anchor="middle">KO13</text>
+  <text x="400" y="456" class="s" xml:space="preserve" text-anchor="middle">RR</text>
+  <rect x="453" y="416" width="97" height="50" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="501" y="411" class="ms" xml:space="preserve" text-anchor="middle">4</text>
+  <text x="501" y="436" class="mb" xml:space="preserve" text-anchor="middle">KO12</text>
+  <text x="501" y="456" class="s" xml:space="preserve" text-anchor="middle">RS</text>
+  <rect x="554" y="416" width="97" height="50" rx="3" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.2"/>
+  <text x="602" y="411" class="ms" xml:space="preserve" text-anchor="middle">3</text>
+  <text x="602" y="436" class="mb" xml:space="preserve" text-anchor="middle">KO11</text>
+  <text x="602" y="456" class="s" xml:space="preserve" text-anchor="middle">キー</text>
+  <rect x="655" y="416" width="97" height="50" rx="3" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.2"/>
+  <text x="703" y="411" class="ms" xml:space="preserve" text-anchor="middle">2</text>
+  <text x="703" y="436" class="mb" xml:space="preserve" text-anchor="middle">KO10</text>
+  <text x="703" y="456" class="s" xml:space="preserve" text-anchor="middle">キー</text>
+  <rect x="756" y="416" width="97" height="50" rx="3" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.2"/>
+  <text x="804" y="411" class="ms" xml:space="preserve" text-anchor="middle">1</text>
+  <text x="804" y="436" class="mb" xml:space="preserve" text-anchor="middle">KO9</text>
+  <text x="804" y="456" class="s" xml:space="preserve" text-anchor="middle">キー</text>
+  <rect x="857" y="416" width="97" height="50" rx="3" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.2"/>
+  <text x="905" y="411" class="ms" xml:space="preserve" text-anchor="middle">0</text>
+  <text x="905" y="436" class="mb" xml:space="preserve" text-anchor="middle">KO8</text>
+  <text x="905" y="456" class="s" xml:space="preserve" text-anchor="middle">キー</text>
+  <text x="24" y="502" class="s" xml:space="preserve">緑は 11 ピン、青は 15 ピン（シリアル）、黄は CE-140F、紫は電源の制御。灰色は表に用途がないビット。</text>
+</svg>

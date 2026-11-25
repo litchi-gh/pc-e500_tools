@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 380" width="980" height="380" role="img" aria-labelledby="t d">
+  <title id="t">角度の単位と、直交座標・極座標</title>
+  <desc id="d">左に度・ラジアン・グラードの対応、右に点 (3,4) の直交座標と極座標の関係を描いた図。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .mb { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 15px; font-weight: 700; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .lbl { font-size: 12px; fill: #52606D; paint-order: stroke; stroke: #FFFFFF; stroke-width: 4px; stroke-linejoin: round; }
+  </style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#52606D"/></marker><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#C0392B"/></marker><marker id="ab" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2F6DB5"/></marker><marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2F855A"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="379" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h" xml:space="preserve">角度の単位と、直交座標・極座標</text>
+  <circle cx="200" cy="220" r="110" fill="#E8F1FC" stroke="#2F6DB5"/>
+  <path d="M200,220 L310,220" fill="none" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="320" y="208" class="ms" text-anchor="start" xml:space="preserve">0°</text>
+  <text x="320" y="225" class="ms" text-anchor="start" xml:space="preserve">0 rad</text>
+  <text x="320" y="242" class="ms" text-anchor="start" xml:space="preserve">0 grad</text>
+  <path d="M200,220 L200,110" fill="none" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="200" y="92" class="ms" text-anchor="middle" xml:space="preserve">90°  PI/2 rad  100 grad</text>
+  <path d="M200,220 L90,220" fill="none" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="80" y="208" class="ms" text-anchor="end" xml:space="preserve">180°</text>
+  <text x="80" y="225" class="ms" text-anchor="end" xml:space="preserve">PI rad</text>
+  <text x="80" y="242" class="ms" text-anchor="end" xml:space="preserve">200 grad</text>
+  <path d="M200,220 L200,330" fill="none" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="200" y="348" class="ms" text-anchor="middle" xml:space="preserve">270°  3*PI/2 rad  300 grad</text>
+  <text x="200" y="66" class="b" text-anchor="middle" xml:space="preserve">DEGREE / RADIAN / GRAD</text>
+  <text x="700" y="66" class="b" text-anchor="middle" xml:space="preserve">POL (3,4) と REC</text>
+  <path d="M540,310 L890,310" fill="none" stroke="#52606D" stroke-width="1.5" marker-end="url(#a)"/>
+  <path d="M560,330 L560,90" fill="none" stroke="#52606D" stroke-width="1.5" marker-end="url(#a)"/>
+  <text x="898" y="315" class="m" xml:space="preserve">x</text>
+  <text x="555" y="84" class="m" xml:space="preserve">y</text>
+  <path d="M560,310 L710,110" fill="none" stroke="#C0392B" stroke-width="2.5"/>
+  <path d="M710,110 L710,310" fill="none" stroke="#52606D" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <path d="M710,110 L560,110" fill="none" stroke="#52606D" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <circle cx="710" cy="110" r="5" fill="#C0392B"/>
+  <text x="720" y="112" class="b" xml:space="preserve">点 (3, 4)</text>
+  <text x="710" y="330" class="m" text-anchor="middle" xml:space="preserve">3</text>
+  <text x="544" y="115" class="m" text-anchor="middle" xml:space="preserve">4</text>
+  <text x="610" y="198" class="m" text-anchor="end" style="fill:#C0392B;" xml:space="preserve">r = 5</text>
+  <text x="604" y="298" class="m" xml:space="preserve">θ = 53.13…°</text>
+  <text x="738" y="156" class="s" xml:space="preserve">POL (3,4) → Y に r、Z に θ</text>
+  <text x="738" y="178" class="s" xml:space="preserve">REC (5,θ) → Y に x、Z に y</text>
+</svg>

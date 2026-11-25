@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 430" width="980" height="430" role="img" aria-labelledby="t d">
+  <title id="t">画面の座標</title>
+  <desc id="d">240×32 ドットの画面に、LOCATE の桁と行、PSET や LINE の X と Y の座標を重ねた図。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .mb { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 15px; font-weight: 700; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .lbl { font-size: 12px; fill: #52606D; paint-order: stroke; stroke: #FFFFFF; stroke-width: 4px; stroke-linejoin: round; }
+  </style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#52606D"/></marker><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#C0392B"/></marker><marker id="ab" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2F6DB5"/></marker><marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2F855A"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="429" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h" xml:space="preserve">画面の座標</text>
+  <text x="24" y="55" class="sub" xml:space="preserve">LOCATE は桁 0〜39 と行 0〜3、GCURSOR・PSET・LINE などは X 0〜239 と Y 0〜31</text>
+  <rect x="70" y="110" width="840" height="112" rx="0" fill="#EEF5E6" stroke="#7B8794" stroke-width="1"/>
+  <path d="M70,110 L70,222" fill="none" stroke="#C5D3B6" stroke-width="0.6"/>
+  <path d="M91,110 L91,222" fill="none" stroke="#C5D3B6" stroke-width="0.6"/>
+  <path d="M112,110 L112,222" fill="none" stroke="#C5D3B6" stroke-width="0.6"/>
+  <path d="M133,110 L133,222" fill="none" stroke="#C5D3B6" stroke-width="0.6"/>
+  <path d="M154,110 L154,222" fill="none" stroke="#C5D3B6" stroke-width="0.6"/>
+  <path d="M175,110 L175,222" fill="none" stroke="#C5D3B6" stroke-width="0.6"/>
+  <path d="M196,110 L196,222" fill="none" stroke="#C5D3B6" stroke-width="0.6"/>
+  <path d="M217,110 L217,222" fill="none" stroke="#C5D3B6" stroke-width="0.6"/>
+  <path d="M238,110 L238,222" fill="none" stroke="#C5D3B6" stroke-width="0.6"/>
+  <path d="M259,110 L259,222" fill="none" stroke="#C5D3B6" stroke-width="0.6"/>
+  <path d="M280,110 L280,222" fill="none" stroke="#C5D3B6" stroke-width="0.6"/>
+  <path d="M301,110 L301,222" fill="none" stroke="#C5D3B6" stroke-width="0.6"/>
+  <path d="M322,110 L322,222" fill="none" stroke="#C5D3B6" stroke-width="0.6"/>
+  <path d="M343,110 L343,222" fill="none" stroke="#C5D3B6" stroke-width="0.6"/>
+  <path d="M364,110 L364,222" fill="none" stroke="#C5D3B6" stroke-width="0.6"/>
+  <path d="M385,110 L385,222" fill="none" stroke="#C5D3B6" stroke-width="0.6"/>
+  <path d="M406,110 L406,222" fill="none" stroke="#C5D3B6" stroke-width="0.6"/>
+  <path d="M427,110 L427,222" fill="none" stroke="#C5D3B6" stroke-width="0.6"/>
+  <path d="M448,110 L448,222" fill="none" stroke="#C5D3B6" stroke-width="0.6"/>
+  <path d="M469,110 L469,222" fill="none" stroke="#C5D3B6" stroke-width="0.6"/>
+  <path d="M490,110 L490,222" fill="none" stroke="#C5D3B6" stroke-width="0.6"/>
+  <path d="M511,110 L511,222" fill="none" stroke="#C5D3B6" stroke-width="0.6"/>
+  <path d="M532,110 L532,222" fill="none" stroke="#C5D3B6" stroke-width="0.6"/>
+  <path d="M553,110 L553,222" fill="none" stroke="#C5D3B6" stroke-width="0.6"/>
+  <path d="M574,110 L574,222" fill="none" stroke="#C5D3B6" stroke-width="0.6"/>
+  <path d="M595,110 L595,222" fill="none" stroke="#C5D3B6" stroke-width="0.6"/>
+  <path d="M616,110 L616,222" fill="none" stroke="#C5D3B6" stroke-width="0.6"/>
+  <path d="M637,110 L637,222" fill="none" stroke="#C5D3B6" stroke-width="0.6"/>
+  <path d="M658,110 L658,222" fill="none" stroke="#C5D3B6" stroke-width="0.6"/>
+  <path d="M679,110 L679,222" fill="none" stroke="#C5D3B6" stroke-width="0.6"/>
+  <path d="M700,110 L700,222" fill="none" stroke="#C5D3B6" stroke-width="0.6"/>
+  <path d="M721,110 L721,222" fill="none" stroke="#C5D3B6" stroke-width="0.6"/>
+  <path d="M742,110 L742,222" fill="none" stroke="#C5D3B6" stroke-width="0.6"/>
+  <path d="M763,110 L763,222" fill="none" stroke="#C5D3B6" stroke-width="0.6"/>
+  <path d="M784,110 L784,222" fill="none" stroke="#C5D3B6" stroke-width="0.6"/>
+  <path d="M805,110 L805,222" fill="none" stroke="#C5D3B6" stroke-width="0.6"/>
+  <path d="M826,110 L826,222" fill="none" stroke="#C5D3B6" stroke-width="0.6"/>
+  <path d="M847,110 L847,222" fill="none" stroke="#C5D3B6" stroke-width="0.6"/>
+  <path d="M868,110 L868,222" fill="none" stroke="#C5D3B6" stroke-width="0.6"/>
+  <path d="M889,110 L889,222" fill="none" stroke="#C5D3B6" stroke-width="0.6"/>
+  <path d="M910,110 L910,222" fill="none" stroke="#C5D3B6" stroke-width="0.6"/>
+  <path d="M70,110 L910,110" fill="none" stroke="#9FB38A" stroke-width="0.8"/>
+  <path d="M70,138 L910,138" fill="none" stroke="#9FB38A" stroke-width="0.8"/>
+  <path d="M70,166 L910,166" fill="none" stroke="#9FB38A" stroke-width="0.8"/>
+  <path d="M70,194 L910,194" fill="none" stroke="#9FB38A" stroke-width="0.8"/>
+  <path d="M70,222 L910,222" fill="none" stroke="#9FB38A" stroke-width="0.8"/>
+  <text x="80.5" y="102" class="ms" text-anchor="middle" xml:space="preserve">0</text>
+  <text x="185.5" y="102" class="ms" text-anchor="middle" xml:space="preserve">5</text>
+  <text x="290.5" y="102" class="ms" text-anchor="middle" xml:space="preserve">10</text>
+  <text x="395.5" y="102" class="ms" text-anchor="middle" xml:space="preserve">15</text>
+  <text x="500.5" y="102" class="ms" text-anchor="middle" xml:space="preserve">20</text>
+  <text x="605.5" y="102" class="ms" text-anchor="middle" xml:space="preserve">25</text>
+  <text x="710.5" y="102" class="ms" text-anchor="middle" xml:space="preserve">30</text>
+  <text x="815.5" y="102" class="ms" text-anchor="middle" xml:space="preserve">35</text>
+  <text x="899.5" y="102" class="ms" text-anchor="middle" xml:space="preserve">39</text>
+  <text x="40" y="102" class="s" xml:space="preserve">桁</text>
+  <text x="58" y="128" class="ms" text-anchor="middle" xml:space="preserve">0</text>
+  <text x="58" y="156" class="ms" text-anchor="middle" xml:space="preserve">1</text>
+  <text x="58" y="184" class="ms" text-anchor="middle" xml:space="preserve">2</text>
+  <text x="58" y="212" class="ms" text-anchor="middle" xml:space="preserve">3</text>
+  <text x="26" y="114" class="s" xml:space="preserve">行</text>
+  <text x="70" y="240" class="ms" text-anchor="middle" xml:space="preserve">X=0</text>
+  <text x="280" y="240" class="ms" text-anchor="middle" xml:space="preserve">X=60</text>
+  <text x="490" y="240" class="ms" text-anchor="middle" xml:space="preserve">X=120</text>
+  <text x="700" y="240" class="ms" text-anchor="middle" xml:space="preserve">X=180</text>
+  <text x="906.5" y="240" class="ms" text-anchor="middle" xml:space="preserve">X=239</text>
+  <text x="918" y="115.75" class="ms" xml:space="preserve">Y=0</text>
+  <text x="918" y="224.25" class="ms" xml:space="preserve">Y=31</text>
+  <path d="M596.75,118.75 L876.75,213.25" fill="none" stroke="#1F2933" stroke-width="2.4"/>
+  <rect x="281.75" y="153.75" width="175" height="59.5" rx="0" fill="none" stroke="#1F2933" stroke-width="2.4"/>
+  <rect x="140" y="180" width="4.9" height="4.9" rx="0" fill="#1F2933" stroke="#7B8794" stroke-width="0"/>
+  <text x="280" y="131" class="m" xml:space="preserve">ABC</text>
+  <text x="70" y="290" class="mb" style="font-size:14px;" xml:space="preserve">LOCATE 10,0: PRINT "ABC"</text>
+  <text x="380" y="290" xml:space="preserve">桁 10、行 0 から文字を出す（X では 60）</text>
+  <text x="70" y="318" class="mb" style="font-size:14px;" xml:space="preserve">LINE (60,12)-(110,29),B</text>
+  <text x="380" y="318" xml:space="preserve">2 点を対角とする四角の枠</text>
+  <text x="70" y="346" class="mb" style="font-size:14px;" xml:space="preserve">LINE (150,2)-(230,29)</text>
+  <text x="380" y="346" xml:space="preserve">2 点を結ぶ直線</text>
+  <text x="70" y="374" class="mb" style="font-size:14px;" xml:space="preserve">PSET (20,20)</text>
+  <text x="380" y="374" xml:space="preserve">1 ドットを点ける</text>
+  <text x="70" y="410" class="s" xml:space="preserve">桁 c は X = c × 6 〜 c × 6 + 5、行 r は Y = r × 8 〜 r × 8 + 7 に当たります。</text>
+</svg>

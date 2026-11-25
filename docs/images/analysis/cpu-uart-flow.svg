@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 560" width="980" height="560" role="img" aria-labelledby="t d">
+  <title id="t">送信と受信の流れ</title>
+  <desc id="d">TXD と送信部の 2 段構えの送信と、TXR、TXE、RXR、OE の変化を時間の流れで示した図。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .mb { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; font-weight: 700; }
+  </style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#52606D"/></marker><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#C0392B"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="559" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h" xml:space="preserve">送信と受信の流れ</text>
+  <text x="24" y="55" class="sub" xml:space="preserve">送信は TXD と送信部の 2 段。1 文字を送っている間に、次の 1 文字を置ける</text>
+  <rect x="24" y="78" width="130" height="44" rx="6" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="89" y="105" class="b" xml:space="preserve" text-anchor="middle">プログラム</text>
+  <rect x="214" y="78" width="150" height="44" rx="6" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="289" y="105" class="b" xml:space="preserve" text-anchor="middle">TXD（FAh）</text>
+  <rect x="424" y="78" width="150" height="44" rx="6" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="499" y="105" class="b" xml:space="preserve" text-anchor="middle">送信部</text>
+  <rect x="640" y="78" width="90" height="44" rx="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="685" y="105" class="b" xml:space="preserve" text-anchor="middle">TXD ピン</text>
+  <path d="M154 100L212 100" fill="none" stroke="#52606D" stroke-width="1.6" marker-end="url(#a)"/>
+  <path d="M364 100L422 100" fill="none" stroke="#52606D" stroke-width="1.6" marker-end="url(#a)"/>
+  <path d="M574 100L638 100" fill="none" stroke="#52606D" stroke-width="1.6" marker-end="url(#a)"/>
+  <text x="752" y="96" class="s" xml:space="preserve">文字ごとに開始、データ、</text>
+  <text x="752" y="112" class="s" xml:space="preserve">パリティ、ストップを付ける</text>
+  <text x="24" y="156" class="b" xml:space="preserve">送信</text>
+  <path d="M170 166L170 290" fill="none" stroke="#D9E0E8" stroke-width="1.6" stroke-dasharray="5 4"/>
+  <text x="170" y="158" class="s" xml:space="preserve" text-anchor="middle">1 文字目を書く</text>
+  <path d="M300 166L300 290" fill="none" stroke="#D9E0E8" stroke-width="1.6" stroke-dasharray="5 4"/>
+  <text x="300" y="158" class="s" xml:space="preserve" text-anchor="middle">2 文字目を書く</text>
+  <path d="M480 166L480 290" fill="none" stroke="#D9E0E8" stroke-width="1.6" stroke-dasharray="5 4"/>
+  <text x="480" y="158" class="s" xml:space="preserve" text-anchor="middle">1 文字目が終わる</text>
+  <path d="M790 166L790 290" fill="none" stroke="#D9E0E8" stroke-width="1.6" stroke-dasharray="5 4"/>
+  <text x="790" y="158" class="s" xml:space="preserve" text-anchor="middle">2 文字目が終わる</text>
+  <text x="24" y="190" class="b" xml:space="preserve">線</text>
+  <rect x="190" y="174" width="290" height="26" rx="3" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="335" y="192" class="s" xml:space="preserve" text-anchor="middle">1 文字目</text>
+  <rect x="480" y="174" width="310" height="26" rx="3" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="635" y="192" class="s" xml:space="preserve" text-anchor="middle">2 文字目</text>
+  <text x="24" y="232" class="mb" xml:space="preserve">TXR</text>
+  <path d="M100 214L170 214L170 238L190 238L190 214L300 214L300 238L480 238L480 214L940 214" fill="none" stroke="#2F6DB5" stroke-width="2.2"/>
+  <text x="24" y="276" class="mb" xml:space="preserve">TXE</text>
+  <path d="M100 258L190 258L190 282L790 282L790 258L940 258" fill="none" stroke="#2F6DB5" stroke-width="2.2"/>
+  <text x="24" y="336" class="b" xml:space="preserve">受信</text>
+  <path d="M430 346L430 470" fill="none" stroke="#D9E0E8" stroke-width="1.6" stroke-dasharray="5 4"/>
+  <text x="430" y="338" class="s" xml:space="preserve" text-anchor="middle">1 文字目が終わる</text>
+  <path d="M700 346L700 470" fill="none" stroke="#D9E0E8" stroke-width="1.6" stroke-dasharray="5 4"/>
+  <text x="700" y="338" class="s" xml:space="preserve" text-anchor="middle">1 ビットの半分ほど前</text>
+  <path d="M820 346L820 470" fill="none" stroke="#D9E0E8" stroke-width="1.6" stroke-dasharray="5 4"/>
+  <text x="820" y="338" class="s" xml:space="preserve" text-anchor="middle">2 文字目が終わる</text>
+  <text x="24" y="370" class="b" xml:space="preserve">線</text>
+  <rect x="130" y="354" width="300" height="26" rx="3" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="280" y="372" class="s" xml:space="preserve" text-anchor="middle">1 文字目</text>
+  <rect x="520" y="354" width="300" height="26" rx="3" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="670" y="372" class="s" xml:space="preserve" text-anchor="middle">2 文字目</text>
+  <text x="24" y="412" class="mb" xml:space="preserve">RXR</text>
+  <path d="M100 418L430 418L430 394L940 394" fill="none" stroke="#2F855A" stroke-width="2.2"/>
+  <text x="24" y="456" class="mb" xml:space="preserve">OE</text>
+  <path d="M100 462L700 462L700 438L940 438" fill="none" stroke="#C0392B" stroke-width="2.2"/>
+  <text x="442" y="432" class="s" xml:space="preserve">1 文字目の RXD を読まないと</text>
+  <text x="442" y="456" class="s" xml:space="preserve">RXR が 1 のまま次が終わり、OE が 1 になる</text>
+  <rect x="24" y="492" width="932" height="54" rx="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="36" y="513" class="s" xml:space="preserve" style="fill:#1F2933">TXR が 1 になるのと TXE が 0 になるのは、前後に 1 ステートずれることがあるので、2 つを同時に調べません。</text>
+  <text x="36" y="533" class="s" xml:space="preserve" style="fill:#1F2933">OE は文字の終わりの少し前に 1 になるので、USR を読んでから続けて RXD を読みます。</text>
+</svg>

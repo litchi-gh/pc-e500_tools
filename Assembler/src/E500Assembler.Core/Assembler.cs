@@ -55,6 +55,8 @@ public sealed class AssemblerOptions
 public sealed class Assembler
 {
     private sealed record Statement(SourceLine Source, string? Label, string Op, string[] Args);
+    // File names differ by case on Linux.
+    private static readonly StringComparer FileNames = OperatingSystem.IsWindows() || OperatingSystem.IsMacOS() ? StringComparer.OrdinalIgnoreCase : StringComparer.Ordinal;
     private static readonly HashSet<string> Directives = new(StringComparer.OrdinalIgnoreCase) { "ORG", "EQU", "DB", "DEFB", "BYTE", "DW", "DEFW", "WORD", "DP", "DS", "DEFS", "SPACE", "ALIGN", "INCLUDE", "INCBIN", "END", "ASSERT" };
     public static long EvaluateExpression(string text) => new Expression(text, s => throw new AssemblyException($"Unknown symbol: {s}"), 0).Evaluate();
     /// <summary>Parse a command-line address. Always hexadecimal: B8000, $B8000, &amp;B8000, 0xB8000 or 0B8000h.</summary>
@@ -95,7 +97,7 @@ public sealed class Assembler
     }
     public AssemblyResult AssembleFile(string path, AssemblerOptions? options = null)
     {
-        options ??= new(); var statements = new List<Statement>(); var active = new HashSet<string>(StringComparer.OrdinalIgnoreCase); var inputFiles = new HashSet<string>(StringComparer.OrdinalIgnoreCase); bool ended = false;
+        options ??= new(); var statements = new List<Statement>(); var active = new HashSet<string>(FileNames); var inputFiles = new HashSet<string>(FileNames); bool ended = false;
         void Read(string file)
         {
             file = Path.GetFullPath(file);
@@ -124,7 +126,7 @@ public sealed class Assembler
             }
             finally { active.Remove(file); }
         }
-        Read(path); var result = Assemble(statements, options); return result with { InputFiles = result.InputFiles.Concat(inputFiles).Distinct(StringComparer.OrdinalIgnoreCase).ToArray() };
+        Read(path); var result = Assemble(statements, options); return result with { InputFiles = result.InputFiles.Concat(inputFiles).Distinct(FileNames).ToArray() };
     }
     public AssemblyResult AssembleText(string text, AssemblerOptions? options = null, string fileName = "<input>")
     {
@@ -161,12 +163,12 @@ public sealed class Assembler
         }
         var previous = new Dictionary<string, long>(options.Defines, StringComparer.OrdinalIgnoreCase);
         var binaryFiles = new Dictionary<Statement, byte[]>();
-        var binaryPaths = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+        var binaryPaths = new HashSet<string>(FileNames);
         var previousLayout = Array.Empty<(int, int)>();
         List<ListingLine> listing = []; Dictionary<string, long> symbols = []; int finalPc = options.Origin; bool converged = false;
         for (int pass = 0; pass < 65; pass++)
         {
-            bool strict = converged; bool unresolved = false;
+            bool strict = converged;
             symbols = new(options.Defines, StringComparer.OrdinalIgnoreCase); listing = []; var layout = new List<(int, int)>();
             int pc = options.Origin;
             var equs = statements.Select((s, i) => (s, i)).Where(x => x.s.Op == "EQU" && x.s.Label != null).ToDictionary(x => x.s.Label!, StringComparer.OrdinalIgnoreCase);
@@ -195,8 +197,7 @@ public sealed class Assembler
                         {
                             if (strict) return ResolveFinal(name);
                             if (symbols.TryGetValue(name, out long v) || previous.TryGetValue(name, out v)) return v;
-                            if (strict) throw new AssemblyException($"Undefined symbol: {name}");
-                            missing = unresolved = true; return 0;
+                            missing = true; return 0;
                         }
                         try { return new Expression(expression, Symbol, pc).Evaluate(); }
                         catch (DivideByZeroException) when (!strict && missing) { return 0; }
@@ -277,7 +278,6 @@ public sealed class Assembler
             converged = same;
             if (!same && pass == 63) throw new AssemblyException("Assembly layout did not converge (cyclic EQU/ORG or unstable allocation)");
             previous = symbols; previousLayout = layout.ToArray();
-            _ = unresolved;
         }
         var emitted = listing.Where(x => x.Bytes.Length != 0).ToArray();
         int origin = emitted.Length == 0 ? finalPc : emitted.Min(x => x.Address);
