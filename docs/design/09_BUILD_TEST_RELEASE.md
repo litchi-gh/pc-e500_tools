@@ -16,7 +16,6 @@
 | 対象 | 必要なもの |
 |---|---|
 | アセンブラ、逆アセンブラ、`e500dbg` | .NET 10 SDK |
-| `ce140conv` | C++17 のコンパイラ |
 | VS Code 拡張 | Node.js と npm |
 | エミュレータを使うテスト | `e500core.dll`（Linux は `libe500core.so`、macOS は `libe500core.dylib`）と ROM。`noRom.test` は ROM なしで動く |
 
@@ -24,13 +23,12 @@
 |---|---|---|---|
 | アセンブラ、逆アセンブラ（CLI）のビルドとテスト | ○（`build.cmd`） | ○（`build.sh`） | ○（`build.sh`） |
 | 逆アセンブラの GUI | ○ | −（Windows Forms） | − |
-| `ce140conv` | ○（`build.bat`） | ○（`build.sh`） | ○（`build.sh`） |
 | 拡張のコンパイルと、エミュレータを使わないテスト | ○ | ○ | ○ |
 | `e500dbg`、エミュレータを使うテスト | ○ | ○（`dap.test`、`basicDap.test` は Windows だけ） | ○（Linux と同じ） |
 
 ## 9.2 ビルド
 
-道具の入れ方は、[Windows](../manual/02_INSTALL_WINDOWS.md#29-ソースから作る必要な人だけ)、[Linux](../manual/02_INSTALL_LINUX.md#25-e500asme500dasmce140conv-を作る)、[macOS](../manual/02_INSTALL_MACOS.md#25-e500asme500dasmce140conv-を作る) にあります。以下はリポジトリのフォルダで打ちます。
+道具の入れ方は、[Windows](../manual/02_INSTALL_WINDOWS.md#29-ソースから作る必要な人だけ)、[Linux](../manual/02_INSTALL_LINUX.md#25-e500asme500dasm-を作る)、[macOS](../manual/02_INSTALL_MACOS.md#25-e500asme500dasm-を作る) にあります。以下はリポジトリのフォルダで打ちます。
 
 ### Windows でビルドする
 
@@ -43,13 +41,6 @@
 |---|---|---|
 | 1 行目 | アセンブラのテストを動かし、通れば EXE を作る | `Assembler\app\e500asm.exe` |
 | 2 行目 | 逆アセンブラとアセンブラのテストを動かし、通れば EXE を作る | `DisAssembler\app\e500dasm.exe`、`E500Disassembler.exe` |
-
-`ce140conv` は、「Developer PowerShell for VS」などコンパイラの使えるターミナルで、フォルダを移ってから作ります（`build.bat` は、今いるフォルダの `ce140conv.cpp` を読むため）。
-
-```powershell
-cd FileConverter
-.\build.bat
-```
 
 Linux 用の .NET の実行ファイルを Windows で作ることもできます。
 
@@ -65,14 +56,12 @@ Linux 用の .NET の実行ファイルを Windows で作ることもできま�
 ```sh
 sh Assembler/build.sh
 sh DisAssembler/build.sh
-sh FileConverter/build.sh
 ```
 
 | コマンド | 何をするか | できるもの |
 |---|---|---|
 | 1 行目 | アセンブラのテストを動かし、通れば実行ファイルを作る。OS と CPU は `uname` で調べる | `Assembler/app/e500asm` |
 | 2 行目 | 逆アセンブラとアセンブラのテストを動かし、通れば CLI を作る | `DisAssembler/app/e500dasm` |
-| 3 行目 | 見つかった C++ のコンパイラで作る | `FileConverter/ce140conv` |
 
 ### 拡張をビルドする（どの OS も同じ）
 
@@ -112,7 +101,6 @@ flowchart TD
 | `build.cmd`（中身は `build.ps1`） | `-TestOnly` | テストだけ |
 | 〃 | `-Runtime <RID>` | ほかの OS 用（`app/<RID>/`） |
 | `build.sh` | `--test-only` | テストだけ |
-| `FileConverter/build.sh` | 環境変数 `CXX` | コンパイラの指定 |
 
 `build.cmd` は PowerShell の実行ポリシーに関係なく動くように、`-ExecutionPolicy Bypass` を付けて `build.ps1` を呼びます。
 
@@ -122,7 +110,6 @@ flowchart TD
 |---|---|---|
 | `e500asm` `e500dasm` `E500Disassembler` | 自己完結型の 1 ファイル（`PublishSingleFile`、`self-contained`） | .NET を入れていない PC でも動く |
 | `e500dbg` | フレームワーク依存（`dotnet build` の出力） | .NET 10 のランタイムが要る。VSIX を小さくするため |
-| `ce140conv` | 1 ファイル | Windows の `.exe` だけリポジトリに入れる |
 
 C# のプロジェクトは `TreatWarningsAsErrors`（`e500dbg` を除く）と `Nullable` を有効にしています。
 
@@ -245,7 +232,6 @@ node --test --test-name-pattern "PRE" out/test/asm.test.js
 |---|---|
 | `Assembler/src` | アセンブラのテスト、逆アセンブラのテスト、`npm test`（移植も直したとき） |
 | `DisAssembler/src` | 逆アセンブラのテスト、`emulator.test`（逆アセンブルの表示） |
-| `ce140conv.cpp` | Windows と Linux でビルド。`project.test`（`.exe` を作り直した後） |
 | `src/asm` | `asm.test`、`completion.test`、`hover.test`、`definition.test` |
 | `src/linter`、`src/basic`、`src/dialects` | `linter.test`、`basicHelp.test` |
 | `src/lcd`、`media/lcd.js` | `lcd.test`、`lcdEdit.test`、`spr.test`。`lcd.js` は画面で確かめる |
@@ -260,7 +246,6 @@ node --test --test-name-pattern "PRE" out/test/asm.test.js
 |---|---|
 | `e500asm-<バージョン>-win-x64.zip` | `Cli/Program.cs`（`--version` と `--help`） |
 | `e500dasm-<バージョン>-win-x64.zip`、`E500Disassembler-<バージョン>-win-x64.zip` | 〃 |
-| `ce140conv-<バージョン>-win-x64.zip`（`ce140conv.exe` と `charset_e500.tab`） | − |
 | `pc-e500-devtools-<バージョン>.vsix` | `package.json` |
 
 - .NET の実行ファイルは自己完結型で 1 つ 70〜120 MB あるため、リポジトリに入れず [Releases](https://github.com/litchi-gh/pc-e500_tools/releases) で配布します。
@@ -294,10 +279,9 @@ node --test --test-name-pattern "PRE" out/test/asm.test.js
 
 1. バージョンの番号を、上の表の場所で上げる（`--help` の 1 行目にもある）。
 2. `CHANGELOG.md` の「未リリース」をバージョンにする。
-3. `Assembler\build.cmd`、`DisAssembler\build.cmd`、（`FileConverter` フォルダで）`build.bat`。
+3. `Assembler\build.cmd`、`DisAssembler\build.cmd`。
 4. 拡張で `npm ci`、`npm test`、`npm run package`。
 5. 別の環境（できれば VS Code を入れたばかりの PC）で、VSIX を入れて `F5` とテスト エクスプローラーを確かめる。
-6. `ce140conv` の ZIP に `charset_e500.tab` が入っているか確かめる。
 
 ## 9.6 よくある失敗
 

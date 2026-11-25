@@ -373,7 +373,7 @@ e500 test ~/pockecom/pc-e500_tools/Samples
 
 ### e500asm、e500dasm を使う
 
-[ソースから作った](02_INSTALL_MACOS.md#25-e500asme500dasmce140conv-を作る) `e500asm` と `e500dasm` でも、同じことができます。こちらは Node.js が要りません。
+[ソースから作った](02_INSTALL_MACOS.md#25-e500asme500dasm-を作る) `e500asm` と `e500dasm` でも、同じことができます。こちらは Node.js が要りません。
 
 ```sh
 e500asm mygame.asm -o mygame_raw.bin -I ~/pockecom/pc-e500_tools/VSCodeExtensions/pc-e500-devtools/inc

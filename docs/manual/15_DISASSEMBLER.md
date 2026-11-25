@@ -21,7 +21,7 @@
 | CE-140F（`SAVE M` のファイル） | 先頭が `FF 00 06 01 10` | ヘッダーから読む |
 | RAW（機械語だけ） | それ以外 | 自分で指定する |
 
-分からないときは `ce140conv info ファイル` で調べます。
+分からないときは `e500 dis ファイル` と打ちます。ヘッダーがあれば読んで逆アセンブルし、なければ `RAW input requires a start address` と出ます。
 
 ## 15.3 画面で使う
 
@@ -139,44 +139,29 @@ VS Code で開けば、色分け、定義へ移動、命令の説明が使えま
 
 ```powershell
 .\DisAssembler\e500dasm.cmd PROG.BIN -f ce140f -o prog_dis.asm
-.\Assembler\e500asm.cmd prog_dis.asm -o rebuilt.bin
-.\FileConverter\ce140conv.exe bas2bin PROG.BIN orig.bin
-fc.exe /b orig.bin rebuilt.bin
+.\Assembler\e500asm.cmd prog_dis.asm -f ce140f -o REBUILT.BIN
+fc.exe /b PROG.BIN REBUILT.BIN
 ```
 
 **Linux、macOS**
 
 ```sh
 DisAssembler/app/e500dasm PROG.BIN -f ce140f -o prog_dis.asm
-Assembler/app/e500asm prog_dis.asm -o rebuilt.bin
-FileConverter/ce140conv bas2bin PROG.BIN orig.bin
-cmp orig.bin rebuilt.bin
+Assembler/app/e500asm prog_dis.asm -f ce140f -o REBUILT.BIN
+cmp PROG.BIN REBUILT.BIN
 ```
 
 | 行 | 何をするか |
 |---|---|
 | 1 | `PROG.BIN` を ASM に戻す |
-| 2 | その ASM を、もう一度機械語にする |
-| 3 | `PROG.BIN` から 16 バイトのヘッダーを外して、元の機械語だけを `orig.bin` に取り出す |
-| 4 | 2 つの機械語を 1 バイトずつ比べる。Windows は `fc.exe`（`/b` はバイナリとして比べる。PowerShell の `fc` は別のコマンドなので、`.exe` まで書く）、Linux と macOS は `cmp` |
+| 2 | その ASM を、もう一度 `LOAD M` で読める形にする |
+| 3 | 2 つのファイルを 1 バイトずつ比べる。Windows は `fc.exe`（`/b` はバイナリとして比べる。PowerShell の `fc` は別のコマンドなので、`.exe` まで書く）、Linux と macOS は `cmp` |
 
 Windows では「相違点は検出されませんでした」と出れば、Linux と macOS では何も表示されなければ、1 バイトも違いません。逆アセンブラの出力は、いつも元と同じバイト列に戻ります。
 
 ![往復のしくみ](../images/disassembler-verify.svg)
 
-`LOAD M` で読める形に戻すには `bin2bas` を使います。機械語の先頭に、アドレスと長さの入ったヘッダーを付けるコマンドです。
-
-**Windows（PowerShell）**
-
-```powershell
-.\FileConverter\ce140conv.exe bin2bas --addr BEC00 rebuilt.bin PROG2.BIN
-```
-
-**Linux、macOS**
-
-```sh
-FileConverter/ce140conv bin2bas --addr BEC00 rebuilt.bin PROG2.BIN
-```
+`REBUILT.BIN` は、そのまま実機の `LOAD M` で読めます。
 
 ## 15.8 エラー
 

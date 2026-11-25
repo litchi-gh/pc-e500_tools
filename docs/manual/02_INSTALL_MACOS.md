@@ -12,7 +12,7 @@ Windows の人は[こちら](02_INSTALL_WINDOWS.md)、Linux の人は[こちら]
 | [2.2](#22-必要なものを入れる) | Node.js、.NET 10 など |
 | [2.3](#23-拡張機能コマンド-e500を入れる) | VS Code と拡張機能、コマンド `e500` |
 | [2.4](#24-エミュレータと-rom-を置く) | エミュレータと ROM |
-| [2.5](#25-e500asme500dasmce140conv-を作る) | ソースから作るツール |
+| [2.5](#25-e500asme500dasm-を作る) | ソースから作るツール |
 | [2.6](#26-どこからでも使えるようにする) | PATH |
 | [2.7](#27-更新とアンインストール) | 新しくする、消す |
 | [2.8](#28-確かめる順番) | うまく動かないときの順番 |
@@ -29,7 +29,6 @@ Windows の人は[こちら](02_INSTALL_WINDOWS.md)、Linux の人は[こちら]
 | VS Code | 1.95 以降（VS Code を使うとき） |
 | Node.js | 20.12 以降 |
 | .NET | `e500 run`、`e500 test` は .NET 10 ランタイム、ソースから作るなら .NET 10 SDK |
-| C++ のコンパイラ | `ce140conv` を作るときだけ。コマンドラインツールの `clang++` |
 | ディスク | VS Code 500 MB まで、エミュレータの `.tar.gz` は約 30 MB |
 
 編集、診断、ドットエディタ、コマンドでの実行とテストが使えます。VS Code の `F5`（実行、デバッグ）とテスト、`E500Disassembler`（画面）は Windows 専用です。
@@ -52,7 +51,7 @@ macOS で使えるのは、VS Code での編集、診断、ドットエディタ
 xcode-select --install
 ```
 
-Apple の「コマンドラインツール」を入れるコマンドです。`git`（リポジトリを取ってくる）と `clang++`（`ce140conv` を作る C++ のコンパイラ）が使えるようになります。画面に出る「インストール」を押して、終わるのを待ちます。既に入っていれば、その旨のメッセージが出るだけです。
+Apple の「コマンドラインツール」を入れるコマンドです。`git`（リポジトリを取ってくる）が使えるようになります。画面に出る「インストール」を押して、終わるのを待ちます。既に入っていれば、その旨のメッセージが出るだけです。
 
 残りは、次のページからインストーラー（`.pkg`）を取って実行します。Apple シリコンの Mac は Arm64、Intel の Mac は x64 を選びます。
 
@@ -131,9 +130,9 @@ cp ~/Downloads/'PC-E500(7.2).ROM' ~/pockecom/pokecom-<バージョン>-osx-arm64
 
 エミュレータの場所は、環境変数 `PCE500_EMULATOR` で `e500` に教えます（[25.3](25_COMMAND_LINE_MACOS.md#253-エミュレータを教える)）。
 
-## 2.5 e500asm、e500dasm、ce140conv を作る
+## 2.5 e500asm、e500dasm を作る
 
-`e500` があれば、アセンブルと逆アセンブルはできます。Node.js なしで使いたいとき、`ce140conv` を使いたいときに作ります。
+`e500` があれば、アセンブルと逆アセンブルはできます。Node.js なしで使いたいときに作ります。
 
 ```sh
 mkdir -p ~/pockecom
@@ -142,7 +141,6 @@ git clone https://github.com/litchi-gh/pc-e500_tools.git
 cd pc-e500_tools
 sh Assembler/build.sh
 sh DisAssembler/build.sh
-sh FileConverter/build.sh
 ```
 
 | コマンド | 何をするか | できるもの |
@@ -152,9 +150,8 @@ sh FileConverter/build.sh
 | `cd pc-e500_tools` | その中に入る | − |
 | `sh Assembler/build.sh` | 自動テストを動かし、通れば 1 つの実行ファイルを作る。Apple シリコンか Intel かは自分で調べる | `Assembler/app/e500asm` |
 | `sh DisAssembler/build.sh` | 同じ。画面の `E500Disassembler` は Windows 専用なので作らない | `DisAssembler/app/e500dasm` |
-| `sh FileConverter/build.sh` | `g++` → `clang++` → `c++` の順に、最初に見つかったコンパイラで作る | `FileConverter/ce140conv` |
 
-テストが通ると `PASS: 413 checks` のように出ます（数はバージョンによって変わります）。`ce140conv` は `built ce140conv with …` と出れば成功です。
+テストが通ると `PASS: 430 checks` のように出ます（数はバージョンによって変わります）。
 
 動くか確かめます。
 
@@ -170,7 +167,6 @@ DisAssembler/app/e500dasm --version
 ```sh
 echo 'export PATH="$PATH:$HOME/pockecom/pc-e500_tools/Assembler/app"' >> ~/.zshrc
 echo 'export PATH="$PATH:$HOME/pockecom/pc-e500_tools/DisAssembler/app"' >> ~/.zshrc
-echo 'export PATH="$PATH:$HOME/pockecom/pc-e500_tools/FileConverter"' >> ~/.zshrc
 source ~/.zshrc
 ```
 
@@ -203,7 +199,7 @@ source ~/.zshrc
 ```sh
 cd ~/pockecom/pc-e500_tools
 git pull
-sh Assembler/build.sh && sh DisAssembler/build.sh && sh FileConverter/build.sh
+sh Assembler/build.sh && sh DisAssembler/build.sh
 ```
 
 `git pull` は、GitHub にある新しい変更を取ってきて、手元に反映します。`&&` は「前が成功したら次を実行する」という意味で、途中で失敗したらそこで止まります。[2.3 の B](#b-vs-code-を使わないとき) で展開した `e500` は、新しい `.vsix` でもう一度 `unzip -o` を実行します。

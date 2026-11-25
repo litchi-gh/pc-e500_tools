@@ -24,7 +24,7 @@ OK: 11 bytes, origin=B8000h -> ...\examples\sum.bin
 
 | 読みたいこと | 文書 |
 |---|---|
-| 入れ方 | [Windows](../docs/manual/02_INSTALL_WINDOWS.md#28-コマンドのツールを入れる)、[Linux](../docs/manual/02_INSTALL_LINUX.md#25-e500asme500dasmce140conv-を作る)、[macOS](../docs/manual/02_INSTALL_MACOS.md#25-e500asme500dasmce140conv-を作る) |
+| 入れ方 | [Windows](../docs/manual/02_INSTALL_WINDOWS.md#28-コマンドのツールを入れる)、[Linux](../docs/manual/02_INSTALL_LINUX.md#25-e500asme500dasm-を作る)、[macOS](../docs/manual/02_INSTALL_MACOS.md#25-e500asme500dasm-を作る) |
 | 機械語を 1 から | [アセンブラ入門](../docs/manual/03_ASSEMBLER_TUTORIAL.md) |
 | オプション、書き方、疑似命令、エラー | [アセンブラの文法](../docs/manual/04_ASSEMBLER_REFERENCE.md) |
 | 命令 | [命令一覧](../docs/manual/05_INSTRUCTIONS.md) |

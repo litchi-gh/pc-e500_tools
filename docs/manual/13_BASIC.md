@@ -91,8 +91,8 @@ BASIC は書きやすく、機械語は速い、という違いがあります�
 
 | 方向 | 手順 |
 |---|---|
-| PC → 実機 | `ce140conv text2bas prog.txt PROG.BAS` → X: に置く → `LOAD "X:PROG.BAS"` |
-| 実機 → PC | `SAVE "X:PROG.BAS",A` → `ce140conv bas2text PROG.BAS prog.txt` |
+| PC → 実機 | `e500 bin prog.bas -o OUT.BAS` → X: に置く → `LOAD "X:OUT.BAS"` |
+| 実機 → PC | `SAVE "X:PROG.BAS",A` → VS Code で開く（カナがあれば Shift JIS で） |
 
 くわしくは[実機へ送る](14_TRANSFER.md#146-basic-のプログラム)にあります。
 

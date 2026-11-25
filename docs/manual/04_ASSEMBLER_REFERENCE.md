@@ -57,7 +57,7 @@ OK: 11 bytes, origin=B8000h -> ...\sum.bin
 | オプション | 値 | 既定 | 内容 |
 |---|---|---|---|
 | `-o`、`--output` | パス | 入力と同じ名前の `.bin` / `.hex` | 出力ファイル |
-| `-f`、`--format` | `bin` / `hex` | `bin` | `bin` はヘッダなしの機械語、`hex` は Intel HEX |
+| `-f`、`--format` | `bin` / `hex` / `ce140f` | `bin` | `bin` はヘッダーなしの機械語、`hex` は Intel HEX、`ce140f` は実機の `LOAD M` で読める形（16 バイトのヘッダー + 機械語） |
 | `-l`、`--listing` | パス | 作らない | アドレス、機械語、ソースを並べたリスト |
 | `-s`、`--symbols` | パス | 作らない | シンボル表 |
 | `--org` | アドレス（16 進） | 0 | `ORG` がないときの開始アドレス。ソースの `ORG` が優先 |
@@ -83,6 +83,7 @@ OK: 11 bytes, origin=B8000h -> ...\sum.bin
 
 ```text
 e500asm prog.asm -f hex -o prog.hex
+e500asm prog.asm -f ce140f -o PROG.BIN
 e500asm prog.asm --org BEC00 --fill 0xFF
 e500asm prog.asm -I inc -I ../common
 e500asm prog.asm -D MODEL=500 -D DEBUG
@@ -108,7 +109,7 @@ e500asm old.asm --encoding shift_jis
 | `.lst` | アドレス、機械語、`ファイル(行番号): ソース` |
 | `.sym` | `名前 EQU $アドレス`。そのまま `INCLUDE` できる |
 
-複数の `ORG` があるときは、一番小さいアドレスから一番大きいアドレスまでを 1 つにまとめ、間を `--fill` の値で埋めます。`LOAD M` で読める形にするには、VS Code の「BIN を作成」か `ce140conv bin2bas` を使います（[実機へ送る](14_TRANSFER.md)）。
+複数の `ORG` があるときは、一番小さいアドレスから一番大きいアドレスまでを 1 つにまとめ、間を `--fill` の値で埋めます。`LOAD M` で読める形にするには、`-f ce140f` を付けるか、VS Code の「BIN を作成」を使います（[実機へ送る](14_TRANSFER.md)）。
 
 リストの例です。
 
@@ -226,7 +227,7 @@ loop:                           ; ラベルだけ
 | `IL` | 8 | 転送、一部の計算。書くと `I` の上位が 0 になる |
 | `BA`、`I` | 16 | 計算、転送 |
 | `X`、`Y`、`U`、`S` | 20 | アドレス、計算、転送 |
-| `F`、`IMR` | 8 | `PUSHU`、`POPU`（`F` は `PUSHS`、`POPS` も） |
+| `F`、`IMR` | 8 | `PUSHU`、`POPU`、`PUSHS`、`POPS` |
 
 - `MV A,IL` と `MV IL,A` は CPU にありません。
 - `ADD` と `SUB` は、左の幅が右の幅以上でなければなりません。
@@ -263,7 +264,7 @@ loop:                           ; ラベルだけ
 | `[($30)+n]`、`[($30)-n]` | そのアドレス ± n |
 
 - レジスタは `X`、`Y`、`U`、`S` です。
-- `[X++]` や `[--X]` で進む量は、移すバイト数と同じです（`A` は 1、`BA` は 2、`X` は 3、`MVL` は `I`）。
+- `[X++]` や `[--X]` で進む量は、移すバイト数と同じです（`A` は 1、`BA` は 2、`X` は 3、`MVL` は `I`）。`MVL` の `[--X]` では、内部 RAM のアドレスも減ります。
 - `S` 自身を移せるのは `[アドレス]` の形だけです（`MV S,[lmn]`）。
 - `MVL (n),[X]` は CPU に同じ形がないので、`[X+0]` として作ります。
 

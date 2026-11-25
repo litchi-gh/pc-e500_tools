@@ -32,62 +32,31 @@ SHARP ポケットコンピュータ PC-E500 シリーズ（PC-E500 / PC-E500S /
 | [VSCodeExtensions/](VSCodeExtensions/pc-e500-devtools/) | VS Code 拡張「PC-E500 開発ツール」。編集、エミュレータでの実行とデバッグ、テスト、ドットエディタ、BIN 作成 |
 | [Assembler/](Assembler/) | クロスアセンブラ `e500asm` |
 | [DisAssembler/](DisAssembler/) | 逆アセンブラ `e500dasm`（コマンド）と `E500Disassembler`（画面、Windows） |
-| [FileConverter/](FileConverter/) | CE-140F のファイル変換 `ce140conv` |
 | [Samples/](Samples/README.md) | サンプル。アセンブラの例題とゲーム、BASIC のゲームなど |
 | [docs/](docs/README.md) | ハンドブック、マニュアル、設計、解析資料 |
 
 ## はじめに
 
-### Windows
+このリポジトリのツールは、**1 つずつ独立しています**。全部を入れる必要はありません。VS Code 拡張にはアセンブラも入っているので、VS Code で作るなら拡張だけで始められます。
 
-[Releases](https://github.com/litchi-gh/pc-e500_tools/releases) から取得します。
+| ツール | できること | 入れ方 | 使い方 |
+|---|---|---|---|
+| **VS Code 拡張**「PC-E500 開発ツール」 | 書く、間違いを見つける、絵を描く、実機用の BIN を作る。Windows では `F5` で、エミュレータで動かしてデバッグする | [Windows](docs/manual/02_INSTALL_WINDOWS.md#24-拡張機能を入れる)、[Linux](docs/manual/02_INSTALL_LINUX.md#23-拡張機能コマンド-e500を入れる)、[macOS](docs/manual/02_INSTALL_MACOS.md#23-拡張機能コマンド-e500を入れる) | [クイックスタート](docs/manual/01_QUICKSTART.md) |
+| **コマンド `e500`**（拡張に入っている） | 拡張の機能をコマンドで使う。アセンブル、逆アセンブル、実行、テスト、実機用の BIN と BAS の作成。AI に書かせるときもこれを使う | 拡張と同じ（Linux、macOS は Node.js も要る） | [Windows](docs/manual/23_COMMAND_LINE_WINDOWS.md)、[Linux](docs/manual/24_COMMAND_LINE_LINUX.md)、[macOS](docs/manual/25_COMMAND_LINE_MACOS.md) |
+| **アセンブラ** `e500asm` | ASM のソースを機械語にする。VS Code も Node.js も要らない | [Windows](docs/manual/02_INSTALL_WINDOWS.md#28-コマンドのツールを入れる)、[Linux](docs/manual/02_INSTALL_LINUX.md#25-e500asme500dasm-を作る)、[macOS](docs/manual/02_INSTALL_MACOS.md#25-e500asme500dasm-を作る) | [アセンブラの文法](docs/manual/04_ASSEMBLER_REFERENCE.md) |
+| **逆アセンブラ** `e500dasm` | 機械語を ASM に戻す。VS Code も Node.js も要らない。Windows には画面の `E500Disassembler` もある | アセンブラと同じ | [逆アセンブラ](docs/manual/15_DISASSEMBLER.md) |
 
-| ファイル | 使い方 |
-|---|---|
-| `pc-e500-devtools-<バージョン>.vsix` | VS Code の「VSIX からのインストール」 |
-| `e500asm-*-win-x64.zip` | `e500asm.exe` を `Assembler\app\` に置く |
-| `e500dasm-*-win-x64.zip`、`E500Disassembler-*-win-x64.zip` | `DisAssembler\app\` に置く |
+エミュレータで動かすときは、[PC-E500 エミュレータ](https://github.com/litchi-gh/pc-e500_emulator_pockecom)（別のリポジトリ）と、自分の本体から吸い出した ROM も要ります。
 
-VS Code でフォルダを右クリック →「新しいプログラムを作成」→ `F5` で動きます（[クイックスタート](docs/manual/01_QUICKSTART_WINDOWS.md)）。コマンドだけで作ることもできます。PowerShell で、リポジトリのフォルダで打ちます。
+リポジトリを Git で取ってくるところから使えるようになるまでの手順は、OS ごとのインストールの章に、1 行ずつの説明付きで書いてあります。
 
-```powershell
-.\Assembler\e500asm.cmd Samples\Assembler\Basics\hello.asm -o hello_raw.bin
-.\FileConverter\ce140conv.exe bin2bas --addr 0xBEC00 hello_raw.bin HELLO.BIN
-```
+| OS | インストール | 最初の 1 本 |
+|---|---|---|
+| Windows | [インストール](docs/manual/02_INSTALL_WINDOWS.md)（Git で取るのは [2.8](docs/manual/02_INSTALL_WINDOWS.md#28-コマンドのツールを入れる)） | [クイックスタート](docs/manual/01_QUICKSTART_WINDOWS.md) |
+| Linux | [インストール](docs/manual/02_INSTALL_LINUX.md)（Git で取るのは [2.5](docs/manual/02_INSTALL_LINUX.md#25-e500asme500dasm-を作る)） | [クイックスタート](docs/manual/01_QUICKSTART_LINUX.md) |
+| macOS | [インストール](docs/manual/02_INSTALL_MACOS.md)（Git で取るのは [2.5](docs/manual/02_INSTALL_MACOS.md#25-e500asme500dasm-を作る)） | [クイックスタート](docs/manual/01_QUICKSTART_MACOS.md) |
 
-1 行目はサンプルを機械語にし、2 行目は機械語にヘッダーを付けて、実機の `LOAD M` で読める `HELLO.BIN` を作ります。入れ方の全部の手順は[インストール](docs/manual/02_INSTALL_WINDOWS.md)にあります。
-
-### Linux
-
-[ソースから作って](docs/manual/02_INSTALL_LINUX.md)使います。
-
-```sh
-Assembler/app/e500asm Samples/Assembler/Basics/hello.asm -o hello_raw.bin
-FileConverter/ce140conv bin2bas --addr 0xBEC00 hello_raw.bin HELLO.BIN
-```
-
-1 行目はサンプルを機械語にし、2 行目は実機の `LOAD M` で読める `HELLO.BIN` を作ります。コマンド `e500` なら、エミュレータでの実行とテストもできます（[Linux のコマンド](docs/manual/24_COMMAND_LINE_LINUX.md)）。
-
-### macOS
-
-[ソースから作って](docs/manual/02_INSTALL_MACOS.md)使います。
-
-```sh
-Assembler/app/e500asm Samples/Assembler/Basics/hello.asm -o hello_raw.bin
-FileConverter/ce140conv bin2bas --addr 0xBEC00 hello_raw.bin HELLO.BIN
-```
-
-1 行目はサンプルを機械語にし、2 行目は実機の `LOAD M` で読める `HELLO.BIN` を作ります。VS Code での編集と、コマンド `e500` での文法チェック、エミュレータでの実行、BIN の作成もできます（[macOS のコマンド](docs/manual/25_COMMAND_LINE_MACOS.md)）。
-
-### 実機で動かす（どの OS でも同じ）
-
-`HELLO.BIN` を CE-140F 互換機（例: [Sharp_ce140f_emul](https://github.com/ffxx68/Sharp_ce140f_emul)）で実機へ渡し、BASIC で読み込みます（1 行目は最初の 1 回だけ。実行後に `BASIC` キーで戻ります）。
-
-```basic
-POKE &HBFE03,&H1A,&HFD,&H0B,&H00,&H10,&H00:CALL &HFFFD8
-LOAD M "X:HELLO.BIN"
-CLS : CALL &HBEC00
-```
+作ったプログラムを実機で動かす手順は、[実機へ送る](docs/manual/14_TRANSFER.md)にあります。
 
 ## 開発の流れ
 
@@ -115,12 +84,12 @@ ROM の解析と一次資料からまとめた、全 29 章の本です。[目�
 | | Windows | Linux | macOS |
 |---|---|---|---|
 | OS | Windows 11 | Ubuntu 24.04 以降 | macOS 15 以降 |
-| CPU | x64 | x64（`e500asm`、`e500dasm`、`ce140conv` のビルドは arm64 にも対応） | Apple シリコン、Intel |
+| CPU | x64 | x64（`e500asm`、`e500dasm` のビルドは arm64 にも対応） | Apple シリコン、Intel |
 | 動作を確かめた環境 | Windows 11 | Ubuntu 26.04（デスクトップ、WSL） | macOS 15（ビルドとテスト、ROM を使わない動作） |
 | VS Code での編集、診断、ドットエディタ | ○ | ○ | ○ |
 | VS Code の `F5`（実行、デバッグ）とテスト | ○ | − | − |
 | コマンド `e500`（実行、テストを含む） | ○ | ○ | ○ |
-| `e500asm`、`e500dasm`、`ce140conv` | ○（配布） | ○（ソースから作る） | ○（ソースから作る） |
+| `e500asm`、`e500dasm` | ○（配布） | ○（ソースから作る） | ○（ソースから作る） |
 | `E500Disassembler`（画面） | ○ | − | − |
 
 | 使うもの | 要るソフト |
@@ -128,18 +97,17 @@ ROM の解析と一次資料からまとめた、全 29 章の本です。[目�
 | VS Code 拡張 | VS Code 1.95 以降 |
 | コマンド `e500` | Node.js 20.12 以降（Windows は VS Code だけでもよい） |
 | エミュレータでの実行、デバッグ、テスト | .NET 10 ランタイム、PC-E500 エミュレータ、自分の ROM |
-| ソースからのビルド | .NET 10 SDK、Node.js、C++17 のコンパイラ |
+| ソースからのビルド | .NET 10 SDK、Node.js |
 
 PC の性能やディスクの大きさは[インストールの「動作環境」](docs/manual/02_INSTALL.md#21-動作環境)にあります。
 
-- ビルド済みの実行ファイル（`e500asm.exe`, `e500dasm.exe`, `E500Disassembler.exe`, `ce140conv.exe`）は Windows x64 用で、追加ランタイムは不要です。
-- .NET 製の 3 つの EXE（`e500asm.exe`, `e500dasm.exe`, `E500Disassembler.exe`）は自己完結型で 1 ファイル 70〜120 MB あり GitHub の上限を超えるため、リポジトリには含めていません。[Releases](https://github.com/litchi-gh/pc-e500_tools/releases) からダウンロードして `Assembler/app/`、`DisAssembler/app/` に置くか、各フォルダの `build.cmd` でビルドしてください（`app/` に生成されます）。リポジトリに含まれている実行ファイルは `ce140conv.exe` だけです。VSIX も Releases から取得できます。
-- ソースからビルドする手順は OS ごとに、[Windows](docs/manual/02_INSTALL_WINDOWS.md#29-ソースから作る必要な人だけ)、[Linux](docs/manual/02_INSTALL_LINUX.md#25-e500asme500dasmce140conv-を作る)、[macOS](docs/manual/02_INSTALL_MACOS.md#25-e500asme500dasmce140conv-を作る) にあります。
+- ビルド済みの実行ファイル（`e500asm.exe`, `e500dasm.exe`, `E500Disassembler.exe`）は Windows x64 用で、追加ランタイムは不要です。
+- .NET 製の 3 つの EXE（`e500asm.exe`, `e500dasm.exe`, `E500Disassembler.exe`）は自己完結型で 1 ファイル 70〜120 MB あり GitHub の上限を超えるため、リポジトリには含めていません。[Releases](https://github.com/litchi-gh/pc-e500_tools/releases) からダウンロードして `Assembler/app/`、`DisAssembler/app/` に置くか、各フォルダの `build.cmd` でビルドしてください（`app/` に生成されます）。VSIX も Releases から取得できます。
+- ソースからビルドする手順は OS ごとに、[Windows](docs/manual/02_INSTALL_WINDOWS.md#29-ソースから作る必要な人だけ)、[Linux](docs/manual/02_INSTALL_LINUX.md#25-e500asme500dasm-を作る)、[macOS](docs/manual/02_INSTALL_MACOS.md#25-e500asme500dasm-を作る) にあります。
 
   | 作るもの | Windows | Linux | macOS |
   |---|---|---|---|
   | Assembler、DisAssembler | .NET 10 SDK、`build.cmd` | .NET 10 SDK、`build.sh` | .NET 10 SDK、`build.sh` |
-  | FileConverter | MSVC、MinGW-w64、LLVM のどれか、`build.bat` | g++ か clang++、`build.sh` | clang++、`build.sh` |
   | VSCodeExtensions | Node.js、.NET 10 SDK | Node.js、.NET 10 SDK | Node.js、.NET 10 SDK |
 - 実機での動作検証は限定的です。アセンブラ・逆アセンブラは SHARP ESR-L Instruction Manual と既存の SC62015 エミュレータを基準に検証しています。
 

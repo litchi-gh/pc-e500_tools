@@ -14,14 +14,14 @@
   <defs><marker id="a52606D" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#52606D"/></marker></defs>
   <rect x="0.5" y="0.5" width="979" height="499" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
   <text x="24" y="34" class="h">SD カード上の 2 つの形式</text>
-  <text x="24" y="55" class="sub">先頭 1 バイトで見分ける（下の値は実際に ce140conv で生成したもの）</text>
+  <text x="24" y="55" class="sub">先頭 1 バイトで見分ける（中間コードの BASIC も FFh で始まるが、2 バイト目から後が違う）</text>
   <rect x="390" y="72" width="200" height="46" rx="23" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
   <text x="490.0" y="100.0" class="b" text-anchor="middle">先頭バイトは FFh？</text>
   <polyline points="390,95 300,95 300,134" fill="none" stroke="#52606D" stroke-width="1.8" marker-end="url(#a52606D)"/>
   <text x="340" y="88" class="lbl" text-anchor="middle">はい</text>
   <polyline points="590,95 968,95 968,366 372,366" fill="none" stroke="#52606D" stroke-width="1.8" marker-end="url(#a52606D)"/>
   <text x="780" y="88" class="lbl" text-anchor="middle">いいえ</text>
-  <text x="24" y="152" class="b">機械語ファイル（LOAD M / SAVE M）  HELLO.BAS = ヘッダ 16 バイト + 本体 46 バイト</text>
+  <text x="24" y="152" class="b">機械語ファイル（LOAD M / SAVE M）  HELLO.BIN = ヘッダ 16 バイト + 本体 46 バイト</text>
   <rect x="24" y="192" width="44" height="42" rx="2" fill="#F3F5F8" stroke="#7B8794" stroke-width="1"/>
   <text x="46.0" y="218.0" class="m" xml:space="preserve" text-anchor="middle">FF</text>
   <text x="46.0" y="186" class="s" text-anchor="middle">0</text>
@@ -145,7 +145,7 @@
   <text x="724" y="432" class="s" text-anchor="middle">LF</text>
   <text x="770" y="396" class="s">行区切りは CR+LF</text>
   <text x="770" y="413" class="s">EOF の 1Ah は付けない</text>
-  <text x="770" y="430" class="s">エミュレータが送るので</text>
-  <text x="770" y="447" class="s">付けると I/O エラーになる</text>
-  <text x="24" y="476" class="sub">ce140conv info &lt;ファイル&gt; で、種別・長さ・開始アドレス・EOF の有無を確認できる。</text>
+  <text x="770" y="430" class="s">終わりは CE-140F が</text>
+  <text x="770" y="447" class="s">知らせる</text>
+  <text x="24" y="476" class="sub">e500 dis &lt;ファイル&gt; は、機械語のファイルならヘッダーのアドレスを読んで逆アセンブルする。</text>
 </svg>

@@ -32,7 +32,7 @@ Node.js で動く（Windows では VS Code の中の Node.js でもよい）。N
 | `e500 dis CODE.BIN -o code.asm` | 逆アセンブル。`SAVE M` のファイルはアドレスを自分で読む。生のバイト列は `--org BEC00` |
 | `e500 run prog.asm --png s.png` | エミュレータで動かし、画面の文字、状態、PNG を得る |
 | `e500 test .` | `*.e500test.json` のテスト |
-| `e500 bin prog.asm` | 実機用の BIN（ソースの隣に作る）と、実機で打つ行 |
+| `e500 bin prog.asm` | 実機用の BIN（ソースの隣に作る）と、実機で打つ行。`e500 bin prog.bas -o OUT.BAS` は実機の `LOAD` 用 |
 
 終了コードは 0 = 成功、1 = 間違いやテストの失敗、2 = 使い方や環境。`--json` で機械向けの出力。`run` と `test` は Windows、Linux、macOS（Linux と macOS では、その OS 用のエミュレータと `dotnet` が要る）。使えないときは、ほかのコマンドで書いて調べ、動かす確認は利用者に頼む。ROM は利用者のもので、リポジトリや成果物に入れない。
 

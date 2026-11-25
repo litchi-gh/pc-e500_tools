@@ -1,5 +1,5 @@
-// The file LOAD M reads: a 16-byte header and the bytes, as ce140conv bin2bas writes
-// it, and what to type on the PC-E500 for it.
+// The file LOAD M reads: a 16-byte header and the bytes, as SAVE M and
+// e500asm -f ce140f write it, and what to type on the PC-E500 for it.
 import * as path from "node:path";
 import { hex5, Program } from "../emu/program";
 

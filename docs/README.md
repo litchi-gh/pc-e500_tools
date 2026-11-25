@@ -41,7 +41,7 @@ flowchart LR
 |---|---|---|---|
 | 1 | [クイックスタート](manual/01_QUICKSTART.md)（[Windows](manual/01_QUICKSTART_WINDOWS.md)、[Linux](manual/01_QUICKSTART_LINUX.md)、[macOS](manual/01_QUICKSTART_MACOS.md)） | 14 | [実機へ送る](manual/14_TRANSFER.md) |
 | 2 | [インストールと設定](manual/02_INSTALL.md)（[Windows](manual/02_INSTALL_WINDOWS.md)、[Linux](manual/02_INSTALL_LINUX.md)、[macOS](manual/02_INSTALL_MACOS.md)） | 15 | [逆アセンブラ](manual/15_DISASSEMBLER.md) |
-| 3 | [アセンブラ入門](manual/03_ASSEMBLER_TUTORIAL.md) | 16 | [ファイル変換](manual/16_FILE_CONVERTER.md) |
+| 3 | [アセンブラ入門](manual/03_ASSEMBLER_TUTORIAL.md) | 16 | [BASIC のファイルと文字](manual/16_BASIC_FILES.md) |
 | 4 | [アセンブラの文法](manual/04_ASSEMBLER_REFERENCE.md) | 17 | [設定とコマンド](manual/17_SETTINGS.md) |
 | 5 | [命令一覧](manual/05_INSTRUCTIONS.md) | 18 | [困ったとき](manual/18_TROUBLESHOOTING.md) |
 | 6 | [INCLUDE ファイル](manual/06_INCLUDE_FILES.md) | 19 | [ファイル形式](manual/19_FILE_FORMATS.md) |
@@ -60,7 +60,7 @@ flowchart LR
 | 1 | [全体の構造](design/01_ARCHITECTURE.md) | 6 | [デバッグサーバー](design/06_DEBUG_SERVER.md) |
 | 2 | [アセンブラ](design/02_ASSEMBLER.md) | 7 | [デバッガー](design/07_DEBUGGER.md) |
 | 3 | [逆アセンブラ](design/03_DISASSEMBLER.md) | 8 | [INCLUDE ファイル](design/08_INCLUDE_FILES.md) |
-| 4 | [ファイル変換](design/04_FILE_CONVERTER.md) | 9 | [テスト、ビルド、配布](design/09_BUILD_TEST_RELEASE.md) |
+| 4 | [実機のファイル](design/04_DEVICE_FILES.md) | 9 | [テスト、ビルド、配布](design/09_BUILD_TEST_RELEASE.md) |
 | 5 | [VS Code 拡張](design/05_VSCODE_EXTENSION.md) | | |
 
 ## サンプル

@@ -34,10 +34,9 @@
 | Node.js | 20.12 以降（22.22 と 24.22 で確認） | コマンド `e500`。Windows は、VS Code があればなくてもよい |
 | .NET ランタイム | 10 | エミュレータで動かす（VS Code の `F5`、`e500 run`、`e500 test`） |
 | .NET SDK | 10 | `e500asm`、`e500dasm`、拡張機能をソースから作る |
-| C++ のコンパイラ | C++17 に対応したもの | `ce140conv` をソースから作る |
 | PC-E500 エミュレータ | デバッグ用の関数があるもの | エミュレータで動かす |
 
-配布している `e500asm.exe`、`e500dasm.exe`、`E500Disassembler.exe`、`ce140conv.exe`（Windows）は、これだけで動きます。.NET も Node.js も要りません。
+配布している `e500asm.exe`、`e500dasm.exe`、`E500Disassembler.exe`（Windows）は、これだけで動きます。.NET も Node.js も要りません。
 
 ### PC の性能
 
@@ -54,7 +53,6 @@
 | 拡張機能 | 約 0.4 MB（VSIX の大きさ） |
 | `e500asm`、`e500dasm` | 1 つ約 74 MB |
 | `E500Disassembler`（Windows） | 約 116 MB |
-| `ce140conv` | 1 MB まで |
 | エミュレータ（Windows） | 約 120 MB |
 
 VS Code の値は [VS Code の動作環境](https://code.visualstudio.com/docs/supporting/requirements)、エミュレータの値は[エミュレータの説明](https://github.com/litchi-gh/pc-e500_emulator_pockecom#動作環境)によります。.NET を使う機能の OS は [.NET 10 の対応 OS](https://github.com/dotnet/core/blob/main/release-notes/10.0/supported-os.md)に従います。
@@ -79,7 +77,7 @@ VS Code の値は [VS Code の動作環境](https://code.visualstudio.com/docs/s
 | コマンドで動かす、テストする | 上に加えて、エミュレータ、ROM、.NET 10 のランタイム |
 | アセンブルだけする | `e500asm` |
 | 機械語を読む | `e500dasm`（コマンド）か `E500Disassembler`（画面、Windows） |
-| 実機と BASIC のファイルをやり取りする | `ce140conv` |
+| 実機用のファイル（BIN、BAS）を作る | 拡張機能（`e500 bin`）。機械語だけなら `e500asm` |
 
 OS によって使えるものが違います。
 
@@ -90,7 +88,6 @@ OS によって使えるものが違います。
 | コマンド `e500` の `asm` `dis` `lint` `bin` `help` `new` `skill` | ○ | ○ | ○ |
 | コマンド `e500` の `run` `test` | ○ | ○ | ○ |
 | `e500asm`、`e500dasm` | ○（EXE を配布） | ○（ソースから作る） | ○（ソースから作る） |
-| `ce140conv` | ○（リポジトリに入っている） | ○（ソースから作る） | ○（ソースから作る） |
 | `E500Disassembler`（画面） | ○ | − | − |
 
 ### 入れるものの正体
@@ -183,7 +180,6 @@ ROM は、自分の本体から吸い出したものを使います。ツール�
 |---|---|
 | `Assembler/` | e500asm |
 | `DisAssembler/` | e500dasm、E500Disassembler |
-| `FileConverter/` | ce140conv |
 | `VSCodeExtensions/pc-e500-devtools/` | VS Code 拡張、コマンド `e500` |
 | `Samples/` | サンプル（アセンブラ、BASIC） |
 | `docs/manual/` | このマニュアル |

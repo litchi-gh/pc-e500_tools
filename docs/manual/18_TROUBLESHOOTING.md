@@ -83,9 +83,9 @@ flowchart LR
 
 | 症状 | 原因 | 対処 |
 |---|---|---|
-| `LOAD` の最後で I/O エラー | ファイルの末尾に `1Ah` がある | `text2bas` で作り直す（`--eof` を付けない） |
+| `LOAD` の最後で I/O エラー | ファイルの末尾に `1Ah` がある | `e500 bin` で作り直す（[16 章](16_BASIC_FILES.md)） |
 | `LOAD` でエラー | 行番号のない行、256 バイトを超える行 | ソースを直す |
-| `LOAD M` が別のアドレスに読み込まれる | `--addr` を付け忘れた、違う値 | `ce140conv info` でアドレスを確かめる |
+| `LOAD M` が別のアドレスに読み込まれる | BIN を作ったときの `ORG` が違う | `e500 dis PROG.BIN` でアドレスを確かめる |
 | `CALL` で暴走する | `ORG` と読み込んだアドレスが違う | 同じにする。「BIN を作成」なら自動で合う |
 | 機械語エリアが消えた | オールリセットした | もう一度確保する |
 | エミュレータでは動くのに実機で動かない | 機械語エリアの確保、`CALL` のアドレス、内蔵 RAM の大きさ | 1 つずつ確かめる。`PRINT PEEK &HBFD1A,PEEK &HBFD1B,PEEK &HBFD1C` |
@@ -97,7 +97,7 @@ flowchart LR
 |---|---|
 | `e500asm` | [アセンブラの文法 4.9](04_ASSEMBLER_REFERENCE.md#49-エラーメッセージ) |
 | `e500dasm` | [逆アセンブラ 15.8](15_DISASSEMBLER.md#158-エラー) |
-| `ce140conv` | [ファイル変換 16.6](16_FILE_CONVERTER.md#166-困ったとき) |
+| BASIC のファイル | [BASIC のファイルと文字 16.7](16_BASIC_FILES.md#167-困ったとき) |
 
 | 症状 | 対処 |
 |---|---|
@@ -116,8 +116,6 @@ Windows で起きることです。
 |---|---|
 | `e500asm.cmd` が「見つかりません」 | `Assembler\app\` に `e500asm.exe` を置く（[手順](02_INSTALL_WINDOWS.md#3-exe-を置く)） |
 | PowerShell で `fc` が別のコマンドになる | `fc.exe` と書く |
-| `output would overwrite …` | `prog.bin` と `PROG.BIN` は、Windows では同じファイル。`prog_raw.bin` のように名前を分ける |
-| `build.bat` が `ce140conv.cpp` を見つけられない | `cd FileConverter` でフォルダを移ってから、`.\build.bat` を打つ |
 
 ## 18.6 Linux
 
@@ -125,7 +123,6 @@ Windows で起きることです。
 |---|---|
 | `build.sh` が `Permission denied` | `sh build.sh` と打つ。または `chmod +x build.sh` で「実行してよい」という印を付ける |
 | `INCLUDE` や `INCBIN` で `File not found` | 大文字と小文字をファイル名に合わせる |
-| `this system's iconv cannot convert` | `--sjis` を使わず、テキストを UTF-8 にしてから渡す |
 | 出力の改行が Windows と違う | `.lst`、`.sym`、`.hex`、逆アセンブル結果は、その OS の改行。バイナリは同じ |
 | `unzip: command not found` | `sudo apt install unzip` で入れる |
 
@@ -135,9 +132,6 @@ Windows で起きることです。
 |---|---|
 | `build.sh` が `permission denied` | `sh build.sh` と打つ。または `chmod +x build.sh` で「実行してよい」という印を付ける |
 | `dotnet: command not found` | .NET 10 SDK を入れて、ターミナルを開き直す |
-| `build.sh: no C++17 compiler found` | `xcode-select --install` でコマンドラインツールを入れる |
-| `output would overwrite …` | `prog.bin` と `PROG.BIN` は、macOS のふつうの設定では同じファイル。`prog_raw.bin` のように名前を分ける |
-| `this system's iconv cannot convert` | `--sjis` を使わず、テキストを UTF-8 にしてから渡す |
 | 出力の改行が Windows と違う | `.lst`、`.sym`、`.hex`、逆アセンブル結果は、その OS の改行。バイナリは同じ |
 
 ## 18.8 原因を探す手順

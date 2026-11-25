@@ -85,7 +85,7 @@ e500dasm PROG.BIN -f ce140f -o prog.asm                     # SAVE M 形式（16
 | 入れ方 | やり方 | 向いている場面 |
 |---|---|---|
 | **POKE** | 短いプログラムなら `POKE 先頭,バイト,…` を数行。リストから 10 進または `&H` 16 進で書く | 数十バイトまで |
-| **LOAD M** | `ce140conv bin2bas --addr 0xBEC00 prog.bin PROG.BIN` で SAVE M 形式（16 バイトヘッダ付き）にし、CE-140F（エミュレータでは X: フォルダ）へ置いて `LOAD M "X:PROG.BIN"`。ヘッダのアドレスへ読み込まれる | ふつうはこれ |
+| **LOAD M** | `e500asm prog.asm -f ce140f -o PROG.BIN`（か VS Code の「BIN を作成」）で SAVE M 形式（16 バイトヘッダ付き）にし、CE-140F（エミュレータでは X: フォルダ）へ置いて `LOAD M "X:PROG.BIN"`。ヘッダのアドレスへ読み込まれる | ふつうはこれ |
 | **エミュレータの BIN 書き込み** | メモリ欄から生バイナリを指定アドレスへ書く | エミュレータで試すとき |
 
 画面付きの手順は [実機へ送る](../manual/14_TRANSFER.md)、本体だけで動かす手順は[ハンドブック](../handbook/22_MACHINE_CODE.md)にあります。
@@ -289,7 +289,7 @@ SAVE M "X:PROG.BIN",&HBEC00,&HBEC3F     ' 機械語エリアの内容を保存
 LOAD M "X:PROG.BIN"                     ' ヘッダのアドレスへ戻す
 ```
 
-ファイル先頭には 16 バイトのヘッダ（`FF 00 06 01 10 長さ3 開始3 FF FF FF 00 0F`）が付きます。`ce140conv bin2bas --addr` が同じヘッダを生成し、`e500dasm -f ce140f` がそれを読みます。詳細は `FileConverter/README.md` と [ファイル形式](../manual/19_FILE_FORMATS.md#機械語load-m--save-m) にあります。
+ファイル先頭には 16 バイトのヘッダ（`FF 00 06 01 10 長さ3 開始3 FF FF FF 00 0F`）が付きます。`e500asm -f ce140f` が同じヘッダを生成し、`e500dasm -f ce140f` がそれを読みます。詳細は [ファイル形式](../manual/19_FILE_FORMATS.md#機械語load-m--save-m) にあります。
 
 ![SAVE M のヘッダ](../images/analysis/machine-code-savem.svg)
 

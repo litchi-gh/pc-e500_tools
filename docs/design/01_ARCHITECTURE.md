@@ -19,7 +19,6 @@
 | `Assembler/src/E500Assembler.Cli/` | C# | `e500asm` のコマンドライン |
 | `DisAssembler/src/E500Disassembler.Core/` | C# | 逆アセンブラ本体（ライブラリ） |
 | `DisAssembler/src/E500Disassembler.Cli/`、`.Gui/` | C# | `e500dasm` と GUI（Windows Forms） |
-| `FileConverter/ce140conv.cpp` | C++17 | 単一ソースの変換ツール |
 | `VSCodeExtensions/pc-e500-devtools/src/` | TypeScript | VS Code 拡張 |
 | `VSCodeExtensions/pc-e500-devtools/media/` | JavaScript | パネル、デバッグ画面、ドットエディタ、環境の確認のページ |
 | `VSCodeExtensions/pc-e500-devtools/server/` | C# | デバッグサーバー `e500dbg` |
@@ -33,18 +32,16 @@
 |---|---|---|
 | アセンブラ | Core 700、CLI 90 | `Assembler.cs`、`InstructionEncoder.cs` |
 | 逆アセンブラ | Core 310、CLI 70、GUI 110 | `Decoder.cs` |
-| `ce140conv` | 740 | `ce140conv.cpp` |
 | 拡張 | TypeScript 8000（テストを除く） | `extension.ts`、`asm/assembler.ts`、`debug/adapter.ts` |
 | 拡張のページ | JavaScript 2000 | `lcd.js`、`emulator.js` |
 | `e500dbg` | 920 | `Program.cs`、`Machine.cs` |
 | INCLUDE ファイル | 1000 | `sprite.inc`、`screen.inc` |
 
-### なぜ 3 つの言語か
+### なぜ 2 つの言語か
 
 | 部分 | 言語 | 理由 |
 |---|---|---|
 | アセンブラ、逆アセンブラ | C# | 1 つの実行ファイルにでき、Windows、Linux、macOS で動く。逆アセンブラがアセンブラを部品として使える |
-| `ce140conv` | C++ | 実行ファイルが小さく（数百 KB）、ほかに何も要らない。リポジトリに入れて配れる |
 | 拡張 | TypeScript | VS Code の拡張の言語。編集のたびに診断するので、外のプロセスを呼ばずに自分で計算したい |
 | `e500dbg` | C# | コアの DLL を呼べて、逆アセンブラの Core をそのまま使える |
 
@@ -69,7 +66,7 @@ flowchart TD
 
 - **基準になるのは `InstructionEncoder.cs` です。** 逆アセンブラはこれを参照して出力を照合し、拡張の `src/asm/encoder.ts` はこれを移植したものです。
 - `e500core.dll` と ROM は同梱しません。`e500dbg` が別のプロセスとして、実行時に利用者のものを読み込みます。拡張と `e500dbg` は MIT、コアは GPL-2.0-or-later のエミュレータの一部です。
-- `ce140conv` はほかのツールに依存しません。`LOAD M` のヘッダーは、`ce140conv`、逆アセンブラ、拡張（`src/project/loadM.ts`）がそれぞれ持っています。
+- `LOAD M` のヘッダーは、アセンブラ、逆アセンブラ、拡張（`src/project/loadM.ts`）がそれぞれ持っています。
 - 実行時に外のライブラリは使いません。C# は .NET の標準だけ、拡張は Node.js と VS Code の API だけです（`devDependencies` は型とビルドのツールです）。
 
 ### 依存の向きの決まり
@@ -107,18 +104,18 @@ flowchart TD
   A2 --> LM["名前.BIN"]
   LCD[".lcd .spr"] -- INCBIN --> A1
   LCD -- INCBIN --> A2
-  BIN --> C1["ce140conv bin2bas"] --> LM
+  A1 -- "-f ce140f" --> LM
   LM --> DEV["実機"]
   DEV -- "SAVE M" --> D1["e500dasm"] --> ASM
-  BAS[".bas"] --> C2["ce140conv text2bas"] --> DEV
+  BAS[".bas"] --> C2["e500 bin"] --> DEV
   BAS --> RUN
 ```
 
 | データ | 作るもの | 使うもの | 形 |
 |---|---|---|---|
 | `.asm` `.inc` | 人、逆アセンブラ | 2 つのアセンブラ | UTF-8（`e500asm` は `--encoding` で変えられる） |
-| `.bin` | `e500asm` | `ce140conv`、ほかのツール | ヘッダーなしのバイト列 |
-| `名前.BIN` | 拡張「BIN を作成」、`ce140conv bin2bas` | 実機の `LOAD M`、`e500dasm -f ce140f` | 16 バイトのヘッダー + 本体 |
+| `.bin` | `e500asm` | ほかのツール | ヘッダーなしのバイト列 |
+| `名前.BIN` | 拡張「BIN を作成」、`e500 bin`、`e500asm -f ce140f` | 実機の `LOAD M`、`e500dasm -f ce140f` | 16 バイトのヘッダー + 本体 |
 | `.lst` `.sym` | `e500asm -l -s` | 人 | テキスト |
 | `.lcd` `.pixels` `.spr` | ドットエディタ、テンプレート | `INCBIN`、テストの `picture` | [ファイル形式](../manual/19_FILE_FORMATS.md) |
 | `.e500test.json` | 人、テンプレート | テスト エクスプローラー | [テスト](../manual/11_TESTS.md) |
@@ -146,7 +143,7 @@ flowchart TD
 | 命令の符号化 | `InstructionEncoder.cs`、`encoder.ts` | 双方のテストに同じ golden vector。`project.test.ts` は、テンプレートを `e500asm` と両方でアセンブルして比べる |
 | 命令の書ける形（候補の表） | `instructions.ts` | テストが全部の形を符号化器に通す |
 | デコード | `Decoder.cs` | デコードした結果を `InstructionEncoder` でもう一度符号化して照合 |
-| `LOAD M` のヘッダー | `ce140conv.cpp`、`InputImage.cs`、`loadM.ts` | 拡張のテストが `ce140conv.exe` の出力と比べる |
+| `LOAD M` のヘッダー | `Assembler.cs`、`InputImage.cs`、`loadM.ts`、`disassembler.ts` | 拡張のテストが `e500asm -f ce140f` の出力と比べる |
 | IOCS の表 | `iocs.ts`、`inc/iocs.inc` | `iocsInclude()` で作り、テストが一致を調べる |
 | 点と `.lcd` の対応 | `lcdFile.ts` の `dotPlace`、`lcd.js` の状態表示、`screen.inc` | エミュレータで実際に表示して比べる |
 | BASIC のキーワード | `pcE500.ts`、`help.ts` | テストが過不足を調べる |
@@ -160,7 +157,7 @@ flowchart TD
 | 式、数の書式（`Expression.cs`） | `src/asm/expression.ts`、[アセンブラの文法](../manual/04_ASSEMBLER_REFERENCE.md#44-数と式) |
 | `--org` の書式（`Assembler.ParseAddress`） | `e500asm` と `e500dasm` が共用。GUI の `RawOrigin`、`--help` の文面、[アドレスの書き方](../manual/14_TRANSFER.md#148-アドレスの書き方) |
 | パス、疑似命令、診断（`Assembler.cs`） | `src/asm/assembler.ts`、[エラーメッセージ](../manual/04_ASSEMBLER_REFERENCE.md#49-エラーメッセージ) |
-| `LOAD M` のヘッダー | `ce140conv.cpp`、`InputImage.cs`、`src/project/loadM.ts`、`src/emu/debugPanel.ts`（BIN の読み込み）、`server/Machine.cs`（ROM のダンプ）、[ファイル形式](../manual/19_FILE_FORMATS.md) |
+| `LOAD M` のヘッダー | `Assembler.cs` の `LoadMFile`、`InputImage.cs`、`src/project/loadM.ts`、`src/asm/disassembler.ts`、`src/emu/debugPanel.ts`（BIN の読み込み）、`server/Machine.cs`（ROM のダンプ）、[ファイル形式](../manual/19_FILE_FORMATS.md) |
 | BASIC のキーワード | `src/dialects/pcE500.ts`、`src/basic/help.ts`、`syntaxes/pc-e500-basic.tmLanguage.json`、[BASIC の命令と関数](../analysis/14_BASIC_REFERENCE.md) |
 | IOCS の番号と引数 | `src/asm/iocs.ts`（ここから `inc/iocs.inc`、候補、説明を作る）、[IOCS と FCS](../analysis/11_IOCS.md)、[INCLUDE ファイル](../manual/06_INCLUDE_FILES.md#番号) |
 | `.lcd` / `.spr` の形 | `src/lcd/lcdFile.ts`、`sprFile.ts`、`media/lcd.js`、`inc/screen.inc`、`sprite.inc`、[ファイル形式](../manual/19_FILE_FORMATS.md) |

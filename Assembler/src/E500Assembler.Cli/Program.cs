@@ -37,9 +37,9 @@ static int Run(string[] args)
         }
     }
     if (input == null) { Help(); return args.Length == 0 ? 0 : 1; }
-    if (format is not ("bin" or "hex")) throw new AssemblyException("Format must be bin or hex");
+    if (format is not ("bin" or "hex" or "ce140f")) throw new AssemblyException("Format must be bin, hex or ce140f");
     if (fill is < 0 or > 255) throw new AssemblyException("Fill must be 0..255");
-    output ??= Path.ChangeExtension(input, format == "bin" ? ".bin" : ".hex");
+    output ??= Path.ChangeExtension(input, format switch { "bin" => ".bin", "hex" => ".hex", _ => ".BIN" });
     var paths = new[] { output, listing, symbols }.Where(p => p != null).Select(p => Path.GetFullPath(p!)).ToArray();
     // Windows と macOS の標準のファイルシステムは大文字小文字を区別しない。Linux では a.bin と A.BIN は別のファイル
     StringComparer pathComparer = OperatingSystem.IsWindows() || OperatingSystem.IsMacOS() ? StringComparer.OrdinalIgnoreCase : StringComparer.Ordinal;
@@ -49,7 +49,7 @@ static int Run(string[] args)
     var result = new Assembler().AssembleFile(input, new AssemblerOptions { Origin = origin, Fill = (byte)fill, SourceEncoding = sourceEncoding, IncludeDirectories = includes, Defines = defines });
     var sources = result.InputFiles.ToHashSet(pathComparer);
     if (paths.Any(sources.Contains)) throw new AssemblyException("Output would overwrite an included source");
-    var outputs = new List<(string Path, byte[] Data)> { (output, format == "bin" ? result.Binary : Encoding.ASCII.GetBytes(result.IntelHex())) };
+    var outputs = new List<(string Path, byte[] Data)> { (output, format switch { "bin" => result.Binary, "hex" => Encoding.ASCII.GetBytes(result.IntelHex()), _ => result.LoadMFile() }) };
     if (listing != null) outputs.Add((listing, Encoding.UTF8.GetBytes(result.ListingText())));
     if (symbols != null) outputs.Add((symbols, Encoding.UTF8.GetBytes(result.SymbolText())));
     // Stage every file before replacing existing results. Assembly errors never touch output.
@@ -71,8 +71,8 @@ static int Run(string[] args)
 static void Help() => Console.WriteLine("""
 e500asm 0.2.0 - SHARP PC-E500 series / SC62015 cross assembler
 Usage: e500asm source.asm [options]
-  -o, --output PATH     Output path (default: source.bin / source.hex)
-  -f, --format bin|hex  Raw binary or Intel HEX (default: bin)
+  -o, --output PATH     Output path (default: source.bin / source.hex / source.BIN)
+  -f, --format FORMAT   bin (raw binary, default), hex (Intel HEX) or ce140f (the file LOAD M reads)
   -l, --listing PATH    Address / bytes / source listing
   -s, --symbols PATH    Symbol table
   --org ADDRESS        Initial origin, hexadecimal (default: 0; source ORG takes precedence)

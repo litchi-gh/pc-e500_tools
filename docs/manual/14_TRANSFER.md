@@ -34,28 +34,27 @@ CE-140F 互換機には、[Sharp_ce140f_emul](https://github.com/ffxx68/Sharp_ce
 
 ### コマンドラインで作る
 
-`e500` があれば `e500 bin prog.asm` の 1 行で、BIN と、実機で打つ行ができます（どの OS でも同じ。[e500 bin](22_COMMAND_LINE_AI.md#e500-bin)）。`e500asm` と `ce140conv` で作るときは、次の 2 行です。リポジトリのフォルダで打ちます。
+`e500` があれば `e500 bin prog.asm` の 1 行で、BIN と、実機で打つ行ができます（どの OS でも同じ。[e500 bin](22_COMMAND_LINE_AI.md#e500-bin)）。Node.js も VS Code もないときは、`e500asm` に `-f ce140f` を付けます。リポジトリのフォルダで打ちます。
 
 **Windows（PowerShell）**
 
 ```powershell
-.\Assembler\e500asm.cmd prog.asm -o prog_raw.bin
-.\FileConverter\ce140conv.exe bin2bas --addr 0xBEC00 prog_raw.bin PROG.BIN
+.\Assembler\e500asm.cmd prog.asm -f ce140f -o PROG.BIN
 ```
 
 **Linux、macOS**
 
 ```sh
-Assembler/app/e500asm prog.asm -o prog_raw.bin
-FileConverter/ce140conv bin2bas --addr 0xBEC00 prog_raw.bin PROG.BIN
+Assembler/app/e500asm prog.asm -f ce140f -o PROG.BIN
 ```
 
-| コマンド | 何をするか |
+| 部分 | 何をするか |
 |---|---|
-| `e500asm prog.asm -o prog_raw.bin` | ソースを機械語にして、`prog_raw.bin` に入れる |
-| `ce140conv bin2bas --addr 0xBEC00 prog_raw.bin PROG.BIN` | 機械語の先頭に、アドレスと長さの入った 16 バイトのヘッダーを付けて、`PROG.BIN` を作る |
+| `e500asm prog.asm` | ソースを機械語にする |
+| `-f ce140f` | 先頭に、アドレスと長さの入った 16 バイトのヘッダーを付ける。アドレスはソースの `ORG` から取る |
+| `-o PROG.BIN` | 作るファイル |
 
-`--addr` はソースの `ORG` と同じ値にします。できるファイルは「BIN を作成」と同じです。Windows と macOS では `prog.bin` と `PROG.BIN` が同じファイルになるので、機械語の方には `_raw` を付けて分けています（同じ名前にすると、`output would overwrite …` と出て止まります）。
+どの方法でも、同じファイルができます。
 
 ## 14.3 機械語エリアを確保する
 
@@ -118,35 +117,22 @@ POKE &HBEC00,&H08,&H7B,&HA8,&H08,&HEC,&H0B,&H9F,&H07,&H00
 
 ### PC → 実機
 
-**Windows（PowerShell）**
-
-```powershell
-.\FileConverter\ce140conv.exe text2bas prog.txt PROG.BAS
-.\FileConverter\ce140conv.exe text2bas --sjis kana.txt KANA.BAS
+```text
+e500 bin prog.bas -o OUT.BAS
 ```
 
-**Linux、macOS**
+`e500 bin` に BASIC のソース（UTF-8）を渡すと、文字と改行を本体のものに変えて、`LOAD` で読める `OUT.BAS` を作ります。出力は、入力と別の名前にします（Windows と macOS では、大文字と小文字だけ違う名前は同じファイルです）。
 
-```sh
-FileConverter/ce140conv text2bas prog.txt PROG.BAS
-FileConverter/ce140conv text2bas --sjis kana.txt KANA.BAS
-```
-
-| コマンド | 何をするか |
-|---|---|
-| 1 行目 | UTF-8 のテキスト `prog.txt` の文字と改行を本体のものに変えて、`LOAD` で読める `PROG.BAS` を作る |
-| 2 行目 | 同じことを、Shift-JIS のテキストから行う |
-
-出力は、入力と別の名前にします。VS Code で `prog.bas` を書いたときは、`text2bas prog.bas OUT.BAS` のように、大文字小文字だけでない違う名前を付けます。
+`e500` を使わずに、VS Code で「Shift JIS」「CRLF」にして保存する方法もあります。文字の決まりと合わせて、[16 章](16_BASIC_FILES.md#164-pc-から実機へ)にあります。
 
 できたファイルを X: に置き、実機で読み込みます。
 
 ```basic
-LOAD "X:PROG.BAS"
+LOAD "X:OUT.BAS"
 RUN
 ```
 
-`LOAD "X:PROG.BAS",R` なら、読み込んですぐに実行します。
+`LOAD "X:OUT.BAS",R` なら、読み込んですぐに実行します。
 
 ### 実機 → PC
 
@@ -154,21 +140,9 @@ RUN
 SAVE "X:PROG.BAS",A
 ```
 
-**`,A` を付けます。** 付けないと中間コードで保存され、変換できません。
+**`,A` を付けます。** 付けないと中間コードで保存され、PC のエディタでは読めません。
 
-**Windows（PowerShell）**
-
-```powershell
-.\FileConverter\ce140conv.exe bas2text PROG.BAS prog.txt
-```
-
-**Linux、macOS**
-
-```sh
-FileConverter/ce140conv bas2text PROG.BAS prog.txt
-```
-
-本体の文字と改行を PC のものに変えて、エディタで読めるテキスト `prog.txt` を作るコマンドです。`PROG.BAS` は変わりません。
+できた `PROG.BAS` を VS Code で開きます。カナが化けるときは、画面右下の「UTF-8」→「エンコード付きで再度開く」→「Japanese (Shift JIS)」を選びます。
 
 ## 14.7 実機の機械語を読む
 
@@ -202,7 +176,6 @@ DisAssembler/app/e500dasm CODE.BIN --format ce140f -o code.asm
 |---|---|
 | ASM のソース | `$BEC00`、`&BEC00`、`0xBEC00`、`0BEC00h`（何も付けないと 10 進） |
 | `e500asm --org`、`e500dasm --org` | `BEC00`、`0xBEC00` など（いつも 16 進） |
-| `ce140conv --addr` | 〃（`&HBEC00` も） |
 | 実機の BASIC | `&HBEC00`、`781312` |
 | `launch.json`、`e500test.json` | `"&HBEC00"`、`"$BEC00"`、`"0xBEC00"`、`"0BEC00h"`、ラベル |
 
@@ -214,11 +187,8 @@ PATH に入れてあれば、どの OS でも同じです。入れ方は [2 章]
 |---|---|
 | アセンブル | `e500asm prog.asm -o prog_raw.bin` |
 | リストとシンボルも | `e500asm prog.asm -o prog_raw.bin -l prog.lst -s prog.sym` |
-| 機械語 → `LOAD M` 用 | `ce140conv bin2bas --addr BEC00 prog_raw.bin PROG.BIN` |
-| `LOAD M` 用 → 機械語 | `ce140conv bas2bin PROG.BIN prog_raw.bin` |
-| テキスト → `LOAD` 用 | `ce140conv text2bas prog.txt PROG.BAS` |
-| `SAVE ,A` → テキスト | `ce140conv bas2text PROG.BAS prog.txt` |
-| 中身を調べる | `ce140conv info PROG.BIN` |
+| `LOAD M` 用の BIN | `e500asm prog.asm -f ce140f -o PROG.BIN`、`e500 bin prog.asm` |
+| BASIC のソース → `LOAD` 用 | `e500 bin prog.bas -o OUT.BAS` |
 | 逆アセンブル（`SAVE M`） | `e500dasm CODE.BIN -f ce140f -o code.asm` |
 | 逆アセンブル（生） | `e500dasm code.bin -f raw --org BEC00 -o code.asm` |
 

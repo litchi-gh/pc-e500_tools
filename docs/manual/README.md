@@ -11,7 +11,6 @@ SHARP PC-E500 シリーズ（PC-E500 / PC-E500S / PC-E550 / PC-E650 / PC-1480U /
 | **PC-E500 開発ツール**（VS Code 拡張） | 編集、実行、デバッグ、テスト、ドット絵、BIN 作成 | [8](08_EDITOR.md)〜[14](14_TRANSFER.md) |
 | **e500asm** | アセンブラ（ASM → 機械語） | [3](03_ASSEMBLER_TUTORIAL.md)、[4](04_ASSEMBLER_REFERENCE.md) |
 | **e500dasm** / **E500Disassembler** | 逆アセンブラ（機械語 → ASM） | [15](15_DISASSEMBLER.md) |
-| **ce140conv** | CE-140F のファイルと PC のファイルの変換 | [16](16_FILE_CONVERTER.md) |
 
 ## この本の使い方
 
@@ -48,7 +47,7 @@ flowchart LR
 | 13 | [BASIC](13_BASIC.md) | BASIC の編集、診断、実行 |
 | 14 | [実機へ送る](14_TRANSFER.md) | BIN を作成、`LOAD M`、BASIC の転送、実機から読む |
 | 15 | [逆アセンブラ](15_DISASSEMBLER.md) | CLI と GUI |
-| 16 | [ファイル変換](16_FILE_CONVERTER.md) | ce140conv |
+| 16 | [BASIC のファイルと文字](16_BASIC_FILES.md) | テキストの決まり、カナ、`e500 bin` |
 | 17 | [設定とコマンド](17_SETTINGS.md) | 全設定、全コマンド、キー、launch.json |
 | 18 | [困ったとき](18_TROUBLESHOOTING.md) | メッセージと症状ごとの対処 |
 | 19 | [ファイル形式](19_FILE_FORMATS.md) | BIN、`.lcd`、`.spr`、リスト、文字コード表 |

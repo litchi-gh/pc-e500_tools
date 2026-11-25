@@ -25,6 +25,14 @@ describe("SC62015 encoder", () => {
     for (const [m, code] of [["NOP", "00"], ["RETI", "01"], ["RET", "06"], ["RETF", "07"], ["SC", "97"], ["RC", "9F"], ["TCL", "CE"], ["HALT", "DE"], ["OFF", "DF"], ["WAIT", "EF"], ["INT", "FE"], ["IR", "FE"], ["RESET", "FF"], ["SWAP A", "EE"], ["PUSHS F", "4F"], ["POPS F", "5F"]]) golden(m, code);
   });
 
+  it("encodes PUSHS and POPS as MV", () => {
+    for (const [i, r] of ["A", "IL", "BA", "I", "X", "Y"].entries()) {
+      golden(`PUSHS ${r}`, `B${i}37`);
+      golden(`POPS ${r}`, `9${i}27`);
+    }
+    golden("PUSHS F", "4F"); golden("POPS F", "5F"); golden("PUSHS IMR", "30E837FB"); golden("POPS IMR", "30E027FB");
+  });
+
   it("encodes register transfers for every register", () => {
     const regs = ["A", "IL", "BA", "I", "X", "Y", "U", "S"];
     const h = (n: number): string => n.toString(16).toUpperCase().padStart(2, "0");
@@ -164,7 +172,7 @@ describe("SC62015 assembler", () => {
       ["MV A,missing", "ASM031", "missing"], ["bad: NOP\nbad: RET", "ASM030", "bad"], ["DB (1+2", "ASM010"],
       ["JR +256", "ASM041"], ["JR -256", "ASM041"], ["ORG $B0000\nJP $C0000", "ASM041"], ["ORG $B0000\nJR $C0000", "ASM041"],
       ["MV A,[BA]", "ASM020", "X, Y, U, S"], ["JP A", "ASM020"], ["MV S,[X]", "ASM020"], ["MV [X],S", "ASM020"], ["PUSHU U", "ASM020"],
-      ["PUSHS A", "ASM020"], ["ADD A,X", "ASM020"], ["ADC A,IL", "ASM020"], ["CMP A,($20)", "ASM020"],
+      ["PUSHS U", "ASM020"], ["POPS S", "ASM020"], ["ADD A,X", "ASM020"], ["ADC A,IL", "ASM020"], ["CMP A,($20)", "ASM020"],
       ["MV A,IL", "ASM020"], ["MV IL,A", "ASM020"], ["MV X,A", "ASM020"], ["EX A,IL", "ASM020"],
       ["MV A,(PY+1)", "ASM020", "PX"], ["MV ($20),(PX+1)", "ASM020", "PY"], ["MV A,[X++ +2]", "ASM020"],
       ["ORG $BFFFF\nMV A,1", "ASM041"], ["ORG $FFFFF\nDW 1", "ASM050"],

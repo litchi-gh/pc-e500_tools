@@ -9,7 +9,7 @@
 | 1 | [全体の構造](01_ARCHITECTURE.md) | フォルダ、依存関係、データの流れ、変更するときに直す場所 |
 | 2 | [アセンブラ](02_ASSEMBLER.md) | `e500asm` のパス、式、符号化 |
 | 3 | [逆アセンブラ](03_DISASSEMBLER.md) | `e500dasm` のデコードと、往復の保証 |
-| 4 | [ファイル変換](04_FILE_CONVERTER.md) | `ce140conv` |
+| 4 | [実機のファイル](04_DEVICE_FILES.md) | `LOAD M` のヘッダー、BASIC の文字 |
 | 5 | [VS Code 拡張](05_VSCODE_EXTENSION.md) | 拡張機能のモジュール、診断、候補、ドットエディタ、パネル |
 | 6 | [デバッグサーバー](06_DEBUG_SERVER.md) | `e500dbg` の通信とコマンド |
 | 7 | [デバッガー](07_DEBUGGER.md) | ASM と BASIC のデバッグのしくみ、テストの実行 |

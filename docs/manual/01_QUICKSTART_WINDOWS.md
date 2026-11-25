@@ -178,26 +178,23 @@ VS Code で動かしているときの画面です。
 
 VS Code を使わずに、PowerShell のコマンドだけでも作れます。`e500` を使う方法（作る、調べる、動かす、BIN にする）は、[23.4 最初の 1 本を作る](23_COMMAND_LINE_WINDOWS.md#234-最初の-1-本を作る)に、1 行ずつの説明付きであります。
 
-`e500asm` と `ce140conv` で作るときは、次の 3 つのコマンドです。リポジトリのフォルダ（`pc-e500_tools`）で打ちます。`hello.asm` は、サンプルの [hello.asm](../../Samples/Assembler/Basics/hello.asm) を使います。
+`e500asm` だけで作るときは、次の 1 つのコマンドです。リポジトリのフォルダ（`pc-e500_tools`）で打ちます。`hello.asm` は、サンプルの [hello.asm](../../Samples/Assembler/Basics/hello.asm) を使います。
 
 ```powershell
-.\Assembler\e500asm.cmd Samples\Assembler\Basics\hello.asm -o hello_raw.bin -l hello.lst
-.\FileConverter\ce140conv.exe bin2bas --addr 0xBEC00 hello_raw.bin HELLO.BIN
-.\FileConverter\ce140conv.exe info HELLO.BIN
+.\Assembler\e500asm.cmd Samples\Assembler\Basics\hello.asm -f ce140f -o HELLO.BIN -l hello.lst
 ```
 
-| コマンド | 何をするか |
+| 部分 | 何をするか |
 |---|---|
-| `e500asm.cmd … -o hello_raw.bin -l hello.lst` | ソースを機械語にして `hello_raw.bin` に入れる。`-l` は、アドレスと機械語とソースを並べたリストも作る |
-| `ce140conv.exe bin2bas --addr 0xBEC00 …` | 機械語の先頭に 16 バイトのヘッダーを付けて、`LOAD M` で読める `HELLO.BIN` にする。`--addr` は置くアドレスで、ソースの `ORG` と同じ値 |
-| `ce140conv.exe info HELLO.BIN` | できたファイルの種類、大きさ、アドレスを表示する。ファイルは変えない |
+| `e500asm.cmd …\hello.asm` | ソースを機械語にする |
+| `-f ce140f` | 先頭にアドレスと長さの入ったヘッダーを付けて、`LOAD M` で読める形にする |
+| `-o HELLO.BIN` | 作るファイル |
+| `-l hello.lst` | アドレスと機械語とソースを並べたリストも作る |
 
 ```mermaid
 flowchart LR
-  A["hello.asm"] -- e500asm --> B["hello_raw.bin"] -- "ce140conv bin2bas" --> C["HELLO.BIN"] -- "CE-140F" --> D["実機<br>LOAD M、CALL"]
+  A["hello.asm"] -- "e500asm -f ce140f" --> C["HELLO.BIN"] -- "CE-140F" --> D["実機<br>LOAD M、CALL"]
 ```
-
-Windows では `hello.bin` と `HELLO.BIN` は同じファイルになるので、途中の機械語には `_raw` を付けて、名前を分けています。
 
 ## 1.12 うまくいかないとき
 

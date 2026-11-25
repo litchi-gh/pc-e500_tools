@@ -71,9 +71,9 @@
   <line x1="175" y1="440" x2="175" y2="410" stroke="#6B4FBB" stroke-width="1.8" stroke-dasharray="4 4"/>
   <text x="188" y="430" class="lbl">同じ期待値で一致を確認</text>
   <rect x="350" y="440" width="260" height="92" rx="8" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
-  <text x="480.0" y="473.0" class="b" text-anchor="middle">ce140conv.cpp</text>
-  <text x="480.0" y="491.0" class="s" text-anchor="middle">C++17 単一ソース・依存なし</text>
-  <text x="480.0" y="509.0" class="s" text-anchor="middle">charset_e500.tab を実行時に読む</text>
+  <text x="480.0" y="473.0" class="b" text-anchor="middle">拡張の loadM.ts、emu/basic.ts</text>
+  <text x="480.0" y="491.0" class="s" text-anchor="middle">LOAD M のヘッダー、BASIC の文字</text>
+  <text x="480.0" y="509.0" class="s" text-anchor="middle">e500asm -f ce140f と同じ出力</text>
   <rect x="650" y="440" width="310" height="92" rx="8" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.5"/>
   <text x="805.0" y="473.0" class="b" text-anchor="middle">BASIC のキーワード定義</text>
   <text x="805.0" y="491.0" class="s" text-anchor="middle">dialects/pcE500.ts</text>

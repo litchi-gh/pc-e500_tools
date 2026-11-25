@@ -8,6 +8,13 @@ public sealed record ListingLine(SourceLine Source, int Address, byte[] Bytes);
 public sealed record AssemblyResult(int Origin, byte[] Binary, IReadOnlyDictionary<string, long> Symbols, IReadOnlyList<ListingLine> Listing)
 {
     public IReadOnlyList<string> InputFiles { get; init; } = [];
+    /// <summary>The file LOAD M reads from a CE-140F, as SAVE M writes it: a 16-byte header with the length and the address, then the bytes.</summary>
+    public byte[] LoadMFile()
+    {
+        if (Origin + Binary.Length > 0x100000) throw new AssemblyException("The program runs past FFFFFh");
+        byte[] file = [0xFF, 0x00, 0x06, 0x01, 0x10, (byte)Binary.Length, (byte)(Binary.Length >> 8), (byte)(Binary.Length >> 16), (byte)Origin, (byte)(Origin >> 8), (byte)(Origin >> 16), 0xFF, 0xFF, 0xFF, 0x00, 0x0F, .. Binary];
+        return file;
+    }
     public string IntelHex()
     {
         var output = new StringBuilder(); int bank = -1;

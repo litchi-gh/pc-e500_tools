@@ -9,6 +9,7 @@ import { AsmHost, assemble, lintAsm } from "../asm/assembler";
 import { disassemble, DisassemblyError, isSaveM, readImage } from "../asm/disassembler";
 import { LintIssue } from "../core";
 import { pcE500Dialect } from "../dialects/pcE500";
+import { driveName, encodeSource } from "../emu/basic";
 import { BasicSession } from "../emu/basicSession";
 import { EmulatorClient } from "../emu/client";
 import { basicCall, loadProgram, startMachine } from "../emu/prepare";
@@ -35,12 +36,12 @@ const host: AsmHost = {
 
 const MACHINE = ["emulator", "rom", "ram", "core", "server"], ASM = ["include", "define"];
 const COMMANDS: Record<string, { options: string[]; run: (a: Arguments) => Promise<number> | number; usage: string }> = {
-  asm: { options: ["out", "format", "listing", "symbols", "org", "fill", ...ASM], run: asmCommand, usage: "asm FILE.asm [-o FILE] [-f bin|hex] [-l LISTING] [-s SYMBOLS] [--org ADDRESS] [--fill N] [-I FOLDER] [-D NAME=VALUE]" },
+  asm: { options: ["out", "format", "listing", "symbols", "org", "fill", ...ASM], run: asmCommand, usage: "asm FILE.asm [-o FILE] [-f bin|hex|ce140f] [-l LISTING] [-s SYMBOLS] [--org ADDRESS] [--fill N] [-I FOLDER] [-D NAME=VALUE]" },
   dis: { options: ["out", "format", "org", "no-labels", "no-addresses", "no-bytes"], run: disCommand, usage: "dis FILE [-f raw|ce140f] [--org ADDRESS] [-o FILE.asm] [--no-labels] [--no-addresses] [--no-bytes]" },
   lint: { options: ["json", ...ASM], run: lintCommand, usage: "lint FILE|FOLDER..." },
   test: { options: ["json", "only", ...MACHINE, ...ASM], run: testCommand, usage: "test FILE|FOLDER... [--only NAME]" },
   run: { options: ["json", "seconds", "keys", "type", "basic", "call", "png", "memory", "no-screen", ...MACHINE, ...ASM], run: runCommand, usage: "run FILE.asm|FILE.bas [--seconds N] [--keys A,B,wait:1] [--type TEXT] [--basic LINE] [--png FILE] [--memory ADDRESS:LENGTH|(NAME):LENGTH]" },
-  bin: { options: ["json", "out", "force", "ram", ...ASM], run: binCommand, usage: "bin FILE.asm [-o FILE.BIN]" },
+  bin: { options: ["json", "out", "force", "ram", ...ASM], run: binCommand, usage: "bin FILE.asm|FILE.bas [-o FILE]" },
   help: { options: ["json"], run: helpCommand, usage: "help WORD..." },
   new: { options: ["force"], run: newCommand, usage: "new minimal|text|screen|game|routine NAME [FOLDER]" },
   skill: { options: ["force"], run: skillCommand, usage: "skill [FOLDER]" },
@@ -84,9 +85,9 @@ const samePath = (a: string, b: string): boolean => {
 function asmCommand(a: Arguments): number {
   if (a.words.length !== 1) throw new UsageError(L("ファイルを 1 つ指定してください。", "Name one file."));
   const file = a.words[0], format = last(a, "format") ?? "bin", fill = numberOption(a, "fill", 0);
-  if (format !== "bin" && format !== "hex") throw new UsageError(L("--format は bin か hex です。", "--format is bin or hex."));
+  if (!["bin", "hex", "ce140f"].includes(format)) throw new UsageError(L("--format は bin、hex、ce140f のどれかです。", "--format is bin, hex or ce140f."));
   if (!Number.isInteger(fill) || fill > 255) throw new UsageError(L("--fill は 0〜255 です。", "--fill is 0 to 255."));
-  const out = last(a, "out") ?? file.replace(/\.[^./\\]*$/, "") + (format === "bin" ? ".bin" : ".hex");
+  const out = last(a, "out") ?? file.replace(/\.[^./\\]*$/, "") + ({ bin: ".bin", hex: ".hex" }[format] ?? ".BIN");
   const targets = [out, last(a, "listing"), last(a, "symbols")].filter((t): t is string => t !== undefined);
   if (targets.some((t, i) => targets.some((u, k) => k !== i && samePath(t, u)))) throw new UsageError(L("出力、リスト、シンボルは別のファイルにしてください。", "Output, listing and symbols must have different paths."));
   const result = assemble(read(file), { filePath: path.resolve(file), ...asmOptions(a), origin: addressOption(a, "org"), fill });
@@ -99,7 +100,8 @@ function asmCommand(a: Arguments): number {
   const over = targets.find(t => sources.some(s => samePath(s, t)));
   if (over) throw new UsageError(L(`ソースを上書きします: ${over}`, `Would overwrite a source: ${over}`));
   const write = (to: string, data: string | Uint8Array): void => { fs.mkdirSync(path.dirname(path.resolve(to)), { recursive: true }); fs.writeFileSync(to, data); };
-  write(out, format === "bin" ? result.binary : intelHex(result.origin, result.binary));
+  if (format === "ce140f" && result.origin + result.binary.length > 0x100000) { note(L("プログラムが FFFFFh を越えます。", "The program runs past FFFFFh.")); return 1; }
+  write(out, format === "bin" ? result.binary : format === "hex" ? intelHex(result.origin, result.binary) : loadMFile(result.origin, result.binary));
   const listing = last(a, "listing"), symbols = last(a, "symbols");
   if (listing !== undefined) write(listing, listingText(result, f => (samePath(f, file) ? read(file) : read(f))));
   if (symbols !== undefined) write(symbols, symbolText(result));
@@ -303,6 +305,7 @@ async function runCommand(a: Arguments): Promise<number> {
 function binCommand(a: Arguments): number {
   if (a.words.length !== 1) throw new UsageError(L("ファイルを 1 つ指定してください。", "Name one file."));
   const file = a.words[0];
+  if (isBasic(file)) return basicFile(a, file);
   const program = Program.build(path.resolve(file), read(file), asmOptions(a));
   if (program.errors.length > 0) { for (const e of program.errors) note(e); return 1; }
   if (program.binary.length === 0) { note(L("プログラムが空です（出力されるバイトがありません）。", "The program is empty (it puts out no bytes).")); return 1; }
@@ -314,6 +317,21 @@ function binCommand(a: Arguments): number {
     print(L(`${target}: ${program.binary.length} バイト、${hex5(program.origin)}〜${hex5(program.end - 1)}、開始 ${hex5(program.entry())}`, `${target}: ${program.binary.length} bytes, ${hex5(program.origin)}-${hex5(program.end - 1)}, starts at ${hex5(program.entry())}`));
     for (const l of [lines.reserve, lines.load, lines.call]) if (l) print(`  ${l}`);
   }
+  return 0;
+}
+
+/** A BASIC source as the text LOAD reads from a CE-140F: the machine's characters, lines ended CR LF. */
+function basicFile(a: Arguments, file: string): number {
+  const { bytes, unsupported, skipped } = encodeSource(read(file));
+  if (bytes.length === 0) { note(L("行番号のある行がありません。", "No line has a number.")); return 1; }
+  const target = last(a, "out") ?? path.join(path.dirname(file), driveName(path.basename(file)));
+  if (samePath(file, target)) throw new UsageError(L(`出力がソースと同じファイルになります（${target}）。-o で別の名前を指定してください。`, `The output would be the source itself (${target}). Give another name with -o.`));
+  if (unsupported) note(L(`本体の文字にない文字があるため省きました: ${unsupported}`, `Left out characters the machine does not have: ${unsupported}`));
+  if (skipped) note(L(`行番号のない行を ${skipped} 行省きました。`, `Left out ${skipped} line(s) with no line number.`));
+  fs.writeFileSync(target, bytes);
+  const load = `LOAD "X:${path.basename(target)}"`;
+  if (last(a, "json") !== undefined) print(JSON.stringify({ file: target, bytes: bytes.length, unsupported, skipped, load }, undefined, 1));
+  else { print(L(`${target}: ${bytes.length} バイト`, `${target}: ${bytes.length} bytes`)); print(`  ${load}`); print("  RUN"); }
   return 0;
 }
 

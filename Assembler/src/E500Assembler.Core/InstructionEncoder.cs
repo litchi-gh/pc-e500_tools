@@ -165,7 +165,16 @@ internal sealed class InstructionEncoder(Func<string, long> evaluate, int pc, bo
             if (r < 0) return false;
             Emit((m == "PUSHU" ? 0x28 : 0x38) + r); return true;
         }
-        if (m is "PUSHS" or "POPS") { if (x.Kind != "F") return false; Emit(m == "PUSHS" ? 0x4f : 0x5f); return true; }
+        if (m is "PUSHS" or "POPS")
+        {
+            // Only F has opcodes of its own. The others are written as MV [--S],x and MV x,[S++] (ESR-L manual p. 67).
+            bool push = m == "PUSHS";
+            if (x.Kind == "F") Emit(push ? 0x4f : 0x5f);
+            else if (x.Kind == "IMR") { Emit(push ? 0xe8 : 0xe0, push ? 0x37 : 0x27); Mem(new("M", "0FBh", Mode: 0)); }
+            else if (x.Kind == "R" && x.Reg < 6) Emit((push ? 0xb0 : 0x90) + x.Reg, push ? 0x37 : 0x27);
+            else return false;
+            return true;
+        }
         if (m is "INC" or "DEC")
         {
             int op = m == "INC" ? 0x6c : 0x7c;

@@ -22,7 +22,6 @@ const workspace = path.dirname(repo);
 const server = path.join(extensionRoot, "out", "server", process.platform === "win32" ? "e500dbg.exe" : "e500dbg.dll");
 const core = process.env.E500_CORE ?? path.join(workspace, "Emulator", "bin", "e500core.dll");
 const rom = process.env.E500_ROM ?? path.join(workspace, "Emulator", "app", "rom", "PC-E500(7.2).ROM");
-const converter = path.join(repo, "FileConverter", "ce140conv.exe");
 const assembler = path.join(repo, "Assembler", "app", "e500asm.exe");
 const available = [server, core, rom].every(f => fs.existsSync(f));
 
@@ -68,11 +67,9 @@ describe("new programs and BIN files", () => {
     assert.equal(loadMOrigin(new Uint8Array(40)), undefined);
     assert.throws(() => loadMFile(0xfff00, new Uint8Array(0x101)), RangeError);
   });
-  it("writes the same file as ce140conv", { skip: fs.existsSync(converter) && process.platform === "win32" ? false : "no ce140conv here" }, () => {
-    const program = make("screen", "conv");
-    const raw = path.join(folder, "conv.raw"), out = path.join(folder, "conv.out");
-    fs.writeFileSync(raw, program.binary);
-    execFileSync(converter, ["bin2bas", "--addr", "0x" + program.origin.toString(16), raw, out], { stdio: "ignore" });
+  it("writes the same file as e500asm -f ce140f", { skip: fs.existsSync(assembler) && process.platform === "win32" ? false : "no e500asm here" }, () => {
+    const program = make("screen", "conv"), out = path.join(folder, "conv.out");
+    execFileSync(assembler, [path.join(folder, "conv.asm"), "-I", path.join(extensionRoot, "inc"), "-f", "ce140f", "-o", out], { stdio: "ignore" });
     assert.deepEqual(Buffer.from(loadMFile(program.origin, program.binary)), fs.readFileSync(out));
   });
   it("makes the same bytes as e500asm", { skip: fs.existsSync(assembler) && process.platform === "win32" ? false : "no e500asm here" }, () => {

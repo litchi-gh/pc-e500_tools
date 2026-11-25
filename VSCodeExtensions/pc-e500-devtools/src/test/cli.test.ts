@@ -110,6 +110,15 @@ describe("command line", () => {
     assert.match(e500("dis", "asm/S.BIN", "-o", "asm/s.asm").out, /origin=BEC00h/);
     assert.match(e500("asm", source, "-D", "N=1", "-f", "hex").out, /^OK: /);
     assert.match(fs.readFileSync(path.join(root, "asm", "a.hex"), "utf8"), /^:02000004000BEF\n:[\s\S]*:00000001FF\n$/);
+    assert.equal(e500("asm", source, "-D", "N=1", "-f", "ce140f", "-o", "asm/M.BIN").code, 0);
+    assert.deepEqual(fs.readFileSync(path.join(root, "asm", "M.BIN")), fs.readFileSync(path.join(root, "asm", "S.BIN")));
+    // BASIC as the machine's text.
+    const bas = put("asm/kana.bas", "10 PRINT \"ｱｲ¥\"\n\nno number\n20 END");
+    const made = e500("bin", bas, "-o", "asm/K.BAS");
+    assert.equal(made.code, 0, made.err);
+    assert.match(made.out, /LOAD "X:K\.BAS"/);
+    assert.equal(fs.readFileSync(path.join(root, "asm", "K.BAS")).toString("hex"), Buffer.from("10 PRINT \"").toString("hex") + "b1b25c22" + "0d0a" + Buffer.from("20 END\r\n").toString("hex"));
+    assert.equal(e500("bin", bas, "-o", bas).code, 2);
     assert.equal(e500("asm", source, "-D", "N=1", "-o", source).code, 2);
     assert.equal(e500("asm", "lint/bad.asm").code, 1);
     assert.equal(e500("dis", "asm/a.bin").code, 1);

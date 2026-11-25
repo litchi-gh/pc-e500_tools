@@ -28,6 +28,5 @@ node_modules/
 /DisAssembler/app/e500dasm
 /Assembler/app/*/
 /DisAssembler/app/*/
-/FileConverter/ce140conv
 
-# ce140conv.exe は小さいので同梱する。VSIX は GitHub Releases で配布する
+# VSIX は GitHub Releases で配布する

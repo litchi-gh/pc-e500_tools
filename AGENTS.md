@@ -20,7 +20,6 @@ VSCodeExtensions/pc-e500-devtools/bin/e500 test Samples
 | `VSCodeExtensions/pc-e500-devtools` | VS Code 拡張、コマンド `e500`（TypeScript）、`server/`（C#） | `npx tsc -p ./`、`npm run build:server`、`node --test out/test/*.test.js` |
 | `Assembler` | `e500asm`（C#） | `Assembler/tests` |
 | `DisAssembler` | `e500dasm`、`E500Disassembler`（C#） | `DisAssembler/tests` |
-| `FileConverter` | `ce140conv`（C++） | `build.bat` / `build.sh` |
 | `Samples` | サンプル（アセンブラのものはテスト付き。`Basics` を除く） | `e500 test Samples` |
 | `docs` | `handbook`（本体）、`manual`（ツール）、`analysis`（解析）、`design`（設計） | リンク、Mermaid |
 

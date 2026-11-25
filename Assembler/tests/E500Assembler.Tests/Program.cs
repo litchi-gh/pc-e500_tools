@@ -39,6 +39,7 @@ for (int r = 0; r < 8; r++)
     }
     string stackReg = r < 6 ? regs[r] : r == 6 ? "F" : "IMR";
     Golden($"PUSHU {stackReg}", $"{0x28+r:X2}"); Golden($"POPU {stackReg}", $"{0x38+r:X2}");
+    Golden($"PUSHS {stackReg}", r < 6 ? $"{0xb0+r:X2}37" : r == 6 ? "4F" : "30E837FB"); Golden($"POPS {stackReg}", r < 6 ? $"{0x90+r:X2}27" : r == 6 ? "5F" : "30E027FB");
 }
 foreach (var (src, hex) in new (string, string)[]
 {
@@ -120,7 +121,7 @@ foreach (var (src, message) in new (string,string)[]
     ("MV A,missing","Undefined"),("bad: NOP\nbad: RET","Duplicate"),("DB (1+2","bracket"),
     ("JR +256","out of range"),("JR -256","out of range"),("ORG $B0000\nJP $C0000","segment"),("ORG $B0000\nJR $C0000","segment"),
     ("MV A,[BA]","index"),("JP A","Unsupported"),("MV S,[X]","Unsupported"),("MV [X],S","Unsupported"),("PUSHU U","Unsupported"),
-    ("PUSHS A","Unsupported"),("ADD A,X","Unsupported"),("ADC A,IL","Unsupported"),("CMP A,($20)","Unsupported"),
+    ("PUSHS U","Unsupported"),("POPS S","Unsupported"),("ADD A,X","Unsupported"),("ADC A,IL","Unsupported"),("CMP A,($20)","Unsupported"),
     ("MV A,IL","Unsupported"),("MV IL,A","Unsupported"),("MV X,A","Unsupported"),("EX A,IL","Unsupported"),
     ("MV A,(PY+1)","PX"),("MV ($20),(PX+1)","PY"),("MV A,[X++ +2]","combine"),
     ("ORG $BFFFF\nMV A,1","boundary"),("ORG $FFFFF\nDW 1","20-bit"),

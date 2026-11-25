@@ -32,7 +32,7 @@ flowchart LR
   B -- ".asm" --> C["F5: アセンブルして実行"]
   B -- ".BAS" --> D["F5: 読み込んで RUN"]
   C --> E["BIN を作成"] --> F["実機: LOAD M、CALL"]
-  D --> G["ce140conv text2bas"] --> H["実機: LOAD、RUN"]
+  D --> G["e500 bin"] --> H["実機: LOAD、RUN"]
 ```
 
 | したいこと | 方法 |

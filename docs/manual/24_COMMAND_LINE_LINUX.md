@@ -443,7 +443,7 @@ e500 skill
 
 ## 24.8 Node.js なしで使う
 
-アセンブルと逆アセンブルだけなら、`e500asm` と `e500dasm` で足ります。Node.js も .NET のランタイムも要りません。作り方は[インストール（Linux）の 2.5](02_INSTALL_LINUX.md#25-e500asme500dasmce140conv-を作る)にあります。
+アセンブルと逆アセンブルだけなら、`e500asm` と `e500dasm` で足ります。Node.js も .NET のランタイムも要りません。作り方は[インストール（Linux）の 2.5](02_INSTALL_LINUX.md#25-e500asme500dasm-を作る)にあります。
 
 ```sh
 e500asm mygame.asm -o mygame_raw.bin

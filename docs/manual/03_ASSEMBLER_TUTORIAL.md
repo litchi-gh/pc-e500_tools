@@ -457,7 +457,7 @@ sequenceDiagram
 | `CALL` | S（2 バイト） | `RET` |
 | `CALLF` | S（3 バイト） | `RETF` |
 | `PUSHU` | U | `POPU` |
-| `PUSHS F` | S | `POPS F` |
+| `PUSHS` | S | `POPS` |
 
 - **積んだ数だけ取り出す。** 途中で飛び出すときも、数を合わせます。
 - 同じプログラムの中のサブルーチンは `CALL` と `RET`、BASIC や ROM とのやり取りは `CALLF` と `RETF` です。

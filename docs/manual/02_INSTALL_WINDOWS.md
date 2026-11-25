@@ -15,7 +15,7 @@ Linux の人は[こちら](02_INSTALL_LINUX.md)、macOS の人は[こちら](02_
 | [2.5](#25-エミュレータと-rom-を置く) | エミュレータと ROM |
 | [2.6](#26-環境の確認) | そろったかどうかを調べる |
 | [2.7](#27-エミュレータの探し方) | 拡張機能がエミュレータを探す順 |
-| [2.8](#28-コマンドのツールを入れる) | `e500asm`、`e500dasm`、`ce140conv` |
+| [2.8](#28-コマンドのツールを入れる) | `e500asm`、`e500dasm` |
 | [2.9](#29-ソースから作る必要な人だけ) | 自分でビルドする |
 | [2.10](#210-更新とアンインストール) | 新しくする、消す |
 | [2.11](#211-確かめる順番) | うまく動かないときの順番 |
@@ -35,7 +35,6 @@ VS Code だけで使う人は 2.2〜2.6、コマンドも使う人は 2.8 まで
 | VS Code | 1.95 以降 |
 | .NET | 動かすなら .NET 10 ランタイム、ソースから作るなら .NET 10 SDK |
 | Node.js | コマンド `e500` は、VS Code があれば不要。なければ 20.12 以降。拡張機能をソースから作るときも要る |
-| C++ のコンパイラ | `ce140conv` をソースから作るときだけ。Visual Studio（Build Tools でもよい）、MinGW-w64、LLVM のどれか |
 | ディスク | VS Code 500 MB まで、エミュレータ 約 120 MB、`e500asm` と `e500dasm` 各 約 74 MB、`E500Disassembler` 約 116 MB |
 
 編集、診断、ドットエディタ、実行、デバッグ、テスト、逆アセンブラの画面まで、全部の機能が使えます。どの機能に何が要るかは [2.1 動作環境](02_INSTALL.md#21-動作環境)にまとめてあります。
@@ -217,7 +216,7 @@ ROM の大きさは 256 KB か 384 KB です。内蔵 RAM の大きさは設定 
 
 ## 2.8 コマンドのツールを入れる
 
-`e500asm`（アセンブラ）、`e500dasm`（逆アセンブラ）、`ce140conv`（ファイル変換）を、1 つのフォルダにまとめて置きます。
+`e500asm`（アセンブラ）と `e500dasm`（逆アセンブラ）を、1 つのフォルダにまとめて置きます。
 
 ### 1. Git を入れる
 
@@ -247,7 +246,7 @@ cd pc-e500_tools
 
 ### 3. EXE を置く
 
-`ce140conv.exe` はリポジトリに入っています。ほかの EXE は大きいので、[Releases](https://github.com/litchi-gh/pc-e500_tools/releases) から別に取ります。
+EXE は大きいのでリポジトリに入っていません。[Releases](https://github.com/litchi-gh/pc-e500_tools/releases) から別に取ります。
 
 | ダウンロードするファイル | 中身 | 置く場所 |
 |---|---|---|
@@ -270,14 +269,12 @@ Expand-Archive -Path "$HOME\Downloads\E500Disassembler-*-win-x64.zip" -Destinati
 ```powershell
 .\Assembler\e500asm.cmd --version
 .\DisAssembler\e500dasm.cmd --version
-.\FileConverter\ce140conv.exe info HELLO.BIN
 ```
 
 | コマンド | 何をするか | 正しいとき |
 |---|---|---|
 | `.\Assembler\e500asm.cmd --version` | アセンブラのバージョンを表示する。`e500asm.cmd` は `app\e500asm.exe` を呼び出すだけの短いファイル | `e500asm 0.2.0 (SC62015)` |
 | `.\DisAssembler\e500dasm.cmd --version` | 逆アセンブラのバージョンを表示する | `e500dasm 0.1.0 (SC62015)` |
-| `.\FileConverter\ce140conv.exe info ファイル` | ファイルの種類を調べる。変換はしない | ファイルの説明が出る。ファイルがなければ「開けない」というエラー（ツールは動いている） |
 
 「指定されたパスが見つかりません」などと出たら、`app` フォルダに EXE があるかを確かめます。
 
@@ -293,16 +290,15 @@ Expand-Archive -Path "$HOME\Downloads\E500Disassembler-*-win-x64.zip" -Destinati
    |---|---|
    | `C:\PockeCom\pc-e500_tools\Assembler\app` | `e500asm` |
    | `C:\PockeCom\pc-e500_tools\DisAssembler\app` | `e500dasm`、`E500Disassembler` |
-   | `C:\PockeCom\pc-e500_tools\FileConverter` | `ce140conv` |
 
 4. 「OK」で閉じ、**ターミナルを開き直します**。開いていたターミナルには反映されません。
 5. 確かめます。
 
    ```powershell
-   Get-Command e500asm, e500dasm, ce140conv
+   Get-Command e500asm, e500dasm
    ```
 
-   `Get-Command 名前` は、その名前で動くものがどこにあるかを調べるコマンドです。3 つとも表示されれば完了です。
+   `Get-Command 名前` は、その名前で動くものがどこにあるかを調べるコマンドです。2 つとも表示されれば完了です。
 
 コマンド `e500` の PATH の足し方は [23.2](23_COMMAND_LINE_WINDOWS.md#232-e500-を使えるようにする) にあります。
 
@@ -340,7 +336,7 @@ cd C:\PockeCom\pc-e500_tools
 最初の 1 回は、必要な部品をインターネットから取るので時間がかかります。テストが通ると、次のように出ます（数はバージョンによって変わります）。
 
 ```text
-PASS: 413 checks
+PASS: 430 checks
 ```
 
 `Tests failed` と出たら、EXE は作られません。前の EXE はそのまま残ります。
@@ -362,17 +358,6 @@ code --install-extension pc-e500-devtools-0.3.0.vsix --force
 | `code --install-extension … --force` | できた `.vsix` を VS Code に入れる。`--force` は、同じバージョンが入っていても入れ直す |
 
 `npm run package` の最後に `DONE  Packaged: …\pc-e500-devtools-0.3.0.vsix` と出れば成功です。途中の `npm warn …` や `WARNING  A 'repository' field is missing` は、そのまま進んでかまいません。
-
-### 4. ce140conv を作る
-
-`ce140conv.exe` はリポジトリに入っているので、`ce140conv.cpp` を直したときだけ作ります。C++17 のコンパイラが要ります。Visual Studio（Build Tools でもよい）を入れ、スタートメニューの「Developer PowerShell for VS」を開いて打ちます。
-
-```powershell
-cd C:\PockeCom\pc-e500_tools\FileConverter
-.\build.bat
-```
-
-`build.bat` は、`cl`（Visual Studio）→ `g++` → `clang++` の順に、最初に見つかったコンパイラで `ce140conv.exe` を作ります。**必ず `FileConverter` フォルダの中で実行します。** `[build] OK -> ce140conv.exe` と出れば成功です。
 
 ## 2.10 更新とアンインストール
 

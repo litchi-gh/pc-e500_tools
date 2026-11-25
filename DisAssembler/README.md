@@ -30,7 +30,7 @@ app/e500dasm program.bin --format raw --org B8000 -o program.asm
 
 | 読みたいこと | 文書 |
 |---|---|
-| 入れ方 | [Windows](../docs/manual/02_INSTALL_WINDOWS.md#28-コマンドのツールを入れる)、[Linux](../docs/manual/02_INSTALL_LINUX.md#25-e500asme500dasmce140conv-を作る)、[macOS](../docs/manual/02_INSTALL_MACOS.md#25-e500asme500dasmce140conv-を作る) |
+| 入れ方 | [Windows](../docs/manual/02_INSTALL_WINDOWS.md#28-コマンドのツールを入れる)、[Linux](../docs/manual/02_INSTALL_LINUX.md#25-e500asme500dasm-を作る)、[macOS](../docs/manual/02_INSTALL_MACOS.md#25-e500asme500dasm-を作る) |
 | 使い方、オプション、出力の読み方 | [逆アセンブラ](../docs/manual/15_DISASSEMBLER.md) |
 | `SAVE M` のファイルの形 | [ファイル形式](../docs/manual/19_FILE_FORMATS.md#191-x-に置くファイル) |
 | ソースの作り | [設計: 逆アセンブラ](../docs/design/03_DISASSEMBLER.md) |

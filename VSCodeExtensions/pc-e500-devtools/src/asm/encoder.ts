@@ -210,8 +210,12 @@ export class InstructionEncoder {
       return true;
     }
     if (m === "PUSHS" || m === "POPS") {
-      if (x.kind !== "F") return false;
-      this.emit(m === "PUSHS" ? 0x4f : 0x5f);
+      // Only F has opcodes of its own. The others are written as MV [--S],x and MV x,[S++] (ESR-L manual p. 67).
+      const push = m === "PUSHS";
+      if (x.kind === "F") this.emit(push ? 0x4f : 0x5f);
+      else if (x.kind === "IMR") { this.emit(push ? 0xe8 : 0xe0, push ? 0x37 : 0x27); this.mem({ kind: "M", text: "0FBh", reg: -1, mode: 0, index: 0 }); }
+      else if (x.kind === "R" && x.reg < 6) this.emit((push ? 0xb0 : 0x90) + x.reg, push ? 0x37 : 0x27);
+      else return false;
       return true;
     }
     if (m === "INC" || m === "DEC") {
