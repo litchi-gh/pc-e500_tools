@@ -13,6 +13,7 @@
 ## 4.1 LOAD M のファイル
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart LR
   S[".asm"] --> A["e500asm -f ce140f<br>LoadMFile()"] --> F["名前.BIN"]
   S --> B["BIN を作成、e500 bin<br>e500 asm -f ce140f<br>loadMFile()"] --> F

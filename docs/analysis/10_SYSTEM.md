@@ -21,6 +21,7 @@
 それを可能にしているのが**割り込み**です。割り込みは、CPU が今の処理をいったん中断し、別の短い処理をしてから元に戻る仕組みです。料理をしている途中にタイマーが鳴り、鍋を見てから元の作業に戻るのに似ています。このとき「鳴る」きっかけになるのが**タイマ**で、その元になるのが**クロック**です。この章では次の順に説明します。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart LR
   A["クロック<br>§10.1"] --> B["リセットの処理<br>§10.2"]
   B --> C["割り込み<br>§10.3"]
@@ -68,6 +69,7 @@ CR 発振は抵抗とコンデンサで作る発振です。水晶より簡単�
 ROM はまず割り込みと表示を止めて静かな状態を作り、電池とキーを確かめ、RAM の中身が残っているかを調べてから、スタックや作業域を用意します。大きな流れは次のとおりです。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart TD
   R["リセット<br>FFFFDh のベクタ → F10BDh"] --> A["割り込みと LCD を止める"]
   A --> B["ON キーの状態を確かめる"]
@@ -160,6 +162,7 @@ ISR と IMR は上の表と同じビットの並びです。`FCh` と `FBh` は 
 どの要因にも当たらなければ、戻り先の 1 バイトが `FEh`（`IR` 命令）かどうかを調べ、そうならソフトウェア割り込みとして扱います。`IR` 命令が積むリターンアドレスが `IR` 自身を指すことを利用した判定です（[CPU（SC62015）](02_CPU.md) §2.10.4）。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart TD
   A["割り込み<br>S スタックにリターンアドレス、F、IMR を積む"] --> B["F2005h<br>要因を順に調べる"]
   B -- "当たった" --> C["RAM のベクタの処理を呼ぶ"]
@@ -173,6 +176,7 @@ flowchart TD
 **3 つのレジスタの動く順（公式 p.93〜94）。** 割り込みを禁止している間に要因が起きた場合を、順に追うと次のようになります。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 sequenceDiagram
   participant E as 要因
   participant I as ISR（FCh）
@@ -405,6 +409,7 @@ CO は 1 ビットの出力ですが、切り替えの時間を分けて 3 音�
 | STOP のあと | ON キーと RESET が効かなくなる |
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 stateDiagram-v2
   direction LR
   state "通常" as N

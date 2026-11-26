@@ -17,6 +17,7 @@
 拡張の中で動く、Debug Adapter Protocol（DAP）の実装です。`launch.json` の `type` は `pc-e500` で、`.asm` は `adapter.ts`、`.bas` は `basicAdapter.ts` が受け持ちます。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart TD
   VS["VS Code の<br>デバッグの画面"] -- DAP --> A["adapter.ts"]
   VS -- DAP --> B["basicAdapter.ts"]
@@ -118,6 +119,7 @@ run   → {"reason":"return","cycles":10,"pc":1048562,"registers":{"A":6,…,"S"
 `asmValues.ts` が、`[式]`、`(式)`、`:2` `:3`、レジスタ、シンボルの式を扱います。変数の一覧、ウォッチ、ホバー、パネル、デバッグ画面で同じものを使います。内部 RAM の書き換えは 00h〜EEh だけです。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart TD
   A["文字列"] --> B{"レジスタの名前"}
   B -- はい --> R["レジスタ"]
@@ -222,6 +224,7 @@ BASIC のプログラムには手を加えず、ROM バージョンごとのア�
 ### 行で止める
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart TD
   A["プログラムの行の表を RAM から作る<br>（内部 RAM CBh のポインタ）"] --> B["最初の行の先頭の中間コードを<br>読み出しのウォッチに入れる"]
   B --> C["RUN を打つ"]
@@ -264,6 +267,7 @@ flowchart TD
 ### 一時停止
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 stateDiagram-v2
   [*] --> 実行中
   実行中 --> 待ち: 一時停止（全部の行をウォッチ）
@@ -352,6 +356,7 @@ BASIC のプログラムが終わっても、デバッグは終わりません�
 最高速で動かすので、1 件は数十ミリ秒から数百ミリ秒です。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart TD
   A["テストファイルを読む<br>（注釈と最後の , を許す）"] --> B["program をアセンブル"]
   B --> C["本体を起動、書き込み"]

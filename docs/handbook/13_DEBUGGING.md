@@ -16,6 +16,7 @@
 新しいプログラムが一度で動くことは、まずありません。本に載っている正しいプログラムを打ち込むだけでも、打ち間違いは起こります。間違いには 2 種類あります。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart TB
   A["動かしてみる"] --> B{"エラーの表示が出た？"}
   B -->|はい| C["PRO モードで ↑<br>カーソルの位置を見る"] --> D{"つづりは正しい？"}

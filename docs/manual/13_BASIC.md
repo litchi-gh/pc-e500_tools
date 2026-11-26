@@ -136,6 +136,7 @@ BASIC は書きやすく、機械語は速い、という違いがあります�
 ```
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart TD
   A["I = 1"] --> B{"I = 5 か"}
   B -- いいえ --> C["PRINT I"]

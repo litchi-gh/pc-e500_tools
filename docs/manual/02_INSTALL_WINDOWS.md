@@ -193,6 +193,7 @@ VS Code の拡張機能は、エミュレータのアプリのウィンドウを
 `e500core.dll`（デバッグ用の関数があるもの）と ROM が要ります。拡張機能は次の順に探します。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart TD
   A{"設定 pcE500.emulatorPath"} -- ある --> U["その場所を使う"]
   A -- 空 --> B{"PATH にあるか"}
@@ -394,6 +395,7 @@ git pull
 VS Code でうまく動かないときは、次の順に確かめます。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart TD
   A["VS Code に拡張機能が入っているか"] -- はい --> B[".asm を開いて色が付くか"]
   B -- はい --> C["環境を確認: 起動の確認が「使えます」か"]

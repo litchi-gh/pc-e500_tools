@@ -353,9 +353,9 @@ Claude Code と Codex がどのフォルダでも PC-E500 のプログラムを�
 ```mermaid
 %%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart LR
-  U["npx -y pc-e500-tools@latest setup<br>（1 回だけ）"] --> H["ホームに入口の SKILL.md"]
+  U["npx -y<br>pc-e500-tools@latest setup<br>（1 回だけ）"] --> H["ホームに入口の<br>SKILL.md"]
   H --> A["Claude Code、Codex"]
-  A --> G["npx -y pc-e500-tools@latest guide<br>（作業のたびに最新の本文）"]
+  A --> G["npx -y<br>pc-e500-tools@latest guide<br>（作業のたびに<br>最新の本文）"]
 ```
 
 `e500` をいつでも使えるようにするなら、`npm install -g pc-e500-tools` で入れます。更新も同じコマンドです。Codex は、`npx` が使えないとき（Windows のサンドボックスの中など）に、入れた `e500` を使います。OS ごとの手順は [Windows](23_COMMAND_LINE_WINDOWS.md#237-ai-に書かせる)、[Linux](24_COMMAND_LINE_LINUX.md#247-ai-に書かせる)、[macOS](25_COMMAND_LINE_MACOS.md#257-ai-に書かせる) にあります。

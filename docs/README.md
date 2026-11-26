@@ -3,6 +3,7 @@
 PC-E500 シリーズの文書は 4 冊の本に分かれています。本体を使う人は「ハンドブック」、PC で作る人は「マニュアル」、しくみを知りたい人は「解析」、このツール自体を直す人は「設計」から入ってください。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart LR
   H["ハンドブック<br>本体を使う"] --> M["マニュアル<br>PC で作る"]
   M --> A["解析<br>しくみを知る"]

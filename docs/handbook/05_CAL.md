@@ -17,6 +17,7 @@
 CAL モードは本体の右側のキーだけで使える関数電卓です。プログラムや変数の知識は必要ありません。一方、BASIC の変数 `A`〜`Z` を電卓のメモリとして使えるので、測定値を電卓で保存し、あとから BASIC の式で使うこともできます。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart LR
   A["数値を入力"] --> B["関数キー<br>すぐに計算"]
   A --> C["+ − × ÷ yˣ<br>計算を保留"]
@@ -152,12 +153,13 @@ CAL モードの計算は印刷できません。印刷が必要なときは RUN
 `FSE` を押すたびに、次の順に切り替わります。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 stateDiagram-v2
   direction LR
-  NORM: NORM（シンボルなし）
-  FIX: FIX（小数点以下の桁数を固定）
-  SCI: SCI（仮数 1 桁 × 10 のべき）
-  ENG: ENG（10 のべきが 3 の倍数）
+  NORM: NORM<br>（シンボルなし）
+  FIX: FIX<br>（小数点以下の桁数を固定）
+  SCI: SCI<br>（仮数 1 桁 × 10 のべき）
+  ENG: ENG<br>（10 のべきが 3 の倍数）
   [*] --> NORM
   NORM --> FIX: FSE
   FIX --> SCI: FSE

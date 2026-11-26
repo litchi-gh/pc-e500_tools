@@ -87,6 +87,7 @@ npm run package
 ### ビルドの順番
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart TD
   T1["Assembler のテスト"] --> P1["e500asm を publish"]
   T2["DisAssembler のテスト"] --> T3["Assembler のテスト"] --> P2["e500dasm、GUI を publish"]
@@ -128,6 +129,7 @@ C# のプロジェクトは `TreatWarningsAsErrors`（`e500dbg` を除く）と 
 ### 何が何を守っているか
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart TD
   G["golden vector<br>（CPU の資料から）"] --> A["Assembler.Tests"]
   G --> B["asm.test（TypeScript）"]

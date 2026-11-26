@@ -27,6 +27,7 @@ PC-E500 シリーズで動くプログラムを集めました。VS Code 拡張�
 ## 動かし方
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart LR
   A["サンプルを開く"] --> B{"種類"}
   B -- ".asm" --> C["F5: アセンブルして実行"]

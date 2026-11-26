@@ -26,6 +26,7 @@
 映画のフィルムのように、少しずつ違う絵を続けて見せると、動いて見えます。ゲームではキーの状態に応じて次の絵をその場で作ります。1 枚の絵を作る作業をいつも同じ順番で行うのが、ゲームの流れです。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart TD
   A["game_start<br>準備"] --> B["背景を読み込む<br>screen_load、screen_keep"]
   B --> C["変数を初期値に"]
@@ -303,6 +304,7 @@ mygame.asm: BE000〜BF2CD（4814 バイト）、開始 BE000 START
 ### 全体の流れ
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart TD
   A["game_start"] --> T["タイトルを描く<br>SPACE を待つ"]
   T --> I["init: 初めの値"]
@@ -413,6 +415,7 @@ gain_1: MV    (beep),2
 ## 7.11 ゲームを作る順番
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart TD
   A["動く 1 つの<br>キャラクタ"] --> B["背景"] --> C["相手"] --> D["当たり判定"] --> E["点数と残り"] --> F["音"] --> G["タイトルと<br>終わり"] --> H["難しさの<br>調整"]
 ```

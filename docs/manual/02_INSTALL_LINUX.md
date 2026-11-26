@@ -207,6 +207,7 @@ sh Assembler/build.sh && sh DisAssembler/build.sh
 うまく動かないときは、次の順に確かめます。前の段が通るまで、後の段へ進まないのがこつです。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart TD
   A["node --version<br>v20.12 以上か"] --> B["e500 --version<br>バージョンが出るか"]
   B --> C["e500 check<br>started: と出るか"]

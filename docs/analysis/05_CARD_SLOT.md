@@ -30,6 +30,7 @@
 カードを挿して電源を入れたあとの流れは、おおまかに次のとおりです。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart TD
     A["カードを挿し、<br>カバーをロック"] --> B["電源を入れる"]
     B --> C["ROM が 40000h を調べる<br>（§5.6.1）"]
@@ -295,6 +296,7 @@ S2(CARD):
 - `S2` は `RESET` のあとも残ります。カードがないと `S1` に戻り、カードを戻しても `S1` のままです（実験）。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 stateDiagram-v2
     S1: S1（内蔵 RAM）
     S2: S2（カード）
@@ -393,6 +395,7 @@ ROM はこの 2 つの印で相方かどうかを判定します（§5.6.1）。
 | 別の本体に入れて起動 | `S2(CARD):PAIR MISMATCH`。PF1 で `+05` が 01h に戻る |
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 stateDiagram-v2
     B: B で動作中
     N: S1(MAIN)：NEW CARD の画面
@@ -435,6 +438,7 @@ base − カードの容量 ≦ アドレス < base なら、40000h + (アドレ
 カードの取り付け、初期化、プログラムを残したまま `B` に広げる手順、容量の大きいカードへの替え方は、ハンドブックの [RAM カード](../handbook/04_RAM_CARD.md) §4.3〜§4.5 にあります。選び方だけを図にすると、次のようになります。`B` で広げるより、`S1` のまま `F:` として使うほうがカードを持ち替えられて便利だと、操作説明書は勧めています（p.22、公式）。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart TD
   Q{"何に使うか"} -->|"ファイルを増やしたい"| A["S1 のまま F: を使う<br>カードを替えられる"]
   Q -->|"大きなプログラム 1 本"| B["MEM$=B<br>カードは本体と組になる"]
@@ -490,6 +494,7 @@ flowchart TD
 見つかると、中身の先頭 1 バイトを内部 RAM の `E0h` に入れます。ヘッダを含むファイルの長さが 25h 未満のときだけです（長さ 24h で有効、25h で無効。実験）。起動の終わりに `BFC5Bh` にコピーします。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart TD
     A["10000h、40000h、S1 の先頭の順に<br>RESET.KEY を探す"] --> B{"見つかった？"}
     B -- いいえ --> Z["ふだんの起動"]
@@ -642,6 +647,7 @@ FRAM は、電源がなくても内容が残るメモリです。電池が要ら
 部品のつながりを図にすると、次のようになります。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart LR
     subgraph スロット
         V["VCC（1、2）"]

@@ -31,6 +31,7 @@ ROM バージョンが違うと、同じ処理でも置かれるアドレスが�
 まず §23.13 の系統図で自分のバージョンを見つけ、次に必要な節の表でアドレスを引いてください。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart TB
   S["§23.13 系統図と早見表<br>自分のバージョンを見つける"] --> A["§23.1、23.2<br>ファイルの形と同じ範囲"]
   A --> B["§23.3〜23.7<br>エントリ、IOCS、フォント、RAM の値"]
@@ -370,6 +371,7 @@ print(len(diff), [hex(i) for i in diff[:5]], hex(diff[-1]))
 1 か所でも処理の長さが変わると、その後ろは全部ずれるので、この比べ方ではほとんどのバイトが違って見えます。その場合は、アドレスを含むバイトを伏せた命令の列どうしを比べます（[24 章](24_ROM_VERSIONS_BASIC.md) §24.7）。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart TD
   A["2 本をアドレスで並べる"] --> B{"違うバイトは<br>少ないか"}
   B -->|"少ない"| C["違う所を逆アセンブルして読む"]

@@ -119,6 +119,7 @@ A
 ### 4.5.1 切り替えの規則
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 stateDiagram-v2
   direction LR
   S1: S1

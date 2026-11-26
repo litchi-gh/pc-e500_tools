@@ -17,6 +17,7 @@ SHARP PC-E500 シリーズ（PC-E500 / PC-E500S / PC-E550 / PC-E650 / PC-1480U /
 全部を順に読む必要はありません。目的によって次の道を選んでください。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart LR
   S{"何をしたいか"}
   S -- "とにかく動かす" --> A["1 クイックスタート"] --> A2["7 ゲームを作る"] --> A3["12 ドットエディタ"]

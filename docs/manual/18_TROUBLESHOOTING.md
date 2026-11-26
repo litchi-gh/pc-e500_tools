@@ -15,6 +15,7 @@
 - [macOS](#187-macos)
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart LR
   A{"どこで困っているか"}
   A -- "色や候補が出ない" --> V["18.1 VS Code"]
@@ -151,6 +152,7 @@ Windows で起きることです。
 4. 1 つの命令まで狭める。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart LR
   A["全体"] --> B{"真ん中の値は正しいか"}
   B -- はい --> C["後ろ半分"]

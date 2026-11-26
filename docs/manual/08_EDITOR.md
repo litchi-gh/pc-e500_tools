@@ -220,6 +220,7 @@ game/
 ## 8.13 何がいつ調べられるか
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart LR
   A["1 文字打つ"] --> B["そのファイルを調べる"] --> C["波線と「問題」"]
   D["保存する"] --> E["開いている ASM を全部調べる<br>（INCLUDE 先かもしれないため）"] --> C

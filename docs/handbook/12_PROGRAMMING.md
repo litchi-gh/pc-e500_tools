@@ -40,6 +40,7 @@ AREA 314.1592654
 BASIC キーを押すたびに、画面上部の表示が `RUN` と `PRO` で入れ替わります。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart LR
   P["PRO モード<br>行を書く、直す、消す、一覧を見る"] -->|BASIC キー| R["RUN モード<br>プログラムを動かす<br>式を計算する、変数を見る"]
   R -->|BASIC キー| P

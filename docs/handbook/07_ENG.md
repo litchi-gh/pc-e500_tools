@@ -1056,6 +1056,7 @@ F= _
 ガイダンスのファイルは、1 行目が `MF`、続いて " で囲んだ 3 行という、短い文字のファイルです。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart LR
   A["6##<br>ﾄﾞｳｸﾞ<br>（ｼﾞﾌﾞﾝ ﾉ ﾄﾞｳｸﾞ）"] --> B["61#<br>ｵﾝﾄﾞ<br>（ｵﾝﾄﾞ ｶﾝｻﾝ）"] --> C["611<br>F2C<br>プログラム"]
 ```

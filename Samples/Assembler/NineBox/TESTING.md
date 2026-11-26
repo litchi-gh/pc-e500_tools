@@ -3,6 +3,7 @@
 `test.ps1` は、リポジトリの隣にあるエミュレータのソース（`Emulator/src/native`）を Visual Studio C++ x64 ビルドツールでコンパイルし、アセンブルした機械語をそのまま動かして確かめます。先に「PC-E500: BIN を作成」で `NINEBOX.BIN` を作り直します。独立した RAM と読み取り専用の仮想ディスクを使うので、起動中のエミュレータや保存した状態は変わりません。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart LR
   A["ninebox.asm"] --> B["e500asm"] --> C["test_runner"]
   D["エミュレータのソース"] --> C

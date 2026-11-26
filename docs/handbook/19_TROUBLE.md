@@ -14,6 +14,7 @@
 ## 19.0 はじめに
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart TD
   A["おかしい"] --> B{"画面に何か出ている？"}
   B -->|出ていない| C["コントラスト、電池、<br>スイッチ、ふたを見る<br>19.1、19.2"]

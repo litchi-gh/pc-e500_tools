@@ -53,6 +53,7 @@ ROM サイズの欄は ROM イメージのサイズで、CPU から見えるサ�
 ### 機種を選ぶ
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart TD
   A{"画面は英語がよいか"} -->|"英語"| B{"構造化 BASIC や<br>画面エディタを使うか"}
   A -->|"日本語、カナを使う"| C{"内蔵 RAM は 64 KB ほしいか"}
@@ -142,6 +143,7 @@ BASIC を使わずに見当を付けることもできます。メインメニ�
 | 7 | 7.2（国内）、7.3（英語） | BASIC の変更なし。AER モードの式の入力だけ（打てる長さが 78 文字になった） |
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart LR
   A["2.2"] -->|"国内"| B["3.2"] -->|"国内"| C["7.2"]
   B -. "英語版を作る" .-> D["5.3"] --> E["6.3"] --> F["7.3"]
@@ -201,6 +203,7 @@ flowchart LR
 PC-E500S、PC-E650、PC-U6000 は同じ基板で、ROM、R25 と R26、IC11 だけが違います。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart LR
   subgraph B["同じ基板（C01、4 Mbit ROM、FSTN の液晶）"]
     S["PC-E500S<br>RAM 1 個、HF9"]

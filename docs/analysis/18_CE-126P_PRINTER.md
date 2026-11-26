@@ -29,6 +29,7 @@ CE-140F との違いは次のとおりです。
 | 返事 | データを返す | ACK だけ |
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart TD
   A["LPRINT の文字"] --> B["ドライバ<br>1 行分ためる<br>§18.5"]
   B --> C["文字コードの変換<br>§18.5"]
@@ -89,6 +90,7 @@ flowchart TD
 `BFD1Dh` の bit7 が立っていなければ、11 ピンで CE-126P を探します（`EAB45h`）。応答があれば 02h、なければ 00h です。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart TD
   A["OPEN（EA907h）"] --> B{"BFD1Dh の bit7 が<br>立っているか"}
   B -- "はい" --> C["別の出力先（80h）"]
@@ -156,6 +158,7 @@ XOUT はブザーと同じ出力です。SCR のビット 4〜6 の意味は [�
 本体と機器のやり取りを 1 ビットについて並べると次のようになります。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 sequenceDiagram
   participant P as 本体
   participant D as CE-126P
@@ -202,6 +205,7 @@ ACK を待つ処理（`EAC98h`・`EACCAh`）は 0D4C0h 回まで見て、その�
 ![1 行を印字するときに送るもの](../images/analysis/ce126p-line.svg)
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 sequenceDiagram
   participant P as 本体
   participant D as CE-126P
@@ -235,6 +239,7 @@ sequenceDiagram
 | 24 桁を超えた | 自動で行を印字し、次の行へ |
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 stateDiagram-v2
   state "行をためている" as A
   state "CR を受けた<br>（BFD1Eh bit6）" as B
@@ -288,6 +293,7 @@ CE-126P の文字の番号は PC-E500 と少し違います。ドライバは送
 この動きを状態の図にすると、次のようになります。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 stateDiagram-v2
   state "待っている" as W
   state "デバイスコードを受ける<br>（XOUT = High）" as C

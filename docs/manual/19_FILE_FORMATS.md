@@ -210,6 +210,7 @@ FF A1 FF 95 7E 42 3C 3C   ← コマ 0（マスク、絵の順に 8 桁ぶん）
 ## 19.11 どのプログラムが何を読むか
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart TD
   ASM[".asm .inc"] --> E["e500asm"]
   ASM --> V["VS Code の内蔵アセンブラ"]

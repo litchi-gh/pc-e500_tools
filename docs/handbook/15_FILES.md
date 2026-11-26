@@ -17,6 +17,7 @@
 プログラムは電源を切っても消えませんが、通常使うプログラム領域は 1 つです（領域を増やす `BTEXT$` は[命令の説明](../analysis/14_BASIC_REFERENCE.md#btext--bdata)にあります）。新しいプログラムを書くために `NEW` をすれば、前のものはなくなります。また、プログラムが計算した値は、変数に入れただけでは次の `RUN` で消えてしまいます（固定変数を除く）。そこで、名前を付けて**ファイル**に保存します。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart LR
   M["本体のメモリ<br>プログラム、変数"] -->|SAVE、PRINT #| F["ファイル<br>E: F: X: CAS: COM:"]
   F -->|LOAD、INPUT #| M

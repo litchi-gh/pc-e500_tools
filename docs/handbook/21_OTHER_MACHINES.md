@@ -21,6 +21,7 @@
 | PC-13xx | PC-1360 |
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart TD
   A["元のプログラム"] --> B{"どこにある？"}
   B -->|本、雑誌| C["打ち込む"]

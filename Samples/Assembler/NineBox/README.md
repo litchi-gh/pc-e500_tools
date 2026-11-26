@@ -11,6 +11,7 @@
 画面の左からブロックが現れ、右の壁へ向かって落ちます。場所は縦 9 段、奥行き 18 マスです。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart LR
   A["ブロックが出る"] --> B["動かす、回す"] --> C["置く"]
   C --> D{"3×3 が<br>埋まった?"}

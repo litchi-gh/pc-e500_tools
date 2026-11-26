@@ -126,6 +126,7 @@ PF1 を押したときの画面です。いくつものプログラムを入れ�
 プログラムを入れた状態で `PASS "文字"`（8 文字まで）を打つと、プログラムの中身が見えなくなります。同じ文字でもう一度 `PASS` を打つと元に戻ります。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 stateDiagram-v2
   state "ふつう" as A
   state "保護中" as B

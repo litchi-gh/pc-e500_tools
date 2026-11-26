@@ -24,6 +24,7 @@
 この章は調べたい目的から引けるように並べています。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart LR
   Q{"知りたいこと"}
   Q -->|"電源や大きさ"| A["9.1 仕様"]

@@ -186,6 +186,7 @@ VS Code を使わずに、PowerShell のコマンドだけでも作れます。`
 | `-l hello.lst` | アドレスと機械語とソースを並べたリストも作る |
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart LR
   A["hello.asm"] -- "e500asm -f ce140f" --> C["HELLO.BIN"] -- "CE-140F" --> D["実機<br>LOAD M、CALL"]
 ```

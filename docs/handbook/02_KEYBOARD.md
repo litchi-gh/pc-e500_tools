@@ -18,6 +18,7 @@
 89 個のキーで、英字、カナ、数字、記号、関数、編集までを入力するため、1 つのキーに 2 つ以上の機能があります。たとえば `sin` キーは、そのまま押せば sin、`2nd F` を押してからなら逆関数の sin⁻¹ です。`R` キーは、英字の R、`SHIFT` を押しながらなら `$`、カナ入力では `RA` で `ﾗ` になります。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart LR
   K["1 つのキー"] --> A["そのまま<br>キーに書かれた機能"]
   K --> B["SHIFT または 2nd F<br>キーの上の機能"]

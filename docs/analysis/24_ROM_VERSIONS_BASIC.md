@@ -306,6 +306,7 @@ BASIC の変更はありません。6.2 と 7.2 の違いは AER モードの式
 パッチは元の命令を 1 つの `JP` に置き換え、空き領域に置いた処理へ飛ばす直し方です。周りのアドレスがずれないので、小さな修正に向きます。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart LR
   A["元の処理<br>E571Ch"] -->|"JP FFA0h"| P["空き領域<br>EFFA0h"]
   P --> X["追加の処理<br>CALLF EF3A2h ほか"]

@@ -26,6 +26,7 @@
 その上にもう 1 段、ファイルを名前で開いて読み書きするための **FCS**（File Control System、ファイル制御）があります。FCS はファイルの仕事を、対応するデバイスの IOCS のコマンドに直して頼みます。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart LR
   P["機械語のプログラム"] -- "CALLF FFFE8h" --> I["IOCS<br>デバイスを選んで実行"]
   P -- "CALLF FFFE4h" --> F["FCS<br>ファイルの処理"]
@@ -949,6 +950,7 @@ PRINT 7*6
 41h と 42h は変換をしませんが、XON/XOFF の設定があれば従います（技術資料 p.51）。送信（41h）の手順は次のとおりです（技術資料 p.57）。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart TD
   A["41h"] --> B{"XOFF で止められている<br>または、見る線が Low"}
   B -- "はい" --> C{"時間の上限を超えた"}
@@ -1850,6 +1852,7 @@ NOTE    .TXT          8   E:
 FCS は開くデバイスの属性を見て、頼み方を変えます。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart TD
   F["FCS 00h〜0Fh"] --> A{"デバイスの属性"}
   A -- "キャラクタ（ビット 5 = 1）" --> C["IOCS 08h〜0Eh<br>画面、キー、プリンタ"]
@@ -1864,6 +1867,7 @@ flowchart TD
 順番は次のとおりです。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 sequenceDiagram
   participant P as プログラム
   participant F as FCS
@@ -1933,6 +1937,7 @@ Technical Reference Manual p.18〜19 の表です。エラーのときは C=1 �
 **例: 同じ A = 01h でも意味が違う。** RAM ディスクのメディアの確認（10h）が C=1、A=01h で戻れば「ドライブがない」です。メモリブロックの 20h〜2Fh が C=1、A=01h で戻れば「パラメータが範囲外」です。先にコマンド番号の列を選んでから表を引きます。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart TD
   A["C = 1 で戻った"] --> B{"呼んだコマンド番号は"}
   B -- "00h〜1Fh、40h" --> C["表の左の列"]

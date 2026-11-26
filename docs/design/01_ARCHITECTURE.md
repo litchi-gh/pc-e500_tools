@@ -52,6 +52,7 @@
 ![ソースコードの依存関係](../images/toolchain-architecture.svg)
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart TD
   EXT["VS Code 拡張<br>（TypeScript）"] -- "標準入出力<br>（JSON）" --> DBG["e500dbg<br>（C#）"]
   EXT --> ASM["src/asm<br>（Core の移植）"]
@@ -98,6 +99,7 @@ VS Code の「制限モード」（信頼していないフォルダ）には、
 ## 1.4 データの流れ
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart TD
   ASM[".asm .inc"] --> A1["e500asm"] --> BIN[".bin .hex .lst .sym"]
   ASM --> A2["拡張の内蔵アセンブラ"] --> RUN["エミュレータで実行"]

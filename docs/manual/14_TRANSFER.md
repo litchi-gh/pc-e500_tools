@@ -195,6 +195,7 @@ PATH に入れてあれば、どの OS でも同じです。入れ方は [2 章]
 ## 14.10 通しの手順（機械語）
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 sequenceDiagram
   participant P as PC
   participant S as SD カード
@@ -232,6 +233,7 @@ sequenceDiagram
 `F5` と「BIN を作成」は、プログラムの先頭から `BFBFFh` までの大きさで、機械語エリアを確保する行を作ります。BASIC のプログラムと一緒に使うときは、残りの RAM（32 KB の本体で 20 KB ほど）も考えます。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart TD
   A["BASIC のプログラム、変数"] --- B["空き"] --- C["スタック、作業域"] --- D["機械語エリア"] --- E["システム BFC00h〜"]
 ```

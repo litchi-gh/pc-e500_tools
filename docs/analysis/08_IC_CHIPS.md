@@ -142,6 +142,7 @@ E500 SM の検査ソフト（`ROM` のメニュー）は ROM のチェックサ�
 計算の手順と、表の引き方です。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart TD
   A["256 KB の ROM"] --> B["262,144 バイトを<br>すべて足す"] --> C["和の下位 16 ビット<br>（16 進 4 桁）"] --> D{"表の値と<br>同じか"}
   D -->|"5C7E"| E["LH5320X5<br>JAPAN Ver.3"]
@@ -333,6 +334,7 @@ tRC は読み出しを 1 回行う周期です。120 ns なら 1 秒に約 830 �
 TC4S と TC7S は 1 個の回路だけを入れた小型の CMOS です。5 V でも 3 V でも動くので、バックアップの線で RAM を守る仕事にも使えます。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart LR
   CE2["/CE2"] --> A["IC13 AND"]
   CE3["/CE3"] --> A

@@ -190,6 +190,7 @@ CE-126P プリンタを接続しているときに乾電池が切れると、プ
 | `ON` を押したまま `RESET` を押し、RESET から離す | メモリを消去するかどうかを確認する |
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart TD
   H["動作がおかしい"] --> R1["RESET、OFF、ON"]
   R1 --> Q{"復帰したか"}

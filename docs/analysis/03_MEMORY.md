@@ -32,6 +32,7 @@
 スロットは本棚、メモリブロックは本にあたります。本棚には背表紙の一覧はなく、1 冊目の場所だけが決まっています。どの本にも「次の本までの長さ」が書いてあるので、1 冊目から順にたどれば、どの本も見つかります。最後に「ここで終わり」の札（`FFh`）があります。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart TD
     S["スロットのヘッダ<br>印 10 12、容量、<br>最初のブロックの位置"] --> A["DATA<br>変数"]
     A -- "+11 の長さ" --> B["TEXT<br>プログラム"]
@@ -269,6 +270,7 @@ BFC00h  システムアドレス（§3.8）
 ここまで分かると、`SAVE` したファイルを RAM へ直接書いて `LOAD` と同じ状態にできます。手順は次のとおりです（実験）。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart TD
     A["① スロットの先頭 + 18h から鎖をたどり、<br>TEXT とその前のブロックを見つける"] --> B["② 新しい TEXT を、<br>今の TEXT の終わりに合わせて置く"]
     B --> C["③ 前のブロックの +11 と +19 を、<br>新しい TEXT の先頭までの長さにする"]
@@ -372,6 +374,7 @@ IOCS（画面やキー、ファイルを扱うシステムの部品集）の作�
 FCB は既定で 5 個です。3 個は標準の入出力が使うので、自分で開けるのは 2 個です。8 個に増やす手順は次のとおりで、ROM 7.2 で確かめました（公式 p.85 と同じ考え方です）。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart LR
   A["① 今の大きさに<br>増やす FCB × 1Fh を足して<br>FFFD8h で確保"] --> B["② メニューから<br>BASIC に戻る"]
   B --> C["③ P+27h を 8 に、<br>P+28h と P+2Bh に<br>同じ分を足す"]
@@ -561,6 +564,7 @@ E5 20 20 20 20 20 20 20 42 41 53 20 00 ... 04 00 24 00 00 00   削除したフ�
 ファイルを開くと、プログラムは**ハンドル**という番号を受け取ります。システムの側では、開いているファイルごとに **FCB**（ファイル制御ブロック。デバイスや位置などの保存データ）を 1 個使います。ハンドルから FCB へは表を 1 回引いてたどります。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart LR
     P["プログラム<br>ハンドル 0"] --> H["ハンドル表 BFC6Dh<br>0 番目のバイト = 00"]
     H --> F["FCB 0<br>P+25h の位置から 31 バイト"]

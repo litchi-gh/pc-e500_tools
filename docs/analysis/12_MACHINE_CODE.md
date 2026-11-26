@@ -18,6 +18,7 @@
 BASIC のプログラムの中から `CALL` で機械語を呼ぶとき、主役は 2 人います。呼ぶ側の **ROM（BASIC）** と、呼ばれる側の**自分の機械語**です。2 人は同じメモリ、同じスタック、同じ内部 RAM を使うので、どちらが何を使ってよいかの規約が必要です。規約を守らないと、プログラムの結果が正しくても、戻った瞬間に暴走したり、あとで BASIC が壊れたりします。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart TD
   A["場所を決める<br>§12.3.1、§12.3.2"] --> B["置く<br>POKE、LOAD M<br>§12.2、§12.3.6"]
   B --> C["呼ぶ<br>CALL<br>§12.3.3"]

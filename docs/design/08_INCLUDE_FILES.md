@@ -46,6 +46,7 @@
 | `ENTRIES` `ARGUMENTS` `ERRORS` | 定数、値、説明 | `iocs.inc` の先頭と終わり |
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart LR
   T["iocs.ts の表"] --> F["iocsInclude()"] --> I["inc/iocs.inc"]
   T --> C["候補（MV IL,）"]
@@ -83,6 +84,7 @@ flowchart LR
 ### 始まりと終わり（game.inc）
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart TD
   A["game_start"] --> B["PUSHU IMR（割り込み禁止。積んだまま戻る）"]
   B --> C["00h〜BFh を game_saved に"]
@@ -103,6 +105,7 @@ flowchart TD
 LCD の表示 RAM は 4 つの区画に分かれ、右半分は左右が逆です。毎回この計算をすると遅いので、左から右へ並んだ 960 バイトの仮想画面に描き、最後にまとめて送ります。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart LR
   L[".lcd（1024 バイト）"] -- screen_load --> S["screen（960 バイト）"]
   S -- screen_keep --> B["screen_back"]

@@ -25,6 +25,7 @@ CE-140F は電線でつながった「相手」です。本体とディスクド
 「相手がうなずくのを確かめる」やり方をハンドシェイクといいます。送る側が「出しました」（BUSY）と合図し、受ける側が「受け取りました」（ACK）と返すので、速さの違う 2 台でも取りこぼしがありません。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 sequenceDiagram
   participant P as 本体（ROM のドライバ）
   participant D as CE-140F
@@ -232,6 +233,7 @@ ROM の判定（`EC26Fh`）は `10h` 未満と `FFh` を成功として扱いま
 | そのほかの `10h`〜`3Fh`、`40h` | I/O error |
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart TD
   A["状態の 1 バイト"] --> B{"10h 未満か FFh か"}
   B -- "はい" --> C["成功"]
@@ -263,6 +265,7 @@ flowchart TD
 `SAVE` の本体はデバイスコードをはさまずに続きます。1 ブロックはデータ（256 バイト、最後は端数）とその和で、応答は状態です。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 sequenceDiagram
   participant P as 本体
   participant D as CE-140F
@@ -301,6 +304,7 @@ protocol.md によると、LOAD の流れは次のとおりです。
 3. 本体をまとめて受け取る。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 sequenceDiagram
   participant P as 本体
   participant D as CE-140F
@@ -404,6 +408,7 @@ BASIC では、`SAVE M` / `LOAD M` はキーワードではなく、`SAVE` / `LO
 CE-140F はディスクドライブの中にもう 1 台の小さなコンピュータが入った機器です（サービスマニュアル p.2〜5、公式）。本体は「`PROG.BAS` を読んで」と頼むだけで、ディスクのどこにあるかは CE-140F が調べます。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart LR
   P["ポケコン<br>11 ピン"] <--> C["CPU SC63A05Y<br>8 ビット"]
   C <--> R["ROM 8 KB<br>RAM 8 KB"]

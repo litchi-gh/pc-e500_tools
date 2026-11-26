@@ -20,6 +20,7 @@
 そのため、本体は絵を作る必要がありません。ペンをどう動かすかを文字で書いて送るだけです。`LLINE (1,2)-(3,4)` という命令は、`M1,2`（(1,2) へ移動）、`L0`（実線）、`D3,4`（(3,4) まで描く）という 3 行の文字になります。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart TD
   A["BASIC の命令<br>LLINE、CIRCLE"] --> B["ROM の処理<br>引数の検査、計算<br>§19.3〜§19.6"]
   B --> C["文字のコマンド<br>M、D、R、J、L<br>§19.2"]
@@ -199,6 +200,7 @@ RLINE [(x1,y1)]-(x2,y2)[-(x3,y3)...][,種類][,色][,B]
 送る順序は常に、移動、線の種類、色、線です。種類は省略しても `L0` を送ります。色は指定したときだけ送ります。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 sequenceDiagram
   participant P as 本体
   participant C as CE-515P
@@ -379,6 +381,7 @@ L0 / M0,-58 / D100,-58 / M0,-16 / D100,-16 / M100,-100
 | `CIRCLE` | 網掛けせず、色を送って中心へ移動する（`M`） | 実験 |
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 stateDiagram-v2
   state "四角形なし<br>PAINT は何も送らない" as N
   state "四角形を覚えている<br>PAINT は網掛けする" as R

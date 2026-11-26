@@ -58,6 +58,7 @@ add2:   MV    A,[WORK]
 1 件のテストは料理の試食に似ています。材料をそろえ（`memory`、`registers`）、作り（`call` か `basic`）、味を見ます（`expect`）。毎回、台所を最初の状態に片付けてから始めるので、順番を変えても、1 件だけ動かしても、同じ結果になります。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart TD
   A["書き込んだ直後の<br>状態に戻す"] --> B["memory を書く"]
   B --> C{"basic があるか"}
@@ -256,6 +257,7 @@ JSON です。コメント（`//`）と、最後の余分な `,` が使えます
 ## 11.8 何をテストするか
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart LR
   A["計算のルーチン"] --> A1["普通の値、端の値、0、桁上がり"]
   B["文字のルーチン"] --> B1["空、1 文字、長い、数字でない文字"]

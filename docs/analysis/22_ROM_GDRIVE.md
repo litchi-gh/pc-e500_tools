@@ -144,6 +144,7 @@ def read(rom, first, size):            # first は先頭のクラスタ
 ROM の FAT とクラスタ鎖から全 60 ファイルを抽出しました。取り出し方が正しいかを確かめるには、ROM 自身に同じファイルを読ませて比べるのが確実です。そこで、ROM 上で `COPY "G:COMN.00$" TO "X:GDTEST.BIN"` を実行し、抽出物と全 1,243 バイトおよび SHA-256 が一致することを確かめました。13 本の ROM のうち形式 A の 10 本で、`COMN.00$` は全バイト同じです。検証値は `5f24ec704b69535f79897a31df6248f5a67b032ecf6563729190f9ab6eefa343` です。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart LR
   R["ROM イメージ"] -->|"FAT をたどって抽出"| A["COMN.00$<br>1,243 バイト"]
   R -->|"ROM 上で COPY"| B["X:GDTEST.BIN<br>1,243 バイト"]
