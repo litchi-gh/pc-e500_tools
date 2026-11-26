@@ -38,7 +38,7 @@ fs.writeFileSync(path.join(stage, "package.json"), JSON.stringify({
 }, undefined, 2) + "\n");
 fs.writeFileSync(path.join(stage, "README.md"), `# pc-e500-tools
 
-SHARP PC-E500 シリーズ（CPU は SC62015）のプログラムを、書く、確かめる、動かすコマンド \`e500\` と、AI（Claude Code、Codex）用のスキルです。
+SHARP PC-E500 シリーズ（CPU は SC62015）のプログラムを、書く、確かめる、動かすコマンド \`e500\` と、AI（Claude Code、Codex）用のスキルです。シャープ株式会社とは関係のない、個人が作った非公式のツールです。
 
 \`\`\`sh
 npx -y pc-e500-tools@latest setup
@@ -55,7 +55,7 @@ e500 --help
 
 ---
 
-The command \`e500\` (write, check and run programs for the SHARP PC-E500 series) and the skill for Claude Code and Codex. \`npx -y pc-e500-tools@latest setup\` puts the skill's entry into your home folder; its text comes from \`e500 guide\`, so it is always the latest. \`e500 run\` and \`e500 test\` need the PC-E500 emulator and a ROM: see ${repository}.
+The command \`e500\` (write, check and run programs for the SHARP PC-E500 series) and the skill for Claude Code and Codex. It is an unofficial tool, not related to Sharp Corporation. \`npx -y pc-e500-tools@latest setup\` puts the skill's entry into your home folder; its text comes from \`e500 guide\`, so it is always the latest. \`e500 run\` and \`e500 test\` need the PC-E500 emulator and a ROM: see ${repository}.
 `);
 
 // npm is a .cmd on Windows: it runs through the shell, with the one argument quoted.

@@ -46,6 +46,7 @@ export interface Tools {
 
 /** The emulator's latest release (Windows zip and setup, Linux, macOS). */
 export const EMULATOR_DOWNLOAD = "https://github.com/litchi-gh/pc-e500_emulator_pockecom/releases/latest";
+const download = (): Fix => ({ kind: "link", url: EMULATOR_DOWNLOAD, label: L("エミュレータのダウンロード", "Download the Emulator") });
 const isFile = (f: string): boolean => { try { return fs.statSync(f).isFile(); } catch { return false; } };
 const isFolder = (f: string): boolean => { try { return fs.statSync(f).isDirectory(); } catch { return false; } };
 const same = (a: string, b: string): boolean => path.resolve(a).toLowerCase() === path.resolve(b).toLowerCase();
@@ -109,7 +110,7 @@ export async function checkSetup(settings: Settings, where: Places, tools: Tools
     fixes.push({ kind: "pick", what: "emulator", label: L("フォルダを選択", "Pick the Folder") });
     if (state === "error") {
       fixes.push(open("pcE500.emulatorPath"));
-      fixes.push({ kind: "link", url: EMULATOR_DOWNLOAD, label: L("エミュレータのダウンロード", "Download the Emulator") });
+      fixes.push(download());
     }
     checks.push({ id: "folder", group: "emulator", title: L("エミュレータのフォルダ", "Emulator folder"), state, lines, fixes });
   }
@@ -122,7 +123,7 @@ export async function checkSetup(settings: Settings, where: Places, tools: Tools
       lines.push(core);
       if (!hasDebugger(core)) { state = "error"; lines.push(L("デバッグ用の関数がない古いものです。新しいエミュレータの e500core.dll が必要です。", "An old one without the debugger functions: a newer emulator's e500core.dll is needed.")); }
     }
-    checks.push({ id: "core", group: "emulator", title: "e500core.dll", state, lines, fixes: state === "ok" ? [] : [open("pcE500.corePath")] });
+    checks.push({ id: "core", group: "emulator", title: "e500core.dll", state, lines, fixes: state === "ok" ? [] : [open("pcE500.corePath"), download()] });
   }
   const rom = settings.rom || found.rom;
   {
