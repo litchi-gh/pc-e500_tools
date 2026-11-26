@@ -32,17 +32,21 @@ game_lcd2:
         JRNZ  game_lcd2
         MV    A,LCD_START
         MV    [LCD_B],A
+        MV    ($20),$FF         ; pad_read: 始まる前から押されているキーは「いま押された」にしない
         AND   (ISR),$FF-MTI
         RET
 
-; 終わる: ON/BRK が離されるのを待ち、画面を消し、すべて元に戻す。
+; 終わる: 音を止め、ON/BRK が離されるのを待ち、画面を消し、すべて元に戻す。
 game_end:
+        AND   (SCR),BZ_OFF
+game_end1:
         MV    (KOL),0
-        MV    (KOH),$08         ; KO11: ON/BRK は KI1
+        AND   (KOH),$F0         ; KOH の上位 4 ビットは別の信号なので残す
+        OR    (KOH),$08         ; KO11: ON/BRK は KI1
         NOP
         TEST  (KI),$02
-        JRNZ  game_end
-        MV    (KOH),0
+        JRNZ  game_end1
+        AND   (KOH),$F0
         MV    I,$C0
         MVL   ($00),[game_saved]
         MV    A,[game_scr]
@@ -56,7 +60,8 @@ game_end:
         POPU  IMR
         RET
 
-; A × 約 16 ミリ秒待つ（前に呼んでから過ぎた時間も数える）。
+; A × 約 16 ミリ秒待つ。前に呼んでからの時間も数えるが、数えるのは 1 回分まで
+; （それより重い処理は、そのぶん 1 ターンが長くなる）。
 game_wait:
         MV    (game_ticks),A
 game_wait1:

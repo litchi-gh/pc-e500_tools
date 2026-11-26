@@ -8,9 +8,9 @@
 
 ```basic
 10 REM *** CALL MACHINE CODE ***
-20 REM RESERVE 1000H FIRST:
+20 REM RESERVE 1000H OR MORE FIRST:
 30 REM POKE &HBFE03,&H1A,&HFD,&HB,0,&H10,0:CALL &HFFFD8
-40 IF PEEK &HBFD1B<>&HEC THEN PRINT "RESERVE FIRST":END
+40 IF PEEK &HBFD1B>&HEC THEN PRINT "RESERVE FIRST":END
 50 RESTORE 200
 60 FOR I=0 TO 27:READ D:POKE &HBEC00+I,D:NEXT I
 70 INPUT "A (0-255)? ";A
@@ -34,7 +34,7 @@
 | 行 | 内容 |
 |---|---|
 | 30 | 最初に 1 回だけ打つ、機械語エリアの確保（[実機へ送る](../../../docs/manual/14_TRANSFER.md#143-機械語エリアを確保する)） |
-| 40 | 確保してあるかを、ポインタの値で調べる |
+| 40 | 1000h 以上を確保してあるかを、ポインタの値で調べる |
 | 60 | 28 バイトを `BEC00h` から書く |
 | 90 | 足す数を渡す |
 | 100 | `start` は `BEC04h` |

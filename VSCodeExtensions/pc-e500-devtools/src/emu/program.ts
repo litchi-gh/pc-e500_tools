@@ -37,6 +37,8 @@ export class Program {
   get errors(): string[] {
     return this.result.issues.filter(i => i.severity === "error").map(i => `${path.basename(this.file)}(${i.range.line + 1}): ${i.message}`);
   }
+  /** Every file the program is made of: the source, INCLUDE and INCBIN. */
+  get inputFiles(): readonly string[] { return this.result.inputFiles; }
   get origin(): number { return this.result.origin; }
   get binary(): Uint8Array { return this.result.binary; }
   get end(): number { return this.result.origin + this.result.binary.length; }
@@ -78,14 +80,14 @@ export class Program {
     return undefined;
   }
 
-  /** The first instruction at or after `line` (0-based) in `file`: where a breakpoint on that line goes. */
-  codeAtOrAfter(file: string, line: number): AsmLine | undefined {
+  /** The first instruction at or after `line` (0-based) in `file`, where a breakpoint on that line goes: one for each time the file is included. */
+  codeAtOrAfter(file: string, line: number): AsmLine[] {
     let best: AsmLine | undefined;
     for (const l of this.lines) {
       if (!l.code || l.line < line || !sameFile(l.file, file)) continue;
       if (best === undefined || l.line < best.line) best = l;
     }
-    return best;
+    return best ? this.lines.filter(l => l.code && l.line === best.line && sameFile(l.file, file)) : [];
   }
 
   /** Whether the program has lines from this file. */

@@ -232,7 +232,9 @@ sum_1:  MV    A,[X++]
 
 ;@sort8
 ; X から A 個のバイトを小さい順に並べ替える。
-sort8:  MV    ($20),A
+sort8:  CMP   A,0
+        JRZ   sort_4
+        MV    ($20),A
         MV    ($24),X           ; 先頭を覚えておく
 sort_1: DEC   ($20)
         JRZ   sort_4            ; 残り 1 個

@@ -4,6 +4,7 @@
 // any program.
 import * as fs from "node:fs";
 import * as path from "node:path";
+import { AssemblyError, evaluate } from "../asm/expression";
 import { plainJson } from "../jsonc";
 import { L } from "../l10n";
 import { EmulatorFolder, coreName, emulatorInstalled, emulatorOnPath, hasDebugger, inEmulatorFolder, places } from "../setup/find";
@@ -32,8 +33,13 @@ export function parseArguments(args: readonly string[], known: ReadonlySet<strin
     const name = SHORT[m[1]] ?? m[1];
     if (!known.has(name) && name !== "help") throw new UsageError(L(`知らないオプションです: ${a}`, `Unknown option: ${a}`));
     let value = m[2] ?? "";
+    if (m[2] !== undefined && ALONE.has(name)) {
+      if (!/^(true|false)$/i.test(value)) throw new UsageError(L(`--${name} に値は付きません: ${a}`, `--${name} takes no value: ${a}`));
+      if (/^false$/i.test(value)) continue;
+    }
     if (m[2] === undefined && !ALONE.has(name)) {
-      if (i + 1 >= args.length) throw new UsageError(L(`${a} に値がありません。`, `${a} has no value.`));
+      const next = /^--([a-z][a-z-]*)(?:=|$)/i.exec(args[i + 1] ?? "");
+      if (i + 1 >= args.length || (next && (known.has(next[1]) || ALONE.has(next[1])))) throw new UsageError(L(`${a} に値がありません。`, `${a} has no value.`));
       value = args[++i];
     }
     options.set(name, [...(options.get(name) ?? []), value]);
@@ -61,14 +67,20 @@ export function addressOption(a: Arguments, name: string): number | undefined {
   return n;
 }
 
+/** A number as a source writes it ($FF, 0FFh, 'A', 1+2). */
+export function expressionValue(text: string, what: string): number {
+  try { return Number(evaluate(text.replace(/&H(?=[0-9A-F])/gi, "$"), name => { throw new AssemblyError(L(`名前は使えません: ${name}`, `A name cannot be used: ${name}`)); }, 0)); }
+  catch (error) { throw new UsageError(`${what}: ${error instanceof Error ? error.message : String(error)}`); }
+}
+
 /** -D name=value, as e500asm has them. */
 export function defines(a: Arguments): Record<string, number> {
   const out: Record<string, number> = {};
   for (const d of a.options.get("define") ?? []) {
     const m = /^([A-Za-z_.][A-Za-z_0-9.]*)(?:=(.+))?$/.exec(d);
-    const n = m ? Number((m[2] ?? "1").replace(/^\$|^&H?/i, "0x")) : NaN;
-    if (!m || !Number.isFinite(n)) throw new UsageError(L(`--define は 名前=値 です: ${d}`, `--define is name=value: ${d}`));
-    out[m[1]] = n;
+    if (!m) throw new UsageError(L(`--define は 名前=値 です: ${d}`, `--define is name=value: ${d}`));
+    if (Object.keys(out).some(k => k.toUpperCase() === m[1].toUpperCase())) throw new UsageError(L(`--define の名前が重なっています: ${m[1]}`, `Duplicate --define name: ${m[1]}`));
+    out[m[1]] = expressionValue(m[2] ?? "1", `--define ${d}`);
   }
   return out;
 }

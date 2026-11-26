@@ -37,12 +37,12 @@ SHARP ポケットコンピュータ PC-E500 シリーズ（PC-E500 / PC-E500S /
 
 ## はじめに
 
-このリポジトリのツールは、**1 つずつ独立しています**。全部を入れる必要はありません。VS Code 拡張にはアセンブラも入っているので、VS Code で作るなら拡張だけで始められます。
+このリポジトリのツールは 1 つずつ独立しています。全部を入れる必要はありません。VS Code 拡張にはアセンブラも入っているので、VS Code で作るなら拡張だけで始められます。
 
 | ツール | できること | 入れ方 | 使い方 |
 |---|---|---|---|
 | **VS Code 拡張**「PC-E500 開発ツール」 | 書く、間違いを見つける、絵を描く、実機用の BIN を作る。Windows では `F5` で、エミュレータで動かしてデバッグする | [Windows](docs/manual/02_INSTALL_WINDOWS.md#24-拡張機能を入れる)、[Linux](docs/manual/02_INSTALL_LINUX.md#23-拡張機能コマンド-e500を入れる)、[macOS](docs/manual/02_INSTALL_MACOS.md#23-拡張機能コマンド-e500を入れる) | [クイックスタート](docs/manual/01_QUICKSTART.md) |
-| **コマンド `e500`**（拡張に入っている） | 拡張の機能をコマンドで使う。アセンブル、逆アセンブル、実行、テスト、実機用の BIN と BAS の作成。AI に書かせるときもこれを使う | 拡張と同じ（Linux、macOS は Node.js も要る） | [Windows](docs/manual/23_COMMAND_LINE_WINDOWS.md)、[Linux](docs/manual/24_COMMAND_LINE_LINUX.md)、[macOS](docs/manual/25_COMMAND_LINE_MACOS.md) |
+| **コマンド `e500`**（拡張に入っている） | 拡張の機能をコマンドで使う。アセンブル、逆アセンブル、実行、テスト、実機用の BIN と BAS の作成。AI に書かせるときもこれを使う | 拡張と同じ（Linux、macOS は [`install.sh`](install.sh) の 1 行で、Node.js なども入る）。AI に使わせるだけなら、Node.js があれば `npx -y pc-e500-tools@latest setup` の 1 行 | [Windows](docs/manual/23_COMMAND_LINE_WINDOWS.md)、[Linux](docs/manual/24_COMMAND_LINE_LINUX.md)、[macOS](docs/manual/25_COMMAND_LINE_MACOS.md) |
 | **アセンブラ** `e500asm` | ASM のソースを機械語にする。VS Code も Node.js も要らない | [Windows](docs/manual/02_INSTALL_WINDOWS.md#28-コマンドのツールを入れる)、[Linux](docs/manual/02_INSTALL_LINUX.md#25-e500asme500dasm-を作る)、[macOS](docs/manual/02_INSTALL_MACOS.md#25-e500asme500dasm-を作る) | [アセンブラの文法](docs/manual/04_ASSEMBLER_REFERENCE.md) |
 | **逆アセンブラ** `e500dasm` | 機械語を ASM に戻す。VS Code も Node.js も要らない。Windows には画面の `E500Disassembler` もある | アセンブラと同じ | [逆アセンブラ](docs/manual/15_DISASSEMBLER.md) |
 
@@ -102,7 +102,7 @@ ROM の解析と一次資料からまとめた、全 29 章の本です。[目�
 PC の性能やディスクの大きさは[インストールの「動作環境」](docs/manual/02_INSTALL.md#21-動作環境)にあります。
 
 - ビルド済みの実行ファイル（`e500asm.exe`, `e500dasm.exe`, `E500Disassembler.exe`）は Windows x64 用で、追加ランタイムは不要です。
-- .NET 製の 3 つの EXE（`e500asm.exe`, `e500dasm.exe`, `E500Disassembler.exe`）は自己完結型で 1 ファイル 70〜120 MB あり GitHub の上限を超えるため、リポジトリには含めていません。[Releases](https://github.com/litchi-gh/pc-e500_tools/releases) からダウンロードして `Assembler/app/`、`DisAssembler/app/` に置くか、各フォルダの `build.cmd` でビルドしてください（`app/` に生成されます）。VSIX も Releases から取得できます。
+- .NET 製の 3 つの EXE（`e500asm.exe`, `e500dasm.exe`, `E500Disassembler.exe`）は自己完結型で 1 ファイル 70〜120 MB あり GitHub の上限を超えるため、リポジトリには含めていません。[Releases](https://github.com/litchi-gh/pc-e500_tools/releases) からダウンロードして `Assembler/app/`、`DisAssembler/app/` に置くか、各フォルダの `build.cmd` でビルドしてください（`app/` に生成されます）。VS Code 拡張は Visual Studio Marketplace と Open VSX にあり（`litchi-gh.pc-e500-devtools`）、VSIX も Releases から取得できます。
 - ソースからビルドする手順は OS ごとに、[Windows](docs/manual/02_INSTALL_WINDOWS.md#29-ソースから作る必要な人だけ)、[Linux](docs/manual/02_INSTALL_LINUX.md#25-e500asme500dasm-を作る)、[macOS](docs/manual/02_INSTALL_MACOS.md#25-e500asme500dasm-を作る) にあります。
 
   | 作るもの | Windows | Linux | macOS |
@@ -113,15 +113,15 @@ PC の性能やディスクの大きさは[インストールの「動作環境�
 
 ## 参考資料
 
-- [Sharp_ce140f_emul](https://github.com/ffxx68/Sharp_ce140f_emul) — CE-140F ディスクドライブエミュレータ
+- [Sharp_ce140f_emul](https://github.com/ffxx68/Sharp_ce140f_emul)（CE-140F ディスクドライブエミュレータ）
 
 ## ライセンス
 
 [MIT License](LICENSE) です（`VSCodeExtensions/pc-e500-devtools` も同じ MIT で、著作権表示は同フォルダの [LICENSE](VSCodeExtensions/pc-e500-devtools/LICENSE) のとおりです）。
 
-次のものは、このライセンスの対象ではありません。
+次のものはこのライセンスの対象ではありません。
 
-- **ROM とマニュアル:** ROM の中身とシャープの資料の権利は、それぞれの権利者のものです。このリポジトリに ROM イメージは含めていません。吸い出した ROM は、公開や配布をしないでください。
-- **参考資料の内容:** [解析資料](docs/analysis/) はマニュアル、書籍、公開プロジェクトなどを参考にしています（出典は各文書にあります）。元の資料の権利は、それぞれの権利者のものです。
-- **製品名:** SHARP、PC-E500 などの名称は、それぞれの権利者の商標または製品名です。このプロジェクトはシャープとは関係ありません。
-- **自己完結型の実行ファイル:** .NET ランタイムを含み、.NET のライセンス（MIT）とその第三者通知に従います。
+- ROM とマニュアル: ROM の中身とシャープの資料の権利は、それぞれの権利者のものです。このリポジトリに ROM イメージは含めていません。吸い出した ROM は公開や配布をしないでください。
+- 参考資料の内容: [解析資料](docs/analysis/) はマニュアル、書籍、公開プロジェクトなどを参考にしています（出典は各文書にあります）。元の資料の権利はそれぞれの権利者のものです。
+- 製品名: SHARP、PC-E500 などの名称はそれぞれの権利者の商標または製品名です。このプロジェクトはシャープとは関係ありません。
+- 自己完結型の実行ファイル: .NET ランタイムを含み、.NET のライセンス（MIT）とその第三者通知に従います。

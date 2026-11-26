@@ -127,7 +127,7 @@ fire:   CMP   (shot_x),0
         JRZ   fire_2
         MV    (shot_x),16
         MV    (shot_y),(ship_y)
-        MV    (beep),1
+        MV    (beep),2          ; このターンの sound で 1 減る
         MV    A,BZ_4K
         JP    sound_on
 fire_1: ADD   (shot_x),8

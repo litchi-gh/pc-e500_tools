@@ -1,6 +1,6 @@
 # 1. 全体の構造
 
-この章は、ツール全体の概要です。どの部品でできていて、どうつながり、ソースが実機で動くまでにデータがどう流れるかを説明します。細かいことはあとの章に任せ、「この機能を直したいときは、どのフォルダを開けばよいか」がすぐに分かることを目指しています。初めてソースを触る人は、ここから読んでください。
+この章はツール全体の概要です。どの部品でできていて、どうつながり、ソースが実機で動くまでにデータがどう流れるかを説明します。細かいことはあとの章に任せ、「この機能を直したいときは、どのフォルダを開けばよいか」がすぐに分かることを目指しています。初めてソースを触る人はここから読んでください。
 
 [設計の目次へ戻る](README.md)
 
@@ -64,7 +64,7 @@ flowchart TD
   ASM -. "同じ golden vector<br>で検証" .- AC
 ```
 
-- **基準になるのは `InstructionEncoder.cs` です。** 逆アセンブラはこれを参照して出力を照合し、拡張の `src/asm/encoder.ts` はこれを移植したものです。
+- 基準になるのは `InstructionEncoder.cs` です。逆アセンブラはこれを参照して出力を照合し、拡張の `src/asm/encoder.ts` はこれを移植したものです。
 - `e500core.dll` と ROM は同梱しません。`e500dbg` が別のプロセスとして、実行時に利用者のものを読み込みます。拡張と `e500dbg` は MIT、コアは GPL-2.0-or-later のエミュレータの一部です。
 - `LOAD M` のヘッダーは、アセンブラ、逆アセンブラ、拡張（`src/project/loadM.ts`）がそれぞれ持っています。
 - 実行時に外のライブラリは使いません。C# は .NET の標準だけ、拡張は Node.js と VS Code の API だけです（`devDependencies` は型とビルドのツールです）。
@@ -141,7 +141,7 @@ flowchart TD
 | 知識 | 持っている場所 | 揃え方 |
 |---|---|---|
 | 命令の符号化 | `InstructionEncoder.cs`、`encoder.ts` | 双方のテストに同じ golden vector。`project.test.ts` は、テンプレートを `e500asm` と両方でアセンブルして比べる |
-| 命令の書ける形（候補の表） | `instructions.ts` | テストが全部の形を符号化器に通す |
+| 命令の書ける形（候補の表） | `instructions.ts` | テストが全部の形をエンコーダに通す |
 | デコード | `Decoder.cs` | デコードした結果を `InstructionEncoder` でもう一度符号化して照合 |
 | `LOAD M` のヘッダー | `Assembler.cs`、`InputImage.cs`、`loadM.ts`、`disassembler.ts` | 拡張のテストが `e500asm -f ce140f` の出力と比べる |
 | IOCS の表 | `iocs.ts`、`inc/iocs.inc` | `iocsInclude()` で作り、テストが一致を調べる |

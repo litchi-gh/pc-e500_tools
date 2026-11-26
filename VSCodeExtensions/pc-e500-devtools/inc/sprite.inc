@@ -12,7 +12,7 @@
 
 sprite_x        EQU $24         ; x 座標（符号付き 2 バイト、-255〜）
 sprite_y        EQU $26         ; y 座標（符号付き 1 バイト、-64〜）
-hit_ax          EQU $40         ; box_hit の四角 A: x、y、幅、高さ
+hit_ax          EQU $40         ; box_hit の四角 A: x、y（0〜255。画面の左や上にはみ出すものは、0 に切って渡す）、幅、高さ
 hit_ay          EQU $41
 hit_aw          EQU $42
 hit_ah          EQU $43

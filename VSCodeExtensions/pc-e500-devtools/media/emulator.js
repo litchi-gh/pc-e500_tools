@@ -483,6 +483,7 @@
       schedule();
     } else if (m.type === "state") {
       running = !!m.running;
+      if (m.speed !== undefined) /** @type {HTMLSelectElement} */ ($("speed")).value = String(m.speed);
       if (m.model && m.model !== model) { model = m.model; keys = buildKeys(isWide()); resize(); }
       $("title").textContent = m.title ?? "PC-E500";
       $("status").textContent = m.attached ? (m.pausing ? L("次の行で停止します（もう一度押すとすぐ停止）", "Stopping at the next line (press again to stop at once)") : running ? L("実行中", "Running") : (m.message ?? L("停止中", "Stopped"))) : "";

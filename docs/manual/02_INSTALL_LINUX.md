@@ -1,6 +1,6 @@
 # 2. インストールと設定（Linux）
 
-この章は、Linux でツールを入れて、使える状態にするまでを説明します。上から順に、必要な所だけ進めてください。どのコマンドにも、「何をするコマンドか」「うまくいくと何が表示されるか」を付けました。
+この章は Linux でツールを入れて、使える状態にするまでを説明します。上から順に必要な所だけ進めてください。どのコマンドにも「何をするコマンドか」「うまくいくと何が表示されるか」を付けました。
 
 Windows の人は[こちら](02_INSTALL_WINDOWS.md)、macOS の人は[こちら](02_INSTALL_MACOS.md)を読んでください。何を入れればよいか分からないときは、[2.2 何を入れるか](02_INSTALL.md#22-何を入れるか)の表で選べます。入れた後の使い方は [24 章](24_COMMAND_LINE_LINUX.md)にあります。
 
@@ -9,9 +9,9 @@ Windows の人は[こちら](02_INSTALL_WINDOWS.md)、macOS の人は[こちら]
 | 節 | 内容 |
 |---|---|
 | [2.1](#21-始める前に) | 動作環境、端末と、この章の書き方 |
-| [2.2](#22-必要なものを入れる) | Node.js、.NET 10 のランタイムなど |
-| [2.3](#23-拡張機能コマンド-e500を入れる) | VS Code と拡張機能、コマンド `e500` |
-| [2.4](#24-エミュレータと-rom-を置く) | エミュレータと ROM |
+| [2.2](#22-必要なものを入れる) | 1 行でまとめて入れる |
+| [2.3](#23-拡張機能コマンド-e500を入れる) | VS Code の拡張機能 |
+| [2.4](#24-エミュレータと-rom-を置く) | ROM を置く |
 | [2.5](#25-e500asme500dasm-を作る) | ソースから作るツール |
 | [2.6](#26-更新とアンインストール) | 新しくする、消す |
 | [2.7](#27-確かめる順番) | うまく動かないときの順番 |
@@ -27,133 +27,92 @@ Windows の人は[こちら](02_INSTALL_WINDOWS.md)、macOS の人は[こちら]
 | メモリ | 4 GB 以上を推奨 |
 | 画面 | 1280 × 800 以上を推奨。コマンドだけなら画面は要らない |
 | VS Code | 1.95 以降（VS Code を使うとき） |
-| Node.js | 20.12 以降。Ubuntu 26.04 では `apt` で 22 が入る。Ubuntu 24.04 の `apt` のものは 18 なので、[nodejs.org](https://nodejs.org/) から入れる |
-| .NET | `e500 run`、`e500 test` は .NET 10 ランタイム、ソースから作るなら .NET 10 SDK |
+| Node.js | 20.12 以降。なければ `install.sh` が入れる |
+| .NET | `e500 run`、`e500 test` は .NET 10 ランタイム（なければ `install.sh` が入れる）、ソースから作るなら .NET 10 SDK |
 | ディスク | VS Code 500 MB まで、`e500asm` と `e500dasm` 各 約 74 MB、エミュレータの `.tar.gz` は約 75 MB |
 
 編集、診断、ドットエディタ、コマンドでの実行とテストが使えます。VS Code の `F5`（実行、デバッグ）とテスト、`E500Disassembler`（画面）は Windows 専用です。WSL の Ubuntu でも、コマンドは同じように使えます。
 
 ### この章の書き方
 
-コマンドは **端末**（ターミナル）に打ちます。`名前@ホスト:~$` のような表示（プロンプト）の右に打って、`Enter` を押します。プロンプト自体は打ちません。パッケージを入れる例は Ubuntu 26.04 のものです。ほかのディストリビューションでは、`apt` の行をその環境のものに替えます。
+コマンドは端末（ターミナル）に打ちます。`名前@ホスト:~$` のような表示（プロンプト）の右に打って、`Enter` を押します。プロンプト自体は打ちません。パッケージを入れる例は Ubuntu 26.04 のものです。ほかのディストリビューションでは `apt` の行をその環境のものに替えます。
 
 | この章での書き方 | 意味 |
 |---|---|
 | `~` | 自分のホームフォルダ（`/home/名前`） |
 | `~/pockecom` | ツールを置くフォルダの例。好きな場所に変えてよい |
-| `<バージョン>` | `0.3.0` などに読み替える |
+| `<バージョン>` | `0.1.0` などに読み替える |
 | `sudo` | 管理者の権限で実行する。自分のパスワードを聞かれる（打っても表示されない） |
 | `#` より右 | 説明。打たなくてよい |
 
-Linux では、VS Code の `F5`（実行、デバッグ）は使えません。動かすのとテストは、コマンド `e500 run`、`e500 test` で行います。
+Linux では、VS Code の `F5`（実行、デバッグ）は使えません。動かすのとテストはコマンド `e500 run`、`e500 test` で行います。
 
 ## 2.2 必要なものを入れる
 
+次の 1 行で要るものがまとめて入ります。新しくするときも、同じ行をもう一度実行します（ROM と、自分で作ったプログラムはそのまま残ります）。
+
 ```sh
-sudo apt update
-sudo apt install -y git unzip nodejs dotnet-runtime-10.0
+wget -qO- https://raw.githubusercontent.com/litchi-gh/pc-e500_tools/main/install.sh | sh
 ```
 
-| コマンド | 何をするか |
-|---|---|
-| `sudo apt update` | 入れられるソフトの一覧を新しくする。まだ何も入れない |
-| `sudo apt install -y 名前…` | 名前のソフトを入れる。`-y` は、確認の質問に「はい」と答える |
+`wget -qO- アドレス` がインストール用のスクリプト `install.sh` を GitHub から取り、`| sh` がそれを実行します。オプションは `| sh -s -- --vscode` のように、`--` の後ろに書きます。中身を見てから実行したいときは、次のように分けます。
 
-| 入れるもの | 何に使うか | 要らない場合 |
+```sh
+wget -qO- https://raw.githubusercontent.com/litchi-gh/pc-e500_tools/main/install.sh > install.sh
+less install.sh
+sh install.sh --vscode
+```
+
+| オプション | 意味 |
+|---|---|
+| `--rom ファイル` | 自分の ROM をエミュレータの `rom` フォルダにコピーする |
+| `--vscode` | VS Code がなければ入れる（Linux では管理者のパスワードを聞かれる） |
+| `--no-emulator` | エミュレータと .NET を入れない（書く、変換するだけのとき） |
+| `--vsix ファイル`、`--emulator ファイル` | 取ってくる代わりに、手元の `.vsix`、`.tar.gz` を使う |
+
+| 入るもの | 場所 | 入れないとき |
 |---|---|---|
-| `git` | リポジトリを取ってくる | ソースもサンプルも要らないとき |
-| `unzip` | `.vsix` を展開する | VS Code に拡張機能を入れるとき |
-| `nodejs` | コマンド `e500` を動かす（20.12 以降） | `e500asm`、`e500dasm` だけ使うとき |
-| `dotnet-runtime-10.0` | `e500 run`、`e500 test` でエミュレータを動かす | 動かさないとき。[2.5](#25-e500asme500dasm-を作る) で SDK を入れるとき |
+| Node.js 22 | `~/pockecom/node` | 20.12 以降が既にある |
+| .NET 10 ランタイム | `~/pockecom/dotnet` | 10 が既にある |
+| コマンド `e500` と拡張機能の中身 | `~/pockecom/devtools` | − |
+| エミュレータ | `~/pockecom/Emulator`（ROM は `rom`） | − |
+| `e500` と打つためのファイル | `~/.local/bin/e500` | − |
+| VS Code の拡張機能 | VS Code の中 | VS Code がない |
+
+- `sudo` を付けずに実行します。自分のフォルダだけに入れるので、管理者の権限は要りません（Linux で VS Code を入れるときだけ、スクリプトが `sudo apt-get` を使います）。
+- `~/.local/bin` が PATH（コマンドを探すフォルダの一覧）になければ、`~/.bashrc` に 1 行足します。**新しい端末を開くと**、`e500` と打てるようになります。
+- `~/pockecom` を別の場所にするには、`POCKECOM_HOME=フォルダ sh install.sh` のように書きます。
+- 取ってくるものは、`e500`、エミュレータ、Node.js、.NET の公式の配布元からです。Node.js は配布元の SHA-256 と同じかを確かめます。
 
 入ったかどうかを確かめます。
 
 ```sh
-node --version
-dotnet --list-runtimes
+e500 --version
+e500 check
 ```
 
 | コマンド | 何をするか | 正しいとき |
 |---|---|---|
-| `node --version` | Node.js のバージョンを表示する | `v20.12` 以上（例 `v22.22.1`） |
-| `dotnet --list-runtimes` | 入っている .NET のランタイムを一覧にする | `Microsoft.NETCore.App 10.…` の行がある |
+| `e500 --version` | `e500` を動かして、バージョンを表示する | `0.1.0` など |
+| `e500 check` | エミュレータと ROM を探し、一度起動してみる | `started:` の行が出る |
 
 ## 2.3 拡張機能（コマンド e500）を入れる
 
-[Releases](https://github.com/litchi-gh/pc-e500_tools/releases) から `pc-e500-devtools-<バージョン>.vsix` を取ります。日本語の Ubuntu では、ブラウザで取ったファイルはホームの `ダウンロード` フォルダに入ります。英語の環境では `Downloads` なので、`~/ダウンロード` を `~/Downloads` に読み替えます。
+`install.sh` は VS Code が入っていれば、拡張機能もその中に入れます。後から VS Code を入れたときは、VS Code の拡張機能の画面（`Ctrl+Shift+X`）で「PC-E500」を探し、「PC-E500 開発ツール」（発行者 `litchi-gh`）を入れます。Visual Studio Marketplace にあります。`install.sh` をもう一度実行しても入ります。
 
-### A. VS Code を使うとき
-
-VS Code がまだなら、[VS Code のページ](https://code.visualstudio.com/)から `.deb` を取って入れます。
-
-```sh
-sudo apt install ~/ダウンロード/code_*_amd64.deb
-code --install-extension MS-CEINTL.vscode-language-pack-ja
-code --install-extension ~/ダウンロード/pc-e500-devtools-0.3.0.vsix
-```
-
-| コマンド | 何をするか |
-|---|---|
-| 1 行目 | ダウンロードした VS Code を入れる。`*` は「何でもよい」なので、バージョンの番号を打たなくて済む |
-| 2 行目 | VS Code のメニューを日本語にする拡張機能を入れる |
-| 3 行目 | この拡張機能を入れる |
-
-`was successfully installed` と出れば入りました。拡張機能の実体は `~/.vscode/extensions/`（Remote - SSH や WSL では `~/.vscode-server/extensions/`）の `pokecom-tools.pc-e500-devtools-<バージョン>` に入り、`e500` はその中の `bin` にあります。
-
-### B. VS Code を使わないとき
-
-`.vsix` は ZIP と同じ形のファイルです。展開するだけで `e500` を使えます。
-
-```sh
-mkdir -p ~/pockecom/devtools
-cd ~/pockecom/devtools
-unzip -o ~/ダウンロード/pc-e500-devtools-0.3.0.vsix 'extension/*'
-sh extension/bin/e500 --version
-```
-
-| コマンド | 何をするか |
-|---|---|
-| `mkdir -p フォルダ` | フォルダを作る。`-p` は、途中のフォルダも作り、既にあってもエラーにしない |
-| `cd フォルダ` | 今いるフォルダを移す |
-| `unzip -o ファイル 'extension/*'` | `.vsix` の中の `extension` フォルダだけを取り出す。`-o` は、前のものがあれば聞かずに置き換える。`'…'` は、`*` をシェルに解釈させないため |
-| `sh extension/bin/e500 --version` | `e500` を動かして、バージョンを表示する。`0.3.0` のように出れば使える |
-
-どこからでも `e500` と打てるようにする方法は [24.2](24_COMMAND_LINE_LINUX.md#242-e500-を使えるようにする) にあります。
+`e500` は、`install.sh` が `~/pockecom/devtools` に入れたものを使います。VS Code の拡張機能の中の `e500` とは別なので、拡張機能だけを新しくしたときは、`install.sh` も実行します。
 
 ## 2.4 エミュレータと ROM を置く
 
-`e500 run` と `e500 test` を使うときだけ要ります。エミュレータの [Releases](https://github.com/litchi-gh/pc-e500_emulator_pockecom/releases) から Linux 版（`libe500core.so` が入っているもの）を取り、次の**どちらか**で入れます。
-
-### A. 展開して使う（tar.gz）
+エミュレータは `install.sh` が入れます。**ROM はツールに入っていません。** 自分の本体から吸い出したものを、次のどちらかで置きます。
 
 ```sh
-mkdir -p ~/pockecom
-tar xzf ~/ダウンロード/PC-E500-Emulator-<バージョン>-linux-x64.tar.gz -C ~/pockecom
-cp ~/ダウンロード/'PC-E500(7.2).ROM' ~/pockecom/PC-E500-Emulator-<バージョン>-linux-x64/rom/
+cp ~/'PC-E500(7.2).ROM' ~/pockecom/Emulator/rom/
 ```
 
-| コマンド | 何をするか |
-|---|---|
-| `mkdir -p ~/pockecom` | 置き場所のフォルダを作る |
-| `tar xzf ファイル -C フォルダ` | `.tar.gz` を展開する。`x` は取り出す、`z` は gzip の圧縮を解く、`f` は次にファイル名を書くという意味。`-C` は取り出す場所 |
-| `cp 元 先` | ファイルをコピーする。ここでは自分の ROM を `rom` フォルダに入れる。名前の `( )` はシェルの記号なので `'…'` で囲む |
+`cp 元 先` はファイルをコピーするコマンドです。名前の `( )` はシェルの記号なので `'…'` で囲みます。インストールするときなら、`--rom ~/'PC-E500(7.2).ROM'` を付けても同じです。
 
-エミュレータの場所は、環境変数 `PCE500_EMULATOR` で `e500` に教えます（[24.3](24_COMMAND_LINE_LINUX.md#243-エミュレータを教える)）。
-
-### B. インストールして使う（.deb）
-
-```sh
-sudo apt install ~/ダウンロード/pc-e500-emulator_<バージョン>_amd64.deb
-mkdir -p ~/.local/share/PockeComE500/rom
-cp ~/ダウンロード/'PC-E500(7.2).ROM' ~/.local/share/PockeComE500/rom/
-```
-
-| コマンド | 何をするか |
-|---|---|
-| `sudo apt install ファイル.deb` | パッケージのファイルから入れる。`/opt/pc-e500` に入る |
-| `mkdir -p …/rom`、`cp …` | ROM を置くフォルダを作り、ROM をコピーする。`/opt` には自分のファイルを置けないので、ホームの中に置く |
-
-`/opt/pc-e500` は `e500` が自分で見つけるので、場所を教える必要はありません。
+エミュレータを `.deb` で入れることもできます。[Releases](https://github.com/litchi-gh/pc-e500_emulator_pockecom/releases) の `pc-e500-emulator_<バージョン>_amd64.deb` を `sudo apt install ./ファイル名` で入れると `/opt/pc-e500` に入り、ROM は `~/.local/share/PockeComE500/rom` に置きます。このときは `--no-emulator` を付けて `install.sh` を実行します（.NET 10 ランタイムは `sudo apt install dotnet-runtime-10.0` で入れます）。`e500` は `/opt/pc-e500` を自分で見つけます。
 
 ## 2.5 e500asm、e500dasm を作る
 
@@ -188,7 +147,7 @@ sh DisAssembler/build.sh
 | `sh Assembler/build.sh` | 自動テストを動かし、通れば 1 つの実行ファイルを作る。CPU の種類（x64、arm64）は自分で調べる | `Assembler/app/e500asm` |
 | `sh DisAssembler/build.sh` | 同じ。画面の `E500Disassembler` は Windows 専用なので作らない | `DisAssembler/app/e500dasm` |
 
-テストが通ると `PASS: 430 checks` のように出ます（数はバージョンによって変わります）。`e500asm` と `e500dasm` は .NET を中に持っているので、できたファイルは、.NET のない同じ種類の PC にコピーしても動きます。
+テストが通ると `PASS: 430 checks` のように出ます（数はバージョンによって変わります）。`e500asm` と `e500dasm` は .NET を中に持っているので、できたファイルは .NET のない同じ種類の PC にコピーしても動きます。
 
 ### 3. 動くか確かめる
 
@@ -220,16 +179,16 @@ ln -sf ~/pockecom/pc-e500_tools/DisAssembler/app/e500dasm ~/.local/bin/e500dasm
 
 | すること | 方法 |
 |---|---|
-| 新しくする | 新しい VSIX を「VSIX からのインストール」で入れ、「開発者: ウィンドウの再読み込み」 |
+| 新しくする | [2.2](#22-必要なものを入れる) の 1 行をもう一度実行し、「開発者: ウィンドウの再読み込み」 |
 | バージョンを確かめる | 拡張機能の画面で「PC-E500 開発ツール」を開く |
 | 消す | 拡張機能の画面の「アンインストール」 |
 | 設定を消す | 設定画面で「PC-E500」を探し、歯車から「設定をリセット」 |
 
-コマンドで消すときは `code --uninstall-extension pokecom-tools.pc-e500-devtools` です。VS Code から、その名前の拡張機能を取り除きます。
+コマンドで消すときは `code --uninstall-extension litchi-gh.pc-e500-devtools` です。VS Code からその名前の拡張機能を取り除きます。
 
-拡張機能を新しくすると、フォルダの名前のバージョンが変わります。`~/.local/bin/e500` に VS Code の拡張機能の場所を書いたときは、その中のバージョンも直します（[24.2](24_COMMAND_LINE_LINUX.md#242-e500-を使えるようにする)）。
+Marketplace に出る前の VSIX（名前が `pokecom-tools.pc-e500-devtools`）を入れていた場合は、`code --uninstall-extension pokecom-tools.pc-e500-devtools` で消してから入れ直します。発行者が変わったので、VS Code は別の拡張機能として扱います。設定はそのまま使えます。
 
-以前の「Pocket BASIC / ASM Linter」を使っていた場合は、アンインストールしてください。設定（`pocketBasic.*`、`pocketAsm.*`、`pocketE500.*`）は、新しい拡張機能が最初に動いたときに `pcE500.*` へコピーします。`launch.json` の `"type": "pocket-e500"` は `"pc-e500"` に書き換えます。
+以前の「Pocket BASIC / ASM Linter」を使っていた場合は、アンインストールしてください。設定（`pocketBasic.*`、`pocketAsm.*`、`pocketE500.*`）は、新しい拡張機能が最初に動いたときに `pcE500.*` へコピーします。`launch.json` の `"type": "pocket-e500"` は自分で `"pc-e500"` に書き換えます。
 
 ### コマンドのツール
 
@@ -239,9 +198,9 @@ git pull
 sh Assembler/build.sh && sh DisAssembler/build.sh
 ```
 
-`git pull` は、GitHub にある新しい変更を取ってきて、手元に反映します。`&&` は「前が成功したら次を実行する」という意味で、途中で失敗したらそこで止まります。[2.3 の B](#b-vs-code-を使わないとき) で展開した `e500` は、新しい `.vsix` でもう一度 `unzip -o` を実行します。
+`git pull` は GitHub にある新しい変更を取ってきて、手元に反映します。`&&` は「前が成功したら次を実行する」という意味で、途中で失敗したらそこで止まります。`e500` とエミュレータは [2.2](#22-必要なものを入れる) の 1 行をもう一度実行すると新しくなります。
 
-消すときは、`~/pockecom` と `~/.local/bin/e500asm`、`~/.local/bin/e500dasm` を消します。
+消すときは、`~/pockecom` と `~/.local/bin/e500`、`~/.local/bin/e500asm`、`~/.local/bin/e500dasm` を消し、`~/.bashrc` に足した行を消します。**`~/pockecom/Emulator/rom` の ROM は、先に別の場所へ移してください。**
 
 ## 2.7 確かめる順番
 

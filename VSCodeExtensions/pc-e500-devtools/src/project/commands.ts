@@ -5,10 +5,11 @@ import * as vscode from "vscode";
 import { AsmHost } from "../asm/assembler";
 import { assemblerOptions, diskFolder, ownIncludeFolder } from "../emu/config";
 import { hex5, Program } from "../emu/program";
+import { installSkill } from "../cli/skill";
 import { L } from "../l10n";
 import { encodeLcd, HEIGHT, WIDTH } from "../lcd/lcdFile";
 import { emptySprite, encodeSpr } from "../lcd/sprFile";
-import { basicLines, binName, isProgramName, loadMFile, loadMOrigin } from "./loadM";
+import { basicLines, binName, isProgramName, loadMFile, loadMOrigin, sharesName } from "./loadM";
 import { templates } from "./templates";
 
 async function exists(uri: vscode.Uri): Promise<boolean> {
@@ -108,6 +109,28 @@ export async function copyIncludes(resource?: vscode.Uri): Promise<void> {
   if (kept.length > 0) void vscode.window.showWarningMessage(L(`既に存在するためコピーしませんでした: ${kept.join("、")}`, `Not copied, as they are there already: ${kept.join(", ")}`));
 }
 
+/** Puts the skill for AI assistants into a folder of the workspace. */
+export async function placeSkill(extension: string, resource?: vscode.Uri): Promise<void> {
+  let folder = resource;
+  if (!folder) {
+    const folders = vscode.workspace.workspaceFolders ?? [];
+    folder = folders.length === 1 ? folders[0].uri : folders.length > 1 ? (await vscode.window.showWorkspaceFolderPick())?.uri : undefined;
+    if (folders.length === 0) void vscode.window.showInformationMessage(L("先にフォルダを開いてください。", "Open a folder first."));
+  }
+  if (!folder || folder.scheme !== "file") return;
+  try {
+    const { written, kept } = installSkill(folder.fsPath, extension, false);
+    const replace = L("置き換える", "Replace");
+    if (kept.length > 0 && await vscode.window.showWarningMessage(L("中身の違う AI 用スキルがあります（古い版か、書き換えたもの）。新しいものに置き換えますか？", "There is a skill for AI with other contents (an older one, or one you changed). Replace it with the new one?"), { modal: true, detail: kept.map(f => path.relative(folder.fsPath, f)).join("\n") }, replace) === replace)
+      written.push(...installSkill(folder.fsPath, extension, true).written);
+    void vscode.window.showInformationMessage(written.length > 0
+      ? L(`AI 用のスキルを置きました（${written.length} ファイル）。Claude Code、Codex を新しく始めると使えます。`, `Placed the skill for AI (${written.length} files). A new session of Claude Code or Codex uses it.`)
+      : kept.length > 0 ? L("AI 用のスキルはそのままです。", "The skill for AI is left as it was.") : L("AI 用のスキルは最新です。", "The skill for AI is up to date."));
+  } catch (error) {
+    void vscode.window.showErrorMessage(error instanceof Error ? error.message : String(error));
+  }
+}
+
 /** Writes the LOAD M file of a source next to it, and says what to type. */
 export async function makeBin(resource: vscode.Uri | undefined, host: AsmHost, output: vscode.OutputChannel): Promise<void> {
   const uri = resource ?? vscode.window.activeTextEditor?.document.uri;
@@ -134,7 +157,8 @@ export async function makeBin(resource: vscode.Uri | undefined, host: AsmHost, o
   const target = path.join(path.dirname(uri.fsPath), name);
   try {
     const bytes = loadMFile(program.origin, program.binary);
-    if (!await mayReplace(target, program.origin)) return;
+    if (program.inputFiles.some(f => path.resolve(f).toLowerCase() === path.resolve(target).toLowerCase())) throw new Error(L("プログラムが INCBIN などで使うファイルです。", "The program uses that file (INCBIN ...)."));
+    if (!await mayReplace(target, program.origin, sharesName(uri.fsPath, binName))) return;
     await fs.promises.writeFile(target, bytes);
     const internalKB = vscode.workspace.getConfiguration("pcE500", uri).get<number>("ramKB", 32);
     const lines = basicLines(program, name, internalKB);
@@ -161,19 +185,21 @@ export async function makeBin(resource: vscode.Uri | undefined, host: AsmHost, o
   const toDisk = L("X: フォルダにコピー", "Copy to the X: Folder"), reveal = L("エクスプローラーで表示", "Show in Explorer");
   const choice = await vscode.window.showInformationMessage(L(`${name} を作成しました。`, `Made ${name}.`), toDisk, reveal);
   if (choice === reveal) await vscode.commands.executeCommand("revealFileInOS", vscode.Uri.file(target));
-  else if (choice === toDisk) await copyToDisk(target, name, program.origin, uri);
+  else if (choice === toDisk) await copyToDisk(target, name, program.origin, uri, sharesName(uri.fsPath, binName));
 }
 
 /** Whether a file may be written over: one of ours for the same place is, others are asked about. */
-async function mayReplace(target: string, origin: number): Promise<boolean> {
+async function mayReplace(target: string, origin: number, others: readonly string[] = []): Promise<boolean> {
   let old: Buffer;
   try { old = await fs.promises.readFile(target); } catch { return true; }
-  if (loadMOrigin(old) === origin) return true;
+  if (loadMOrigin(old) === origin && others.length === 0) return true;
   const replace = L("上書き", "Replace");
-  return await vscode.window.showWarningMessage(L(`${target} は、別の形式か別のアドレスのファイルです。上書きしますか？`, `${target} is in another format or for another address. Replace it?`), { modal: true }, replace) === replace;
+  return await vscode.window.showWarningMessage(others.length > 0
+    ? L(`${target} は、${others.join("、")} から作ったものかもしれません（同じ名前になります）。上書きしますか？`, `${target} may be made from ${others.join(", ")}, which gets the same name. Replace it?`)
+    : L(`${target} は、別の形式か別のアドレスのファイルです。上書きしますか？`, `${target} is in another format or for another address. Replace it?`), { modal: true }, replace) === replace;
 }
 
-async function copyToDisk(file: string, name: string, origin: number, scope: vscode.Uri): Promise<void> {
+async function copyToDisk(file: string, name: string, origin: number, scope: vscode.Uri, others: readonly string[]): Promise<void> {
   let folder = diskFolder(scope);
   if (!folder) {
     const picked = await vscode.window.showOpenDialog({ canSelectFolders: true, canSelectFiles: false, title: L("CE-140F の X: フォルダ（drive-x）", "The CE-140F's X: folder (drive-x)"), openLabel: L("選ぶ", "Select") });
@@ -183,7 +209,7 @@ async function copyToDisk(file: string, name: string, origin: number, scope: vsc
   }
   const target = path.join(folder, name);
   try {
-    if (!await mayReplace(target, origin)) return;
+    if (!await mayReplace(target, origin, others)) return;
     await fs.promises.copyFile(file, target);
     void vscode.window.showInformationMessage(L(`コピーしました: ${target}`, `Copied: ${target}`));
   } catch (error) {

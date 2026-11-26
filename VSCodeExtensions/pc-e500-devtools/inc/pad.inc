@@ -23,7 +23,7 @@ pad_old         EQU $22         ; 作業用
 pad_read:
         MV    (pad_old),(pad_now)
         MV    (pad_now),0
-        MV    (KOH),0
+        AND   (KOH),$F0         ; 上位 4 ビットは別の信号なので残す
         MV    (KOL),$10         ; KO4: 右は KI6、RETURN は KI7
         NOP
         MV    A,(KI)
@@ -57,12 +57,12 @@ pad_6:  MV    (KOL),$01         ; KO0: Z は KI5
         JRZ   pad_7
         OR    (pad_now),PAD_C
 pad_7:  MV    (KOL),0
-        MV    (KOH),$08         ; KO11: ON/BRK は KI1
+        OR    (KOH),$08         ; KO11: ON/BRK は KI1
         NOP
         TEST  (KI),$02
         JRZ   pad_8
         OR    (pad_now),PAD_BREAK
-pad_8:  MV    (KOH),0
+pad_8:  AND   (KOH),$F0
         MV    A,(pad_old)       ; 新しく押されたもの = 今 かつ 前でない
         XOR   A,$FF
         AND   A,(pad_now)

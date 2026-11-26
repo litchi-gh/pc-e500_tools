@@ -26,22 +26,33 @@ export interface VariableEditor {
 
 export class MachineHub implements vscode.Disposable {
   private attached?: Attached;
+  /** Debug sessions that were shown before the one that is: shown again when it ends. */
+  private readonly behind: Attached[] = [];
   private readonly changed = new vscode.EventEmitter<Attached | undefined>();
   readonly onDidChange = this.changed.event;
 
   get current(): Attached | undefined { return this.attached; }
 
   attach(value: Attached): void {
-    if (this.attached && this.attached.client !== value.client && !this.attached.debugging) this.attached.client.dispose();
+    // A machine of the panel's own does not take the place of a debug session that began while it was starting.
+    if (!value.debugging && this.attached?.debugging && this.attached.client.alive) { value.client.dispose(); return; }
+    if (this.attached && this.attached.client !== value.client) {
+      if (this.attached.debugging) this.behind.push(this.attached);
+      else this.attached.client.dispose();
+    }
     this.attached = value;
     this.changed.fire(value);
   }
 
   /** Forgets the client if it is the current one. */
   detach(client: EmulatorClient): void {
-    if (this.attached?.client !== client) return;
-    this.attached = undefined;
-    this.changed.fire(undefined);
+    if (this.attached?.client !== client) {
+      const at = this.behind.findIndex(b => b.client === client);
+      if (at >= 0) this.behind.splice(at, 1);
+      return;
+    }
+    do this.attached = this.behind.pop(); while (this.attached && !this.attached.client.alive);
+    this.changed.fire(this.attached);
   }
 
   dispose(): void {

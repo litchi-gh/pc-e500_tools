@@ -6,6 +6,12 @@
   "allowTrailingCommas": true,
   "allowComments": true,
   "definitions": {
+    "variables": {
+      "type": "object",
+      "description": "BASIC の変数。A、XY、D#、P(1) は数、B$ は文字列",
+      "propertyNames": { "pattern": "^[A-Za-z][A-Za-z0-9]*[#$]?(\\([0-9]+(,[0-9]+)?\\))?$" },
+      "additionalProperties": { "type": ["number", "string"] }
+    },
     "value": {
       "description": "数値、または &HBEC00・$BEC00・0xBEC00・BEC00h・ラベル・式",
       "type": ["number", "string"]
@@ -13,7 +19,7 @@
     "registers": {
       "type": "object",
       "description": "レジスタ A, IL, BA, I, X, Y, U, S, P, F とフラグ C, Z",
-      "propertyNames": { "enum": ["A", "IL", "BA", "I", "X", "Y", "U", "S", "P", "F", "C", "Z"] },
+      "propertyNames": { "pattern": "^([Aa]|[Ii][Ll]?|[Bb][Aa]|[XYUSPFCZxyuspfcz])$" },
       "additionalProperties": { "$ref": "#/definitions/value" }
     },
     "memory": {
@@ -21,14 +27,15 @@
       "description": "アドレス（ラベル・式・数値。(名前) は内部 RAM）→ バイトの配列、または文字列（文字コード）",
       "additionalProperties": {
         "oneOf": [
-          { "type": "array", "items": { "type": "integer", "minimum": 0, "maximum": 255 } },
+          { "type": "array", "minItems": 1, "items": { "type": "integer", "minimum": -128, "maximum": 255 } },
           { "type": "string" }
         ]
       }
     }
   },
   "properties": {
-    "program": { "type": "string", "description": "テストするアセンブリのソース（このファイルからの相対パス）" },
+    "$schema": { "type": "string" },
+    "program": { "type": "string", "description": "テストする .asm か .bas のソース（このファイルからの相対パス）" },
     "tests": {
       "type": "array",
       "items": {
@@ -36,14 +43,16 @@
         "required": ["name"],
         "properties": {
           "name": { "type": "string", "description": "テストの名前（ファイルの中で重ならないもの）" },
-          "call": { "type": "string", "description": "呼び出すルーチン（ラベルまたはアドレス）。省略時は START、MAIN、先頭" },
+          "call": { "type": ["string", "integer"], "description": "呼び出すルーチン（ラベルまたはアドレス）。省略時は START、MAIN、先頭。BASIC ではサブルーチンの行番号か *ラベル" },
           "return": { "enum": ["far", "near"], "default": "far", "description": "ルーチンの戻り方：far = RETF（BASIC の CALL と同じ）、near = RET" },
           "basic": { "type": "string", "description": "ルーチンを呼ぶ代わりに、BASIC のプロンプトで打つ行（改行で複数行）" },
           "keys": {
             "type": "array",
-            "description": "BASIC の行を打った後に 1 つずつ押すキー（SPACE、ENTER、UP、DOWN、LEFT、RIGHT、ON/BRK、A など）",
+            "description": "BASIC の行を打った後に 1 つずつ押すキー（SPACE、ENTER、UP、DOWN、LEFT、RIGHT、ON/BRK、A など。wait:1 は 1 秒待つ）",
             "items": { "type": "string" }
           },
+          "type": { "type": "string", "description": "行を打った後に打つ文字（INPUT への答え。\\n は RETURN）" },
+          "variables": { "$ref": "#/definitions/variables", "description": "始める前に入れる BASIC の変数" },
           "registers": { "$ref": "#/definitions/registers", "description": "呼び出す前に設定するレジスタ" },
           "memory": { "$ref": "#/definitions/memory", "description": "呼び出す前に書き込むメモリ" },
           "expect": {
@@ -53,8 +62,11 @@
               "memory": { "$ref": "#/definitions/memory", "description": "終わったときのメモリ" },
               "screen": {
                 "description": "LCD に出ているはずの文字（配列ならすべて）",
-                "oneOf": [{ "type": "string" }, { "type": "array", "items": { "type": "string" } }]
+                "oneOf": [{ "type": "string" }, { "type": "array", "minItems": 1, "items": { "type": "string" } }]
               },
+              "variables": { "$ref": "#/definitions/variables", "description": "終わったときの BASIC の変数" },
+              "state": { "enum": ["ended", "running", "error"], "description": "BASIC の終わり方：プロンプトに戻った、動き続けている、エラー" },
+              "error": { "type": "string", "description": "BASIC のエラーの文（一部でよい）" },
               "picture": { "type": "string", "description": "LCD の全ドットが同じはずの .lcd か .pixels のファイル（このファイルからの相対パス）" }
             },
             "additionalProperties": false
@@ -64,5 +76,6 @@
         "additionalProperties": false
       }
     }
-  }
+  },
+  "additionalProperties": false
 }

@@ -38,7 +38,7 @@ flowchart LR
 
 ## 動かす
 
-VS Code で `ninebox.asm` を開いて `F5` を押します。実機では、[NINEBOX.BIN](NINEBOX.BIN)（9,324 バイト）を送ります（[実機へ送る](../../../docs/manual/14_TRANSFER.md)）。アドレスは `BD000h`〜`BF45Bh` で、機械語エリアの中なので、BASIC のプログラムと一緒に使えます。
+VS Code で `ninebox.asm` を開いて `F5` を押します。実機では、[NINEBOX.BIN](NINEBOX.BIN)（9,336 バイト）を送ります（[実機へ送る](../../../docs/manual/14_TRANSFER.md)）。アドレスは `BD000h`〜`BF467h` で、機械語エリアの中なので、BASIC のプログラムと一緒に使えます。
 
 ```basic
 POKE &HBFE03,&H1A,&HFD,&H0B,&H00,&H2C,&H00:CALL &HFFFD8

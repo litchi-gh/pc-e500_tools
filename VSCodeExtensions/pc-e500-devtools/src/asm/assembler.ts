@@ -4,7 +4,7 @@ import * as path from "node:path";
 import { LintIssue, Severity } from "../core";
 import { L } from "../l10n";
 import { InstructionEncoder, MNEMONICS } from "./encoder";
-import { AssemblyError, DivideByZeroError, evaluate, parseString, splitOperands, stripComment } from "./expression";
+import { AssemblyError, evaluate, parseBytes, parseString, splitOperands, stripComment, ValueError } from "./expression";
 
 export interface AsmHost {
   /** Text of a file, or undefined when it does not exist. */
@@ -58,6 +58,8 @@ export interface AsmResult {
   readonly listing: readonly ListedLine[];
   /** The symbols' names as they were first written, by their names in capitals. */
   readonly names: ReadonlyMap<string, string>;
+  /** Every file read: the source, INCLUDE and INCBIN. */
+  readonly inputFiles: readonly string[];
 }
 
 export const DIRECTIVES: ReadonlySet<string> = new Set(["ORG", "EQU", "DB", "DEFB", "BYTE", "DW", "DEFW", "WORD", "DP", "DS", "DEFS", "SPACE", "ALIGN", "INCLUDE", "INCBIN", "END", "ASSERT"]);
@@ -142,11 +144,15 @@ export function findFile(givenName: string, sourceFile: string, options: AsmOpti
   if (!host) return undefined;
   // Windows で書いたソースの "inc\\defs.inc" も、ほかの OS で開けるようにする（e500asm と同じ）
   const name = path.sep === "/" ? givenName.replace(/\\/g, "/") : givenName;
-  const candidates = [path.join(path.dirname(sourceFile), name), ...(options.includeDirectories ?? []).map(dir => path.join(dir, name))];
+  const candidates = [path.resolve(path.dirname(sourceFile), name), ...(options.includeDirectories ?? []).map(dir => path.resolve(dir, name))];
   for (const candidate of candidates) {
     if (host.readText(candidate) !== undefined) return path.resolve(candidate);
   }
   return undefined;
+}
+
+class NeededError extends Error {
+  constructor(readonly needed: string) { super(needed); }
 }
 
 export function assemble(source: string, options: AsmOptions = {}): AsmResult {
@@ -154,6 +160,7 @@ export function assemble(source: string, options: AsmOptions = {}): AsmResult {
   const statements: Statement[] = [];
   const mainFile = options.filePath ? path.resolve(options.filePath) : "<input>";
   const active = new Set<string>([mainFile]);
+  const inputFiles = new Set<string>([mainFile]);
   let ended = false;
 
   const readLines = (text: string, file: string, where: string, fallback?: Location): void => {
@@ -168,6 +175,9 @@ export function assemble(source: string, options: AsmOptions = {}): AsmResult {
       } catch (error) {
         if (!(error instanceof AssemblyError)) throw error;
         issues.push(issue(error.code, prefix + error.message, "error", lineAt));
+        // The label is there all the same: what uses it is not wrong.
+        const label = /^\s*([A-Za-z_.][A-Za-z_0-9.]*)\s*:/.exec(line)?.[1];
+        if (label) statements.push({ file, sourceLine: n, where, text: line, label, op: "", args: [], argsColumn: line.length, whole: lineAt, labelAt: lineAt, opAt: lineAt, argsAt: lineAt });
         continue;
       }
       if (statement.op === "INCLUDE") {
@@ -201,6 +211,7 @@ export function assemble(source: string, options: AsmOptions = {}): AsmResult {
           continue;
         }
         active.add(resolved);
+        inputFiles.add(resolved);
         try {
           readLines(options.host.readText(resolved) ?? "", resolved, where ? `${where} > ${name}` : name, statement.whole);
         } finally {
@@ -231,6 +242,7 @@ export function assemble(source: string, options: AsmOptions = {}): AsmResult {
   // Checks that do not need addresses. Statements failing them are skipped in the passes below.
   const knownNames = new Set(defines.keys());
   const broken = new Set<Statement>();
+  const duplicates = new Set<Statement>();
   for (const s of statements) {
     const prefix = s.where ? `${s.where}: ` : "";
     if (s.label !== undefined) {
@@ -238,6 +250,7 @@ export function assemble(source: string, options: AsmOptions = {}): AsmResult {
       if (knownNames.has(key)) {
         issues.push(issue("ASM030", prefix + L(`シンボル ${s.label} が重複しています。`, `Duplicate symbol ${s.label}.`), "error", s.labelAt));
         broken.add(s);
+        duplicates.add(s);
       } else {
         knownNames.add(key);
       }
@@ -257,6 +270,8 @@ export function assemble(source: string, options: AsmOptions = {}): AsmResult {
   statements.forEach((s, i) => {
     if (s.op === "EQU" && s.label !== undefined && !broken.has(s)) equs.set(s.label.toUpperCase(), { s, i });
   });
+
+  const labelNames = new Set(statements.filter(s => s.label !== undefined && s.op !== "EQU").map(s => s.label!.toUpperCase()));
 
   const reported = new Set<Statement>();
   const report = (s: Statement, error: AssemblyError): void => {
@@ -292,53 +307,67 @@ export function assemble(source: string, options: AsmOptions = {}): AsmResult {
     listing = [];
     const layout: Array<[number, number]> = [];
     let pc = options.origin ?? 0;
-    const resolving = new Set<string>();
     const equValues = new Map<string, bigint>();
 
-    const resolveFinal = (name: string): bigint => {
+    const known = (name: string): bigint => {
       const key = name.toUpperCase();
       const cached = equValues.get(key);
       if (cached !== undefined) return cached;
-      const equ = equs.get(key);
-      if (equ) {
-        if (resolving.has(key)) throw new AssemblyError(L(`EQU の定義が循環しています: ${name}`, `Circular EQU definition: ${name}`), "ASM032");
-        resolving.add(key);
-        try {
-          if (equ.s.args.length !== 1) throw new AssemblyError(L("EQU には式を 1 つ指定します。", "EQU takes one expression."), "ASM021");
-          const v = evaluate(equ.s.args[0], resolveFinal, previousLayout[equ.i]?.[0] ?? 0);
-          equValues.set(key, v);
-          return v;
-        } finally {
-          resolving.delete(key);
-        }
-      }
+      if (equs.has(key)) throw new NeededError(name);
       const value = previous.get(key);
       if (value === undefined) throw new AssemblyError(`Undefined:${name}`, "ASM031");
       return value;
+    };
+    // An EQU needs other EQUs: these are worked out first, from a list and not by recursion, which a long chain would overflow.
+    const resolveFinal = (name: string): bigint => {
+      if (!equs.has(name.toUpperCase()) || equValues.has(name.toUpperCase())) return known(name);
+      const waiting = [name.toUpperCase()], resolving = new Set(waiting);
+      while (waiting.length > 0) {
+        const top = waiting[waiting.length - 1], equ = equs.get(top)!;
+        if (equ.s.args.length !== 1) throw new AssemblyError(L("EQU には式を 1 つ指定します。", "EQU takes one expression."), "ASM021");
+        try {
+          equValues.set(top, evaluate(equ.s.args[0], known, previousLayout[equ.i]?.[0] ?? 0));
+          waiting.pop();
+          resolving.delete(top);
+        } catch (error) {
+          if (!(error instanceof NeededError)) throw error;
+          const key = error.needed.toUpperCase();
+          if (resolving.has(key)) throw new AssemblyError(L(`EQU の定義が循環しています: ${error.needed}`, `Circular EQU definition: ${error.needed}`), "ASM032");
+          waiting.push(key);
+          resolving.add(key);
+        }
+      }
+      return equValues.get(name.toUpperCase())!;
     };
 
     statements.forEach((s, index) => {
       let address = pc;
       let data = new Uint8Array(0);
       try {
-        if (broken.has(s)) throw new AssemblyError("", "ASM000");
-        let missing = false;
+        if (broken.has(s)) {
+          if (s.label !== undefined && s.op !== "EQU" && !duplicates.has(s)) symbols.set(s.label.toUpperCase(), BigInt(pc));
+          throw new AssemblyError("", "ASM000");
+        }
         const eval_ = (expression: string): bigint => {
           const symbol = (name: string): bigint => {
             if (strict) return resolveFinal(name);
             const key = name.toUpperCase();
             const v = symbols.get(key) ?? previous.get(key);
             if (v !== undefined) return v;
-            missing = true;
             return 0n;
           };
           try {
             return evaluate(expression, symbol, pc);
           } catch (error) {
-            if (error instanceof DivideByZeroError && !strict && missing) return 0n;
+            if (error instanceof ValueError && !strict) return 0n;
             throw error;
           }
         };
+        // Whether an expression names a label of the lowest 64 KB (a number below 10000h is an offset in the segment).
+        const lowLabel = (expression: string): boolean => (expression.match(/[A-Za-z_.][A-Za-z_0-9.]*/g) ?? []).some(n => {
+          const at = labelNames.has(n.toUpperCase()) ? previous.get(n.toUpperCase()) : undefined;
+          return at !== undefined && at <= 0xffffn;
+        });
         const range = (expression: string, min: number, max: number): number => {
           const v = eval_(expression);
           if (v < BigInt(min) || v > BigInt(max)) {
@@ -363,11 +392,7 @@ export function assemble(source: string, options: AsmOptions = {}): AsmResult {
             for (const arg of s.args) {
               if (arg.startsWith('"')) {
                 if (width !== 1) throw new AssemblyError(L("文字列は DB でのみ使用できます。", "Strings are allowed in DB only."), "ASM020");
-                for (const c of parseString(arg)) {
-                  const code = c.charCodeAt(0);
-                  if (code > 255) throw new AssemblyError(L("DB の文字列は 1 バイト文字のみです。PC-E500 独自文字は数値で指定してください。", "A DB string takes 1-byte characters only. Give PC-E500 characters as numbers."), "ASM040");
-                  values.push(code);
-                }
+                for (const c of parseBytes(arg)) values.push(c.charCodeAt(0));
               } else {
                 const v = range(arg, -(1 << (width * 8 - 1)), (1 << (width * 8)) - 1);
                 for (let i = 0; i < width; i += 1) values.push((v >> (8 * i)) & 0xff);
@@ -394,6 +419,7 @@ export function assemble(source: string, options: AsmOptions = {}): AsmResult {
               raw = resolved === undefined ? undefined : options.host.readBinary(resolved);
               if (raw === undefined) throw new AssemblyError(L(`ファイルが見つかりません: ${name}`, `File not found: ${name}`), "ASM060");
               binaryFiles.set(s, raw);
+              inputFiles.add(resolved!);
             }
             const offset = s.args.length >= 2 ? range(s.args[1], 0, raw.length) : 0;
             const length = s.args.length >= 3 ? range(s.args[2], 0, raw.length - offset) : raw.length - offset;
@@ -403,11 +429,12 @@ export function assemble(source: string, options: AsmOptions = {}): AsmResult {
           case "ASSERT": requireCount(1); if (eval_(s.args[0]) === 0n && strict) throw new AssemblyError(L("ASSERT が成立しません。", "ASSERT failed."), "ASM070"); break;
           case "END": requireCount(0); break;
           default:
-            data = Uint8Array.from(new InstructionEncoder(eval_, pc, strict).encode(s.op, s.args));
+            data = Uint8Array.from(new InstructionEncoder(eval_, pc, strict, lowLabel).encode(s.op, s.args));
             if (strict && (pc & 0xffff) + data.length > 0x10000) throw new AssemblyError(L("命令が 64 KiB セグメント境界をまたいでいます。", "The instruction crosses a 64 KiB segment boundary."), "ASM041");
             break;
         }
-        if (pc + data.length > 0x100000) throw new AssemblyError(L("出力が 20 ビットアドレス空間を超えています。", "The output goes beyond the 20-bit address space."), "ASM050");
+        // Before the last pass the layout is provisional, and may reach too far for a while.
+        if (pc + data.length > (strict ? 0x100000 : 0x200000)) throw new AssemblyError(L("出力が 20 ビットアドレス空間を超えています。", "The output goes beyond the 20-bit address space."), "ASM050");
       } catch (error) {
         if (!(error instanceof AssemblyError)) throw error;
         if (strict && error.code !== "ASM000") report(s, error);
@@ -462,7 +489,7 @@ export function assemble(source: string, options: AsmOptions = {}): AsmResult {
   for (const x of listing) if (x.s.label !== undefined && x.s.op !== "EQU") labels.set(x.s.label.toUpperCase(), Number(symbols.get(x.s.label.toUpperCase()) ?? BigInt(x.address)));
   const names = new Map<string, string>();
   for (const n of [...Object.keys(options.defines ?? {}), ...listing.flatMap(x => (x.s.label === undefined ? [] : [x.s.label]))]) if (!names.has(n.toUpperCase())) names.set(n.toUpperCase(), n);
-  return { issues, origin, binary, symbols, lines, labels, names, listing: listing.map(x => ({ file: x.s.file, line: x.s.sourceLine, address: x.address, data: x.data })) };
+  return { issues, origin, binary, symbols, lines, labels, names, listing: listing.map(x => ({ file: x.s.file, line: x.s.sourceLine, address: x.address, data: x.data })), inputFiles: [...inputFiles] };
 }
 
 export function lintAsm(source: string, options: AsmOptions = {}): LintIssue[] {

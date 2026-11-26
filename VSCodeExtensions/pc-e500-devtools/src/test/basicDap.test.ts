@@ -41,6 +41,41 @@ load._load = (request: string, ...rest: unknown[]) => request === "vscode" ? fak
 
 type Msg = { type: string; command?: string; event?: string; body?: any; success?: boolean; message?: string; request_seq?: number };
 
+describe("BASIC debug adapter (DAP), at the first line", { skip: available ? false : "e500dbg, e500core.dll or the ROM not found" }, () => {
+  it("stops at a breakpoint there, and shows a large array in parts", async () => {
+    const { BasicDebugAdapter } = require("../debug/basicAdapter") as typeof import("../debug/basicAdapter.js");
+    const { MachineHub } = require("../emu/hub") as typeof import("../emu/hub.js");
+    const file = path.join(require("node:os").tmpdir(), `e500-dap1-${process.pid}.bas`);
+    fs.writeFileSync(file, "10 DIM P(150)\r\n20 P(120)=7\r\n30 GOTO 30\r\n");
+    const messages: Msg[] = [];
+    const adapter = new BasicDebugAdapter(new MachineHub() as never, extensionRoot, () => undefined);
+    adapter.onDidSendMessage(m => messages.push(m as Msg));
+    let seq = 1;
+    const until = async (match: (m: Msg) => boolean): Promise<Msg> => {
+      for (let i = 0; i < 800; i++) { const k = messages.findIndex(match); if (k >= 0) return messages.splice(k, 1)[0]; await new Promise(r => setTimeout(r, 25)); }
+      throw new Error("no answer");
+    };
+    const request = async (command: string, args: unknown = {}): Promise<Msg> => {
+      const id = seq++;
+      adapter.handleMessage({ seq: id, type: "request", command, arguments: args });
+      return until(m => m.type === "response" && m.request_seq === id);
+    };
+    const line = async (): Promise<string> => { await until(m => m.event === "stopped"); return (await request("stackTrace", { threadId: 1 })).body.stackFrames[0].name; };
+    try {
+      await request("initialize");
+      adapter.handleMessage({ seq: seq++, type: "request", command: "launch", arguments: { program: file, speed: 0 } });
+      await request("setBreakpoints", { source: { path: file }, breakpoints: [{ line: 1 }, { line: 3 }] });
+      await request("configurationDone");
+      assert.equal(await line(), "10 行");
+      await request("continue", { threadId: 1 });
+      assert.equal(await line(), "30 行");
+      const array = (await request("variables", { variablesReference: 1 })).body.variables.find((v: { name: string }) => v.name.startsWith("P"));
+      const part = (await request("variables", { variablesReference: array.variablesReference, filter: "indexed", start: 100, count: 51 })).body.variables;
+      assert.deepEqual([part.length, part[0].name, part[20].value], [51, "P(100)", "7"]);
+    } finally { adapter.dispose(); fs.rmSync(file, { force: true }); }
+  });
+});
+
 describe("BASIC debug adapter (DAP)", { skip: available ? false : "e500dbg, e500core.dll or the ROM not found" }, () => {
   it("runs a .bas file, stops on entry, steps, breaks on a line and shows the variables", async () => {
     const { BasicDebugAdapter } = require("../debug/basicAdapter") as typeof import("../debug/basicAdapter.js");

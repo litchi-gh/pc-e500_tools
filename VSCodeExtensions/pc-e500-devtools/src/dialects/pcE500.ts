@@ -22,6 +22,10 @@ export const pcE500Dialect: Dialect = {
     if (text[index] === "'") {
       return true;
     }
-    return /^REM(?:\s|$)/i.test(text.slice(index));
+    if (!/^REM/i.test(text.slice(index, index + 3))) return false;
+    // REM starts a statement, and then whatever follows is the comment (REM"..., REMARK); in the middle of one only as a word.
+    const before = text.slice(0, index).trimEnd();
+    if (before === "" || /(?::|THEN|ELSE)$|^\d+$|^\*[A-Z][A-Z0-9]*$|^"[^"]*"$/i.test(before)) return true;
+    return !/[A-Z0-9]$/i.test(text.slice(0, index)) && /^REM(?:\s|$)/i.test(text.slice(index));
   }
 };

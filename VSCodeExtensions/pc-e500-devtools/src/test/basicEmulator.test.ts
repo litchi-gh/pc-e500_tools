@@ -68,6 +68,35 @@ describe("pausing a BASIC program", { skip: available && fs.existsSync(oneRom) ?
       assert.equal(await session.stopped(await stop), undefined, "in the middle of line 20");
     } finally { session.dispose(); client.dispose(); }
   });
+  it("loads a long program to its end, and says which line LOAD does not take", async () => {
+    const client = await startMachine({ server, core, rom: oneRom, ram: 32 });
+    try {
+      const long = Array.from({ length: 200 }, (_, i) => `${(i + 1) * 10} A=A+1:B$="${"Z".repeat(50)}"`).join("\n");
+      const session = await BasicSession.load(client, "long.bas", long);
+      assert.equal(session.lines.length, 200);
+      session.dispose();
+      await assert.rejects(BasicSession.load(client, "cut.bas", `10 PRINT "A"\n20 ${"A=A+1:".repeat(36)}A=1\n30 PRINT "END"`), /20 行/);
+      await assert.rejects(BasicSession.load(client, "bare.bas", "10 PRINT \"A\"\n15\n30 PRINT \"END\""), /15 行/);
+    } finally { client.dispose(); }
+  });
+
+  it("keeps what is written to X:", async () => {
+    const client = await startMachine({ server, core, rom: oneRom, ram: 32 });
+    const notes: string[] = [];
+    try {
+      const session = await BasicSession.load(client, "wr.bas", "10 OPEN \"X:OUT.TXT\" FOR OUTPUT AS #1\n20 PRINT #1,\"HELLO\"\n30 CLOSE\n", t => notes.push(t));
+      await client.tap("C-CE");
+      await client.type("RUN\n");
+      await client.run(768000 * 20, { untilTyped: true, settle: 768000 * 3 });
+      session.dispose();
+    } finally { client.dispose(); }
+    const folder = /: ((?:[A-Z]:|[/]).*pce500-basic-.*)$/.exec(notes.at(-1) ?? "")?.[1];
+    assert.ok(folder, notes.join("\n"));
+    assert.deepEqual(fs.readdirSync(folder), ["OUT.TXT"]);
+    assert.match(fs.readFileSync(path.join(folder, "OUT.TXT"), "utf8"), /HELLO/);
+    fs.rmSync(folder, { recursive: true });
+  });
+
   it("waits for INPUT to be answered", async () => {
     const { client, session } = await start("10 INPUT A\r\n20 B=A*2\r\n30 END");
     try {

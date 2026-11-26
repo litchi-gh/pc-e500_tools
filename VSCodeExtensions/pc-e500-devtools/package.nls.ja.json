@@ -40,7 +40,7 @@
   "config.defines": "アセンブルの前に定義するシンボル（e500asm -D 名前=値 と同じ）。",
   "config.assemblerPath": "「e500asm でアセンブル」で使う e500asm（Windows では `e500asm.exe` か `e500asm.cmd`）。空なら PATH から探します。\n\n[環境を確認](command:pcE500.checkSetup)",
   "config.e500.title": "エミュレータ",
-  "config.emulatorPath": "PC-E500 エミュレータのフォルダ。`e500core.dll`（`bin/`・`app/` の下も探す）と `rom/`（`app/rom/`）をここから探します。空なら PATH とインストール先から探します。\n\n[環境を確認](command:pcE500.checkSetup)",
+  "config.emulatorPath": "PC-E500 エミュレータのフォルダ。`e500core.dll`（`bin/`・`app/` の下も探す）と `rom/`（`app/rom/`）をここから探します。空なら PATH とインストール先から探します。\n\n[環境を確認](command:pcE500.checkSetup) ・ [エミュレータのダウンロード](https://github.com/litchi-gh/pc-e500_emulator_pockecom/releases/latest) ・ [拡張機能のマニュアル](https://github.com/litchi-gh/pc-e500_tools/blob/main/docs/manual/README.md)",
   "config.diskFolder": "CE-140F の X: ドライブのフォルダ。「BIN を作成」のコピー先。空なら `pcE500.emulatorPath` の `drive-x`。",
   "config.corePath": "エミュレータのコア `e500core.dll`（デバッグ用の関数があるもの）。空なら `pcE500.emulatorPath` から探します。",
   "config.romPath": "ROM ファイル（256KB または 384KB）。空なら `pcE500.emulatorPath` の `rom` フォルダから、`PC-E500(7.2).ROM` を優先して選びます。",
@@ -50,6 +50,7 @@
   "config.serverPath": "デバッグサーバー `e500dbg.exe`。空なら拡張に入っているもの（`out/server/`）。",
   "command.checkSetup": "環境を確認",
   "config.paths.title": "アセンブラとエミュレータの場所",
+  "command.placeSkill": "AI 用のスキルを置く",
   "command.copyIncludes": "INCLUDE ファイルをコピー",
   "command.newPicture": "新しいドット絵を作成",
   "spr.displayName": "PC-E500 のキャラクタ"

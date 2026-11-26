@@ -3,7 +3,7 @@ import { L } from "../l10n";
 import { encodeLcd, HEIGHT, WIDTH } from "../lcd/lcdFile";
 import { encodeSpr } from "../lcd/sprFile";
 
-export type TemplateId = "minimal" | "text" | "screen" | "game" | "routine";
+export type TemplateId = "minimal" | "text" | "screen" | "game" | "routine" | "app" | "basicapp" | "basicgame";
 export interface TemplateFile { readonly name: string; readonly content: string | Uint8Array }
 export interface Template { readonly id: TemplateId; readonly icon: string; readonly label: string; readonly detail: string; files(name: string): TemplateFile[] }
 
@@ -243,7 +243,7 @@ l_on:   CALL  ready
 
 ; ${L("押されているキーを A に返す。", "The keys held, in A.")}
 keys:   MV    (found),0
-        MV    (KOH),0
+        AND   (KOH),$F0         ; ${L("上位 4 ビットは別の信号", "The upper four bits are other lines")}
         MV    (KOL),$10         ; ${L("KO4: ▶ は KI6", "KO4: right is KI6")}
         NOP
         TEST  (KI),$40
@@ -266,12 +266,12 @@ k_4:    TEST  (KI),$80
         JRZ   k_5
         OR    (found),DOWN
 k_5:    MV    (KOL),0
-        MV    (KOH),$08         ; ${L("KO11: ON/BRK は KI1", "KO11: ON/BRK is KI1")}
+        OR    (KOH),$08         ; ${L("KO11: ON/BRK は KI1", "KO11: ON/BRK is KI1")}
         NOP
         TEST  (KI),$02
         JRZ   k_6
         OR    (found),BREAK
-k_6:    MV    (KOH),0
+k_6:    AND   (KOH),$F0
         MV    A,(found)
         RET
 
@@ -321,7 +321,7 @@ loop:   CALL  pad_read
         CALL  draw
         CALL  screen_show
         INC   (count)
-        MV    A,3               ; ${L("約 48 ミリ秒ごと", "About every 48 ms")}
+        MV    A,3               ; ${L("約 16 ミリ秒の 3 回分（処理込みで 1 秒に約 16 ターン）", "Three of 16 ms (about 16 turns a second, with the work)")}
         CALL  game_wait
         JP    loop
 
@@ -501,6 +501,468 @@ const routineTests = (name: string): string => `{
 }
 `;
 
+const app = (name: string): string => `; ${name}: ${L("メニューのあるアプリ", "an application with a menu")}
+; ${L("10 進 → 16 進、16 進 → 10 進。メニューは 1、2、Q。入力は BS で消し、RETURN で決める。ON/BRK で戻る。", "Decimal to hexadecimal and back. The menu takes 1, 2 and Q; BS deletes, RETURN enters, ON/BRK goes back.")}
+        ORG   $BE000            ; ${L("置くアドレス。BFBFF までに収める", "Where it goes: up to BFBFF")}
+        INCLUDE "iocs.inc"
+        INCLUDE "keycode.inc"
+
+; ---- ${L("流れ", "The flow")} ----
+start:  MV    X,t_menu          ; ${L("メニュー", "The menu")}
+        CALL  show
+menu_1: CALL  get_key
+        CMP   A,'1'
+        JRZ   do_hex
+        CMP   A,'2'
+        JRZ   do_dec
+        CMP   A,'Q'
+        JRZ   quit
+        CMP   A,KEY_BRK
+        JRNZ  menu_1
+quit:   TEST  ($FF),$08         ; ${L("ON/BRK が離されるのを待つ（BASIC が BREAK にならないように）", "Until ON/BRK is let go, or BASIC would break")}
+        JRNZ  quit
+        MV    A,[$BFCBE]        ; ${L("BREAK の印を消す", "No break is waiting")}
+        AND   A,$7F
+        MV    [$BFCBE],A
+        CALL  cls
+        RC                      ; ${L("C=0: エラーなし", "C=0: no error")}
+        RETF                    ; ${L("BASIC へ戻る", "Back to BASIC")}
+
+do_hex: MV    X,t_hex           ; ${L("10 進 → 16 進", "Decimal to hexadecimal")}
+        CALL  show
+        CALL  input             ; ${L("C=1: ON/BRK", "C=1: ON/BRK")}
+        JRC   start
+        CALL  to_num
+        JRC   bad
+        CALL  to_hex
+        JR    answer
+
+do_dec: MV    X,t_dec           ; ${L("16 進 → 10 進", "Hexadecimal to decimal")}
+        CALL  show
+        CALL  input
+        JRC   start
+        CALL  hex_num
+        JRC   bad
+        CALL  to_dec
+answer: MV    X,line            ; ${L("結果を 3 行目に出す", "The answer on the third line")}
+        JR    say
+bad:    MV    X,t_bad
+say:    MV    (BL),0
+        MV    (BH),2
+        CALL  print
+        MV    X,t_key
+        MV    (BL),0
+        MV    (BH),3
+        CALL  print
+        CALL  get_key
+        JP    start
+
+; ---- ${L("計算（テストから 1 つずつ呼べる）", "The sums, which the tests call one by one")} ----
+; ${L("line の 10 進の文字 → I。数でないか 65535 を越えれば C=1。", "The decimal text in line to I; C=1 when it is no number or above 65535.")}
+to_num: MV    X,line
+        MV    BA,0
+        MV    (d_val),BA
+        MV    (d_got),0
+num_1:  MV    A,[X++]
+        CMP   A,0
+        JRZ   num_end
+        SUB   A,'0'
+        JRC   num_bad
+        CMP   A,10
+        JRNC  num_bad
+        MV    (d_add),A
+        MV    (d_add+1),0
+        MV    (d_got),1
+        MV    IL,10             ; ${L("10 倍する = 10 回足す", "Ten times: added ten times")}
+        MV    BA,0
+        MV    (d_sum),BA
+num_2:  MV    BA,(d_sum)
+        PUSHU I
+        MV    I,(d_val)
+        ADD   BA,I
+        POPU  I
+        JRC   num_bad
+        MV    (d_sum),BA
+        DEC   IL
+        JRNZ  num_2
+        MV    BA,(d_sum)
+        MV    I,(d_add)
+        ADD   BA,I
+        JRC   num_bad
+        MV    (d_val),BA
+        JR    num_1
+num_end:
+        CMP   (d_got),1         ; ${L("1 文字もなければ C=1", "C=1 when there was none")}
+        JRNZ  num_bad
+        MV    I,(d_val)
+        RC
+        RET
+num_bad:
+        SC
+        RET
+
+; ${L("line の 16 進の文字（4 桁まで）→ I。", "The hexadecimal text in line, up to 4 digits, to I.")}
+hex_num:
+        MV    X,line
+        MV    BA,0
+        MV    (d_val),BA
+        MV    (d_got),0
+hxn_1:  MV    A,[X++]
+        CMP   A,0
+        JRZ   num_end
+        SUB   A,'0'
+        JRC   num_bad
+        CMP   A,10
+        JRC   hxn_2
+        SUB   A,7               ; 'A' - '9' - 1
+        CMP   A,10
+        JRC   num_bad
+        CMP   A,16
+        JRNC  num_bad
+hxn_2:  MV    (d_add),A
+        MV    (d_got),1
+        MV    (d_sum),4         ; ${L("4 ビット左へ", "Four bits to the left")}
+hxn_3:  RC
+        SHL   (d_val)
+        SHL   (d_val+1)
+        JRC   num_bad
+        DEC   (d_sum)
+        JRNZ  hxn_3
+        MV    A,(d_add)
+        OR    (d_val),A
+        JR    hxn_1
+
+; ${L("I → line に 16 進 4 桁。", "I to line as 4 hexadecimal digits.")}
+to_hex: MV    (d_val),I
+        MV    X,line
+        MV    A,(d_val+1)
+        CALL  hex_2
+        MV    A,(d_val)
+        CALL  hex_2
+        MV    A,0
+        MV    [X++],A
+        RET
+hex_2:  MV    (d_add),A
+        SWAP  A
+        CALL  hex_1
+        MV    A,(d_add)
+hex_1:  AND   A,$0F
+        CMP   A,10
+        JRC   hex_0
+        ADD   A,7
+hex_0:  ADD   A,'0'
+        MV    [X++],A
+        RET
+
+; ${L("I → line に 10 進（先頭の 0 は付けない）。", "I to line as decimal, with no zeros in front.")}
+to_dec: MV    (d_val),I
+        MV    X,line
+        MV    Y,powers
+        MV    (d_got),0
+        MV    (d_sum),5
+dec_1:  MV    (d_add),'0'
+        MV    I,[Y++]
+dec_2:  MV    BA,(d_val)
+        SUB   BA,I
+        JRC   dec_3
+        MV    (d_val),BA
+        INC   (d_add)
+        JR    dec_2
+dec_3:  CMP   (d_add),'0'
+        JRNZ  dec_4
+        CMP   (d_got),1
+        JRZ   dec_4
+        CMP   (d_sum),1         ; ${L("1 の位は 0 でも書く", "The last digit is always written")}
+        JRNZ  dec_5
+dec_4:  MV    (d_got),1
+        MV    A,(d_add)
+        MV    [X++],A
+dec_5:  DEC   (d_sum)
+        JRNZ  dec_1
+        MV    A,0
+        MV    [X++],A
+        RET
+powers: DW    10000,1000,100,10,1
+
+; ---- ${L("画面とキー", "Screen and keys")} ----
+; ${L("画面を消して、X から 0 で終わる文字列を 1 行ずつ出す（空の文字列で終わり）。", "Clears the screen and shows texts from X, a line each, until an empty one.")}
+show:   PUSHU X
+        CALL  cls
+        POPU  X
+        MV    (BL),0
+        MV    (BH),0
+show_1: MV    A,[X]
+        CMP   A,0
+        JRZ   show_2
+        MV    A,(BH)
+        PUSHU A
+        CALL  print             ; ${L("X は次の文字列へ進む", "X goes on to the next text")}
+        POPU  A
+        INC   A
+        MV    (BH),A
+        MV    (BL),0
+        JR    show_1
+show_2: RET
+
+cls:    MVW   (CX),DEV_SCRN
+        MV    IL,SCRN_CLEAR
+        CALLF IOCS
+        RET
+
+; ${L("X の文字列を (BL) 桁、(BH) 行に出す。X は 0 の次へ進む。", "Shows the text at X at column (BL), row (BH). X goes past its 0.")}
+print:  PUSHU X
+        MV    Y,0
+prt_1:  MV    A,[X++]
+        CMP   A,0
+        JRZ   prt_2
+        INC   Y
+        JR    prt_1
+prt_2:  MV    (d_next),X
+        POPU  X
+        MVW   (CX),DEV_SCRN
+        MV    IL,SCRN_PUTS
+        CALLF IOCS
+        MV    X,(d_next)
+        RET
+
+; ${L("キーを 1 つ待つ。A = 文字。", "Waits for a key: A = its character.")}
+get_key:
+        MVW   (CX),DEV_KYBD
+        MV    A,$80             ; ${L("押されるまで待つ", "Until one is pressed")}
+        MV    IL,KYBD_READ
+        CALLF IOCS
+        RET
+
+; ${L("2 行目に 1 行入力して line に置く（7 文字まで）。ON/BRK なら C=1。", "A line typed on the second row, to line (up to 7 characters). C=1 for ON/BRK.")}
+input:  MV    (d_len),0
+inp_1:  CALL  inp_draw
+        CALL  get_key
+        CMP   A,KEY_BRK
+        JRZ   inp_brk
+        CMP   A,KEY_ENTER
+        JRZ   inp_ok
+        CMP   A,KEY_BS
+        JRZ   inp_bs
+        CMP   A,$21
+        JRC   inp_1             ; ${L("文字でない", "Not a character")}
+        CMP   A,$7F
+        JRNC  inp_1
+        CMP   (d_len),7
+        JRNC  inp_1
+        CALL  inp_at
+        MV    [X],A
+        INC   (d_len)
+        JR    inp_1
+inp_bs: CMP   (d_len),0
+        JRZ   inp_1
+        DEC   (d_len)
+        JR    inp_1
+inp_ok: CALL  inp_at
+        MV    A,0
+        MV    [X],A
+        RC
+        RET
+inp_brk:
+        SC
+        RET
+inp_at: PUSHU A                 ; X = line + (d_len)
+        MV    X,line
+        MV    A,(d_len)
+        ADD   X,A
+        POPU  A
+        RET
+inp_draw:
+        CALL  inp_at            ; ${L("カーソルの代わりの _ と、消した跡の空白", "A _ for a cursor, and a blank over what was deleted")}
+        MV    A,'_'
+        MV    [X++],A
+        MV    A,' '
+        MV    [X++],A
+        MV    A,0
+        MV    [X++],A
+        MV    X,line
+        MV    (BL),0
+        MV    (BH),1
+        JP    print
+
+; ---- ${L("データ", "Data")} ----
+; ${L("内部 RAM。IOCS を呼ぶと変わる D4h〜DFh は使わない", "Internal RAM; not D4h-DFh, which IOCS uses")}
+d_val   EQU   $20               ; ${L("数（2 バイト）", "A number, 2 bytes")}
+d_sum   EQU   $22
+d_add   EQU   $24
+d_got   EQU   $26
+d_len   EQU   $27
+d_next  EQU   $28               ; ${L("3 バイト", "3 bytes")}
+t_menu: DB    "${name.toUpperCase()}",0
+        DB    "1  DEC -> HEX",0
+        DB    "2  HEX -> DEC",0
+        DB    "Q  QUIT",0
+        DB    0
+t_hex:  DB    "DECIMAL (0-65535)?",0,0
+t_dec:  DB    "HEXADECIMAL (0-FFFF)?",0,0
+t_bad:  DB    "NOT A NUMBER",0
+t_key:  DB    "PRESS ANY KEY",0
+line:   DS    16
+        END
+`;
+
+const appTests = (name: string): string => `{
+  // ${L("e500 test か、テスト エクスプローラーで動かす。", "Run with e500 test or the Test Explorer.")}
+  "program": "${name}.asm",
+  "tests": [
+    { "name": "${L("10 進を読む", "Reads decimal")}", "call": "to_num", "return": "near", "memory": { "line": "255\\u0000" }, "expect": { "registers": { "I": 255, "C": 0 } } },
+    { "name": "${L("いちばん大きい数", "The largest number")}", "call": "to_num", "return": "near", "memory": { "line": "65535\\u0000" }, "expect": { "registers": { "I": 65535, "C": 0 } } },
+    { "name": "${L("大きすぎる", "Too large")}", "call": "to_num", "return": "near", "memory": { "line": "65536\\u0000" }, "expect": { "registers": { "C": 1 } } },
+    { "name": "${L("数でない", "No number")}", "call": "to_num", "return": "near", "memory": { "line": "12A\\u0000" }, "expect": { "registers": { "C": 1 } } },
+    { "name": "${L("空", "Empty")}", "call": "to_num", "return": "near", "memory": { "line": "\\u0000" }, "expect": { "registers": { "C": 1 } } },
+    { "name": "${L("16 進を読む", "Reads hexadecimal")}", "call": "hex_num", "return": "near", "memory": { "line": "BEC\\u0000" }, "expect": { "registers": { "I": "$BEC", "C": 0 } } },
+    { "name": "${L("16 進が 5 桁", "Five hexadecimal digits")}", "call": "hex_num", "return": "near", "memory": { "line": "10000\\u0000" }, "expect": { "registers": { "C": 1 } } },
+    { "name": "${L("16 進にする", "To hexadecimal")}", "call": "to_hex", "return": "near", "registers": { "I": "$0A5F" }, "expect": { "memory": { "line": "0A5F\\u0000" } } },
+    { "name": "${L("10 進にする", "To decimal")}", "call": "to_dec", "return": "near", "registers": { "I": 1024 }, "expect": { "memory": { "line": "1024\\u0000" } } },
+    { "name": "${L("0 を 10 進に", "Zero to decimal")}", "call": "to_dec", "return": "near", "registers": { "I": 0 }, "expect": { "memory": { "line": "0\\u0000" } } },
+    { "name": "${L("メニュー", "The menu")}", "basic": "CALL &HBE000", "maxCycles": 1536000, "expect": { "screen": ["DEC -> HEX", "QUIT"] } },
+    { "name": "${L("255 を入れる", "Enters 255")}", "basic": "CALL &HBE000", "maxCycles": 1536000, "keys": ["1", "2", "5", "5", "ENTER"], "expect": { "screen": ["00FF", "PRESS ANY KEY"] } },
+    { "name": "${L("消して入れ直す", "Deletes and enters again")}", "basic": "CALL &HBE000", "maxCycles": 1536000, "keys": ["2", "F", "0", "BS", "ENTER"], "expect": { "screen": ["15", "PRESS ANY KEY"] } },
+    { "name": "${L("終わる", "Quits")}", "basic": "CALL &HBE000", "maxCycles": 1536000, "keys": ["Q"], "expect": { "screen": ">" } }
+  ]
+}
+`;
+
+// In BASIC, the machine's own characters only: its comments are English.
+const basicApp = (name: string): string => `10 REM *** ${name.toUpperCase()} ***
+20 CLEAR:WAIT 0:M=50
+30 DIM A$(M)*16,V(M),Q$(M)*16,W(M):N=0
+100 REM --- MENU ---
+110 ON ERROR GOTO 0:CLS:PRINT "${name.toUpperCase()}";N;"ITEMS"
+120 PRINT "1 ADD  2 LIST  3 TOTAL"
+130 PRINT "4 SAVE 5 LOAD  Q QUIT"
+140 K$=INKEY$:IF K$="" THEN 140
+150 IF K$="Q" THEN CLS:END
+160 K=VAL K$:IF K<1 OR K>5 THEN 140
+170 CLS:ON K GOSUB 200,300,400,600,700
+180 GOTO 110
+200 REM --- ADD ---
+210 IF N=M THEN PRINT "FULL":GOSUB 900:RETURN
+220 B$="":INPUT "NAME=";B$:IF B$="" THEN RETURN
+230 V$="":INPUT "VALUE=";V$:IF V$="" THEN RETURN
+240 GOSUB 800:GOSUB 850:IF E=1 THEN PRINT "NOT A NUMBER":GOSUB 900:RETURN
+250 REM ADD B$ AND V TO THE LIST
+260 N=N+1:A$(N)=LEFT$(B$,16):V(N)=V:RETURN
+300 REM --- LIST ---
+310 IF N=0 THEN PRINT "NO ITEMS":GOSUB 900:RETURN
+320 FOR I=1 TO N:PRINT LEFT$(A$(I)+"                    ",20);V(I)
+330 IF I/3=INT (I/3) OR I=N THEN GOSUB 900:CLS
+340 NEXT I:RETURN
+400 REM --- TOTAL ---
+410 GOSUB 500:PRINT "TOTAL  =";T
+420 IF N>0 THEN PRINT "AVERAGE=";T/N
+430 GOSUB 900:RETURN
+500 REM T = THE SUM OF V(1)-V(N)
+510 T=0:FOR I=1 TO N:T=T+V(I):NEXT I:RETURN
+600 REM --- SAVE TO E: ---
+610 ON ERROR GOTO 980
+620 OPEN "E:ITEMS" FOR OUTPUT AS #1:PRINT #1,N
+630 FOR I=1 TO N:PRINT #1,A$(I):PRINT #1,V(I):NEXT I
+640 CLOSE:ON ERROR GOTO 0:PRINT "SAVED":GOSUB 900:RETURN
+700 REM --- LOAD FROM E:, THE LIST IS KEPT WHEN IT FAILS ---
+710 ON ERROR GOTO 980
+720 OPEN "E:ITEMS" FOR INPUT AS #1:INPUT #1,C
+730 IF C<0 OR C>M THEN CLOSE:ON ERROR GOTO 0:PRINT "NOT A LIST":GOSUB 900:RETURN
+740 IF C>0 THEN FOR I=1 TO C:INPUT #1,Q$(I):INPUT #1,W(I):NEXT I
+750 CLOSE:ON ERROR GOTO 0:N=C
+760 IF N>0 THEN FOR I=1 TO N:A$(I)=Q$(I):V(I)=W(I):NEXT I
+770 PRINT "LOADED":GOSUB 900:RETURN
+800 REM A FILE CANNOT KEEP COMMAS AND QUOTES IN B$
+810 IF LEN B$=0 THEN RETURN
+820 FOR I=1 TO LEN B$:C$=MID$(B$,I,1):IF C$="," OR C$=CHR$ 34 THEN C$="."
+830 IF I=1 THEN D$=C$ ELSE D$=D$+C$
+840 NEXT I:B$=D$:RETURN
+850 REM V = THE NUMBER IN V$, E=1 WHEN IT IS NONE
+860 E=1:V=0:IF LEN V$>12 THEN RETURN
+870 FOR I=1 TO LEN V$:C$=MID$(V$,I,1)
+880 IF (C$<"0" OR C$>"9") AND C$<>"." AND (C$<>"-" OR I>1) THEN I=99
+890 NEXT I:IF I<99 AND V$<>"-" AND V$<>"." THEN V=VAL V$:E=0
+895 RETURN
+900 REM --- WAIT FOR A KEY ---
+910 IF INKEY$<>"" THEN 910
+920 IF INKEY$="" THEN 920
+930 RETURN
+980 REM --- FILE ERROR ---
+985 PRINT "FILE ERROR";ERN:IF ERN=75 THEN PRINT "INIT E: FIRST"
+990 CLOSE:RESUME 995
+995 ON ERROR GOTO 0:GOSUB 900:RETURN
+`;
+
+const basicAppTests = (name: string): string => `{
+  // ${L("e500 test で動かす。サブルーチンは call に行番号を書く。", "Run with e500 test. A subroutine is called by its line.")}
+  "program": "${name}.bas",
+  "tests": [
+    { "name": "${L("メニュー", "The menu")}", "maxCycles": 1536000, "expect": { "state": "running", "screen": ["1 ADD", "Q QUIT"] } },
+    { "name": "${L("終わる", "Quits")}", "maxCycles": 1536000, "keys": ["Q"], "expect": { "state": "ended" } },
+    { "name": "${L("品目が多すぎる", "Too many items")}", "basic": "CLS:M=50:N=50:GOTO 200", "maxCycles": 1536000, "expect": { "screen": "FULL" } },
+    { "name": "${L("品目がない", "No items")}", "basic": "CLS:N=0:GOTO 300", "maxCycles": 1536000, "expect": { "screen": "NO ITEMS" } },
+    { "name": "${L("加える", "Adds one")}", "basic": "DIM A$(50)*16,V(50)", "call": 250, "variables": { "N": 1, "B$": "PEN", "V": 120 }, "expect": { "variables": { "N": 2, "A$(2)": "PEN", "V(2)": 120 } } },
+    { "name": "${L("カンマと引用符", "Commas and quotes")}", "call": 800, "variables": { "B$": "A,B\\"C" }, "expect": { "variables": { "B$": "A.B.C" } } },
+    { "name": "${L("数を読む", "Reads a number")}", "call": 850, "variables": { "V$": "-12.5" }, "expect": { "variables": { "E": 0, "V": -12.5 } } },
+    { "name": "${L("数でない", "No number")}", "call": 850, "variables": { "V$": "1/0" }, "expect": { "variables": { "E": 1 } } },
+    { "name": "${L("空の名前で戻る", "An empty name goes back")}", "maxCycles": 1536000, "keys": ["1", "P", "ENTER", "5", "ENTER", "wait:1", "1", "ENTER", "wait:1"], "expect": { "state": "running", "variables": { "N": 1 } } },
+    { "name": "${L("合計", "The total")}", "basic": "DIM V(50)\\nV(1)=100:V(2)=20.5:V(3)=-1", "call": 500, "variables": { "N": 3 }, "expect": { "variables": { "T": 119.5 } } }
+  ]
+}
+`;
+
+const basicGame = (name: string): string => `10 REM *** ${name.toUpperCase()}: CATCH THE STARS ***
+20 CLEAR:CLS:WAIT 0:RANDOMIZE
+30 RESTORE 900:READ N:DIM C$(N)*36
+40 FOR I=1 TO N:READ C$(I):NEXT I
+50 S=0:T=10:X=15:U=RND 30:V=0:W=0:O=X
+60 GOSUB 500
+100 REM --- MAIN LOOP ---
+110 K$=INKEY$:IF K$="Q" THEN 160
+120 GOSUB 200:GOSUB 300:GOSUB 500
+130 IF T>0 THEN 110
+160 LOCATE 11,1:PRINT "GAME OVER";:LOCATE 11,2:PRINT "SCORE";S;
+170 BEEP 1,60,200
+180 IF INKEY$<>"" THEN 180
+190 IF INKEY$="" THEN 190
+195 CLS:END
+200 REM --- MOVE THE BASKET: X ---
+210 IF K$=CHR$ 15 AND X>0 THEN X=X-1
+220 IF K$=CHR$ 14 AND X<28 THEN X=X+1
+230 RETURN
+300 REM --- THE STAR FALLS: U,V ---
+305 W=W+1:IF W<4 THEN RETURN
+310 W=0:GCURSOR (U*6,V*8+7):GPRINT C$(2);:V=V+1:IF V<3 THEN RETURN
+320 IF U>=X AND U<=X+2 THEN S=S+1:BEEP 1,5,60
+330 T=T-1:U=RND 30:V=0:RETURN
+500 REM --- DRAW ---
+510 IF O<>X THEN GCURSOR (O*6,31):GPRINT C$(4);
+520 GCURSOR (X*6,31):GPRINT C$(3);:O=X
+530 GCURSOR (U*6,V*8+7):GPRINT C$(1);
+540 LOCATE 32,0:PRINT "SCORE";:LOCATE 32,1:PRINT S;
+550 LOCATE 32,2:PRINT "LEFT";:LOCATE 32,3:PRINT T;" ";
+560 RETURN
+900 REM --- PICTURES: STAR, ITS BLANK, BASKET, ITS BLANK ---
+910 DATA 4
+920 DATA "2A1C7F1C2A00","000000000000"
+930 DATA "FFFFC0C0C0C0C0C0C0C0C0C0C0C0C0C0FFFF"
+940 DATA "000000000000000000000000000000000000"
+`;
+
+const basicGameTests = (name: string): string => `{
+  "program": "${name}.bas",
+  "tests": [
+    { "name": "${L("始まる", "It starts")}", "maxCycles": 2304000, "expect": { "state": "running", "screen": "SCORE", "variables": { "N": 4, "C$(1)": "2A1C7F1C2A00" } } },
+    { "name": "${L("右へ動く（▶ は 0Eh）", "Moves right (the key is 0Eh)")}", "call": 200, "variables": { "X": 15, "K$": "\\u000e" }, "expect": { "variables": { "X": 16 } } },
+    { "name": "${L("左端では動かない", "Stays at the left end")}", "call": 200, "variables": { "X": 0, "K$": "\\u000f" }, "expect": { "variables": { "X": 0 } } },
+    { "name": "${L("受けると 1 点", "Catching one counts")}", "basic": "DIM C$(4)*36", "call": 300, "variables": { "X": 10, "U": 11, "V": 2, "W": 3, "S": 0, "T": 5 }, "expect": { "variables": { "S": 1, "T": 4, "V": 0 } } },
+    { "name": "${L("右にずれると取れない", "Missed on the right")}", "basic": "DIM C$(4)*36", "call": 300, "variables": { "X": 10, "U": 13, "V": 2, "W": 3, "S": 0, "T": 5 }, "expect": { "variables": { "S": 0, "T": 4 } } },
+    { "name": "${L("落ちている途中", "On its way down")}", "basic": "DIM C$(4)*36", "call": 300, "variables": { "X": 10, "U": 11, "V": 0, "W": 3, "S": 0, "T": 5 }, "expect": { "variables": { "V": 1, "T": 5 } } },
+    { "name": "${L("終わると点が出る", "Shows the score at the end")}", "basic": "S=7:GOTO 160", "keys": ["SPACE"], "expect": { "state": "ended" } },
+    { "name": "${L("Q でやめる", "Q quits")}", "maxCycles": 768000, "keys": ["Q", "wait:1"], "expect": { "screen": "GAME OVER" } }
+  ]
+}
+`;
+
 /** A frame around the screen, to see that the file is the one shown. */
 function framePicture(): Uint8Array {
   const dots = new Uint8Array(WIDTH * HEIGHT);
@@ -510,10 +972,13 @@ function framePicture(): Uint8Array {
 
 export function templates(): Template[] {
   return [
-    { id: "minimal", icon: "file-code", label: L("最小", "Minimal"), detail: L("BASIC へ戻るだけのプログラム", "A program that only returns to BASIC"), files: n => [{ name: `${n}.asm`, content: minimal(n) }] },
-    { id: "text", icon: "symbol-string", label: L("文字を表示", "Text"), detail: L("IOCS で 1 行表示する", "Shows a line through IOCS"), files: n => [{ name: `${n}.asm`, content: text(n) }] },
-    { id: "screen", icon: "device-mobile", label: L("画面を使うプログラム", "Screen"), detail: L("背景の絵（.lcd）、点の描画、キー入力", "A background picture (.lcd), drawing dots, reading keys"), files: n => [{ name: `${n}.asm`, content: screen(n) }, { name: `${n}.lcd`, content: framePicture() }] },
+    { id: "app", icon: "window", label: L("アプリ", "Application"), detail: L("メニュー、1 行入力、計算、結果の表示。テスト付き", "A menu, a line of input, a sum and its result, with tests"), files: n => [{ name: `${n}.asm`, content: app(n) }, { name: `${n}.e500test.json`, content: appTests(n) }] },
+    { id: "basicapp", icon: "list-selection", label: L("BASIC のアプリ", "Application in BASIC"), detail: L("メニュー、入力、一覧、合計、ファイルへの保存。テスト付き", "A menu, input, a list, a total, a file, with tests"), files: n => [{ name: `${n}.bas`, content: basicApp(n) }, { name: `${n}.e500test.json`, content: basicAppTests(n) }] },
     { id: "game", icon: "game", label: L("キャラクタを動かすゲーム", "Game with sprites"), detail: L("背景（.lcd）、キャラクタ（.spr）、キー、当たり判定、点数、音", "A background (.lcd), sprites (.spr), keys, collisions, a score, sound"), files: n => [{ name: `${n}.asm`, content: game(n) }, { name: `${n}.lcd`, content: fieldPicture() }, { name: `${n}p.spr`, content: FACE() }, { name: `${n}s.spr`, content: STAR() }] },
-    { id: "routine", icon: "beaker", label: L("BASIC から呼ぶルーチン", "Routine for BASIC"), detail: L("POKE / PEEK で値を受け渡す。テスト付き", "Takes values by POKE and PEEK, with tests"), files: n => [{ name: `${n}.asm`, content: routine(n) }, { name: `${n}.e500test.json`, content: routineTests(n) }] }
+    { id: "basicgame", icon: "game", label: L("BASIC のゲーム", "Game in BASIC"), detail: L("DATA に書いたキャラクタ、キー、点数、音。テスト付き", "Characters in DATA, keys, a score, sound, with tests"), files: n => [{ name: `${n}.bas`, content: basicGame(n) }, { name: `${n}.e500test.json`, content: basicGameTests(n) }] },
+    { id: "screen", icon: "device-mobile", label: L("画面を使うプログラム", "Screen"), detail: L("背景の絵（.lcd）、点の描画、キー入力", "A background picture (.lcd), drawing dots, reading keys"), files: n => [{ name: `${n}.asm`, content: screen(n) }, { name: `${n}.lcd`, content: framePicture() }] },
+    { id: "text", icon: "symbol-string", label: L("文字を表示", "Text"), detail: L("IOCS で 1 行表示する", "Shows a line through IOCS"), files: n => [{ name: `${n}.asm`, content: text(n) }] },
+    { id: "routine", icon: "beaker", label: L("BASIC から呼ぶルーチン", "Routine for BASIC"), detail: L("POKE / PEEK で値を受け渡す。テスト付き", "Takes values by POKE and PEEK, with tests"), files: n => [{ name: `${n}.asm`, content: routine(n) }, { name: `${n}.e500test.json`, content: routineTests(n) }] },
+    { id: "minimal", icon: "file-code", label: L("最小", "Minimal"), detail: L("BASIC へ戻るだけのプログラム", "A program that only returns to BASIC"), files: n => [{ name: `${n}.asm`, content: minimal(n) }] }
   ];
 }

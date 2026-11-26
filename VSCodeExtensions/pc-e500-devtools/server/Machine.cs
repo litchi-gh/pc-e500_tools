@@ -51,6 +51,7 @@ internal sealed class Machine : IDisposable
 
     readonly Queue<(int Code, bool Down, int Cycles)> keys = new();
     int keyWait;
+    bool capsLamp = true;
     readonly byte[] font = [];
     readonly Dictionary<ulong, char> glyphs = [];
 
@@ -152,9 +153,15 @@ internal sealed class Machine : IDisposable
     internal string Type(string text)
     {
         var skipped = new System.Text.StringBuilder();
+        // One key goes by the CAPS lamp, as on the machine. A text with small letters is typed as it is written, with CAPS pressed for them.
+        bool small = text.Length > 1 && text.Any(char.IsAsciiLetterLower);
+        if (!Typing) capsLamp = (Symbols()[1] & 8) != 0;
+        bool caps = capsLamp;
+        void Want(bool on) { if (small && caps != on) { Tap("CAPS"); caps = on; } }
         foreach (char raw in text.Replace("\r\n", "\n"))
         {
-            if (raw == '\n') { Tap("ENTER"); continue; }
+            if (raw == '\n') { Want(capsLamp); Tap("ENTER"); continue; }
+            if (char.IsAsciiLetter(raw)) Want(char.IsAsciiLetterUpper(raw));
             string name = raw == ' ' ? "SPACE" : char.ToUpperInvariant(raw).ToString();
             if (KeyCodes.ContainsKey(name)) { Tap(name); continue; }
             if (Shifted.TryGetValue(raw, out var under))
@@ -166,6 +173,7 @@ internal sealed class Machine : IDisposable
             }
             skipped.Append(raw);
         }
+        Want(capsLamp);
         return skipped.ToString();
     }
 
@@ -205,6 +213,8 @@ internal sealed class Machine : IDisposable
                     pattern |= (ulong)bits << (x * 8);
                 }
                 ulong inverse = ~pattern & ((1UL << 48) - 1);
+                // A reversed space; some ROMs also have a character that is all black.
+                if (inverse == 0) { text[col] = ' '; continue; }
                 if (glyphs.TryGetValue(pattern, out char c) || glyphs.TryGetValue(inverse, out c)) { text[col] = c; continue; }
                 int best = 3; c = '□';
                 foreach (var (glyph, ch) in glyphs)
@@ -294,7 +304,8 @@ internal sealed class Machine : IDisposable
     /// <summary>Mode lamps: BUSY (a program running), RUN, PRO.</summary>
     internal (bool Busy, bool Run, bool Pro) Mode()
     {
-        int s = Native.e500_symbols(Handle, 0);
+        // The byte the ROM writes to the LCD for DBL, PRO, RUN and BUSY. The LCD itself is the program's to draw on, the lamps with it.
+        int s = Read(0xBFC98, 1)[0];
         return ((s & 1) != 0, (s & 2) != 0, (s & 4) != 0);
     }
 }

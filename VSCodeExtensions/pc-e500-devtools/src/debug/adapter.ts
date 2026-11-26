@@ -4,7 +4,7 @@ import * as fs from "node:fs";
 import * as path from "node:path";
 import * as vscode from "vscode";
 import { AsmHost } from "../asm/assembler";
-import { bitsOf, evaluateExpression, hexAndDecimal, hexValue, POINTERS, readTarget, REGISTER_BITS, Target, targetOf, writeLabel, writeTarget } from "../emu/asmValues";
+import { bitsOf, evaluateExpression, hexAndDecimal, hexValue, POINTERS, readTarget, REGISTER_BITS, Target, targetOf, writeLabel, writeTarget, writeTyped } from "../emu/asmValues";
 import { EmulatorClient, Stopped } from "../emu/client";
 import { assemblerOptions, machineConfig } from "../emu/config";
 import { MachineHub } from "../emu/hub";
@@ -70,6 +70,7 @@ export class E500DebugAdapter implements vscode.DebugAdapter {
   private setConfigured!: () => void;
   private readonly sourceBreakpoints = new Map<string, number[]>();
   private instructionBreakpoints: number[] = [];
+  private stepping = false;
   private entryBreakpoint?: number;
   private lastFrames: number[] = [];
   private ended = false;
@@ -152,7 +153,7 @@ export class E500DebugAdapter implements vscode.DebugAdapter {
       case "setExpression": {
         const value = await this.setTarget(String(a.expression ?? ""), String(a.value ?? ""));
         this.respond(request, true, { value });
-        this.event("invalidated", { areas: ["variables"] });
+        this.event("invalidated", { areas: ["variables", "stacks"] });
         return;
       }
       case "evaluate": return this.evaluate(request, a.expression, a.context);
@@ -168,17 +169,18 @@ export class E500DebugAdapter implements vscode.DebugAdapter {
         const data = Buffer.from(a.data ?? "", "base64");
         await this.machine.write(address, data);
         this.respond(request, true, { bytesWritten: data.length });
-        this.event("invalidated", { areas: ["variables"] });
+        this.event("invalidated", { areas: ["variables", "stacks"] });
         return;
       }
       case "disassemble": return this.disassemble(request, a);
       case "continue":
         this.respond(request, true, { allThreadsContinued: true });
-        await this.machine.continue(this.args?.speed);
+        this.stepping = false;
+        await this.machine.continue();
         return;
-      case "next": this.respond(request); await this.machine.stepOver(); return;
-      case "stepIn": this.respond(request); await this.machine.step(); return;
-      case "stepOut": this.respond(request); await this.machine.stepOut(); return;
+      case "next": this.respond(request); this.stepping = true; await this.machine.stepOver(); return;
+      case "stepIn": this.respond(request); this.stepping = true; await this.machine.step(); return;
+      case "stepOut": this.respond(request); this.stepping = true; await this.machine.stepOut(); return;
       case "pause": this.respond(request); await this.machine.pause(); return;
       case "terminate":
         // VS Code waits for the event: without it the session stayed until stopped again.
@@ -229,7 +231,7 @@ export class E500DebugAdapter implements vscode.DebugAdapter {
         await client.write(address, Uint8Array.from(typeof data === "string" ? [...data].map(c => c.charCodeAt(0) & 0xff) : data));
       }
       if (this.ended) return;
-      this.hub.attach({ client, label: L(`デバッグ: ${path.basename(file)}`, `Debugging: ${path.basename(file)}`), debugging: true, program, changed: () => this.event("invalidated", { areas: ["variables"] }) });
+      this.hub.attach({ client, label: L(`デバッグ: ${path.basename(file)}`, `Debugging: ${path.basename(file)}`), debugging: true, program, changed: () => this.event("invalidated", { areas: ["variables", "stacks"] }) });
       if (vscode.workspace.getConfiguration("pcE500").get<boolean>("openPanelOnDebug", true)) this.showPanel();
 
       await this.configured;
@@ -251,7 +253,8 @@ export class E500DebugAdapter implements vscode.DebugAdapter {
         const registers: Record<string, number> = {};
         for (const [name, v] of Object.entries(args.registers ?? {})) registers[name.toUpperCase()] = typeof v === "number" ? v : parseNumber(v) ?? program.resolve(v);
         await client.call(entry, args.return !== "near", registers);
-        this.log(L(`${hex5(entry)} を直接呼び出します（${args.return === "near" ? "RET" : "RETF"} で戻ると止まります）。`, `Calling ${hex5(entry)} directly (it stops when ${args.return === "near" ? "RET" : "RETF"} returns).`));
+        const back = args.return === "near" ? "RET" : "RETF";
+        this.log(L(`${hex5(entry)} を直接呼び出します（${args.stopOnReturn ? `${back} で戻ると止まります` : `${back} で戻ります`}）。`, `Calling ${hex5(entry)} directly (${args.stopOnReturn ? `it stops when ${back} returns` : `${back} returns`}).`));
       }
       await client.continue(speed);
     } catch (error) {
@@ -266,17 +269,20 @@ export class E500DebugAdapter implements vscode.DebugAdapter {
     if (stop.reason === "return") {
       const r = stop.registers!;
       this.log(L("ルーチンから戻りました", "The routine returned") + `: A=${hexWidth(r.A, 2)} IL=${hexWidth(r.IL, 2)} BA=${hexWidth(r.BA, 4)} X=${hexWidth(r.X, 5)} Y=${hexWidth(r.Y, 5)} C=${r.F & 1} Z=${(r.F >> 1) & 1}`, "important");
-      if (!this.args?.stopOnReturn) { await this.machine.continue(this.args?.speed); return; }
+      // A step ends somewhere, here too.
+      if (!this.args?.stopOnReturn && !this.stepping) { await this.machine.continue(); return; }
+      this.stepping = false;
       this.event("stopped", { reason: "step", description: L("ルーチンから戻りました", "The routine returned"), threadId: THREAD, allThreadsStopped: true });
       return;
     }
+    this.stepping = false;
     let reason: string = stop.reason;
     if (stop.reason === "breakpoint" && this.entryBreakpoint === stop.pc) {
       reason = "entry";
       this.entryBreakpoint = undefined;
       await this.applyBreakpoints();
     }
-    if (this.args?.noDebug && stop.reason === "breakpoint") { await this.machine.continue(this.args.speed); return; }
+    if (this.args?.noDebug && stop.reason === "breakpoint") { await this.machine.continue(); return; }
     const description = stop.reason === "exception" ? L(`未定義命令で停止しました（${hex5(stop.pc)}）`, `Stopped on an undefined instruction (${hex5(stop.pc)})`) : undefined;
     this.event("stopped", { reason, description, text: description, threadId: THREAD, allThreadsStopped: true });
   }
@@ -294,9 +300,11 @@ export class E500DebugAdapter implements vscode.DebugAdapter {
     const result: unknown[] = [];
     const addresses: number[] = [];
     for (const bp of a.breakpoints ?? []) {
-      const line = program?.hasFile(file) ? program.codeAtOrAfter(file, bp.line - 1) : undefined;
+      const lines = program?.hasFile(file) ? program.codeAtOrAfter(file, bp.line - 1) : [];
+      const line = lines[0];
       if (line) {
-        addresses.push(line.address);
+        // A file included twice has the line twice.
+        addresses.push(...lines.map(l => l.address));
         result.push({ verified: true, line: line.line + 1, instructionReference: reference(line.address) });
       } else {
         result.push({ verified: false, line: bp.line, message: program?.hasFile(file) ? L("この行より後に命令がありません。", "No instruction at or after this line.") : L("デバッグ中のプログラムに含まれないファイルです。", "This file is not part of the program being debugged.") });
@@ -375,9 +383,9 @@ export class E500DebugAdapter implements vscode.DebugAdapter {
 
   /** Sets a register, [..] or (..), and returns the value it then shows. */
   private async setTarget(name: string, typed: string): Promise<string> {
-    const target = targetOf(name, await this.machine.registers(), this.program);
+    const target = targetOf(name, await this.machine.registers(), this.program, await this.machine.internalMemory());
     if (!target) throw new Error(L(`${name} は書き換えられません。メモリは [${name}] と書きます。`, `${name} cannot be changed. Write [${name}] for the memory there.`));
-    const value = await writeTarget(this.machine, target, typed, this.program);
+    const value = await writeTyped(this.machine, target, typed, this.program);
     return bitsOf(target) === 1 ? String(value) : hexAndDecimal(value, bitsOf(target));
   }
 
@@ -396,7 +404,7 @@ export class E500DebugAdapter implements vscode.DebugAdapter {
       shown = hexValue(await writeTarget(this.machine, { kind: "imem", address: POINTERS[pointer], size: 1 }, a.value, this.program), 8);
     }
     this.respond(request, true, { value: shown });
-    this.event("invalidated", { areas: ["variables"] });
+    this.event("invalidated", { areas: ["variables", "stacks"] });
   }
 
   private async labelBytes(address: number): Promise<string> {
@@ -409,7 +417,7 @@ export class E500DebugAdapter implements vscode.DebugAdapter {
   private async evaluate(request: Message, expression: string, context?: string): Promise<void> {
     try {
       const registers = this.client?.alive ? await this.machine.registers() : undefined;
-      const target = registers ? targetOf(expression, registers, this.program) : undefined;
+      const target = registers ? targetOf(expression, registers, this.program, await this.machine.internalMemory()) : undefined;
       if (registers && target) {
         const value = await readTarget(this.machine, target, registers);
         const at = target.kind === "memory" ? target.address : target.kind === "register" && bitsOf(target) === 20 ? value : undefined;

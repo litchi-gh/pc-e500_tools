@@ -19,7 +19,6 @@ export class EmulatorPanel implements vscode.Disposable {
   private static instance?: EmulatorPanel;
   private readonly disposables: vscode.Disposable[] = [];
   private unbind: () => void = () => undefined;
-  private speed = 1;
 
   /** Opens the panel (or brings it forward). `start` makes a machine when none is attached. */
   static show(context: vscode.ExtensionContext, hub: MachineHub, start: () => Promise<void>, focus = false): EmulatorPanel {
@@ -64,12 +63,12 @@ export class EmulatorPanel implements vscode.Disposable {
     const client = attached.client;
     const onFrame = (screen: Screen): void => this.post({ type: "frame", pixels: screen.pixels, symbols: screen.symbols });
     const model = appearance(client.info);
-    const onStopped = (stop: Stopped): void => this.post({ type: "state", attached: true, title: attached.label, running: false, model, message: stopText(stop) });
-    const onContinued = (): void => this.post({ type: "state", attached: true, title: attached.label, running: true, model });
+    const onStopped = (stop: Stopped): void => this.post({ type: "state", attached: true, title: attached.label, running: false, model, speed: client.currentSpeed, message: stopText(stop) });
+    const onContinued = (): void => this.post({ type: "state", attached: true, title: attached.label, running: true, model, speed: client.currentSpeed });
     const onExit = (): void => this.post({ type: "state", attached: false, title: L("終了しました", "Ended"), running: false });
     client.on("frame", onFrame).on("stopped", onStopped).on("continued", onContinued).on("exit", onExit);
     this.unbind = () => { client.off("frame", onFrame).off("stopped", onStopped).off("continued", onContinued).off("exit", onExit); };
-    this.post({ type: "state", attached: true, title: attached.label, running: client.running, model });
+    this.post({ type: "state", attached: true, title: attached.label, running: client.running, model, speed: client.currentSpeed });
     void client.screen().then(onFrame, () => undefined);
   }
 
@@ -99,7 +98,7 @@ export class EmulatorPanel implements vscode.Disposable {
         }
         case "control":
           switch (message.action) {
-            case "continue": await client.continue(this.speed); break;
+            case "continue": await client.continue(); break;
             case "pause": {
               const attached = this.hub.current!;
               if (!attached.pause) { await client.pause(); break; }
@@ -107,8 +106,8 @@ export class EmulatorPanel implements vscode.Disposable {
               if (client.running) this.post({ type: "state", attached: true, title: attached.label, running: true, model: appearance(client.info), pausing: true });
               break;
             }
-            case "reset": await client.reset(false); if (!client.running) await client.continue(this.speed); break;
-            case "speed": this.speed = message.value ?? 1; await client.speed(this.speed); break;
+            case "reset": await client.reset(false); if (!client.running) await client.continue(); break;
+            case "speed": await client.speed(message.value ?? 1); break;
             case "copy": {
               const text = (await client.screen()).text ?? "";
               await vscode.env.clipboard.writeText(text);

@@ -17,6 +17,10 @@ obj/
 .vs/
 node_modules/
 /VSCodeExtensions/pc-e500-devtools/out/
+# npm のパッケージ（node scripts/npm-package.js が作る）
+/VSCodeExtensions/pc-e500-devtools/npm-dist/
+# skills/ の写し（VSIX に入れるため、npm run copy:skill が作る）
+/VSCodeExtensions/pc-e500-devtools/skills/
 
 # .NET 製の自己完結型 EXE（各 70〜120 MB）は GitHub の 1 ファイル上限を超えるため同梱しない
 # → GitHub Releases から取得するか、各フォルダの build.cmd でビルドする（app/ に生成される）

@@ -42,7 +42,7 @@ loop:   CALL  pad_read
         CALL  crash             ; 敵に当たったか
         JPC   over
         INC   (count)
-        MV    A,3               ; 約 48 ミリ秒ごと
+        MV    A,3               ; 約 16 ミリ秒の 3 回分（処理込みで 1 秒に約 16 ターン）
         CALL  game_wait
         JP    loop
 

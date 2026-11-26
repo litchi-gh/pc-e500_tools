@@ -44,6 +44,8 @@ export interface Tools {
   start(server: string, core: string, rom: string, ram: number): Promise<{ romVersion: string; romKB: number; internalKB: number; ms: number }>;
 }
 
+/** The emulator's latest release (Windows zip and setup, Linux, macOS). */
+export const EMULATOR_DOWNLOAD = "https://github.com/litchi-gh/pc-e500_emulator_pockecom/releases/latest";
 const isFile = (f: string): boolean => { try { return fs.statSync(f).isFile(); } catch { return false; } };
 const isFolder = (f: string): boolean => { try { return fs.statSync(f).isDirectory(); } catch { return false; } };
 const same = (a: string, b: string): boolean => path.resolve(a).toLowerCase() === path.resolve(b).toLowerCase();
@@ -105,7 +107,10 @@ export async function checkSetup(settings: Settings, where: Places, tools: Tools
       fixes.push(use("pcE500.emulatorPath", suggestion));
     }
     fixes.push({ kind: "pick", what: "emulator", label: L("フォルダを選択", "Pick the Folder") });
-    if (state === "error") fixes.push(open("pcE500.emulatorPath"));
+    if (state === "error") {
+      fixes.push(open("pcE500.emulatorPath"));
+      fixes.push({ kind: "link", url: EMULATOR_DOWNLOAD, label: L("エミュレータのダウンロード", "Download the Emulator") });
+    }
     checks.push({ id: "folder", group: "emulator", title: L("エミュレータのフォルダ", "Emulator folder"), state, lines, fixes });
   }
   const core = settings.core || found.core;
@@ -125,7 +130,8 @@ export async function checkSetup(settings: Settings, where: Places, tools: Tools
     let state: State = "ok";
     if (!rom || !isFile(rom)) { state = "error"; lines.push(rom ? L(`ありません: ${rom}`, `Not there: ${rom}`) : L("ROM が見つかりません（rom フォルダの *.ROM）。", "No ROM was found (*.ROM in the rom folder).")); }
     else {
-      const kb = fs.statSync(rom).size / 1024;
+      // A dump by SAVE M has its 16-byte header in front.
+      const size = fs.statSync(rom).size, kb = (size % 1024 === 16 ? size - 16 : size) / 1024;
       lines.push(rom);
       if (kb !== 256 && kb !== 384) { state = "error"; lines.push(L(`大きさが違います（${kb} KB。256 か 384 KB）。`, `The size is wrong (${kb} KB; 256 or 384 KB).`)); }
     }

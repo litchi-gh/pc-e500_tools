@@ -43,6 +43,7 @@ static int Run(string[] args)
     var paths = new[] { output, listing, symbols }.Where(p => p != null).Select(p => Path.GetFullPath(p!)).ToArray();
     // Windows と macOS の標準のファイルシステムは大文字小文字を区別しない。Linux では a.bin と A.BIN は別のファイル
     StringComparer pathComparer = OperatingSystem.IsWindows() || OperatingSystem.IsMacOS() ? StringComparer.OrdinalIgnoreCase : StringComparer.Ordinal;
+    if (paths.FirstOrDefault(Directory.Exists) is string folder) throw new AssemblyException($"Output is a folder: {folder}");
     if (paths.Distinct(pathComparer).Count() != paths.Length) throw new AssemblyException("Output, listing and symbols must have different paths");
     if (paths.Contains(Path.GetFullPath(input), pathComparer)) throw new AssemblyException("Output would overwrite the input source");
     Encoding sourceEncoding = Encoding.GetEncoding(encoding, EncoderFallback.ExceptionFallback, DecoderFallback.ExceptionFallback);

@@ -212,6 +212,7 @@ describe("SC62015 assembler", () => {
     const ok = assemble("INCLUDE \"consts.inc\"\nCALLF IOCS\nINCBIN \"data.bin\",1", options);
     assert.deepEqual(ok.issues, []);
     assert.equal(hex(ok.binary), "05E8FF0F0203");
+    assert.deepEqual(ok.inputFiles.map(f => path.basename(f)).sort(), ["consts.inc", "data.bin", "main.asm"]);
     const missing = lintAsm("INCLUDE \"nothere.inc\"\nRET", options);
     assert.equal(missing[0].code, "ASM060");
     assert.equal(lintAsm("INCLUDE \"x.inc\"")[0].severity, "warning");
@@ -227,6 +228,24 @@ describe("SC62015 assembler", () => {
     const r = assemble("        ORG $B8000\n        NOP\nhere:   ORG $B9000\n        NOP\n");
     assert.equal(r.labels.get("HERE"), 0xb8001);
     assert.equal(Number(r.symbols.get("HERE")), 0xb8001);
+  });
+
+  it("works values out that come right once the names are known, and says which do not", () => {
+    golden("DB 1 << later\nlater EQU 3", "08");
+    golden("DB 12/later\nlater EQU 3", "04");
+    golden(`${Array.from({ length: 50 }, (_, i) => `e${i} EQU e${i + 1}+1\n`).join("")}e50 EQU 0\nDW e0`, "3200");
+    reject("DB 1 << 64", "ASM040");
+    reject(`DB ${"(".repeat(300)}1${")".repeat(300)}`, "ASM010");
+  });
+
+  it("takes 7-bit characters as they are, and others as numbers", () => {
+    reject("DB \"ｱ\"", "ASM040", "そのまま書けません");
+    golden("DB \"A\\xB1\"", "41B1");
+  });
+
+  it("refuses a near call of a label in another segment, the lowest one too", () => {
+    const issues = lintAsm("ORG $20000\nCALL low\nORG $100\nlow: RET");
+    assert.ok(issues.some(i => /64 KiB/.test(i.message)), JSON.stringify(issues));
   });
 
   it("says that a define is not a number", () => {

@@ -5,7 +5,7 @@
 // - a watch expression: a BASIC variable (A, B$, P(1)), a register, [address] or
 //   (address) for memory and internal RAM (:2 and :3 for more bytes), or an expression of
 //   numbers and the program's symbols (src/emu/asmValues.ts).
-import { bitsOf, evaluateExpression, hexAndDecimal, hexValue, POINTERS, readTarget, REGISTER_BITS, Target, targetOf, writeLabel, writeTarget } from "./asmValues";
+import { bitsOf, evaluateExpression, hexAndDecimal, hexValue, POINTERS, readTarget, REGISTER_BITS, Target, targetOf, writeLabel, writeTyped } from "./asmValues";
 import { BasicVariable, findVariable, isShown, readBasicVariables } from "./basic";
 import { EmulatorClient } from "./client";
 import { hex5, Program } from "./program";
@@ -65,8 +65,11 @@ export class Inspector {
     });
     if (this.program && this.program.labels.length) {
       const rows: InspectRow[] = [];
+      // One read for all of them: the machine answers between its slices.
+      const from = this.program.labels[0][1], to = this.program.labels[this.program.labels.length - 1][1] + 4;
+      const all = to - from <= 0x10000 ? await this.client.read(from, Math.min(to, 0x100000) - from) : undefined;
       for (const [name, address] of this.program.labels) {
-        const bytes = await this.client.read(address, 4);
+        const bytes = all ? all.subarray(address - from, address - from + 4) : await this.client.read(address, 4);
         rows.push({ name, value: `${hex5(address)}h: ${[...bytes].map(b => b.toString(16).toUpperCase().padStart(2, "0")).join(" ")}`, edit: "memory", target: `label ${name}` });
       }
       groups.push({ id: "labels", title: L("ラベル", "Labels"), rows, closed: true });
@@ -97,7 +100,7 @@ export class Inspector {
       if (/[#$]$|\)$/.test(text)) throw new Error(L(`変数 ${text} はまだありません。`, `There is no variable ${text} yet.`));
     }
     const registers = await this.client.registers();
-    const target = targetOf(text, registers, this.program);
+    const target = targetOf(text, registers, this.program, await this.client.internalMemory());
     if (target) {
       const shown = hexAndDecimal(await readTarget(this.client, target, registers), bitsOf(target));
       return { value: shown + (target.kind === "memory" ? `  @${hex5(target.address)}` : ""), edit: target.kind === "memory" ? "memory" : "asm" };
@@ -110,8 +113,8 @@ export class Inspector {
   async set(name: string, typed: string): Promise<void> {
     const label = /^label (.+)$/.exec(name);
     if (label && this.program) { await writeLabel(this.client, this.program, label[1], typed); return; }
-    const target: Target | undefined = targetOf(name, await this.client.registers(), this.program);
+    const target: Target | undefined = targetOf(name, await this.client.registers(), this.program, await this.client.internalMemory());
     if (!target) throw new Error(L(`${name} は書き換えられません。メモリは [${name}] と書きます。`, `${name} cannot be changed. Write [${name}] for the memory there.`));
-    await writeTarget(this.client, target, typed, this.program);
+    await writeTyped(this.client, target, typed, this.program);
   }
 }

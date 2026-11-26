@@ -113,6 +113,9 @@ Golden("DB \"a;b,c\\n\\x41\",0 ; comment", "613B622C630A4100");
 Golden("DW -1,$1234\nDP $123456\nMV X,-1", "FFFF34125634120CFFFF0F");
 Golden("ORG 3\nDB 1\nALIGN 8,$EE\nDS 2,$AA\nORG 12\nDB 2", "01EEEEEEEEAAAA000002");
 Golden(".org 4\n.DB LOW($), HIGH($)\nend\nunsupported", "0400");
+Golden(string.Concat(Enumerable.Range(0,50).Select(i => $"e{i} EQU e{i+1}+1\n")) + "e50 EQU 0\nDW e0", "3200");
+Golden("DB 1 << later\nlater EQU 3", "08");
+Golden("DB 12/later\nlater EQU 3", "04");
 Golden("PRE $32\nMV (BP+1),(BP+2)", "32C80102");
 
 foreach (var (src, message) in new (string,string)[]
@@ -126,10 +129,11 @@ foreach (var (src, message) in new (string,string)[]
     ("MV A,(PY+1)","PX"),("MV ($20),(PX+1)","PY"),("MV A,[X++ +2]","combine"),
     ("ORG $BFFFF\nMV A,1","boundary"),("ORG $FFFFF\nDW 1","20-bit"),
     ("ORG 10\nDB 1\nORG 10\nDB 2","Overlapping"),("DB 256","outside"),("ALIGN 0","outside"),
-    ("DS -1","outside"),("DB 1/0","zero"),("DB \"あ\"","single-byte"),("NOP 1","no operands"),
+    ("DS -1","outside"),("DB 1/0","zero"),("DB \"あ\"","not a character"),("NOP 1","no operands"),
     ("PRE $20","reserved"),("DB 1,","Empty"),("ASSERT 0","ASSERT"),("a1 EQU a1\nDB a1","Cyclic"),
     ("a1 EQU a2\na2 EQU a1\nDB a1","Cyclic"),("a1 EQU a1+1","converge"),("a1 EQU missing\nDB a1","Undefined"),
     ("DB \"bad","Unterminated"),("DB '\\q'","escape"),("MV A,,1","Empty"),("MV A,()","Expression"),
+    ("ORG $10000\nnear: NOP\nORG $20000\nCALL low\nORG $100\nlow: RET","segment"),("DB '\\xZZ'","hex"),("DB " + new string('(',300) + "1" + new string(')',300),"nested"),
     ("EQU 2","label"),("DB 1 << 64","Shift"),("DB 999999999999999999999999","Invalid number")
 }) Reject(src,message);
 

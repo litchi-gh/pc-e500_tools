@@ -40,7 +40,7 @@
   "config.defines": "Symbols defined before assembling (same as e500asm -D NAME=VALUE).",
   "config.assemblerPath": "e500asm (`e500asm.exe` or `e500asm.cmd` on Windows), for \"Assemble with e500asm\". Empty: the one on PATH.\n\n[Check the setup](command:pcE500.checkSetup)",
   "config.e500.title": "Emulator",
-  "config.emulatorPath": "Folder of the PC-E500 emulator. `e500core.dll` (also under `bin/` and `app/`) and `rom/` (`app/rom/`) are looked for there. Empty: one on PATH, or where it is installed.\n\n[Check the setup](command:pcE500.checkSetup)",
+  "config.emulatorPath": "Folder of the PC-E500 emulator. `e500core.dll` (also under `bin/` and `app/`) and `rom/` (`app/rom/`) are looked for there. Empty: one on PATH, or where it is installed.\n\n[Check the setup](command:pcE500.checkSetup) · [Download the emulator](https://github.com/litchi-gh/pc-e500_emulator_pockecom/releases/latest) · [Manual of the extension](https://github.com/litchi-gh/pc-e500_tools/blob/main/docs/manual/README.md)",
   "config.diskFolder": "Folder of the CE-140F's X: drive, where \"Make BIN\" copies to. Empty: `drive-x` of `pcE500.emulatorPath`.",
   "config.corePath": "The emulator's core `e500core.dll` (one with the debugger functions). Empty: found from `pcE500.emulatorPath`.",
   "config.romPath": "ROM file (256KB or 384KB). Empty: picked from the `rom` folder of `pcE500.emulatorPath`, `PC-E500(7.2).ROM` first.",
@@ -50,6 +50,7 @@
   "config.serverPath": "The debug server `e500dbg.exe`. Empty: the one in the extension (`out/server/`).",
   "command.checkSetup": "Check the Setup",
   "config.paths.title": "Paths of the Assembler and the Emulator",
+  "command.placeSkill": "Place the Skill for AI",
   "command.copyIncludes": "Copy Include Files",
   "command.newPicture": "New Dot Picture",
   "spr.displayName": "PC-E500 Sprite"

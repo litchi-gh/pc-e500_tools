@@ -46,7 +46,7 @@ export class InstructionEncoder {
   private readonly internalOperands: Operand[] = [];
   private readonly bytes: number[] = [];
 
-  constructor(private readonly evaluate: Evaluator, private readonly pc: number, private readonly strict: boolean) {}
+  constructor(private readonly evaluate: Evaluator, private readonly pc: number, private readonly strict: boolean, private readonly lowLabel: (expression: string) => boolean = () => false) {}
 
   private emit(...values: number[]): void {
     for (const v of values) this.bytes.push(v & 0xff);
@@ -180,7 +180,7 @@ export class InstructionEncoder {
         this.immediate(x.text, 20);
       } else {
         const target = Number(this.value(x.text, 20));
-        if (this.strict && target > 0xffff && (target >> 16) !== (this.pc >> 16)) throw new AssemblyError(L("近距離分岐が 64 KiB セグメントをまたいでいます。JPF/CALLF を使用してください。", "A near branch crosses a 64 KiB segment. Use JPF/CALLF."), "ASM041");
+        if (this.strict && (target >> 16) !== (this.pc >> 16) && (target > 0xffff || this.lowLabel(x.text))) throw new AssemblyError(L("近距離分岐が 64 KiB セグメントをまたいでいます。JPF/CALLF を使用してください。", "A near branch crosses a 64 KiB segment. Use JPF/CALLF."), "ASM041");
         this.emit(target, target >> 8);
       }
       return true;
@@ -193,7 +193,7 @@ export class InstructionEncoder {
         delta = Number(this.evaluate(expression));
       } else {
         let target = Number(this.value(expression, 20));
-        if (target <= 0xffff) target += this.pc & 0xf0000;
+        if (target <= 0xffff && !this.lowLabel(expression)) target += this.pc & 0xf0000;
         if (this.strict && (target >> 16) !== (this.pc >> 16)) throw new AssemblyError(L("相対分岐が 64 KiB セグメントをまたいでいます。", "A relative branch crosses a 64 KiB segment."), "ASM041");
         delta = (target - (((this.pc + 2) & 0xffff) | (this.pc & 0xf0000))) & 0xffff;
         if (delta > 32767) delta -= 65536;

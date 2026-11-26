@@ -83,6 +83,9 @@ export function parseProgram(block: Uint8Array, blockAddress: number): BasicLine
   return lines;
 }
 
+/** Text as a list of variables shows it. */
+export function shownText(bytes: Uint8Array): string { return text(bytes); }
+
 function text(bytes: Uint8Array): string {
   let s = "";
   // 5Ch is ¥ on the machine; a backslash here is always the start of \xNN.
@@ -162,7 +165,8 @@ export function usedLetters(block: Uint8Array): Set<string> {
       const b = block[i];
       if (b === 0x1e) break;
       if (b === 0x1d) { i += 1 + ((block[i + 1] & 1) ? 12 : 7); continue; }
-      if (b === 0x1f || b === 0x1c) { i += 3; continue; }
+      // 00: the place of a line number, once a jump has been there.
+      if (b === 0x1f || b === 0x1c || b === 0x00) { i += 3; continue; }
       if (b === 0x22) { i++; while (i < end && block[i] !== 0x22) i++; i++; continue; }
       if (b === 0xfe) {
         const keyword = block[i + 1];

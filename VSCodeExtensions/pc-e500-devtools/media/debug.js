@@ -77,7 +77,8 @@
     const shown = caret >= 0 ? caret : first;
     $("region").textContent = `${hex(first, 5)}-${hex(Math.min(0xfffff, first + visibleRows() * columns - 1), 5)}   ${areaName(first)}` +
       (caret >= 0 ? L(`   カーソル ${hex(caret, 5)} (${areaName(caret)})`, `   Caret ${hex(caret, 5)} (${areaName(caret)})`) : "");
-    /** @type {HTMLInputElement} */ ($("address")).value = hex(shown, 5);
+    // Not while it is being typed in.
+    if (document.activeElement !== $("address")) /** @type {HTMLInputElement} */ ($("address")).value = hex(shown, 5);
     markMaps();
   }
   function jump(/** @type {number} */ address) {
@@ -104,7 +105,7 @@
       else if (row >= topRow() + visibleRows() - 1) hexBox.scrollTop = (row - visibleRows() + 2) * LINE;
       renderHex(); return;
     }
-    if (!/^[0-9a-fA-F]$/.test(e.key)) return;
+    if (e.ctrlKey || e.metaKey || e.altKey || !/^[0-9a-fA-F]$/.test(e.key)) return;
     e.preventDefault();
     const digit = parseInt(e.key, 16);
     if (kindOf(caret) !== "ram") { note(L(`${hex(caret, 5)} は RAM ではないため書き換えられません。`, `${hex(caret, 5)} is not RAM and cannot be changed.`)); return; }

@@ -11,7 +11,7 @@
 import * as fs from "node:fs";
 import * as os from "node:os";
 import * as path from "node:path";
-import { BasicLine, BasicVariable, driveName, encodeSource, encodeValue, findVariable, parseProgram, readBasicVariables } from "./basic";
+import { BasicLine, BasicVariable, driveName, encodeSource, encodeValue, findVariable, parseProgram, readBasicVariables, sourceLineNumbers } from "./basic";
 import { EmulatorClient, Stopped } from "./client";
 import { L } from "../l10n";
 
@@ -24,6 +24,8 @@ export class BasicSession {
   private pausing?: object;
   private breakAt = new Set<number>();
   private folder?: string;
+  private source: Buffer = Buffer.alloc(0);
+  private log: (text: string) => void = () => undefined;
 
   private constructor(readonly client: EmulatorClient, readonly name: string, readonly lines: BasicLine[]) {}
 
@@ -43,13 +45,23 @@ export class BasicSession {
       await client.tap("C-CE");
       await client.type(`LOAD "X:${name}"\n`);
       await client.run(CPU_HZ * 30, { untilTyped: true, settle: CPU_HZ });
-      for (let i = 0; i < 60 && (await client.mode()).busy; i++) await client.run(CPU_HZ / 2);
+      // About 160 bytes a second.
+      const limit = 60 + bytes.length / 50;
+      let spent = 0;
+      for (; spent < limit && (await client.mode()).busy; spent += 0.5) await client.run(CPU_HZ / 2);
       const screen = (await client.screen()).text ?? "";
-      if (/error/i.test(screen.split("\n").slice(-2).join(" "))) throw new Error(L(`LOAD でエラーになりました。画面:\n${screen}`, `LOAD failed with an error. Screen:\n${screen}`));
+      if (spent >= limit) throw new Error(L(`LOAD が終わりません。画面:\n${screen}`, `LOAD does not end. Screen:\n${screen}`));
+      if (/error/i.test(screen.split("\n").filter(l => !/LOAD "X:/.test(l)).slice(-2).join(" "))) throw new Error(L(`LOAD でエラーになりました。画面:\n${screen}`, `LOAD failed with an error. Screen:\n${screen}`));
       const lines = await BasicSession.readLines(client);
       if (lines.length === 0) throw new Error(L(`プログラムを読み込めませんでした。画面:\n${screen}`, `The program could not be loaded. Screen:\n${screen}`));
+      // LOAD stops at a line it cannot take (too long, no statement ...) and keeps those before it.
+      const have = new Set(lines.map(l => l.number));
+      const missing = sourceLineNumbers(source).find(n => n !== undefined && !have.has(n));
+      if (missing !== undefined) throw new Error(L(`${missing} 行を読み込めませんでした（行が長すぎる、文がないなど。その後の行も入っていません）。画面:\n${screen}`, `Line ${missing} could not be loaded (too long, nothing after its number ...), nor what follows it. Screen:\n${screen}`));
       const session = new BasicSession(client, name, lines);
       session.folder = folder;
+      session.source = bytes;
+      session.log = log;
       log(L(`${name} を CE-140F から読み込みました（${lines.length} 行）。`, `Loaded ${name} from the CE-140F (${lines.length} lines).`));
       return session;
     } catch (error) {
@@ -182,8 +194,23 @@ export class BasicSession {
     setTimeout(() => void watch().catch(() => undefined), 200);
   }
 
+  /** X: as it was when the program was loaded: the program, and nothing else. */
+  restoreDisk(): void {
+    if (!this.folder) return;
+    for (const n of fs.readdirSync(this.folder)) if (n !== this.name) { try { fs.rmSync(path.join(this.folder, n), { recursive: true, force: true }); } catch { /* open in the machine */ } }
+    fs.writeFileSync(path.join(this.folder, this.name), this.source);
+  }
+
   dispose(): void {
-    if (this.folder) fs.rmSync(this.folder, { recursive: true, force: true });
+    const folder = this.folder;
     this.folder = undefined;
+    if (!folder) return;
+    // What the program, or the user with SAVE, has put on X: is theirs.
+    const own = path.join(folder, this.name);
+    try {
+      if (fs.existsSync(own) && fs.readFileSync(own).equals(this.source)) fs.rmSync(own);
+      if (fs.readdirSync(folder).length > 0) this.log(L(`X: に書かれたファイルを残しました: ${folder}`, `Kept the files written to X: ${folder}`));
+      else fs.rmdirSync(folder);
+    } catch { /* still open in the server: left in the temp folder */ }
   }
 }

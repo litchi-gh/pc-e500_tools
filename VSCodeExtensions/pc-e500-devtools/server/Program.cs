@@ -38,6 +38,10 @@ internal static class Program
     static int[] lastSymbols = [];
     static readonly Stopwatch frameClock = Stopwatch.StartNew();
     static bool framesOn = true;
+    // S before a CALL that is stepped over, and a "call" not yet gone on from.
+    static uint? stepS;
+    static uint stepNext;
+    static bool called;
 
     static int Main(string[] args)
     {
@@ -100,6 +104,14 @@ internal static class Program
             budget = (int)Math.Min(due, Machine.CpuHz / 20.0);
         }
         var (reason, ran) = m.Run(budget, resume, depth);
+        // Still inside the call stepped over: an interrupt taken with it has returned, or its return address was only taken off and put back.
+        while (reason == StopReason.Depth && Inside(m) && ran < budget)
+        {
+            // Breakpoints count here too: the next instruction has not been looked at yet.
+            var (why2, more) = m.Run(budget - ran, false, depth);
+            reason = why2; ran += more;
+        }
+        if (reason == StopReason.Depth && Inside(m)) reason = StopReason.None;
         resume = false;
         clockCycles += (ulong)ran;
         if (reason != StopReason.None)
@@ -120,16 +132,35 @@ internal static class Program
     // A step that came to where a "call" returns is its return (the CPU goes back to where it was).
     static string StepReason(Machine m) => returnAddress is int r && (int)m.Register("P") == r ? "return" : "step";
 
+    /// <summary>
+    /// Whether the call being stepped over has not returned yet: S is below what it was before
+    /// the call, or its return address was only taken off (to skip data after the CALL). What
+    /// RET and RETF take off is still under S, and is where P is.
+    /// </summary>
+    static bool Inside(Machine m)
+    {
+        if (stepS is not uint before) return false;
+        uint s = m.Register("S"), p = m.Register("P");
+        if (s < before) return true;
+        if (p == stepNext) return false;
+        var b = m.Read((int)(s - 3) & 0xfffff, 3);
+        return (b[1] | b[2] << 8) != (p & 0xffff) && (b[0] | b[1] << 8 | (b[2] & 15) << 16) != p;
+    }
+
+    /// <summary>Stops a machine that runs, and says so: no request leaves it standing in silence.</summary>
+    static void Halt(Machine m) { if (running) Stop(m, "pause"); }
+
     static void Start(Machine m, int stopDepth = -1)
     {
-        running = true; resume = true; depth = stopDepth;
+        // From where a "call" has put the CPU, a breakpoint on the first instruction counts.
+        running = true; resume = !called; called = false; depth = stopDepth; stepS = null;
         clock.Restart(); clockCycles = 0;
         Send(new JsonObject { ["event"] = "continued" });
     }
 
     static void Stop(Machine m, string reason)
     {
-        running = false; depth = -1;
+        running = false; depth = -1; stepS = null; called = false;
         var body = new JsonObject { ["reason"] = reason, ["pc"] = (int)m.Register("P") };
         if (reason == "return") body["registers"] = Returned(m);
         if (reason == "read") body["address"] = Native.e500_debug_read_hit(m.Handle);
@@ -259,7 +290,8 @@ internal static class Program
         {
             case "open":
             {
-                running = false; returnAddress = null; beforeCall = null; breakpoints = [];
+                if (machine is not null) Halt(machine);
+                returnAddress = null; beforeCall = null; breakpoints = [];
                 machine?.Dispose(); machine = null;
                 var m = new Machine(Str(args, "rom"), Int(args, "ram", 32), Int(args, "card", 0));
                 machine = m;
@@ -269,10 +301,12 @@ internal static class Program
             case "info": return Info(M);
             case "reset":
             {
-                running = false; ForgetCall(M);
+                // A machine that runs goes on running, from the start.
+                ForgetCall(M); depth = -1; stepS = null; called = false;
                 M.ReleaseKeys();
                 Native.e500_reset(M.Handle, Bool(args, "clear", false) ? 1 : 0);
                 Native.e500_debug_clear_frames(M.Handle);
+                clock.Restart(); clockCycles = 0;
                 SendFrame(M, true);
                 return null;
             }
@@ -290,19 +324,24 @@ internal static class Program
                 return null;
             case "step":
             {
-                running = false;
+                running = false; called = false;
                 var reason = M.Step();
                 Stop(M, reason == StopReason.Fault ? "exception" : StepReason(M));
                 return null;
             }
             case "stepOver":
             {
-                running = false;
+                running = false; called = false;
                 int before = M.Frames().Count;
+                uint at = M.Register("P");
+                byte op = M.Read((int)at, 1)[0];
+                bool call = op is 0x04 or 0x05;
+                uint next = (at & 0xf0000) | ((at + (op == 4 ? 3u : 4u)) & 0xffff);
+                uint s = M.Register("S");
                 var reason = M.Step();
                 if (reason == StopReason.Fault) { Stop(M, "exception"); return null; }
                 // A call (or an interrupt taken on the way) added a frame: run until it returns.
-                if (M.Frames().Count > before) { Start(M, before + 1); resume = false; return null; }
+                if (M.Frames().Count > before) { Start(M, before + 1); resume = false; if (call) { stepS = s; stepNext = next; } return null; }
                 Stop(M, StepReason(M));
                 return null;
             }
@@ -369,18 +408,18 @@ internal static class Program
             case "disassemble": return Disassemble(M, Int(args, "address"), Int(args, "count", 16), Int(args, "before", 0));
             case "state.save": return new JsonObject { ["data"] = Convert.ToBase64String(M.SaveState()) };
             case "state.load":
-                running = false; ForgetCall(M);
+                Halt(M); ForgetCall(M);
                 M.LoadState(Convert.FromBase64String(Str(args, "data")));
                 SendFrame(M, true);
                 return null;
-            case "state.loadFile": running = false; ForgetCall(M); LoadStateFile(M, Str(args, "path")); SendFrame(M, true); return Info(M);
+            case "state.loadFile": Halt(M); ForgetCall(M); LoadStateFile(M, Str(args, "path")); SendFrame(M, true); return Info(M);
             case "area":
                 return M.MachineCodeArea() is { } area ? new JsonObject { ["start"] = area.Start, ["size"] = area.Size } : null;
             case "reserve": return Reserve(M, Int(args, "size"));
             case "call":
             {
                 // As BASIC's CALL does (CALLF), or a near CALL from the routine's own page.
-                running = false;
+                Halt(M);
                 int entry = Int(args, "entry") & 0xfffff;
                 bool far = Bool(args, "far", true);
                 int back = far ? 0xffff2 : (entry & 0xf0000) | 0xfff2;
@@ -391,14 +430,15 @@ internal static class Program
                 // Registers given for the call (A, X, ...) are set after the jump.
                 if (args["registers"] is JsonObject given)
                     foreach (var (name, value) in given) if (name is not ("P" or "S")) M.SetRegister(name, (uint)Int(given, name));
-                returnAddress = back;
+                returnAddress = back; called = true;
                 ApplyBreakpoints(M);
                 return new JsonObject { ["returnAddress"] = back };
             }
             case "run":
             {
                 // Unpaced: until keys are typed (+settle), a breakpoint, a return, or the cycles run out.
-                running = false;
+                Halt(M);
+                called = false;
                 var (reason, ran) = RunFast(M, (long)(args["cycles"]?.GetValue<double>() ?? Machine.CpuHz * 10.0), Int(args, "settle", 0), Bool(args, "untilTyped", false));
                 var result = new JsonObject { ["reason"] = reason, ["cycles"] = ran, ["pc"] = (int)M.Register("P") };
                 if (reason == "return") result["registers"] = Returned(M);
@@ -435,7 +475,7 @@ internal static class Program
     // the ROM starts in its menu (or asks to set up RAM), F1 picks BASIC.
     static JsonObject Boot(Machine m, JsonObject args)
     {
-        running = false; ForgetCall(m);
+        Halt(m); ForgetCall(m);
         m.ReleaseKeys();
         Native.e500_reset(m.Handle, 1);
         Native.e500_debug_clear_frames(m.Handle);
@@ -466,7 +506,7 @@ internal static class Program
     // Sizes the machine-code area with the ROM's routine (typed at the BASIC prompt), then back to BASIC.
     static JsonObject Reserve(Machine m, int size)
     {
-        running = false;
+        Halt(m);
         var (busy, run, pro) = m.Mode();
         if (busy) throw new InvalidOperationException(Lang.L("BASIC のプログラムの実行中です。", "A BASIC program is running."));
         if (!run && !pro) throw new InvalidOperationException(Lang.L("機械語エリアの確保は BASIC の RUN か PRO モードで行います。", "The machine-code area is reserved in BASIC's RUN or PRO mode."));

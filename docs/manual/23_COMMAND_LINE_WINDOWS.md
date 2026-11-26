@@ -1,6 +1,6 @@
 # 23. Windows のコマンド
 
-この章は、Windows で `e500` を使えるようにして、プログラムを作り、動かし、実機用のファイルにするまでを、**PowerShell に打つとおり**に説明します。1 行ごとに、何をするコマンドか、何が表示されるかを書きました。
+この章は Windows で `e500` を使えるようにして、プログラムを作り、動かし、実機用のファイルにするまでを、PowerShell に打つとおりに説明します。1 行ごとに、何をするコマンドか、何が表示されるかを書きました。
 
 Linux の人は [24 章](24_COMMAND_LINE_LINUX.md)、macOS の人は [25 章](25_COMMAND_LINE_MACOS.md)を読んでください。オプションの全部の意味は [22 章](22_COMMAND_LINE_AI.md#224-それぞれのコマンド)にあります。
 
@@ -55,7 +55,7 @@ Linux の人は [24 章](24_COMMAND_LINE_LINUX.md)、macOS の人は [25 章](25
 ### 1. 場所を調べる
 
 ```powershell
-(Get-ChildItem "$HOME\.vscode\extensions\pokecom-tools.pc-e500-devtools-*\bin").FullName
+(Get-ChildItem "$HOME\.vscode\extensions\litchi-gh.pc-e500-devtools-*\bin").FullName
 ```
 
 | 部分 | 意味 |
@@ -82,6 +82,8 @@ npm run build:server
 
 ### 2. PATH に入れる
 
+VS Code のターミナルでは、拡張が PATH に足してあるので、そのまま `e500` が使えます（拡張を入れた後に開いたターミナルから）。ここは、ほかのターミナルで使うときの設定です。
+
 PATH は、Windows がコマンドを探すフォルダの一覧です。1 で出たフォルダを足すと、どこにいても `e500` だけで動きます。
 
 1. スタートメニューで「環境変数」と打ち、「環境変数を編集」を開く。
@@ -94,7 +96,7 @@ PATH は、Windows がコマンドを探すフォルダの一覧です。1 で�
 試しに今のターミナルだけで使うなら、次の 1 行で足せます。ターミナルを閉じると元に戻ります。
 
 ```powershell
-$env:Path += ";" + (Get-ChildItem "$HOME\.vscode\extensions\pokecom-tools.pc-e500-devtools-*\bin").FullName
+$env:Path += ";" + (Get-ChildItem "$HOME\.vscode\extensions\litchi-gh.pc-e500-devtools-*\bin").FullName
 ```
 
 `$env:Path` は今のターミナルの PATH、`+=` は「後ろに付け足す」です。
@@ -109,11 +111,11 @@ e500 --version
 | コマンド | 何をするか | 正しいとき |
 |---|---|---|
 | `Get-Command e500` | `e500` と打ったときに動くものの場所を表示する | `e500.cmd` が出る |
-| `e500 --version` | バージョンを表示する | `0.3.0` など |
+| `e500 --version` | バージョンを表示する | `0.1.0` など |
 
 ## 23.3 エミュレータを教える
 
-`e500 run` と `e500 test` は、エミュレータと ROM を使います。[エミュレータと ROM を置いて](02_INSTALL_WINDOWS.md#25-エミュレータと-rom-を置く)から、次のどれかをします。
+`e500 run` と `e500 test` はエミュレータと ROM を使います。[エミュレータと ROM を置いて](02_INSTALL_WINDOWS.md#25-エミュレータと-rom-を置く)から、次のどれかをします。
 
 | やり方 | することと、向いている人 |
 |---|---|
@@ -145,7 +147,7 @@ e500 check
 エミュレータと ROM を探し、実際に一度起動して、使えるかどうかを調べます。何も変えません。
 
 ```text
-server: C:\Users\名前\.vscode\extensions\pokecom-tools.pc-e500-devtools-0.3.0\out\server\e500dbg.exe
+server: C:\Users\名前\.vscode\extensions\litchi-gh.pc-e500-devtools-0.1.0\out\server\e500dbg.exe
 emulator: C:\PockeCom\Emulator
 core: C:\PockeCom\Emulator\bin\e500core.dll
 rom: C:\PockeCom\Emulator\rom\PC-E500(7.2).ROM
@@ -166,15 +168,15 @@ mkdir C:\MyGame
 cd C:\MyGame
 ```
 
-1 行目でフォルダを作り、2 行目でそこへ移ります。この後のコマンドは、ここで打ちます。
+1 行目でフォルダを作り、2 行目でそこへ移ります。この後のコマンドはここで打ちます。
 
 ### 2. ゲームのひな形を作る
 
 ```powershell
-e500 new game mygame
+e500 new mygame
 ```
 
-`new` は「テンプレートから作る」、`game` は種類、`mygame` は名前です。4 つのファイルができます。
+`new` は「新しく作る」、`mygame` は名前です。続けて 2 つ聞かれるので、「何で作りますか？」に `2`（機械語）、「何を作りますか？」にそのまま `Enter`（キャラクタを動かすゲーム）と答えます。4 つのファイルができます。
 
 ```text
 mygame.asm
@@ -255,7 +257,7 @@ MYGAME.BIN: 4814 バイト、BE000〜BF2CD、開始 BE000
 Copy-Item MYGAME.BIN E:\
 ```
 
-`Copy-Item ファイル 先` は、ファイルをコピーするコマンドです。`E:` は SD カードのドライブの例です。
+`Copy-Item ファイル 先` はファイルをコピーするコマンドです。`E:` は SD カードのドライブの例です。
 
 ## 23.5 そのほかのコマンド
 
@@ -288,7 +290,7 @@ state: ended
 e500 run hello.bas --rom 8.5 --no-screen
 ```
 
-`--rom 8.5` は、名前に `8.5` を含む ROM（`PC-E650(8.5).ROM` など）を使います。`--no-screen` は、画面の文字を出しません。
+`--rom 8.5` は名前に `8.5` を含む ROM（`PC-E650(8.5).ROM` など）を使います。`--no-screen` は画面の文字を出しません。
 
 ### 命令や IOCS を調べる
 
@@ -369,7 +371,7 @@ e500 test C:\PockeCom\pc-e500_tools\Samples
 
 ## 23.6 まとめて自動で行う
 
-何度も行う作業は、スクリプトにしておくと 1 行で済みます。次を `build.ps1` という名前で保存します。
+何度も行う作業はスクリプトにしておくと 1 行で済みます。次を `build.ps1` という名前で保存します。
 
 ```powershell
 e500 lint .
@@ -426,9 +428,53 @@ call e500 bin mygame.asm
 | `call e500 …` | `e500` を動かして、終わったら次の行へ進む。`e500` もバッチファイルなので、`call` を付けないと、そこで終わってしまう |
 | `if errorlevel 1 exit /b 1` | 終了コードが 1 以上なら、そこでやめる |
 
+### 記号を含む引数
+
+`--type` や `--basic` に `>`、`&`、`|`、`"` を含む文字を渡すときは、PowerShell と、`e500` の起動に使われる `cmd` の両方が記号を読みます。`--%` を付けると、その後ろは PowerShell が変えずに渡します。全体を `"` で囲み、中の `"` は `\"` にします。
+
+```powershell
+e500 --% run game.asm --basic "PRINT 5>3"
+e500 --% run game.bas --type "PRINT \"A\"\n"
+```
+
+記号が多いときは、文字をファイルに書いて `--type-file ファイル`、`--basic-file ファイル` で渡すと、書き方を気にせずに済みます（改行は RETURN）。
+
+```powershell
+e500 run game.bas --type-file keys.txt
+```
+
+`--%` も `"` も付けないと、`>` の後ろの名前のファイルに結果が書き込まれ、前の中身が消えます。`--org` などのアドレスは `&HBE000` ではなく `BE000` と書きます。
+
 ## 23.7 AI に書かせる
 
-AI に渡すスキルを、自分のフォルダに置きます。
+### どのフォルダでも使えるようにする（おすすめ）
+
+Node.js が入っていれば、次の 1 行を 1 回だけ実行します。`e500` が入っていなくてもかまいません。
+
+```powershell
+npx.cmd -y pc-e500-tools@latest setup
+```
+
+| コマンド | 何をするか |
+|---|---|
+| `npx.cmd -y pc-e500-tools@latest` | 最新の `pc-e500-tools`（コマンド `e500` の入ったパッケージ）を取ってきて、その場で動かす。`-y` は、取ってくるかを聞かずに進めるという意味 |
+| `setup` | ホームフォルダに、AI 用のスキルの入口を置く |
+
+```text
+C:\Users\名前\.claude\skills\pc-e500\SKILL.md
+C:\Users\名前\.agents\skills\pc-e500\SKILL.md
+Claude Code と Codex は、どのフォルダでも、このスキルを使います。本文は e500 guide が出します（いつも最新）。
+```
+
+これで、どのフォルダで AI を起動しても、PC-E500 のプログラムを頼めます。AI は作業のたびに最新の本文を読むので、置き直す必要はありません。
+
+`npx` ではなく `npx.cmd` と打つのは、PowerShell の設定によっては `npx` が「スクリプトの実行が無効」で止まるためです。コマンドプロンプトでは `npx` でもかまいません。Codex の中では `npx` が使えないことがあるので、`npm install -g pc-e500-tools` で入れておくと確実です。
+
+`e500` を自分でも使うなら、`npm install -g pc-e500-tools` で入れます。更新も同じコマンドです。
+
+### 1 つのフォルダに置く
+
+AI に渡すスキルを自分のフォルダに置きます。VS Code では、エクスプローラーでフォルダを右クリックして「AI 用のスキルを置く」を選んでも同じです。
 
 ```powershell
 cd C:\MyGame
@@ -455,7 +501,7 @@ C:\MyGame\.agents\skills\pc-e500\SKILL.md
 | Claude Code | `claude` | `.claude\skills\pc-e500\` |
 | Codex | `codex` | `.agents\skills\pc-e500\` |
 
-拡張機能を更新したら、`e500 skill --force` で置き直します。`--force` は、前のものを新しいものに置き換えるという意味で、自分で書き足した部分も消えます。頼み方の例は [22.6](22_COMMAND_LINE_AI.md#226-ai-に書かせる) にあります。
+拡張機能を更新したら、`e500 skill --force` で置き直します。`--force` は前のものを新しいものに置き換えるという意味で、自分で書き足した部分も消えます。頼み方の例は [22.6](22_COMMAND_LINE_AI.md#226-ai-に書かせる) にあります。
 
 ## 23.8 困ったとき
 

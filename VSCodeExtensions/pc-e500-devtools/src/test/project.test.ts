@@ -45,7 +45,7 @@ describe("new programs and BIN files", () => {
   it("assembles every template, in both languages", () => {
     for (const language of ["en", "ja"]) {
       setLanguage(language);
-      for (const t of templates()) {
+      for (const t of templates().filter(t => !t.id.startsWith("basic"))) {
         const program = make(t.id, t.id);
         assert.equal(program.result.issues.length, 0, `${t.id} ${JSON.stringify(program.result.issues)}`);
         assert.ok(program.end <= 0xbfc00);
@@ -73,7 +73,7 @@ describe("new programs and BIN files", () => {
     assert.deepEqual(Buffer.from(loadMFile(program.origin, program.binary)), fs.readFileSync(out));
   });
   it("makes the same bytes as e500asm", { skip: fs.existsSync(assembler) && process.platform === "win32" ? false : "no e500asm here" }, () => {
-    for (const t of templates()) {
+    for (const t of templates().filter(t => !t.id.startsWith("basic"))) {
       const program = make(t.id, "same"), out = path.join(folder, "same.out");
       execFileSync(assembler, [path.join(folder, "same.asm"), "-I", path.join(extensionRoot, "inc"), "-o", out], { stdio: "ignore" });
       assert.deepEqual(Buffer.from(program.binary), fs.readFileSync(out), t.id);

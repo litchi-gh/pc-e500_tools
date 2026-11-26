@@ -37,6 +37,10 @@ export class EmulatorClient extends EventEmitter {
   private readonly ready: Promise<void>;
   info?: MachineInfo;
   running = false;
+  /** How fast it runs (1: as the real one, 0: as fast as it goes): the same for every window. */
+  currentSpeed = 1;
+  /** The end of what the server wrote to stderr: why it did not start. */
+  private errors = "";
 
   constructor(options: ClientOptions) {
     super();
@@ -66,11 +70,16 @@ export class EmulatorClient extends EventEmitter {
       if (message.ok) waiting.resolve(message.body);
       else waiting.reject(new Error(message.error ?? L(`${waiting.cmd} に失敗しました。`, `${waiting.cmd} failed.`)));
     });
-    this.process.stderr!.on("data", (data: Buffer) => this.emit("log", data.toString("utf8")));
+    this.process.stderr!.on("data", (data: Buffer) => { this.errors = (this.errors + data.toString("utf8")).slice(-2000); this.emit("log", data.toString("utf8")); });
+    // The server is gone: "exit" answers what was waiting.
+    this.process.stdin!.on("error", () => undefined);
     this.process.on("error", error => { readyReject(error); this.fail(error); });
-    this.process.on("exit", code => {
-      readyReject(new Error(L(`e500dbg が終了しました（${code}）。`, `e500dbg exited (${code}).`)));
-      this.fail(new Error(L(`e500dbg が終了しました（${code}）。`, `e500dbg exited (${code}).`)));
+    this.process.on("close", code => {
+      const why = this.errors.trim();
+      const error = new Error(L(`e500dbg が終了しました（${code}）。`, `e500dbg exited (${code}).`) + (why ? "\n" + why : ""));
+      readyReject(error);
+      this.running = false;
+      this.fail(error);
       this.emit("exit", code);
     });
   }
@@ -113,8 +122,8 @@ export class EmulatorClient extends EventEmitter {
   reserve(size: number): Promise<{ start: number; size: number }> { return this.request("reserve", { size }); }
   call(entry: number, far: boolean, registers?: Record<string, number>): Promise<{ returnAddress: number }> { return this.request("call", { entry, far, registers }); }
   run(cycles: number, options: { settle?: number; untilTyped?: boolean } = {}): Promise<RunResult> { return this.request("run", { cycles, ...options }); }
-  continue(speed?: number): Promise<void> { return this.request("continue", speed === undefined ? {} : { speed }); }
-  speed(speed: number): Promise<void> { return this.request("speed", { speed }); }
+  continue(speed?: number): Promise<void> { if (speed !== undefined) this.currentSpeed = speed; return this.request("continue", speed === undefined ? {} : { speed }); }
+  speed(speed: number): Promise<void> { this.currentSpeed = speed; return this.request("speed", { speed }); }
   pause(): Promise<void> { return this.request("pause"); }
   step(): Promise<void> { return this.request("step"); }
   stepOver(): Promise<void> { return this.request("stepOver"); }
@@ -126,7 +135,11 @@ export class EmulatorClient extends EventEmitter {
   reset(clear = false): Promise<void> { return this.request("reset", { clear }); }
   async saveState(): Promise<string> { return (await this.request<{ data: string }>("state.save")).data; }
   loadState(data: string): Promise<void> { return this.request("state.load", { data }); }
-  loadStateFile(file: string): Promise<MachineInfo> { return this.request("state.loadFile", { path: file }); }
+  /** The machine has the RAM of the state from then on. */
+  async loadStateFile(file: string): Promise<MachineInfo> {
+    this.info = await this.request<MachineInfo>("state.loadFile", { path: file });
+    return this.info;
+  }
   mode(): Promise<{ busy: boolean; run: boolean; pro: boolean }> { return this.request("mode"); }
   /** Stops when an instruction reads one of these bytes; with `after`, only one that leaves P there. */
   watchReads(addresses: number[], after?: number): Promise<void> { return this.request("watchReads", { addresses, after: after ?? -1 }); }

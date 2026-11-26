@@ -1,129 +1,49 @@
 # 1. クイックスタート（Linux）
 
-この章は、ツールを初めて入れる人が、Linux で**キャラクタの動くゲームを自分の手で動かす**までの道のりです。プログラムを書いた経験も、機械語の知識も要りません。順に進めると、30 分ほどで、エミュレータの中で顔が動くところまで行けます。最後に、同じプログラムを実機へ送る手順も見ます。
+この章は、ツールを初めて入れる人が、Linux でキャラクタの動くゲームを自分の手で動かすまでの道のりです。プログラムを書いた経験も、機械語の知識も要りません。順に進めると、30 分ほどで、エミュレータの中で顔が動くところまで行けます。最後に、同じプログラムを実機へ送る手順も見ます。
 
 くわしい説明はあとの章に回し、ここでは「動いた」を先に味わいます。画面は Ubuntu 26.04 のものです。Windows の人は[こちら](01_QUICKSTART_WINDOWS.md)、macOS の人は[こちら](01_QUICKSTART_MACOS.md)を読んでください。
 
 [目次へ戻る](README.md)
 
-```mermaid
-flowchart TD
-  A["VS Code と<br>拡張機能を入れる"] --> B["エミュレータと<br>e500 を用意する"] --> C["プログラムを<br>作る"] --> D["e500 run で<br>動かす"] --> E["絵を<br>描き直す"] --> F["BIN を作って<br>実機へ"]
-```
-
-Linux では、プログラムと絵を VS Code で作り、動かすのはコマンド `e500 run` で行います。VS Code の `F5`（実行、デバッグ）は Windows 専用です。
+Linux ではプログラムと絵を VS Code で作り、動かすのはコマンド `e500 run` で行います。VS Code の `F5`（実行、デバッグ）は Windows 専用です。
 
 ## 1.1 用意するもの
 
 | もの | 用途 |
 |---|---|
 | Ubuntu 24.04 以降（x64）の PC | この章の手順は Ubuntu 26.04 で確かめたもの（[動作環境](02_INSTALL_LINUX.md#動作環境)） |
-| [VS Code](https://code.visualstudio.com/) | プログラムと絵を作る |
-| Node.js（20.12 以降） | コマンド `e500` を動かす |
-| .NET 10 のランタイム | エミュレータを操作する部品を動かす |
-| PC-E500 エミュレータの Linux 版 | `libe500core.so` が入ったもの |
+| VS Code、拡張機能、コマンド `e500`、エミュレータ | プログラムと絵を作る、動かす。次の節の 1 行で入る |
 | 自分の ROM | 自分の本体から吸い出したもの。ツールには入っていない |
 
 実機で動かすには、CE-140F か互換機も使います（[実機へ送る](14_TRANSFER.md)）。
 
-先に、ブラウザで次の 3 つを取っておきます。日本語の Ubuntu では、ホームの `ダウンロード` フォルダに入ります（英語の環境では `Downloads`。この章の `~/ダウンロード` を `~/Downloads` に読み替えます）。
+自分の ROM（例 `PC-E500(7.2).ROM`）のある場所は、`~/PC-E500(7.2).ROM`（ホーム）の例で書きます。
 
-| 取るもの | 場所 |
+## 1.2 まとめて入れる
+
+端末を開いて（Ubuntu なら `Ctrl+Alt+T`）、次の 1 行を貼り付けます。
+
+```sh
+wget -qO- https://raw.githubusercontent.com/litchi-gh/pc-e500_tools/main/install.sh | sh -s -- --vscode --rom ~/'PC-E500(7.2).ROM'
+```
+
+| 部分 | 意味 |
 |---|---|
-| VS Code の `.deb`（`code_…_amd64.deb`） | [VS Code のページ](https://code.visualstudio.com/) |
-| `pc-e500-devtools-<バージョン>.vsix` | [ツールの Releases](https://github.com/litchi-gh/pc-e500_tools/releases) |
-| `PC-E500-Emulator-<バージョン>-linux-x64.tar.gz` | [エミュレータの Releases](https://github.com/litchi-gh/pc-e500_emulator_pockecom/releases) |
+| `wget -qO- アドレス` | インストール用のスクリプト（`install.sh`）を GitHub から取る |
+| `\| sh -s --` | 取ったスクリプトを実行する。`--` の後ろがスクリプトのオプション |
+| `--vscode` | VS Code がなければ入れる（Linux では管理者のパスワードを聞かれる） |
+| `--rom ファイル` | 自分の ROM の場所。名前の `( )` は端末では特別な意味を持つので、`'…'` で囲む。まだないなら、この部分を書かない |
 
-自分の ROM（例 `PC-E500(7.2).ROM`）も、同じフォルダに置いておきます。
+Node.js、.NET 10 のランタイム、コマンド `e500`、拡張機能、エミュレータが入ります。入る場所は `~/pockecom` と `~/.local/bin` で、`sudo` は要りません（VS Code を入れるときだけ要る）。既にあるものは使い回します。何をするスクリプトかは [2.2](02_INSTALL_LINUX.md#22-必要なものを入れる) にあります。
 
-## 1.2 必要なものを入れる
+最後に `started: ROM Ver.7.2, …` と出れば入りました。ここで**新しい端末を開きます**。`e500` と打てるようになります。
 
-端末を開いて（Ubuntu なら `Ctrl+Alt+T`）、次を 1 行ずつ打ちます。
+## 1.3 日本語にする
 
-```sh
-sudo apt update
-sudo apt install -y nodejs dotnet-runtime-10.0
-sudo apt install ~/ダウンロード/code_*_amd64.deb
-```
+VS Code を開いて、言語を変えるか聞かれたら「変更して再起動」を選びます。聞かれないときは、拡張機能の画面（`Ctrl+Shift+X`）で `Japanese` を探し、「Japanese Language Pack」を入れます。既に日本語なら、何もしません。
 
-| コマンド | 何をするか |
-|---|---|
-| `sudo apt update` | 入れられるソフトの一覧を新しくする。`sudo` は管理者の権限で実行するという意味で、自分のパスワードを聞かれる（打っても表示されない） |
-| `sudo apt install -y nodejs dotnet-runtime-10.0` | Node.js と .NET 10 のランタイムを入れる。`-y` は、確認の質問に「はい」と答える |
-| `sudo apt install …deb` | ダウンロードした VS Code を入れる。`*` は「何でもよい」なので、バージョンの番号を打たなくて済む。Microsoft のリポジトリを足すか聞かれたら、どちらでもよい（足すと、VS Code も `apt` で新しくなる） |
-
-入ったかどうかを確かめます。バージョンを表示するだけのコマンドです。
-
-```sh
-node --version
-dotnet --list-runtimes
-code --version
-```
-
-`node` は `v20.12` 以上、`dotnet` は `Microsoft.NETCore.App 10.` で始まる行があれば大丈夫です。
-
-## 1.3 拡張機能を入れる
-
-```sh
-code --install-extension ~/ダウンロード/pc-e500-devtools-0.3.0.vsix
-code --install-extension MS-CEINTL.vscode-language-pack-ja
-```
-
-| コマンド | 何をするか |
-|---|---|
-| 1 行目 | ダウンロードした拡張機能を VS Code に入れる。`0.3.0` は、取ったファイルのバージョンに合わせる |
-| 2 行目 | VS Code のメニューを日本語にする拡張機能を、インターネットから入れる |
-
-どちらも `was successfully installed` と出れば入りました。VS Code を開いたときに言語を変えるか聞かれたら、「変更して再起動」を選びます。
-
-## 1.4 エミュレータと e500 を用意する
-
-### 1. エミュレータと ROM を置く
-
-```sh
-mkdir -p ~/pockecom
-tar xzf ~/ダウンロード/PC-E500-Emulator-*-linux-x64.tar.gz -C ~/pockecom
-mv ~/pockecom/PC-E500-Emulator-*-linux-x64 ~/pockecom/Emulator
-cp ~/ダウンロード/'PC-E500(7.2).ROM' ~/pockecom/Emulator/rom/
-```
-
-| コマンド | 何をするか |
-|---|---|
-| `mkdir -p ~/pockecom` | ホームに `pockecom` フォルダを作る |
-| `tar xzf … -C ~/pockecom` | ダウンロードしたエミュレータを、そこに展開する |
-| `mv 元 先` | 展開したフォルダの名前を、短い `Emulator` に変える |
-| `cp 元 先` | 自分の ROM を、エミュレータの `rom` フォルダにコピーする。名前の `( )` は端末では特別な意味を持つので、`'…'` で囲む |
-
-### 2. e500 と打てるようにする
-
-コマンド `e500` は、入れた拡張機能の中にあります。どこからでも打てるように、それを呼び出す短いファイルを作ります。`0.3.0` は、入れたバージョンに合わせてください。
-
-```sh
-mkdir -p ~/.local/bin
-cat > ~/.local/bin/e500 <<'EOF'
-#!/bin/sh
-exec sh "$HOME/.vscode/extensions/pokecom-tools.pc-e500-devtools-0.3.0/bin/e500" "$@"
-EOF
-chmod +x ~/.local/bin/e500
-```
-
-| 部分 | 何をするか |
-|---|---|
-| `mkdir -p ~/.local/bin` | 自分用のコマンドを置くフォルダを作る |
-| `cat > ファイル <<'EOF'` 〜 `EOF` | 間の 2 行を、そのままファイルに書き込む。4 行をまとめて貼り付けてよい |
-| `chmod +x ファイル` | そのファイルに「実行してよい」という印を付ける |
-
-### 3. エミュレータの場所を教える
-
-```sh
-echo 'export PCE500_EMULATOR="$HOME/pockecom/Emulator"' >> ~/.bashrc
-```
-
-端末を開いたときに読まれる `~/.bashrc` の最後に、「エミュレータはここにある」という 1 行を書き加えます。**1 回だけ**打ちます。
-
-ここで**一度ログアウトして、ログインし直します**。作ったコマンドと、書き加えた設定が効くようになります。
-
-### 4. 確かめる
+## 1.4 確かめる
 
 端末で次を打ちます。エミュレータと ROM を探し、実際に一度起動して、使えるかどうかを調べるコマンドです。何も変えません。
 
@@ -137,7 +57,7 @@ e500 check
 
 | 出たもの | 対処 |
 |---|---|
-| `コマンドが見つかりません` | ログインし直したか。`ls ~/.local/bin` に `e500` があるか |
+| `コマンドが見つかりません` | 新しい端末を開いたか。`ls ~/.local/bin` に `e500` があるか |
 | `エミュレータ（libe500core.so）が見つかりません` | `ls ~/pockecom/Emulator` に `libe500core.so` があるか |
 | `ROM（*.ROM）がありません` | `ls ~/pockecom/Emulator/rom` に ROM があるか |
 
@@ -152,11 +72,11 @@ e500 check
 
    1 行目でフォルダを作り、2 行目でそのフォルダを VS Code で開きます。「このフォルダーの作成者を信頼しますか」と聞かれたら「はい」を押します。
 
-2. エクスプローラーの空いた所を右クリックし、**「新しいプログラムを作成」** を選びます。
+2. エクスプローラーの空いた所を右クリックし、「新しいプログラムを作成」を選びます。
 
    ![右クリックのメニュー](../images/manual/lq_menu.png)
 
-3. テンプレートの一覧から **「キャラクタを動かすゲーム」** を選びます。
+3. テンプレートの一覧から「キャラクタを動かすゲーム」を選びます。
 
    ![テンプレートの一覧](../images/manual/lq_template.png)
 
@@ -175,11 +95,11 @@ e500 check
 
 ![できたプログラム](../images/manual/lq_made.png)
 
-VS Code を使わないときは、端末で `cd ~/mygame` と `e500 new game mygame` を打つと、同じファイルができます。
+VS Code を使わないときは、端末で `cd ~/mygame` と `e500 new mygame` を打ち、機械語（`2`）とゲーム（そのまま `Enter`）を選ぶと、同じファイルができます。
 
 ## 1.6 動かす
 
-VS Code のメニューの「ターミナル」→「新しいターミナル」を選びます（メニューが隠れているときは「…」の中）。下に開いたターミナルに、次を打ちます。
+VS Code のメニューの「ターミナル」→「新しいターミナル」を選びます（メニューが隠れているときは「…」の中）。下に開いたターミナルに次を打ちます。
 
 ```sh
 e500 run mygame.asm --seconds 2 --keys RIGHT,RIGHT,wait:1 --png screen.png
@@ -190,7 +110,7 @@ e500 run mygame.asm --seconds 2 --keys RIGHT,RIGHT,wait:1 --png screen.png
 | `run mygame.asm` | アセンブル（ソースを機械語に変える）して、エミュレータに入れ、動かす |
 | `--seconds 2` | 2 秒動かす |
 | `--keys RIGHT,RIGHT,wait:1` | その後、右キーを 2 回押して 1 秒待つ |
-| `--png screen.png` | 終わったときの画面を、`screen.png` という画像にする |
+| `--png screen.png` | 終わったときの画面を `screen.png` という画像にする |
 
 ![e500 run の結果](../images/manual/lq_run.png)
 
@@ -305,10 +225,10 @@ VS Code の画面です。
 |---|---|
 | 「新しいプログラムを作成」が出ない | 拡張機能が入っているか（`code --list-extensions`）。フォルダを開いているか |
 | `F5` を押しても動かない | `F5` は Windows 専用。`e500 run` を使う |
-| `e500` が見つからない | ログインし直したか（[1.4](#14-エミュレータと-e500-を用意する)） |
+| `e500` が見つからない | 新しい端末を開いたか（[1.2](#12-まとめて入れる)） |
 | メッセージが英語 | `export E500_LANG=ja` を打ってから、もう一度打つ |
 | 赤い波線が出て動かない | 「問題」（`Ctrl+Shift+M`）を読む |
-| `state: menu` や `state: fault` と出る | プログラムが暴走した。直したところを元に戻して確かめる |
+| `state: menu` と出る | プログラムが暴走した。直したところを元に戻して確かめる |
 
 ほかは [24.9 困ったとき](24_COMMAND_LINE_LINUX.md#249-困ったとき)にあります。
 

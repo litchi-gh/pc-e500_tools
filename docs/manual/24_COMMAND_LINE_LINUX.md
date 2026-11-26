@@ -1,6 +1,6 @@
 # 24. Linux のコマンド
 
-この章は、Linux で `e500` を使えるようにして、プログラムを作り、動かし、実機用のファイルにするまでを、**端末に打つとおり**に説明します。1 行ごとに、何をするコマンドか、何が表示されるかを書きました。WSL の Linux でも同じです。
+この章は Linux で `e500` を使えるようにして、プログラムを作り、動かし、実機用のファイルにするまでを、端末に打つとおりに説明します。1 行ごとに、何をするコマンドか、何が表示されるかを書きました。WSL の Linux でも同じです。
 
 Windows の人は [23 章](23_COMMAND_LINE_WINDOWS.md)、macOS の人は [25 章](25_COMMAND_LINE_MACOS.md)を読んでください。オプションの全部の意味は [22 章](22_COMMAND_LINE_AI.md#224-それぞれのコマンド)にあります。
 
@@ -48,17 +48,17 @@ Windows の人は [23 章](23_COMMAND_LINE_WINDOWS.md)、macOS の人は [25 章
 
 ## 24.2 e500 を使えるようにする
 
-`e500` は拡張機能の中に入っています。先に[拡張機能を入れる](02_INSTALL_LINUX.md#23-拡張機能コマンド-e500を入れる)か、`.vsix` を展開してください。Node.js（20.12 以降）が要ります。
+[`install.sh`](02_INSTALL_LINUX.md#22-必要なものを入れる) で入れたなら、`e500` はもう使えます。[24.2 の 3](#3-確かめる) で確かめて、次の節へ進みます。ここは、自分で入れるときの手順です。`e500` は拡張機能の中にあり、Node.js（20.12 以降）が要ります。
 
 ### 1. 場所を調べる
 
-`e500` のファイルは、入れ方によって次の場所にあります。
+`e500` のファイルは入れ方によって次の場所にあります。
 
 | 入れ方 | 場所 |
 |---|---|
 | `.vsix` を展開した | `~/pockecom/devtools/extension/bin/e500` |
-| VS Code に入れた | `~/.vscode/extensions/pokecom-tools.pc-e500-devtools-<バージョン>/bin/e500` |
-| Remote - SSH、WSL の VS Code に入れた | `~/.vscode-server/extensions/pokecom-tools.pc-e500-devtools-<バージョン>/bin/e500` |
+| VS Code に入れた | `~/.vscode/extensions/litchi-gh.pc-e500-devtools-<バージョン>/bin/e500` |
+| Remote - SSH、WSL の VS Code に入れた | `~/.vscode-server/extensions/litchi-gh.pc-e500-devtools-<バージョン>/bin/e500` |
 | リポジトリ | `~/pockecom/pc-e500_tools/VSCodeExtensions/pc-e500-devtools/bin/e500` |
 
 リポジトリから使うときは、先に `pc-e500-devtools` フォルダで次を 1 回ずつ実行します（`npm` と .NET 10 SDK が要る。Ubuntu なら `sudo apt install -y npm dotnet-sdk-10.0`）。
@@ -76,6 +76,8 @@ npm run build:server
 | `npm run build:server` | エミュレータを操作する `e500dbg` を作る（`run` と `test` に使う） |
 
 ### 2. どこからでも打てるようにする
+
+拡張を入れた VS Code のターミナルでは、設定しなくても `e500` が使えます（拡張を入れた後に開いたターミナルから）。ここは、ほかのターミナルで使うときの設定です。
 
 `e500` という名前の短いファイルを、コマンドを置くフォルダ（`~/.local/bin`）に作ります。中身は「本物の `e500` を呼び出す」だけです。
 
@@ -108,16 +110,16 @@ e500 --version
 | コマンド | 何をするか | 正しいとき |
 |---|---|---|
 | `which e500` | `e500` と打ったときに動くファイルを表示する | `/home/名前/.local/bin/e500` |
-| `e500 --version` | バージョンを表示する | `0.3.0` など |
+| `e500 --version` | バージョンを表示する | `0.1.0` など |
 
-`which` で何も出ないときは、`~/.local/bin` が PATH（コマンドを探すフォルダの一覧）に入っていません。Ubuntu では、このフォルダを作った後でログインし直すと入ります。ログインし直しても出なければ、次の 2 行を打ちます。
+`which` で何も出ないときは、`~/.local/bin` が PATH（コマンドを探すフォルダの一覧）に入っていません。Ubuntu ではこのフォルダを作った後でログインし直すと入ります。ログインし直しても出なければ、次の 2 行を打ちます。
 
 ```sh
 echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
 source ~/.bashrc
 ```
 
-1 行目は、端末を開いたときに読まれる `~/.bashrc` の最後に、PATH を足す行を書き加えます。2 行目は、今の端末でそれを読み直します。
+1 行目は端末を開いたときに読まれる `~/.bashrc` の最後に、PATH を足す行を書き加えます。2 行目は今の端末でそれを読み直します。
 
 ### 4. メッセージを日本語にする
 
@@ -132,7 +134,9 @@ source ~/.bashrc
 
 ## 24.3 エミュレータを教える
 
-`e500 run` と `e500 test` は、エミュレータと ROM、.NET 10 のランタイムを使います。[エミュレータと ROM を置いて](02_INSTALL_LINUX.md#24-エミュレータと-rom-を置く)から、次のどれかをします。
+`install.sh` で入れたなら、`~/pockecom/Emulator` を自分で見つけるので、この節は要りません。
+
+`e500 run` と `e500 test` はエミュレータと ROM、.NET 10 のランタイムを使います。[エミュレータと ROM を置いて](02_INSTALL_LINUX.md#24-エミュレータと-rom-を置く)から、次のどれかをします。
 
 | やり方 | することと、向いている人 |
 |---|---|
@@ -143,7 +147,7 @@ source ~/.bashrc
 ### B. 環境変数で教える
 
 ```sh
-echo 'export PCE500_EMULATOR="$HOME/pockecom/PC-E500-Emulator-<バージョン>-linux-x64"' >> ~/.bashrc
+echo 'export PCE500_EMULATOR="$HOME/pockecom/Emulator"' >> ~/.bashrc
 source ~/.bashrc
 ```
 
@@ -165,9 +169,9 @@ e500 check
 
 ```text
 server: /home/名前/pockecom/devtools/extension/out/server/e500dbg.dll
-emulator: /home/名前/pockecom/PC-E500-Emulator-<バージョン>-linux-x64
-core: /home/名前/pockecom/PC-E500-Emulator-<バージョン>-linux-x64/libe500core.so
-rom: /home/名前/pockecom/PC-E500-Emulator-<バージョン>-linux-x64/rom/PC-E500(7.2).ROM
+emulator: /home/名前/pockecom/Emulator
+core: /home/名前/pockecom/Emulator/libe500core.so
+rom: /home/名前/pockecom/Emulator/rom/PC-E500(7.2).ROM
 ram: 32
 from: PCE500_EMULATOR
 node: v22.22.1
@@ -185,15 +189,15 @@ mkdir -p ~/mygame
 cd ~/mygame
 ```
 
-1 行目でフォルダを作り、2 行目でそこへ移ります。この後のコマンドは、ここで打ちます。
+1 行目でフォルダを作り、2 行目でそこへ移ります。この後のコマンドはここで打ちます。
 
 ### 2. ゲームのひな形を作る
 
 ```sh
-e500 new game mygame
+e500 new mygame
 ```
 
-`new` は「テンプレートから作る」、`game` は種類、`mygame` は名前です。4 つのファイルができます。
+`new` は「新しく作る」、`mygame` は名前です。続けて 2 つ聞かれるので、「何で作りますか？」に `2`（機械語）、「何を作りますか？」にそのまま `Enter`（キャラクタを動かすゲーム）と答えます。4 つのファイルができます。
 
 ```text
 mygame.asm
@@ -274,7 +278,7 @@ MYGAME.BIN: 4814 バイト、BE000〜BF2CD、開始 BE000
 cp MYGAME.BIN /media/$USER/SDCARD/
 ```
 
-`cp ファイル 先` は、ファイルをコピーするコマンドです。`/media/$USER/SDCARD` は SD カードの場所の例で、`$USER` は自分のユーザー名です。実際の場所は `ls /media/$USER` で調べます。
+`cp ファイル 先` はファイルをコピーするコマンドです。`/media/$USER/SDCARD` は SD カードの場所の例で、`$USER` は自分のユーザー名です。実際の場所は `ls /media/$USER` で調べます。
 
 ## 24.5 そのほかのコマンド
 
@@ -307,7 +311,7 @@ state: ended
 e500 run hello.bas --rom 8.5 --no-screen
 ```
 
-`--rom 8.5` は、`rom` フォルダの中の、名前に `8.5` を含む ROM（`PC-E650(8.5).ROM` など）を使います。`--no-screen` は、画面の文字を出しません。
+`--rom 8.5` は `rom` フォルダの中の、名前に `8.5` を含む ROM（`PC-E650(8.5).ROM` など）を使います。`--no-screen` は画面の文字を出しません。
 
 ### 命令や IOCS を調べる
 
@@ -386,7 +390,7 @@ e500 test ~/pockecom/pc-e500_tools/Samples
 
 ## 24.6 まとめて自動で行う
 
-何度も行う作業は、スクリプトにしておくと 1 行で済みます。次を `build.sh` という名前で保存します。
+何度も行う作業はスクリプトにしておくと 1 行で済みます。次を `build.sh` という名前で保存します。
 
 ```sh
 #!/bin/sh
@@ -408,11 +412,36 @@ e500 bin mygame.asm
 sh build.sh
 ```
 
-`sh ファイル` は、スクリプトを実行するコマンドです。テストのないフォルダでは、`e500 test .` の行を消して使います。終了コードは、コマンドのすぐ後に `echo $?` と打つと見られます。
+`sh ファイル` はスクリプトを実行するコマンドです。テストのないフォルダでは `e500 test .` の行を消して使います。終了コードはコマンドのすぐ後に `echo $?` と打つと見られます。
 
 ## 24.7 AI に書かせる
 
-AI に渡すスキルを、自分のフォルダに置きます。
+### どのフォルダでも使えるようにする（おすすめ）
+
+Node.js が入っていれば、次の 1 行を 1 回だけ実行します。`e500` が入っていなくてもかまいません。
+
+```sh
+npx -y pc-e500-tools@latest setup
+```
+
+| コマンド | 何をするか |
+|---|---|
+| `npx -y pc-e500-tools@latest` | 最新の `pc-e500-tools`（コマンド `e500` の入ったパッケージ）を取ってきて、その場で動かす。`-y` は、取ってくるかを聞かずに進めるという意味 |
+| `setup` | ホームフォルダに、AI 用のスキルの入口を置く |
+
+```text
+/home/名前/.claude/skills/pc-e500/SKILL.md
+/home/名前/.agents/skills/pc-e500/SKILL.md
+Claude Code と Codex は、どのフォルダでも、このスキルを使います。本文は e500 guide が出します（いつも最新）。
+```
+
+これで、どのフォルダで AI を起動しても、PC-E500 のプログラムを頼めます。AI は作業のたびに最新の本文を読むので、置き直す必要はありません。
+
+`e500` を自分でも使うなら、`npm install -g pc-e500-tools` で入れます。更新も同じコマンドです。
+
+### 1 つのフォルダに置く
+
+AI に渡すスキルを自分のフォルダに置きます。VS Code では、エクスプローラーでフォルダを右クリックして「AI 用のスキルを置く」を選んでも同じです。
 
 ```sh
 cd ~/mygame
@@ -439,7 +468,7 @@ e500 skill
 | Claude Code | `claude` | `.claude/skills/pc-e500/` |
 | Codex | `codex` | `.agents/skills/pc-e500/` |
 
-新しい拡張機能に替えたら、`e500 skill --force` で置き直します。`--force` は、前のものを新しいものに置き換えるという意味で、自分で書き足した部分も消えます。頼み方の例は [22.6](22_COMMAND_LINE_AI.md#226-ai-に書かせる) にあります。
+新しい拡張機能に替えたら、`e500 skill --force` で置き直します。`--force` は前のものを新しいものに置き換えるという意味で、自分で書き足した部分も消えます。頼み方の例は [22.6](22_COMMAND_LINE_AI.md#226-ai-に書かせる) にあります。
 
 ## 24.8 Node.js なしで使う
 

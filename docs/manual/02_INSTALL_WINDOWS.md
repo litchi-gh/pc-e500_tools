@@ -1,6 +1,6 @@
 # 2. インストールと設定（Windows）
 
-この章は、Windows でツールを入れて、使える状態にするまでを説明します。上から順に、必要な所だけ進めてください。どのコマンドにも、「何をするコマンドか」「うまくいくと何が表示されるか」を付けました。
+この章は Windows でツールを入れて、使える状態にするまでを説明します。上から順に必要な所だけ進めてください。どのコマンドにも「何をするコマンドか」「うまくいくと何が表示されるか」を付けました。
 
 Linux の人は[こちら](02_INSTALL_LINUX.md)、macOS の人は[こちら](02_INSTALL_MACOS.md)を読んでください。何を入れればよいか分からないときは、[2.2 何を入れるか](02_INSTALL.md#22-何を入れるか)の表で選べます。入れた後の使い方は [23 章](23_COMMAND_LINE_WINDOWS.md)にあります。
 
@@ -41,12 +41,12 @@ VS Code だけで使う人は 2.2〜2.6、コマンドも使う人は 2.8 まで
 
 ### この章の書き方
 
-コマンドは **PowerShell** に打ちます。スタートボタンを右クリックして「ターミナル」を選ぶと開きます。`PS C:\Users\…>` のような表示（プロンプト）の右に打って、`Enter` を押します。プロンプト自体は打ちません。
+コマンドは PowerShell に打ちます。スタートボタンを右クリックして「ターミナル」を選ぶと開きます。`PS C:\Users\…>` のような表示（プロンプト）の右に打って、`Enter` を押します。プロンプト自体は打ちません。
 
 | この章での書き方 | 意味 |
 |---|---|
 | `C:\PockeCom` | ツールを置くフォルダの例。好きな場所に変えてよい |
-| `<バージョン>` | `0.3.0` などに読み替える |
+| `<バージョン>` | `0.1.0` などに読み替える |
 | `.\` で始まるコマンド | 「今いるフォルダの中の」という意味。PowerShell では、これがないと今いるフォルダのコマンドを実行しない |
 | `#` より右 | 説明。打たなくてよい（打っても無視される） |
 
@@ -64,7 +64,7 @@ winget install --id Microsoft.VisualStudioCode -e
 | `--id Microsoft.VisualStudioCode` | 入れるソフトの名前（ID） |
 | `-e` | 名前が完全に一致するものだけを入れる。似た名前の別のソフトが入るのを防ぐ |
 
-途中で「変更を加えることを許可しますか」と聞かれたら「はい」を押します。終わったら、ターミナルを開き直します。VS Code のコマンド `code` は、開き直した後のターミナルで使えます。
+途中で「変更を加えることを許可しますか」と聞かれたら「はい」を押します。終わったら、ターミナルを開き直します。VS Code のコマンド `code` は開き直した後のターミナルで使えます。
 
 ## 2.3 .NET 10 のランタイムを入れる
 
@@ -80,7 +80,7 @@ winget install --id Microsoft.DotNet.Runtime.10 -e
 dotnet --list-runtimes
 ```
 
-`dotnet --list-runtimes` は、PC に入っている .NET のランタイムを一覧にするだけのコマンドで、何も変えません。次のように、`Microsoft.NETCore.App 10.` で始まる行があれば入っています。
+`dotnet --list-runtimes` は PC に入っている .NET のランタイムを一覧にするだけのコマンドで、何も変えません。次のように、`Microsoft.NETCore.App 10.` で始まる行があれば入っています。
 
 ```text
 Microsoft.NETCore.App 10.0.13 [C:\Program Files\dotnet\shared\Microsoft.NETCore.App]
@@ -94,43 +94,45 @@ Microsoft.NETCore.App 10.0.13 [C:\Program Files\dotnet\shared\Microsoft.NETCore.
 
 ## 2.4 拡張機能を入れる
 
-1. [Releases](https://github.com/litchi-gh/pc-e500_tools/releases) から `pc-e500-devtools-<バージョン>.vsix` をダウンロードします。ブラウザで取ったファイルは、ふつう「ダウンロード」フォルダに入ります。
-2. 次の**どちらか**で入れます。
+拡張機能は Visual Studio Marketplace にあります。次のどちらかで入れます。
 
-**画面で入れる:** VS Code の拡張機能の画面（`Ctrl+Shift+X`）で、右上の「…」→「VSIX からのインストール」を選び、ファイルを指定します。
+**画面で入れる:** VS Code の拡張機能の画面（`Ctrl+Shift+X`）の検索欄に「PC-E500」と打ち、「PC-E500 開発ツール」（発行者 `litchi-gh`）の「インストール」を押します。
 
 **コマンドで入れる:**
 
 ```powershell
-cd $HOME\Downloads
-code --install-extension pc-e500-devtools-0.3.0.vsix
+code --install-extension litchi-gh.pc-e500-devtools
 ```
 
 | コマンド | 何をするか |
 |---|---|
-| `cd $HOME\Downloads` | 今いるフォルダを「ダウンロード」に移す。`$HOME` は自分のフォルダ（`C:\Users\名前`）を表す |
-| `code --install-extension ファイル` | VS Code に、そのファイルの拡張機能を入れる。VS Code の画面は開かない |
+| `code --install-extension 名前` | Marketplace からその名前の拡張機能を取って、VS Code に入れる。VS Code の画面は開かない |
 
 ```text
 Installing extensions...
-Extension 'pc-e500-devtools-0.3.0.vsix' was successfully installed.
+Installing extension 'litchi-gh.pc-e500-devtools'...
+Extension 'litchi-gh.pc-e500-devtools' v0.1.0 was successfully installed.
 ```
 
-`successfully installed` と出れば入りました。入っているかどうかは、次のコマンドでも分かります。
+`successfully installed` と出れば入りました。入っているかどうかは次のコマンドでも分かります。
 
 ```powershell
 code --list-extensions --show-versions
 ```
 
-入っている拡張機能の名前とバージョンを一覧にするコマンドです。`pokecom-tools.pc-e500-devtools@0.3.0` があれば入っています。
+入っている拡張機能の名前とバージョンを一覧にするコマンドです。`litchi-gh.pc-e500-devtools@0.1.0` があれば入っています。
 
-3. VS Code を開いていたときは、「ウィンドウの再読み込み」を求められたら従います。
+VS Code を開いていたときは、「ウィンドウの再読み込み」を求められたら従います。
 
-拡張機能の実体は、`%USERPROFILE%\.vscode\extensions\pokecom-tools.pc-e500-devtools-<バージョン>` に入ります。コマンド `e500` は、その中の `bin` フォルダにあります。
+拡張機能の実体は `%USERPROFILE%\.vscode\extensions\litchi-gh.pc-e500-devtools-<バージョン>` に入ります。コマンド `e500` はその中の `bin` フォルダにあります。
+
+**ファイルから入れる:** インターネットにつながらない PC や、前のバージョンを使うときは、[Releases](https://github.com/litchi-gh/pc-e500_tools/releases) から `pc-e500-devtools-<バージョン>.vsix` を取ります。拡張機能の画面の右上の「…」→「VSIX からのインストール」で、そのファイルを指定します。コマンドなら `code --install-extension pc-e500-devtools-0.1.0.vsix` です。
+
+**Cursor、VSCodium など:** VS Code から作られたエディタの多くは、Open VSX から拡張機能を取ります。拡張機能の画面で「PC-E500」を探して入れます。
 
 ## 2.5 エミュレータと ROM を置く
 
-1. エミュレータの [Releases](https://github.com/litchi-gh/pc-e500_emulator_pockecom/releases) から、インストーラー（`-setup.exe`）か ZIP を取ります。
+1. エミュレータの [Releases](https://github.com/litchi-gh/pc-e500_emulator_pockecom/releases) からインストーラー（`-setup.exe`）か ZIP を取ります。
 2. インストーラーなら実行します。ZIP なら、次のように展開します。
 
    ```powershell
@@ -154,7 +156,7 @@ code --list-extensions --show-versions
    Copy-Item "D:\MyROM\PC-E500(7.2).ROM" C:\PockeCom\Emulator\rom\
    ```
 
-   `Copy-Item 元 先` は、ファイルをコピーするコマンドです。元のファイルは残ります。エクスプローラーでコピーしても同じです。
+   `Copy-Item 元 先` はファイルをコピーするコマンドです。元のファイルは残ります。エクスプローラーでコピーしても同じです。
 
 4. VS Code で `Ctrl+Shift+P` →「PC-E500: 環境を確認」を実行し、「エミュレータのフォルダ」の「フォルダを選択」で、展開したフォルダを選びます。画面の見方は [2.6](#26-環境の確認) にあります。
 
@@ -186,9 +188,9 @@ VS Code だけで使うなら、次の [2.6](#26-環境の確認) で確かめ�
 
 ## 2.7 エミュレータの探し方
 
-VS Code の拡張機能は、エミュレータのアプリのウィンドウを開くのではなく、その中身である `e500core.dll` を使います。画面やキーは、VS Code のパネルに自分で描きます。だから、アプリを起動しておく必要はなく、アプリの保存した状態にも影響しません。
+VS Code の拡張機能は、エミュレータのアプリのウィンドウを開くのではなく、その中身である `e500core.dll` を使います。画面やキーは、拡張機能が VS Code のパネルに自分で描きます。だから、アプリを起動しておく必要はなく、アプリの保存した状態にも影響しません。
 
-`e500core.dll`（デバッグ用の関数があるもの）と ROM が要ります。拡張機能は、次の順に探します。
+`e500core.dll`（デバッグ用の関数があるもの）と ROM が要ります。拡張機能は次の順に探します。
 
 ```mermaid
 flowchart TD
@@ -200,7 +202,7 @@ flowchart TD
   C -- ない --> D["フォルダを選択する画面を出す"]
 ```
 
-そのフォルダの中では、次の場所を調べます。
+そのフォルダの中では次の場所を調べます。
 
 | もの | 場所 |
 |---|---|
@@ -238,9 +240,9 @@ cd pc-e500_tools
 | コマンド | 何をするか |
 |---|---|
 | `New-Item -ItemType Directory -Force C:\PockeCom` | フォルダ `C:\PockeCom` を作る。`-Force` を付けると、既にあってもエラーにならない（中身は消えない） |
-| `cd C:\PockeCom` | 今いるフォルダを、そこへ移す |
-| `git clone アドレス` | GitHub にあるリポジトリを、丸ごとコピーする。今いるフォルダの中に `pc-e500_tools` というフォルダができる |
-| `cd pc-e500_tools` | できたフォルダの中に入る。この後のコマンドは、ここで打つ |
+| `cd C:\PockeCom` | 今いるフォルダをそこへ移す |
+| `git clone アドレス` | GitHub にあるリポジトリを丸ごとコピーする。今いるフォルダの中に `pc-e500_tools` というフォルダができる |
+| `cd pc-e500_tools` | できたフォルダの中に入る。この後のコマンドはここで打つ |
 
 `git clone` は最初の 1 回だけです。新しくするときは [2.10](#210-更新とアンインストール) の `git pull` を使います。
 
@@ -254,7 +256,7 @@ EXE は大きいのでリポジトリに入っていません。[Releases](https
 | `e500dasm-<バージョン>-win-x64.zip` | `e500dasm.exe` | `DisAssembler\app\` |
 | `E500Disassembler-<バージョン>-win-x64.zip` | `E500Disassembler.exe` | `DisAssembler\app\` |
 
-ダウンロードした 3 つの ZIP を、まとめて展開します。
+ダウンロードした 3 つの ZIP をまとめて展開します。
 
 ```powershell
 Expand-Archive -Path "$HOME\Downloads\e500asm-*-win-x64.zip" -DestinationPath Assembler\app -Force
@@ -262,7 +264,7 @@ Expand-Archive -Path "$HOME\Downloads\e500dasm-*-win-x64.zip" -DestinationPath D
 Expand-Archive -Path "$HOME\Downloads\E500Disassembler-*-win-x64.zip" -DestinationPath DisAssembler\app -Force
 ```
 
-1 行ごとに、1 つの ZIP の中身を `app` フォルダに取り出します。`-Force` は、前のバージョンの EXE があれば置き換えるという意味です。この 3 つの EXE は .NET を中に持っているので、動かすのに .NET を入れる必要はありません。
+1 行ごとに、1 つの ZIP の中身を `app` フォルダに取り出します。`-Force` は前のバージョンの EXE があれば置き換えるという意味です。この 3 つの EXE は .NET を中に持っているので、動かすのに .NET を入れる必要はありません。
 
 ### 4. 動くか確かめる
 
@@ -298,7 +300,7 @@ Expand-Archive -Path "$HOME\Downloads\E500Disassembler-*-win-x64.zip" -Destinati
    Get-Command e500asm, e500dasm
    ```
 
-   `Get-Command 名前` は、その名前で動くものがどこにあるかを調べるコマンドです。2 つとも表示されれば完了です。
+   `Get-Command 名前` はその名前で動くものがどこにあるかを調べるコマンドです。2 つとも表示されれば完了です。
 
 コマンド `e500` の PATH の足し方は [23.2](23_COMMAND_LINE_WINDOWS.md#232-e500-を使えるようにする) にあります。
 
@@ -333,7 +335,7 @@ cd C:\PockeCom\pc-e500_tools
 | `.\Assembler\build.cmd` | ①自動テストを全部動かす ②通れば、.NET を中に持った 1 つの EXE を作る | `Assembler\app\e500asm.exe` |
 | `.\DisAssembler\build.cmd` | ①逆アセンブラとアセンブラの自動テスト ②通れば、コマンドと画面の EXE を作る | `DisAssembler\app\e500dasm.exe`、`E500Disassembler.exe` |
 
-最初の 1 回は、必要な部品をインターネットから取るので時間がかかります。テストが通ると、次のように出ます（数はバージョンによって変わります）。
+最初の 1 回は必要な部品をインターネットから取るので時間がかかります。テストが通ると、次のように出ます（数はバージョンによって変わります）。
 
 ```text
 PASS: 430 checks
@@ -347,7 +349,7 @@ PASS: 430 checks
 cd C:\PockeCom\pc-e500_tools\VSCodeExtensions\pc-e500-devtools
 npm ci
 npm run package
-code --install-extension pc-e500-devtools-0.3.0.vsix --force
+code --install-extension pc-e500-devtools-0.1.0.vsix --force
 ```
 
 | コマンド | 何をするか |
@@ -355,9 +357,9 @@ code --install-extension pc-e500-devtools-0.3.0.vsix --force
 | `cd …` | 拡張機能のソースのフォルダへ移る |
 | `npm ci` | 作るのに要る部品を `package-lock.json` のとおりに取ってきて、`node_modules` フォルダに入れる。最初の 1 回と、部品が変わったときだけ |
 | `npm run package` | ① TypeScript を JavaScript に変える ② `e500dbg` を作る ③ `.vsix` にまとめる |
-| `code --install-extension … --force` | できた `.vsix` を VS Code に入れる。`--force` は、同じバージョンが入っていても入れ直す |
+| `code --install-extension … --force` | できた `.vsix` を VS Code に入れる。`--force` は同じバージョンが入っていても入れ直す |
 
-`npm run package` の最後に `DONE  Packaged: …\pc-e500-devtools-0.3.0.vsix` と出れば成功です。途中の `npm warn …` や `WARNING  A 'repository' field is missing` は、そのまま進んでかまいません。
+`npm run package` の最後に `DONE  Packaged: …\pc-e500-devtools-0.1.0.vsix` と出れば成功です。途中の `npm warn …` は、そのまま進んでかまいません。
 
 ## 2.10 更新とアンインストール
 
@@ -365,14 +367,16 @@ code --install-extension pc-e500-devtools-0.3.0.vsix --force
 
 | すること | 方法 |
 |---|---|
-| 新しくする | 新しい VSIX を「VSIX からのインストール」で入れ、「開発者: ウィンドウの再読み込み」 |
+| 新しくする | Marketplace から入れたものは、VS Code が自動で新しくする。VSIX から入れたときは、新しい VSIX を「VSIX からのインストール」で入れ、「開発者: ウィンドウの再読み込み」 |
 | バージョンを確かめる | 拡張機能の画面で「PC-E500 開発ツール」を開く |
 | 消す | 拡張機能の画面の「アンインストール」 |
 | 設定を消す | 設定画面で「PC-E500」を探し、歯車から「設定をリセット」 |
 
-コマンドで消すときは `code --uninstall-extension pokecom-tools.pc-e500-devtools` です。VS Code から、その名前の拡張機能を取り除きます。
+コマンドで消すときは `code --uninstall-extension litchi-gh.pc-e500-devtools` です。VS Code からその名前の拡張機能を取り除きます。
 
-以前の「Pocket BASIC / ASM Linter」を使っていた場合は、アンインストールしてください。設定（`pocketBasic.*`、`pocketAsm.*`、`pocketE500.*`）は、新しい拡張機能が最初に動いたときに `pcE500.*` へコピーします。`launch.json` の `"type": "pocket-e500"` は `"pc-e500"` に書き換えます。
+Marketplace に出る前の VSIX（名前が `pokecom-tools.pc-e500-devtools`）を入れていた場合は、`code --uninstall-extension pokecom-tools.pc-e500-devtools` で消してから入れ直します。発行者が変わったので、VS Code は別の拡張機能として扱います。設定はそのまま使えます。
+
+以前の「Pocket BASIC / ASM Linter」を使っていた場合は、アンインストールしてください。設定（`pocketBasic.*`、`pocketAsm.*`、`pocketE500.*`）は、新しい拡張機能が最初に動いたときに `pcE500.*` へコピーします。`launch.json` の `"type": "pocket-e500"` は自分で `"pc-e500"` に書き換えます。
 
 ### コマンドのツール
 
@@ -381,7 +385,7 @@ cd C:\PockeCom\pc-e500_tools
 git pull
 ```
 
-`git pull` は、GitHub にある新しい変更を取ってきて、手元のフォルダに反映するコマンドです。自分で書き換えたファイルと重なるときは、止まって知らせます。その後、新しい EXE を[2.8 の 3](#3-exe-を置く) と同じように置き直します。
+`git pull` は GitHub にある新しい変更を取ってきて、手元のフォルダに反映するコマンドです。自分で書き換えたファイルと重なるときは、止まって知らせます。その後、新しい EXE を[2.8 の 3](#3-exe-を置く) と同じように置き直します。
 
 消すときは、`C:\PockeCom\pc-e500_tools` フォルダを消し、[2.8 の 5](#5-どこからでも使えるようにするpath) で足した PATH の行を消します。
 

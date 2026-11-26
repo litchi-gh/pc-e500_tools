@@ -62,6 +62,21 @@ describe("LCD picture editing", () => {
     assert.equal(await r.save(files), "none");
     assert.equal(files.all.has("/a.pixels"), false);
   });
+  it("asks before saving over a file that changed behind a backup or an undo", () => {
+    const picture = new LcdPicture("a.pixels");
+    const old = new Uint8Array(7680), now = new Uint8Array(7680).fill(1);
+    picture.load(old);
+    picture.dots[5] = 1;
+    const backup = picture.backup();
+    const again = new LcdPicture("a.pixels");
+    assert.ok(again.restore(backup));
+    assert.deepEqual([again.dots[5], again.dirty, again.isDisk(old), again.isDisk(now)], [1, true, true, false]);
+    assert.ok(!again.restore("x"));
+    picture.load(now);
+    picture.forgetDisk();
+    assert.ok(!picture.isDisk(now));
+  });
+
   it("takes an empty file as a blank picture, and no other size", async () => {
     const files = new Files();
     const p = new LcdPicture("/new.lcd");

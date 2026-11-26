@@ -2,9 +2,17 @@
   "name": "pc-e500-devtools",
   "displayName": "%displayName%",
   "description": "%description%",
-  "version": "0.3.0",
-  "publisher": "pokecom-tools",
+  "version": "0.1.0",
+  "publisher": "litchi-gh",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/litchi-gh/pc-e500_tools.git"
+  },
+  "bugs": {
+    "url": "https://github.com/litchi-gh/pc-e500_tools/issues"
+  },
+  "homepage": "https://github.com/litchi-gh/pc-e500_tools#readme",
   "engines": {
     "vscode": "^1.95.0"
   },
@@ -15,7 +23,8 @@
     "Testing"
   ],
   "activationEvents": [
-    "workspaceContains:**/*.e500test.json"
+    "workspaceContains:**/*.e500test.json",
+    "onStartupFinished"
   ],
   "main": "./out/extension.js",
   "capabilities": {
@@ -118,6 +127,11 @@
       {
         "command": "pcE500.copyIncludes",
         "title": "%command.copyIncludes%",
+        "category": "PC-E500"
+      },
+      {
+        "command": "pcE500.placeSkill",
+        "title": "%command.placeSkill%",
         "category": "PC-E500"
       },
       {
@@ -391,6 +405,11 @@
           "when": "resourceScheme == file && explorerResourceIsFolder"
         },
         {
+          "command": "pcE500.placeSkill",
+          "group": "navigation@19",
+          "when": "resourceScheme == file && explorerResourceIsFolder"
+        },
+        {
           "command": "pcE500.makeBin",
           "group": "navigation@22",
           "when": "resourceScheme == file && resourceLangId == pc-e500-asm"
@@ -550,7 +569,10 @@
     "watch": "tsc -watch -p ./",
     "build:server": "dotnet build server -c Release -o out/server -nologo -v q",
     "test": "npm run compile && node --test out/test/**/*.test.js",
-    "package": "npm run compile && npm run build:server && npx @vscode/vsce package"
+    "copy:skill": "node -e \"const fs=require('fs');fs.rmSync('skills',{recursive:true,force:true});fs.cpSync('../../skills','skills',{recursive:true})\"",
+    "vscode:prepublish": "npm run copy:skill",
+    "package": "npm run compile && npm run build:server && npx @vscode/vsce package",
+    "package:npm": "npm run compile && npm run build:server && npm run copy:skill && node scripts/npm-package.js"
   },
   "devDependencies": {
     "@types/node": "^22.10.0",

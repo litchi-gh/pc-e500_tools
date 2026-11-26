@@ -23,12 +23,16 @@ export class LcdPicture {
 
   constructor(readonly path: string) { this.format = formatOf(path); }
 
+  /** What is shown is from before the file was last read again: saving asks. */
+  private stale = false;
+
   get dirty(): boolean { return !sameDots(this.dots, this.savedDots); }
 
   /** Takes a file's bytes as what is on the disk and, unless `keep`, as the picture. An empty file is a blank picture. */
   load(bytes: Uint8Array, keep = false): void {
     const picture = bytes.length === 0 ? { format: formatOf(this.path), dots: new Uint8Array(WIDTH * HEIGHT) } : decodeLcd(bytes);
     this.disk = Uint8Array.from(bytes);
+    this.stale = false;
     this.wrongSize = picture ? undefined : bytes.length;
     if (!picture) return;
     this.format = picture.format;
@@ -38,7 +42,25 @@ export class LcdPicture {
 
   /** Whether the file is as it was last read or written here. */
   isDisk(bytes: Uint8Array | undefined): boolean {
-    return bytes !== undefined && bytes.length === this.disk.length && bytes.every((b, i) => b === this.disk[i]);
+    return !this.stale && bytes !== undefined && bytes.length === this.disk.length && bytes.every((b, i) => b === this.disk[i]);
+  }
+
+  /** An edit from before the file was read again is undone or redone. */
+  forgetDisk(): void { this.stale = true; }
+
+  /** For a hot exit: the picture and the file it is of. */
+  backup(): string { return JSON.stringify({ dots: Buffer.from(this.dots).toString("base64"), disk: Buffer.from(this.disk).toString("base64") }); }
+  /** Takes a backup; false when it is not one. */
+  restore(text: string): boolean {
+    let kept: { dots?: unknown; disk?: unknown };
+    try { kept = JSON.parse(text) as typeof kept; } catch { return false; }
+    if (typeof kept.dots !== "string" || typeof kept.disk !== "string") return false;
+    const dots = Uint8Array.from(Buffer.from(kept.dots, "base64"), d => (d ? 1 : 0));
+    if (dots.length !== WIDTH * HEIGHT) return false;
+    this.load(Uint8Array.from(Buffer.from(kept.disk, "base64")));
+    if (this.wrongSize !== undefined) return false;
+    this.dots = dots;
+    return true;
   }
 
   bytes(): Uint8Array { return encode(this.format, this.dots, this.disk); }

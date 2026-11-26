@@ -1,7 +1,7 @@
 # -Runtime linux-x64 and so on build for another system into app/<runtime>/.
 param([switch]$TestOnly, [string]$Runtime = 'win-x64')
 $ErrorActionPreference = 'Stop'
-Push-Location $PSScriptRoot
+Push-Location -LiteralPath $PSScriptRoot
 try {
     dotnet run --project tests/E500Assembler.Tests -c Release
     if ($LASTEXITCODE -ne 0) { throw 'Tests failed' }

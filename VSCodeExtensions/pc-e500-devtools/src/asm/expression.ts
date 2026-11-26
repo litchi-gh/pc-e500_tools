@@ -8,11 +8,14 @@ export class AssemblyError extends Error {
   }
 }
 
-export class DivideByZeroError extends AssemblyError {
-  constructor() {
-    super(L("0 で除算しています。", "Division by zero."), "ASM040");
+/** A value that does not work out (a shift of 64, a division by zero ...): in a pass that does not have all the names yet, it may still come right. */
+export class ValueError extends AssemblyError {
+  constructor(message: string) {
+    super(message, "ASM040");
   }
 }
+
+const divisionByZero = (): ValueError => new ValueError(L("0 で除算しています。", "Division by zero."));
 
 export type SymbolResolver = (name: string) => bigint;
 
@@ -20,7 +23,7 @@ const INT64_MAX = (1n << 63n) - 1n;
 const INT64_MIN = -(1n << 63n);
 
 function checked(value: bigint): bigint {
-  if (value > INT64_MAX || value < INT64_MIN) throw new AssemblyError(L("演算結果が 64 ビットを超えました。", "The result does not fit in 64 bits."), "ASM040");
+  if (value > INT64_MAX || value < INT64_MIN) throw new ValueError(L("演算結果が 64 ビットを超えました。", "The result does not fit in 64 bits."));
   return value;
 }
 
@@ -38,6 +41,7 @@ function isHexDigit(ch: string): boolean {
 
 class Parser {
   private pos = 0;
+  private depth = 0;
 
   constructor(private readonly text: string, private readonly symbol: SymbolResolver, private readonly pc: number) {}
 
@@ -66,17 +70,17 @@ class Parser {
         case "+": left = checked(left + right); break;
         case "-": left = checked(left - right); break;
         case "*": left = checked(left * right); break;
-        case "/": if (right === 0n) throw new DivideByZeroError(); left = left / right; break;
-        case "%": if (right === 0n) throw new DivideByZeroError(); left = left % right; break;
+        case "/": if (right === 0n) throw divisionByZero(); left = checked(left / right); break;
+        case "%": if (right === 0n) throw divisionByZero(); left = left % right; break;
         case "&": left &= right; break;
         case "|": left |= right; break;
         case "^": left ^= right; break;
         case "<<":
-          if (right < 0n || right > 63n) throw new AssemblyError(L("シフト量は 0～63 です。", "A shift count must be 0-63."), "ASM040");
+          if (right < 0n || right > 63n) throw new ValueError(L("シフト量は 0～63 です。", "A shift count must be 0-63."));
           left = BigInt.asIntN(64, left << right);
           break;
         case ">>":
-          if (right < 0n || right > 63n) throw new AssemblyError(L("シフト量は 0～63 です。", "A shift count must be 0-63."), "ASM040");
+          if (right < 0n || right > 63n) throw new ValueError(L("シフト量は 0～63 です。", "A shift count must be 0-63."));
           left >>= right;
           break;
         default: throw new AssemblyError(L("不正な演算子です。", "Invalid operator."), "ASM010");
@@ -85,6 +89,15 @@ class Parser {
   }
 
   private atom(): bigint {
+    // Deeper than anyone writes, and well inside the stack.
+    this.depth += 1;
+    if (this.depth > 200) throw new AssemblyError(L("式の入れ子が深すぎます。", "The expression is nested too deeply."), "ASM010");
+    const value = this.primary();
+    this.depth -= 1;
+    return value;
+  }
+
+  private primary(): bigint {
     this.space();
     if (this.pos === this.text.length) throw new AssemblyError(L("式がありません。", "Expression expected."), "ASM010");
     const ch = this.text[this.pos];
@@ -108,7 +121,7 @@ class Parser {
         if (c === "\\" && this.pos < this.text.length) this.pos += 1;
         else if (c === "'") break;
       }
-      const s = parseString(this.text.slice(start, this.pos));
+      const s = parseBytes(this.text.slice(start, this.pos));
       if (s.length !== 1 || s.charCodeAt(0) > 255) throw new AssemblyError(L("文字定数は 1 バイトの文字 1 つです。", "A character constant is a single 1-byte character."), "ASM040");
       return BigInt(s.charCodeAt(0));
     }
@@ -127,6 +140,8 @@ class Parser {
       const valid = radix === 16 ? /^[0-9A-Fa-f]+$/ : radix === 2 ? /^[01]+$/ : /^[0-9]+$/;
       if (!valid.test(n)) throw new AssemblyError(L(`数値 ${raw} を解釈できません。`, `Cannot read the number ${raw}.`), "ASM010");
       const value = BigInt((radix === 16 ? "0x" : radix === 2 ? "0b" : "") + n);
+      // As Convert.ToInt64 reads them: $FFFFFFFFFFFFFFFF is -1, as a .sym file writes it.
+      if (radix !== 10 && value > INT64_MAX && value < 1n << 64n) return BigInt.asIntN(64, value);
       if (value > INT64_MAX) throw new AssemblyError(L(`数値 ${raw} を解釈できません。`, `Cannot read the number ${raw}.`), "ASM010");
       return value;
     }
@@ -202,6 +217,13 @@ export function splitOperands(s: string): string[] {
   parts.push(s.slice(start).trim());
   if (parts.some(p => p.length === 0)) throw new AssemblyError(L("空のオペランドがあります。", "Empty operand."), "ASM010");
   return parts;
+}
+
+/** A string for DB or a character constant: the characters as written are 7-bit, others come as \\xNN. Anything else would be taken for a code the PC-E500 shows as something else. */
+export function parseBytes(s: string): string {
+  const bad = /[^\u0000-\u007f]/u.exec(s)?.[0];
+  if (bad) throw new AssemblyError(L(`文字 '${bad}' はそのまま書けません。PC-E500 の文字コードを数値か \\xNN で指定してください。`, `'${bad}' cannot be written as it is. Give the PC-E500 character code as a number or \\xNN.`), "ASM040");
+  return parseString(s);
 }
 
 /** Decode a quoted string literal with C-style escapes. Each character is a byte value (0..255) unless the source contained non-Latin-1 text. */

@@ -1,6 +1,6 @@
 # 9. テスト、ビルド、配布
 
-この章は、ツールを作り、確かめ、配るまでの手順です。どのテストが何を守っているかを知っておくと、直したあとに「どこまで動かせば安心か」を自分で決められます。文書と図の決まりもここにあります。
+この章はツールを作り、確かめ、配るまでの手順です。どのテストが何を守っているかを知っておくと、直したあとに「どこまで動かせば安心か」を自分で決められます。文書と図の決まりもここにあります。
 
 [設計の目次へ戻る](README.md)
 
@@ -49,7 +49,7 @@ Linux 用の .NET の実行ファイルを Windows で作ることもできま�
 .\DisAssembler\build.cmd -Runtime linux-x64
 ```
 
-`-Runtime` は、どの OS と CPU 用に作るかを選びます（`linux-x64`、`linux-arm64`）。出力は `app\linux-x64\` などに分かれます。Linux へコピーした後は `chmod +x` で「実行してよい」という印を付けます。macOS の実行ファイルには署名が要るので、macOS の `build.sh` で作ります。
+`-Runtime` はどの OS と CPU 用に作るかを選びます（`linux-x64`、`linux-arm64`）。出力は `app\linux-x64\` などに分かれます。Linux へコピーした後は `chmod +x` で「実行してよい」という印を付けます。macOS の実行ファイルには署名が要るので、macOS の `build.sh` で作ります。
 
 ### Linux、macOS でビルドする
 
@@ -80,6 +80,7 @@ npm run package
 | `npm run compile` | TypeScript を JavaScript に変える（`tsc`） | `out/` |
 | `npm run build:server` | `e500dbg` を作る（`dotnet build`） | `out/server/` |
 | `npm run package` | 上の 2 つを行い、VSIX にまとめる（`vsce package`） | `pc-e500-devtools-<バージョン>.vsix` |
+| `npm run package:npm` | コンパイル、`e500dbg`、スキルの写しを作り、npm のパッケージにまとめる（`scripts/npm-package.js`） | `npm-dist/pc-e500-tools-<バージョン>.tgz` |
 
 拡張を VS Code で開いて `F5` を押すと、開発用の VS Code が起動します。
 
@@ -92,7 +93,7 @@ flowchart TD
   N["npm ci"] --> C["npm run compile（tsc）"] --> S["npm run build:server（dotnet build）"] --> V["vsce package"]
 ```
 
-`build.cmd` / `build.sh` は、テストが通らないと実行ファイルを作りません。逆アセンブラは、アセンブラのテストも動かします（照合に使うため）。
+`build.cmd` / `build.sh` は、テストが通らないと実行ファイルを作りません。逆アセンブラはアセンブラのテストも動かします（照合に使うため）。
 
 ### スクリプトの引数
 
@@ -137,7 +138,7 @@ flowchart TD
   EMU --> DAP["dap.test、basicDap.test"]
 ```
 
-golden vector はプログラムの出力からではなく、CPU の資料の命令表から起こします。出力をコピーすると、誤りもそのまま正解になるからです。
+golden vector はプログラムの出力からではなく CPU の資料の命令表から起こします。出力をコピーすると、誤りもそのまま正解になるからです。
 
 ### 拡張のテスト
 
@@ -164,12 +165,12 @@ npm test
 Linux
 
 ```sh
-export E500_CORE="$HOME/pockecom/PC-E500-Emulator-<バージョン>-linux-x64/libe500core.so"
-export E500_ROM="$HOME/pockecom/PC-E500-Emulator-<バージョン>-linux-x64/rom/PC-E500(7.2).ROM"
+export E500_CORE="$HOME/pockecom/Emulator/libe500core.so"
+export E500_ROM="$HOME/pockecom/Emulator/rom/PC-E500(7.2).ROM"
 npm test
 ```
 
-どちらも、今のターミナルの環境変数にファイルの場所を入れてから、テストを動かしています。ターミナルを閉じると元に戻ります。
+どちらも今のターミナルの環境変数にファイルの場所を入れてから、テストを動かしています。ターミナルを閉じると元に戻ります。
 
 | 環境変数 | 内容 | 省略時 |
 |---|---|---|
@@ -180,7 +181,7 @@ npm test
 
 ### 一部だけ動かす
 
-`npm test` は全部を動かします（コンパイルして `node --test out/test/**/*.test.js`）。直している間は、1 つのファイルだけにします。
+`npm test` は全部を動かします（コンパイルして `node --test out/test/**/*.test.js`）。直している間は 1 つのファイルだけにします。
 
 ```text
 npm run compile
@@ -198,7 +199,7 @@ node --test --test-name-pattern "PRE" out/test/asm.test.js
 
 ### VS Code なしのテスト
 
-拡張のテストは、VS Code を起動せずに Node.js の `node:test` だけで動きます。`dap.test` は、アダプターが使うところだけを持つ偽の `vscode` を、モジュールの読み込みを差し替えて渡します。
+拡張のテストは VS Code を起動せずに Node.js の `node:test` だけで動きます。`dap.test` は、アダプターが使うところだけを持つ偽の `vscode` を、モジュールの読み込みを差し替えて渡します。
 
 | 使う偽物 | 中身 |
 |---|---|
@@ -211,11 +212,11 @@ node --test --test-name-pattern "PRE" out/test/asm.test.js
 
 ### 入門の例題
 
-`Samples/Assembler/Tutorial/` の `*.e500test.json` は、拡張を入れた VS Code のテスト エクスプローラーで実行できます。ゲームのサンプル（`StarCatch`、`Meteor`、`NineBox`）と `Recipes` にもテストがあります。例題を直したら、マニュアルの本文も合わせます。
+`Samples/Assembler/Tutorial/` の `*.e500test.json` は拡張を入れた VS Code のテスト エクスプローラーで実行できます。ゲームのサンプル（`StarCatch`、`Meteor`、`NineBox`）と `Recipes` にもテストがあります。例題を直したら、マニュアルの本文も合わせます。
 
 ### アセンブラの実行ファイルのテスト
 
-`cli_smoke.py` は、作った `e500asm` を実際に起動して、次を確かめます。
+`cli_smoke.py` は作った `e500asm` を実際に起動して、次を確かめます。
 
 | 項目 | 例 |
 |---|---|
@@ -247,9 +248,12 @@ node --test --test-name-pattern "PRE" out/test/asm.test.js
 | `e500asm-<バージョン>-win-x64.zip` | `Cli/Program.cs`（`--version` と `--help`） |
 | `e500dasm-<バージョン>-win-x64.zip`、`E500Disassembler-<バージョン>-win-x64.zip` | 〃 |
 | `pc-e500-devtools-<バージョン>.vsix` | `package.json` |
+| npm の `pc-e500-tools`（コマンド `e500` とスキル） | `package.json`（拡張と同じ番号） |
 
 - .NET の実行ファイルは自己完結型で 1 つ 70〜120 MB あるため、リポジトリに入れず [Releases](https://github.com/litchi-gh/pc-e500_tools/releases) で配布します。
 - VSIX には `e500dbg`（フレームワーク依存）を入れます。`e500core.dll` と ROM は入れません。
+- `install.sh`（Linux、macOS）は、最新のリリースから名前の終わり（`.vsix`）で取ります。手順書は `main` の `install.sh` を実行するので、`main` に置きます。`--vsix`、`--emulator` で手元のファイルを使って試せます。VSIX は 1 つのリリースに 1 つだけ付け、拡張のないリリースを最新にしません。エミュレータも、`linux-x64.tar.gz`、`amd64.deb`、`osx-arm64.tar.gz`、`osx-x64.tar.gz` で終わる名前を使います。
+- npm の `pc-e500-tools` には、`out/`（テストを除く）、`inc/`、`skills/`、`schemas/`、LICENSE を入れます。`e500` は `out/cli/main.js`（先頭に `#!/usr/bin/env node`）です。`npm publish npm-dist/pc-e500-tools-<バージョン>.tgz` で公開します。`npx -y pc-e500-tools@latest setup` が置くスキルの入口は、本文を `guide` で読むので、公開したバージョンがすぐに全員に届きます。入口の文（`src/cli/skill.ts` の `stubText`）を変えたときだけ、`setup` をやり直してもらいます。
 - 拡張の変更は `CHANGELOG.md` に書きます。
 
 ### リポジトリに入れないもの
@@ -273,15 +277,35 @@ node --test --test-name-pattern "PRE" out/test/asm.test.js
 | `inc/` | INCLUDE ファイル |
 | `syntaxes/`、`snippets/`、`schemas/` | 色分け、スニペット、スキーマ |
 | `examples/` | サンプル |
-| `package.json`、`package.nls*.json`、README、CHANGELOG、LICENSE | − |
+| `package.json`、`package.nls*.json`、README、CHANGELOG、LICENSE、ThirdPartyNotices.txt | − |
+
+ドットエディタの文字入れのフォント（`media/lcd.js` の `FONT`）は SparkFun Electronics の 5 × 7 ドットのフォント（MIT）です。著作権の表示は `ThirdPartyNotices.txt` にあり、VSIX に入れます。本体の ROM の字形は入れません（ゲームの `text.inc` は、実行するときに本体の ROM から読みます）。
 
 ### 配布の前に
 
 1. バージョンの番号を、上の表の場所で上げる（`--help` の 1 行目にもある）。
 2. `CHANGELOG.md` の「未リリース」をバージョンにする。
 3. `Assembler\build.cmd`、`DisAssembler\build.cmd`。
-4. 拡張で `npm ci`、`npm test`、`npm run package`。
+4. 拡張で `npm ci`、`npm test`、`npm run package`、`npm run package:npm`。
 5. 別の環境（できれば VS Code を入れたばかりの PC）で、VSIX を入れて `F5` とテスト エクスプローラーを確かめる。
+
+### 公開する
+
+拡張は 3 か所に同じ VSIX を出し、npm には同じ番号のパッケージを出します。README と設定画面のリンクは GitHub の `main` を指すので、先に `main` に入れます。
+
+| 順番 | 出す先 | コマンド | 要るもの |
+|---|---|---|---|
+| 1 | GitHub の `main` | ブランチを `main` に入れて push する | − |
+| 2 | GitHub Releases | タグ `v<バージョン>` を付け、VSIX と EXE の ZIP を付けて出す | − |
+| 3 | Visual Studio Marketplace | `npx @vscode/vsce publish --packagePath pc-e500-devtools-<バージョン>.vsix` | 発行者 `litchi-gh` のアクセストークン（環境変数 `VSCE_PAT`） |
+| 4 | Open VSX | `npx ovsx publish pc-e500-devtools-<バージョン>.vsix` | 名前空間 `litchi-gh` のアクセストークン（環境変数 `OVSX_PAT`） |
+| 5 | npm | `npm publish npm-dist/pc-e500-tools-<バージョン>.tgz` | `npm login` |
+
+- 発行者の ID は `litchi-gh` です。拡張の ID は `litchi-gh.pc-e500-devtools` で、変えると別の拡張になり、入れている人に更新が届きません。
+- Open VSX は、最初の 1 回だけ `npx ovsx create-namespace litchi-gh` で名前空間を作ります。
+- アクセストークンはリポジトリやファイルに書かず、そのときだけ環境変数で渡します。
+- 出したら、`code --install-extension litchi-gh.pc-e500-devtools` と `npx -y pc-e500-tools@latest guide` で、出したバージョンが入ることを確かめます。
+- 同じバージョンの番号は二度と出せません。直すときは番号を上げます。
 
 ## 9.6 よくある失敗
 

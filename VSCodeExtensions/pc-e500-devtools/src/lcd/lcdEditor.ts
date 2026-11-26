@@ -16,6 +16,9 @@ class LcdDocument implements vscode.CustomDocument {
   readonly disposables: vscode.Disposable[] = [];
   /** Saving is writing the file: the watcher has nothing new to tell. */
   saving = false;
+  /** Counts the times the file was read again. */
+  generation = 0;
+  reload: () => Promise<void> = async () => undefined;
 
   constructor(readonly uri: vscode.Uri) { this.picture = new LcdPicture(uri.path); }
 
@@ -31,11 +34,9 @@ export class LcdEditorProvider implements vscode.CustomEditorProvider<LcdDocumen
 
   async openCustomDocument(uri: vscode.Uri, open: vscode.CustomDocumentOpenContext): Promise<LcdDocument> {
     const document = new LcdDocument(uri);
-    document.picture.load(await vscode.workspace.fs.readFile(uri));
-    if (open.backupId) {
-      const backup = await readFile(vscode.Uri.parse(open.backupId));
-      if (backup?.length === WIDTH * HEIGHT) document.picture.dots = Uint8Array.from(backup);
-    }
+    // A backup goes with the file it was made of: when that has changed since, saving asks.
+    const backup = open.backupId ? await readFile(vscode.Uri.parse(open.backupId)) : undefined;
+    if (!backup || !document.picture.restore(Buffer.from(backup).toString("utf8"))) document.picture.load(await vscode.workspace.fs.readFile(uri));
     // Made again by a build: shown again, unless it is being edited (saving asks then).
     const watcher = vscode.workspace.createFileSystemWatcher(new vscode.RelativePattern(vscode.Uri.joinPath(uri, ".."), path.basename(uri.path)));
     const reload = async (): Promise<void> => {
@@ -43,8 +44,10 @@ export class LcdEditorProvider implements vscode.CustomEditorProvider<LcdDocumen
       const bytes = await readFile(uri);
       if (document.saving || bytes === undefined || document.picture.isDisk(bytes) || document.picture.dirty) return;
       document.picture.load(bytes);
+      document.generation++;
       this.show(document);
     };
+    document.reload = reload;
     document.disposables.push(watcher, watcher.onDidChange(reload), watcher.onDidCreate(reload));
     return document;
   }
@@ -81,7 +84,14 @@ export class LcdEditorProvider implements vscode.CustomEditorProvider<LcdDocumen
     if (picture.wrongSize !== undefined || data.length !== picture.dots.length) return;
     const before = picture.dots, after = Uint8Array.from(data, d => (d ? 1 : 0));
     if (before.every((d, i) => d === after[i])) return;
-    const set = (dots: Uint8Array): void => { picture.dots = Uint8Array.from(dots); this.show(document); };
+    const generation = document.generation;
+    const set = (dots: Uint8Array): void => {
+      picture.dots = Uint8Array.from(dots);
+      if (generation !== document.generation) picture.forgetDisk();
+      this.show(document);
+      // Clean again: what the file has become meanwhile is shown.
+      void document.reload();
+    };
     picture.dots = after;
     this.show(document, undefined, from);
     this.changed.fire({ document, label, undo: () => set(before), redo: () => set(after) });
@@ -89,7 +99,7 @@ export class LcdEditorProvider implements vscode.CustomEditorProvider<LcdDocumen
 
   async saveCustomDocument(document: LcdDocument): Promise<void> {
     const picture = document.picture;
-    if (picture.wrongSize !== undefined) return;
+    if (picture.wrongSize !== undefined) throw new Error(L("LCD の画面ではないので保存できません。", "It is not an LCD picture and cannot be saved."));
     const now = await readFile(document.uri);
     if (now !== undefined && !picture.isDisk(now)) await mayOverwrite(document.uri);
     const at = (p: string): vscode.Uri => document.uri.with({ path: p });
@@ -112,13 +122,14 @@ export class LcdEditorProvider implements vscode.CustomEditorProvider<LcdDocumen
   }
 
   async revertCustomDocument(document: LcdDocument): Promise<void> {
+    document.generation++;
     document.picture.load(await vscode.workspace.fs.readFile(document.uri));
     this.show(document);
   }
 
   async backupCustomDocument(document: LcdDocument, context: vscode.CustomDocumentBackupContext): Promise<vscode.CustomDocumentBackup> {
     await vscode.workspace.fs.createDirectory(vscode.Uri.joinPath(context.destination, ".."));
-    await vscode.workspace.fs.writeFile(context.destination, document.picture.dots);
+    await vscode.workspace.fs.writeFile(context.destination, Buffer.from(document.picture.backup(), "utf8"));
     return { id: context.destination.toString(), delete: () => { void vscode.workspace.fs.delete(context.destination).then(undefined, () => undefined); } };
   }
 }

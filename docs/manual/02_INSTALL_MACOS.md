@@ -1,6 +1,6 @@
 # 2. インストールと設定（macOS）
 
-この章は、macOS でツールを入れて、使える状態にするまでを説明します。上から順に、必要な所だけ進めてください。どのコマンドにも、「何をするコマンドか」「うまくいくと何が表示されるか」を付けました。
+この章は macOS でツールを入れて、使える状態にするまでを説明します。上から順に必要な所だけ進めてください。どのコマンドにも「何をするコマンドか」「うまくいくと何が表示されるか」を付けました。
 
 Windows の人は[こちら](02_INSTALL_WINDOWS.md)、Linux の人は[こちら](02_INSTALL_LINUX.md)を読んでください。何を入れればよいか分からないときは、[2.2 何を入れるか](02_INSTALL.md#22-何を入れるか)の表で選べます。入れた後の使い方は [25 章](25_COMMAND_LINE_MACOS.md)にあります。
 
@@ -9,9 +9,9 @@ Windows の人は[こちら](02_INSTALL_WINDOWS.md)、Linux の人は[こちら]
 | 節 | 内容 |
 |---|---|
 | [2.1](#21-始める前に) | 動作環境、ターミナルと、この章の書き方 |
-| [2.2](#22-必要なものを入れる) | Node.js、.NET 10 など |
-| [2.3](#23-拡張機能コマンド-e500を入れる) | VS Code と拡張機能、コマンド `e500` |
-| [2.4](#24-エミュレータと-rom-を置く) | エミュレータと ROM |
+| [2.2](#22-必要なものを入れる) | 1 行でまとめて入れる |
+| [2.3](#23-拡張機能コマンド-e500を入れる) | VS Code の拡張機能 |
+| [2.4](#24-エミュレータと-rom-を置く) | ROM を置く |
 | [2.5](#25-e500asme500dasm-を作る) | ソースから作るツール |
 | [2.6](#26-どこからでも使えるようにする) | PATH |
 | [2.7](#27-更新とアンインストール) | 新しくする、消す |
@@ -27,112 +27,94 @@ Windows の人は[こちら](02_INSTALL_WINDOWS.md)、Linux の人は[こちら]
 | CPU | Apple シリコンか Intel |
 | メモリ | 4 GB 以上を推奨 |
 | VS Code | 1.95 以降（VS Code を使うとき） |
-| Node.js | 20.12 以降 |
-| .NET | `e500 run`、`e500 test` は .NET 10 ランタイム、ソースから作るなら .NET 10 SDK |
+| Node.js | 20.12 以降。なければ `install.sh` が入れる |
+| .NET | `e500 run`、`e500 test` は .NET 10 ランタイム（なければ `install.sh` が入れる）、ソースから作るなら .NET 10 SDK |
 | ディスク | VS Code 500 MB まで、エミュレータの `.tar.gz` は約 30 MB |
 
 編集、診断、ドットエディタ、コマンドでの実行とテストが使えます。VS Code の `F5`（実行、デバッグ）とテスト、`E500Disassembler`（画面）は Windows 専用です。
 
 ### この章の書き方
 
-コマンドは **ターミナル**（「アプリケーション」→「ユーティリティ」）に打ちます。`%` で終わる表示（プロンプト）の右に打って、`return` を押します。プロンプト自体は打ちません。
+コマンドはターミナル（「アプリケーション」→「ユーティリティ」）に打ちます。`%` で終わる表示（プロンプト）の右に打って、`return` を押します。プロンプト自体は打ちません。
 
 | この章での書き方 | 意味 |
 |---|---|
 | `~` | 自分のホームフォルダ（`/Users/名前`） |
 | `~/pockecom` | ツールを置くフォルダの例。好きな場所に変えてよい |
-| `<バージョン>` | `0.3.0` などに読み替える |
+| `<バージョン>` | `0.1.0` などに読み替える |
 
 macOS で使えるのは、VS Code での編集、診断、ドットエディタと、コマンドでのアセンブル、逆アセンブル、文法チェック、BIN の作成、ファイル変換、エミュレータでの実行とテスト（`e500 run`、`e500 test`）です。VS Code の中からの実行とデバッグ（`F5`）は Windows で行います。
 
 ## 2.2 必要なものを入れる
 
+次の 1 行で要るものがまとめて入ります。新しくするときも、同じ行をもう一度実行します（ROM と、自分で作ったプログラムはそのまま残ります）。
+
 ```sh
-xcode-select --install
+curl -fsSL https://raw.githubusercontent.com/litchi-gh/pc-e500_tools/main/install.sh | sh
 ```
 
-Apple の「コマンドラインツール」を入れるコマンドです。`git`（リポジトリを取ってくる）が使えるようになります。画面に出る「インストール」を押して、終わるのを待ちます。既に入っていれば、その旨のメッセージが出るだけです。
-
-残りは、次のページからインストーラー（`.pkg`）を取って実行します。Apple シリコンの Mac は Arm64、Intel の Mac は x64 を選びます。
-
-| 入れるもの | ページ | 何に使うか |
-|---|---|---|
-| Node.js（20.12 以降、LTS） | [nodejs.org](https://nodejs.org/) | コマンド `e500` を動かす |
-| .NET 10 **SDK** | [.NET のダウンロード](https://dotnet.microsoft.com/download/dotnet/10.0) | `e500 run` と `e500 test`、`e500asm` と `e500dasm` を作る（どれも使わないなら要らない） |
-
-ターミナルを開き直して確かめます。
+`curl -fsSL アドレス` がインストール用のスクリプト `install.sh` を GitHub から取り、`| sh` がそれを実行します。オプションは `| sh -s -- --vscode` のように、`--` の後ろに書きます。中身を見てから実行したいときは、次のように分けます。
 
 ```sh
-git --version
-node --version
-dotnet --list-sdks
+curl -fsSL https://raw.githubusercontent.com/litchi-gh/pc-e500_tools/main/install.sh > install.sh
+less install.sh
+sh install.sh --vscode
+```
+
+| オプション | 意味 |
+|---|---|
+| `--rom ファイル` | 自分の ROM をエミュレータの `rom` フォルダにコピーする |
+| `--vscode` | VS Code がなければ入れる（「アプリケーション」に入る） |
+| `--no-emulator` | エミュレータと .NET を入れない（書く、変換するだけのとき） |
+| `--vsix ファイル`、`--emulator ファイル` | 取ってくる代わりに、手元の `.vsix`、`.tar.gz` を使う |
+
+| 入るもの | 場所 | 入れないとき |
+|---|---|---|
+| Node.js 22 | `~/pockecom/node` | 20.12 以降が既にある |
+| .NET 10 ランタイム | `~/pockecom/dotnet` | 10 が既にある |
+| コマンド `e500` と拡張機能の中身 | `~/pockecom/devtools` | − |
+| エミュレータ | `~/pockecom/Emulator`（ROM は `rom`） | − |
+| `e500` と打つためのファイル | `~/.local/bin/e500` | − |
+| VS Code の拡張機能 | VS Code の中 | VS Code がない |
+
+- `sudo` を付けずに実行します。自分のフォルダだけに入れるので、管理者の権限は要りません（Apple シリコンか Intel かは、スクリプトが調べます）。
+- `~/.local/bin` が PATH（コマンドを探すフォルダの一覧）になければ、`~/.zshrc` に 1 行足します。**新しいターミナルを開くと**、`e500` と打てるようになります。
+- `~/pockecom` を別の場所にするには、`POCKECOM_HOME=フォルダ sh install.sh` のように書きます。
+- 取ってくるものは、`e500`、エミュレータ、Node.js、.NET の公式の配布元からです。Node.js は配布元の SHA-256 と同じかを確かめます。
+
+入ったかどうかを確かめます。
+
+```sh
+e500 --version
+e500 check
 ```
 
 | コマンド | 何をするか | 正しいとき |
 |---|---|---|
-| `git --version` | Git のバージョンを表示する | `git version 2.…` |
-| `node --version` | Node.js のバージョンを表示する | `v20.12` 以上 |
-| `dotnet --list-sdks` | 入っている .NET の SDK を一覧にする | `10.` で始まる行がある |
+| `e500 --version` | `e500` を動かして、バージョンを表示する | `0.1.0` など |
+| `e500 check` | エミュレータと ROM を探し、一度起動してみる | `started:` の行が出る |
 
 ## 2.3 拡張機能（コマンド e500）を入れる
 
-[Releases](https://github.com/litchi-gh/pc-e500_tools/releases) から `pc-e500-devtools-<バージョン>.vsix` を取ります。以下は `~/Downloads` にあるとして書きます。
+`install.sh` は VS Code が入っていれば、拡張機能もその中に入れます。後から VS Code を入れたときは、VS Code の拡張機能の画面（`Cmd+Shift+X`）で「PC-E500」を探し、「PC-E500 開発ツール」（発行者 `litchi-gh`）を入れます。Visual Studio Marketplace にあります。`install.sh` をもう一度実行しても入ります。
 
-### A. VS Code を使うとき
-
-VS Code の拡張機能の画面（`Cmd+Shift+X`）で、右上の「…」→「VSIX からのインストール」を選び、ファイルを指定します。
-
-コマンドで入れるなら、先に VS Code で `Cmd+Shift+P` →「シェル コマンド: PATH 内に 'code' コマンドをインストールします」を 1 回実行して、次を打ちます。
-
-```sh
-code --install-extension ~/Downloads/pc-e500-devtools-0.3.0.vsix
-```
-
-VS Code に拡張機能を入れるコマンドです。`was successfully installed` と出れば入りました。実体は `~/.vscode/extensions/pokecom-tools.pc-e500-devtools-<バージョン>` に入り、`e500` はその中の `bin` にあります。
-
-### B. VS Code を使わないとき
-
-`.vsix` は ZIP と同じ形のファイルです。展開するだけで `e500` を使えます。
-
-```sh
-mkdir -p ~/pockecom/devtools
-cd ~/pockecom/devtools
-unzip -o ~/Downloads/pc-e500-devtools-0.3.0.vsix 'extension/*'
-sh extension/bin/e500 --version
-```
-
-| コマンド | 何をするか |
-|---|---|
-| `mkdir -p フォルダ` | フォルダを作る。`-p` は、途中のフォルダも作り、既にあってもエラーにしない |
-| `cd フォルダ` | 今いるフォルダを移す |
-| `unzip -o ファイル 'extension/*'` | `.vsix` の中の `extension` フォルダだけを取り出す。`-o` は、前のものがあれば聞かずに置き換える。`'…'` は、`*` をシェルに解釈させないため |
-| `sh extension/bin/e500 --version` | `e500` を動かして、バージョンを表示する。`0.3.0` のように出れば使える |
-
-どこからでも `e500` と打てるようにする方法は [25.2](25_COMMAND_LINE_MACOS.md#252-e500-を使えるようにする) にあります。
+`e500` は、`install.sh` が `~/pockecom/devtools` に入れたものを使います。VS Code の拡張機能の中の `e500` とは別なので、拡張機能だけを新しくしたときは、`install.sh` も実行します。
 
 ## 2.4 エミュレータと ROM を置く
 
-`e500 run` と `e500 test` を使うときだけ要ります。エミュレータの [Releases](https://github.com/litchi-gh/pc-e500_emulator_pockecom/releases) から macOS 版の `pokecom`（`libe500core.dylib` が入っているもの）を取ります。Apple シリコンの Mac は `osx-arm64`、Intel の Mac は `osx-x64` です。macOS 15 以降で使えます。
+エミュレータは `install.sh` が入れます。**ROM はツールに入っていません。** 自分の本体から吸い出したものを、次のどちらかで置きます。
 
 ```sh
-mkdir -p ~/pockecom
-tar xzf ~/Downloads/pokecom-<バージョン>-osx-arm64.tar.gz -C ~/pockecom
-xattr -dr com.apple.quarantine ~/pockecom/pokecom-<バージョン>-osx-arm64
-cp ~/Downloads/'PC-E500(7.2).ROM' ~/pockecom/pokecom-<バージョン>-osx-arm64/rom/
+cp ~/'PC-E500(7.2).ROM' ~/pockecom/Emulator/rom/
 ```
 
-| コマンド | 何をするか |
-|---|---|
-| `mkdir -p ~/pockecom` | 置き場所のフォルダを作る |
-| `tar xzf ファイル -C フォルダ` | `.tar.gz` を展開する。`x` は取り出す、`z` は gzip の圧縮を解く、`f` は次にファイル名を書くという意味。`-C` は取り出す場所 |
-| `xattr -dr com.apple.quarantine フォルダ` | ダウンロードしたファイルに macOS が付ける「実行の制限」の印を、フォルダの中の全部から外す。Apple の公証を受けていないファイルなので要る |
-| `cp 元 先` | ファイルをコピーする。ここでは自分の ROM を `rom` フォルダに入れる。名前の `( )` はシェルの記号なので `'…'` で囲む |
-
-エミュレータの場所は、環境変数 `PCE500_EMULATOR` で `e500` に教えます（[25.3](25_COMMAND_LINE_MACOS.md#253-エミュレータを教える)）。
+`cp 元 先` はファイルをコピーするコマンドです。名前の `( )` はシェルの記号なので `'…'` で囲みます。インストールするときなら、`--rom ~/'PC-E500(7.2).ROM'` を付けても同じです。
 
 ## 2.5 e500asm、e500dasm を作る
 
 `e500` があれば、アセンブルと逆アセンブルはできます。Node.js なしで使いたいときに作ります。
+
+`git` は `xcode-select --install`（Apple のコマンドラインツール）、.NET 10 **SDK** は[.NET のページ](https://dotnet.microsoft.com/download/dotnet/10.0)の `.pkg` で、先に入れておきます。
 
 ```sh
 mkdir -p ~/pockecom
@@ -183,16 +165,16 @@ source ~/.zshrc
 
 | すること | 方法 |
 |---|---|
-| 新しくする | 新しい VSIX を「VSIX からのインストール」で入れ、「開発者: ウィンドウの再読み込み」 |
+| 新しくする | [2.2](#22-必要なものを入れる) の 1 行をもう一度実行し、「開発者: ウィンドウの再読み込み」 |
 | バージョンを確かめる | 拡張機能の画面で「PC-E500 開発ツール」を開く |
 | 消す | 拡張機能の画面の「アンインストール」 |
 | 設定を消す | 設定画面で「PC-E500」を探し、歯車から「設定をリセット」 |
 
-コマンドで消すときは `code --uninstall-extension pokecom-tools.pc-e500-devtools` です。VS Code から、その名前の拡張機能を取り除きます。
+コマンドで消すときは `code --uninstall-extension litchi-gh.pc-e500-devtools` です。VS Code からその名前の拡張機能を取り除きます。
 
-拡張機能を新しくすると、フォルダの名前のバージョンが変わります。`~/.local/bin/e500` に VS Code の拡張機能の場所を書いたときは、その中のバージョンも直します（[25.2](25_COMMAND_LINE_MACOS.md#252-e500-を使えるようにする)）。
+Marketplace に出る前の VSIX（名前が `pokecom-tools.pc-e500-devtools`）を入れていた場合は、`code --uninstall-extension pokecom-tools.pc-e500-devtools` で消してから入れ直します。発行者が変わったので、VS Code は別の拡張機能として扱います。設定はそのまま使えます。
 
-以前の「Pocket BASIC / ASM Linter」を使っていた場合は、アンインストールしてください。設定（`pocketBasic.*`、`pocketAsm.*`、`pocketE500.*`）は、新しい拡張機能が最初に動いたときに `pcE500.*` へコピーします。`launch.json` の `"type": "pocket-e500"` は `"pc-e500"` に書き換えます。
+以前の「Pocket BASIC / ASM Linter」を使っていた場合は、アンインストールしてください。設定（`pocketBasic.*`、`pocketAsm.*`、`pocketE500.*`）は、新しい拡張機能が最初に動いたときに `pcE500.*` へコピーします。`launch.json` の `"type": "pocket-e500"` は自分で `"pc-e500"` に書き換えます。
 
 ### コマンドのツール
 
@@ -202,9 +184,9 @@ git pull
 sh Assembler/build.sh && sh DisAssembler/build.sh
 ```
 
-`git pull` は、GitHub にある新しい変更を取ってきて、手元に反映します。`&&` は「前が成功したら次を実行する」という意味で、途中で失敗したらそこで止まります。[2.3 の B](#b-vs-code-を使わないとき) で展開した `e500` は、新しい `.vsix` でもう一度 `unzip -o` を実行します。
+`git pull` は GitHub にある新しい変更を取ってきて、手元に反映します。`&&` は「前が成功したら次を実行する」という意味で、途中で失敗したらそこで止まります。`e500` とエミュレータは [2.2](#22-必要なものを入れる) の 1 行をもう一度実行すると新しくなります。
 
-消すときは、`~/pockecom` を消し、`~/.zshrc` に足した行を消します。
+消すときは、`~/pockecom` と `~/.local/bin/e500` を消し、`~/.zshrc` に足した行を消します。**`~/pockecom/Emulator/rom` の ROM は、先に別の場所へ移してください。**
 
 ## 2.8 確かめる順番
 

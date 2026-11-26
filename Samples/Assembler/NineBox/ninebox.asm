@@ -146,13 +146,14 @@ title_tick:
 exit_game:
         ; Wait for ON/BRK release before re-enabling the ROM interrupt handler.
         MV ($F0),0
-        MV ($F1),8
+        AND ($F1),$F0
+        OR ($F1),8
 exit_release:
         MV A,($F2)
         TEST A,2
         JRNZ exit_release
         MV ($F0),0
-        MV ($F1),0
+        AND ($F1),$F0
         MV I,208
         MVL ($20),[saved_scratch]
         ; IOCS may modify scratch: preserve it again after clearing the LCD.
@@ -586,7 +587,7 @@ poll_io:
         INC (tick_pending)
 poll_keys:
         MV (key_now),0
-        MV ($F1),0
+        AND ($F1),$F0
         MV ($F0),8
         NOP
         MV A,($F2)
@@ -635,14 +636,16 @@ key_row1:
         OR (key_now),CWKEY
 key_row10:
         MV ($F0),0
-        MV ($F1),4
+        AND ($F1),$F0
+        OR ($F1),4
         NOP
         MV A,($F2)
         TEST A,1
         JRZ key_quit
         OR (key_now),PAUSEKEY
 key_quit:
-        MV ($F1),8
+        AND ($F1),$F0
+        OR ($F1),8
         NOP
         MV A,($F2)
         TEST A,2
@@ -650,7 +653,7 @@ key_quit:
         MV (quit_flag),1
 key_finish:
         MV ($F0),0
-        MV ($F1),0
+        AND ($F1),$F0
         MV A,(key_prev)
         XOR A,255
         AND A,(key_now)

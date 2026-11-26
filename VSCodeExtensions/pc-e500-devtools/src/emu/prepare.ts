@@ -21,7 +21,7 @@ export async function startMachine(config: MachineConfig, log: (text: string) =>
     log(L(`ROM Ver.${info.romVersion}（${info.romKB}KB）、内蔵 RAM ${info.internalKB}KB`, `ROM Ver.${info.romVersion} (${info.romKB}KB), internal RAM ${info.internalKB}KB`));
     if (config.state) {
       await client.loadStateFile(config.state);
-      log(L(`状態ファイルから開始: ${config.state}`, `Started from the state file: ${config.state}`));
+      log(L(`状態ファイルから開始: ${config.state}（内蔵 RAM ${client.info!.internalKB}KB）`, `Started from the state file: ${config.state} (internal RAM ${client.info!.internalKB}KB)`));
     } else {
       await client.boot();
       log(L("初期化して BASIC の RUN モードにしました。", "Initialized and put BASIC in RUN mode."));

@@ -2,9 +2,11 @@
 rem The extension from a command line. Runs on Node.js, or on the one inside VS Code.
 rem The arguments stay out of ( ) blocks: a parenthesis in one would end the block.
 setlocal
-where node >nul 2>nul
-if errorlevel 1 goto vscode
-node "%~dp0..\out\cli\main.js" %*
+rem node.exe of PATH, and not of the folder one happens to be in.
+set "E500_NODE="
+for %%I in (node.exe) do set "E500_NODE=%%~$PATH:I"
+if not defined E500_NODE goto vscode
+"%E500_NODE%" "%~dp0..\out\cli\main.js" %*
 exit /b %errorlevel%
 
 :vscode

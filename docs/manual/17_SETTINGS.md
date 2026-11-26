@@ -1,6 +1,6 @@
 # 17. 設定とコマンド
 
-この章は、VS Code 拡張のすべての設定、コマンド、キー、`launch.json` の項目を並べた一覧です。ふつうに使うだけなら、決めるのは**エミュレータのフォルダ**の 1 つだけで、ほかは初めの値のままでかまいません。機種を切り替える、複数人で同じ設定を使う、実行の仕方を細かく決める、といったときに引いてください。
+この章は VS Code 拡張のすべての設定、コマンド、キー、`launch.json` の項目を並べた一覧です。ふつうに使うだけなら、決めるのはエミュレータのフォルダ（`pcE500.emulatorPath`）の 1 つだけで、ほかは初めの値のままでかまいません。機種を切り替える、複数人で同じ設定を使う、実行の仕方を細かく決める、といったときに引いてください。
 
 [目次へ戻る](README.md)
 
@@ -91,13 +91,13 @@ VS Code の標準のキーを使います。
 | `Ctrl+Shift+M` | 問題 |
 | `Ctrl+Shift+U` | 出力 |
 
-`F5` などは「キーボード ショートカット」（`Ctrl+K Ctrl+S`）で変えられます。コマンドの ID は `pcE500.debugFile`、`pcE500.runFile`、`pcE500.makeBin`、`pcE500.assemble`、`pcE500.newProgram`、`pcE500.newPicture`、`pcE500.copyIncludes`、`pcE500.openEmulator`、`pcE500.openDebugger`、`pcE500.checkSetup`、`pcE500.openAsBasic`、`pcE500.openAsAsm` です。
+`F5` などは「キーボード ショートカット」（`Ctrl+K Ctrl+S`）で変えられます。コマンドの ID は `pcE500.debugFile`、`pcE500.runFile`、`pcE500.makeBin`、`pcE500.assemble`、`pcE500.newProgram`、`pcE500.newPicture`、`pcE500.copyIncludes`、`pcE500.placeSkill`、`pcE500.openEmulator`、`pcE500.openDebugger`、`pcE500.checkSetup`、`pcE500.openAsBasic`、`pcE500.openAsAsm` です。
 
 ## 17.4 launch.json
 
-`F5` は、`launch.json` がなくても、開いているファイルを動かします。決まったアドレスから始める、レジスタに値を入れて呼ぶ、決まった ROM で動かす、のように条件を変えたいときに `launch.json` を作ると、条件に名前を付けて選べるようになります。
+`F5` は `launch.json` がなくても、開いているファイルを動かします。決まったアドレスから始める、レジスタに値を入れて呼ぶ、決まった ROM で動かす、のように条件を変えたいときに `launch.json` を作ると、条件に名前を付けて選べるようになります。
 
-なくても動きます。動かし方を変えたいときに作ります。「実行とデバッグ」の歯車か、`.vscode/launch.json` を書きます。
+なくても動きます。動かし方を変えたいときに作ります。「実行とデバッグ」の歯車から作るか、`.vscode/launch.json` を書きます。
 
 ```jsonc
 {
@@ -239,7 +239,7 @@ VS Code の表示言語が日本語なら日本語、それ以外は英語です
 
 ## 17.10 定数で作り分ける
 
-条件付きアセンブルはありませんが、`defines` の定数と式で、値を切り替えられます。
+条件付きアセンブルはありませんが、`defines` の定数と式で値を切り替えられます。
 
 ```asm
 WAIT_T  EQU   3-DEBUG*2         ; DEBUG = 1 なら 1、0 なら 3

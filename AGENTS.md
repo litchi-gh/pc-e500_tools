@@ -4,7 +4,7 @@ SHARP PC-E500 シリーズ（CPU は SC62015）のプログラムを PC で作�
 
 ## プログラムを書くとき
 
-スキル [VSCodeExtensions/pc-e500-devtools/skills/pc-e500/SKILL.md](VSCodeExtensions/pc-e500-devtools/skills/pc-e500/SKILL.md) を先に読んでください。`.asm`、`.bas`、`*.e500test.json`、`.lcd`、`.spr` を扱う作業はすべて対象です。書いたものは、必ず `e500 lint`、`e500 run`、`e500 test` で確かめます。
+スキル [skills/pc-e500/SKILL.md](skills/pc-e500/SKILL.md) を先に読んでください。`.asm`、`.bas`、`*.e500test.json`、`.lcd`、`.spr` を扱う作業はすべて対象です。書いたものは、必ず `e500 lint`、`e500 run`、`e500 test` で確かめます。
 
 ```text
 VSCodeExtensions/pc-e500-devtools/bin/e500 check
@@ -20,8 +20,9 @@ VSCodeExtensions/pc-e500-devtools/bin/e500 test Samples
 | `VSCodeExtensions/pc-e500-devtools` | VS Code 拡張、コマンド `e500`（TypeScript）、`server/`（C#） | `npx tsc -p ./`、`npm run build:server`、`node --test out/test/*.test.js` |
 | `Assembler` | `e500asm`（C#） | `Assembler/tests` |
 | `DisAssembler` | `e500dasm`、`E500Disassembler`（C#） | `DisAssembler/tests` |
+| `skills` | AI 用のスキル（VSIX には写しを入れる） | `node --test out/test/cli.test.js` |
 | `Samples` | サンプル（アセンブラのものはテスト付き。`Basics` を除く） | `e500 test Samples` |
-| `docs` | `handbook`（本体）、`manual`（ツール）、`analysis`（解析）、`design`（設計） | リンク、Mermaid |
+| `docs` | `handbook`（本体）、`manual`（ツール）、`analysis`（解析）、`design`（設計） | リンク、Mermaid。ファイル名や見出しを変えたら `node --test out/test/cli.test.js`（スキルの参照） |
 
 設計と、どこを直せばよいかは [docs/design](docs/design/README.md)、ビルドと配布は [docs/design/09_BUILD_TEST_RELEASE.md](docs/design/09_BUILD_TEST_RELEASE.md) にあります。
 

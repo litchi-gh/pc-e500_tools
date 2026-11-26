@@ -19,6 +19,7 @@ describe("assembler invocation", () => {
   it("refuses an argument that could end the quoting", () => {
     assert.throws(() => assemblerInvocation("e500asm.bat", ['a"&calc&"b.asm']));
     assert.throws(() => assemblerInvocation("e500asm.cmd", ["a\nb.asm"]));
+    assert.throws(() => assemblerInvocation("e500asm.cmd", ["-D", "X%CMDCMDLINE:~-1%&calc&rem =1"]));
   });
 
   it("does not run commands hidden in file names", { skip: process.platform !== "win32" }, () => {

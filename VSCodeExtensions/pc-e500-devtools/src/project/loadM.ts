@@ -1,5 +1,6 @@
 // The file LOAD M reads: a 16-byte header and the bytes, as SAVE M and
 // e500asm -f ce140f write it, and what to type on the PC-E500 for it.
+import * as fs from "node:fs";
 import * as path from "node:path";
 import { hex5, Program } from "../emu/program";
 
@@ -30,6 +31,14 @@ export function isProgramName(name: string): boolean {
 export function binName(source: string): string {
   const name = path.basename(source, path.extname(source)).toUpperCase().replace(/[^A-Z0-9_]/g, "").slice(0, 8);
   return (!name || RESERVED.test(name) ? "PROGRAM" : name) + ".BIN";
+}
+
+/** The other sources of a folder whose output gets the same name (Japanese names, or ones alike in their first eight characters). */
+export function sharesName(source: string, nameOf: (file: string) => string): string[] {
+  const kind = path.extname(source).toLowerCase(), own = path.basename(source), name = nameOf(source);
+  try {
+    return fs.readdirSync(path.dirname(path.resolve(source))).filter(f => f.toLowerCase() !== own.toLowerCase() && path.extname(f).toLowerCase() === kind && nameOf(f) === name && f.toUpperCase() !== name);
+  } catch { return []; }
 }
 
 /** What to type: the machine-code area to reserve first (internal RAM of this size), the LOAD M and the CALL. */

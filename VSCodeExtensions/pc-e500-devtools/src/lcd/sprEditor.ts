@@ -22,18 +22,36 @@ class SprDocument implements vscode.CustomDocument {
   readonly panels = new Set<vscode.Webview>();
   readonly disposables: vscode.Disposable[] = [];
   saving = false;
+  /** Counts the times the file was read again. */
+  generation = 0;
+  /** What is shown is from before that: saving asks. */
+  stale = false;
+  reload: () => Promise<void> = async () => undefined;
 
   constructor(readonly uri: vscode.Uri) {}
+
+  restore(text: string): boolean {
+    try {
+      const kept = JSON.parse(text) as SentSprite & { disk: string };
+      const sprite = fromMessage(kept);
+      if (!isSprite(sprite)) return false;
+      this.load(Uint8Array.from(Buffer.from(kept.disk, "base64")));
+      if (this.wrongSize !== undefined) return false;
+      this.sprite = sprite;
+      return true;
+    } catch { return false; }
+  }
 
   load(bytes: Uint8Array): void {
     const sprite = decodeSpr(bytes);
     this.disk = Uint8Array.from(bytes);
+    this.stale = false;
     this.wrongSize = sprite ? undefined : bytes.length;
     if (sprite) this.sprite = this.saved = sprite;
   }
 
   get dirty(): boolean { return !sameSprite(this.sprite, this.saved); }
-  isDisk(bytes: Uint8Array): boolean { return bytes.length === this.disk.length && bytes.every((b, i) => b === this.disk[i]); }
+  isDisk(bytes: Uint8Array): boolean { return !this.stale && bytes.length === this.disk.length && bytes.every((b, i) => b === this.disk[i]); }
   dispose(): void { this.disposables.forEach(d => d.dispose()); }
 }
 
@@ -46,22 +64,19 @@ export class SprEditorProvider implements vscode.CustomEditorProvider<SprDocumen
 
   async openCustomDocument(uri: vscode.Uri, open: vscode.CustomDocumentOpenContext): Promise<SprDocument> {
     const document = new SprDocument(uri);
-    document.load(await vscode.workspace.fs.readFile(uri));
-    if (open.backupId) {
-      const backup = await readFile(vscode.Uri.parse(open.backupId));
-      try {
-        const kept = fromMessage(JSON.parse(Buffer.from(backup ?? []).toString("utf8")) as SentSprite);
-        if (isSprite(kept)) document.sprite = kept;
-      } catch { /* the file as it is */ }
-    }
+    // A backup goes with the file it was made of: when that has changed since, saving asks.
+    const backup = open.backupId ? await readFile(vscode.Uri.parse(open.backupId)) : undefined;
+    if (!backup || !document.restore(Buffer.from(backup).toString("utf8"))) document.load(await vscode.workspace.fs.readFile(uri));
     const watcher = vscode.workspace.createFileSystemWatcher(new vscode.RelativePattern(vscode.Uri.joinPath(uri, ".."), path.basename(uri.path)));
     const reload = async (): Promise<void> => {
       if (document.saving) return;
       const bytes = await readFile(uri);
       if (document.saving || bytes === undefined || document.isDisk(bytes) || document.dirty) return;
       document.load(bytes);
+      document.generation++;
       this.show(document);
     };
+    document.reload = reload;
     document.disposables.push(watcher, watcher.onDidChange(reload), watcher.onDidCreate(reload));
     return document;
   }
@@ -99,14 +114,21 @@ export class SprEditorProvider implements vscode.CustomEditorProvider<SprDocumen
       if (!sameSprite(got, after)) this.show(document, from);
       return;
     }
-    const set = (s: Sprite): void => { document.sprite = s; this.show(document); };
+    const generation = document.generation;
+    const set = (s: Sprite): void => {
+      document.sprite = s;
+      if (generation !== document.generation) document.stale = true;
+      this.show(document);
+      // Clean again: what the file has become meanwhile is shown.
+      void document.reload();
+    };
     document.sprite = after;
     this.show(document, undefined, sameSprite(got, after) ? from : undefined);
     this.changed.fire({ document, label, undo: () => set(before), redo: () => set(after) });
   }
 
   async saveCustomDocument(document: SprDocument): Promise<void> {
-    if (document.wrongSize !== undefined) return;
+    if (document.wrongSize !== undefined) throw new Error(L("キャラクタ（.spr）ではないので保存できません。", "It is not a sprite (.spr) and cannot be saved."));
     const now = await readFile(document.uri);
     if (now !== undefined && !document.isDisk(now)) await mayOverwrite(document.uri);
     const sprite = document.sprite, bytes = encodeSpr(sprite);
@@ -114,6 +136,7 @@ export class SprEditorProvider implements vscode.CustomEditorProvider<SprDocumen
     try {
       await vscode.workspace.fs.writeFile(document.uri, bytes);
       document.disk = bytes;
+      document.stale = false;
       document.saved = sprite;
     } finally {
       document.saving = false;
@@ -125,13 +148,14 @@ export class SprEditorProvider implements vscode.CustomEditorProvider<SprDocumen
   }
 
   async revertCustomDocument(document: SprDocument): Promise<void> {
+    document.generation++;
     document.load(await vscode.workspace.fs.readFile(document.uri));
     this.show(document);
   }
 
   async backupCustomDocument(document: SprDocument, context: vscode.CustomDocumentBackupContext): Promise<vscode.CustomDocumentBackup> {
     await vscode.workspace.fs.createDirectory(vscode.Uri.joinPath(context.destination, ".."));
-    await vscode.workspace.fs.writeFile(context.destination, Buffer.from(JSON.stringify(toMessage(document.sprite)), "utf8"));
+    await vscode.workspace.fs.writeFile(context.destination, Buffer.from(JSON.stringify({ ...toMessage(document.sprite), disk: Buffer.from(document.disk).toString("base64") }), "utf8"));
     return { id: context.destination.toString(), delete: () => { void vscode.workspace.fs.delete(context.destination).then(undefined, () => undefined); } };
   }
 }

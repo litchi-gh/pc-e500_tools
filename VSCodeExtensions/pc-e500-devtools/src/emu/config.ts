@@ -22,7 +22,8 @@ function expand(value: string, scope?: vscode.Uri): string {
 
 /** Where things are looked for: PATH, the installed places, the workspace. */
 export function workspacePlaces(): Places {
-  return places((vscode.workspace.workspaceFolders ?? []).map(f => f.uri.fsPath));
+  // Nothing of a folder that is not trusted is offered: it would be run at once.
+  return places(vscode.workspace.isTrusted === false ? [] : (vscode.workspace.workspaceFolders ?? []).map(f => f.uri.fsPath));
 }
 
 /** The emulator's folder: the setting, or one on PATH or installed. */

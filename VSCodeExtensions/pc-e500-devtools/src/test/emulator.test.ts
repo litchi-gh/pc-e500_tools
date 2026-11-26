@@ -52,7 +52,7 @@ describe("emulator (e500dbg)", { skip: available ? false : "e500dbg, e500core.dl
     await client.loadState(base);
     const program = build("        ORG &BE000\nstart:  MV A,0\n        MV IL,10\nloop:   ADD A,IL\n        DEC IL\n        JRNZ loop\n        RET\n");
     await loadProgram(client, program);
-    const line = program.codeAtOrAfter(program.file, 6)!;
+    const line = program.codeAtOrAfter(program.file, 6)[0];
     assert.equal(line.address, 0xbe00a);
     await client.breakpoints([line.address]);
     await client.call(program.entry(), false);
@@ -174,12 +174,106 @@ describe("emulator (e500dbg)", { skip: available ? false : "e500dbg, e500core.dl
     await inspector.set("X", "data+1");
     assert.match(await inspector.evaluate("X"), /^BEC08h/);
     await inspector.set("BP", "55h");
-    assert.match(await inspector.evaluate("(BP)"), /^55h/);
+    assert.match(await inspector.evaluate("BP"), /^55h/);
+    // What it points at, as the assembler reads it.
+    await inspector.set("(BP)", "ABh");
+    await inspector.set("(BP+1)", "CDh");
+    assert.match(await inspector.evaluate("($55):2"), /^CDABh/);
+    await inspector.set("[data]", "01 02 03");
+    await inspector.set("[data+3]", "\"AB\"");
+    assert.deepEqual([...await client.read(0xbec07, 5)], [1, 2, 3, 0x41, 0x42]);
     assert.deepEqual([(await inspector.watch("X")).edit, (await inspector.watch("[data]")).edit, (await inspector.watch("data")).edit], ["asm", "memory", undefined]);
     await assert.rejects(inspector.set("data", "1"), /\[data\]/);
     await client.continue(0);
     await assert.rejects(inspector.set("X", "1"), /止めているとき/);
     await client.pause();
+  });
+
+  it("goes on running after RESET, and says so when a request stops it", async () => {
+    await client.loadState(base);
+    await client.continue(0);
+    await client.reset(false);
+    assert.equal(client.running, true);
+    const cycles = async (): Promise<number> => (await client.request<{ cycles: number }>("status")).cycles;
+    const before = await cycles();
+    await new Promise(r => setTimeout(r, 200));
+    assert.ok(await cycles() > before);
+    const stop = new Promise<Stopped>(resolve => client.once("stopped", resolve));
+    await client.loadState(base);
+    assert.equal((await stop).reason, "pause");
+    assert.equal(client.running, false);
+  });
+
+  it("stops at a breakpoint on the first instruction of a direct call", async () => {
+    await client.loadState(base);
+    const program = build("        ORG $BEC00\nstart:  MV A,1\n        RET\n");
+    await loadProgram(client, program);
+    await client.breakpoints([0xbec00]);
+    const stop = new Promise<Stopped>(resolve => client.once("stopped", resolve));
+    await client.call(0xbec00, false);
+    await client.continue(0);
+    assert.deepEqual([(await stop).reason, (await client.registers()).P], ["breakpoint", 0xbec00]);
+    await client.breakpoints([]);
+  });
+
+  it("steps over a call that takes its return address off to skip data", async () => {
+    await client.loadState(base);
+    const program = build("        ORG $BEC00\nstart:  CALLF skip\n        DB 1,2\n        NOP\n        RET\nskip:   MV X,[S++]\n        MV Y,2\n        ADD X,Y\n        MV [--S],X\n        RETF\n");
+    await loadProgram(client, program);
+    await client.call(0xbec00, false);
+    const stop = new Promise<Stopped>(resolve => client.once("stopped", resolve));
+    await client.stepOver();
+    assert.equal((await stop).pc, 0xbec06);
+  });
+
+  it("stops at a breakpoint on the way of a step over, also after the return address is taken off", async () => {
+    await client.loadState(base);
+    const program = build("        ORG $BEC00\nstart:  CALL put\n        DB 1,2,0\n        RET\nput:    POPS BA\n        MV X,$B0000\n        ADD X,BA\np1:     MV A,[X++]\nbp:     CMP A,0\n        JRNZ p1\n        MV BA,X\n        PUSHS BA\n        RET\n");
+    await loadProgram(client, program);
+    const at = program.resolve("bp");
+    await client.breakpoints([at]);
+    await client.call(0xbec00, false);
+    const stop = new Promise<Stopped>(resolve => client.once("stopped", resolve));
+    await client.stepOver();
+    const got = await stop;
+    assert.deepEqual([got.reason, got.pc], ["breakpoint", at]);
+    await client.breakpoints([]);
+  });
+
+  it("leaves CAPS to the machine when a key at a time is typed", async () => {
+    await client.loadState(base);
+    await client.tap("C-CE");
+    await client.tap("CAPS");
+    for (const c of "a$=\"abc\"") await client.type(c);
+    await client.run(768000 * 20, { untilTyped: true, settle: 768000 / 2 });
+    assert.match((await client.screen()).text ?? "", /a\$="abc"/);
+  });
+
+  it("types a text as it is written, small letters too", async () => {
+    await client.loadState(base);
+    await client.tap("C-CE");
+    await client.type("a=5:b$=\"abC\":print b$;A\n");
+    await client.run(768000 * 20, { untilTyped: true, settle: 768000 / 2 });
+    const screen = (await client.screen()).text ?? "";
+    assert.match(screen, /a=5:b\$="abC"/);
+    assert.match(screen, /^abC +5$/m);
+  });
+
+  it("takes the RAM size of the state it starts from", async () => {
+    const big = await startMachine({ server, core, rom, ram: 64 });
+    const state = path.join(fs.mkdtempSync(path.join(require("node:os").tmpdir(), "e500state-")), "a.e500state");
+    fs.writeFileSync(state, JSON.stringify({ Data: await big.saveState() }));
+    big.dispose();
+    const started = await startMachine({ server, core, rom, ram: 32, state });
+    assert.equal(started.info?.internalKB, 64);
+    started.dispose();
+    fs.rmSync(path.dirname(state), { recursive: true });
+  });
+
+  it("breaks on every copy of a line of a file included twice", () => {
+    const files = new Map([[path.join(repo, "twice.inc"), "        INC A\n        INC A\n"]]);
+    const program = Program.build(path.join(repo, "t.asm"), "        ORG $BEC00\n        INCLUDE \"twice.inc\"\n        NOP\n        INCLUDE \"twice.inc\"\n        RET\n", { host: { readText: f => files.get(f), readBinary: () => undefined } });
+    assert.deepEqual(program.codeAtOrAfter(path.join(repo, "twice.inc"), 0).map(l => l.address), [0xbec00, 0xbec05]);
   });
 
   it("disassembles around an address", async () => {

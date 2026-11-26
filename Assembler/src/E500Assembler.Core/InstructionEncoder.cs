@@ -2,7 +2,7 @@ using System.Text.RegularExpressions;
 
 namespace E500Assembler;
 
-internal sealed class InstructionEncoder(Func<string, long> evaluate, int pc, bool strict)
+internal sealed class InstructionEncoder(Func<string, long> evaluate, int pc, bool strict, Func<string, bool>? lowLabel = null)
 {
     private static readonly string[] Registers = ["A", "IL", "BA", "I", "X", "Y", "U", "S"];
     private static readonly Dictionary<string, int> Fixed = new()
@@ -136,7 +136,7 @@ internal sealed class InstructionEncoder(Func<string, long> evaluate, int pc, bo
             else
             {
                 long target = Value(x.Text, 20);
-                if (strict && target > 0xffff && (target >> 16) != (pc >> 16)) throw new AssemblyException("Near branch crosses a 64 KiB segment; use JPF/CALLF or an explicit far-branch sequence");
+                if (strict && (target >> 16) != (pc >> 16) && (target > 0xffff || lowLabel?.Invoke(x.Text) == true)) throw new AssemblyException("Near branch crosses a 64 KiB segment; use JPF/CALLF or an explicit far-branch sequence");
                 Emit((int)target, (int)(target >> 8));
             }
             return true;
@@ -150,7 +150,7 @@ internal sealed class InstructionEncoder(Func<string, long> evaluate, int pc, bo
             else
             {
                 long target = Value(expression, 20);
-                if (target <= 0xffff) target += pc & 0xf0000;
+                if (target <= 0xffff && lowLabel?.Invoke(expression) != true) target += pc & 0xf0000;
                 if (strict && (target >> 16) != (pc >> 16)) throw new AssemblyException("Relative branch crosses a 64 KiB segment");
                 delta = (target - ((pc + 2) & 0xffff | (pc & 0xf0000))) & 0xffff;
                 if (delta > 32767) delta -= 65536;

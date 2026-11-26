@@ -2,6 +2,10 @@
 
 SHARP PC-E500 シリーズ（PC-E500 / PC-E500S / PC-E550 / PC-E650 / PC-1480U / PC-U6000 など）のプログラムを VS Code で作るための拡張機能です。
 
+シャープ株式会社とは関係のない、個人が作った非公式のツールです。SHARP はシャープ株式会社の商標です。
+
+English: [see below](#english).
+
 | できること | くわしい説明 |
 |---|---|
 | ASM と BASIC の色分け、間違いの表示、候補、説明、定義へ移動 | [編集](https://github.com/litchi-gh/pc-e500_tools/blob/main/docs/manual/08_EDITOR.md)、[BASIC](https://github.com/litchi-gh/pc-e500_tools/blob/main/docs/manual/13_BASIC.md) |
@@ -12,6 +16,15 @@ SHARP PC-E500 シリーズ（PC-E500 / PC-E500S / PC-E550 / PC-E650 / PC-1480U /
 | 実機用の BIN（`LOAD M`） | [実機へ送る](https://github.com/litchi-gh/pc-e500_tools/blob/main/docs/manual/14_TRANSFER.md) |
 
 全部の文書は[マニュアルの目次](https://github.com/litchi-gh/pc-e500_tools/blob/main/docs/manual/README.md)にあります。
+
+## 必要なもの
+
+| 使う機能 | 必要なもの |
+|---|---|
+| 編集、間違いの表示、ドットエディタ | VS Code 1.95 以降だけ（Windows、Linux、macOS） |
+| エミュレータでの実行、デバッグ、テスト | Windows 11（x64）、[.NET 10 のランタイム](https://dotnet.microsoft.com/download/dotnet/10.0)、[PC-E500 エミュレータ](https://github.com/litchi-gh/pc-e500_emulator_pockecom/releases/latest)、自分の本体から吸い出した ROM |
+
+ROM とエミュレータは、この拡張機能に入っていません。
 
 ## はじめに
 
@@ -27,13 +40,6 @@ SHARP PC-E500 シリーズ（PC-E500 / PC-E500S / PC-E550 / PC-E650 / PC-1480U /
 | `.bas` `.basic` `.e500` | PC-E500 BASIC |
 | `.lcd` `.pixels` `.spr` | ドットエディタ |
 | `*.e500test.json` | テスト |
-
-## 必要なもの
-
-- 編集、診断、ドットエディタ: VS Code 1.95 以降だけ（Windows、Linux、macOS）
-- エミュレータでの実行、デバッグ、テスト（VS Code の中から）: Windows 11（x64）、[.NET 10 のランタイム](https://dotnet.microsoft.com/download/dotnet/10.0)、PC-E500 エミュレータ（デバッグ用の関数を持つ `e500core.dll`）、自分の ROM
-
-ROM とエミュレータは入っていません。
 
 ## 表示の言語
 
@@ -61,4 +67,18 @@ code .
 
 ## ライセンス
 
-MIT です。エミュレータのコアは GPL-2.0-or-later の別のプログラムで、実行時に利用者のものを読み込みます。
+MIT です。エミュレータのコアは GPL-2.0-or-later の別のプログラムで、実行時に利用者のものを読み込みます。ドットエディタの文字入れの 5 × 7 ドットのフォントは SparkFun Electronics のもの（MIT）で、[ThirdPartyNotices.txt](https://github.com/litchi-gh/pc-e500_tools/blob/main/VSCodeExtensions/pc-e500-devtools/ThirdPartyNotices.txt) に書いてあります。
+
+## English
+
+Tools for writing programs for the SHARP PC-E500 series (PC-E500, PC-E500S, PC-E550, PC-E650, PC-1480U, PC-U6000 and others; CPU SC62015) in VS Code. This is an unofficial tool made by an individual, not related to Sharp Corporation. SHARP is a trademark of Sharp Corporation.
+
+- Editing: highlighting, errors as you type, completion and hover help for SC62015 assembly (`.asm`, same syntax and bytes as `e500asm`) and PC-E500 BASIC (`.bas`)
+- Running and debugging in the PC-E500 emulator (Windows): breakpoints, stepping, registers, flags, variables, memory, disassembly
+- Tests (`*.e500test.json`) in the Test Explorer
+- Dot editors for screen pictures (`.lcd`) and sprites (`.spr`), game templates and INCLUDE files
+- BIN files for the real machine (`LOAD M`), and the command `e500` (Windows, Linux, macOS)
+
+Requirements: editing needs only VS Code 1.95 or later. Running, debugging and tests need Windows 11 (x64), the [.NET 10 runtime](https://dotnet.microsoft.com/download/dotnet/10.0), the [PC-E500 emulator](https://github.com/litchi-gh/pc-e500_emulator_pockecom/releases/latest) and a ROM dumped from your own machine. Neither the ROM nor the emulator is included.
+
+Run **"PC-E500: Check the Setup"** first. The user interface is in English unless VS Code is in Japanese. The [manual](https://github.com/litchi-gh/pc-e500_tools/blob/main/docs/manual/README.md) is in Japanese.

@@ -1,6 +1,6 @@
 # ゲームを作る
 
-`e500 new game NAME` から始める（背景 `.lcd`、キャラクタ `.spr` 2 つ、当たり判定、点数、音が入っている）。完成した例は `Samples/Assembler/StarCatch`、`Meteor`、`NineBox`。**市販のゲームの名前、キャラクタ、面をまねない。**
+`e500 new 名前 --kind game` から始める（背景 `.lcd`、キャラクタ `.spr` 2 つ、当たり判定、点数、音が入っている）。完成した例は `Samples/Assembler/StarCatch`、`Meteor`、`NineBox`。**市販のゲームの名前、キャラクタ、面をまねない。**
 
 ## 流れ
 
@@ -15,7 +15,7 @@ loop:   CALL  pad_read
         …sprite_draw、text_draw、number_draw…
         CALL  screen_show       ; LCD へ
         MV    A,3
-        CALL  game_wait         ; 約 48 ms にそろえる
+        CALL  game_wait         ; 16 ms の 3 回分
         JP    loop
 quit:   CALL  game_end
         RC
@@ -45,7 +45,7 @@ quit:   CALL  game_end
 | 名前 | 渡す | 働き |
 |---|---|---|
 | `game_start` / `game_end` | − | 必ず対にする。終わる道はすべて `game_end` を通す |
-| `game_wait` | `A` = 回数 | `A` × 約 16 ms ごとにそろえる |
+| `game_wait` | `A` = 回数 | `A` × 約 16 ms 待つ（前に呼んでからの時間は 16 ms まで数える） |
 | `sound_on` / `sound_off` | `A` = `BZ_2K` / `BZ_4K` | 音。止め忘れに注意 |
 | `screen_load` | `X` = `.lcd` | 絵を仮想画面へ |
 | `screen_keep` / `screen_restore` | − | 背景を覚える / 戻す（5 ms） |
@@ -94,7 +94,7 @@ def spr(w, h, frames, mask=True):  # frame[y][x]: 0 透明、1 点灯、2 消灯
 
 ## 確かめ方
 
-- `e500 run game.asm --seconds 2 --keys SPACE,wait:2,RIGHT --png s.png` の PNG を見る。
+- `e500 run game.asm --seconds 2 --keys SPACE,wait:2,RIGHT --png s.png` の PNG を見る。見せたい画面（タイトル、プレイ中、終わり）は `screens/` に残す。
 - `--keys ON/BRK` で `ended` になる（BASIC に戻れる）こと。
 - 変数は内部 RAM なので、テストでは `"(ball_x)": [100]` の形で入れて調べる（[testing.md](testing.md)）。1 回ぶんの動きを `RET` で終わるルーチンに分けておくと、そのまま呼べる。
 - `test` に、タイトルの `picture`、`ON/BRK` で戻る、計算のルーチン（当たり判定、得点）を入れる。

@@ -2,7 +2,8 @@
 // debug view, the panel's lists and watches and the debug view:
 //   A IL BA I X Y U S P F, and the flags C and Z
 //   [expr], [expr]:2, [expr]:3     memory, little-endian
-//   (expr), (expr):2, (expr):3     internal RAM, as the assembler writes it; BP, PX, PY
+//   (expr), (expr):2, (expr):3     internal RAM, as the assembler writes it: (BP), (PX+1) and (BP+PX) are what they point at
+//   BP, PX, PY                     these pointers themselves
 // expr is made of numbers, registers and the program's symbols.
 import { evaluate } from "../asm/expression";
 import { L } from "../l10n";
@@ -29,12 +30,14 @@ export function hexAndDecimal(value: number, bits: number): string {
 const registerValue = (registers: Registers, name: string): number => (registers as unknown as Record<string, number>)[name];
 
 /** An expression of numbers, registers and the program's symbols. */
-export function evaluateExpression(text: string, registers: Registers | undefined, program: Program | undefined): bigint {
+export function evaluateExpression(text: string, registers: Registers | undefined, program: Program | undefined, pointer: (name: string) => number | undefined = () => undefined): bigint {
   const n = parseNumber(text);
   if (n !== undefined) return BigInt(n);
   return evaluate(text.trim().replace(/&H(?=[0-9A-F])/gi, "$"), name => {
     const key = name.toUpperCase();
     if (registers && key in REGISTER_BITS) return BigInt(registerValue(registers, key));
+    const at = pointer(key);
+    if (at !== undefined) return BigInt(at);
     const v = program?.symbols.get(key);
     if (v === undefined) throw new Error(L(`${name} は変数でもレジスタでもシンボルでもありません。`, `${name} is not a variable, a register or a symbol.`));
     return v;
@@ -55,7 +58,7 @@ function enclosed(text: string, open: string, close: string): { inner: string; s
 }
 
 /** What a name or [..] or (..) stands for; undefined when it is only an expression. */
-export function targetOf(text: string, registers: Registers, program: Program | undefined): Target | undefined {
+export function targetOf(text: string, registers: Registers, program: Program | undefined, imem?: Uint8Array): Target | undefined {
   const key = text.trim().toUpperCase();
   if (key in REGISTER_BITS) return { kind: "register", name: key };
   // Not reserved words of the assembler: a program's own symbol comes first.
@@ -67,8 +70,14 @@ export function targetOf(text: string, registers: Registers, program: Program | 
   if (memory) return { kind: "memory", address: Number(evaluateExpression(memory.inner, registers, program)) & 0xfffff, size: memory.size };
   const internal = enclosed(text, "(", ")");
   if (internal) {
-    const pointer = internal.inner.trim().toUpperCase();
-    const at = pointer in POINTERS && !program?.symbols.has(pointer) ? POINTERS[pointer] : Number(evaluateExpression(internal.inner, registers, program));
+    let pointed = false;
+    const value = Number(evaluateExpression(internal.inner, registers, program, name => {
+      if (!(name in POINTERS) || program?.symbols.has(name)) return undefined;
+      pointed = true;
+      return imem === undefined ? 0 : imem[POINTERS[name]];
+    }));
+    // As the CPU adds them: within the 256 bytes.
+    const at = pointed ? value & 0xff : value;
     if (at < 0 || at + internal.size > 256) throw new Error(L("内部 RAM は 00h〜FFh です。", "Internal RAM is 00h-FFh."));
     return { kind: "imem", address: at, size: internal.size };
   }
@@ -110,6 +119,16 @@ function fit(value: number, bits: number): number {
 
 function mustBeStopped(client: EmulatorClient): void {
   if (client.running) throw new Error(L("止めているときだけ書き換えられます。", "Values can be changed only while it is stopped."));
+}
+
+/** [expr] alone takes bytes too, 03 04 FF or "ABC": a label's. */
+export async function writeTyped(client: EmulatorClient, target: Target, typed: string, program: Program | undefined): Promise<number> {
+  if (target.kind === "memory" && target.size === 1 && (/^\s*"/.test(typed) || /^\s*[0-9A-F]{2}(\s+[0-9A-F]{2})+\s*$/i.test(typed))) {
+    mustBeStopped(client);
+    await client.write(target.address, parseBytes(typed));
+    return readTarget(client, target, await client.registers());
+  }
+  return writeTarget(client, target, typed, program);
 }
 
 /** Sets a register, flag, memory or internal RAM, and returns the value it then has. */

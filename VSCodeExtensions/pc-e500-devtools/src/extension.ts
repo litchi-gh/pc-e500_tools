@@ -22,7 +22,7 @@ import { DebugPanel } from "./emu/debugPanel";
 import { EmulatorPanel } from "./emu/panel";
 import { startMachine } from "./emu/prepare";
 import { registerTests } from "./emu/testController";
-import { copyIncludes, makeBin, newPicture, newProgram } from "./project/commands";
+import { copyIncludes, makeBin, newPicture, newProgram, placeSkill } from "./project/commands";
 import { migrateSettings } from "./setup/migrate";
 import { SetupPanel } from "./setup/panel";
 
@@ -135,7 +135,7 @@ export function activate(context: vscode.ExtensionContext): void {
     const source = document.uri.fsPath;
     const args = [source];
     for (const dir of assemblerOptions(document.uri).includeDirectories) args.push("-I", dir);
-    for (const [name, value] of Object.entries(config.get<Record<string, number>>("defines", {}))) args.push("-D", `${name}=${value}`);
+    for (const [name, value] of Object.entries(config.get<Record<string, number>>("defines", {}))) if (/^[A-Za-z_.][\w.]*$/.test(name) && Number.isFinite(value)) args.push("-D", `${name}=${value}`);
     output.clear();
     output.show(true);
     output.appendLine(`> ${command} ${args.join(" ")}`);
@@ -167,6 +167,7 @@ export function activate(context: vscode.ExtensionContext): void {
     vscode.commands.registerCommand("pcE500.checkSetup", () => SetupPanel.show(context)),
     vscode.commands.registerCommand("pcE500.newPicture", (resource?: vscode.Uri) => newPicture(resource)),
     vscode.commands.registerCommand("pcE500.copyIncludes", (resource?: vscode.Uri) => copyIncludes(resource)),
+    vscode.commands.registerCommand("pcE500.placeSkill", (resource?: vscode.Uri) => placeSkill(context.extensionPath, resource)),
     vscode.commands.registerCommand("pcE500.newProgram", (resource?: vscode.Uri) => newProgram(resource)),
     vscode.languages.registerDefinitionProvider("pc-e500-asm", new AsmDefinitionProvider(names)),
     vscode.languages.registerDocumentLinkProvider("pc-e500-asm", new IncbinLinkProvider(document => names.options(document))),
@@ -176,6 +177,13 @@ export function activate(context: vscode.ExtensionContext): void {
     vscode.languages.registerHoverProvider("pc-e500-asm", new AsmHoverProvider(names)),
     vscode.languages.registerCompletionItemProvider("pc-e500-basic", new BasicCompletionProvider(), ...BasicCompletionProvider.triggers),
     vscode.languages.registerHoverProvider("pc-e500-basic", new BasicHoverProvider()),
+    vscode.languages.registerEvaluatableExpressionProvider("pc-e500-basic", {
+      // P(1) and D#, and not only P and D.
+      provideEvaluatableExpression: (document, position) => {
+        const range = document.getWordRangeAtPosition(position, /[A-Za-z][A-Za-z0-9]*[#$]?(?:\s*\([0-9, ]+\))?/);
+        return range && new vscode.EvaluatableExpression(range);
+      }
+    }),
     vscode.workspace.onDidOpenTextDocument(refresh),
     vscode.workspace.onDidChangeTextDocument(event => refresh(event.document)),
     // INCLUDE / INCBIN contents are read from disk, so re-lint the open ASM files whenever a file is saved.
@@ -192,7 +200,14 @@ export function activate(context: vscode.ExtensionContext): void {
   );
   vscode.workspace.textDocuments.forEach(refresh);
   registerEmulator(context);
+  // The command e500 in VS Code's terminal.
+  const bin = path.join(context.extensionPath, "bin"), variables = context.environmentVariableCollection;
+  variables.clear();
+  variables.description = L("コマンド e500 を使えるようにします。", "Makes the command e500 available.");
+  variables.append("PATH", path.delimiter + bin);
+  if (process.platform !== "win32") { try { fs.chmodSync(path.join(bin, "e500"), 0o755); } catch { /* not ours to change */ } }
   void migrateSettings(context);
+  context.subscriptions.push(vscode.workspace.onDidGrantWorkspaceTrust(() => void migrateSettings(context)));
 }
 
 // ---- The emulator: panel, debugger, tests ----
@@ -210,6 +225,7 @@ function registerEmulator(context: vscode.ExtensionContext): void {
       startMachine(machineConfig(context.extensionPath, scope), text => log.appendLine(text)));
     client.on("exit", () => hub.detach(client));
     hub.attach({ client, label: L("エミュレータ", "Emulator"), debugging: false });
+    if (hub.current?.client !== client) return;
     await client.continue(vscode.workspace.getConfiguration("pcE500").get<number>("speed", 1));
   };
   const showPanel = (focus = false): void => { EmulatorPanel.show(context, hub, startFree, focus); };

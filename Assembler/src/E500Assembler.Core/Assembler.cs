@@ -70,9 +70,11 @@ public sealed class Assembler
     public static int ParseAddress(string text)
     {
         string n = text.Trim().Replace("_", "");
-        if (n.StartsWith('$') || n.StartsWith('&')) n = n[1..];
+        if (n.StartsWith("&H", StringComparison.OrdinalIgnoreCase)) n = n[2..];
+        else if (n.StartsWith('$') || n.StartsWith('&')) n = n[1..];
         else if (n.StartsWith("0x", StringComparison.OrdinalIgnoreCase)) n = n[2..];
         else if (n.EndsWith('h') || n.EndsWith('H')) n = n[..^1];
+        if (!n.All(Uri.IsHexDigit)) throw new AssemblyException($"Invalid address: {text}");
         try { return Convert.ToInt32(n, 16); }
         catch (Exception e) when (e is FormatException or OverflowException or ArgumentException) { throw new AssemblyException($"Invalid address: {text}"); }
     }
@@ -158,6 +160,7 @@ public sealed class Assembler
         var candidates = new[] { Path.Combine(Path.GetDirectoryName(source) ?? ".", path) }.Concat(options.IncludeDirectories.Select(d => Path.Combine(d, path)));
         return candidates.FirstOrDefault(File.Exists) is string result ? Path.GetFullPath(result) : throw new AssemblyException($"File not found: {path}");
     }
+    private sealed class NeededException(string name) : Exception { public string Name => name; }
     private static AssemblyResult Assemble(List<Statement> statements, AssemblerOptions options)
     {
         if (options.Origin is < 0 or > 0xfffff) throw new AssemblyException("Origin must be 00000h..FFFFFh");
@@ -168,6 +171,7 @@ public sealed class Assembler
             if (s.Label != null && !knownNames.Add(s.Label)) throw At(s.Source, $"Duplicate symbol: {s.Label}");
             if (s.Op == "EQU" && s.Label == null) throw At(s.Source, "EQU requires a label");
         }
+        var labels = statements.Where(s => s.Label != null && s.Op != "EQU").Select(s => s.Label!).ToHashSet(StringComparer.OrdinalIgnoreCase);
         var previous = new Dictionary<string, long>(options.Defines, StringComparer.OrdinalIgnoreCase);
         var binaryFiles = new Dictionary<Statement, byte[]>();
         var binaryPaths = new HashSet<string>(FileNames);
@@ -181,17 +185,28 @@ public sealed class Assembler
             var equs = statements.Select((s, i) => (s, i)).Where(x => x.s.Op == "EQU" && x.s.Label != null).ToDictionary(x => x.s.Label!, StringComparer.OrdinalIgnoreCase);
             var resolving = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
             var equValues = new Dictionary<string, long>(StringComparer.OrdinalIgnoreCase);
-            long ResolveFinal(string name)
+            long Known(string name)
             {
                 if (equValues.TryGetValue(name, out long cached)) return cached;
-                if (equs.TryGetValue(name, out var equ))
-                {
-                    if (!resolving.Add(name)) throw new AssemblyException($"Cyclic EQU definition: {name}");
-                    RequireCount(equ.s, 1);
-                    long v = new Expression(equ.s.Args[0], ResolveFinal, previousLayout[equ.i].Item1).Evaluate();
-                    resolving.Remove(name); equValues[name] = v; return v;
-                }
+                if (equs.ContainsKey(name)) throw new NeededException(name);
                 return previous.TryGetValue(name, out long value) ? value : throw new AssemblyException($"Undefined symbol: {name}");
+            }
+            // An EQU needs other EQUs: these are worked out first, from a list and not by recursion, which a long chain would overflow.
+            long ResolveFinal(string name)
+            {
+                if (!equs.ContainsKey(name) || equValues.ContainsKey(name)) return Known(name);
+                var waiting = new Stack<string>([name]); resolving.Clear(); resolving.Add(name);
+                while (waiting.TryPeek(out string? top))
+                {
+                    var equ = equs[top]; RequireCount(equ.s, 1);
+                    try { equValues[top] = new Expression(equ.s.Args[0], Known, previousLayout[equ.i].Item1).Evaluate(); resolving.Remove(waiting.Pop()); }
+                    catch (NeededException e)
+                    {
+                        if (!resolving.Add(e.Name)) throw new AssemblyException($"Cyclic EQU definition: {e.Name}");
+                        waiting.Push(e.Name);
+                    }
+                }
+                return equValues[name];
             }
             foreach (var s in statements)
             {
@@ -199,16 +214,17 @@ public sealed class Assembler
                 {
                     long Eval(string expression)
                     {
-                        bool missing = false;
                         long Symbol(string name)
                         {
                             if (strict) return ResolveFinal(name);
                             if (symbols.TryGetValue(name, out long v) || previous.TryGetValue(name, out v)) return v;
-                            missing = true; return 0;
+                            return 0;
                         }
                         try { return new Expression(expression, Symbol, pc).Evaluate(); }
-                        catch (DivideByZeroException) when (!strict && missing) { return 0; }
+                        catch (ValueException) when (!strict) { return 0; }
                     }
+                    // Whether an expression names a label of the lowest 64 KB (a number below 10000h is an offset in the segment).
+                    bool LowLabel(string expression) => Regex.Matches(expression, @"[A-Za-z_\.][A-Za-z_0-9\.]*").Any(x => labels.Contains(x.Value) && previous.TryGetValue(x.Value, out long at) && at <= 0xffff);
                     int Range(string expression, int min, int max)
                     {
                         long v = Eval(expression);
@@ -232,7 +248,7 @@ public sealed class Assembler
                                 if (arg.StartsWith('"'))
                                 {
                                     if (width != 1) throw new AssemblyException("Strings are only valid in DB");
-                                    foreach (char c in Syntax.String(arg)) { if (c > 255) throw new AssemblyException("DB strings must be single-byte characters; use numeric bytes for PC-E500 characters"); values.Add((byte)c); }
+                                    foreach (char c in Syntax.Bytes(arg)) values.Add((byte)c);
                                 }
                                 else
                                 {
@@ -265,11 +281,12 @@ public sealed class Assembler
                         case "END": RequireCount(s, 0); break;
                         case "INCLUDE": throw new AssemblyException("INCLUDE requires AssembleFile");
                         default:
-                            data = new InstructionEncoder(Eval, pc, strict).Encode(s.Op, s.Args);
+                            data = new InstructionEncoder(Eval, pc, strict, LowLabel).Encode(s.Op, s.Args);
                             if (strict && (pc & 0xffff) + data.Length > 0x10000) throw new AssemblyException("Instruction crosses a 64 KiB segment boundary");
                             break;
                     }
-                    if ((long)pc + data.Length > 0x100000) throw new AssemblyException("Output exceeds 20-bit address space");
+                    // Before the last pass the layout is provisional, and may reach too far for a while.
+                    if ((long)pc + data.Length > (strict ? 0x100000 : 0x200000)) throw new AssemblyException("Output exceeds 20-bit address space");
                     listing.Add(new(s.Source, address, data)); layout.Add((address, data.Length)); pc += data.Length;
                 }
                 catch (Exception e) when (e is AssemblyException or OverflowException or DivideByZeroException or IOException or UnauthorizedAccessException) { throw At(s.Source, e.Message); }

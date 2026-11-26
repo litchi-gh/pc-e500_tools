@@ -95,7 +95,7 @@ export class BasicDebugAdapter implements vscode.DebugAdapter {
           { name: L("変数", "Variables"), variablesReference: VARIABLES, presentationHint: "locals", expensive: false }
         ] });
         return;
-      case "variables": return this.variables(request, a.variablesReference);
+      case "variables": return this.variables(request, a);
       case "setVariable": {
         const value = await this.setVariable(String(a.name ?? ""), String(a.value ?? ""));
         this.respond(request, true, { value });
@@ -110,19 +110,19 @@ export class BasicDebugAdapter implements vscode.DebugAdapter {
       case "continue":
         this.respond(request, true, { allThreadsContinued: true });
         this.stepping = false;
-        await this.basic.continue(this.speed);
+        await this.basic.continue();
         return;
       case "next":
       case "stepIn":
         this.respond(request);
         this.stepping = true;
-        await this.basic.step(this.speed);
+        await this.basic.step();
         return;
       case "stepOut":
         // A GOSUB's return is not followed: on to the next breakpoint.
         this.respond(request);
         this.stepping = false;
-        await this.basic.continue(this.speed);
+        await this.basic.continue();
         return;
       case "pause":
         this.respond(request);
@@ -156,7 +156,7 @@ export class BasicDebugAdapter implements vscode.DebugAdapter {
       if (this.ended) { client.dispose(); return; }
       this.client = client;
       client.on("stopped", (stop: Stopped) => void this.onStopped(stop));
-      client.on("continued", () => { this.current = undefined; });
+      client.on("continued", () => { this.current = undefined; this.lastVariables = []; });
       client.on("continued", () => this.event("continued", { threadId: THREAD, allThreadsContinued: true }));
       client.on("exit", () => this.end(true));
       client.on("log", (text: string) => this.log(text, "stderr"));
@@ -180,14 +180,18 @@ export class BasicDebugAdapter implements vscode.DebugAdapter {
 
       await this.configured;
       this.respond(request);
+      await client.speed(this.speed);
       const first = await session.runToFirstLine();
       this.log(L(`RUN しました（ROM の行の始まり ${session.dispatchAddress?.toString(16).toUpperCase()}h）。`, `RUN started (the ROM starts lines at ${session.dispatchAddress?.toString(16).toUpperCase()}h).`));
       if (args.noDebug) await session.setBreakpoints([]); else await session.setBreakpoints(this.wanted);
       if (args.stopOnEntry === true && !args.noDebug) {
         this.current = first.number;
         this.event("stopped", { reason: "entry", threadId: THREAD, allThreadsStopped: true });
+      } else if (!args.noDebug && this.wanted.includes(first.number)) {
+        this.current = first.number;
+        this.event("stopped", { reason: "breakpoint", threadId: THREAD, allThreadsStopped: true });
       } else {
-        await session.continue(this.speed);
+        await session.continue();
       }
     } catch (error) {
       this.setReady(this.session);
@@ -259,7 +263,7 @@ export class BasicDebugAdapter implements vscode.DebugAdapter {
   }
 
   private async readVariables(): Promise<BasicVariable[]> {
-    if (this.lastVariables.length === 0) {
+    if (this.lastVariables.length === 0 || this.client?.running) {
       const { variables, letters } = await this.basic.variablesAndLetters();
       this.lastVariables = variables;
       this.lastLetters = letters;
@@ -267,13 +271,15 @@ export class BasicDebugAdapter implements vscode.DebugAdapter {
     return this.lastVariables;
   }
 
-  private async variables(request: Message, ref: number): Promise<void> {
+  private async variables(request: Message, a: { variablesReference: number; filter?: string; start?: number; count?: number }): Promise<void> {
+    const ref = a.variablesReference;
     const all = await this.readVariables();
     const kind = (v: BasicVariable): string => v.kind === "string" ? "string" : v.kind === "array" ? "array" : "number";
     let variables: unknown[];
     if (ref >= ARRAYS) {
       const array = all[ref - ARRAYS];
-      variables = (array?.elements ?? []).map(e => ({ name: array.name.replace("()", "") + e.index, value: e.value, variablesReference: 0 }));
+      const start = a.start ?? 0;
+      variables = (array?.elements ?? []).slice(start, a.count ? start + a.count : undefined).map(e => ({ name: array.name.replace("()", "") + e.index, value: e.value, variablesReference: 0 }));
     } else {
       variables = all.map((v, i) => ({ v, i }))
         .filter(({ v }) => isShown(v, this.lastLetters))

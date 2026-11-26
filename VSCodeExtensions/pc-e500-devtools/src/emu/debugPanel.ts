@@ -165,7 +165,10 @@ export class DebugPanel implements vscode.Disposable {
     let address: number, data: Uint8Array;
     if (file.length >= 16 && file[0] === 0xff && file[1] === 0 && file[2] === 6 && file[3] === 1 && file[4] === 0x10) {
       address = file[8] | file[9] << 8 | file[10] << 16;
-      data = file.subarray(16);
+      // Up to the length in the header: what follows (padding of a transfer) is not the program.
+      const length = file[5] | file[6] << 8 | file[7] << 16;
+      if (file.length < 16 + length) throw new Error(L(`ファイルが途中で切れています（${length} バイトのはずが ${file.length - 16} バイト）。`, `The file is cut short (${file.length - 16} of ${length} bytes).`));
+      data = file.subarray(16, 16 + length);
     } else {
       const text = await vscode.window.showInputBox({ title: L("書き込む先頭アドレス（16進）", "Address to write at (hex)"), value: hex5(caret), validateInput: v => /^(&H|0x|\$)?[0-9A-F]{1,5}$/i.test(v.trim()) ? undefined : L("16進で入力してください", "Enter a hex address") });
       if (text === undefined) return;

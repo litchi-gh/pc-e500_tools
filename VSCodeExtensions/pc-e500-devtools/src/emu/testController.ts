@@ -6,7 +6,7 @@ import { AsmHost } from "../asm/assembler";
 import { assemblerOptions, machineConfig, showSetupError } from "./config";
 import { startMachine } from "./prepare";
 import { Program } from "./program";
-import { parseTestFile, runTests, TestFile, testLine } from "./testfile";
+import { parseTestFile, runTests, TestFile, testLine, TestTarget, testTarget } from "./testfile";
 import { L } from "../l10n";
 
 const PATTERN = "**/*.e500test.json";
@@ -39,7 +39,7 @@ export function registerTests(context: vscode.ExtensionContext): void {
       const item = controller.createTestItem(`${id}#${test.name}`, test.name, uri);
       const line = testLine(text, test.name);
       item.range = new vscode.Range(line, 0, line, 0);
-      item.description = test.basic !== undefined ? "BASIC" : test.call ?? "";
+      item.description = test.basic !== undefined ? "BASIC" : String(test.call ?? "");
       children.push(item);
     }
     file.children.replace(children);
@@ -84,12 +84,12 @@ export function registerTests(context: vscode.ExtensionContext): void {
       const { spec, error } = await read(file.uri);
       if (!spec) { failAll(error ?? L("テストファイルを読めません。", "Cannot read the test file.")); continue; }
       const programPath = path.resolve(path.dirname(file.uri.fsPath), spec.program);
-      let program: Program;
+      let program: TestTarget;
       try {
         const programUri = vscode.Uri.file(programPath);
         const document = await vscode.workspace.openTextDocument(programUri);
-        program = Program.build(programPath, document.getText(), { host: fileHost, ...assemblerOptions(programUri) });
-        if (program.errors.length) { failAll(L("アセンブルのエラー:", "Assembly errors:") + `\n${program.errors.join("\n")}`); continue; }
+        program = testTarget(programPath, document.getText(), () => ({ host: fileHost, ...assemblerOptions(programUri) }));
+        if (program.errors.length) { failAll(L("プログラムの間違い:", "Mistakes in the program:") + `\n${program.errors.join("\n")}`); continue; }
       } catch (e) {
         const why = e instanceof Error ? e.message : String(e);
         failAll(L(`プログラム ${spec.program} を読めません: ${why}`, `Cannot read the program ${spec.program}: ${why}`));
@@ -137,7 +137,7 @@ export function registerTests(context: vscode.ExtensionContext): void {
     const { spec } = await read(item.uri);
     const test = spec?.tests.find(t => t.name === item.label);
     if (!spec || !test) return;
-    if (test.basic !== undefined) { void vscode.window.showInformationMessage(L("BASIC のテストはデバッグできません。ブレークポイントを置いて通常のデバッグで CALL してください。", "A BASIC test cannot be debugged. Set a breakpoint and CALL it in a normal debug session.")); return; }
+    if (test.basic !== undefined || !/\.asm$|\.s$|\.e500asm$/i.test(spec.program)) { void vscode.window.showInformationMessage(L("BASIC のテストはデバッグできません。ブレークポイントを置いて通常のデバッグで CALL してください。", "A BASIC test cannot be debugged. Set a breakpoint and CALL it in a normal debug session.")); return; }
     await vscode.debug.startDebugging(vscode.workspace.getWorkspaceFolder(item.uri), {
       type: "pc-e500", request: "launch", name: L(`テスト: ${test.name}`, `Test: ${test.name}`),
       program: path.resolve(path.dirname(item.uri.fsPath), spec.program),

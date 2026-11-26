@@ -16,7 +16,8 @@ export async function migrateSettings(context: vscode.ExtensionContext): Promise
   const config = vscode.workspace.getConfiguration();
   const levels = [
     { state: context.globalState, target: vscode.ConfigurationTarget.Global, key: "globalValue" as const, on: true },
-    { state: context.workspaceState, target: vscode.ConfigurationTarget.Workspace, key: "workspaceValue" as const, on: vscode.workspace.workspaceFolders !== undefined }
+    { state: context.workspaceState, target: vscode.ConfigurationTarget.Workspace, // A folder that is not trusted does not show its settings.
+      key: "workspaceValue" as const, on: vscode.workspace.workspaceFolders !== undefined && vscode.workspace.isTrusted }
   ];
   for (const { state, target, key, on } of levels) {
     if (!on || state.get<boolean>(DONE)) continue;

@@ -429,10 +429,15 @@
     return lines.join("\n") + "\n";
   }
   function asGprint(/** @type {Piece} */ p) {
-    return columns(p).map(row => {
+    const rows = columns(p);
+    // Where it is in the picture; a sprite goes to X, Y.
+    const at = lift || selection ? /** @type {Rect} */ (rectOfLift()) : { x: 0, y: 0 };
+    return rows.map((row, r) => {
       const parts = [];
-      // A line of BASIC has room for this many.
-      for (let i = 0; i < row.length; i += 100) parts.push(`GPRINT "${row.slice(i, i + 100).map(hex2).join("")}"`);
+      // A line of BASIC has room for this many; with ; the next one goes on from there.
+      for (let i = 0; i < row.length; i += 100) parts.push(`GPRINT "${row.slice(i, i + 100).map(hex2).join("")}"${i + 100 < row.length ? ";" : ""}`);
+      // GCURSOR is the bottom dot of the eight.
+      if (rows.length > 1 || parts.length > 1) parts[0] = `GCURSOR (${SPR ? `X,Y+${r * 8 + 7}` : `${at.x},${at.y + r * 8 + 7}`}):` + parts[0];
       return parts.join("\n");
     }).join("\n") + "\n";
   }
@@ -483,7 +488,7 @@
       wipe(next, selection ?? all());
       commit(next, L("消す", "Clear"));
     },
-    invert() { change(L("反転", "Invert"), p => ({ ...p, dots: p.dots.map(d => SPR ? (d === 1 ? 2 : d === 2 ? 1 : 0) : d ? 0 : 1) })); },
+    invert() { change(L("反転", "Invert"), p => ({ ...p, dots: p.dots.map(d => SPR && mask ? (d === 1 ? 2 : d === 2 ? 1 : 0) : d === 1 ? 0 : 1) })); },
     outline() {
       change(L("縁取り", "Outline"), p => ({ ...p, dots: p.dots.map((d, i) => {
         if (d) return d;
@@ -537,17 +542,18 @@
     p.dots.forEach((d, i) => { if (d) { const x = i % p.w, y = Math.floor(i / p.w); x0 = Math.min(x0, x); x1 = Math.max(x1, x); y0 = Math.min(y0, y); y1 = Math.max(y1, y); } });
     return x1 < 0 ? undefined : map(p, x1 - x0 + 1, y1 - y0 + 1, (x, y) => (y + y0) * p.w + x + x0);
   }
-  // The characters from 20h on, five columns each, bit 0 at the top.
+  // The characters from 20h on, five columns each, bit 0 at the top: the ASCII table of SparkFun's
+  // GraphicLCD_Nokia_5110 (MIT License, Copyright (c) 2016 SparkFun Electronics; see ThirdPartyNotices.txt).
   const FONT =
-    "000000000000005F00000007000700147F147F14242A7F2A12231308646236495522500005030000001C2241000041221C00082A1C2A0808083E08080050300000080808080800606000002010080402" +
-    "3E5149453E00427F400042615149462141454B311814127F1027454545393C4A49493001710905033649494936064949291E003636000000563600000008142241141414141441221408000201510906" +
-    "324979413E7E1111117E7F494949363E414141227F4141221C7F494949417F090909013E414151327F0808087F00417F41002040413F017F081422417F404040407F0204027F7F0408107F3E4141413E" +
-    "7F090909063E4151215E7F09192946464949493101017F01013F4040403F1F2040201F7F2018207F63140814630304780403615149454300007F4141020408102041417F000004020102044040404040" +
-    "000102040020545454787F484444383844444420384444487F3854545418087E090102081454543C7F0804047800447D40002040443D00007F10284400417F40007C041804787C080404783844444438" +
-    "7C14141408081414187C7C080404084854545420043F4440203C4040207C1C2040201C3C4030403C44281028440C5050503C4464544C44000836410000007F000000413608000804081008";
+    "000000000000005F00000007000700147F147F14242A7F2A12231308646236495522500005030000001C2241000041221C0014083E081408083E08080050300000080808080800606000002010080402" +
+    "3E5149453E00427F400042615149462141454B311814127F1027454545393C4A49493001710905033649494936064949291E003636000000563600000814224100141414141400412214080201510906" +
+    "324979413E7E1111117E7F494949363E414141227F4141221C7F494949417F090909013E4149497A7F0808087F00417F41002040413F017F081422417F404040407F020C027F7F0408107F3E4141413E" +
+    "7F090909063E4151215E7F09192946464949493101017F01013F4040403F1F2040201F3F4038403F631408146307087008076151494543007F41410002040810200041417F0004020102044040404040" +
+    "000102040020545454787F484444383844444420384444487F3854545418087E0901020C5252523E7F0804047800447D40002040443D007F1028440000417F40007C041804787C080404783844444438" +
+    "7C14141408081414187C7C080404084854545420043F4440203C4040207C1C2040201C3C4030403C44281028440C5050503C4464544C44000836410000007F000000413608001008081008";
   /** Text in 5 x 7 dots, its characters 6 dots apart (8 high, 16 is twice as big). @returns {Piece} */
   function dotText(/** @type {string} */ text, /** @type {number} */ px) {
-    const n = Math.max(1, Math.floor(px / 8)), bold = input("textBold").checked ? 1 : 0, w = (text.length * 6 - 1 + bold) * n, out = new Uint8Array(w * 8 * n);
+    const n = Math.max(1, Math.floor(Math.min(32, px) / 8)), bold = input("textBold").checked ? 1 : 0, w = (text.length * 6 - 1 + bold) * n, out = new Uint8Array(w * 8 * n);
     [...text].forEach((c, k) => {
       const at = (c.charCodeAt(0) - 32) * 10;
       for (let x = 0; x < (5 + bold) * n; x++) {
@@ -889,7 +895,8 @@
       if (drag) finish(false);
       else if (placing || image || saved.tool === "text") cancelPlacing();
       else { deselect(); buttons(); }
-    } else if (key === "enter" && placing) place();
+    } else if (drag && !typing) return; // a drag is finished first: it would put its own picture over what these do
+    else if (key === "enter" && placing) place();
     else if (typing || e.target instanceof HTMLSelectElement) return;
     else if (key === " " && plain) { if (e.target instanceof HTMLButtonElement) return; if (!spaceHeld) { spaceHeld = true; buttons(); draw(); } }
     else if (command && !e.altKey && !e.shiftKey && key === "c") actions.copy();

@@ -51,5 +51,4 @@ OK: 11 bytes, origin=B8000h -> ...\examples\sum.bin
 | `src/E500Assembler.Cli/` | コマンドライン |
 | `tests/` | 自動テスト、実行ファイルの統合テスト（`cli_smoke.py`） |
 | `examples/` | `sum.asm` と生成結果 |
-| `docs/SOURCES.md` | 仕様の参照元と判断 |
 | `build.cmd`、`build.sh` | ビルド（`-TestOnly` / `--test-only` でテストだけ） |
