@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 380" width="980" height="380" role="img" aria-labelledby="t d">
+  <title id="t">式の優先順位</title>
+  <desc id="d">RUN モードの計算の順番。上ほど先に計算する。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .xs { font-size: 11px; fill: #52606D; }
+    .r { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; fill: #B7791F; font-weight: 700; }
+    .j { font-size: 10px; fill: #B7791F; font-weight: 700; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .lcd { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 14px; font-weight: 700; fill: #24351D; }
+  </style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#7B8794"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="379" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">式の優先順位</text>
+  <text x="24" y="56" class="sub">上ほど優先順位が高い。かっこは最優先</text>
+  <rect x="24" y="76" width="380" height="27" rx="6" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="40" y="95" class="b"></text>
+  <text x="70" y="95" class="b">かっこ</text>
+  <text x="190" y="95" class="m" xml:space="preserve">( )</text>
+  <rect x="24" y="108" width="380" height="27" rx="6" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="40" y="127" class="b">1</text>
+  <text x="70" y="127" class="b">変数、PI</text>
+  <text x="190" y="127" class="m" xml:space="preserve">A   X#   PI</text>
+  <rect x="24" y="140" width="380" height="27" rx="6" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="40" y="159" class="b">2</text>
+  <text x="70" y="159" class="b">関数</text>
+  <text x="190" y="159" class="m" xml:space="preserve">SIN   SQR   FACT …</text>
+  <rect x="24" y="172" width="380" height="27" rx="6" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="40" y="191" class="b">3</text>
+  <text x="70" y="191" class="b">べき乗、根</text>
+  <text x="190" y="191" class="m" xml:space="preserve">^   ROT</text>
+  <rect x="24" y="204" width="380" height="27" rx="6" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="40" y="223" class="b">4</text>
+  <text x="70" y="223" class="b">符号</text>
+  <text x="190" y="223" class="m" xml:space="preserve">+   −</text>
+  <rect x="24" y="236" width="380" height="27" rx="6" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="40" y="255" class="b">5</text>
+  <text x="70" y="255" class="b">乗除</text>
+  <text x="190" y="255" class="m" xml:space="preserve">*   /</text>
+  <rect x="24" y="268" width="380" height="27" rx="6" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="40" y="287" class="b">6</text>
+  <text x="70" y="287" class="b">加減</text>
+  <text x="190" y="287" class="m" xml:space="preserve">+   −</text>
+  <rect x="24" y="300" width="380" height="27" rx="6" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="40" y="319" class="b">7</text>
+  <text x="70" y="319" class="b">関係</text>
+  <text x="190" y="319" class="m" xml:space="preserve">=  &gt;  &lt;  &gt;=  &lt;=  &lt;&gt;</text>
+  <rect x="24" y="332" width="380" height="27" rx="6" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="40" y="351" class="b">8</text>
+  <text x="70" y="351" class="b">論理</text>
+  <text x="190" y="351" class="m" xml:space="preserve">AND   OR   XOR</text>
+  <text x="440" y="96" class="b">例</text>
+  <text x="440" y="126" class="m" xml:space="preserve">-2^4</text>
+  <rect x="570" y="106" width="130" height="30" rx="4" fill="#BDD08B" stroke="#4A5A2A" stroke-width="1.2"/>
+  <text x="690" y="126" class="lcd" xml:space="preserve" text-anchor="end">-16</text>
+  <text x="716" y="126" class="s">べき乗が先、符号が後</text>
+  <text x="440" y="162" class="m" xml:space="preserve">2^-2</text>
+  <rect x="570" y="142" width="130" height="30" rx="4" fill="#BDD08B" stroke="#4A5A2A" stroke-width="1.2"/>
+  <text x="690" y="162" class="lcd" xml:space="preserve" text-anchor="end">0.25</text>
+  <text x="716" y="162" class="s">指数の符号は先</text>
+  <text x="440" y="198" class="m" xml:space="preserve">3^2^2</text>
+  <rect x="570" y="178" width="130" height="30" rx="4" fill="#BDD08B" stroke="#4A5A2A" stroke-width="1.2"/>
+  <text x="690" y="198" class="lcd" xml:space="preserve" text-anchor="end">81</text>
+  <text x="716" y="198" class="s">右から: 3^(2^2)</text>
+  <text x="440" y="234" class="m" xml:space="preserve">SIN ACS 0.6</text>
+  <rect x="570" y="214" width="130" height="30" rx="4" fill="#BDD08B" stroke="#4A5A2A" stroke-width="1.2"/>
+  <text x="690" y="234" class="lcd" xml:space="preserve" text-anchor="end">0.8</text>
+  <text x="716" y="234" class="s">関数も右から</text>
+  <text x="440" y="270" class="m" xml:space="preserve">SQR 16+9</text>
+  <rect x="570" y="250" width="130" height="30" rx="4" fill="#BDD08B" stroke="#4A5A2A" stroke-width="1.2"/>
+  <text x="690" y="270" class="lcd" xml:space="preserve" text-anchor="end">13</text>
+  <text x="716" y="270" class="s">√16 + 9</text>
+  <text x="440" y="306" class="m" xml:space="preserve">SQR (16+9)</text>
+  <rect x="570" y="286" width="130" height="30" rx="4" fill="#BDD08B" stroke="#4A5A2A" stroke-width="1.2"/>
+  <text x="690" y="306" class="lcd" xml:space="preserve" text-anchor="end">5</text>
+  <text x="716" y="306" class="s">かっこで囲む</text>
+  <text x="440" y="342" class="m" xml:space="preserve">5&gt;3 AND 2&gt;1</text>
+  <rect x="570" y="322" width="130" height="30" rx="4" fill="#BDD08B" stroke="#4A5A2A" stroke-width="1.2"/>
+  <text x="690" y="342" class="lcd" xml:space="preserve" text-anchor="end">-1</text>
+  <text x="716" y="342" class="s">真は -1</text>
+</svg>

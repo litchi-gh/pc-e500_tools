@@ -1,6 +1,0 @@
-.vscode/**
-src/**
-out/test/**
-tsconfig.json
-**/*.map
-node_modules/@types/**

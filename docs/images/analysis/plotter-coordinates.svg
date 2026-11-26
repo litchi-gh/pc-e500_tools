@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 440" width="980" height="440" role="img" aria-labelledby="t d">
+  <title id="t">座標と、四角形を描くときのペンの動き</title>
+  <desc id="d">原点と X 軸、Y 軸、(1,2) から (3,2)、(3,4)、(1,4)、(1,2) と描き、最後に (3,4) へペンを上げて移動する図と、送るコマンドの一覧。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+  </style>
+  <defs><marker id="a52606D" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#52606D"/></marker><marker id="aC0392B" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#C0392B"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="439" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">座標と、四角形を描くときのペンの動き</text>
+  <text x="24" y="55" class="sub">X は右が正、Y は上が正。1 ステップは 0.2 mm。例は LLINE (1,2)-(3,4),2,3,B</text>
+  <polyline points="110,370 110,84.8" fill="none" stroke="#E3E8EE" stroke-width="1"/>
+  <polyline points="110,370 444.8,370" fill="none" stroke="#E3E8EE" stroke-width="1"/>
+  <text x="110" y="390" class="s" text-anchor="middle">0</text>
+  <polyline points="172,370 172,84.8" fill="none" stroke="#E3E8EE" stroke-width="1"/>
+  <polyline points="110,308 444.8,308" fill="none" stroke="#E3E8EE" stroke-width="1"/>
+  <text x="172" y="390" class="s" text-anchor="middle">1</text>
+  <text x="100" y="312" class="s" text-anchor="end">1</text>
+  <polyline points="234,370 234,84.8" fill="none" stroke="#E3E8EE" stroke-width="1"/>
+  <polyline points="110,246 444.8,246" fill="none" stroke="#E3E8EE" stroke-width="1"/>
+  <text x="234" y="390" class="s" text-anchor="middle">2</text>
+  <text x="100" y="250" class="s" text-anchor="end">2</text>
+  <polyline points="296,370 296,84.8" fill="none" stroke="#E3E8EE" stroke-width="1"/>
+  <polyline points="110,184 444.8,184" fill="none" stroke="#E3E8EE" stroke-width="1"/>
+  <text x="296" y="390" class="s" text-anchor="middle">3</text>
+  <text x="100" y="188" class="s" text-anchor="end">3</text>
+  <polyline points="358,370 358,84.8" fill="none" stroke="#E3E8EE" stroke-width="1"/>
+  <polyline points="110,122 444.8,122" fill="none" stroke="#E3E8EE" stroke-width="1"/>
+  <text x="358" y="390" class="s" text-anchor="middle">4</text>
+  <text x="100" y="126" class="s" text-anchor="end">4</text>
+  <polyline points="420,370 420,84.8" fill="none" stroke="#E3E8EE" stroke-width="1"/>
+  <polyline points="110,84.8 444.8,84.8" fill="none" stroke="#E3E8EE" stroke-width="1"/>
+  <text x="420" y="390" class="s" text-anchor="middle">5</text>
+  <polyline points="90,370 451,370" fill="none" stroke="#52606D" stroke-width="1.5" marker-end="url(#a52606D)"/>
+  <polyline points="110,384 110,75.5" fill="none" stroke="#52606D" stroke-width="1.5" marker-end="url(#a52606D)"/>
+  <text x="459" y="375" class="b">X</text>
+  <text x="118" y="82.6" class="b">Y</text>
+  <polyline points="110,370 172,246" fill="none" stroke="#52606D" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#a52606D)"/>
+  <polyline points="172,246 296,246" fill="none" stroke="#C0392B" stroke-width="2.5" marker-end="url(#aC0392B)"/>
+  <polyline points="296,246 296,122" fill="none" stroke="#C0392B" stroke-width="2.5" marker-end="url(#aC0392B)"/>
+  <polyline points="296,122 172,122" fill="none" stroke="#C0392B" stroke-width="2.5" marker-end="url(#aC0392B)"/>
+  <polyline points="172,122 172,246" fill="none" stroke="#C0392B" stroke-width="2.5" marker-end="url(#aC0392B)"/>
+  <polyline points="172,246 292.28,125.72" fill="none" stroke="#52606D" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#a52606D)"/>
+  <circle cx="172" cy="246" r="4" fill="#C0392B" stroke="none"/>
+  <text x="122" y="250" class="ms" xml:space="preserve">(1,2)</text>
+  <circle cx="296" cy="246" r="4" fill="#C0392B" stroke="none"/>
+  <text x="306" y="266" class="ms" xml:space="preserve">(3,2)</text>
+  <circle cx="296" cy="122" r="4" fill="#C0392B" stroke="none"/>
+  <text x="306" y="116" class="ms" xml:space="preserve">(3,4)</text>
+  <circle cx="172" cy="122" r="4" fill="#C0392B" stroke="none"/>
+  <text x="132" y="114" class="ms" xml:space="preserve">(1,4)</text>
+  <text x="520" y="92" class="b">送るコマンド（それぞれのあとに CR NUL）</text>
+  <rect x="520" y="108" width="170" height="38" rx="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="605" y="131.68" class="m" xml:space="preserve" text-anchor="middle">M1,2</text>
+  <text x="706" y="132" class="s">ペンを上げて (1,2) へ（点線）</text>
+  <rect x="520" y="158" width="170" height="38" rx="6" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.5"/>
+  <text x="605" y="181.68" class="m" xml:space="preserve" text-anchor="middle">L2</text>
+  <text x="706" y="182" class="s">線の種類 2</text>
+  <rect x="520" y="208" width="170" height="38" rx="6" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.5"/>
+  <text x="605" y="231.68" class="m" xml:space="preserve" text-anchor="middle">ESC 3</text>
+  <text x="706" y="232" class="s">色 3（赤）</text>
+  <rect x="520" y="258" width="170" height="38" rx="6" fill="#FDECEA" stroke="#C0392B" stroke-width="1.5"/>
+  <text x="605" y="281.68" class="m" xml:space="preserve" text-anchor="middle">D3,2,3,4,1,4,1,2</text>
+  <text x="706" y="282" class="s">ペンを下げて 4 辺を描く（実線）</text>
+  <rect x="520" y="308" width="170" height="38" rx="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="605" y="331.68" class="m" xml:space="preserve" text-anchor="middle">M3,4</text>
+  <text x="706" y="332" class="s">ペンを上げて対角の点へ（点線）</text>
+  <text x="520" y="384" class="s">最初の M は、それまでのペンの位置から動く（図では原点から）。</text>
+</svg>

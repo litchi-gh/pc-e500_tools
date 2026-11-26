@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 300" width="980" height="300" role="img" aria-labelledby="t d">
+  <title id="t">RAM カードの検査の範囲</title>
+  <desc id="d">8 KB から 64 KB までの検査の範囲を横棒で比べた図。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .mb { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; font-weight: 700; }
+  </style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#52606D"/></marker><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#C0392B"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="299" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h" xml:space="preserve">RAM カードの検査の範囲</text>
+  <text x="24" y="55" class="sub" xml:space="preserve">選んだ容量で 40000h からどこまで調べるか。横は比率どおり</text>
+  <text x="110" y="106" class="b" xml:space="preserve" text-anchor="end">8 KB</text>
+  <rect x="120" y="84" width="84" height="32" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="212" y="105" class="m" xml:space="preserve">40000h〜41FFFh</text>
+  <text x="110" y="152" class="b" xml:space="preserve" text-anchor="end">16 KB</text>
+  <rect x="120" y="130" width="168" height="32" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="296" y="151" class="m" xml:space="preserve">40000h〜43FFFh</text>
+  <text x="110" y="198" class="b" xml:space="preserve" text-anchor="end">32 KB</text>
+  <rect x="120" y="176" width="336" height="32" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="464" y="197" class="m" xml:space="preserve">40000h〜47FFFh</text>
+  <text x="110" y="244" class="b" xml:space="preserve" text-anchor="end">64 KB</text>
+  <rect x="120" y="222" width="672" height="32" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="800" y="243" class="m" xml:space="preserve">40000h〜4FFFFh</text>
+  <text x="24" y="284" class="s" xml:space="preserve">2 KB と 4 KB は 40000h からです（終わりのアドレスは表にありません）。</text>
+</svg>

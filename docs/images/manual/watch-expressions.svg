@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 330" width="980" height="330" role="img" aria-labelledby="t d">
+  <title id="t">ウォッチの式が指すもの</title>
+  <desc id="d">角括弧は外部メモリ、丸括弧は内部 RAM、括弧なしはレジスタやラベルの値を表す。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 14px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 12px; }
+  </style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#52606D"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="329" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+
+  <text x="24" y="34" class="h" text-anchor="start" xml:space="preserve">ウォッチの式が指すもの</text>
+  <rect x="24" y="56" width="290" height="250" rx="10" fill="#F1ECFB" stroke="#6B4FBB"/>
+  <text x="40" y="82" class="b" text-anchor="start" xml:space="preserve">CPU のレジスタ</text>
+  <text x="298" y="82" class="s" text-anchor="end" xml:space="preserve">括弧を付けない</text>
+  <rect x="344" y="56" width="290" height="250" rx="10" fill="#E8F1FC" stroke="#2F6DB5"/>
+  <text x="360" y="82" class="b" text-anchor="start" xml:space="preserve">外部メモリ（1 MB）</text>
+  <text x="618" y="82" class="s" text-anchor="end" xml:space="preserve">[ ] で囲む</text>
+  <rect x="664" y="56" width="290" height="250" rx="10" fill="#E6F6EC" stroke="#2F855A"/>
+  <text x="680" y="82" class="b" text-anchor="start" xml:space="preserve">内部 RAM（256 バイト）</text>
+  <text x="938" y="82" class="s" text-anchor="end" xml:space="preserve">( ) で囲む</text>
+  <rect x="40" y="102" width="100" height="32" rx="6" fill="#FFFFFF" stroke="#7B8794"/>
+  <text x="90" y="123" class="m" text-anchor="middle" xml:space="preserve">X</text>
+  <text x="152" y="123" class="" text-anchor="start" xml:space="preserve">X の値（アドレス）</text>
+  <rect x="40" y="148" width="100" height="32" rx="6" fill="#FFFFFF" stroke="#7B8794"/>
+  <text x="90" y="169" class="m" text-anchor="middle" xml:space="preserve">BA</text>
+  <text x="152" y="169" class="" text-anchor="start" xml:space="preserve">BA の値</text>
+  <rect x="40" y="194" width="100" height="32" rx="6" fill="#FFFFFF" stroke="#7B8794"/>
+  <text x="90" y="215" class="m" text-anchor="middle" xml:space="preserve">C</text>
+  <text x="152" y="215" class="" text-anchor="start" xml:space="preserve">キャリー</text>
+  <rect x="40" y="240" width="100" height="32" rx="6" fill="#FFFFFF" stroke="#7B8794"/>
+  <text x="90" y="261" class="m" text-anchor="middle" xml:space="preserve">label</text>
+  <text x="152" y="261" class="" text-anchor="start" xml:space="preserve">ラベルのアドレス</text>
+  <rect x="360" y="102" width="100" height="32" rx="6" fill="#FFFFFF" stroke="#7B8794"/>
+  <text x="410" y="123" class="m" text-anchor="middle" xml:space="preserve">[WORK]</text>
+  <text x="472" y="123" class="" text-anchor="start" xml:space="preserve">そのアドレスの 1 バイト</text>
+  <rect x="360" y="148" width="100" height="32" rx="6" fill="#FFFFFF" stroke="#7B8794"/>
+  <text x="410" y="169" class="m" text-anchor="middle" xml:space="preserve">[WORK]:2</text>
+  <text x="472" y="169" class="" text-anchor="start" xml:space="preserve">2 バイト（下位が先）</text>
+  <rect x="360" y="194" width="100" height="32" rx="6" fill="#FFFFFF" stroke="#7B8794"/>
+  <text x="410" y="215" class="m" text-anchor="middle" xml:space="preserve">[WORK+2]</text>
+  <text x="472" y="215" class="" text-anchor="start" xml:space="preserve">2 つ先の 1 バイト</text>
+  <rect x="360" y="240" width="100" height="32" rx="6" fill="#FFFFFF" stroke="#7B8794"/>
+  <text x="410" y="261" class="m" text-anchor="middle" xml:space="preserve">[X]</text>
+  <text x="472" y="261" class="" text-anchor="start" xml:space="preserve">X が指す 1 バイト</text>
+  <rect x="680" y="102" width="100" height="32" rx="6" fill="#FFFFFF" stroke="#7B8794"/>
+  <text x="730" y="123" class="m" text-anchor="middle" xml:space="preserve">($20)</text>
+  <text x="792" y="123" class="" text-anchor="start" xml:space="preserve">アドレス 20hの 1 バイト</text>
+  <rect x="680" y="148" width="100" height="32" rx="6" fill="#FFFFFF" stroke="#7B8794"/>
+  <text x="730" y="169" class="m" text-anchor="middle" xml:space="preserve">(score):2</text>
+  <text x="792" y="169" class="" text-anchor="start" xml:space="preserve">2 バイト（下位が先）</text>
+  <rect x="680" y="194" width="100" height="32" rx="6" fill="#FFFFFF" stroke="#7B8794"/>
+  <text x="730" y="215" class="m" text-anchor="middle" xml:space="preserve">(BP)</text>
+  <text x="792" y="215" class="" text-anchor="start" xml:space="preserve">BP が指す所</text>
+  <rect x="680" y="240" width="100" height="32" rx="6" fill="#FFFFFF" stroke="#7B8794"/>
+  <text x="730" y="261" class="m" text-anchor="middle" xml:space="preserve">($EC)</text>
+  <text x="792" y="261" class="" text-anchor="start" xml:space="preserve">BP そのもの</text>
+</svg>

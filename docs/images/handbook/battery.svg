@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 430" width="980" height="430" role="img" aria-labelledby="t d">
+  <title id="t">電池の取り付け</title>
+  <desc id="d">単 4 形 4 本を縦に並べて入れ、メモリ保護スイッチを B にしてから交換する。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .xs { font-size: 11px; fill: #52606D; }
+    .r { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; fill: #B7791F; font-weight: 700; }
+    .j { font-size: 10px; fill: #B7791F; font-weight: 700; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .lcd { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 14px; font-weight: 700; fill: #24351D; }
+  </style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#7B8794"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="429" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">電池の取り付け</text>
+  <text x="24" y="56" class="sub">4 本を一列に、− 側を奥にして入れる</text>
+  <rect x="40" y="90" width="60" height="300" rx="8" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="70" y="82" class="s" text-anchor="middle">奥</text>
+  <text x="70" y="412" class="s" text-anchor="middle">カバー側</text>
+  <rect x="48" y="96" width="44" height="66" rx="6" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="70" y="114" class="b" text-anchor="middle">−</text>
+  <text x="70" y="156" class="b" text-anchor="middle">＋</text>
+  <rect x="48" y="168" width="44" height="66" rx="6" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="70" y="186" class="b" text-anchor="middle">−</text>
+  <text x="70" y="228" class="b" text-anchor="middle">＋</text>
+  <rect x="48" y="240" width="44" height="66" rx="6" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="70" y="258" class="b" text-anchor="middle">−</text>
+  <text x="70" y="300" class="b" text-anchor="middle">＋</text>
+  <rect x="48" y="312" width="44" height="66" rx="6" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="70" y="330" class="b" text-anchor="middle">−</text>
+  <text x="70" y="372" class="b" text-anchor="middle">＋</text>
+  <text x="112" y="130" class="s">1 本目（− から入れる）</text>
+  <text x="112" y="346" class="s">4 本目</text>
+  <rect x="330" y="90" width="300" height="130" rx="6" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="350" y="116" class="b">A（通常）</text>
+  <rect x="350" y="130" width="90" height="28" rx="6" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.2"/>
+  <rect x="352" y="132" width="40" height="24" rx="3" fill="#52606D" stroke="#1F2933" stroke-width="1.2"/>
+  <text x="350" y="176" class="m" xml:space="preserve">A</text>
+  <text x="430" y="176" class="m" xml:space="preserve">B</text>
+  <text x="460" y="146" class="s">本体が動作する</text>
+  <text x="460" y="168" class="s">通常はこの位置</text>
+  <rect x="650" y="90" width="300" height="130" rx="6" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="670" y="116" class="b">B（電池の交換時）</text>
+  <rect x="670" y="130" width="90" height="28" rx="6" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.2"/>
+  <rect x="718" y="132" width="40" height="24" rx="3" fill="#52606D" stroke="#1F2933" stroke-width="1.2"/>
+  <text x="670" y="176" class="m" xml:space="preserve">A</text>
+  <text x="750" y="176" class="m" xml:space="preserve">B</text>
+  <text x="780" y="146" class="s">メモリを保持</text>
+  <text x="780" y="168" class="s">本体は動作しない</text>
+  <text x="330" y="250" class="b">乾電池の交換手順</text>
+  <rect x="330" y="266" width="112" height="36" rx="6" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="386" y="289" class="s" text-anchor="middle">OFF</text>
+  <line x1="442" y1="284" x2="454" y2="284" stroke="#7B8794" stroke-width="1.4" marker-end="url(#a)"/>
+  <rect x="456" y="266" width="112" height="36" rx="6" fill="#FDECEA" stroke="#C0392B" stroke-width="1.2"/>
+  <text x="512" y="289" class="s" text-anchor="middle">カードを外す</text>
+  <line x1="568" y1="284" x2="580" y2="284" stroke="#7B8794" stroke-width="1.4" marker-end="url(#a)"/>
+  <rect x="582" y="266" width="112" height="36" rx="6" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="638" y="289" class="s" text-anchor="middle">カバーを外す</text>
+  <line x1="694" y1="284" x2="706" y2="284" stroke="#7B8794" stroke-width="1.4" marker-end="url(#a)"/>
+  <rect x="708" y="266" width="112" height="36" rx="6" fill="#FDECEA" stroke="#C0392B" stroke-width="1.2"/>
+  <text x="764" y="289" class="s" text-anchor="middle">スイッチ B</text>
+  <line x1="820" y1="284" x2="832" y2="284" stroke="#7B8794" stroke-width="1.4" marker-end="url(#a)"/>
+  <rect x="834" y="266" width="112" height="36" rx="6" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="890" y="289" class="s" text-anchor="middle">4 本を交換</text>
+  <rect x="330" y="322" width="112" height="36" rx="6" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="386" y="345" class="s" text-anchor="middle">RESET を押す</text>
+  <line x1="442" y1="340" x2="454" y2="340" stroke="#7B8794" stroke-width="1.4" marker-end="url(#a)"/>
+  <rect x="456" y="322" width="112" height="36" rx="6" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="512" y="345" class="s" text-anchor="middle">カードを戻す</text>
+  <line x1="568" y1="340" x2="580" y2="340" stroke="#7B8794" stroke-width="1.4" marker-end="url(#a)"/>
+  <rect x="582" y="322" width="112" height="36" rx="6" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="638" y="345" class="s" text-anchor="middle">スイッチ A</text>
+  <line x1="694" y1="340" x2="706" y2="340" stroke="#7B8794" stroke-width="1.4" marker-end="url(#a)"/>
+  <rect x="708" y="322" width="112" height="36" rx="6" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="764" y="345" class="s" text-anchor="middle">カバー</text>
+  <text x="330" y="404" class="s">A のまま電池を外すとメモリの内容が、カードを入れたまま交換するとカードの内容が消える</text>
+</svg>

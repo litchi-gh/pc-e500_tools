@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 520" width="980" height="520" role="img" aria-labelledby="t d">
+  <title id="t">パケットの形</title>
+  <desc id="d">名前のブロック 14 バイト、コマンドと応答の形、SAVE の本体と LOAD の本体の和の入り方（600 バイトの例）。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+  </style>
+  <defs><marker id="a2F855A" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2F855A"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="519" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">パケットの形</text>
+  <text x="24" y="55" class="sub">上から、名前のブロック、OPEN の送信、LOF の応答、SAVE と LOAD の本体</text>
+  <text x="24" y="106" class="b">名前（14）</text>
+  <rect x="150" y="84" width="40" height="34" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="170" y="105.68" class="m" xml:space="preserve" text-anchor="middle">X</text>
+  <rect x="194" y="84" width="40" height="34" rx="3" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="214" y="105.68" class="m" xml:space="preserve" text-anchor="middle">:</text>
+  <rect x="238" y="84" width="40" height="34" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="258" y="105.68" class="m" xml:space="preserve" text-anchor="middle">P</text>
+  <rect x="282" y="84" width="40" height="34" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="302" y="105.68" class="m" xml:space="preserve" text-anchor="middle">R</text>
+  <rect x="326" y="84" width="40" height="34" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="346" y="105.68" class="m" xml:space="preserve" text-anchor="middle">O</text>
+  <rect x="370" y="84" width="40" height="34" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="390" y="105.68" class="m" xml:space="preserve" text-anchor="middle">G</text>
+  <rect x="414" y="84" width="40" height="34" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="434" y="104.96" class="ms" xml:space="preserve" text-anchor="middle">20</text>
+  <rect x="458" y="84" width="40" height="34" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="478" y="104.96" class="ms" xml:space="preserve" text-anchor="middle">20</text>
+  <rect x="502" y="84" width="40" height="34" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="522" y="104.96" class="ms" xml:space="preserve" text-anchor="middle">20</text>
+  <rect x="546" y="84" width="40" height="34" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="566" y="104.96" class="ms" xml:space="preserve" text-anchor="middle">20</text>
+  <rect x="590" y="84" width="40" height="34" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="610" y="105.68" class="m" xml:space="preserve" text-anchor="middle">.</text>
+  <rect x="634" y="84" width="40" height="34" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="654" y="105.68" class="m" xml:space="preserve" text-anchor="middle">B</text>
+  <rect x="678" y="84" width="40" height="34" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="698" y="105.68" class="m" xml:space="preserve" text-anchor="middle">A</text>
+  <rect x="722" y="84" width="40" height="34" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="742" y="105.68" class="m" xml:space="preserve" text-anchor="middle">S</text>
+  <text x="150" y="136" class="s">ドライブ</text>
+  <text x="238" y="136" class="s">ファイル名 12 文字（空白 20h で埋める）</text>
+  <text x="24" y="189" class="b">OPEN 送信</text>
+  <rect x="150" y="166" width="56" height="36" rx="3" fill="#FDECEA" stroke="#C0392B" stroke-width="1.5"/>
+  <text x="178" y="188.32" class="s" text-anchor="middle">03h</text>
+  <rect x="210" y="166" width="186" height="36" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="303" y="188.32" class="s" text-anchor="middle">名前（14）</text>
+  <rect x="400" y="166" width="96" height="36" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="448" y="188.32" class="s" text-anchor="middle">モード</text>
+  <rect x="500" y="166" width="96" height="36" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="548" y="188.32" class="s" text-anchor="middle">番号</text>
+  <rect x="600" y="166" width="56" height="36" rx="3" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="628" y="188.32" class="s" text-anchor="middle">和</text>
+  <text x="24" y="243" class="b">LOF の応答</text>
+  <rect x="150" y="220" width="56" height="36" rx="3" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+  <text x="178" y="242.32" class="s" text-anchor="middle">00h</text>
+  <rect x="210" y="220" width="56" height="36" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="238" y="242.32" class="s" text-anchor="middle">2Ch</text>
+  <rect x="270" y="220" width="56" height="36" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="298" y="242.32" class="s" text-anchor="middle">01h</text>
+  <rect x="330" y="220" width="56" height="36" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="358" y="242.32" class="s" text-anchor="middle">00h</text>
+  <rect x="390" y="220" width="56" height="36" rx="3" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="418" y="242.32" class="s" text-anchor="middle">2Dh</text>
+  <text x="470" y="243" class="s">長さ 00012Ch = 300 バイト。和 = 2Ch + 01h + 00h = 2Dh</text>
+  <text x="24" y="292" class="b">本体が 600 バイトのとき（256 + 256 + 88）</text>
+  <text x="24" y="329" class="b">SAVE 送る</text>
+  <rect x="150" y="306" width="166" height="36" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="233" y="328.32" class="s" text-anchor="middle">256 バイト</text>
+  <rect x="320" y="306" width="46" height="36" rx="3" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="343" y="327.96" class="ms" xml:space="preserve" text-anchor="middle">和</text>
+  <rect x="370" y="306" width="166" height="36" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="453" y="328.32" class="s" text-anchor="middle">256 バイト</text>
+  <rect x="540" y="306" width="46" height="36" rx="3" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="563" y="327.96" class="ms" xml:space="preserve" text-anchor="middle">和</text>
+  <rect x="590" y="306" width="106" height="36" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="643" y="328.32" class="s" text-anchor="middle">88 バイト</text>
+  <rect x="700" y="306" width="46" height="36" rx="3" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="723" y="327.96" class="ms" xml:space="preserve" text-anchor="middle">和</text>
+  <polyline points="344,344 344,370" fill="none" stroke="#2F855A" stroke-width="1.5" marker-end="url(#a2F855A)"/>
+  <rect x="310" y="372" width="68" height="28" rx="3" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+  <text x="344" y="390.32" class="s" text-anchor="middle">状態</text>
+  <polyline points="564,344 564,370" fill="none" stroke="#2F855A" stroke-width="1.5" marker-end="url(#a2F855A)"/>
+  <rect x="530" y="372" width="68" height="28" rx="3" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+  <text x="564" y="390.32" class="s" text-anchor="middle">状態</text>
+  <polyline points="724,344 724,370" fill="none" stroke="#2F855A" stroke-width="1.5" marker-end="url(#a2F855A)"/>
+  <rect x="690" y="372" width="68" height="28" rx="3" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+  <text x="724" y="390.32" class="s" text-anchor="middle">状態</text>
+  <text x="24" y="390" class="s">機器が返す</text>
+  <text x="24" y="453" class="b">LOAD 受ける</text>
+  <rect x="150" y="430" width="56" height="36" rx="3" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+  <text x="178" y="452.32" class="s" text-anchor="middle">00h</text>
+  <rect x="210" y="430" width="166" height="36" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="293" y="452.32" class="s" text-anchor="middle">256 バイト</text>
+  <rect x="380" y="430" width="46" height="36" rx="3" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="403" y="451.96" class="ms" xml:space="preserve" text-anchor="middle">和</text>
+  <rect x="430" y="430" width="166" height="36" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="513" y="452.32" class="s" text-anchor="middle">256 バイト</text>
+  <rect x="600" y="430" width="46" height="36" rx="3" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="623" y="451.96" class="ms" xml:space="preserve" text-anchor="middle">和</text>
+  <rect x="650" y="430" width="106" height="36" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="703" y="452.32" class="s" text-anchor="middle">88 バイト</text>
+  <rect x="760" y="430" width="46" height="36" rx="3" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="783" y="451.96" class="ms" xml:space="preserve" text-anchor="middle">和</text>
+  <rect x="810" y="430" width="56" height="36" rx="3" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+  <text x="838" y="452.32" class="s" text-anchor="middle">00h</text>
+  <text x="24" y="500" class="s">SAVE はブロックごとに状態が返る。LOAD（0Fh）は状態の 00h のあとに本体と和が続き、最後にもう一度 00h が来る。</text>
+</svg>

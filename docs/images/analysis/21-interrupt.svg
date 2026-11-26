@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 470" width="980" height="470" role="img" aria-labelledby="t d">
+  <title id="t">割り込みのエントリが調べる順番</title>
+  <desc id="d">割り込みの処理が、受信、外部、送信、ON、キー、遅いタイマ、速いタイマ、ソフトウェアの順に要因を調べ、RAM のベクタを読んで飛ぶことを示す表の形の図。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .lbl { font-size: 12px; fill: #52606D; paint-order: stroke; stroke: #FFFFFF; stroke-width: 4px; stroke-linejoin: round; }
+  </style>
+  <defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#52606D"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="469" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">割り込みのエントリが調べる順番</text>
+  <text x="24" y="55" class="sub">FFFFAh の先頭で ISR AND IMR を作り、上から順に調べて最初に見つかった 1 つだけを処理する</text>
+  <text x="40" y="92" class="b">順</text>
+  <text x="90" y="92" class="b">調べるビット</text>
+  <text x="220" y="92" class="b">要因</text>
+  <text x="390" y="92" class="b">(EBh) に立てる</text>
+  <text x="540" y="92" class="b">RAM のベクタ</text>
+  <text x="690" y="92" class="b">終わりに ISR と (EBh) へ AND する値</text>
+  <rect x="24" y="104" width="932" height="34" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="40" y="126">1</text>
+  <text x="90" y="126" class="m" xml:space="preserve">20h</text>
+  <text x="220" y="126">受信（RXRI）</text>
+  <text x="390" y="126" class="m" xml:space="preserve">20h</text>
+  <text x="540" y="126" class="m" xml:space="preserve">BFCD5h</text>
+  <text x="690" y="126" class="m" xml:space="preserve">DFh</text>
+  <rect x="24" y="142" width="932" height="34" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="40" y="164">2</text>
+  <text x="90" y="164" class="m" xml:space="preserve">40h</text>
+  <text x="220" y="164">外部 IRQ（EXI）</text>
+  <text x="390" y="164" class="m" xml:space="preserve">40h</text>
+  <text x="540" y="164" class="m" xml:space="preserve">BFCD8h</text>
+  <text x="690" y="164" class="m" xml:space="preserve">BFh</text>
+  <rect x="24" y="180" width="932" height="34" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="40" y="202">3</text>
+  <text x="90" y="202" class="m" xml:space="preserve">10h</text>
+  <text x="220" y="202">送信（TXRI）</text>
+  <text x="390" y="202" class="m" xml:space="preserve">10h</text>
+  <text x="540" y="202" class="m" xml:space="preserve">BFCD2h</text>
+  <text x="690" y="202" class="m" xml:space="preserve">EFh</text>
+  <rect x="24" y="218" width="932" height="34" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="40" y="240">4</text>
+  <text x="90" y="240" class="m" xml:space="preserve">08h</text>
+  <text x="220" y="240">ON キー（ONKI）</text>
+  <text x="390" y="240" class="m" xml:space="preserve">08h</text>
+  <text x="540" y="240" class="m" xml:space="preserve">BFCCFh</text>
+  <text x="690" y="240" class="m" xml:space="preserve">F7h</text>
+  <rect x="24" y="256" width="932" height="34" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="40" y="278">5</text>
+  <text x="90" y="278" class="m" xml:space="preserve">04h</text>
+  <text x="220" y="278">キー（KEYI）</text>
+  <text x="390" y="278" class="m" xml:space="preserve">04h</text>
+  <text x="540" y="278" class="m" xml:space="preserve">BFCCCh</text>
+  <text x="690" y="278" class="m" xml:space="preserve">FBh</text>
+  <rect x="24" y="294" width="932" height="34" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="40" y="316">6</text>
+  <text x="90" y="316" class="m" xml:space="preserve">02h</text>
+  <text x="220" y="316">遅いタイマ（STI）</text>
+  <text x="390" y="316" class="m" xml:space="preserve">02h</text>
+  <text x="540" y="316" class="m" xml:space="preserve">BFCC9h</text>
+  <text x="690" y="316" class="m" xml:space="preserve">FDh</text>
+  <rect x="24" y="332" width="932" height="34" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="40" y="354">7</text>
+  <text x="90" y="354" class="m" xml:space="preserve">01h</text>
+  <text x="220" y="354">速いタイマ（MTI）</text>
+  <text x="390" y="354" class="m" xml:space="preserve">01h</text>
+  <text x="540" y="354" class="m" xml:space="preserve">BFCC6h</text>
+  <text x="690" y="354" class="m" xml:space="preserve">FEh</text>
+  <rect x="24" y="370" width="932" height="34" rx="0" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1"/>
+  <text x="40" y="392">8</text>
+  <text x="90" y="392">戻り先の命令が FEh</text>
+  <text x="220" y="392">ソフトウェア（IR）</text>
+  <text x="390" y="392" class="m" xml:space="preserve">80h</text>
+  <text x="540" y="392" class="m" xml:space="preserve">BFCDBh</text>
+  <text x="690" y="392" class="m" xml:space="preserve">7Fh</text>
+  <rect x="24" y="408" width="932" height="34" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1"/>
+  <text x="40" y="430">9</text>
+  <text x="90" y="430">どれでもない</text>
+  <text x="220" y="430"></text>
+  <text x="390" y="430" class="m" xml:space="preserve"></text>
+  <text x="540" y="430" class="m" xml:space="preserve"></text>
+  <text x="690" y="430">何もせず RETI</text>
+</svg>

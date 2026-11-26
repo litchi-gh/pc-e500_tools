@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 320" width="980" height="320" role="img" aria-labelledby="t d">
+  <title id="t">同じバイト列の 2 つの読み方</title>
+  <desc id="d">48 45 4C 4C 4F は、命令として読むと SUB などになり、文字として読むと HELLO になる。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 14px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 12px; }
+  </style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#52606D"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="319" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+
+  <text x="24" y="34" class="h" text-anchor="start" xml:space="preserve">同じバイト列の 2 つの読み方</text>
+  <rect x="200" y="130" width="74" height="40" rx="4" fill="#FFF5DF" stroke="#B7791F"/>
+  <text x="237" y="156" class="m" text-anchor="middle" xml:space="preserve">48</text>
+  <rect x="280" y="130" width="74" height="40" rx="4" fill="#FFF5DF" stroke="#B7791F"/>
+  <text x="317" y="156" class="m" text-anchor="middle" xml:space="preserve">45</text>
+  <rect x="360" y="130" width="74" height="40" rx="4" fill="#FFF5DF" stroke="#B7791F"/>
+  <text x="397" y="156" class="m" text-anchor="middle" xml:space="preserve">4C</text>
+  <rect x="440" y="130" width="74" height="40" rx="4" fill="#FFF5DF" stroke="#B7791F"/>
+  <text x="477" y="156" class="m" text-anchor="middle" xml:space="preserve">4C</text>
+  <rect x="520" y="130" width="74" height="40" rx="4" fill="#FFF5DF" stroke="#B7791F"/>
+  <text x="557" y="156" class="m" text-anchor="middle" xml:space="preserve">4F</text>
+  <rect x="600" y="130" width="74" height="40" rx="4" fill="#FFF5DF" stroke="#B7791F"/>
+  <text x="637" y="156" class="m" text-anchor="middle" xml:space="preserve">2C</text>
+  <rect x="680" y="130" width="74" height="40" rx="4" fill="#FFF5DF" stroke="#B7791F"/>
+  <text x="717" y="156" class="m" text-anchor="middle" xml:space="preserve">20</text>
+  <text x="36" y="156" class="b" text-anchor="start" xml:space="preserve">メモリのバイト列</text>
+  <text x="36" y="90" class="b" text-anchor="start" xml:space="preserve">命令として</text>
+  <rect x="200" y="68" width="154" height="36" rx="4" fill="#E8F1FC" stroke="#2F6DB5"/>
+  <text x="277.0" y="91" class="ms" text-anchor="middle" xml:space="preserve">SUB  A,$45</text>
+  <rect x="360" y="68" width="154" height="36" rx="4" fill="#E8F1FC" stroke="#2F6DB5"/>
+  <text x="437.0" y="91" class="ms" text-anchor="middle" xml:space="preserve">SUB  X,X</text>
+  <rect x="520" y="68" width="74" height="36" rx="4" fill="#E8F1FC" stroke="#2F6DB5"/>
+  <text x="557.0" y="91" class="ms" text-anchor="middle" xml:space="preserve">PUSHS F</text>
+  <rect x="600" y="68" width="74" height="36" rx="4" fill="#E8F1FC" stroke="#2F6DB5"/>
+  <text x="637.0" y="91" class="ms" text-anchor="middle" xml:space="preserve">PUSHU X</text>
+  <rect x="680" y="68" width="74" height="36" rx="4" fill="#E8F1FC" stroke="#2F6DB5"/>
+  <text x="717.0" y="91" class="ms" text-anchor="middle" xml:space="preserve">予約</text>
+  <text x="36" y="218" class="b" text-anchor="start" xml:space="preserve">文字として</text>
+  <rect x="200" y="194" width="74" height="36" rx="4" fill="#E6F6EC" stroke="#2F855A"/>
+  <text x="237" y="217" class="m" text-anchor="middle" xml:space="preserve">H</text>
+  <rect x="280" y="194" width="74" height="36" rx="4" fill="#E6F6EC" stroke="#2F855A"/>
+  <text x="317" y="217" class="m" text-anchor="middle" xml:space="preserve">E</text>
+  <rect x="360" y="194" width="74" height="36" rx="4" fill="#E6F6EC" stroke="#2F855A"/>
+  <text x="397" y="217" class="m" text-anchor="middle" xml:space="preserve">L</text>
+  <rect x="440" y="194" width="74" height="36" rx="4" fill="#E6F6EC" stroke="#2F855A"/>
+  <text x="477" y="217" class="m" text-anchor="middle" xml:space="preserve">L</text>
+  <rect x="520" y="194" width="74" height="36" rx="4" fill="#E6F6EC" stroke="#2F855A"/>
+  <text x="557" y="217" class="m" text-anchor="middle" xml:space="preserve">O</text>
+  <rect x="600" y="194" width="74" height="36" rx="4" fill="#E6F6EC" stroke="#2F855A"/>
+  <text x="637" y="217" class="m" text-anchor="middle" xml:space="preserve">,</text>
+  <rect x="680" y="194" width="74" height="36" rx="4" fill="#E6F6EC" stroke="#2F855A"/>
+  <text x="717" y="217" class="" text-anchor="middle" xml:space="preserve">空白</text>
+  <rect x="24" y="252" width="932" height="48" rx="6" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="40" y="281" class="" text-anchor="start" xml:space="preserve">手がかり: RETF の直後にあり、MV X,$BEC1F のようにアドレスだけが使われている → データ。文字にして意味が通れば文字列です。</text>
+</svg>

@@ -57,10 +57,13 @@ internal sealed class MainForm : Form
         input.Text = path; output.Text = Path.ChangeExtension(path, ".asm"); preview.Clear();
         try
         {
-            byte[] head = File.ReadAllBytes(path).Take(16).ToArray();
-            if (head.Length == 16 && head.AsSpan(0, 5).SequenceEqual(new byte[] { 0xff, 0, 6, 1, 0x10 })) format.SelectedIndex = 1;
+            byte[] head = new byte[16];
+            using var file = File.OpenRead(path);
+            bool saveM = file.ReadAtLeast(head, 16, false) == 16 && head.AsSpan(0, 5).SequenceEqual(new byte[] { 0xff, 0, 6, 1, 0x10 });
+            format.SelectedIndex = saveM ? 1 : 0;
         }
-        catch (IOException) { }
+        // A folder or a file that cannot be read is told about when it is run.
+        catch (Exception e) when (e is IOException or UnauthorizedAccessException or ArgumentException or NotSupportedException) { }
     }
     private void BrowseOutput(object? sender, EventArgs e)
     {
@@ -70,12 +73,10 @@ internal sealed class MainForm : Form
     }
     private int RawOrigin()
     {
-        string text = origin.Text.Trim();
-        if (text.StartsWith("0x", StringComparison.OrdinalIgnoreCase)) text = text[2..];
-        if (text.StartsWith('$') || text.StartsWith('&')) text = text[1..];
-        if (text.EndsWith("h", StringComparison.OrdinalIgnoreCase)) text = text[..^1];
-        if (!int.TryParse(text, NumberStyles.HexNumber, CultureInfo.InvariantCulture, out int value) || value > 0xfffff)
-            throw new DisassemblyException("RAW開始アドレスは00000～FFFFFの16進数で指定してください");
+        // The same spellings as --org of the command line.
+        int value = -1;
+        try { value = E500Assembler.Assembler.ParseAddress(origin.Text); } catch (E500Assembler.AssemblyException) { }
+        if (value is < 0 or > 0xfffff) throw new DisassemblyException("RAW開始アドレスは00000～FFFFFの16進数で指定してください");
         return value;
     }
     private async Task ExecuteAsync()
@@ -84,7 +85,8 @@ internal sealed class MainForm : Form
         try
         {
             string inPath = Path.GetFullPath(input.Text), outPath = Path.GetFullPath(output.Text);
-            if (inPath == outPath) throw new DisassemblyException("出力先は入力ファイルと別の名前にしてください");
+            if (string.Equals(inPath, outPath, StringComparison.OrdinalIgnoreCase)) throw new DisassemblyException("出力先は入力ファイルと別の名前にしてください");
+            if (!Disassembler.MayReplace(outPath) && MessageBox.Show(this, $"{outPath}\n\n逆アセンブラが作ったものではないファイルがあります。置き換えますか？", "出力先の確認", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) != DialogResult.Yes) { status.Text = "中止しました"; return; }
             InputFormat selected = format.SelectedIndex == 0 ? InputFormat.Raw : InputFormat.Ce140f;
             int? address = selected == InputFormat.Raw ? RawOrigin() : null;
             var settings = new DisassemblerOptions { GenerateLabels = labels.Checked, ShowAddresses = addresses.Checked, ShowBytes = bytes.Checked };

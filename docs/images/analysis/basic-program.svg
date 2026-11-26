@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 600" width="980" height="600" role="img" aria-labelledby="t d">
+  <title id="t">10 PRINT &quot;HI&quot; / 20 END のプログラム</title>
+  <desc id="d">TEXT.BAS のファイルを、種類、先頭と終わりの位置、パスワード、印、2 つの行、終わりの FFh に分けて描いた図。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .mb { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 15px; font-weight: 700; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .lbl { font-size: 12px; fill: #52606D; paint-order: stroke; stroke: #FFFFFF; stroke-width: 4px; stroke-linejoin: round; }
+  </style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#52606D"/></marker><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#C0392B"/></marker><marker id="ab" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2F6DB5"/></marker><marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2F855A"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="599" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h" xml:space="preserve">10 PRINT "HI" / 20 END のプログラム</text>
+  <text x="24" y="55" class="sub" xml:space="preserve">ブロックの先頭からの位置（+22h から後ろがファイル）。数字はすべて 16 進</text>
+  <text x="24" y="103" class="m" xml:space="preserve">+22h</text>
+  <rect x="130" y="80" width="48" height="34" rx="0" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1"/>
+  <text x="154" y="102" class="mb" text-anchor="middle" xml:space="preserve">FF</text>
+  <rect x="178" y="80" width="48" height="34" rx="0" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1"/>
+  <text x="202" y="102" class="mb" text-anchor="middle" xml:space="preserve">00</text>
+  <rect x="226" y="80" width="48" height="34" rx="0" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1"/>
+  <text x="250" y="102" class="mb" text-anchor="middle" xml:space="preserve">00</text>
+  <rect x="274" y="80" width="48" height="34" rx="0" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1"/>
+  <text x="298" y="102" class="mb" text-anchor="middle" xml:space="preserve">00</text>
+  <rect x="322" y="80" width="48" height="34" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="1"/>
+  <text x="346" y="102" class="mb" text-anchor="middle" xml:space="preserve">34</text>
+  <rect x="370" y="80" width="48" height="34" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="1"/>
+  <text x="394" y="102" class="mb" text-anchor="middle" xml:space="preserve">00</text>
+  <rect x="418" y="80" width="48" height="34" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="1"/>
+  <text x="442" y="102" class="mb" text-anchor="middle" xml:space="preserve">00</text>
+  <rect x="466" y="80" width="48" height="34" rx="0" fill="#FDECEA" stroke="#C0392B" stroke-width="1"/>
+  <text x="490" y="102" class="mb" text-anchor="middle" xml:space="preserve">45</text>
+  <rect x="514" y="80" width="48" height="34" rx="0" fill="#FDECEA" stroke="#C0392B" stroke-width="1"/>
+  <text x="538" y="102" class="mb" text-anchor="middle" xml:space="preserve">00</text>
+  <rect x="562" y="80" width="48" height="34" rx="0" fill="#FDECEA" stroke="#C0392B" stroke-width="1"/>
+  <text x="586" y="102" class="mb" text-anchor="middle" xml:space="preserve">00</text>
+  <path d="M132,118 v6 H320 v-6" fill="none" stroke="#52606D" stroke-width="1.2"/>
+  <text x="226" y="140" class="s" text-anchor="middle" style="fill:#52606D;" xml:space="preserve">種類（プログラム）</text>
+  <path d="M324,118 v6 H464 v-6" fill="none" stroke="#52606D" stroke-width="1.2"/>
+  <text x="394" y="140" class="s" text-anchor="middle" style="fill:#52606D;" xml:space="preserve">先頭の位置 34h</text>
+  <path d="M468,118 v6 H608 v-6" fill="none" stroke="#52606D" stroke-width="1.2"/>
+  <text x="538" y="140" class="s" text-anchor="middle" style="fill:#52606D;" xml:space="preserve">終わりの位置 45h</text>
+  <text x="24" y="187" class="m" xml:space="preserve">+2Ch</text>
+  <rect x="130" y="164" width="48" height="34" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1"/>
+  <text x="154" y="186" class="mb" text-anchor="middle" xml:space="preserve">xx</text>
+  <rect x="178" y="164" width="48" height="34" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1"/>
+  <text x="202" y="186" class="mb" text-anchor="middle" xml:space="preserve">xx</text>
+  <rect x="226" y="164" width="48" height="34" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1"/>
+  <text x="250" y="186" class="mb" text-anchor="middle" xml:space="preserve">xx</text>
+  <rect x="274" y="164" width="48" height="34" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1"/>
+  <text x="298" y="186" class="mb" text-anchor="middle" xml:space="preserve">xx</text>
+  <rect x="322" y="164" width="48" height="34" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1"/>
+  <text x="346" y="186" class="mb" text-anchor="middle" xml:space="preserve">xx</text>
+  <rect x="370" y="164" width="48" height="34" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1"/>
+  <text x="394" y="186" class="mb" text-anchor="middle" xml:space="preserve">xx</text>
+  <rect x="418" y="164" width="48" height="34" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1"/>
+  <text x="442" y="186" class="mb" text-anchor="middle" xml:space="preserve">xx</text>
+  <rect x="466" y="164" width="48" height="34" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1"/>
+  <text x="490" y="186" class="mb" text-anchor="middle" xml:space="preserve">xx</text>
+  <path d="M132,202 v6 H512 v-6" fill="none" stroke="#52606D" stroke-width="1.2"/>
+  <text x="322" y="224" class="s" text-anchor="middle" style="fill:#52606D;" xml:space="preserve">パスワード 8 バイト（なければ 00）</text>
+  <text x="24" y="271" class="m" xml:space="preserve">+34h</text>
+  <rect x="130" y="248" width="48" height="34" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="1"/>
+  <text x="154" y="270" class="mb" text-anchor="middle" xml:space="preserve">0D</text>
+  <text x="192" y="270" class="s" xml:space="preserve">← 先頭の印。「先頭の位置 34h」はここを指す</text>
+  <text x="24" y="327" class="m" xml:space="preserve">+35h</text>
+  <rect x="130" y="304" width="48" height="34" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1"/>
+  <text x="154" y="326" class="mb" text-anchor="middle" xml:space="preserve">00</text>
+  <rect x="178" y="304" width="48" height="34" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1"/>
+  <text x="202" y="326" class="mb" text-anchor="middle" xml:space="preserve">0A</text>
+  <rect x="226" y="304" width="48" height="34" rx="0" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1"/>
+  <text x="250" y="326" class="mb" text-anchor="middle" xml:space="preserve">07</text>
+  <rect x="274" y="304" width="48" height="34" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="298" y="326" class="mb" text-anchor="middle" xml:space="preserve">FE</text>
+  <rect x="322" y="304" width="48" height="34" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="346" y="326" class="mb" text-anchor="middle" xml:space="preserve">60</text>
+  <rect x="370" y="304" width="48" height="34" rx="0" fill="#FFFFFF" stroke="#B8C2CC" stroke-width="1"/>
+  <text x="394" y="326" class="mb" text-anchor="middle" xml:space="preserve">22</text>
+  <rect x="418" y="304" width="48" height="34" rx="0" fill="#FFFFFF" stroke="#B8C2CC" stroke-width="1"/>
+  <text x="442" y="326" class="mb" text-anchor="middle" xml:space="preserve">48</text>
+  <rect x="466" y="304" width="48" height="34" rx="0" fill="#FFFFFF" stroke="#B8C2CC" stroke-width="1"/>
+  <text x="490" y="326" class="mb" text-anchor="middle" xml:space="preserve">49</text>
+  <rect x="514" y="304" width="48" height="34" rx="0" fill="#FFFFFF" stroke="#B8C2CC" stroke-width="1"/>
+  <text x="538" y="326" class="mb" text-anchor="middle" xml:space="preserve">22</text>
+  <rect x="562" y="304" width="48" height="34" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1"/>
+  <text x="586" y="326" class="mb" text-anchor="middle" xml:space="preserve">0D</text>
+  <path d="M132,342 v6 H224 v-6" fill="none" stroke="#52606D" stroke-width="1.2"/>
+  <text x="178" y="364" class="s" text-anchor="middle" style="fill:#52606D;" xml:space="preserve">行番号 10</text>
+  <path d="M228,342 v6 H272 v-6" fill="none" stroke="#52606D" stroke-width="1.2"/>
+  <text x="250" y="364" class="s" text-anchor="middle" style="fill:#52606D;" xml:space="preserve">長さ 7</text>
+  <path d="M276,342 v6 H368 v-6" fill="none" stroke="#52606D" stroke-width="1.2"/>
+  <text x="322" y="364" class="s" text-anchor="middle" style="fill:#52606D;" xml:space="preserve">PRINT</text>
+  <path d="M372,342 v6 H560 v-6" fill="none" stroke="#52606D" stroke-width="1.2"/>
+  <text x="466" y="364" class="s" text-anchor="middle" style="fill:#52606D;" xml:space="preserve">"HI" の 4 文字</text>
+  <path d="M564,342 v6 H608 v-6" fill="none" stroke="#52606D" stroke-width="1.2"/>
+  <text x="586" y="364" class="s" text-anchor="middle" style="fill:#52606D;" xml:space="preserve">行末</text>
+  <path d="M276,374 v6 H608 v-6" fill="none" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="442" y="396" class="s" text-anchor="middle" style="fill:#6B4FBB;" xml:space="preserve">長さ 7 = FE 60 22 48 49 22 0D の 7 バイト</text>
+  <text x="24" y="447" class="m" xml:space="preserve">+3Fh</text>
+  <rect x="130" y="424" width="48" height="34" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1"/>
+  <text x="154" y="446" class="mb" text-anchor="middle" xml:space="preserve">00</text>
+  <rect x="178" y="424" width="48" height="34" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1"/>
+  <text x="202" y="446" class="mb" text-anchor="middle" xml:space="preserve">14</text>
+  <rect x="226" y="424" width="48" height="34" rx="0" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1"/>
+  <text x="250" y="446" class="mb" text-anchor="middle" xml:space="preserve">03</text>
+  <rect x="274" y="424" width="48" height="34" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="298" y="446" class="mb" text-anchor="middle" xml:space="preserve">FE</text>
+  <rect x="322" y="424" width="48" height="34" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="346" y="446" class="mb" text-anchor="middle" xml:space="preserve">5A</text>
+  <rect x="370" y="424" width="48" height="34" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1"/>
+  <text x="394" y="446" class="mb" text-anchor="middle" xml:space="preserve">0D</text>
+  <path d="M132,462 v6 H224 v-6" fill="none" stroke="#52606D" stroke-width="1.2"/>
+  <text x="178" y="484" class="s" text-anchor="middle" style="fill:#52606D;" xml:space="preserve">行番号 20</text>
+  <path d="M228,462 v6 H272 v-6" fill="none" stroke="#52606D" stroke-width="1.2"/>
+  <text x="250" y="484" class="s" text-anchor="middle" style="fill:#52606D;" xml:space="preserve">長さ 3</text>
+  <path d="M276,462 v6 H368 v-6" fill="none" stroke="#52606D" stroke-width="1.2"/>
+  <text x="322" y="484" class="s" text-anchor="middle" style="fill:#52606D;" xml:space="preserve">END</text>
+  <path d="M372,462 v6 H416 v-6" fill="none" stroke="#52606D" stroke-width="1.2"/>
+  <text x="394" y="484" class="s" text-anchor="middle" style="fill:#52606D;" xml:space="preserve">行末</text>
+  <text x="24" y="533" class="m" xml:space="preserve">+45h</text>
+  <rect x="130" y="510" width="48" height="34" rx="0" fill="#FDECEA" stroke="#C0392B" stroke-width="1"/>
+  <text x="154" y="532" class="mb" text-anchor="middle" xml:space="preserve">FF</text>
+  <text x="192" y="532" class="s" xml:space="preserve">← 終わりの印。「終わりの位置 45h」はここを指す</text>
+  <text x="24" y="578" xml:space="preserve">次の行の先頭 = この行の先頭 + 3 + 長さ。例: 35h + 3 + 7 = 3Fh、3Fh + 3 + 3 = 45h（FFh なら終わり）</text>
+</svg>

@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 472" width="980" height="472" role="img" aria-labelledby="t d">
+  <title id="t">PC-E500 Tools の全体像</title>
+  <desc id="d">文書とサンプル、VS Code 拡張、アセンブラ、逆アセンブラと、できるファイルの関係。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .lbl { font-size: 12px; fill: #52606D; paint-order: stroke; stroke: #FFFFFF; stroke-width: 4px; stroke-linejoin: round; }
+  </style>
+  <defs><marker id="a52606D" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#52606D"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="471" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">全体像</text>
+  <text x="24" y="55" class="sub">ツールは 1 つずつ独立している。VS Code で作るなら、拡張だけで始められる</text>
+  <rect x="24" y="76" width="250" height="344" rx="8" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.5"/>
+  <text x="149.0" y="145.0" class="b" xml:space="preserve" text-anchor="middle">docs/  文書</text>
+  <text x="149.0" y="163.0" class="s" xml:space="preserve" text-anchor="middle"></text>
+  <text x="149.0" y="181.0" class="" xml:space="preserve" text-anchor="middle">ハンドブック</text>
+  <text x="149.0" y="199.0" class="s" xml:space="preserve" text-anchor="middle">本体の使い方</text>
+  <text x="149.0" y="217.0" class="" xml:space="preserve" text-anchor="middle">マニュアル</text>
+  <text x="149.0" y="235.0" class="s" xml:space="preserve" text-anchor="middle">ツールの使い方（OS ごと）</text>
+  <text x="149.0" y="253.0" class="" xml:space="preserve" text-anchor="middle">解析資料</text>
+  <text x="149.0" y="271.0" class="s" xml:space="preserve" text-anchor="middle">CPU、ROM、IOCS、ハードウェア</text>
+  <text x="149.0" y="289.0" class="" xml:space="preserve" text-anchor="middle">設計</text>
+  <text x="149.0" y="307.0" class="s" xml:space="preserve" text-anchor="middle">ソースの作り</text>
+  <text x="149.0" y="325.0" class="s" xml:space="preserve" text-anchor="middle"></text>
+  <text x="149.0" y="343.0" class="b" xml:space="preserve" text-anchor="middle">Samples/  サンプル</text>
+  <text x="149.0" y="361.0" class="s" xml:space="preserve" text-anchor="middle">動く例題とゲーム</text>
+  <rect x="300" y="76" width="656" height="206" rx="12" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="316" y="100" class="b">ツール</text>
+  <rect x="316" y="112" width="300" height="154" rx="8" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="466.0" y="149.0" class="b" xml:space="preserve" text-anchor="middle">VS Code 拡張  PC-E500 開発ツール</text>
+  <text x="466.0" y="167.0" class="s" xml:space="preserve" text-anchor="middle">編集、診断、ドットエディタ、BIN 作成</text>
+  <text x="466.0" y="185.0" class="s" xml:space="preserve" text-anchor="middle">実行とデバッグ（Windows）</text>
+  <text x="466.0" y="203.0" class="s" xml:space="preserve" text-anchor="middle"></text>
+  <text x="466.0" y="221.0" class="m" xml:space="preserve" text-anchor="middle">e500</text>
+  <text x="466.0" y="239.0" class="s" xml:space="preserve" text-anchor="middle">同じ機能をコマンドで。AI もこれを使う</text>
+  <rect x="632" y="112" width="308" height="70" rx="8" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="786.0" y="143.0" class="b" xml:space="preserve" text-anchor="middle">e500asm</text>
+  <text x="786.0" y="161.0" class="s" xml:space="preserve" text-anchor="middle">ASM → 機械語（単独で動く）</text>
+  <rect x="632" y="196" width="308" height="70" rx="8" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="786.0" y="227.0" class="b" xml:space="preserve" text-anchor="middle">e500dasm / E500Disassembler</text>
+  <text x="786.0" y="245.0" class="s" xml:space="preserve" text-anchor="middle">機械語 → ASM（単独で動く）</text>
+  <rect x="300" y="322" width="400" height="98" rx="8" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="500.0" y="358.0" class="b" xml:space="preserve" text-anchor="middle">できるファイル</text>
+  <text x="500.0" y="376.0" class="s" xml:space="preserve" text-anchor="middle">実機用: 名前.BIN（LOAD M）、名前.BAS（LOAD）</text>
+  <text x="500.0" y="394.0" class="s" xml:space="preserve" text-anchor="middle">.bin .hex .lst .sym、逆アセンブルした .asm</text>
+  <rect x="730" y="322" width="226" height="98" rx="8" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+  <text x="843.0" y="358.0" class="b" xml:space="preserve" text-anchor="middle">動かす</text>
+  <text x="843.0" y="376.0" class="s" xml:space="preserve" text-anchor="middle">実機（CE-140F の X:）</text>
+  <text x="843.0" y="394.0" class="s" xml:space="preserve" text-anchor="middle">PC-E500 エミュレータ（別）</text>
+  <polyline points="500,282 500,322" fill="none" stroke="#52606D" stroke-width="1.8" marker-end="url(#a52606D)"/>
+  <polyline points="700,371 730,371" fill="none" stroke="#52606D" stroke-width="1.8" marker-end="url(#a52606D)"/>
+  <rect x="24" y="440" width="14" height="14" rx="3" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="44" y="451" class="s">文書</text>
+  <rect x="106" y="440" width="14" height="14" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="126" y="451" class="s">ツール</text>
+  <rect x="202" y="440" width="14" height="14" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="222" y="451" class="s">ファイル</text>
+  <rect x="312" y="440" width="14" height="14" rx="3" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="332" y="451" class="s">実機、エミュレータ</text>
+</svg>

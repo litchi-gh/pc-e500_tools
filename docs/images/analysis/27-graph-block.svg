@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 300" width="980" height="300" role="img" aria-labelledby="t d">
+  <title id="t">形式 B のスロット S3: の中身（6.4、8.4）</title>
+  <desc id="d">C0000h からの 128 KB を横に並べ、RAMFILE のブロックと GRAPH.BAS のブロック、その後ろの領域を示した図。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .lbl { font-size: 12px; fill: #52606D; paint-order: stroke; stroke: #FFFFFF; stroke-width: 4px; stroke-linejoin: round; }
+  </style>
+  <defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#52606D"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="299" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">形式 B のスロット S3: の中身（6.4、8.4）</text>
+  <text x="24" y="55" class="sub">メモリブロックが 2 つ並ぶ。GRAPH は G: のファイルではなく、2 つ目のブロック</text>
+  <rect x="40.1648" y="90" width="407.812" height="60" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1"/>
+  <text x="244.071" y="114" class="b" text-anchor="middle">RAMFILE（G:）</text>
+  <text x="244.071" y="134" class="s" text-anchor="middle">22 ファイル、E800h バイト</text>
+  <rect x="447.977" y="90" width="347.8" height="60" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="1"/>
+  <text x="621.877" y="114" class="b" text-anchor="middle">GRAPH.BAS</text>
+  <text x="621.877" y="134" class="s" text-anchor="middle">BASIC 1,572 行、C5DCh バイト</text>
+  <rect x="795.777" y="90" width="17.6605" height="60" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1"/>
+  <rect x="813.438" y="90" width="101.692" height="60" rx="0" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1"/>
+  <text x="864.284" y="114" class="s" text-anchor="middle">GRAPH の</text>
+  <text x="864.284" y="134" class="s" text-anchor="middle">機械語</text>
+  <rect x="915.13" y="90" width="5.53436" height="60" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1"/>
+  <rect x="920.664" y="90" width="19.3359" height="60" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <polyline points="40.1648,150 40.1648,164" fill="none" stroke="#7B8794" stroke-width="1.2" stroke-linejoin="round"/>
+  <text x="43.1648" y="176" class="ms" xml:space="preserve">C0018h</text>
+  <polyline points="447.977,150 447.977,164" fill="none" stroke="#7B8794" stroke-width="1.2" stroke-linejoin="round"/>
+  <text x="450.977" y="176" class="ms" xml:space="preserve">CE818h</text>
+  <polyline points="795.777,150 795.777,200" fill="none" stroke="#7B8794" stroke-width="1.2" stroke-linejoin="round"/>
+  <text x="791.777" y="212" class="ms" xml:space="preserve" text-anchor="end">DADF4h（FFh = 終わり）</text>
+  <polyline points="813.438,150 813.438,164" fill="none" stroke="#7B8794" stroke-width="1.2" stroke-linejoin="round"/>
+  <text x="816.438" y="176" class="ms" xml:space="preserve">DB800h</text>
+  <polyline points="920.664,150 920.664,182" fill="none" stroke="#7B8794" stroke-width="1.2" stroke-linejoin="round"/>
+  <text x="916.664" y="194" class="ms" xml:space="preserve" text-anchor="end">DF500h IOCS ヘッダ</text>
+  <rect x="40" y="216" width="900" height="66" rx="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1"/>
+  <text x="60" y="240">鎖のたどり方　C0018h の +11 が E800h → CE818h　　CE818h の +11 が C5DCh → DADF4h</text>
+  <text x="60" y="264" class="s">各ブロックの先頭から 34 バイトがヘッダ（FBh、名前、長さ）。GRAPH.BAS の属性は 22h</text>
+</svg>

@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 440" width="980" height="440" role="img" aria-labelledby="t d">
+  <title id="t">3 つのキーの同時押しで起きるゴースト</title>
+  <desc id="d">KO1 から W、KI0、▲▼、KO0、Q を通って KI1 に電流が回り込む経路を赤で示した図。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .mb { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; font-weight: 700; }
+  </style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#52606D"/></marker><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#C0392B"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="439" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h" xml:space="preserve">3 つのキーの同時押しで起きるゴースト</text>
+  <text x="24" y="55" class="sub" xml:space="preserve">KO1 だけを 1 にして読んでいるのに、押していない E の位置の KI1 にも 1 が届く</text>
+  <rect x="186" y="76" width="128" height="34" rx="4" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="250" y="98" class="b" xml:space="preserve" text-anchor="middle">KO1 = 1（H）</text>
+  <path d="M250 110L250 360" fill="none" stroke="#9AA5B1" stroke-width="2"/>
+  <rect x="416" y="76" width="128" height="34" rx="4" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="480" y="98" class="b" xml:space="preserve" text-anchor="middle">KO0 = 0（L）</text>
+  <path d="M480 110L480 360" fill="none" stroke="#9AA5B1" stroke-width="2"/>
+  <path d="M120 180L580 180" fill="none" stroke="#9AA5B1" stroke-width="2"/>
+  <rect x="46" y="162" width="74" height="36" rx="4" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="83" y="185" class="b" xml:space="preserve" text-anchor="middle">KI0</text>
+  <path d="M120 300L580 300" fill="none" stroke="#9AA5B1" stroke-width="2"/>
+  <rect x="46" y="282" width="74" height="36" rx="4" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="83" y="305" class="b" xml:space="preserve" text-anchor="middle">KI1</text>
+  <path d="M250 112L250 180" fill="none" stroke="#C0392B" stroke-width="3"/>
+  <path d="M250 180L480 180" fill="none" stroke="#C0392B" stroke-width="3"/>
+  <path d="M480 180L480 300" fill="none" stroke="#C0392B" stroke-width="3"/>
+  <path d="M480 300L124 300" fill="none" stroke="#C0392B" stroke-width="3" marker-end="url(#ar)"/>
+  <path d="M250 180L124 180" fill="none" stroke="#2F855A" stroke-width="3" marker-end="url(#a)"/>
+  <rect x="220" y="158" width="60" height="44" rx="8" fill="#E6F6EC" stroke="#2F855A" stroke-width="2.2"/>
+  <text x="250" y="185" class="b" xml:space="preserve" text-anchor="middle">W</text>
+  <rect x="450" y="158" width="60" height="44" rx="8" fill="#E6F6EC" stroke="#2F855A" stroke-width="2.2"/>
+  <text x="480" y="185" class="b" xml:space="preserve" text-anchor="middle">▲▼</text>
+  <rect x="450" y="278" width="60" height="44" rx="8" fill="#E6F6EC" stroke="#2F855A" stroke-width="2.2"/>
+  <text x="480" y="305" class="b" xml:space="preserve" text-anchor="middle">Q</text>
+  <rect x="220" y="278" width="60" height="44" rx="8" fill="#FDECEA" stroke="#C0392B" stroke-width="1.4" stroke-dasharray="5 4"/>
+  <text x="250" y="305" class="b" xml:space="preserve" text-anchor="middle">E</text>
+  <text x="260" y="140" class="b" xml:space="preserve" style="fill:#C0392B">①</text>
+  <text x="360" y="170" class="b" xml:space="preserve" style="fill:#C0392B">②</text>
+  <text x="490" y="245" class="b" xml:space="preserve" style="fill:#C0392B">③</text>
+  <text x="370" y="291" class="b" xml:space="preserve" style="fill:#C0392B">④</text>
+  <text x="46" y="222" class="s" xml:space="preserve">W が押されているので</text>
+  <text x="46" y="238" class="s" xml:space="preserve">KI0 = 1（正しい）</text>
+  <text x="46" y="342" class="b" xml:space="preserve" style="fill:#C0392B">KI1 = 1（ゴースト）</text>
+  <rect x="640" y="90" width="316" height="260" rx="10" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="656" y="116" class="b" xml:space="preserve">電流の経路</text>
+  <text x="656" y="146" xml:space="preserve">① KO1 から W を通って KI0 へ</text>
+  <text x="656" y="171" xml:space="preserve">② KI0 の線から ▲▼ へ</text>
+  <text x="656" y="196" xml:space="preserve">③ ▲▼ を通って KO0 の線から Q へ</text>
+  <text x="656" y="221" xml:space="preserve">④ Q を通って KI1 へ</text>
+  <text x="656" y="246" xml:space="preserve"></text>
+  <text x="656" y="271" xml:space="preserve">押しているキー: W、▲▼、Q</text>
+  <text x="656" y="296" xml:space="preserve">読んだ値: KI0 = 1、KI1 = 1（F2h = 03h）</text>
+  <text x="656" y="321" xml:space="preserve">→ W と E が押されたように見える</text>
+  <text x="24" y="412" class="s" xml:space="preserve">実線の枠は押しているキー、赤い点線の枠は、押していないのに「押されている」と読まれるキー。</text>
+</svg>

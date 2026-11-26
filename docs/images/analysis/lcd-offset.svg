@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 300" width="980" height="300" role="img" aria-labelledby="t d">
+  <title id="t">表示開始オフセット P+08h の働き</title>
+  <desc id="d">IOCS 作業域の P+08h から表示開始ラインの命令が作られる様子を示した図。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+  </style>
+  <defs><marker id="a52606D" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#52606D"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="299" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">表示開始オフセット P+08h の働き</text>
+  <text x="24" y="55" class="sub">ROM は、遅いタイマの割り込みのたびに C0h +（P+08h の下位 3 ビット）× 8 を両方のコントローラへ書く</text>
+  <rect x="40" y="100" width="200" height="60" rx="6" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.5"/>
+  <text x="140" y="126.18" class="m" xml:space="preserve" text-anchor="middle">P+08h</text>
+  <text x="140" y="143.32" class="s" text-anchor="middle">0〜7（行の番号）</text>
+  <polyline points="240,130 298,130" fill="none" stroke="#52606D" stroke-width="1.6" marker-end="url(#a52606D)"/>
+  <rect x="300" y="100" width="260" height="60" rx="6" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="430" y="126.18" class="m" xml:space="preserve" text-anchor="middle">C0h +（値 and 07h）× 8</text>
+  <text x="430" y="143.32" class="s" text-anchor="middle">遅いタイマごと（約 0.5 秒）</text>
+  <polyline points="560,130 618,130" fill="none" stroke="#52606D" stroke-width="1.6" marker-end="url(#a52606D)"/>
+  <rect x="620" y="100" width="300" height="60" rx="6" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+  <text x="770" y="126.18" class="m" xml:space="preserve" text-anchor="middle">[0A000h]（= 2000h と同じウィンドウ）</text>
+  <text x="770" y="143.32" class="s" text-anchor="middle">2 つのコントローラに同時</text>
+  <rect x="40" y="196" width="100" height="48" rx="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="90" y="216.32" class="s" text-anchor="middle">P+08h = 0</text>
+  <text x="90" y="232.46" class="ms" xml:space="preserve" text-anchor="middle">C0h = ライン 0</text>
+  <rect x="150" y="196" width="100" height="48" rx="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="200" y="216.32" class="s" text-anchor="middle">P+08h = 1</text>
+  <text x="200" y="232.46" class="ms" xml:space="preserve" text-anchor="middle">C8h = ライン 8</text>
+  <rect x="260" y="196" width="100" height="48" rx="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="310" y="216.32" class="s" text-anchor="middle">P+08h = 2</text>
+  <text x="310" y="232.46" class="ms" xml:space="preserve" text-anchor="middle">D0h = ライン 16</text>
+  <rect x="370" y="196" width="100" height="48" rx="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="420" y="216.32" class="s" text-anchor="middle">P+08h = 3</text>
+  <text x="420" y="232.46" class="ms" xml:space="preserve" text-anchor="middle">D8h = ライン 24</text>
+  <rect x="480" y="196" width="100" height="48" rx="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="530" y="216.32" class="s" text-anchor="middle">P+08h = 4</text>
+  <text x="530" y="232.46" class="ms" xml:space="preserve" text-anchor="middle">E0h = ライン 32</text>
+  <rect x="590" y="196" width="100" height="48" rx="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="640" y="216.32" class="s" text-anchor="middle">P+08h = 5</text>
+  <text x="640" y="232.46" class="ms" xml:space="preserve" text-anchor="middle">E8h = ライン 40</text>
+  <rect x="700" y="196" width="100" height="48" rx="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="750" y="216.32" class="s" text-anchor="middle">P+08h = 6</text>
+  <text x="750" y="232.46" class="ms" xml:space="preserve" text-anchor="middle">F0h = ライン 48</text>
+  <rect x="810" y="196" width="100" height="48" rx="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="860" y="216.32" class="s" text-anchor="middle">P+08h = 7</text>
+  <text x="860" y="232.46" class="ms" xml:space="preserve" text-anchor="middle">F8h = ライン 56</text>
+  <text x="40" y="274" class="s">自分で開始ラインを変えても、この値が 0 のままなら約 0.5 秒で 0 に戻される</text>
+</svg>

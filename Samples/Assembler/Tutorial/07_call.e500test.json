@@ -1,0 +1,7 @@
+{
+  "program": "07_call.asm",
+  "tests": [
+    { "name": "5 の 3 乗", "call": "start", "memory": { "NUM": [5] }, "expect": { "memory": { "CUBE": [125, 0] } } },
+    { "name": "40 の 3 乗", "call": "start", "memory": { "NUM": [40] }, "expect": { "memory": { "CUBE": [0, 250] } } }
+  ]
+}

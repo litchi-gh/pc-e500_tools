@@ -1,0 +1,265 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 472" width="980" height="472" role="img" aria-labelledby="t d">
+  <title id="t">機種ごとに見えるもの</title>
+  <desc id="d">画面の言語や添付ソフトの 8 項目を行、13 のバージョンを機種コードの順の列にとり、持っているものを塗った図。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .lbl { font-size: 12px; fill: #52606D; paint-order: stroke; stroke: #FFFFFF; stroke-width: 4px; stroke-linejoin: round; }
+  </style>
+  <defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#52606D"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="471" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">機種ごとに見えるもの</text>
+  <text x="24" y="55" class="sub">列は機種コードの順（1、2、3、4、5）に並べ替えてある</text>
+  <text x="276.923" y="88" class="b" text-anchor="middle">2.1</text>
+  <text x="276.923" y="104" class="ms" xml:space="preserve" text-anchor="middle">1480U</text>
+  <text x="330.769" y="88" class="b" text-anchor="middle">2.2</text>
+  <text x="330.769" y="104" class="ms" xml:space="preserve" text-anchor="middle">E500</text>
+  <text x="384.615" y="88" class="b" text-anchor="middle">3.2</text>
+  <text x="384.615" y="104" class="ms" xml:space="preserve" text-anchor="middle">E500</text>
+  <text x="438.462" y="88" class="b" text-anchor="middle">6.2</text>
+  <text x="438.462" y="104" class="ms" xml:space="preserve" text-anchor="middle">E500PJ</text>
+  <text x="492.308" y="88" class="b" text-anchor="middle">7.2</text>
+  <text x="492.308" y="104" class="ms" xml:space="preserve" text-anchor="middle">E500</text>
+  <text x="546.154" y="88" class="b" text-anchor="middle">5.3</text>
+  <text x="546.154" y="104" class="ms" xml:space="preserve" text-anchor="middle">E500</text>
+  <text x="600" y="88" class="b" text-anchor="middle">6.3</text>
+  <text x="600" y="104" class="ms" xml:space="preserve" text-anchor="middle">E500</text>
+  <text x="653.846" y="88" class="b" text-anchor="middle">7.3</text>
+  <text x="653.846" y="104" class="ms" xml:space="preserve" text-anchor="middle">E500</text>
+  <text x="707.692" y="88" class="b" text-anchor="middle">8.3</text>
+  <text x="707.692" y="104" class="ms" xml:space="preserve" text-anchor="middle">E500S</text>
+  <text x="761.538" y="88" class="b" text-anchor="middle">6.4</text>
+  <text x="761.538" y="104" class="ms" xml:space="preserve" text-anchor="middle">1490UII</text>
+  <text x="815.385" y="88" class="b" text-anchor="middle">8.4</text>
+  <text x="815.385" y="104" class="ms" xml:space="preserve" text-anchor="middle">U6000</text>
+  <text x="869.231" y="88" class="b" text-anchor="middle">7.5</text>
+  <text x="869.231" y="104" class="ms" xml:space="preserve" text-anchor="middle">E550</text>
+  <text x="923.077" y="88" class="b" text-anchor="middle">8.5</text>
+  <text x="923.077" y="104" class="ms" xml:space="preserve" text-anchor="middle">E650</text>
+  <text x="238" y="135" text-anchor="end">カナの画面・カナ入力</text>
+  <rect x="250" y="114" width="53.8462" height="34" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.8"/>
+  <text x="276.923" y="136" class="b" text-anchor="middle">○</text>
+  <rect x="303.846" y="114" width="53.8462" height="34" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.8"/>
+  <text x="330.769" y="136" class="b" text-anchor="middle">○</text>
+  <rect x="357.692" y="114" width="53.8462" height="34" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.8"/>
+  <text x="384.615" y="136" class="b" text-anchor="middle">○</text>
+  <rect x="411.538" y="114" width="53.8462" height="34" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.8"/>
+  <text x="438.462" y="136" class="b" text-anchor="middle">○</text>
+  <rect x="465.385" y="114" width="53.8462" height="34" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.8"/>
+  <text x="492.308" y="136" class="b" text-anchor="middle">○</text>
+  <rect x="519.231" y="114" width="53.8462" height="34" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.8"/>
+  <text x="546.154" y="136" class="b" text-anchor="middle"></text>
+  <rect x="573.077" y="114" width="53.8462" height="34" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.8"/>
+  <text x="600" y="136" class="b" text-anchor="middle"></text>
+  <rect x="626.923" y="114" width="53.8462" height="34" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.8"/>
+  <text x="653.846" y="136" class="b" text-anchor="middle"></text>
+  <rect x="680.769" y="114" width="53.8462" height="34" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.8"/>
+  <text x="707.692" y="136" class="b" text-anchor="middle"></text>
+  <rect x="734.615" y="114" width="53.8462" height="34" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.8"/>
+  <text x="761.538" y="136" class="b" text-anchor="middle">○</text>
+  <rect x="788.462" y="114" width="53.8462" height="34" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.8"/>
+  <text x="815.385" y="136" class="b" text-anchor="middle">○</text>
+  <rect x="842.308" y="114" width="53.8462" height="34" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.8"/>
+  <text x="869.231" y="136" class="b" text-anchor="middle">○</text>
+  <rect x="896.154" y="114" width="53.8462" height="34" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.8"/>
+  <text x="923.077" y="136" class="b" text-anchor="middle">○</text>
+  <text x="238" y="169" text-anchor="end">英語の画面・欧文文字セット</text>
+  <rect x="250" y="148" width="53.8462" height="34" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.8"/>
+  <text x="276.923" y="170" class="b" text-anchor="middle"></text>
+  <rect x="303.846" y="148" width="53.8462" height="34" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.8"/>
+  <text x="330.769" y="170" class="b" text-anchor="middle"></text>
+  <rect x="357.692" y="148" width="53.8462" height="34" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.8"/>
+  <text x="384.615" y="170" class="b" text-anchor="middle"></text>
+  <rect x="411.538" y="148" width="53.8462" height="34" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.8"/>
+  <text x="438.462" y="170" class="b" text-anchor="middle"></text>
+  <rect x="465.385" y="148" width="53.8462" height="34" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.8"/>
+  <text x="492.308" y="170" class="b" text-anchor="middle"></text>
+  <rect x="519.231" y="148" width="53.8462" height="34" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.8"/>
+  <text x="546.154" y="170" class="b" text-anchor="middle">○</text>
+  <rect x="573.077" y="148" width="53.8462" height="34" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.8"/>
+  <text x="600" y="170" class="b" text-anchor="middle">○</text>
+  <rect x="626.923" y="148" width="53.8462" height="34" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.8"/>
+  <text x="653.846" y="170" class="b" text-anchor="middle">○</text>
+  <rect x="680.769" y="148" width="53.8462" height="34" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.8"/>
+  <text x="707.692" y="170" class="b" text-anchor="middle">○</text>
+  <rect x="734.615" y="148" width="53.8462" height="34" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.8"/>
+  <text x="761.538" y="170" class="b" text-anchor="middle"></text>
+  <rect x="788.462" y="148" width="53.8462" height="34" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.8"/>
+  <text x="815.385" y="170" class="b" text-anchor="middle"></text>
+  <rect x="842.308" y="148" width="53.8462" height="34" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.8"/>
+  <text x="869.231" y="170" class="b" text-anchor="middle"></text>
+  <rect x="896.154" y="148" width="53.8462" height="34" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.8"/>
+  <text x="923.077" y="170" class="b" text-anchor="middle"></text>
+  <text x="238" y="203" text-anchor="end">エンジニアソフト（日本語）</text>
+  <rect x="250" y="182" width="53.8462" height="34" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.8"/>
+  <text x="276.923" y="204" class="b" text-anchor="middle"></text>
+  <rect x="303.846" y="182" width="53.8462" height="34" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.8"/>
+  <text x="330.769" y="204" class="b" text-anchor="middle">○</text>
+  <rect x="357.692" y="182" width="53.8462" height="34" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.8"/>
+  <text x="384.615" y="204" class="b" text-anchor="middle">○</text>
+  <rect x="411.538" y="182" width="53.8462" height="34" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.8"/>
+  <text x="438.462" y="204" class="b" text-anchor="middle">○</text>
+  <rect x="465.385" y="182" width="53.8462" height="34" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.8"/>
+  <text x="492.308" y="204" class="b" text-anchor="middle">○</text>
+  <rect x="519.231" y="182" width="53.8462" height="34" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.8"/>
+  <text x="546.154" y="204" class="b" text-anchor="middle"></text>
+  <rect x="573.077" y="182" width="53.8462" height="34" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.8"/>
+  <text x="600" y="204" class="b" text-anchor="middle"></text>
+  <rect x="626.923" y="182" width="53.8462" height="34" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.8"/>
+  <text x="653.846" y="204" class="b" text-anchor="middle"></text>
+  <rect x="680.769" y="182" width="53.8462" height="34" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.8"/>
+  <text x="707.692" y="204" class="b" text-anchor="middle"></text>
+  <rect x="734.615" y="182" width="53.8462" height="34" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.8"/>
+  <text x="761.538" y="204" class="b" text-anchor="middle"></text>
+  <rect x="788.462" y="182" width="53.8462" height="34" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.8"/>
+  <text x="815.385" y="204" class="b" text-anchor="middle"></text>
+  <rect x="842.308" y="182" width="53.8462" height="34" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.8"/>
+  <text x="869.231" y="204" class="b" text-anchor="middle">○</text>
+  <rect x="896.154" y="182" width="53.8462" height="34" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.8"/>
+  <text x="923.077" y="204" class="b" text-anchor="middle">○</text>
+  <text x="238" y="237" text-anchor="end">エンジニアソフト（英語）</text>
+  <rect x="250" y="216" width="53.8462" height="34" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.8"/>
+  <text x="276.923" y="238" class="b" text-anchor="middle"></text>
+  <rect x="303.846" y="216" width="53.8462" height="34" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.8"/>
+  <text x="330.769" y="238" class="b" text-anchor="middle"></text>
+  <rect x="357.692" y="216" width="53.8462" height="34" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.8"/>
+  <text x="384.615" y="238" class="b" text-anchor="middle"></text>
+  <rect x="411.538" y="216" width="53.8462" height="34" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.8"/>
+  <text x="438.462" y="238" class="b" text-anchor="middle"></text>
+  <rect x="465.385" y="216" width="53.8462" height="34" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.8"/>
+  <text x="492.308" y="238" class="b" text-anchor="middle"></text>
+  <rect x="519.231" y="216" width="53.8462" height="34" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.8"/>
+  <text x="546.154" y="238" class="b" text-anchor="middle">○</text>
+  <rect x="573.077" y="216" width="53.8462" height="34" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.8"/>
+  <text x="600" y="238" class="b" text-anchor="middle">○</text>
+  <rect x="626.923" y="216" width="53.8462" height="34" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.8"/>
+  <text x="653.846" y="238" class="b" text-anchor="middle">○</text>
+  <rect x="680.769" y="216" width="53.8462" height="34" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.8"/>
+  <text x="707.692" y="238" class="b" text-anchor="middle">○</text>
+  <rect x="734.615" y="216" width="53.8462" height="34" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.8"/>
+  <text x="761.538" y="238" class="b" text-anchor="middle"></text>
+  <rect x="788.462" y="216" width="53.8462" height="34" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.8"/>
+  <text x="815.385" y="238" class="b" text-anchor="middle"></text>
+  <rect x="842.308" y="216" width="53.8462" height="34" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.8"/>
+  <text x="869.231" y="238" class="b" text-anchor="middle"></text>
+  <rect x="896.154" y="216" width="53.8462" height="34" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.8"/>
+  <text x="923.077" y="238" class="b" text-anchor="middle"></text>
+  <text x="238" y="271" text-anchor="end">E550・E650 版の ﾃﾞﾓ</text>
+  <rect x="250" y="250" width="53.8462" height="34" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.8"/>
+  <text x="276.923" y="272" class="b" text-anchor="middle"></text>
+  <rect x="303.846" y="250" width="53.8462" height="34" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.8"/>
+  <text x="330.769" y="272" class="b" text-anchor="middle"></text>
+  <rect x="357.692" y="250" width="53.8462" height="34" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.8"/>
+  <text x="384.615" y="272" class="b" text-anchor="middle"></text>
+  <rect x="411.538" y="250" width="53.8462" height="34" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.8"/>
+  <text x="438.462" y="272" class="b" text-anchor="middle"></text>
+  <rect x="465.385" y="250" width="53.8462" height="34" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.8"/>
+  <text x="492.308" y="272" class="b" text-anchor="middle"></text>
+  <rect x="519.231" y="250" width="53.8462" height="34" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.8"/>
+  <text x="546.154" y="272" class="b" text-anchor="middle"></text>
+  <rect x="573.077" y="250" width="53.8462" height="34" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.8"/>
+  <text x="600" y="272" class="b" text-anchor="middle"></text>
+  <rect x="626.923" y="250" width="53.8462" height="34" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.8"/>
+  <text x="653.846" y="272" class="b" text-anchor="middle"></text>
+  <rect x="680.769" y="250" width="53.8462" height="34" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.8"/>
+  <text x="707.692" y="272" class="b" text-anchor="middle"></text>
+  <rect x="734.615" y="250" width="53.8462" height="34" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.8"/>
+  <text x="761.538" y="272" class="b" text-anchor="middle"></text>
+  <rect x="788.462" y="250" width="53.8462" height="34" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.8"/>
+  <text x="815.385" y="272" class="b" text-anchor="middle"></text>
+  <rect x="842.308" y="250" width="53.8462" height="34" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.8"/>
+  <text x="869.231" y="272" class="b" text-anchor="middle">○</text>
+  <rect x="896.154" y="250" width="53.8462" height="34" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.8"/>
+  <text x="923.077" y="272" class="b" text-anchor="middle">○</text>
+  <text x="238" y="305" text-anchor="end">ソフト集 22 本</text>
+  <rect x="250" y="284" width="53.8462" height="34" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.8"/>
+  <text x="276.923" y="306" class="b" text-anchor="middle"></text>
+  <rect x="303.846" y="284" width="53.8462" height="34" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.8"/>
+  <text x="330.769" y="306" class="b" text-anchor="middle"></text>
+  <rect x="357.692" y="284" width="53.8462" height="34" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.8"/>
+  <text x="384.615" y="306" class="b" text-anchor="middle"></text>
+  <rect x="411.538" y="284" width="53.8462" height="34" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.8"/>
+  <text x="438.462" y="306" class="b" text-anchor="middle"></text>
+  <rect x="465.385" y="284" width="53.8462" height="34" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.8"/>
+  <text x="492.308" y="306" class="b" text-anchor="middle"></text>
+  <rect x="519.231" y="284" width="53.8462" height="34" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.8"/>
+  <text x="546.154" y="306" class="b" text-anchor="middle"></text>
+  <rect x="573.077" y="284" width="53.8462" height="34" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.8"/>
+  <text x="600" y="306" class="b" text-anchor="middle"></text>
+  <rect x="626.923" y="284" width="53.8462" height="34" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.8"/>
+  <text x="653.846" y="306" class="b" text-anchor="middle"></text>
+  <rect x="680.769" y="284" width="53.8462" height="34" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.8"/>
+  <text x="707.692" y="306" class="b" text-anchor="middle"></text>
+  <rect x="734.615" y="284" width="53.8462" height="34" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.8"/>
+  <text x="761.538" y="306" class="b" text-anchor="middle">○</text>
+  <rect x="788.462" y="284" width="53.8462" height="34" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.8"/>
+  <text x="815.385" y="306" class="b" text-anchor="middle">○</text>
+  <rect x="842.308" y="284" width="53.8462" height="34" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.8"/>
+  <text x="869.231" y="306" class="b" text-anchor="middle"></text>
+  <rect x="896.154" y="284" width="53.8462" height="34" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.8"/>
+  <text x="923.077" y="306" class="b" text-anchor="middle"></text>
+  <text x="238" y="339" text-anchor="end">GRAPH</text>
+  <rect x="250" y="318" width="53.8462" height="34" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.8"/>
+  <text x="276.923" y="340" class="b" text-anchor="middle"></text>
+  <rect x="303.846" y="318" width="53.8462" height="34" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.8"/>
+  <text x="330.769" y="340" class="b" text-anchor="middle"></text>
+  <rect x="357.692" y="318" width="53.8462" height="34" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.8"/>
+  <text x="384.615" y="340" class="b" text-anchor="middle"></text>
+  <rect x="411.538" y="318" width="53.8462" height="34" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.8"/>
+  <text x="438.462" y="340" class="b" text-anchor="middle"></text>
+  <rect x="465.385" y="318" width="53.8462" height="34" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.8"/>
+  <text x="492.308" y="340" class="b" text-anchor="middle"></text>
+  <rect x="519.231" y="318" width="53.8462" height="34" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.8"/>
+  <text x="546.154" y="340" class="b" text-anchor="middle"></text>
+  <rect x="573.077" y="318" width="53.8462" height="34" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.8"/>
+  <text x="600" y="340" class="b" text-anchor="middle"></text>
+  <rect x="626.923" y="318" width="53.8462" height="34" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.8"/>
+  <text x="653.846" y="340" class="b" text-anchor="middle"></text>
+  <rect x="680.769" y="318" width="53.8462" height="34" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.8"/>
+  <text x="707.692" y="340" class="b" text-anchor="middle"></text>
+  <rect x="734.615" y="318" width="53.8462" height="34" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.8"/>
+  <text x="761.538" y="340" class="b" text-anchor="middle">○</text>
+  <rect x="788.462" y="318" width="53.8462" height="34" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.8"/>
+  <text x="815.385" y="340" class="b" text-anchor="middle">○</text>
+  <rect x="842.308" y="318" width="53.8462" height="34" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.8"/>
+  <text x="869.231" y="340" class="b" text-anchor="middle"></text>
+  <rect x="896.154" y="318" width="53.8462" height="34" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.8"/>
+  <text x="923.077" y="340" class="b" text-anchor="middle"></text>
+  <text x="238" y="373" text-anchor="end">TIMER</text>
+  <rect x="250" y="352" width="53.8462" height="34" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.8"/>
+  <text x="276.923" y="374" class="b" text-anchor="middle">○</text>
+  <rect x="303.846" y="352" width="53.8462" height="34" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.8"/>
+  <text x="330.769" y="374" class="b" text-anchor="middle"></text>
+  <rect x="357.692" y="352" width="53.8462" height="34" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.8"/>
+  <text x="384.615" y="374" class="b" text-anchor="middle"></text>
+  <rect x="411.538" y="352" width="53.8462" height="34" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.8"/>
+  <text x="438.462" y="374" class="b" text-anchor="middle"></text>
+  <rect x="465.385" y="352" width="53.8462" height="34" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.8"/>
+  <text x="492.308" y="374" class="b" text-anchor="middle"></text>
+  <rect x="519.231" y="352" width="53.8462" height="34" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.8"/>
+  <text x="546.154" y="374" class="b" text-anchor="middle"></text>
+  <rect x="573.077" y="352" width="53.8462" height="34" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.8"/>
+  <text x="600" y="374" class="b" text-anchor="middle"></text>
+  <rect x="626.923" y="352" width="53.8462" height="34" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.8"/>
+  <text x="653.846" y="374" class="b" text-anchor="middle"></text>
+  <rect x="680.769" y="352" width="53.8462" height="34" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.8"/>
+  <text x="707.692" y="374" class="b" text-anchor="middle"></text>
+  <rect x="734.615" y="352" width="53.8462" height="34" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.8"/>
+  <text x="761.538" y="374" class="b" text-anchor="middle">○</text>
+  <rect x="788.462" y="352" width="53.8462" height="34" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.8"/>
+  <text x="815.385" y="374" class="b" text-anchor="middle">○</text>
+  <rect x="842.308" y="352" width="53.8462" height="34" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.8"/>
+  <text x="869.231" y="374" class="b" text-anchor="middle"></text>
+  <rect x="896.154" y="352" width="53.8462" height="34" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.8"/>
+  <text x="923.077" y="374" class="b" text-anchor="middle"></text>
+  <rect x="24" y="415" width="14" height="14" rx="3" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="44" y="426" class="s">持っている</text>
+  <rect x="128" y="415" width="14" height="14" rx="3" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.2"/>
+  <text x="148" y="426" class="s">持っていない</text>
+  <text x="24" y="454" class="s">左から機種コード 1（2.1）、2（2.2〜7.2）、3（5.3〜8.3）、4（6.4、8.4）、5（7.5、8.5）</text>
+</svg>

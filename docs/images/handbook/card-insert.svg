@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 360" width="980" height="360" role="img" aria-labelledby="t d">
+  <title id="t">RAM カードの取り付け</title>
+  <desc id="d">ロックを外し、カバーを外し、端子の側を先に差し、反対の端を押し込み、カバーを閉めてロックする。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .xs { font-size: 11px; fill: #52606D; }
+    .r { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; fill: #B7791F; font-weight: 700; }
+    .j { font-size: 10px; fill: #B7791F; font-weight: 700; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .lcd { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 14px; font-weight: 700; fill: #24351D; }
+  </style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#7B8794"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="359" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">RAM カードの取り付け</text>
+  <text x="24" y="56" class="sub">端子の側を先に。反対向きに差すと、ショートして本体が故障するおそれがある</text>
+  <rect x="24" y="76" width="222" height="250" rx="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="135" y="102" class="b" text-anchor="middle">1 カバーを外す</text>
+  <text x="135" y="310" class="s" text-anchor="middle">ロックを LOCK の反対へ</text>
+  <rect x="44" y="230" width="182" height="30" rx="4" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.2"/>
+  <rect x="48" y="222" width="20" height="16" rx="2" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="58" y="276" class="xs" text-anchor="middle">端子</text>
+  <rect x="210" y="216" width="12" height="22" rx="2" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="212" y="276" class="xs" text-anchor="middle">ラッチ</text>
+  <path d="M 54 200 L 214 150 L 218 160 L 58 210 Z" fill="#FBFBFC" stroke="#7B8794" stroke-width="1.4"/>
+  <line x1="134" y1="170" x2="134" y2="128" stroke="#7B8794" stroke-width="1.4" marker-end="url(#a)"/>
+  <rect x="260" y="76" width="222" height="250" rx="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="371" y="102" class="b" text-anchor="middle">2 端子側から差す</text>
+  <text x="371" y="310" class="s" text-anchor="middle">斜めに、端子を奥へ</text>
+  <rect x="280" y="230" width="182" height="30" rx="4" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.2"/>
+  <rect x="284" y="222" width="20" height="16" rx="2" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="294" y="276" class="xs" text-anchor="middle">端子</text>
+  <rect x="446" y="216" width="12" height="22" rx="2" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="448" y="276" class="xs" text-anchor="middle">ラッチ</text>
+  <path d="M 306 228 L 436 150 L 441 158 L 311 236 Z" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.4"/>
+  <line x1="410" y1="130" x2="350" y2="166" stroke="#7B8794" stroke-width="1.4" marker-end="url(#a)"/>
+  <rect x="496" y="76" width="222" height="250" rx="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="607" y="102" class="b" text-anchor="middle">3 押し込む</text>
+  <text x="607" y="310" class="s" text-anchor="middle">反対の端を軽く押す</text>
+  <rect x="516" y="230" width="182" height="30" rx="4" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.2"/>
+  <rect x="520" y="222" width="20" height="16" rx="2" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="530" y="276" class="xs" text-anchor="middle">端子</text>
+  <rect x="682" y="216" width="12" height="22" rx="2" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="684" y="276" class="xs" text-anchor="middle">ラッチ</text>
+  <rect x="542" y="220" width="138" height="10" rx="2" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <line x1="666" y1="150" x2="666" y2="214" stroke="#7B8794" stroke-width="1.4" marker-end="url(#a)"/>
+  <rect x="732" y="76" width="222" height="250" rx="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="843" y="102" class="b" text-anchor="middle">4 閉めてロック</text>
+  <text x="843" y="310" class="s" text-anchor="middle">ロックしないと動作しない</text>
+  <rect x="752" y="230" width="182" height="30" rx="4" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.2"/>
+  <rect x="756" y="222" width="20" height="16" rx="2" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="766" y="276" class="xs" text-anchor="middle">端子</text>
+  <rect x="918" y="216" width="12" height="22" rx="2" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="920" y="276" class="xs" text-anchor="middle">ラッチ</text>
+  <rect x="778" y="220" width="138" height="10" rx="2" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <rect x="748" y="196" width="190" height="12" rx="2" fill="#FBFBFC" stroke="#7B8794" stroke-width="1.2"/>
+  <rect x="748" y="166" width="60" height="18" rx="3" fill="#FDECEA" stroke="#C0392B" stroke-width="1.2"/>
+  <text x="778" y="179" class="ms" xml:space="preserve" text-anchor="middle">LOCK</text>
+  <line x1="852" y1="175" x2="814" y2="175" stroke="#7B8794" stroke-width="1.4" marker-end="url(#a)"/>
+</svg>

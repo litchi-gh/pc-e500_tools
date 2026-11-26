@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 330" width="980" height="330" role="img" aria-labelledby="t d">
+  <title id="t">BEEP n,P,D の 1 周期</title>
+  <desc id="d">P が 0、10、100 のときの BEEP の 1 周期の長さを、同じ時間の目盛りで並べた図。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+  </style>
+  <defs></defs>
+  <rect x="0.5" y="0.5" width="979" height="329" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">BEEP n,P,D の 1 周期</text>
+  <text x="24" y="55" class="sub">周期 = 270 + 12 × P サイクル（768 kHz）。High と Low の割合は模式的に半分ずつで描いた</text>
+  <polyline points="150,76 150,290" fill="none" stroke="#D9E0E8" stroke-width="1"/>
+  <text x="150" y="308" class="s" text-anchor="middle">0 ms</text>
+  <polyline points="340,76 340,290" fill="none" stroke="#D9E0E8" stroke-width="1"/>
+  <text x="340" y="308" class="s" text-anchor="middle">1 ms</text>
+  <polyline points="530,76 530,290" fill="none" stroke="#D9E0E8" stroke-width="1"/>
+  <text x="530" y="308" class="s" text-anchor="middle">2 ms</text>
+  <polyline points="720,76 720,290" fill="none" stroke="#D9E0E8" stroke-width="1"/>
+  <text x="720" y="308" class="s" text-anchor="middle">3 ms</text>
+  <polyline points="910,76 910,290" fill="none" stroke="#D9E0E8" stroke-width="1"/>
+  <text x="910" y="308" class="s" text-anchor="middle">4 ms</text>
+  <text x="24" y="110" class="b">P = 0</text>
+  <text x="24" y="130" class="s">270 サイクル</text>
+  <text x="24" y="146" class="s">2844 Hz</text>
+  <polyline points="150,96 183.398,96 183.398,136 216.797,136 216.797,96 250.195,96 250.195,136 283.594,136 283.594,96 316.992,96 316.992,136 350.391,136 350.391,96 383.789,96 383.789,136 417.188,136 417.188,96 450.586,96 450.586,136 483.984,136 483.984,96 517.383,96 517.383,136 550.781,136 550.781,96 584.18,96 584.18,136 617.578,136 617.578,96 650.977,96 650.977,136 684.375,136 684.375,96 717.773,96 717.773,136 751.172,136 751.172,96 784.57,96 784.57,136 817.969,136 817.969,96 851.367,96 851.367,136 884.766,136 884.766,96 910,96" fill="none" stroke="#2F6DB5" stroke-width="2"/>
+  <text x="24" y="178" class="b">P = 10</text>
+  <text x="24" y="198" class="s">390 サイクル</text>
+  <text x="24" y="214" class="s">1969 Hz</text>
+  <polyline points="150,164 198.242,164 198.242,204 246.484,204 246.484,164 294.727,164 294.727,204 342.969,204 342.969,164 391.211,164 391.211,204 439.453,204 439.453,164 487.695,164 487.695,204 535.938,204 535.938,164 584.18,164 584.18,204 632.422,204 632.422,164 680.664,164 680.664,204 728.906,204 728.906,164 777.148,164 777.148,204 825.391,204 825.391,164 873.633,164 873.633,204 910,204" fill="none" stroke="#2F855A" stroke-width="2"/>
+  <text x="24" y="246" class="b">P = 100</text>
+  <text x="24" y="266" class="s">1470 サイクル</text>
+  <text x="24" y="282" class="s">522 Hz</text>
+  <polyline points="150,232 331.836,232 331.836,272 513.672,272 513.672,232 695.508,232 695.508,272 877.344,272 877.344,232 910,232" fill="none" stroke="#B7791F" stroke-width="2"/>
+</svg>

@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 360" width="980" height="360" role="img" aria-labelledby="t d">
+  <title id="t">GPRINT &quot;1824458F452418&quot; の絵</title>
+  <desc id="d">16 進 2 桁を 1 列として、7 列のドットに直した図。下位ビットが上。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .mb { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 15px; font-weight: 700; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .lbl { font-size: 12px; fill: #52606D; paint-order: stroke; stroke: #FFFFFF; stroke-width: 4px; stroke-linejoin: round; }
+  </style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#52606D"/></marker><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#C0392B"/></marker><marker id="ab" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2F6DB5"/></marker><marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2F855A"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="359" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h" xml:space="preserve">GPRINT "1824458F452418" の絵</text>
+  <text x="24" y="55" class="sub" xml:space="preserve">2 桁が 1 列（縦 8 ドット）。下位ビットが上のドット</text>
+  <rect x="110" y="80" width="28" height="26" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1"/>
+  <text x="124" y="98" class="m" text-anchor="middle" xml:space="preserve">18</text>
+  <rect x="110" y="112" width="28" height="28" rx="0" fill="#FFFFFF" stroke="#D9E0E8" stroke-width="1"/>
+  <rect x="110" y="140" width="28" height="28" rx="0" fill="#FFFFFF" stroke="#D9E0E8" stroke-width="1"/>
+  <rect x="110" y="168" width="28" height="28" rx="0" fill="#FFFFFF" stroke="#D9E0E8" stroke-width="1"/>
+  <rect x="110" y="196" width="28" height="28" rx="0" fill="#1F2933" stroke="#D9E0E8" stroke-width="1"/>
+  <rect x="110" y="224" width="28" height="28" rx="0" fill="#1F2933" stroke="#D9E0E8" stroke-width="1"/>
+  <rect x="110" y="252" width="28" height="28" rx="0" fill="#FFFFFF" stroke="#D9E0E8" stroke-width="1"/>
+  <rect x="110" y="280" width="28" height="28" rx="0" fill="#FFFFFF" stroke="#D9E0E8" stroke-width="1"/>
+  <rect x="110" y="308" width="28" height="28" rx="0" fill="#FFFFFF" stroke="#D9E0E8" stroke-width="1"/>
+  <rect x="138" y="80" width="28" height="26" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1"/>
+  <text x="152" y="98" class="m" text-anchor="middle" xml:space="preserve">24</text>
+  <rect x="138" y="112" width="28" height="28" rx="0" fill="#FFFFFF" stroke="#D9E0E8" stroke-width="1"/>
+  <rect x="138" y="140" width="28" height="28" rx="0" fill="#FFFFFF" stroke="#D9E0E8" stroke-width="1"/>
+  <rect x="138" y="168" width="28" height="28" rx="0" fill="#1F2933" stroke="#D9E0E8" stroke-width="1"/>
+  <rect x="138" y="196" width="28" height="28" rx="0" fill="#FFFFFF" stroke="#D9E0E8" stroke-width="1"/>
+  <rect x="138" y="224" width="28" height="28" rx="0" fill="#FFFFFF" stroke="#D9E0E8" stroke-width="1"/>
+  <rect x="138" y="252" width="28" height="28" rx="0" fill="#1F2933" stroke="#D9E0E8" stroke-width="1"/>
+  <rect x="138" y="280" width="28" height="28" rx="0" fill="#FFFFFF" stroke="#D9E0E8" stroke-width="1"/>
+  <rect x="138" y="308" width="28" height="28" rx="0" fill="#FFFFFF" stroke="#D9E0E8" stroke-width="1"/>
+  <rect x="166" y="80" width="28" height="26" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1"/>
+  <text x="180" y="98" class="m" text-anchor="middle" xml:space="preserve">45</text>
+  <rect x="166" y="112" width="28" height="28" rx="0" fill="#1F2933" stroke="#D9E0E8" stroke-width="1"/>
+  <rect x="166" y="140" width="28" height="28" rx="0" fill="#FFFFFF" stroke="#D9E0E8" stroke-width="1"/>
+  <rect x="166" y="168" width="28" height="28" rx="0" fill="#1F2933" stroke="#D9E0E8" stroke-width="1"/>
+  <rect x="166" y="196" width="28" height="28" rx="0" fill="#FFFFFF" stroke="#D9E0E8" stroke-width="1"/>
+  <rect x="166" y="224" width="28" height="28" rx="0" fill="#FFFFFF" stroke="#D9E0E8" stroke-width="1"/>
+  <rect x="166" y="252" width="28" height="28" rx="0" fill="#FFFFFF" stroke="#D9E0E8" stroke-width="1"/>
+  <rect x="166" y="280" width="28" height="28" rx="0" fill="#1F2933" stroke="#D9E0E8" stroke-width="1"/>
+  <rect x="166" y="308" width="28" height="28" rx="0" fill="#FFFFFF" stroke="#D9E0E8" stroke-width="1"/>
+  <rect x="194" y="80" width="28" height="26" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1"/>
+  <text x="208" y="98" class="m" text-anchor="middle" xml:space="preserve">8F</text>
+  <rect x="194" y="112" width="28" height="28" rx="0" fill="#1F2933" stroke="#D9E0E8" stroke-width="1"/>
+  <rect x="194" y="140" width="28" height="28" rx="0" fill="#1F2933" stroke="#D9E0E8" stroke-width="1"/>
+  <rect x="194" y="168" width="28" height="28" rx="0" fill="#1F2933" stroke="#D9E0E8" stroke-width="1"/>
+  <rect x="194" y="196" width="28" height="28" rx="0" fill="#1F2933" stroke="#D9E0E8" stroke-width="1"/>
+  <rect x="194" y="224" width="28" height="28" rx="0" fill="#FFFFFF" stroke="#D9E0E8" stroke-width="1"/>
+  <rect x="194" y="252" width="28" height="28" rx="0" fill="#FFFFFF" stroke="#D9E0E8" stroke-width="1"/>
+  <rect x="194" y="280" width="28" height="28" rx="0" fill="#FFFFFF" stroke="#D9E0E8" stroke-width="1"/>
+  <rect x="194" y="308" width="28" height="28" rx="0" fill="#1F2933" stroke="#D9E0E8" stroke-width="1"/>
+  <rect x="222" y="80" width="28" height="26" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1"/>
+  <text x="236" y="98" class="m" text-anchor="middle" xml:space="preserve">45</text>
+  <rect x="222" y="112" width="28" height="28" rx="0" fill="#1F2933" stroke="#D9E0E8" stroke-width="1"/>
+  <rect x="222" y="140" width="28" height="28" rx="0" fill="#FFFFFF" stroke="#D9E0E8" stroke-width="1"/>
+  <rect x="222" y="168" width="28" height="28" rx="0" fill="#1F2933" stroke="#D9E0E8" stroke-width="1"/>
+  <rect x="222" y="196" width="28" height="28" rx="0" fill="#FFFFFF" stroke="#D9E0E8" stroke-width="1"/>
+  <rect x="222" y="224" width="28" height="28" rx="0" fill="#FFFFFF" stroke="#D9E0E8" stroke-width="1"/>
+  <rect x="222" y="252" width="28" height="28" rx="0" fill="#FFFFFF" stroke="#D9E0E8" stroke-width="1"/>
+  <rect x="222" y="280" width="28" height="28" rx="0" fill="#1F2933" stroke="#D9E0E8" stroke-width="1"/>
+  <rect x="222" y="308" width="28" height="28" rx="0" fill="#FFFFFF" stroke="#D9E0E8" stroke-width="1"/>
+  <rect x="250" y="80" width="28" height="26" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1"/>
+  <text x="264" y="98" class="m" text-anchor="middle" xml:space="preserve">24</text>
+  <rect x="250" y="112" width="28" height="28" rx="0" fill="#FFFFFF" stroke="#D9E0E8" stroke-width="1"/>
+  <rect x="250" y="140" width="28" height="28" rx="0" fill="#FFFFFF" stroke="#D9E0E8" stroke-width="1"/>
+  <rect x="250" y="168" width="28" height="28" rx="0" fill="#1F2933" stroke="#D9E0E8" stroke-width="1"/>
+  <rect x="250" y="196" width="28" height="28" rx="0" fill="#FFFFFF" stroke="#D9E0E8" stroke-width="1"/>
+  <rect x="250" y="224" width="28" height="28" rx="0" fill="#FFFFFF" stroke="#D9E0E8" stroke-width="1"/>
+  <rect x="250" y="252" width="28" height="28" rx="0" fill="#1F2933" stroke="#D9E0E8" stroke-width="1"/>
+  <rect x="250" y="280" width="28" height="28" rx="0" fill="#FFFFFF" stroke="#D9E0E8" stroke-width="1"/>
+  <rect x="250" y="308" width="28" height="28" rx="0" fill="#FFFFFF" stroke="#D9E0E8" stroke-width="1"/>
+  <rect x="278" y="80" width="28" height="26" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1"/>
+  <text x="292" y="98" class="m" text-anchor="middle" xml:space="preserve">18</text>
+  <rect x="278" y="112" width="28" height="28" rx="0" fill="#FFFFFF" stroke="#D9E0E8" stroke-width="1"/>
+  <rect x="278" y="140" width="28" height="28" rx="0" fill="#FFFFFF" stroke="#D9E0E8" stroke-width="1"/>
+  <rect x="278" y="168" width="28" height="28" rx="0" fill="#FFFFFF" stroke="#D9E0E8" stroke-width="1"/>
+  <rect x="278" y="196" width="28" height="28" rx="0" fill="#1F2933" stroke="#D9E0E8" stroke-width="1"/>
+  <rect x="278" y="224" width="28" height="28" rx="0" fill="#1F2933" stroke="#D9E0E8" stroke-width="1"/>
+  <rect x="278" y="252" width="28" height="28" rx="0" fill="#FFFFFF" stroke="#D9E0E8" stroke-width="1"/>
+  <rect x="278" y="280" width="28" height="28" rx="0" fill="#FFFFFF" stroke="#D9E0E8" stroke-width="1"/>
+  <rect x="278" y="308" width="28" height="28" rx="0" fill="#FFFFFF" stroke="#D9E0E8" stroke-width="1"/>
+  <text x="100" y="131" class="m" text-anchor="end" xml:space="preserve">01h</text>
+  <text x="100" y="159" class="m" text-anchor="end" xml:space="preserve">02h</text>
+  <text x="100" y="187" class="m" text-anchor="end" xml:space="preserve">04h</text>
+  <text x="100" y="215" class="m" text-anchor="end" xml:space="preserve">08h</text>
+  <text x="100" y="243" class="m" text-anchor="end" xml:space="preserve">10h</text>
+  <text x="100" y="271" class="m" text-anchor="end" xml:space="preserve">20h</text>
+  <text x="100" y="299" class="m" text-anchor="end" xml:space="preserve">40h</text>
+  <text x="100" y="327" class="m" text-anchor="end" xml:space="preserve">80h</text>
+  <text x="370" y="104" class="b" xml:space="preserve">同じ絵を数値で書く</text>
+  <text x="370" y="130" class="m" xml:space="preserve">GPRINT &amp;H18;&amp;H24;&amp;H45;&amp;H8F;&amp;H45;&amp;H24;&amp;H18</text>
+  <text x="370" y="170" class="b" xml:space="preserve">3 列目 45h の分解</text>
+  <text x="370" y="196" class="m" xml:space="preserve">45h = 01h + 04h + 40h</text>
+  <text x="370" y="222" xml:space="preserve">上から 1 番目、3 番目、7 番目のドットが点く</text>
+  <text x="370" y="262" class="b" xml:space="preserve">4 列目 8Fh の分解</text>
+  <text x="370" y="288" class="m" xml:space="preserve">8Fh = 01h + 02h + 04h + 08h + 80h</text>
+  <text x="370" y="314" xml:space="preserve">上の 4 ドットと、いちばん下のドットが点く</text>
+</svg>

@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 560" width="980" height="560" role="img" aria-labelledby="t d">
+  <title id="t">OPEN "COM:…" の文字列を分解する</title>
+  <desc id="d">OPEN の 9 つの項目と、それが入る BFD33h、BFD34h、BFD3Bh、BFD3Ch の関係。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .lbl { font-size: 12px; fill: #52606D; paint-order: stroke; stroke: #FFFFFF; stroke-width: 4px; stroke-linejoin: round; }
+  </style>
+  <defs></defs>
+  <rect x="0.5" y="0.5" width="979" height="559" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">OPEN "COM:…" の文字列を分解する</text>
+  <text x="24" y="55" class="sub">例：OPEN "COM:1200,N,8,1,A,C,&amp;H1A,N,S" AS #1</text>
+  <rect x="40" y="78" width="92" height="34" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="86" y="100" class="m" xml:space="preserve" text-anchor="middle">1200</text>
+  <text x="86" y="130" class="s" text-anchor="middle">ボーレート</text>
+  <rect x="140" y="78" width="92" height="34" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="186" y="100" class="m" xml:space="preserve" text-anchor="middle">N</text>
+  <text x="186" y="130" class="s" text-anchor="middle">パリティ</text>
+  <rect x="240" y="78" width="92" height="34" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+  <text x="286" y="100" class="m" xml:space="preserve" text-anchor="middle">8</text>
+  <text x="286" y="130" class="s" text-anchor="middle">語長</text>
+  <rect x="340" y="78" width="92" height="34" rx="0" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.5"/>
+  <text x="386" y="100" class="m" xml:space="preserve" text-anchor="middle">1</text>
+  <text x="386" y="130" class="s" text-anchor="middle">ストップ</text>
+  <rect x="440" y="78" width="92" height="34" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="486" y="100" class="m" xml:space="preserve" text-anchor="middle">A</text>
+  <text x="486" y="130" class="s" text-anchor="middle">コード</text>
+  <rect x="540" y="78" width="92" height="34" rx="0" fill="#FDECEA" stroke="#C0392B" stroke-width="1.5"/>
+  <text x="586" y="100" class="m" xml:space="preserve" text-anchor="middle">C</text>
+  <text x="586" y="130" class="s" text-anchor="middle">デリミタ</text>
+  <rect x="640" y="78" width="92" height="34" rx="0" fill="#FDECEA" stroke="#C0392B" stroke-width="1.5"/>
+  <text x="686" y="100" class="m" xml:space="preserve" text-anchor="middle">&amp;H1A</text>
+  <text x="686" y="130" class="s" text-anchor="middle">EOF</text>
+  <rect x="740" y="78" width="92" height="34" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="786" y="100" class="m" xml:space="preserve" text-anchor="middle">N</text>
+  <text x="786" y="130" class="s" text-anchor="middle">XON</text>
+  <rect x="840" y="78" width="92" height="34" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+  <text x="886" y="100" class="m" xml:space="preserve" text-anchor="middle">S</text>
+  <text x="886" y="130" class="s" text-anchor="middle">シフト</text>
+  <text x="214" y="196" class="s" text-anchor="middle">ビット 7</text>
+  <text x="282" y="196" class="s" text-anchor="middle">ビット 6</text>
+  <text x="350" y="196" class="s" text-anchor="middle">ビット 5</text>
+  <text x="418" y="196" class="s" text-anchor="middle">ビット 4</text>
+  <text x="486" y="196" class="s" text-anchor="middle">ビット 3</text>
+  <text x="554" y="196" class="s" text-anchor="middle">ビット 2</text>
+  <text x="622" y="196" class="s" text-anchor="middle">ビット 1</text>
+  <text x="690" y="196" class="s" text-anchor="middle">ビット 0</text>
+  <text x="40" y="228" class="b">BFD33h</text>
+  <rect x="180" y="204" width="68" height="36" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="214" y="227" class="m" xml:space="preserve" text-anchor="middle">0</text>
+  <rect x="248" y="204" width="204" height="36" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="350" y="227" class="m" xml:space="preserve" text-anchor="middle">011</text>
+  <rect x="452" y="204" width="136" height="36" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="520" y="227" class="m" xml:space="preserve" text-anchor="middle">10</text>
+  <rect x="588" y="204" width="68" height="36" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+  <text x="622" y="227" class="m" xml:space="preserve" text-anchor="middle">0</text>
+  <rect x="656" y="204" width="68" height="36" rx="0" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.5"/>
+  <text x="690" y="227" class="m" xml:space="preserve" text-anchor="middle">0</text>
+  <text x="740" y="222" class="m" xml:space="preserve">0011 1000 = 38h</text>
+  <text x="740" y="239" class="s">実験の F7h の値と一致</text>
+  <text x="40" y="288" class="b">BFD34h</text>
+  <rect x="180" y="264" width="68" height="36" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="214" y="287" class="m" xml:space="preserve" text-anchor="middle">1</text>
+  <rect x="248" y="264" width="136" height="36" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="316" y="287" class="m" xml:space="preserve" text-anchor="middle">01</text>
+  <rect x="384" y="264" width="136" height="36" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="452" y="287" class="m" xml:space="preserve" text-anchor="middle">00</text>
+  <rect x="520" y="264" width="136" height="36" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="588" y="287" class="m" xml:space="preserve" text-anchor="middle">00</text>
+  <rect x="656" y="264" width="68" height="36" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+  <text x="690" y="287" class="m" xml:space="preserve" text-anchor="middle">1</text>
+  <text x="740" y="282" class="m" xml:space="preserve">1010 0001 = A1h</text>
+  <text x="740" y="299" class="s">開いている間は bit7 = 1</text>
+  <text x="40" y="336" class="b">BFD3Bh</text>
+  <rect x="180" y="316" width="136" height="34" rx="0" fill="#FDECEA" stroke="#C0392B" stroke-width="1.5"/>
+  <text x="248" y="338" class="m" xml:space="preserve" text-anchor="middle">01h（CR）</text>
+  <text x="360" y="338" class="b">BFD3Ch</text>
+  <rect x="440" y="316" width="136" height="34" rx="0" fill="#FDECEA" stroke="#C0392B" stroke-width="1.5"/>
+  <text x="508" y="338" class="m" xml:space="preserve" text-anchor="middle">1Ah</text>
+  <polyline points="24,370 956,370" fill="none" stroke="#D9E0E8" stroke-width="1"/>
+  <text x="40" y="394" class="b">値の対応</text>
+  <text x="56" y="418">ボーレート（3 ビット）</text>
+  <text x="230" y="418" class="m" xml:space="preserve">001=300 010=600 011=1200 100=2400 101=4800 110=9600</text>
+  <text x="56" y="439">パリティ（2 ビット）</text>
+  <text x="230" y="439" class="m" xml:space="preserve">00=E（偶数） 01=O（奇数） 1x=N（なし）</text>
+  <text x="56" y="460">語長</text>
+  <text x="230" y="460" class="m" xml:space="preserve">0=8 ビット 1=7 ビット</text>
+  <text x="56" y="481">ストップ</text>
+  <text x="230" y="481" class="m" xml:space="preserve">0=1 ビット 1=2 ビット</text>
+  <text x="56" y="502">デリミタ</text>
+  <text x="230" y="502" class="m" xml:space="preserve">01h=C（CR） 02h=F（LF） 03h=L（CR+LF）</text>
+  <text x="56" y="523">シフト</text>
+  <text x="230" y="523" class="m" xml:space="preserve">1=S 0=N</text>
+  <text x="56" y="544">XON（ビット 2、1）</text>
+  <text x="230" y="544" class="m" xml:space="preserve">00=N 11=X</text>
+</svg>

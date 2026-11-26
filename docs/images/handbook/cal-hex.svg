@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 250" width="980" height="250" role="img" aria-labelledby="t d">
+  <title id="t">16 進で扱える範囲</title>
+  <desc id="d">16 進の数の並び。0 から 2540BE3FF が 0 以上、FDABF41C01 から FFFFFFFFFF が負の数、その間は扱えない。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .xs { font-size: 11px; fill: #52606D; }
+    .r { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; fill: #B7791F; font-weight: 700; }
+    .j { font-size: 10px; fill: #B7791F; font-weight: 700; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .lcd { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 14px; font-weight: 700; fill: #24351D; }
+  </style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#7B8794"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="249" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">16 進で扱える範囲</text>
+  <text x="24" y="56" class="sub">10 桁の 16 進を、正の数と負の数（補数）に分けて使う。間の数は 10 進に変換できない</text>
+  <rect x="40" y="110" width="270" height="60" rx="6" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="175" y="135" class="b" text-anchor="middle">0 以上の数</text>
+  <text x="175" y="157" class="m" xml:space="preserve" text-anchor="middle">0 〜 9999999999</text>
+  <rect x="310" y="110" width="360" height="60" rx="6" fill="#FDECEA" stroke="#C0392B" stroke-width="1.2"/>
+  <text x="490" y="145" class="b" text-anchor="middle">10 進に変換できない（E が点く）</text>
+  <rect x="670" y="110" width="270" height="60" rx="6" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="805" y="135" class="b" text-anchor="middle">負の数</text>
+  <text x="805" y="157" class="m" xml:space="preserve" text-anchor="middle">-9999999999 〜 -1</text>
+  <text x="40" y="96" class="m" xml:space="preserve">0</text>
+  <text x="306" y="96" class="m" xml:space="preserve" text-anchor="end">2540BE3FF</text>
+  <text x="674" y="96" class="m" xml:space="preserve">FDABF41C01</text>
+  <text x="940" y="96" class="m" xml:space="preserve" text-anchor="end">FFFFFFFFFF</text>
+  <text x="40" y="204" class="s">例: FFFFFFFFFF = −1、FFFFFFFF9C = −100。+/− キーで正と負（補数）が入れ替わる</text>
+</svg>

@@ -1,2 +1,4 @@
 # Shell scripts must keep LF, or they fail on Linux and macOS
 *.sh text eol=lf
+VSCodeExtensions/pc-e500-devtools/bin/e500 text eol=lf
+VSCodeExtensions/pc-e500-devtools/bin/e500.cmd text eol=crlf

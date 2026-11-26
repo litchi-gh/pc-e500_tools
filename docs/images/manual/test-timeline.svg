@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 270" width="980" height="270" role="img" aria-labelledby="t d">
+  <title id="t">テストの時間の流れ</title>
+  <desc id="d">basic の行を打ち、maxCycles まで待ってから、キーを 0.2 秒押して 1 秒離すことを繰り返し、最後に expect を調べる。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 14px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 12px; }
+  </style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#52606D"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="269" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+
+  <text x="24" y="34" class="h" text-anchor="start" xml:space="preserve">テストの時間の流れ</text>
+  <path d="M30,170 L960,170" fill="none" stroke="#7B8794" stroke-width="1.6" marker-end="url(#a)"/>
+  <text x="952" y="194" class="s" text-anchor="end" xml:space="preserve">エミュレータの時間</text>
+  <rect x="30" y="110" width="110" height="56" rx="6" fill="#E8F1FC" stroke="#2F6DB5"/>
+  <text x="85.0" y="134" class="" text-anchor="middle" xml:space="preserve">basic の行を</text>
+  <text x="85.0" y="154" class="s" text-anchor="middle" xml:space="preserve">打つ</text>
+  <rect x="140" y="110" width="260" height="56" rx="6" fill="#FFF5DF" stroke="#B7791F"/>
+  <text x="270.0" y="134" class="" text-anchor="middle" xml:space="preserve">BUSY が消えるまで</text>
+  <text x="270.0" y="154" class="s" text-anchor="middle" xml:space="preserve">ゲームなどは maxCycles まで</text>
+  <rect x="400" y="110" width="60" height="56" rx="6" fill="#E6F6EC" stroke="#2F855A"/>
+  <text x="430.0" y="134" class="ms" text-anchor="middle" xml:space="preserve">SPACE</text>
+  <text x="430.0" y="154" class="s" text-anchor="middle" xml:space="preserve">0.2 秒</text>
+  <rect x="460" y="110" width="150" height="56" rx="6" fill="#F3F5F8" stroke="#7B8794"/>
+  <text x="535.0" y="134" class="" text-anchor="middle" xml:space="preserve">離して待つ</text>
+  <text x="535.0" y="154" class="s" text-anchor="middle" xml:space="preserve">1 秒</text>
+  <rect x="610" y="110" width="60" height="56" rx="6" fill="#E6F6EC" stroke="#2F855A"/>
+  <text x="640.0" y="134" class="ms" text-anchor="middle" xml:space="preserve">ON/BRK</text>
+  <text x="640.0" y="154" class="s" text-anchor="middle" xml:space="preserve">0.2 秒</text>
+  <rect x="670" y="110" width="150" height="56" rx="6" fill="#F3F5F8" stroke="#7B8794"/>
+  <text x="745.0" y="134" class="" text-anchor="middle" xml:space="preserve">離して待つ</text>
+  <text x="745.0" y="154" class="s" text-anchor="middle" xml:space="preserve">1 秒</text>
+  <rect x="820" y="110" width="120" height="56" rx="6" fill="#F1ECFB" stroke="#6B4FBB"/>
+  <text x="880.0" y="134" class="" text-anchor="middle" xml:space="preserve">expect を</text>
+  <text x="880.0" y="154" class="s" text-anchor="middle" xml:space="preserve">調べる</text>
+  <text x="30" y="72" class="m" text-anchor="start" xml:space="preserve">"basic": "CALL &amp;HBE000",  "keys": ["SPACE", "ON/BRK"],  "maxCycles": 3000000</text>
+  <text x="30" y="230" class="" text-anchor="start" xml:space="preserve">1 秒 = 768000 サイクル。maxCycles が 3000000 なら約 3.9 秒待ってから、最初のキーを押します。</text>
+  <text x="30" y="252" class="s" text-anchor="start" xml:space="preserve">call のテストでは、ルーチンが戻ったところで、すぐに expect を調べます。</text>
+</svg>

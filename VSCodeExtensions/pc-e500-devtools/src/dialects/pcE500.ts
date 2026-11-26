@@ -1,0 +1,31 @@
+import { Dialect } from "../core";
+
+// Extracted from docs/analysis/14_BASIC_REFERENCE.md (PC-E500 ROM 8.5).
+const statementNames = `APPEND AS ARUN AUTOGOTO AUTO BEEP BASIC BTEXT$ BDATA$ CONT CONSOLE CLEAR CLOAD CSAVE CLOSE CALL CLS CHAIN COPY CSIZE COLOR CROTATE CIRCLE CASE DIM DEGREE DATA DELETE DEFDBL DEFSNG DEFAULT END ERASE ERROR ELSE FOR FILES GOTO GOSUB GPRINT GCURSOR GRAD GRAPH GLCURSOR INPUT IF INIT KILL KEY LIST LLIST LPRINT LOCATE LOAD LINE LET LFILES LTEXT LF LLINE MEM$ MERGE NEXT NAME NEW ON OPEN OUTPUT PRINT PASS POKE PSET PRESET PAUSE PAINT RUN RETURN READ RESTORE RANDOMIZE RADIAN REM RENUM RLINE RESUME REPEAT STOP SAVE STEP SET SORGN SWITCH THEN TEXT TRON TROFF TO USING UNTIL WAIT WHILE WEND ENDIF ENDSWITCH`;
+const functionNames = `ASC AND ABS ATN ASN ACS AHS AHC AHT AER BTEXT$ BDATA$ COS CHR$ CUB CUR DEG DMS DECI EXP EOF ERL ERN EVAL FRE FACT HEX$ HEX HSN HCS HTN INPUT INT INKEY$ KEY LOG LOF LOC LN LEN LEFT$ MID$ MEM$ MDF NOT NCR NPR OPEN OR PI PEEK POINT POL RND RIGHT$ ROT RCP REC SQR SIN SGN STR$ SQU TAN TEN VAL XOR DSKF`;
+
+export const pcE500Dialect: Dialect = {
+  id: "pc-e500",
+  displayName: "SHARP PC-E500 series",
+  minLineNumber: 1,
+  maxLineNumber: 65279,
+  statements: new Set(statementNames.split(" ")),
+  functions: new Set(functionNames.split(" ")),
+  structuralPairs: new Map([
+    ["FOR", "NEXT"],
+    ["WHILE", "WEND"],
+    ["REPEAT", "UNTIL"],
+    ["SWITCH", "ENDSWITCH"]
+  ]),
+  targetStatements: new Set(["GOTO", "GOSUB", "RESTORE", "RESUME", "RUN", "ARUN", "AUTOGOTO"]),
+  isCommentStart(text: string, index: number): boolean {
+    if (text[index] === "'") {
+      return true;
+    }
+    if (!/^REM/i.test(text.slice(index, index + 3))) return false;
+    // REM starts a statement, and then whatever follows is the comment (REM"..., REMARK); in the middle of one only as a word.
+    const before = text.slice(0, index).trimEnd();
+    if (before === "" || /(?::|THEN|ELSE)$|^\d+$|^\*[A-Z][A-Z0-9]*$|^"[^"]*"$/i.test(before)) return true;
+    return !/[A-Z0-9]$/i.test(text.slice(0, index)) && /^REM(?:\s|$)/i.test(text.slice(index));
+  }
+};

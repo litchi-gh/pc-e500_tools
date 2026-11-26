@@ -1,0 +1,61 @@
+{
+  // テスト エクスプローラー（フラスコのアイコン）から実行する。細かい検証は test.ps1。
+  "program": "ninebox.asm",
+  "tests": [
+    {
+      "name": "タイトルが title.lcd と同じ",
+      "basic": "CLS:CALL &HBD000",
+      "maxCycles": 2304000,
+      "expect": { "picture": "assets/title.lcd" }
+    },
+    {
+      "name": "ON/BRK で BASIC に戻る",
+      "basic": "CLS:CALL &HBD000",
+      "maxCycles": 2304000,
+      "keys": ["ON/BRK"],
+      "expect": { "screen": ">" }
+    },
+    {
+      "name": "SPACE で始まり、盤面は空",
+      "basic": "CLS:CALL &HBD000",
+      "maxCycles": 2304000,
+      "keys": ["SPACE"],
+      "expect": { "memory": { "board": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], "board+152": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0] } }
+    },
+    {
+      "name": "3×3 がそろうと消えて、前のブロックが 3 マス進む",
+      "call": "clear_boxes",
+      "return": "near",
+      "memory": {
+        "board+108": [0, 0, 0, 4, 0, 0, 5, 0, 0],
+        "board+135": [0, 0, 1, 2, 3, 0, 0, 0, 0],
+        "board+144": [0, 0, 1, 2, 3, 0, 0, 0, 0],
+        "board+153": [0, 0, 1, 2, 3, 0, 0, 0, 0]
+      },
+      "expect": {
+        "memory": {
+          "board+108": [0, 0, 0, 0, 0, 0, 5, 0, 0],
+          "board+135": [0, 0, 0, 4, 0, 0, 0, 0, 0],
+          "board+144": [0, 0, 0, 0, 0, 0, 0, 0, 0],
+          "board+153": [0, 0, 0, 0, 0, 0, 0, 0, 0]
+        }
+      }
+    },
+    {
+      "name": "2 マスしかない列は消えない",
+      "call": "clear_boxes",
+      "return": "near",
+      "memory": {
+        "board+135": [0, 0, 1, 2, 0, 0, 0, 0, 0],
+        "board+144": [0, 0, 1, 2, 3, 0, 0, 0, 0],
+        "board+153": [0, 0, 1, 2, 3, 0, 0, 0, 0]
+      },
+      "expect": {
+        "memory": {
+          "board+135": [0, 0, 1, 2, 0, 0, 0, 0, 0],
+          "board+144": [0, 0, 1, 2, 3, 0, 0, 0, 0]
+        }
+      }
+    }
+  ]
+}

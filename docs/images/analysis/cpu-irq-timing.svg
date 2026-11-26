@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 400" width="980" height="400" role="img" aria-labelledby="t d">
+  <title id="t">割り込みは命令の切れ目で始まる</title>
+  <desc id="d">命令の並びの途中で要因が起き、次の命令の前で受け付け、処理をして RETI で戻るまでの時間の流れ。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .mb { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; font-weight: 700; }
+  </style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#52606D"/></marker><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#C0392B"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="399" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h" xml:space="preserve">割り込みは命令の切れ目で始まる</text>
+  <text x="24" y="55" class="sub" xml:space="preserve">1 命令の実行中は割り込まない。長い命令の間は待たされる</text>
+  <text x="24" y="100" class="b" xml:space="preserve">本体のプログラム</text>
+  <rect x="24" y="110" width="80" height="44" rx="4" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="64" y="137" class="m" xml:space="preserve" text-anchor="middle">INC X</text>
+  <rect x="104" y="110" width="220" height="44" rx="4" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="214" y="130" class="m" xml:space="preserve" text-anchor="middle">MVL (m),(n)</text>
+  <text x="214" y="147" class="s" xml:space="preserve" text-anchor="middle">I が大きいと長い</text>
+  <rect x="796" y="110" width="70" height="44" rx="4" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="831" y="137" class="m" xml:space="preserve" text-anchor="middle">DEC IL</text>
+  <rect x="866" y="110" width="90" height="44" rx="4" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="911" y="137" class="m" xml:space="preserve" text-anchor="middle">JRNZ</text>
+  <rect x="324" y="110" width="470" height="44" rx="4" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.2" stroke-dasharray="5 4"/>
+  <text x="560" y="137" class="s" xml:space="preserve" text-anchor="middle">止まっている</text>
+  <text x="24" y="206" class="b" xml:space="preserve">割り込みの処理</text>
+  <rect x="330" y="216" width="150" height="44" rx="4" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="405" y="236" class="b" xml:space="preserve" text-anchor="middle">受け付け</text>
+  <text x="405" y="253" class="s" xml:space="preserve" text-anchor="middle">積む、IRM=0、ベクタ</text>
+  <rect x="480" y="216" width="220" height="44" rx="4" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="590" y="236" class="b" xml:space="preserve" text-anchor="middle">要因を調べて処理</text>
+  <text x="590" y="253" class="s" xml:space="preserve" text-anchor="middle">ISR のビットを 0 に</text>
+  <rect x="700" y="216" width="90" height="44" rx="4" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="745" y="236" class="m" xml:space="preserve" text-anchor="middle">RETI</text>
+  <text x="745" y="253" class="s" xml:space="preserve" text-anchor="middle">5 バイト戻す</text>
+  <path d="M326 156L330 214" fill="none" stroke="#52606D" stroke-width="1.4" marker-end="url(#a)"/>
+  <path d="M790 214L796 156" fill="none" stroke="#52606D" stroke-width="1.4" marker-end="url(#a)"/>
+  <text x="24" y="306" class="b" xml:space="preserve">ISR のビット</text>
+  <path d="M130 320 L200 320 L200 296 L600 296 L600 320 L956 320" fill="none" stroke="#B7791F" stroke-width="2.4"/>
+  <path d="M200 158L200 292" fill="none" stroke="#C0392B" stroke-width="1.6" marker-end="url(#ar)" stroke-dasharray="5 4"/>
+  <text x="206" y="190" class="s" xml:space="preserve" style="fill:#C0392B">要因が起きる</text>
+  <text x="206" y="338" class="s" xml:space="preserve">1 になる</text>
+  <text x="576" y="338" class="s" xml:space="preserve">ソフトが 0 を書く</text>
+  <path d="M204 170L322 170" fill="none" stroke="#52606D" stroke-width="1.2" marker-end="url(#a)" marker-start="url(#a)"/>
+  <text x="232" y="166" class="s" xml:space="preserve">待つ</text>
+  <text x="24" y="380" class="s" xml:space="preserve" style="fill:#1F2933">待つ時間は、そのとき実行している命令の残りで決まります。</text>
+</svg>

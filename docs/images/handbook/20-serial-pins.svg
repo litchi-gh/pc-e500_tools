@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 230" width="980" height="230" role="img" aria-labelledby="t d">
+  <title id="t">15 ピンの並び</title>
+  <desc id="d">本体の右側を正面から見た 15 ピンコネクタ。右端がピン 1、左端がピン 15。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .mb { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 15px; font-weight: 700; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .lbl { font-size: 12px; fill: #52606D; paint-order: stroke; stroke: #FFFFFF; stroke-width: 4px; stroke-linejoin: round; }
+  </style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#52606D"/></marker><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#C0392B"/></marker><marker id="ab" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2F6DB5"/></marker><marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2F855A"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="229" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h" xml:space="preserve">15 ピンの並び</text>
+  <text x="24" y="55" class="sub" xml:space="preserve">本体の右側を正面から見たところ。点線は仕様に挙がっていないピン</text>
+  <rect x="30" y="86" width="920" height="84" rx="12" fill="#FFFFFF" stroke="#B8C2CC" stroke-width="2"/>
+  <rect x="884" y="100" width="50" height="56" rx="5" fill="#F3F5F8" stroke="#7B8794" stroke-width="1"/>
+  <text x="909" y="124" class="b" text-anchor="middle" xml:space="preserve">1</text>
+  <text x="909" y="146" class="m" text-anchor="middle" xml:space="preserve">FG</text>
+  <rect x="824" y="100" width="50" height="56" rx="5" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="849" y="124" class="b" text-anchor="middle" xml:space="preserve">2</text>
+  <text x="849" y="146" class="m" text-anchor="middle" xml:space="preserve">SD</text>
+  <rect x="764" y="100" width="50" height="56" rx="5" fill="#E6F6EC" stroke="#2F855A" stroke-width="1"/>
+  <text x="789" y="124" class="b" text-anchor="middle" xml:space="preserve">3</text>
+  <text x="789" y="146" class="m" text-anchor="middle" xml:space="preserve">RD</text>
+  <rect x="704" y="100" width="50" height="56" rx="5" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="729" y="124" class="b" text-anchor="middle" xml:space="preserve">4</text>
+  <text x="729" y="146" class="m" text-anchor="middle" xml:space="preserve">RS</text>
+  <rect x="644" y="100" width="50" height="56" rx="5" fill="#E6F6EC" stroke="#2F855A" stroke-width="1"/>
+  <text x="669" y="124" class="b" text-anchor="middle" xml:space="preserve">5</text>
+  <text x="669" y="146" class="m" text-anchor="middle" xml:space="preserve">CS</text>
+  <rect x="584" y="100" width="50" height="56" rx="5" fill="#FFFFFF" stroke="#B8C2CC" stroke-width="1" stroke-dasharray="4 3"/>
+  <text x="609" y="124" class="s" text-anchor="middle" xml:space="preserve">6</text>
+  <rect x="524" y="100" width="50" height="56" rx="5" fill="#F3F5F8" stroke="#7B8794" stroke-width="1"/>
+  <text x="549" y="124" class="b" text-anchor="middle" xml:space="preserve">7</text>
+  <text x="549" y="146" class="m" text-anchor="middle" xml:space="preserve">SG</text>
+  <rect x="464" y="100" width="50" height="56" rx="5" fill="#E6F6EC" stroke="#2F855A" stroke-width="1"/>
+  <text x="489" y="124" class="b" text-anchor="middle" xml:space="preserve">8</text>
+  <text x="489" y="146" class="m" text-anchor="middle" xml:space="preserve">CD</text>
+  <rect x="404" y="100" width="50" height="56" rx="5" fill="#FFFFFF" stroke="#B8C2CC" stroke-width="1" stroke-dasharray="4 3"/>
+  <text x="429" y="124" class="s" text-anchor="middle" xml:space="preserve">9</text>
+  <rect x="344" y="100" width="50" height="56" rx="5" fill="#FDECEA" stroke="#C0392B" stroke-width="1"/>
+  <text x="369" y="124" class="b" text-anchor="middle" xml:space="preserve">10</text>
+  <text x="369" y="146" class="m" text-anchor="middle" xml:space="preserve">VC</text>
+  <rect x="284" y="100" width="50" height="56" rx="5" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="309" y="124" class="b" text-anchor="middle" xml:space="preserve">11</text>
+  <text x="309" y="146" class="m" text-anchor="middle" xml:space="preserve">RR</text>
+  <rect x="224" y="100" width="50" height="56" rx="5" fill="#FFFFFF" stroke="#B8C2CC" stroke-width="1" stroke-dasharray="4 3"/>
+  <text x="249" y="124" class="s" text-anchor="middle" xml:space="preserve">12</text>
+  <rect x="164" y="100" width="50" height="56" rx="5" fill="#FDECEA" stroke="#C0392B" stroke-width="1"/>
+  <text x="189" y="124" class="b" text-anchor="middle" xml:space="preserve">13</text>
+  <text x="189" y="146" class="m" text-anchor="middle" xml:space="preserve">VC</text>
+  <rect x="104" y="100" width="50" height="56" rx="5" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="129" y="124" class="b" text-anchor="middle" xml:space="preserve">14</text>
+  <text x="129" y="146" class="m" text-anchor="middle" xml:space="preserve">ER</text>
+  <rect x="44" y="100" width="50" height="56" rx="5" fill="#FFFFFF" stroke="#B8C2CC" stroke-width="1" stroke-dasharray="4 3"/>
+  <text x="69" y="124" class="s" text-anchor="middle" xml:space="preserve">15</text>
+  <rect x="60" y="192" width="18" height="14" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="86" y="204" class="s" xml:space="preserve">出力</text>
+  <rect x="180" y="192" width="18" height="14" rx="3" fill="#E6F6EC" stroke="#2F855A" stroke-width="1"/>
+  <text x="206" y="204" class="s" xml:space="preserve">入力</text>
+  <rect x="300" y="192" width="18" height="14" rx="3" fill="#FDECEA" stroke="#C0392B" stroke-width="1"/>
+  <text x="326" y="204" class="s" xml:space="preserve">電源</text>
+  <rect x="420" y="192" width="18" height="14" rx="3" fill="#F3F5F8" stroke="#7B8794" stroke-width="1"/>
+  <text x="446" y="204" class="s" xml:space="preserve">接地</text>
+</svg>

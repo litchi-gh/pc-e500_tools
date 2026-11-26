@@ -1,0 +1,595 @@
+{
+  "name": "pc-e500-devtools",
+  "displayName": "%displayName%",
+  "description": "%description%",
+  "version": "0.1.0",
+  "publisher": "litchi-gh",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/litchi-gh/pc-e500_tools.git"
+  },
+  "bugs": {
+    "url": "https://github.com/litchi-gh/pc-e500_tools/issues"
+  },
+  "homepage": "https://github.com/litchi-gh/pc-e500_tools#readme",
+  "engines": {
+    "vscode": "^1.95.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Linters",
+    "Debuggers",
+    "Testing"
+  ],
+  "activationEvents": [
+    "workspaceContains:**/*.e500test.json",
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "capabilities": {
+    "untrustedWorkspaces": {
+      "supported": "limited",
+      "description": "%untrusted%",
+      "restrictedConfigurations": [
+        "pcE500.asm.assemblerPath",
+        "pcE500.emulatorPath",
+        "pcE500.corePath",
+        "pcE500.romPath",
+        "pcE500.serverPath",
+        "pcE500.diskFolder"
+      ]
+    }
+  },
+  "contributes": {
+    "languages": [
+      {
+        "id": "pc-e500-basic",
+        "aliases": [
+          "PC-E500 BASIC",
+          "Pocket BASIC"
+        ],
+        "extensions": [
+          ".bas",
+          ".basic",
+          ".e500"
+        ],
+        "configuration": "./language-configuration.json",
+        "icon": {
+          "light": "./media/file-basic.svg",
+          "dark": "./media/file-basic.svg"
+        }
+      },
+      {
+        "id": "pc-e500-asm",
+        "aliases": [
+          "PC-E500 Assembly",
+          "SC62015 Assembly",
+          "e500asm"
+        ],
+        "extensions": [
+          ".asm",
+          ".inc",
+          ".e500asm"
+        ],
+        "configuration": "./language-configuration-asm.json",
+        "icon": {
+          "light": "./media/file-asm.svg",
+          "dark": "./media/file-asm.svg"
+        }
+      },
+      {
+        "id": "pc-e500-lcd",
+        "aliases": [
+          "PC-E500 LCD"
+        ],
+        "extensions": [
+          ".lcd",
+          ".pixels",
+          ".spr"
+        ],
+        "icon": {
+          "light": "./media/file-lcd.svg",
+          "dark": "./media/file-lcd.svg"
+        }
+      }
+    ],
+    "grammars": [
+      {
+        "language": "pc-e500-basic",
+        "scopeName": "source.pc-e500-basic",
+        "path": "./syntaxes/pc-e500-basic.tmLanguage.json"
+      },
+      {
+        "language": "pc-e500-asm",
+        "scopeName": "source.pc-e500-asm",
+        "path": "./syntaxes/pc-e500-asm.tmLanguage.json"
+      }
+    ],
+    "commands": [
+      {
+        "command": "pcE500.checkSetup",
+        "title": "%command.checkSetup%",
+        "category": "PC-E500",
+        "icon": "$(checklist)"
+      },
+      {
+        "command": "pcE500.openAsBasic",
+        "title": "%command.openAsBasic%",
+        "category": "PC-E500"
+      },
+      {
+        "command": "pcE500.newPicture",
+        "title": "%command.newPicture%",
+        "category": "PC-E500",
+        "icon": "$(paintcan)"
+      },
+      {
+        "command": "pcE500.copyIncludes",
+        "title": "%command.copyIncludes%",
+        "category": "PC-E500"
+      },
+      {
+        "command": "pcE500.placeSkill",
+        "title": "%command.placeSkill%",
+        "category": "PC-E500"
+      },
+      {
+        "command": "pcE500.openAsAsm",
+        "title": "%command.openAsAsm%",
+        "category": "PC-E500"
+      },
+      {
+        "command": "pcE500.assemble",
+        "title": "%command.assemble%",
+        "category": "PC-E500"
+      },
+      {
+        "command": "pcE500.newProgram",
+        "title": "%command.newProgram%",
+        "category": "PC-E500",
+        "icon": "$(new-file)"
+      },
+      {
+        "command": "pcE500.makeBin",
+        "title": "%command.makeBin%",
+        "category": "PC-E500",
+        "icon": "$(file-binary)"
+      },
+      {
+        "command": "pcE500.openEmulator",
+        "title": "%command.openEmulator%",
+        "category": "PC-E500",
+        "icon": "$(device-mobile)"
+      },
+      {
+        "command": "pcE500.openDebugger",
+        "title": "%command.openDebugger%",
+        "category": "PC-E500",
+        "icon": "$(debug-console)"
+      },
+      {
+        "command": "pcE500.debugFile",
+        "title": "%command.debugFile%",
+        "category": "PC-E500",
+        "icon": "$(debug-alt)"
+      },
+      {
+        "command": "pcE500.runFile",
+        "title": "%command.runFile%",
+        "category": "PC-E500",
+        "icon": "$(play)"
+      }
+    ],
+    "breakpoints": [
+      {
+        "language": "pc-e500-asm"
+      },
+      {
+        "language": "pc-e500-basic"
+      }
+    ],
+    "debuggers": [
+      {
+        "type": "pc-e500",
+        "label": "%debugger.label%",
+        "languages": [
+          "pc-e500-asm",
+          "pc-e500-basic"
+        ],
+        "configurationAttributes": {
+          "launch": {
+            "required": [
+              "program"
+            ],
+            "properties": {
+              "program": {
+                "type": "string",
+                "description": "%launch.program%",
+                "default": "${file}"
+              },
+              "entry": {
+                "type": "string",
+                "description": "%launch.entry%"
+              },
+              "mode": {
+                "type": "string",
+                "enum": [
+                  "basic",
+                  "direct"
+                ],
+                "default": "basic",
+                "enumDescriptions": [
+                  "%launch.mode.basic%",
+                  "%launch.mode.direct%"
+                ],
+                "description": "%launch.mode%"
+              },
+              "return": {
+                "type": "string",
+                "enum": [
+                  "far",
+                  "near"
+                ],
+                "default": "far",
+                "description": "%launch.return%"
+              },
+              "registers": {
+                "type": "object",
+                "description": "%launch.registers%"
+              },
+              "memory": {
+                "type": "object",
+                "description": "%launch.memory%"
+              },
+              "stopOnEntry": {
+                "type": "boolean",
+                "default": false,
+                "description": "%launch.stopOnEntry%"
+              },
+              "stopOnReturn": {
+                "type": "boolean",
+                "default": false,
+                "description": "%launch.stopOnReturn%"
+              },
+              "rom": {
+                "type": "string",
+                "description": "%launch.rom%"
+              },
+              "ram": {
+                "type": "number",
+                "description": "%launch.ram%"
+              },
+              "state": {
+                "type": "string",
+                "description": "%launch.state%"
+              },
+              "speed": {
+                "type": "number",
+                "description": "%launch.speed%"
+              }
+            }
+          }
+        },
+        "initialConfigurations": [
+          {
+            "type": "pc-e500",
+            "request": "launch",
+            "name": "%launch.name.run%",
+            "program": "${file}",
+            "mode": "basic",
+            "stopOnEntry": false
+          }
+        ],
+        "configurationSnippets": [
+          {
+            "label": "%snippet.call.label%",
+            "body": {
+              "type": "pc-e500",
+              "request": "launch",
+              "name": "%snippet.call.name%",
+              "program": "^\"\\${file}\"",
+              "mode": "basic",
+              "stopOnEntry": false
+            }
+          },
+          {
+            "label": "%snippet.direct.label%",
+            "body": {
+              "type": "pc-e500",
+              "request": "launch",
+              "name": "%snippet.direct.name%",
+              "program": "^\"\\${file}\"",
+              "mode": "direct",
+              "entry": "start",
+              "return": "far",
+              "registers": {},
+              "stopOnEntry": true,
+              "stopOnReturn": true
+            }
+          }
+        ]
+      }
+    ],
+    "customEditors": [
+      {
+        "viewType": "pcE500.lcd",
+        "displayName": "%lcd.displayName%",
+        "selector": [
+          {
+            "filenamePattern": "*.lcd"
+          },
+          {
+            "filenamePattern": "*.pixels"
+          }
+        ],
+        "priority": "default"
+      },
+      {
+        "viewType": "pcE500.spr",
+        "displayName": "%spr.displayName%",
+        "selector": [
+          {
+            "filenamePattern": "*.spr"
+          }
+        ],
+        "priority": "default"
+      }
+    ],
+    "jsonValidation": [
+      {
+        "fileMatch": "*.e500test.json",
+        "url": "./schemas/e500test.schema.json"
+      }
+    ],
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "pcE500.assemble",
+          "when": "editorLangId == pc-e500-asm"
+        },
+        {
+          "command": "pcE500.makeBin",
+          "when": "editorLangId == pc-e500-asm"
+        },
+        {
+          "command": "pcE500.debugFile",
+          "when": "editorLangId == pc-e500-asm || editorLangId == pc-e500-basic"
+        },
+        {
+          "command": "pcE500.runFile",
+          "when": "editorLangId == pc-e500-asm || editorLangId == pc-e500-basic"
+        }
+      ],
+      "editor/title/run": [
+        {
+          "command": "pcE500.debugFile",
+          "group": "navigation@1",
+          "when": "editorLangId == pc-e500-asm || editorLangId == pc-e500-basic"
+        },
+        {
+          "command": "pcE500.runFile",
+          "group": "navigation@2",
+          "when": "editorLangId == pc-e500-asm || editorLangId == pc-e500-basic"
+        },
+        {
+          "command": "pcE500.makeBin",
+          "group": "navigation@3",
+          "when": "editorLangId == pc-e500-asm"
+        }
+      ],
+      "file/newFile": [
+        {
+          "command": "pcE500.newProgram",
+          "group": "file"
+        },
+        {
+          "command": "pcE500.newPicture",
+          "group": "file"
+        }
+      ],
+      "explorer/context": [
+        {
+          "command": "pcE500.newProgram",
+          "group": "navigation@19",
+          "when": "resourceScheme == file && explorerResourceIsFolder"
+        },
+        {
+          "command": "pcE500.newPicture",
+          "group": "navigation@19",
+          "when": "resourceScheme == file && explorerResourceIsFolder"
+        },
+        {
+          "command": "pcE500.copyIncludes",
+          "group": "navigation@19",
+          "when": "resourceScheme == file && explorerResourceIsFolder"
+        },
+        {
+          "command": "pcE500.placeSkill",
+          "group": "navigation@19",
+          "when": "resourceScheme == file && explorerResourceIsFolder"
+        },
+        {
+          "command": "pcE500.makeBin",
+          "group": "navigation@22",
+          "when": "resourceScheme == file && resourceLangId == pc-e500-asm"
+        },
+        {
+          "command": "pcE500.openAsBasic",
+          "group": "navigation@20",
+          "when": "resourceScheme == file"
+        },
+        {
+          "command": "pcE500.openAsAsm",
+          "group": "navigation@21",
+          "when": "resourceScheme == file"
+        }
+      ],
+      "editor/title/context": [
+        {
+          "command": "pcE500.openAsBasic",
+          "group": "navigation@20",
+          "when": "resourceScheme == file && editorLangId != pc-e500-basic"
+        },
+        {
+          "command": "pcE500.openAsAsm",
+          "group": "navigation@21",
+          "when": "resourceScheme == file && editorLangId != pc-e500-asm"
+        }
+      ],
+      "editor/context": [
+        {
+          "command": "pcE500.makeBin",
+          "group": "navigation@19",
+          "when": "editorLangId == pc-e500-asm"
+        },
+        {
+          "command": "pcE500.assemble",
+          "group": "navigation@20",
+          "when": "editorLangId == pc-e500-asm"
+        }
+      ]
+    },
+    "configuration": [
+      {
+        "title": "%config.paths.title%",
+        "properties": {
+          "pcE500.asm.assemblerPath": {
+            "type": "string",
+            "default": "",
+            "markdownDescription": "%config.assemblerPath%",
+            "order": 0
+          },
+          "pcE500.emulatorPath": {
+            "type": "string",
+            "default": "",
+            "markdownDescription": "%config.emulatorPath%",
+            "order": 1
+          },
+          "pcE500.romPath": {
+            "type": "string",
+            "default": "",
+            "markdownDescription": "%config.romPath%",
+            "order": 2
+          },
+          "pcE500.corePath": {
+            "type": "string",
+            "default": "",
+            "markdownDescription": "%config.corePath%",
+            "order": 3
+          },
+          "pcE500.serverPath": {
+            "type": "string",
+            "default": "",
+            "markdownDescription": "%config.serverPath%",
+            "order": 4
+          },
+          "pcE500.diskFolder": {
+            "type": "string",
+            "default": "",
+            "markdownDescription": "%config.diskFolder%",
+            "order": 5
+          }
+        }
+      },
+      {
+        "title": "%config.basic.title%",
+        "properties": {
+          "pcE500.basic.requireLineNumbers": {
+            "type": "boolean",
+            "default": true,
+            "description": "%config.requireLineNumbers%"
+          },
+          "pcE500.basic.checkMissingTargets": {
+            "type": "boolean",
+            "default": true,
+            "description": "%config.checkMissingTargets%"
+          }
+        }
+      },
+      {
+        "title": "%config.asm.title%",
+        "properties": {
+          "pcE500.asm.includeDirectories": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "default": [],
+            "description": "%config.includeDirectories%"
+          },
+          "pcE500.asm.defines": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "number"
+            },
+            "default": {},
+            "description": "%config.defines%"
+          }
+        }
+      },
+      {
+        "title": "%config.e500.title%",
+        "properties": {
+          "pcE500.ramKB": {
+            "type": "number",
+            "enum": [
+              8,
+              16,
+              32,
+              64,
+              128,
+              256
+            ],
+            "default": 32,
+            "description": "%config.ramKB%"
+          },
+          "pcE500.speed": {
+            "type": "number",
+            "default": 1,
+            "description": "%config.speed%"
+          },
+          "pcE500.openPanelOnDebug": {
+            "type": "boolean",
+            "default": true,
+            "description": "%config.openPanelOnDebug%"
+          }
+        }
+      }
+    ],
+    "snippets": [
+      {
+        "language": "pc-e500-asm",
+        "path": "./snippets/asm.json"
+      }
+    ]
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "build:server": "dotnet build server -c Release -o out/server -nologo -v q",
+    "test": "npm run compile && node --test out/test/**/*.test.js",
+    "copy:skill": "node -e \"const fs=require('fs');fs.rmSync('skills',{recursive:true,force:true});fs.cpSync('../../skills','skills',{recursive:true})\"",
+    "vscode:prepublish": "npm run copy:skill",
+    "package": "npm run compile && npm run build:server && npx @vscode/vsce package",
+    "package:npm": "npm run compile && npm run build:server && npm run copy:skill && node scripts/npm-package.js"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "@types/vscode": "^1.95.0",
+    "@vscode/vsce": "^3.2.1",
+    "typescript": "^5.7.2"
+  },
+  "icon": "media/icon.png",
+  "galleryBanner": {
+    "color": "#22303a",
+    "theme": "dark"
+  },
+  "keywords": [
+    "PC-E500",
+    "PC-E650",
+    "SHARP",
+    "pocket computer",
+    "SC62015"
+  ]
+}

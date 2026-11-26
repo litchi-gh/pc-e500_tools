@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 352" width="980" height="352" role="img" aria-labelledby="t d">
+  <title id="t">ルーチンを直接呼ぶ（direct）</title>
+  <desc id="d">直接呼び出しの前、実行中、戻った後の P と S スタック</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .lbl { font-size: 12px; fill: #52606D; paint-order: stroke; stroke: #FFFFFF; stroke-width: 4px; stroke-linejoin: round; }
+  </style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#52606D"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="351" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">ルーチンを直接呼ぶ（direct）</text>
+  <text x="24" y="55" class="sub">ROM はプロンプトで待ったまま。リターンアドレスを積んで飛び、戻ったら CPU を元に戻す</text>
+  <rect x="24" y="78" width="218" height="110" rx="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="133" y="105" class="b" text-anchor="middle">1. 呼ぶ前</text>
+  <text x="133" y="127" class="s" text-anchor="middle">P = ROM の中（プロンプトの処理）</text>
+  <text x="133" y="149" class="s" text-anchor="middle">S = BE43Ah</text>
+  <text x="133" y="171" class="s" text-anchor="middle">全レジスタと HALT を覚える</text>
+  <path d="M242 133L262 133" fill="none" stroke="#52606D" stroke-width="1.5" marker-end="url(#a)"/>
+  <rect x="262" y="78" width="218" height="110" rx="6" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="371" y="105" class="b" text-anchor="middle">2. call の後</text>
+  <text x="371" y="127" class="s" text-anchor="middle">P = BEC00h（エントリ）</text>
+  <text x="371" y="149" class="s" text-anchor="middle">S = BE437h</text>
+  <text x="371" y="171" class="s" text-anchor="middle">指定のレジスタを入れる</text>
+  <path d="M480 133L500 133" fill="none" stroke="#52606D" stroke-width="1.5" marker-end="url(#a)"/>
+  <rect x="500" y="78" width="218" height="110" rx="6" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="609" y="105" class="b" text-anchor="middle">3. RETF で戻った</text>
+  <text x="609" y="127" class="s" text-anchor="middle">P = FFFF2h で止まる</text>
+  <text x="609" y="149" class="s" text-anchor="middle">S = BE43Ah</text>
+  <text x="609" y="171" class="s" text-anchor="middle">結果のレジスタを返す</text>
+  <path d="M718 133L738 133" fill="none" stroke="#52606D" stroke-width="1.5" marker-end="url(#a)"/>
+  <rect x="738" y="78" width="218" height="110" rx="6" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="847" y="105" class="b" text-anchor="middle">4. 元に戻す</text>
+  <text x="847" y="127" class="s" text-anchor="middle">全レジスタと HALT を戻す</text>
+  <text x="847" y="149" class="s" text-anchor="middle">returnAddress を消す</text>
+  <text x="847" y="171" class="s" text-anchor="middle">ROM は待ち続ける</text>
+  <text x="262" y="218" class="s">積まれたリターンアドレス（FAR は 3 バイト）</text>
+  <rect x="262" y="228" width="72" height="34" rx="2" fill="#FFF5DF" stroke="#B7791F" stroke-width="1"/>
+  <text x="298" y="250" class="m" xml:space="preserve" text-anchor="middle">F2h</text>
+  <text x="298" y="280" class="ms" xml:space="preserve" text-anchor="middle">BE437</text>
+  <rect x="334" y="228" width="72" height="34" rx="2" fill="#FFF5DF" stroke="#B7791F" stroke-width="1"/>
+  <text x="370" y="250" class="m" xml:space="preserve" text-anchor="middle">FFh</text>
+  <text x="370" y="280" class="ms" xml:space="preserve" text-anchor="middle">BE438</text>
+  <rect x="406" y="228" width="72" height="34" rx="2" fill="#FFF5DF" stroke="#B7791F" stroke-width="1"/>
+  <text x="442" y="250" class="m" xml:space="preserve" text-anchor="middle">0Fh</text>
+  <text x="442" y="280" class="ms" xml:space="preserve" text-anchor="middle">BE439</text>
+  <text x="24" y="312" class="s">ブレークポイントの一覧に FFFF2h（near は同じ 64 KB の xFFF2h）を足しておき、そこで止まったら「return」とする。</text>
+  <text x="24" y="332" class="s">FFFF2h はふつうは実行されないアドレスなので、ROM の動作と混ざらない。S の値は例（ROM 7.2 で起動した直後）。</text>
+</svg>

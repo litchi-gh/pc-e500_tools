@@ -1,34 +1,26 @@
-# 非公開フォルダ
-/.claude/
-/Emulator/
-/EPS32S3/
-/pc-e500_esp32s3_replicate/
-/Sharp_ce140f_emul/
-/CE-140F_Pico/
-/PicoPicoIF/
-/ROMDump/
-/CustomROM/
-/TETRIS/
-/BD900.BIN
-/docs/
-
 # 個人の環境（PC のパスを含む）
+/.claude/*
+!/.claude/skills/
 /.vscode/
 
 # 作業用一時ファイル（マニュアルスキャン等を含むため公開しない）
 /Assembler/tmp/
 /DisAssembler/tmp/
 /Assembler/tests/output/
-/temp/
 
 # ビルド生成物
 bin/
+!/VSCodeExtensions/pc-e500-devtools/bin/
 obj/
 *.obj
 *.user
 .vs/
 node_modules/
-/VSCodeExtensions/pocket-basic-linter/out/
+/VSCodeExtensions/pc-e500-devtools/out/
+# npm のパッケージ（node scripts/npm-package.js が作る）
+/VSCodeExtensions/pc-e500-devtools/npm-dist/
+# skills/ の写し（VSIX に入れるため、npm run copy:skill が作る）
+/VSCodeExtensions/pc-e500-devtools/skills/
 
 # .NET 製の自己完結型 EXE（各 70〜120 MB）は GitHub の 1 ファイル上限を超えるため同梱しない
 # → GitHub Releases から取得するか、各フォルダの build.cmd でビルドする（app/ に生成される）
@@ -40,6 +32,5 @@ node_modules/
 /DisAssembler/app/e500dasm
 /Assembler/app/*/
 /DisAssembler/app/*/
-/FileConverter/ce140conv
 
-# ce140conv.exe は小さいので同梱する。VSIX は GitHub Releases で配布する
+# VSIX は GitHub Releases で配布する

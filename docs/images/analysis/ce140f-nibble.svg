@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 360" width="980" height="360" role="img" aria-labelledby="t d">
+  <title id="t">1 バイトを 4 ビットずつ 2 回に分ける（A5h の例）</title>
+  <desc id="d">A5h のビット 7 から 0 と、DIN、DOUT、IO2、IO1 の 4 本の端子への割り当て。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+  </style>
+  <defs></defs>
+  <rect x="0.5" y="0.5" width="979" height="359" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">1 バイトを 4 ビットずつ 2 回に分ける（A5h の例）</text>
+  <text x="24" y="55" class="sub">XOUT = Low のとき。1 回目に下位 4 ビット、2 回目に上位 4 ビット</text>
+  <text x="224" y="88" class="ms" xml:space="preserve" text-anchor="middle">bit7</text>
+  <rect x="190" y="96" width="68" height="38" rx="6" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="224" y="119.68" class="m" xml:space="preserve" text-anchor="middle">1</text>
+  <text x="300" y="88" class="ms" xml:space="preserve" text-anchor="middle">bit6</text>
+  <rect x="266" y="96" width="68" height="38" rx="6" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="300" y="119.68" class="m" xml:space="preserve" text-anchor="middle">0</text>
+  <text x="376" y="88" class="ms" xml:space="preserve" text-anchor="middle">bit5</text>
+  <rect x="342" y="96" width="68" height="38" rx="6" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="376" y="119.68" class="m" xml:space="preserve" text-anchor="middle">1</text>
+  <text x="452" y="88" class="ms" xml:space="preserve" text-anchor="middle">bit4</text>
+  <rect x="418" y="96" width="68" height="38" rx="6" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="452" y="119.68" class="m" xml:space="preserve" text-anchor="middle">0</text>
+  <text x="528" y="88" class="ms" xml:space="preserve" text-anchor="middle">bit3</text>
+  <rect x="494" y="96" width="68" height="38" rx="6" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="528" y="119.68" class="m" xml:space="preserve" text-anchor="middle">0</text>
+  <text x="604" y="88" class="ms" xml:space="preserve" text-anchor="middle">bit2</text>
+  <rect x="570" y="96" width="68" height="38" rx="6" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="604" y="119.68" class="m" xml:space="preserve" text-anchor="middle">1</text>
+  <text x="680" y="88" class="ms" xml:space="preserve" text-anchor="middle">bit1</text>
+  <rect x="646" y="96" width="68" height="38" rx="6" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="680" y="119.68" class="m" xml:space="preserve" text-anchor="middle">0</text>
+  <text x="756" y="88" class="ms" xml:space="preserve" text-anchor="middle">bit0</text>
+  <rect x="722" y="96" width="68" height="38" rx="6" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="756" y="119.68" class="m" xml:space="preserve" text-anchor="middle">1</text>
+  <text x="24" y="120" class="b">A5h = 1010 0101</text>
+  <text x="190" y="176" class="b">1 回目（下位 4 ビット = 5h）</text>
+  <rect x="190" y="190" width="80" height="32" rx="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="230" y="210.68" class="m" xml:space="preserve" text-anchor="middle">DIN</text>
+  <rect x="278" y="190" width="90" height="32" rx="6" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="323" y="210.68" class="m" xml:space="preserve" text-anchor="middle">bit3</text>
+  <rect x="376" y="190" width="50" height="32" rx="6" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.5"/>
+  <text x="401" y="210.68" class="m" xml:space="preserve" text-anchor="middle">0</text>
+  <text x="440" y="211" class="s">Low</text>
+  <rect x="190" y="228" width="80" height="32" rx="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="230" y="248.68" class="m" xml:space="preserve" text-anchor="middle">DOUT</text>
+  <rect x="278" y="228" width="90" height="32" rx="6" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="323" y="248.68" class="m" xml:space="preserve" text-anchor="middle">bit2</text>
+  <rect x="376" y="228" width="50" height="32" rx="6" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.5"/>
+  <text x="401" y="248.68" class="m" xml:space="preserve" text-anchor="middle">1</text>
+  <text x="440" y="249" class="s">High</text>
+  <rect x="190" y="266" width="80" height="32" rx="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="230" y="286.68" class="m" xml:space="preserve" text-anchor="middle">IO2</text>
+  <rect x="278" y="266" width="90" height="32" rx="6" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="323" y="286.68" class="m" xml:space="preserve" text-anchor="middle">bit1</text>
+  <rect x="376" y="266" width="50" height="32" rx="6" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.5"/>
+  <text x="401" y="286.68" class="m" xml:space="preserve" text-anchor="middle">0</text>
+  <text x="440" y="287" class="s">Low</text>
+  <rect x="190" y="304" width="80" height="32" rx="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="230" y="324.68" class="m" xml:space="preserve" text-anchor="middle">IO1</text>
+  <rect x="278" y="304" width="90" height="32" rx="6" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="323" y="324.68" class="m" xml:space="preserve" text-anchor="middle">bit0</text>
+  <rect x="376" y="304" width="50" height="32" rx="6" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.5"/>
+  <text x="401" y="324.68" class="m" xml:space="preserve" text-anchor="middle">1</text>
+  <text x="440" y="325" class="s">High</text>
+  <text x="580" y="176" class="b">2 回目（上位 4 ビット = Ah）</text>
+  <rect x="580" y="190" width="80" height="32" rx="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="620" y="210.68" class="m" xml:space="preserve" text-anchor="middle">DIN</text>
+  <rect x="668" y="190" width="90" height="32" rx="6" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="713" y="210.68" class="m" xml:space="preserve" text-anchor="middle">bit7</text>
+  <rect x="766" y="190" width="50" height="32" rx="6" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.5"/>
+  <text x="791" y="210.68" class="m" xml:space="preserve" text-anchor="middle">1</text>
+  <text x="830" y="211" class="s">High</text>
+  <rect x="580" y="228" width="80" height="32" rx="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="620" y="248.68" class="m" xml:space="preserve" text-anchor="middle">DOUT</text>
+  <rect x="668" y="228" width="90" height="32" rx="6" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="713" y="248.68" class="m" xml:space="preserve" text-anchor="middle">bit6</text>
+  <rect x="766" y="228" width="50" height="32" rx="6" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.5"/>
+  <text x="791" y="248.68" class="m" xml:space="preserve" text-anchor="middle">0</text>
+  <text x="830" y="249" class="s">Low</text>
+  <rect x="580" y="266" width="80" height="32" rx="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="620" y="286.68" class="m" xml:space="preserve" text-anchor="middle">IO2</text>
+  <rect x="668" y="266" width="90" height="32" rx="6" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="713" y="286.68" class="m" xml:space="preserve" text-anchor="middle">bit5</text>
+  <rect x="766" y="266" width="50" height="32" rx="6" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.5"/>
+  <text x="791" y="286.68" class="m" xml:space="preserve" text-anchor="middle">1</text>
+  <text x="830" y="287" class="s">High</text>
+  <rect x="580" y="304" width="80" height="32" rx="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="620" y="324.68" class="m" xml:space="preserve" text-anchor="middle">IO1</text>
+  <rect x="668" y="304" width="90" height="32" rx="6" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="713" y="324.68" class="m" xml:space="preserve" text-anchor="middle">bit4</text>
+  <rect x="766" y="304" width="50" height="32" rx="6" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.5"/>
+  <text x="791" y="324.68" class="m" xml:space="preserve" text-anchor="middle">0</text>
+  <text x="830" y="325" class="s">Low</text>
+</svg>

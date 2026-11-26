@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 560" width="980" height="560" role="img" aria-labelledby="t d">
+  <title id="t">内部 RAM のアドレスの作り方</title>
+  <desc id="d">直接、BP 相対、PX、PY、BP+PX、BP+PY の 6 つのモードで、内部 RAM の実効アドレスを作る計算を示した図。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .mb { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; font-weight: 700; }
+  </style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#52606D"/></marker><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#C0392B"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="559" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h" xml:space="preserve">内部 RAM のアドレスの作り方</text>
+  <text x="24" y="55" class="sub" xml:space="preserve">例: BP = 40h、PX = 10h、PY = 05h、n = 20h。足し算は 8 ビットで、FFh を越えると 00h へ回る</text>
+  <rect x="24" y="76" width="138" height="40" rx="6" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="36" y="101" class="b" xml:space="preserve">BP</text>
+  <text x="68" y="101" class="mb" xml:space="preserve">40h</text>
+  <text x="154" y="101" class="s" xml:space="preserve" text-anchor="end">ECh</text>
+  <rect x="174" y="76" width="138" height="40" rx="6" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="186" y="101" class="b" xml:space="preserve">PX</text>
+  <text x="218" y="101" class="mb" xml:space="preserve">10h</text>
+  <text x="304" y="101" class="s" xml:space="preserve" text-anchor="end">EDh</text>
+  <rect x="324" y="76" width="138" height="40" rx="6" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="336" y="101" class="b" xml:space="preserve">PY</text>
+  <text x="368" y="101" class="mb" xml:space="preserve">05h</text>
+  <text x="454" y="101" class="s" xml:space="preserve" text-anchor="end">EEh</text>
+  <rect x="474" y="76" width="138" height="40" rx="6" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="486" y="101" class="b" xml:space="preserve">n</text>
+  <text x="518" y="101" class="mb" xml:space="preserve">20h</text>
+  <text x="604" y="101" class="s" xml:space="preserve" text-anchor="end">命令の中</text>
+  <text x="24" y="162" class="mb" xml:space="preserve">(n)</text>
+  <rect x="130" y="142" width="96" height="32" rx="4" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="140" y="163" class="b" xml:space="preserve">n</text>
+  <text x="178" y="163" class="mb" xml:space="preserve">20h</text>
+  <path d="M360 158L400 158" fill="none" stroke="#52606D" stroke-width="1.6" marker-end="url(#a)"/>
+  <rect x="410" y="142" width="70" height="32" rx="4" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="445" y="163" class="mb" xml:space="preserve" text-anchor="middle">20h</text>
+  <text x="496" y="163" class="s" xml:space="preserve">絶対アドレス。周辺のレジスタに使う</text>
+  <text x="24" y="212" class="mb" xml:space="preserve">(BP+n)</text>
+  <rect x="130" y="192" width="96" height="32" rx="4" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="140" y="213" class="b" xml:space="preserve">BP</text>
+  <text x="178" y="213" class="mb" xml:space="preserve">40h</text>
+  <text x="238" y="212" class="b" xml:space="preserve" text-anchor="middle">+</text>
+  <rect x="250" y="192" width="96" height="32" rx="4" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="260" y="213" class="b" xml:space="preserve">n</text>
+  <text x="298" y="213" class="mb" xml:space="preserve">20h</text>
+  <path d="M360 208L400 208" fill="none" stroke="#52606D" stroke-width="1.6" marker-end="url(#a)"/>
+  <rect x="410" y="192" width="70" height="32" rx="4" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="445" y="213" class="mb" xml:space="preserve" text-anchor="middle">60h</text>
+  <text x="496" y="213" class="s" xml:space="preserve">既定。PRE が要らない</text>
+  <text x="24" y="262" class="mb" xml:space="preserve">(PX+n)</text>
+  <rect x="130" y="242" width="96" height="32" rx="4" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="140" y="263" class="b" xml:space="preserve">PX</text>
+  <text x="178" y="263" class="mb" xml:space="preserve">10h</text>
+  <text x="238" y="262" class="b" xml:space="preserve" text-anchor="middle">+</text>
+  <rect x="250" y="242" width="96" height="32" rx="4" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="260" y="263" class="b" xml:space="preserve">n</text>
+  <text x="298" y="263" class="mb" xml:space="preserve">20h</text>
+  <path d="M360 258L400 258" fill="none" stroke="#52606D" stroke-width="1.6" marker-end="url(#a)"/>
+  <rect x="410" y="242" width="70" height="32" rx="4" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="445" y="263" class="mb" xml:space="preserve" text-anchor="middle">30h</text>
+  <text x="496" y="263" class="s" xml:space="preserve">第 1 オペランド</text>
+  <text x="24" y="312" class="mb" xml:space="preserve">(PY+n)</text>
+  <rect x="130" y="292" width="96" height="32" rx="4" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="140" y="313" class="b" xml:space="preserve">PY</text>
+  <text x="178" y="313" class="mb" xml:space="preserve">05h</text>
+  <text x="238" y="312" class="b" xml:space="preserve" text-anchor="middle">+</text>
+  <rect x="250" y="292" width="96" height="32" rx="4" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="260" y="313" class="b" xml:space="preserve">n</text>
+  <text x="298" y="313" class="mb" xml:space="preserve">20h</text>
+  <path d="M360 308L400 308" fill="none" stroke="#52606D" stroke-width="1.6" marker-end="url(#a)"/>
+  <rect x="410" y="292" width="70" height="32" rx="4" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="445" y="313" class="mb" xml:space="preserve" text-anchor="middle">25h</text>
+  <text x="496" y="313" class="s" xml:space="preserve">第 2 オペランド</text>
+  <text x="24" y="362" class="mb" xml:space="preserve">(BP+PX)</text>
+  <rect x="130" y="342" width="96" height="32" rx="4" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="140" y="363" class="b" xml:space="preserve">BP</text>
+  <text x="178" y="363" class="mb" xml:space="preserve">40h</text>
+  <text x="238" y="362" class="b" xml:space="preserve" text-anchor="middle">+</text>
+  <rect x="250" y="342" width="96" height="32" rx="4" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="260" y="363" class="b" xml:space="preserve">PX</text>
+  <text x="298" y="363" class="mb" xml:space="preserve">10h</text>
+  <path d="M360 358L400 358" fill="none" stroke="#52606D" stroke-width="1.6" marker-end="url(#a)"/>
+  <rect x="410" y="342" width="70" height="32" rx="4" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="445" y="363" class="mb" xml:space="preserve" text-anchor="middle">50h</text>
+  <text x="496" y="363" class="s" xml:space="preserve">第 1 オペランド</text>
+  <text x="24" y="412" class="mb" xml:space="preserve">(BP+PY)</text>
+  <rect x="130" y="392" width="96" height="32" rx="4" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="140" y="413" class="b" xml:space="preserve">BP</text>
+  <text x="178" y="413" class="mb" xml:space="preserve">40h</text>
+  <text x="238" y="412" class="b" xml:space="preserve" text-anchor="middle">+</text>
+  <rect x="250" y="392" width="96" height="32" rx="4" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="260" y="413" class="b" xml:space="preserve">PY</text>
+  <text x="298" y="413" class="mb" xml:space="preserve">05h</text>
+  <path d="M360 408L400 408" fill="none" stroke="#52606D" stroke-width="1.6" marker-end="url(#a)"/>
+  <rect x="410" y="392" width="70" height="32" rx="4" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="445" y="413" class="mb" xml:space="preserve" text-anchor="middle">45h</text>
+  <text x="496" y="413" class="s" xml:space="preserve">第 2 オペランド</text>
+  <rect x="720" y="138" width="120" height="350" rx="4" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="780" y="128" class="b" xml:space="preserve" text-anchor="middle">内部 RAM</text>
+  <path d="M720 181.75L840 181.75" fill="none" stroke="#2F855A" stroke-width="3"/>
+  <path d="M720 188.586L840 188.586" fill="none" stroke="#2F855A" stroke-width="3"/>
+  <path d="M720 203.625L840 203.625" fill="none" stroke="#2F855A" stroke-width="3"/>
+  <path d="M720 232.336L840 232.336" fill="none" stroke="#2F855A" stroke-width="3"/>
+  <path d="M720 247.375L840 247.375" fill="none" stroke="#2F855A" stroke-width="3"/>
+  <path d="M720 269.25L840 269.25" fill="none" stroke="#2F855A" stroke-width="3"/>
+  <text x="712" y="144" class="ms" xml:space="preserve" text-anchor="end">00h</text>
+  <text x="712" y="490" class="ms" xml:space="preserve" text-anchor="end">FFh</text>
+  <rect x="720" y="460.656" width="120" height="5.46875" rx="0" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <rect x="720" y="466.125" width="120" height="21.875" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="848" y="185.75" class="ms" xml:space="preserve">20h (n)</text>
+  <text x="848" y="199.586" class="ms" xml:space="preserve">25h (PY+n)</text>
+  <text x="848" y="215.625" class="ms" xml:space="preserve">30h (PX+n)</text>
+  <text x="848" y="236.336" class="ms" xml:space="preserve">45h (BP+PY)</text>
+  <text x="848" y="254.375" class="ms" xml:space="preserve">50h (BP+PX)</text>
+  <text x="848" y="276.25" class="ms" xml:space="preserve">60h (BP+n)</text>
+  <text x="848" y="462.656" class="ms" xml:space="preserve">BP, PX, PY, AMC</text>
+  <text x="848" y="483.062" class="s" xml:space="preserve">周辺のレジスタ</text>
+  <rect x="24" y="506" width="932" height="34" rx="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="36" y="527" class="s" xml:space="preserve" style="fill:#1F2933">回る例: BP = F0h のとき (BP+20h) は F0h + 20h = 110h の下位 8 ビットで 10h になります。</text>
+</svg>

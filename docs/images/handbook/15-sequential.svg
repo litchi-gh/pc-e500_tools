@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 270" width="980" height="270" role="img" aria-labelledby="t d">
+  <title id="t">シーケンシャルファイルの中身</title>
+  <desc id="d">PRINT # で書いた 3 件のデータが文字として一列に並び、INPUT # が読む位置が先頭から順に進む図。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .mb { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 15px; font-weight: 700; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .lbl { font-size: 12px; fill: #52606D; paint-order: stroke; stroke: #FFFFFF; stroke-width: 4px; stroke-linejoin: round; }
+  </style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#52606D"/></marker><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#C0392B"/></marker><marker id="ab" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2F6DB5"/></marker><marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2F855A"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="269" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h" xml:space="preserve">シーケンシャルファイルの中身</text>
+  <text x="24" y="55" class="sub" xml:space="preserve">SCORE.DAT: 名前と点数を 3 件書いたところ。文字として一列に並び、頭から順に読む</text>
+  <rect x="40" y="100" width="62" height="38" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="71" y="124" class="m" text-anchor="middle" xml:space="preserve">SATO</text>
+  <rect x="102" y="100" width="58" height="38" rx="3" fill="#F3F5F8" stroke="#7B8794" stroke-width="1"/>
+  <text x="131" y="124" class="m" text-anchor="middle" xml:space="preserve">,</text>
+  <rect x="160" y="100" width="62" height="38" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1"/>
+  <text x="191" y="124" class="m" text-anchor="middle" xml:space="preserve"> 82 </text>
+  <rect x="222" y="100" width="58" height="38" rx="3" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1"/>
+  <text x="251" y="124" class="m" text-anchor="middle" xml:space="preserve">改行</text>
+  <rect x="280" y="100" width="62" height="38" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="311" y="124" class="m" text-anchor="middle" xml:space="preserve">KATO</text>
+  <rect x="342" y="100" width="58" height="38" rx="3" fill="#F3F5F8" stroke="#7B8794" stroke-width="1"/>
+  <text x="371" y="124" class="m" text-anchor="middle" xml:space="preserve">,</text>
+  <rect x="400" y="100" width="62" height="38" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1"/>
+  <text x="431" y="124" class="m" text-anchor="middle" xml:space="preserve"> 64 </text>
+  <rect x="462" y="100" width="58" height="38" rx="3" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1"/>
+  <text x="491" y="124" class="m" text-anchor="middle" xml:space="preserve">改行</text>
+  <rect x="520" y="100" width="62" height="38" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="551" y="124" class="m" text-anchor="middle" xml:space="preserve">MORI</text>
+  <rect x="582" y="100" width="58" height="38" rx="3" fill="#F3F5F8" stroke="#7B8794" stroke-width="1"/>
+  <text x="611" y="124" class="m" text-anchor="middle" xml:space="preserve">,</text>
+  <rect x="640" y="100" width="62" height="38" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1"/>
+  <text x="671" y="124" class="m" text-anchor="middle" xml:space="preserve"> 91 </text>
+  <rect x="702" y="100" width="58" height="38" rx="3" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1"/>
+  <text x="731" y="124" class="m" text-anchor="middle" xml:space="preserve">改行</text>
+  <path d="M60,180 L60,142" fill="none" stroke="#52606D" stroke-width="1.5" marker-end="url(#a)"/>
+  <text x="60" y="200" class="s" xml:space="preserve">開いた直後はここを指す</text>
+  <path d="M346,180 L346,142" fill="none" stroke="#52606D" stroke-width="1.5" marker-end="url(#a)"/>
+  <text x="346" y="200" class="s" text-anchor="middle" xml:space="preserve">INPUT #1,N$,P を 1 回終えるとここ</text>
+  <text x="40" y="236" class="b" xml:space="preserve">EOF (1) は、残りがなくなると -1（真）になる</text>
+  <text x="40" y="90" class="s" xml:space="preserve">PRINT #1,N$;",";P の 1 回で 1 件</text>
+</svg>

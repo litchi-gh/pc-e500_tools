@@ -10,7 +10,7 @@ catch (Exception e) when (e is DisassemblyException or IOException or Unauthoriz
 static int Run(string[] args)
 {
     string? input = null, output = null; InputFormat? format = null; int? origin = null;
-    bool labels = true, addresses = true, bytes = true;
+    bool labels = true, addresses = true, bytes = true, force = false;
     for (int i = 0; i < args.Length; i++)
     {
         string Next() => ++i < args.Length ? args[i] : throw new DisassemblyException($"Missing value for {args[i - 1]}");
@@ -23,6 +23,7 @@ static int Run(string[] args)
                 string f = Next().ToLowerInvariant();
                 format = f switch { "raw" => InputFormat.Raw, "ce140f" or "save-m" => InputFormat.Ce140f, _ => throw new DisassemblyException("Format must be raw or ce140f") }; break;
             case "--org": origin = Number(Next()); break;
+            case "--force": force = true; break;
             case "--no-labels": labels = false; break;
             case "--no-addresses": addresses = false; break;
             case "--no-bytes": bytes = false; break;
@@ -33,11 +34,14 @@ static int Run(string[] args)
     }
     if (input == null) { Help(); return args.Length == 0 ? 0 : 1; }
     if (format == null) throw new DisassemblyException("Select input format with --format raw or --format ce140f");
+    bool named = output != null;
     output ??= Path.ChangeExtension(input, ".asm");
     string inputPath = Path.GetFullPath(input), outputPath = Path.GetFullPath(output);
     // Windows と macOS の標準のファイルシステムは大文字小文字を区別しない。Linux では a.asm と A.ASM は別のファイル
     StringComparison pathComparison = OperatingSystem.IsWindows() || OperatingSystem.IsMacOS() ? StringComparison.OrdinalIgnoreCase : StringComparison.Ordinal;
     if (string.Equals(inputPath, outputPath, pathComparison)) throw new DisassemblyException("Output would overwrite the input file");
+    // HELLO.BIN made from hello.asm leads back to hello.asm: a source must not be lost to a default name.
+    if (!named && !force && !Disassembler.MayReplace(outputPath)) throw new DisassemblyException($"{outputPath} exists and was not written by e500dasm. Name the output with -o, or replace it with --force");
     var result = new Disassembler().DisassembleFile(inputPath, format.Value, origin, new() { GenerateLabels = labels, ShowAddresses = addresses, ShowBytes = bytes });
     Directory.CreateDirectory(Path.GetDirectoryName(outputPath)!);
     string temp = outputPath + "." + Guid.NewGuid().ToString("N") + ".tmp";
@@ -59,6 +63,7 @@ Usage: e500dasm input-file --format raw|ce140f [options]
   -f, --format raw|ce140f   RAW or CE-140F SAVE M with 16-byte header (required)
   --org ADDRESS             RAW load/start address (required for RAW)
   -o, --output PATH         Assembly output (default: input-file.asm)
+  --force                   Replace an existing source with the default output
   --no-labels               Keep branch targets numeric
   --no-addresses            Hide addresses in comments
   --no-bytes                Hide machine bytes in comments

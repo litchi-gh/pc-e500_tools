@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 400" width="980" height="400" role="img" aria-labelledby="t d">
+  <title id="t">内部の桁数と表示の桁数</title>
+  <desc id="d">単精度は中で 12 桁、倍精度は 24 桁で計算し、表示は 10 桁と 20 桁。結果を再利用すると表示の桁になる。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .xs { font-size: 11px; fill: #52606D; }
+    .r { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; fill: #B7791F; font-weight: 700; }
+    .j { font-size: 10px; fill: #B7791F; font-weight: 700; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .lcd { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 14px; font-weight: 700; fill: #24351D; }
+  </style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#7B8794"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="399" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">内部の桁数と表示の桁数</text>
+  <text x="24" y="56" class="sub">4 ÷ 3 × 3 を、1 行で計算したときと、2 回に分けて計算したとき</text>
+  <rect x="24" y="80" width="456" height="290" rx="6" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="252" y="106" class="b" text-anchor="middle">1 行で計算する</text>
+  <text x="40" y="140" class="m" xml:space="preserve">4/3*3 ⏎</text>
+  <text x="40" y="180" class="m" xml:space="preserve">4 ÷ 3 =</text>
+  <rect x="120" y="162" width="220" height="28" rx="6" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="130" y="181" class="m" xml:space="preserve">1.33333333333</text>
+  <text x="350" y="181" class="s">内部は 12 桁</text>
+  <text x="40" y="230" class="m" xml:space="preserve">× 3 =</text>
+  <rect x="120" y="212" width="220" height="28" rx="6" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="130" y="231" class="m" xml:space="preserve">3.99999999999</text>
+  <line x1="230" y1="244" x2="230" y2="272" stroke="#7B8794" stroke-width="1.4" marker-end="url(#a)"/>
+  <text x="246" y="264" class="s">10 桁に丸める</text>
+  <rect x="120" y="278" width="220" height="30" rx="4" fill="#BDD08B" stroke="#4A5A2A" stroke-width="1.2"/>
+  <text x="330" y="298" class="lcd" xml:space="preserve" text-anchor="end">4</text>
+  <text x="40" y="340" class="s">誤差は表示に現れない</text>
+  <rect x="500" y="80" width="456" height="290" rx="6" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="728" y="106" class="b" text-anchor="middle">2 回に分ける</text>
+  <text x="516" y="140" class="m" xml:space="preserve">4/3 ⏎   *3 ⏎</text>
+  <rect x="596" y="160" width="220" height="30" rx="4" fill="#BDD08B" stroke="#4A5A2A" stroke-width="1.2"/>
+  <text x="806" y="180" class="lcd" xml:space="preserve" text-anchor="end">1.333333333</text>
+  <text x="826" y="180" class="s">表示は 10 桁</text>
+  <text x="516" y="230" class="m" xml:space="preserve">× 3 =</text>
+  <text x="596" y="230" class="s">（表示された 1.333333333 を使う）</text>
+  <line x1="706" y1="240" x2="706" y2="272" stroke="#7B8794" stroke-width="1.4" marker-end="url(#a)"/>
+  <rect x="596" y="278" width="220" height="30" rx="4" fill="#BDD08B" stroke="#4A5A2A" stroke-width="1.2"/>
+  <text x="806" y="298" class="lcd" xml:space="preserve" text-anchor="end">3.999999999</text>
+  <text x="516" y="340" class="s">表示された桁から計算するので、誤差が見える</text>
+  <text x="516" y="360" class="s">誤差を避けるには、分けずに 1 行の式で計算する</text>
+</svg>

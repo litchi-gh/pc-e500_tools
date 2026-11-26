@@ -1,0 +1,33 @@
+{
+  "program": "recipes.asm",
+  "tests": [
+    { "name": "mem_fill", "call": "mem_fill", "return": "near", "registers": { "X": "buffer", "I": 4, "A": 170 }, "expect": { "memory": { "buffer": [170, 170, 170, 170, 0] } } },
+    { "name": "mem_copy", "call": "mem_copy", "return": "near", "registers": { "X": "text1", "Y": "buffer", "I": 8 }, "expect": { "memory": { "buffer": "PC-E500" } } },
+    { "name": "fast_copy", "call": "fast_copy", "return": "near", "registers": { "X": "buffer", "Y": "buffer+128", "A": 2 }, "memory": { "buffer": [1, 2, 3], "buffer+126": [7, 8] }, "expect": { "memory": { "buffer+128": [1, 2, 3], "buffer+254": [7, 8] } } },
+    { "name": "mem_comp 同じ", "call": "mem_comp", "return": "near", "registers": { "X": "text1", "Y": "text3", "I": 7 }, "expect": { "registers": { "Z": 1 } } },
+    { "name": "mem_comp 違う", "call": "mem_comp", "return": "near", "registers": { "X": "text1", "Y": "text2", "I": 7 }, "expect": { "registers": { "Z": 0 } } },
+    { "name": "cmp16 小さい", "call": "cmp16", "return": "near", "registers": { "BA": 999, "I": 1000 }, "expect": { "registers": { "C": 1, "Z": 0 } } },
+    { "name": "cmp16 同じ", "call": "cmp16", "return": "near", "registers": { "BA": 1000, "I": 1000 }, "expect": { "registers": { "C": 0, "Z": 1 } } },
+    { "name": "cmp16 大きい", "call": "cmp16", "return": "near", "registers": { "BA": 1256, "I": 1000 }, "expect": { "registers": { "C": 0, "Z": 0 } } },
+    { "name": "mul8 12 × 34", "call": "mul8", "return": "near", "registers": { "A": 12, "I": 34 }, "expect": { "registers": { "BA": 408 } } },
+    { "name": "mul8 255 × 255", "call": "mul8", "return": "near", "registers": { "A": 255, "I": 255 }, "expect": { "registers": { "BA": 65025 } } },
+    { "name": "div16 50000 ÷ 123", "call": "div16", "return": "near", "registers": { "BA": 50000, "I": 123 }, "expect": { "registers": { "BA": 406, "I": 62 } } },
+    { "name": "div16 65535 ÷ 32767", "call": "div16", "return": "near", "registers": { "BA": 65535, "I": 32767 }, "expect": { "registers": { "BA": 2, "I": 1 } } },
+    { "name": "abs8", "call": "abs8", "return": "near", "registers": { "A": 251 }, "expect": { "registers": { "A": 5 } } },
+    { "name": "scmp8 -1 と 1", "call": "scmp8", "return": "near", "registers": { "A": 255, "I": 1 }, "expect": { "registers": { "C": 1, "Z": 0 } } },
+    { "name": "scmp8 1 と -1", "call": "scmp8", "return": "near", "registers": { "A": 1, "I": 255 }, "expect": { "registers": { "C": 0, "Z": 0 } } },
+    { "name": "to_dec", "call": "to_dec", "return": "near", "registers": { "I": 60209, "X": "buffer" }, "expect": { "memory": { "buffer": "60209" } } },
+    { "name": "to_hex", "call": "to_hex", "return": "near", "registers": { "A": 175, "X": "buffer" }, "expect": { "memory": { "buffer": "AF" } } },
+    { "name": "to_num", "call": "to_num", "return": "near", "registers": { "X": "digits" }, "expect": { "registers": { "BA": 1234 } } },
+    { "name": "str_len", "call": "str_len", "return": "near", "registers": { "X": "text1" }, "expect": { "registers": { "I": 7 } } },
+    { "name": "str_comp 同じ", "call": "str_comp", "return": "near", "registers": { "X": "text1", "Y": "text3" }, "expect": { "registers": { "Z": 1 } } },
+    { "name": "str_comp 前", "call": "str_comp", "return": "near", "registers": { "X": "text1", "Y": "text2" }, "expect": { "registers": { "Z": 0, "C": 1 } } },
+    { "name": "bit_rev", "call": "bit_rev", "return": "near", "registers": { "A": 19 }, "expect": { "registers": { "A": 200 } } },
+    { "name": "bit_count", "call": "bit_count", "return": "near", "registers": { "A": 183 }, "expect": { "registers": { "A": 6 } } },
+    { "name": "checksum", "call": "checksum", "return": "near", "registers": { "X": "buffer", "I": 3 }, "memory": { "buffer": [200, 100, 250] }, "expect": { "registers": { "BA": 550 } } },
+    { "name": "sort8", "call": "sort8", "return": "near", "registers": { "X": "list", "A": 5 }, "expect": { "memory": { "list": [1, 3, 5, 7, 9] } } },
+    { "name": "dispatch", "call": "dispatch", "return": "near", "registers": { "A": 2 }, "expect": { "registers": { "A": 30 } } },
+    { "name": "wait_ms", "call": "wait_ms", "return": "near", "registers": { "A": 10 }, "expect": { "registers": { "A": 0 } } },
+    { "name": "表示と音", "basic": "CLS:CALL &HBE000", "expect": { "screen": "00408" } }
+  ]
+}

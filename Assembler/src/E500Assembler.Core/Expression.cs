@@ -3,11 +3,13 @@ using System.Text;
 
 namespace E500Assembler;
 
-public sealed class AssemblyException(string message) : Exception(message);
+public class AssemblyException(string message) : Exception(message);
+/// <summary>A value that does not work out (a shift of 64, a division by zero ...): in a pass that does not have all the names yet, it may still come right.</summary>
+internal sealed class ValueException(string message) : AssemblyException(message);
 
 internal sealed class Expression(string text, Func<string, long> symbol, long pc)
 {
-    private int pos;
+    private int pos, depth;
     public long Evaluate()
     {
         long value = Binary(0);
@@ -29,26 +31,39 @@ internal sealed class Expression(string text, Func<string, long> symbol, long pc
             long right = Binary(priority + 1);
             left = op switch
             {
-                "+" => checked(left + right), "-" => checked(left - right), "*" => checked(left * right),
+                "+" or "-" or "*" => Checked(op, left, right),
+                "/" or "%" when right == 0 => throw new ValueException("Division by zero"),
+                "/" or "%" when right == -1 => op == "/" ? Checked("-", 0, left) : 0,
                 "/" => left / right, "%" => left % right, "&" => left & right, "|" => left | right, "^" => left ^ right,
-                "<<" => right is >= 0 and <= 63 ? left << (int)right : throw new AssemblyException("Shift count must be 0..63"),
-                ">>" => right is >= 0 and <= 63 ? left >> (int)right : throw new AssemblyException("Shift count must be 0..63"),
+                "<<" => right is >= 0 and <= 63 ? left << (int)right : throw new ValueException("Shift count must be 0..63"),
+                ">>" => right is >= 0 and <= 63 ? left >> (int)right : throw new ValueException("Shift count must be 0..63"),
                 _ => throw new AssemblyException("Invalid operator")
             };
         }
     }
+    private static long Checked(string op, long a, long b)
+    {
+        try { return checked(op switch { "+" => a + b, "-" => a - b, _ => a * b }); }
+        catch (OverflowException) { throw new ValueException("The result does not fit in 64 bits"); }
+    }
     private long Atom()
+    {
+        // Deeper than anyone writes, and well inside the stack.
+        if (++depth > 200) throw new AssemblyException("Expression is nested too deeply");
+        try { return Primary(); } finally { depth--; }
+    }
+    private long Primary()
     {
         Space();
         if (pos == text.Length) throw new AssemblyException("Expression expected");
         char ch = text[pos++];
-        if (ch is '+' or '-' or '~') { long v = Atom(); return ch == '-' ? checked(-v) : ch == '~' ? ~v : v; }
+        if (ch is '+' or '-' or '~') { long v = Atom(); return ch == '-' ? Checked("-", 0, v) : ch == '~' ? ~v : v; }
         if (ch == '(') { long v = Binary(0); Space(); if (pos >= text.Length || text[pos++] != ')') throw new AssemblyException("Missing ')' in expression"); return v; }
         if (ch == '\'')
         {
             int start = pos - 1;
             while (pos < text.Length) { if (text[pos++] == '\\' && pos < text.Length) pos++; else if (text[pos - 1] == '\'') break; }
-            string s = Syntax.String(text[start..pos]);
+            string s = Syntax.Bytes(text[start..pos]);
             if (s.Length != 1 || s[0] > 255) throw new AssemblyException("Character literal must contain one byte");
             return s[0];
         }
@@ -64,6 +79,8 @@ internal sealed class Expression(string text, Func<string, long> symbol, long pc
             else if (n.StartsWith("0x", StringComparison.OrdinalIgnoreCase)) { n = n[2..]; radix = 16; }
             else if (n.EndsWith('h') || n.EndsWith('H')) { n = n[..^1]; radix = 16; } // before 0b: 0B8000h is hexadecimal
             else if (n.StartsWith("0b", StringComparison.OrdinalIgnoreCase)) { n = n[2..]; radix = 2; }
+            // Convert takes a 0x of its own.
+            if (radix == 16 && !n.All(Uri.IsHexDigit)) throw new AssemblyException($"Invalid number: {text[start..pos]}");
             try { return Convert.ToInt64(n, radix); } catch (Exception e) when (e is FormatException or OverflowException or ArgumentException) { throw new AssemblyException($"Invalid number: {text[start..pos]}"); }
         }
         if (char.IsLetter(ch) || ch is '_' or '.')
@@ -115,6 +132,12 @@ internal static class Syntax
         parts.Add(s[start..].Trim());
         if (parts.Any(p => p.Length == 0)) throw new AssemblyException("Empty operand");
         return parts.ToArray();
+    }
+    /// <summary>A string for DB or a character constant: the characters as written are 7-bit, others come as \xNN. Anything else would be taken for a code the PC-E500 shows as something else.</summary>
+    public static string Bytes(string s)
+    {
+        if (s.FirstOrDefault(c => c > 0x7f) is char bad && bad != '\0') throw new AssemblyException($"'{bad}' is not a character of the PC-E500 as it is; write its code as a number or \\xNN");
+        return String(s);
     }
     public static string String(string s)
     {

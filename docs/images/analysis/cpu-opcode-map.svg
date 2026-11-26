@@ -1,0 +1,818 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 640" width="980" height="640" role="img" aria-labelledby="t d">
+  <title id="t">オペコードマップ</title>
+  <desc id="d">256 個のオペコードを 16×16 のマスに並べ、命令の種類で色分けした図。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .mb { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; font-weight: 700; }
+  </style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#52606D"/></marker><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#C0392B"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="639" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h" xml:space="preserve">オペコードマップ</text>
+  <text x="24" y="55" class="sub" xml:space="preserve">行が上位の桁、列が下位の桁。命令の名前と、オペランドの先頭だけを書いた</text>
+  <text x="80.3" y="84" class="ms" xml:space="preserve" text-anchor="middle">x0</text>
+  <text x="136.9" y="84" class="ms" xml:space="preserve" text-anchor="middle">x1</text>
+  <text x="193.5" y="84" class="ms" xml:space="preserve" text-anchor="middle">x2</text>
+  <text x="250.1" y="84" class="ms" xml:space="preserve" text-anchor="middle">x3</text>
+  <text x="306.7" y="84" class="ms" xml:space="preserve" text-anchor="middle">x4</text>
+  <text x="363.3" y="84" class="ms" xml:space="preserve" text-anchor="middle">x5</text>
+  <text x="419.9" y="84" class="ms" xml:space="preserve" text-anchor="middle">x6</text>
+  <text x="476.5" y="84" class="ms" xml:space="preserve" text-anchor="middle">x7</text>
+  <text x="533.1" y="84" class="ms" xml:space="preserve" text-anchor="middle">x8</text>
+  <text x="589.7" y="84" class="ms" xml:space="preserve" text-anchor="middle">x9</text>
+  <text x="646.3" y="84" class="ms" xml:space="preserve" text-anchor="middle">xA</text>
+  <text x="702.9" y="84" class="ms" xml:space="preserve" text-anchor="middle">xB</text>
+  <text x="759.5" y="84" class="ms" xml:space="preserve" text-anchor="middle">xC</text>
+  <text x="816.1" y="84" class="ms" xml:space="preserve" text-anchor="middle">xD</text>
+  <text x="872.7" y="84" class="ms" xml:space="preserve" text-anchor="middle">xE</text>
+  <text x="929.3" y="84" class="ms" xml:space="preserve" text-anchor="middle">xF</text>
+  <text x="44" y="112" class="ms" xml:space="preserve" text-anchor="end">0x</text>
+  <rect x="52" y="92" width="56.6" height="30" rx="0" fill="#FDECEA" stroke="#C0392B" stroke-width="0.7"/>
+  <text x="80.3" y="105" class="ms" xml:space="preserve" text-anchor="middle">NOP</text>
+  <rect x="108.6" y="92" width="56.6" height="30" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.7"/>
+  <text x="136.9" y="105" class="ms" xml:space="preserve" text-anchor="middle">RETI</text>
+  <rect x="165.2" y="92" width="56.6" height="30" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.7"/>
+  <text x="193.5" y="105" class="ms" xml:space="preserve" text-anchor="middle">JP</text>
+  <text x="193.5" y="117" text-anchor="middle" style="font-size:9px;fill:#52606D">mn</text>
+  <rect x="221.8" y="92" width="56.6" height="30" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.7"/>
+  <text x="250.1" y="105" class="ms" xml:space="preserve" text-anchor="middle">JPF</text>
+  <text x="250.1" y="117" text-anchor="middle" style="font-size:9px;fill:#52606D">lmn</text>
+  <rect x="278.4" y="92" width="56.6" height="30" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.7"/>
+  <text x="306.7" y="105" class="ms" xml:space="preserve" text-anchor="middle">CALL</text>
+  <text x="306.7" y="117" text-anchor="middle" style="font-size:9px;fill:#52606D">mn</text>
+  <rect x="335" y="92" width="56.6" height="30" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.7"/>
+  <text x="363.3" y="105" class="ms" xml:space="preserve" text-anchor="middle">CALLF</text>
+  <text x="363.3" y="117" text-anchor="middle" style="font-size:9px;fill:#52606D">lmn</text>
+  <rect x="391.6" y="92" width="56.6" height="30" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.7"/>
+  <text x="419.9" y="105" class="ms" xml:space="preserve" text-anchor="middle">RET</text>
+  <rect x="448.2" y="92" width="56.6" height="30" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.7"/>
+  <text x="476.5" y="105" class="ms" xml:space="preserve" text-anchor="middle">RETF</text>
+  <rect x="504.8" y="92" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="533.1" y="105" class="ms" xml:space="preserve" text-anchor="middle">MV</text>
+  <text x="533.1" y="117" text-anchor="middle" style="font-size:9px;fill:#52606D">A,n</text>
+  <rect x="561.4" y="92" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="589.7" y="105" class="ms" xml:space="preserve" text-anchor="middle">MV</text>
+  <text x="589.7" y="117" text-anchor="middle" style="font-size:9px;fill:#52606D">IL,n</text>
+  <rect x="618" y="92" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="646.3" y="105" class="ms" xml:space="preserve" text-anchor="middle">MV</text>
+  <text x="646.3" y="117" text-anchor="middle" style="font-size:9px;fill:#52606D">BA,mn</text>
+  <rect x="674.6" y="92" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="702.9" y="105" class="ms" xml:space="preserve" text-anchor="middle">MV</text>
+  <text x="702.9" y="117" text-anchor="middle" style="font-size:9px;fill:#52606D">I,mn</text>
+  <rect x="731.2" y="92" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="759.5" y="105" class="ms" xml:space="preserve" text-anchor="middle">MV</text>
+  <text x="759.5" y="117" text-anchor="middle" style="font-size:9px;fill:#52606D">X,lmn</text>
+  <rect x="787.8" y="92" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="816.1" y="105" class="ms" xml:space="preserve" text-anchor="middle">MV</text>
+  <text x="816.1" y="117" text-anchor="middle" style="font-size:9px;fill:#52606D">Y,lmn</text>
+  <rect x="844.4" y="92" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="872.7" y="105" class="ms" xml:space="preserve" text-anchor="middle">MV</text>
+  <text x="872.7" y="117" text-anchor="middle" style="font-size:9px;fill:#52606D">U,lmn</text>
+  <rect x="901" y="92" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="929.3" y="105" class="ms" xml:space="preserve" text-anchor="middle">MV</text>
+  <text x="929.3" y="117" text-anchor="middle" style="font-size:9px;fill:#52606D">S,lmn</text>
+  <text x="44" y="142" class="ms" xml:space="preserve" text-anchor="end">1x</text>
+  <rect x="52" y="122" width="56.6" height="30" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.7"/>
+  <text x="80.3" y="135" class="ms" xml:space="preserve" text-anchor="middle">JP</text>
+  <text x="80.3" y="147" text-anchor="middle" style="font-size:9px;fill:#52606D">(n)</text>
+  <rect x="108.6" y="122" width="56.6" height="30" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.7"/>
+  <text x="136.9" y="135" class="ms" xml:space="preserve" text-anchor="middle">JP</text>
+  <text x="136.9" y="147" text-anchor="middle" style="font-size:9px;fill:#52606D">r3</text>
+  <rect x="165.2" y="122" width="56.6" height="30" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.7"/>
+  <text x="193.5" y="135" class="ms" xml:space="preserve" text-anchor="middle">JR</text>
+  <text x="193.5" y="147" text-anchor="middle" style="font-size:9px;fill:#52606D">+n</text>
+  <rect x="221.8" y="122" width="56.6" height="30" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.7"/>
+  <text x="250.1" y="135" class="ms" xml:space="preserve" text-anchor="middle">JR</text>
+  <text x="250.1" y="147" text-anchor="middle" style="font-size:9px;fill:#52606D">-n</text>
+  <rect x="278.4" y="122" width="56.6" height="30" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.7"/>
+  <text x="306.7" y="135" class="ms" xml:space="preserve" text-anchor="middle">JPZ</text>
+  <text x="306.7" y="147" text-anchor="middle" style="font-size:9px;fill:#52606D">mn</text>
+  <rect x="335" y="122" width="56.6" height="30" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.7"/>
+  <text x="363.3" y="135" class="ms" xml:space="preserve" text-anchor="middle">JPNZ</text>
+  <text x="363.3" y="147" text-anchor="middle" style="font-size:9px;fill:#52606D">mn</text>
+  <rect x="391.6" y="122" width="56.6" height="30" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.7"/>
+  <text x="419.9" y="135" class="ms" xml:space="preserve" text-anchor="middle">JPC</text>
+  <text x="419.9" y="147" text-anchor="middle" style="font-size:9px;fill:#52606D">mn</text>
+  <rect x="448.2" y="122" width="56.6" height="30" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.7"/>
+  <text x="476.5" y="135" class="ms" xml:space="preserve" text-anchor="middle">JPNC</text>
+  <text x="476.5" y="147" text-anchor="middle" style="font-size:9px;fill:#52606D">mn</text>
+  <rect x="504.8" y="122" width="56.6" height="30" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.7"/>
+  <text x="533.1" y="135" class="ms" xml:space="preserve" text-anchor="middle">JRZ</text>
+  <text x="533.1" y="147" text-anchor="middle" style="font-size:9px;fill:#52606D">+n</text>
+  <rect x="561.4" y="122" width="56.6" height="30" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.7"/>
+  <text x="589.7" y="135" class="ms" xml:space="preserve" text-anchor="middle">JRZ</text>
+  <text x="589.7" y="147" text-anchor="middle" style="font-size:9px;fill:#52606D">-n</text>
+  <rect x="618" y="122" width="56.6" height="30" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.7"/>
+  <text x="646.3" y="135" class="ms" xml:space="preserve" text-anchor="middle">JRNZ</text>
+  <text x="646.3" y="147" text-anchor="middle" style="font-size:9px;fill:#52606D">+n</text>
+  <rect x="674.6" y="122" width="56.6" height="30" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.7"/>
+  <text x="702.9" y="135" class="ms" xml:space="preserve" text-anchor="middle">JRNZ</text>
+  <text x="702.9" y="147" text-anchor="middle" style="font-size:9px;fill:#52606D">-n</text>
+  <rect x="731.2" y="122" width="56.6" height="30" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.7"/>
+  <text x="759.5" y="135" class="ms" xml:space="preserve" text-anchor="middle">JRC</text>
+  <text x="759.5" y="147" text-anchor="middle" style="font-size:9px;fill:#52606D">+n</text>
+  <rect x="787.8" y="122" width="56.6" height="30" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.7"/>
+  <text x="816.1" y="135" class="ms" xml:space="preserve" text-anchor="middle">JRC</text>
+  <text x="816.1" y="147" text-anchor="middle" style="font-size:9px;fill:#52606D">-n</text>
+  <rect x="844.4" y="122" width="56.6" height="30" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.7"/>
+  <text x="872.7" y="135" class="ms" xml:space="preserve" text-anchor="middle">JRNC</text>
+  <text x="872.7" y="147" text-anchor="middle" style="font-size:9px;fill:#52606D">+n</text>
+  <rect x="901" y="122" width="56.6" height="30" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="0.7"/>
+  <text x="929.3" y="135" class="ms" xml:space="preserve" text-anchor="middle">JRNC</text>
+  <text x="929.3" y="147" text-anchor="middle" style="font-size:9px;fill:#52606D">-n</text>
+  <text x="44" y="172" class="ms" xml:space="preserve" text-anchor="end">2x</text>
+  <rect x="52" y="152" width="56.6" height="30" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.7"/>
+  <text x="80.3" y="171" class="s" xml:space="preserve" text-anchor="middle">未使用</text>
+  <rect x="108.6" y="152" width="56.6" height="30" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="0.7"/>
+  <text x="136.9" y="165" class="ms" xml:space="preserve" text-anchor="middle">PRE</text>
+  <text x="136.9" y="177" text-anchor="middle" style="font-size:9px;fill:#52606D">21h</text>
+  <rect x="165.2" y="152" width="56.6" height="30" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="0.7"/>
+  <text x="193.5" y="165" class="ms" xml:space="preserve" text-anchor="middle">PRE</text>
+  <text x="193.5" y="177" text-anchor="middle" style="font-size:9px;fill:#52606D">22h</text>
+  <rect x="221.8" y="152" width="56.6" height="30" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="0.7"/>
+  <text x="250.1" y="165" class="ms" xml:space="preserve" text-anchor="middle">PRE</text>
+  <text x="250.1" y="177" text-anchor="middle" style="font-size:9px;fill:#52606D">23h</text>
+  <rect x="278.4" y="152" width="56.6" height="30" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="0.7"/>
+  <text x="306.7" y="165" class="ms" xml:space="preserve" text-anchor="middle">PRE</text>
+  <text x="306.7" y="177" text-anchor="middle" style="font-size:9px;fill:#52606D">24h</text>
+  <rect x="335" y="152" width="56.6" height="30" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="0.7"/>
+  <text x="363.3" y="165" class="ms" xml:space="preserve" text-anchor="middle">PRE</text>
+  <text x="363.3" y="177" text-anchor="middle" style="font-size:9px;fill:#52606D">25h</text>
+  <rect x="391.6" y="152" width="56.6" height="30" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="0.7"/>
+  <text x="419.9" y="165" class="ms" xml:space="preserve" text-anchor="middle">PRE</text>
+  <text x="419.9" y="177" text-anchor="middle" style="font-size:9px;fill:#52606D">26h</text>
+  <rect x="448.2" y="152" width="56.6" height="30" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="0.7"/>
+  <text x="476.5" y="165" class="ms" xml:space="preserve" text-anchor="middle">PRE</text>
+  <text x="476.5" y="177" text-anchor="middle" style="font-size:9px;fill:#52606D">27h</text>
+  <rect x="504.8" y="152" width="56.6" height="30" rx="0" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="0.7"/>
+  <text x="533.1" y="165" class="ms" xml:space="preserve" text-anchor="middle">PUSHU</text>
+  <text x="533.1" y="177" text-anchor="middle" style="font-size:9px;fill:#52606D">A</text>
+  <rect x="561.4" y="152" width="56.6" height="30" rx="0" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="0.7"/>
+  <text x="589.7" y="165" class="ms" xml:space="preserve" text-anchor="middle">PUSHU</text>
+  <text x="589.7" y="177" text-anchor="middle" style="font-size:9px;fill:#52606D">IL</text>
+  <rect x="618" y="152" width="56.6" height="30" rx="0" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="0.7"/>
+  <text x="646.3" y="165" class="ms" xml:space="preserve" text-anchor="middle">PUSHU</text>
+  <text x="646.3" y="177" text-anchor="middle" style="font-size:9px;fill:#52606D">BA</text>
+  <rect x="674.6" y="152" width="56.6" height="30" rx="0" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="0.7"/>
+  <text x="702.9" y="165" class="ms" xml:space="preserve" text-anchor="middle">PUSHU</text>
+  <text x="702.9" y="177" text-anchor="middle" style="font-size:9px;fill:#52606D">I</text>
+  <rect x="731.2" y="152" width="56.6" height="30" rx="0" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="0.7"/>
+  <text x="759.5" y="165" class="ms" xml:space="preserve" text-anchor="middle">PUSHU</text>
+  <text x="759.5" y="177" text-anchor="middle" style="font-size:9px;fill:#52606D">X</text>
+  <rect x="787.8" y="152" width="56.6" height="30" rx="0" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="0.7"/>
+  <text x="816.1" y="165" class="ms" xml:space="preserve" text-anchor="middle">PUSHU</text>
+  <text x="816.1" y="177" text-anchor="middle" style="font-size:9px;fill:#52606D">Y</text>
+  <rect x="844.4" y="152" width="56.6" height="30" rx="0" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="0.7"/>
+  <text x="872.7" y="165" class="ms" xml:space="preserve" text-anchor="middle">PUSHU</text>
+  <text x="872.7" y="177" text-anchor="middle" style="font-size:9px;fill:#52606D">F</text>
+  <rect x="901" y="152" width="56.6" height="30" rx="0" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="0.7"/>
+  <text x="929.3" y="165" class="ms" xml:space="preserve" text-anchor="middle">PUSHU</text>
+  <text x="929.3" y="177" text-anchor="middle" style="font-size:9px;fill:#52606D">IMR</text>
+  <text x="44" y="202" class="ms" xml:space="preserve" text-anchor="end">3x</text>
+  <rect x="52" y="182" width="56.6" height="30" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="0.7"/>
+  <text x="80.3" y="195" class="ms" xml:space="preserve" text-anchor="middle">PRE</text>
+  <text x="80.3" y="207" text-anchor="middle" style="font-size:9px;fill:#52606D">30h</text>
+  <rect x="108.6" y="182" width="56.6" height="30" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="0.7"/>
+  <text x="136.9" y="195" class="ms" xml:space="preserve" text-anchor="middle">PRE</text>
+  <text x="136.9" y="207" text-anchor="middle" style="font-size:9px;fill:#52606D">31h</text>
+  <rect x="165.2" y="182" width="56.6" height="30" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="0.7"/>
+  <text x="193.5" y="195" class="ms" xml:space="preserve" text-anchor="middle">PRE</text>
+  <text x="193.5" y="207" text-anchor="middle" style="font-size:9px;fill:#52606D">32h</text>
+  <rect x="221.8" y="182" width="56.6" height="30" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="0.7"/>
+  <text x="250.1" y="195" class="ms" xml:space="preserve" text-anchor="middle">PRE</text>
+  <text x="250.1" y="207" text-anchor="middle" style="font-size:9px;fill:#52606D">33h</text>
+  <rect x="278.4" y="182" width="56.6" height="30" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="0.7"/>
+  <text x="306.7" y="195" class="ms" xml:space="preserve" text-anchor="middle">PRE</text>
+  <text x="306.7" y="207" text-anchor="middle" style="font-size:9px;fill:#52606D">34h</text>
+  <rect x="335" y="182" width="56.6" height="30" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="0.7"/>
+  <text x="363.3" y="195" class="ms" xml:space="preserve" text-anchor="middle">PRE</text>
+  <text x="363.3" y="207" text-anchor="middle" style="font-size:9px;fill:#52606D">35h</text>
+  <rect x="391.6" y="182" width="56.6" height="30" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="0.7"/>
+  <text x="419.9" y="195" class="ms" xml:space="preserve" text-anchor="middle">PRE</text>
+  <text x="419.9" y="207" text-anchor="middle" style="font-size:9px;fill:#52606D">36h</text>
+  <rect x="448.2" y="182" width="56.6" height="30" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="0.7"/>
+  <text x="476.5" y="195" class="ms" xml:space="preserve" text-anchor="middle">PRE</text>
+  <text x="476.5" y="207" text-anchor="middle" style="font-size:9px;fill:#52606D">37h</text>
+  <rect x="504.8" y="182" width="56.6" height="30" rx="0" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="0.7"/>
+  <text x="533.1" y="195" class="ms" xml:space="preserve" text-anchor="middle">POPU</text>
+  <text x="533.1" y="207" text-anchor="middle" style="font-size:9px;fill:#52606D">A</text>
+  <rect x="561.4" y="182" width="56.6" height="30" rx="0" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="0.7"/>
+  <text x="589.7" y="195" class="ms" xml:space="preserve" text-anchor="middle">POPU</text>
+  <text x="589.7" y="207" text-anchor="middle" style="font-size:9px;fill:#52606D">IL</text>
+  <rect x="618" y="182" width="56.6" height="30" rx="0" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="0.7"/>
+  <text x="646.3" y="195" class="ms" xml:space="preserve" text-anchor="middle">POPU</text>
+  <text x="646.3" y="207" text-anchor="middle" style="font-size:9px;fill:#52606D">BA</text>
+  <rect x="674.6" y="182" width="56.6" height="30" rx="0" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="0.7"/>
+  <text x="702.9" y="195" class="ms" xml:space="preserve" text-anchor="middle">POPU</text>
+  <text x="702.9" y="207" text-anchor="middle" style="font-size:9px;fill:#52606D">I</text>
+  <rect x="731.2" y="182" width="56.6" height="30" rx="0" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="0.7"/>
+  <text x="759.5" y="195" class="ms" xml:space="preserve" text-anchor="middle">POPU</text>
+  <text x="759.5" y="207" text-anchor="middle" style="font-size:9px;fill:#52606D">X</text>
+  <rect x="787.8" y="182" width="56.6" height="30" rx="0" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="0.7"/>
+  <text x="816.1" y="195" class="ms" xml:space="preserve" text-anchor="middle">POPU</text>
+  <text x="816.1" y="207" text-anchor="middle" style="font-size:9px;fill:#52606D">Y</text>
+  <rect x="844.4" y="182" width="56.6" height="30" rx="0" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="0.7"/>
+  <text x="872.7" y="195" class="ms" xml:space="preserve" text-anchor="middle">POPU</text>
+  <text x="872.7" y="207" text-anchor="middle" style="font-size:9px;fill:#52606D">F</text>
+  <rect x="901" y="182" width="56.6" height="30" rx="0" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="0.7"/>
+  <text x="929.3" y="195" class="ms" xml:space="preserve" text-anchor="middle">POPU</text>
+  <text x="929.3" y="207" text-anchor="middle" style="font-size:9px;fill:#52606D">IMR</text>
+  <text x="44" y="232" class="ms" xml:space="preserve" text-anchor="end">4x</text>
+  <rect x="52" y="212" width="56.6" height="30" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.7"/>
+  <text x="80.3" y="225" class="ms" xml:space="preserve" text-anchor="middle">ADD</text>
+  <text x="80.3" y="237" text-anchor="middle" style="font-size:9px;fill:#52606D">A,n</text>
+  <rect x="108.6" y="212" width="56.6" height="30" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.7"/>
+  <text x="136.9" y="225" class="ms" xml:space="preserve" text-anchor="middle">ADD</text>
+  <text x="136.9" y="237" text-anchor="middle" style="font-size:9px;fill:#52606D">(m),n</text>
+  <rect x="165.2" y="212" width="56.6" height="30" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.7"/>
+  <text x="193.5" y="225" class="ms" xml:space="preserve" text-anchor="middle">ADD</text>
+  <text x="193.5" y="237" text-anchor="middle" style="font-size:9px;fill:#52606D">A,(n)</text>
+  <rect x="221.8" y="212" width="56.6" height="30" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.7"/>
+  <text x="250.1" y="225" class="ms" xml:space="preserve" text-anchor="middle">ADD</text>
+  <text x="250.1" y="237" text-anchor="middle" style="font-size:9px;fill:#52606D">(n),A</text>
+  <rect x="278.4" y="212" width="56.6" height="30" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.7"/>
+  <text x="306.7" y="225" class="ms" xml:space="preserve" text-anchor="middle">ADD</text>
+  <text x="306.7" y="237" text-anchor="middle" style="font-size:9px;fill:#52606D">r2,r&#x27;</text>
+  <rect x="335" y="212" width="56.6" height="30" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.7"/>
+  <text x="363.3" y="225" class="ms" xml:space="preserve" text-anchor="middle">ADD</text>
+  <text x="363.3" y="237" text-anchor="middle" style="font-size:9px;fill:#52606D">r3,r&#x27;</text>
+  <rect x="391.6" y="212" width="56.6" height="30" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.7"/>
+  <text x="419.9" y="225" class="ms" xml:space="preserve" text-anchor="middle">ADD</text>
+  <text x="419.9" y="237" text-anchor="middle" style="font-size:9px;fill:#52606D">r1,r1&#x27;</text>
+  <rect x="448.2" y="212" width="56.6" height="30" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.7"/>
+  <text x="476.5" y="225" class="ms" xml:space="preserve" text-anchor="middle">PMDF</text>
+  <text x="476.5" y="237" text-anchor="middle" style="font-size:9px;fill:#52606D">(m),n</text>
+  <rect x="504.8" y="212" width="56.6" height="30" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.7"/>
+  <text x="533.1" y="225" class="ms" xml:space="preserve" text-anchor="middle">SUB</text>
+  <text x="533.1" y="237" text-anchor="middle" style="font-size:9px;fill:#52606D">A,n</text>
+  <rect x="561.4" y="212" width="56.6" height="30" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.7"/>
+  <text x="589.7" y="225" class="ms" xml:space="preserve" text-anchor="middle">SUB</text>
+  <text x="589.7" y="237" text-anchor="middle" style="font-size:9px;fill:#52606D">(m),n</text>
+  <rect x="618" y="212" width="56.6" height="30" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.7"/>
+  <text x="646.3" y="225" class="ms" xml:space="preserve" text-anchor="middle">SUB</text>
+  <text x="646.3" y="237" text-anchor="middle" style="font-size:9px;fill:#52606D">A,(n)</text>
+  <rect x="674.6" y="212" width="56.6" height="30" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.7"/>
+  <text x="702.9" y="225" class="ms" xml:space="preserve" text-anchor="middle">SUB</text>
+  <text x="702.9" y="237" text-anchor="middle" style="font-size:9px;fill:#52606D">(n),A</text>
+  <rect x="731.2" y="212" width="56.6" height="30" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.7"/>
+  <text x="759.5" y="225" class="ms" xml:space="preserve" text-anchor="middle">SUB</text>
+  <text x="759.5" y="237" text-anchor="middle" style="font-size:9px;fill:#52606D">r2,r&#x27;</text>
+  <rect x="787.8" y="212" width="56.6" height="30" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.7"/>
+  <text x="816.1" y="225" class="ms" xml:space="preserve" text-anchor="middle">SUB</text>
+  <text x="816.1" y="237" text-anchor="middle" style="font-size:9px;fill:#52606D">r3,r&#x27;</text>
+  <rect x="844.4" y="212" width="56.6" height="30" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.7"/>
+  <text x="872.7" y="225" class="ms" xml:space="preserve" text-anchor="middle">SUB</text>
+  <text x="872.7" y="237" text-anchor="middle" style="font-size:9px;fill:#52606D">r1,r1&#x27;</text>
+  <rect x="901" y="212" width="56.6" height="30" rx="0" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="0.7"/>
+  <text x="929.3" y="225" class="ms" xml:space="preserve" text-anchor="middle">PUSHS</text>
+  <text x="929.3" y="237" text-anchor="middle" style="font-size:9px;fill:#52606D">F</text>
+  <text x="44" y="262" class="ms" xml:space="preserve" text-anchor="end">5x</text>
+  <rect x="52" y="242" width="56.6" height="30" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.7"/>
+  <text x="80.3" y="255" class="ms" xml:space="preserve" text-anchor="middle">ADC</text>
+  <text x="80.3" y="267" text-anchor="middle" style="font-size:9px;fill:#52606D">A,n</text>
+  <rect x="108.6" y="242" width="56.6" height="30" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.7"/>
+  <text x="136.9" y="255" class="ms" xml:space="preserve" text-anchor="middle">ADC</text>
+  <text x="136.9" y="267" text-anchor="middle" style="font-size:9px;fill:#52606D">(m),n</text>
+  <rect x="165.2" y="242" width="56.6" height="30" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.7"/>
+  <text x="193.5" y="255" class="ms" xml:space="preserve" text-anchor="middle">ADC</text>
+  <text x="193.5" y="267" text-anchor="middle" style="font-size:9px;fill:#52606D">A,(n)</text>
+  <rect x="221.8" y="242" width="56.6" height="30" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.7"/>
+  <text x="250.1" y="255" class="ms" xml:space="preserve" text-anchor="middle">ADC</text>
+  <text x="250.1" y="267" text-anchor="middle" style="font-size:9px;fill:#52606D">(n),A</text>
+  <rect x="278.4" y="242" width="56.6" height="30" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.7"/>
+  <text x="306.7" y="255" class="ms" xml:space="preserve" text-anchor="middle">ADCL</text>
+  <text x="306.7" y="267" text-anchor="middle" style="font-size:9px;fill:#52606D">(m),(n)</text>
+  <rect x="335" y="242" width="56.6" height="30" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.7"/>
+  <text x="363.3" y="255" class="ms" xml:space="preserve" text-anchor="middle">ADCL</text>
+  <text x="363.3" y="267" text-anchor="middle" style="font-size:9px;fill:#52606D">(n),A</text>
+  <rect x="391.6" y="242" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="419.9" y="255" class="ms" xml:space="preserve" text-anchor="middle">MVL</text>
+  <text x="419.9" y="267" text-anchor="middle" style="font-size:9px;fill:#52606D">(m),[r3±n]</text>
+  <rect x="448.2" y="242" width="56.6" height="30" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.7"/>
+  <text x="476.5" y="255" class="ms" xml:space="preserve" text-anchor="middle">PMDF</text>
+  <text x="476.5" y="267" text-anchor="middle" style="font-size:9px;fill:#52606D">(n),A</text>
+  <rect x="504.8" y="242" width="56.6" height="30" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.7"/>
+  <text x="533.1" y="255" class="ms" xml:space="preserve" text-anchor="middle">SBC</text>
+  <text x="533.1" y="267" text-anchor="middle" style="font-size:9px;fill:#52606D">A,n</text>
+  <rect x="561.4" y="242" width="56.6" height="30" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.7"/>
+  <text x="589.7" y="255" class="ms" xml:space="preserve" text-anchor="middle">SBC</text>
+  <text x="589.7" y="267" text-anchor="middle" style="font-size:9px;fill:#52606D">(m),n</text>
+  <rect x="618" y="242" width="56.6" height="30" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.7"/>
+  <text x="646.3" y="255" class="ms" xml:space="preserve" text-anchor="middle">SBC</text>
+  <text x="646.3" y="267" text-anchor="middle" style="font-size:9px;fill:#52606D">A,(n)</text>
+  <rect x="674.6" y="242" width="56.6" height="30" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.7"/>
+  <text x="702.9" y="255" class="ms" xml:space="preserve" text-anchor="middle">SBC</text>
+  <text x="702.9" y="267" text-anchor="middle" style="font-size:9px;fill:#52606D">(n),A</text>
+  <rect x="731.2" y="242" width="56.6" height="30" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.7"/>
+  <text x="759.5" y="255" class="ms" xml:space="preserve" text-anchor="middle">SBCL</text>
+  <text x="759.5" y="267" text-anchor="middle" style="font-size:9px;fill:#52606D">(m),(n)</text>
+  <rect x="787.8" y="242" width="56.6" height="30" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.7"/>
+  <text x="816.1" y="255" class="ms" xml:space="preserve" text-anchor="middle">SBCL</text>
+  <text x="816.1" y="267" text-anchor="middle" style="font-size:9px;fill:#52606D">(n),A</text>
+  <rect x="844.4" y="242" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="872.7" y="255" class="ms" xml:space="preserve" text-anchor="middle">MVL</text>
+  <text x="872.7" y="267" text-anchor="middle" style="font-size:9px;fill:#52606D">[r3±m],(n)</text>
+  <rect x="901" y="242" width="56.6" height="30" rx="0" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="0.7"/>
+  <text x="929.3" y="255" class="ms" xml:space="preserve" text-anchor="middle">POPS</text>
+  <text x="929.3" y="267" text-anchor="middle" style="font-size:9px;fill:#52606D">F</text>
+  <text x="44" y="292" class="ms" xml:space="preserve" text-anchor="end">6x</text>
+  <rect x="52" y="272" width="56.6" height="30" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.7"/>
+  <text x="80.3" y="285" class="ms" xml:space="preserve" text-anchor="middle">CMP</text>
+  <text x="80.3" y="297" text-anchor="middle" style="font-size:9px;fill:#52606D">A,n</text>
+  <rect x="108.6" y="272" width="56.6" height="30" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.7"/>
+  <text x="136.9" y="285" class="ms" xml:space="preserve" text-anchor="middle">CMP</text>
+  <text x="136.9" y="297" text-anchor="middle" style="font-size:9px;fill:#52606D">(m),n</text>
+  <rect x="165.2" y="272" width="56.6" height="30" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.7"/>
+  <text x="193.5" y="285" class="ms" xml:space="preserve" text-anchor="middle">CMP</text>
+  <text x="193.5" y="297" text-anchor="middle" style="font-size:9px;fill:#52606D">[klm],n</text>
+  <rect x="221.8" y="272" width="56.6" height="30" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.7"/>
+  <text x="250.1" y="285" class="ms" xml:space="preserve" text-anchor="middle">CMP</text>
+  <text x="250.1" y="297" text-anchor="middle" style="font-size:9px;fill:#52606D">(n),A</text>
+  <rect x="278.4" y="272" width="56.6" height="30" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.7"/>
+  <text x="306.7" y="285" class="ms" xml:space="preserve" text-anchor="middle">TEST</text>
+  <text x="306.7" y="297" text-anchor="middle" style="font-size:9px;fill:#52606D">A,n</text>
+  <rect x="335" y="272" width="56.6" height="30" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.7"/>
+  <text x="363.3" y="285" class="ms" xml:space="preserve" text-anchor="middle">TEST</text>
+  <text x="363.3" y="297" text-anchor="middle" style="font-size:9px;fill:#52606D">(m),n</text>
+  <rect x="391.6" y="272" width="56.6" height="30" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.7"/>
+  <text x="419.9" y="285" class="ms" xml:space="preserve" text-anchor="middle">TEST</text>
+  <text x="419.9" y="297" text-anchor="middle" style="font-size:9px;fill:#52606D">[klm],n</text>
+  <rect x="448.2" y="272" width="56.6" height="30" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.7"/>
+  <text x="476.5" y="285" class="ms" xml:space="preserve" text-anchor="middle">TEST</text>
+  <text x="476.5" y="297" text-anchor="middle" style="font-size:9px;fill:#52606D">(n),A</text>
+  <rect x="504.8" y="272" width="56.6" height="30" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.7"/>
+  <text x="533.1" y="285" class="ms" xml:space="preserve" text-anchor="middle">XOR</text>
+  <text x="533.1" y="297" text-anchor="middle" style="font-size:9px;fill:#52606D">A,n</text>
+  <rect x="561.4" y="272" width="56.6" height="30" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.7"/>
+  <text x="589.7" y="285" class="ms" xml:space="preserve" text-anchor="middle">XOR</text>
+  <text x="589.7" y="297" text-anchor="middle" style="font-size:9px;fill:#52606D">(m),n</text>
+  <rect x="618" y="272" width="56.6" height="30" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.7"/>
+  <text x="646.3" y="285" class="ms" xml:space="preserve" text-anchor="middle">XOR</text>
+  <text x="646.3" y="297" text-anchor="middle" style="font-size:9px;fill:#52606D">[klm],n</text>
+  <rect x="674.6" y="272" width="56.6" height="30" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.7"/>
+  <text x="702.9" y="285" class="ms" xml:space="preserve" text-anchor="middle">XOR</text>
+  <text x="702.9" y="297" text-anchor="middle" style="font-size:9px;fill:#52606D">(n),A</text>
+  <rect x="731.2" y="272" width="56.6" height="30" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.7"/>
+  <text x="759.5" y="285" class="ms" xml:space="preserve" text-anchor="middle">INC</text>
+  <text x="759.5" y="297" text-anchor="middle" style="font-size:9px;fill:#52606D">r</text>
+  <rect x="787.8" y="272" width="56.6" height="30" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.7"/>
+  <text x="816.1" y="285" class="ms" xml:space="preserve" text-anchor="middle">INC</text>
+  <text x="816.1" y="297" text-anchor="middle" style="font-size:9px;fill:#52606D">(m)</text>
+  <rect x="844.4" y="272" width="56.6" height="30" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.7"/>
+  <text x="872.7" y="285" class="ms" xml:space="preserve" text-anchor="middle">XOR</text>
+  <text x="872.7" y="297" text-anchor="middle" style="font-size:9px;fill:#52606D">(m),(n)</text>
+  <rect x="901" y="272" width="56.6" height="30" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.7"/>
+  <text x="929.3" y="285" class="ms" xml:space="preserve" text-anchor="middle">XOR</text>
+  <text x="929.3" y="297" text-anchor="middle" style="font-size:9px;fill:#52606D">A,(n)</text>
+  <text x="44" y="322" class="ms" xml:space="preserve" text-anchor="end">7x</text>
+  <rect x="52" y="302" width="56.6" height="30" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.7"/>
+  <text x="80.3" y="315" class="ms" xml:space="preserve" text-anchor="middle">AND</text>
+  <text x="80.3" y="327" text-anchor="middle" style="font-size:9px;fill:#52606D">A,n</text>
+  <rect x="108.6" y="302" width="56.6" height="30" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.7"/>
+  <text x="136.9" y="315" class="ms" xml:space="preserve" text-anchor="middle">AND</text>
+  <text x="136.9" y="327" text-anchor="middle" style="font-size:9px;fill:#52606D">(m),n</text>
+  <rect x="165.2" y="302" width="56.6" height="30" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.7"/>
+  <text x="193.5" y="315" class="ms" xml:space="preserve" text-anchor="middle">AND</text>
+  <text x="193.5" y="327" text-anchor="middle" style="font-size:9px;fill:#52606D">[klm],n</text>
+  <rect x="221.8" y="302" width="56.6" height="30" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.7"/>
+  <text x="250.1" y="315" class="ms" xml:space="preserve" text-anchor="middle">AND</text>
+  <text x="250.1" y="327" text-anchor="middle" style="font-size:9px;fill:#52606D">(n),A</text>
+  <rect x="278.4" y="302" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="306.7" y="315" class="ms" xml:space="preserve" text-anchor="middle">MV</text>
+  <text x="306.7" y="327" text-anchor="middle" style="font-size:9px;fill:#52606D">A,B</text>
+  <rect x="335" y="302" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="363.3" y="315" class="ms" xml:space="preserve" text-anchor="middle">MV</text>
+  <text x="363.3" y="327" text-anchor="middle" style="font-size:9px;fill:#52606D">B,A</text>
+  <rect x="391.6" y="302" width="56.6" height="30" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.7"/>
+  <text x="419.9" y="315" class="ms" xml:space="preserve" text-anchor="middle">AND</text>
+  <text x="419.9" y="327" text-anchor="middle" style="font-size:9px;fill:#52606D">(m),(n)</text>
+  <rect x="448.2" y="302" width="56.6" height="30" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.7"/>
+  <text x="476.5" y="315" class="ms" xml:space="preserve" text-anchor="middle">AND</text>
+  <text x="476.5" y="327" text-anchor="middle" style="font-size:9px;fill:#52606D">A,(n)</text>
+  <rect x="504.8" y="302" width="56.6" height="30" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.7"/>
+  <text x="533.1" y="315" class="ms" xml:space="preserve" text-anchor="middle">OR</text>
+  <text x="533.1" y="327" text-anchor="middle" style="font-size:9px;fill:#52606D">A,n</text>
+  <rect x="561.4" y="302" width="56.6" height="30" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.7"/>
+  <text x="589.7" y="315" class="ms" xml:space="preserve" text-anchor="middle">OR</text>
+  <text x="589.7" y="327" text-anchor="middle" style="font-size:9px;fill:#52606D">(m),n</text>
+  <rect x="618" y="302" width="56.6" height="30" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.7"/>
+  <text x="646.3" y="315" class="ms" xml:space="preserve" text-anchor="middle">OR</text>
+  <text x="646.3" y="327" text-anchor="middle" style="font-size:9px;fill:#52606D">[klm],n</text>
+  <rect x="674.6" y="302" width="56.6" height="30" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.7"/>
+  <text x="702.9" y="315" class="ms" xml:space="preserve" text-anchor="middle">OR</text>
+  <text x="702.9" y="327" text-anchor="middle" style="font-size:9px;fill:#52606D">(n),A</text>
+  <rect x="731.2" y="302" width="56.6" height="30" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.7"/>
+  <text x="759.5" y="315" class="ms" xml:space="preserve" text-anchor="middle">DEC</text>
+  <text x="759.5" y="327" text-anchor="middle" style="font-size:9px;fill:#52606D">r</text>
+  <rect x="787.8" y="302" width="56.6" height="30" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.7"/>
+  <text x="816.1" y="315" class="ms" xml:space="preserve" text-anchor="middle">DEC</text>
+  <text x="816.1" y="327" text-anchor="middle" style="font-size:9px;fill:#52606D">(m)</text>
+  <rect x="844.4" y="302" width="56.6" height="30" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.7"/>
+  <text x="872.7" y="315" class="ms" xml:space="preserve" text-anchor="middle">OR</text>
+  <text x="872.7" y="327" text-anchor="middle" style="font-size:9px;fill:#52606D">(m),(n)</text>
+  <rect x="901" y="302" width="56.6" height="30" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.7"/>
+  <text x="929.3" y="315" class="ms" xml:space="preserve" text-anchor="middle">OR</text>
+  <text x="929.3" y="327" text-anchor="middle" style="font-size:9px;fill:#52606D">A,(n)</text>
+  <text x="44" y="352" class="ms" xml:space="preserve" text-anchor="end">8x</text>
+  <rect x="52" y="332" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="80.3" y="345" class="ms" xml:space="preserve" text-anchor="middle">MV</text>
+  <text x="80.3" y="357" text-anchor="middle" style="font-size:9px;fill:#52606D">A,(n)</text>
+  <rect x="108.6" y="332" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="136.9" y="345" class="ms" xml:space="preserve" text-anchor="middle">MV</text>
+  <text x="136.9" y="357" text-anchor="middle" style="font-size:9px;fill:#52606D">IL,(n)</text>
+  <rect x="165.2" y="332" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="193.5" y="345" class="ms" xml:space="preserve" text-anchor="middle">MV</text>
+  <text x="193.5" y="357" text-anchor="middle" style="font-size:9px;fill:#52606D">BA,(n)</text>
+  <rect x="221.8" y="332" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="250.1" y="345" class="ms" xml:space="preserve" text-anchor="middle">MV</text>
+  <text x="250.1" y="357" text-anchor="middle" style="font-size:9px;fill:#52606D">I,(n)</text>
+  <rect x="278.4" y="332" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="306.7" y="345" class="ms" xml:space="preserve" text-anchor="middle">MV</text>
+  <text x="306.7" y="357" text-anchor="middle" style="font-size:9px;fill:#52606D">X,(n)</text>
+  <rect x="335" y="332" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="363.3" y="345" class="ms" xml:space="preserve" text-anchor="middle">MV</text>
+  <text x="363.3" y="357" text-anchor="middle" style="font-size:9px;fill:#52606D">Y,(n)</text>
+  <rect x="391.6" y="332" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="419.9" y="345" class="ms" xml:space="preserve" text-anchor="middle">MV</text>
+  <text x="419.9" y="357" text-anchor="middle" style="font-size:9px;fill:#52606D">U,(n)</text>
+  <rect x="448.2" y="332" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="476.5" y="345" class="ms" xml:space="preserve" text-anchor="middle">MV</text>
+  <text x="476.5" y="357" text-anchor="middle" style="font-size:9px;fill:#52606D">S,(n)</text>
+  <rect x="504.8" y="332" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="533.1" y="345" class="ms" xml:space="preserve" text-anchor="middle">MV</text>
+  <text x="533.1" y="357" text-anchor="middle" style="font-size:9px;fill:#52606D">A,[lmn]</text>
+  <rect x="561.4" y="332" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="589.7" y="345" class="ms" xml:space="preserve" text-anchor="middle">MV</text>
+  <text x="589.7" y="357" text-anchor="middle" style="font-size:9px;fill:#52606D">IL,[lmn]</text>
+  <rect x="618" y="332" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="646.3" y="345" class="ms" xml:space="preserve" text-anchor="middle">MV</text>
+  <text x="646.3" y="357" text-anchor="middle" style="font-size:9px;fill:#52606D">BA,[lmn]</text>
+  <rect x="674.6" y="332" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="702.9" y="345" class="ms" xml:space="preserve" text-anchor="middle">MV</text>
+  <text x="702.9" y="357" text-anchor="middle" style="font-size:9px;fill:#52606D">I,[lmn]</text>
+  <rect x="731.2" y="332" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="759.5" y="345" class="ms" xml:space="preserve" text-anchor="middle">MV</text>
+  <text x="759.5" y="357" text-anchor="middle" style="font-size:9px;fill:#52606D">X,[lmn]</text>
+  <rect x="787.8" y="332" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="816.1" y="345" class="ms" xml:space="preserve" text-anchor="middle">MV</text>
+  <text x="816.1" y="357" text-anchor="middle" style="font-size:9px;fill:#52606D">Y,[lmn]</text>
+  <rect x="844.4" y="332" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="872.7" y="345" class="ms" xml:space="preserve" text-anchor="middle">MV</text>
+  <text x="872.7" y="357" text-anchor="middle" style="font-size:9px;fill:#52606D">U,[lmn]</text>
+  <rect x="901" y="332" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="929.3" y="345" class="ms" xml:space="preserve" text-anchor="middle">MV</text>
+  <text x="929.3" y="357" text-anchor="middle" style="font-size:9px;fill:#52606D">S,[lmn]</text>
+  <text x="44" y="382" class="ms" xml:space="preserve" text-anchor="end">9x</text>
+  <rect x="52" y="362" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="80.3" y="375" class="ms" xml:space="preserve" text-anchor="middle">MV</text>
+  <text x="80.3" y="387" text-anchor="middle" style="font-size:9px;fill:#52606D">A,[r3]</text>
+  <rect x="108.6" y="362" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="136.9" y="375" class="ms" xml:space="preserve" text-anchor="middle">MV</text>
+  <text x="136.9" y="387" text-anchor="middle" style="font-size:9px;fill:#52606D">IL,[r3]</text>
+  <rect x="165.2" y="362" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="193.5" y="375" class="ms" xml:space="preserve" text-anchor="middle">MV</text>
+  <text x="193.5" y="387" text-anchor="middle" style="font-size:9px;fill:#52606D">BA,[r3]</text>
+  <rect x="221.8" y="362" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="250.1" y="375" class="ms" xml:space="preserve" text-anchor="middle">MV</text>
+  <text x="250.1" y="387" text-anchor="middle" style="font-size:9px;fill:#52606D">I,[r3]</text>
+  <rect x="278.4" y="362" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="306.7" y="375" class="ms" xml:space="preserve" text-anchor="middle">MV</text>
+  <text x="306.7" y="387" text-anchor="middle" style="font-size:9px;fill:#52606D">X,[r3]</text>
+  <rect x="335" y="362" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="363.3" y="375" class="ms" xml:space="preserve" text-anchor="middle">MV</text>
+  <text x="363.3" y="387" text-anchor="middle" style="font-size:9px;fill:#52606D">Y,[r3]</text>
+  <rect x="391.6" y="362" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="419.9" y="375" class="ms" xml:space="preserve" text-anchor="middle">MV</text>
+  <text x="419.9" y="387" text-anchor="middle" style="font-size:9px;fill:#52606D">U,[r3]</text>
+  <rect x="448.2" y="362" width="56.6" height="30" rx="0" fill="#FDECEA" stroke="#C0392B" stroke-width="0.7"/>
+  <text x="476.5" y="375" class="ms" xml:space="preserve" text-anchor="middle">SC</text>
+  <rect x="504.8" y="362" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="533.1" y="375" class="ms" xml:space="preserve" text-anchor="middle">MV</text>
+  <text x="533.1" y="387" text-anchor="middle" style="font-size:9px;fill:#52606D">A,[(n)]</text>
+  <rect x="561.4" y="362" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="589.7" y="375" class="ms" xml:space="preserve" text-anchor="middle">MV</text>
+  <text x="589.7" y="387" text-anchor="middle" style="font-size:9px;fill:#52606D">IL,[(n)]</text>
+  <rect x="618" y="362" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="646.3" y="375" class="ms" xml:space="preserve" text-anchor="middle">MV</text>
+  <text x="646.3" y="387" text-anchor="middle" style="font-size:9px;fill:#52606D">BA,[(n)]</text>
+  <rect x="674.6" y="362" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="702.9" y="375" class="ms" xml:space="preserve" text-anchor="middle">MV</text>
+  <text x="702.9" y="387" text-anchor="middle" style="font-size:9px;fill:#52606D">I,[(n)]</text>
+  <rect x="731.2" y="362" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="759.5" y="375" class="ms" xml:space="preserve" text-anchor="middle">MV</text>
+  <text x="759.5" y="387" text-anchor="middle" style="font-size:9px;fill:#52606D">X,[(n)]</text>
+  <rect x="787.8" y="362" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="816.1" y="375" class="ms" xml:space="preserve" text-anchor="middle">MV</text>
+  <text x="816.1" y="387" text-anchor="middle" style="font-size:9px;fill:#52606D">Y,[(n)]</text>
+  <rect x="844.4" y="362" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="872.7" y="375" class="ms" xml:space="preserve" text-anchor="middle">MV</text>
+  <text x="872.7" y="387" text-anchor="middle" style="font-size:9px;fill:#52606D">U,[(n)]</text>
+  <rect x="901" y="362" width="56.6" height="30" rx="0" fill="#FDECEA" stroke="#C0392B" stroke-width="0.7"/>
+  <text x="929.3" y="375" class="ms" xml:space="preserve" text-anchor="middle">RC</text>
+  <text x="44" y="412" class="ms" xml:space="preserve" text-anchor="end">Ax</text>
+  <rect x="52" y="392" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="80.3" y="405" class="ms" xml:space="preserve" text-anchor="middle">MV</text>
+  <text x="80.3" y="417" text-anchor="middle" style="font-size:9px;fill:#52606D">(n),A</text>
+  <rect x="108.6" y="392" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="136.9" y="405" class="ms" xml:space="preserve" text-anchor="middle">MV</text>
+  <text x="136.9" y="417" text-anchor="middle" style="font-size:9px;fill:#52606D">(n),IL</text>
+  <rect x="165.2" y="392" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="193.5" y="405" class="ms" xml:space="preserve" text-anchor="middle">MV</text>
+  <text x="193.5" y="417" text-anchor="middle" style="font-size:9px;fill:#52606D">(n),BA</text>
+  <rect x="221.8" y="392" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="250.1" y="405" class="ms" xml:space="preserve" text-anchor="middle">MV</text>
+  <text x="250.1" y="417" text-anchor="middle" style="font-size:9px;fill:#52606D">(n),I</text>
+  <rect x="278.4" y="392" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="306.7" y="405" class="ms" xml:space="preserve" text-anchor="middle">MV</text>
+  <text x="306.7" y="417" text-anchor="middle" style="font-size:9px;fill:#52606D">(n),X</text>
+  <rect x="335" y="392" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="363.3" y="405" class="ms" xml:space="preserve" text-anchor="middle">MV</text>
+  <text x="363.3" y="417" text-anchor="middle" style="font-size:9px;fill:#52606D">(n),Y</text>
+  <rect x="391.6" y="392" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="419.9" y="405" class="ms" xml:space="preserve" text-anchor="middle">MV</text>
+  <text x="419.9" y="417" text-anchor="middle" style="font-size:9px;fill:#52606D">(n),U</text>
+  <rect x="448.2" y="392" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="476.5" y="405" class="ms" xml:space="preserve" text-anchor="middle">MV</text>
+  <text x="476.5" y="417" text-anchor="middle" style="font-size:9px;fill:#52606D">(n),S</text>
+  <rect x="504.8" y="392" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="533.1" y="405" class="ms" xml:space="preserve" text-anchor="middle">MV</text>
+  <text x="533.1" y="417" text-anchor="middle" style="font-size:9px;fill:#52606D">[lmn],A</text>
+  <rect x="561.4" y="392" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="589.7" y="405" class="ms" xml:space="preserve" text-anchor="middle">MV</text>
+  <text x="589.7" y="417" text-anchor="middle" style="font-size:9px;fill:#52606D">[lmn],IL</text>
+  <rect x="618" y="392" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="646.3" y="405" class="ms" xml:space="preserve" text-anchor="middle">MV</text>
+  <text x="646.3" y="417" text-anchor="middle" style="font-size:9px;fill:#52606D">[lmn],BA</text>
+  <rect x="674.6" y="392" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="702.9" y="405" class="ms" xml:space="preserve" text-anchor="middle">MV</text>
+  <text x="702.9" y="417" text-anchor="middle" style="font-size:9px;fill:#52606D">[lmn],I</text>
+  <rect x="731.2" y="392" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="759.5" y="405" class="ms" xml:space="preserve" text-anchor="middle">MV</text>
+  <text x="759.5" y="417" text-anchor="middle" style="font-size:9px;fill:#52606D">[lmn],X</text>
+  <rect x="787.8" y="392" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="816.1" y="405" class="ms" xml:space="preserve" text-anchor="middle">MV</text>
+  <text x="816.1" y="417" text-anchor="middle" style="font-size:9px;fill:#52606D">[lmn],Y</text>
+  <rect x="844.4" y="392" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="872.7" y="405" class="ms" xml:space="preserve" text-anchor="middle">MV</text>
+  <text x="872.7" y="417" text-anchor="middle" style="font-size:9px;fill:#52606D">[lmn],U</text>
+  <rect x="901" y="392" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="929.3" y="405" class="ms" xml:space="preserve" text-anchor="middle">MV</text>
+  <text x="929.3" y="417" text-anchor="middle" style="font-size:9px;fill:#52606D">[lmn],S</text>
+  <text x="44" y="442" class="ms" xml:space="preserve" text-anchor="end">Bx</text>
+  <rect x="52" y="422" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="80.3" y="435" class="ms" xml:space="preserve" text-anchor="middle">MV</text>
+  <text x="80.3" y="447" text-anchor="middle" style="font-size:9px;fill:#52606D">[r3],A</text>
+  <rect x="108.6" y="422" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="136.9" y="435" class="ms" xml:space="preserve" text-anchor="middle">MV</text>
+  <text x="136.9" y="447" text-anchor="middle" style="font-size:9px;fill:#52606D">[r3],IL</text>
+  <rect x="165.2" y="422" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="193.5" y="435" class="ms" xml:space="preserve" text-anchor="middle">MV</text>
+  <text x="193.5" y="447" text-anchor="middle" style="font-size:9px;fill:#52606D">[r3],BA</text>
+  <rect x="221.8" y="422" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="250.1" y="435" class="ms" xml:space="preserve" text-anchor="middle">MV</text>
+  <text x="250.1" y="447" text-anchor="middle" style="font-size:9px;fill:#52606D">[r3],I</text>
+  <rect x="278.4" y="422" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="306.7" y="435" class="ms" xml:space="preserve" text-anchor="middle">MV</text>
+  <text x="306.7" y="447" text-anchor="middle" style="font-size:9px;fill:#52606D">[r3],X</text>
+  <rect x="335" y="422" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="363.3" y="435" class="ms" xml:space="preserve" text-anchor="middle">MV</text>
+  <text x="363.3" y="447" text-anchor="middle" style="font-size:9px;fill:#52606D">[r3],Y</text>
+  <rect x="391.6" y="422" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="419.9" y="435" class="ms" xml:space="preserve" text-anchor="middle">MV</text>
+  <text x="419.9" y="447" text-anchor="middle" style="font-size:9px;fill:#52606D">[r3],U</text>
+  <rect x="448.2" y="422" width="56.6" height="30" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.7"/>
+  <text x="476.5" y="435" class="ms" xml:space="preserve" text-anchor="middle">CMP</text>
+  <text x="476.5" y="447" text-anchor="middle" style="font-size:9px;fill:#52606D">(m),(n)</text>
+  <rect x="504.8" y="422" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="533.1" y="435" class="ms" xml:space="preserve" text-anchor="middle">MV</text>
+  <text x="533.1" y="447" text-anchor="middle" style="font-size:9px;fill:#52606D">[(n)],A</text>
+  <rect x="561.4" y="422" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="589.7" y="435" class="ms" xml:space="preserve" text-anchor="middle">MV</text>
+  <text x="589.7" y="447" text-anchor="middle" style="font-size:9px;fill:#52606D">[(n)],IL</text>
+  <rect x="618" y="422" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="646.3" y="435" class="ms" xml:space="preserve" text-anchor="middle">MV</text>
+  <text x="646.3" y="447" text-anchor="middle" style="font-size:9px;fill:#52606D">[(n)],BA</text>
+  <rect x="674.6" y="422" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="702.9" y="435" class="ms" xml:space="preserve" text-anchor="middle">MV</text>
+  <text x="702.9" y="447" text-anchor="middle" style="font-size:9px;fill:#52606D">[(n)],I</text>
+  <rect x="731.2" y="422" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="759.5" y="435" class="ms" xml:space="preserve" text-anchor="middle">MV</text>
+  <text x="759.5" y="447" text-anchor="middle" style="font-size:9px;fill:#52606D">[(n)],X</text>
+  <rect x="787.8" y="422" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="816.1" y="435" class="ms" xml:space="preserve" text-anchor="middle">MV</text>
+  <text x="816.1" y="447" text-anchor="middle" style="font-size:9px;fill:#52606D">[(n)],Y</text>
+  <rect x="844.4" y="422" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="872.7" y="435" class="ms" xml:space="preserve" text-anchor="middle">MV</text>
+  <text x="872.7" y="447" text-anchor="middle" style="font-size:9px;fill:#52606D">[(n)],U</text>
+  <rect x="901" y="422" width="56.6" height="30" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="0.7"/>
+  <text x="929.3" y="441" class="s" xml:space="preserve" text-anchor="middle">未使用</text>
+  <text x="44" y="472" class="ms" xml:space="preserve" text-anchor="end">Cx</text>
+  <rect x="52" y="452" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="80.3" y="465" class="ms" xml:space="preserve" text-anchor="middle">EX</text>
+  <text x="80.3" y="477" text-anchor="middle" style="font-size:9px;fill:#52606D">(m),(n)</text>
+  <rect x="108.6" y="452" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="136.9" y="465" class="ms" xml:space="preserve" text-anchor="middle">EXW</text>
+  <text x="136.9" y="477" text-anchor="middle" style="font-size:9px;fill:#52606D">(m),(n)</text>
+  <rect x="165.2" y="452" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="193.5" y="465" class="ms" xml:space="preserve" text-anchor="middle">EXP</text>
+  <text x="193.5" y="477" text-anchor="middle" style="font-size:9px;fill:#52606D">(m),(n)</text>
+  <rect x="221.8" y="452" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="250.1" y="465" class="ms" xml:space="preserve" text-anchor="middle">EXL</text>
+  <text x="250.1" y="477" text-anchor="middle" style="font-size:9px;fill:#52606D">(m),(n)</text>
+  <rect x="278.4" y="452" width="56.6" height="30" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.7"/>
+  <text x="306.7" y="465" class="ms" xml:space="preserve" text-anchor="middle">DADL</text>
+  <text x="306.7" y="477" text-anchor="middle" style="font-size:9px;fill:#52606D">(m),(n)</text>
+  <rect x="335" y="452" width="56.6" height="30" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.7"/>
+  <text x="363.3" y="465" class="ms" xml:space="preserve" text-anchor="middle">DADL</text>
+  <text x="363.3" y="477" text-anchor="middle" style="font-size:9px;fill:#52606D">(n),A</text>
+  <rect x="391.6" y="452" width="56.6" height="30" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.7"/>
+  <text x="419.9" y="465" class="ms" xml:space="preserve" text-anchor="middle">CMPW</text>
+  <text x="419.9" y="477" text-anchor="middle" style="font-size:9px;fill:#52606D">(m),(n)</text>
+  <rect x="448.2" y="452" width="56.6" height="30" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.7"/>
+  <text x="476.5" y="465" class="ms" xml:space="preserve" text-anchor="middle">CMPP</text>
+  <text x="476.5" y="477" text-anchor="middle" style="font-size:9px;fill:#52606D">(m),(n)</text>
+  <rect x="504.8" y="452" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="533.1" y="465" class="ms" xml:space="preserve" text-anchor="middle">MV</text>
+  <text x="533.1" y="477" text-anchor="middle" style="font-size:9px;fill:#52606D">(m),(n)</text>
+  <rect x="561.4" y="452" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="589.7" y="465" class="ms" xml:space="preserve" text-anchor="middle">MVW</text>
+  <text x="589.7" y="477" text-anchor="middle" style="font-size:9px;fill:#52606D">(m),(n)</text>
+  <rect x="618" y="452" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="646.3" y="465" class="ms" xml:space="preserve" text-anchor="middle">MVP</text>
+  <text x="646.3" y="477" text-anchor="middle" style="font-size:9px;fill:#52606D">(m),(n)</text>
+  <rect x="674.6" y="452" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="702.9" y="465" class="ms" xml:space="preserve" text-anchor="middle">MVL</text>
+  <text x="702.9" y="477" text-anchor="middle" style="font-size:9px;fill:#52606D">(m),(n)</text>
+  <rect x="731.2" y="452" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="759.5" y="465" class="ms" xml:space="preserve" text-anchor="middle">MV</text>
+  <text x="759.5" y="477" text-anchor="middle" style="font-size:9px;fill:#52606D">(m),n</text>
+  <rect x="787.8" y="452" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="816.1" y="465" class="ms" xml:space="preserve" text-anchor="middle">MVW</text>
+  <text x="816.1" y="477" text-anchor="middle" style="font-size:9px;fill:#52606D">(l),mn</text>
+  <rect x="844.4" y="452" width="56.6" height="30" rx="0" fill="#FDECEA" stroke="#C0392B" stroke-width="0.7"/>
+  <text x="872.7" y="465" class="ms" xml:space="preserve" text-anchor="middle">TCL</text>
+  <rect x="901" y="452" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="929.3" y="465" class="ms" xml:space="preserve" text-anchor="middle">MVLD</text>
+  <text x="929.3" y="477" text-anchor="middle" style="font-size:9px;fill:#52606D">(m),(n)</text>
+  <text x="44" y="502" class="ms" xml:space="preserve" text-anchor="end">Dx</text>
+  <rect x="52" y="482" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="80.3" y="495" class="ms" xml:space="preserve" text-anchor="middle">MV</text>
+  <text x="80.3" y="507" text-anchor="middle" style="font-size:9px;fill:#52606D">(k),[lmn]</text>
+  <rect x="108.6" y="482" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="136.9" y="495" class="ms" xml:space="preserve" text-anchor="middle">MVW</text>
+  <text x="136.9" y="507" text-anchor="middle" style="font-size:9px;fill:#52606D">(k),[lmn]</text>
+  <rect x="165.2" y="482" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="193.5" y="495" class="ms" xml:space="preserve" text-anchor="middle">MVP</text>
+  <text x="193.5" y="507" text-anchor="middle" style="font-size:9px;fill:#52606D">(k),[lmn]</text>
+  <rect x="221.8" y="482" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="250.1" y="495" class="ms" xml:space="preserve" text-anchor="middle">MVL</text>
+  <text x="250.1" y="507" text-anchor="middle" style="font-size:9px;fill:#52606D">(k),[lmn]</text>
+  <rect x="278.4" y="482" width="56.6" height="30" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.7"/>
+  <text x="306.7" y="495" class="ms" xml:space="preserve" text-anchor="middle">DSBL</text>
+  <text x="306.7" y="507" text-anchor="middle" style="font-size:9px;fill:#52606D">(m),(n)</text>
+  <rect x="335" y="482" width="56.6" height="30" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.7"/>
+  <text x="363.3" y="495" class="ms" xml:space="preserve" text-anchor="middle">DSBL</text>
+  <text x="363.3" y="507" text-anchor="middle" style="font-size:9px;fill:#52606D">(n),A</text>
+  <rect x="391.6" y="482" width="56.6" height="30" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.7"/>
+  <text x="419.9" y="495" class="ms" xml:space="preserve" text-anchor="middle">CMPW</text>
+  <text x="419.9" y="507" text-anchor="middle" style="font-size:9px;fill:#52606D">(m),r2</text>
+  <rect x="448.2" y="482" width="56.6" height="30" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.7"/>
+  <text x="476.5" y="495" class="ms" xml:space="preserve" text-anchor="middle">CMPP</text>
+  <text x="476.5" y="507" text-anchor="middle" style="font-size:9px;fill:#52606D">(m),r3</text>
+  <rect x="504.8" y="482" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="533.1" y="495" class="ms" xml:space="preserve" text-anchor="middle">MV</text>
+  <text x="533.1" y="507" text-anchor="middle" style="font-size:9px;fill:#52606D">[klm],(n)</text>
+  <rect x="561.4" y="482" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="589.7" y="495" class="ms" xml:space="preserve" text-anchor="middle">MVW</text>
+  <text x="589.7" y="507" text-anchor="middle" style="font-size:9px;fill:#52606D">[klm],(n)</text>
+  <rect x="618" y="482" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="646.3" y="495" class="ms" xml:space="preserve" text-anchor="middle">MVP</text>
+  <text x="646.3" y="507" text-anchor="middle" style="font-size:9px;fill:#52606D">[klm],(n)</text>
+  <rect x="674.6" y="482" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="702.9" y="495" class="ms" xml:space="preserve" text-anchor="middle">MVL</text>
+  <text x="702.9" y="507" text-anchor="middle" style="font-size:9px;fill:#52606D">[klm],(n)</text>
+  <rect x="731.2" y="482" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="759.5" y="495" class="ms" xml:space="preserve" text-anchor="middle">MVP</text>
+  <text x="759.5" y="507" text-anchor="middle" style="font-size:9px;fill:#52606D">(k),lmn</text>
+  <rect x="787.8" y="482" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="816.1" y="495" class="ms" xml:space="preserve" text-anchor="middle">EX</text>
+  <text x="816.1" y="507" text-anchor="middle" style="font-size:9px;fill:#52606D">A,B</text>
+  <rect x="844.4" y="482" width="56.6" height="30" rx="0" fill="#FDECEA" stroke="#C0392B" stroke-width="0.7"/>
+  <text x="872.7" y="495" class="ms" xml:space="preserve" text-anchor="middle">HALT</text>
+  <rect x="901" y="482" width="56.6" height="30" rx="0" fill="#FDECEA" stroke="#C0392B" stroke-width="0.7"/>
+  <text x="929.3" y="495" class="ms" xml:space="preserve" text-anchor="middle">OFF</text>
+  <text x="44" y="532" class="ms" xml:space="preserve" text-anchor="end">Ex</text>
+  <rect x="52" y="512" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="80.3" y="525" class="ms" xml:space="preserve" text-anchor="middle">MV</text>
+  <text x="80.3" y="537" text-anchor="middle" style="font-size:9px;fill:#52606D">(n),[r3]</text>
+  <rect x="108.6" y="512" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="136.9" y="525" class="ms" xml:space="preserve" text-anchor="middle">MVW</text>
+  <text x="136.9" y="537" text-anchor="middle" style="font-size:9px;fill:#52606D">(n),[r3]</text>
+  <rect x="165.2" y="512" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="193.5" y="525" class="ms" xml:space="preserve" text-anchor="middle">MVP</text>
+  <text x="193.5" y="537" text-anchor="middle" style="font-size:9px;fill:#52606D">(n),[r3]</text>
+  <rect x="221.8" y="512" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="250.1" y="525" class="ms" xml:space="preserve" text-anchor="middle">MVL</text>
+  <text x="250.1" y="537" text-anchor="middle" style="font-size:9px;fill:#52606D">(n),[r3++]</text>
+  <rect x="278.4" y="512" width="56.6" height="30" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.7"/>
+  <text x="306.7" y="525" class="ms" xml:space="preserve" text-anchor="middle">ROR</text>
+  <text x="306.7" y="537" text-anchor="middle" style="font-size:9px;fill:#52606D">A</text>
+  <rect x="335" y="512" width="56.6" height="30" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.7"/>
+  <text x="363.3" y="525" class="ms" xml:space="preserve" text-anchor="middle">ROR</text>
+  <text x="363.3" y="537" text-anchor="middle" style="font-size:9px;fill:#52606D">(n)</text>
+  <rect x="391.6" y="512" width="56.6" height="30" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.7"/>
+  <text x="419.9" y="525" class="ms" xml:space="preserve" text-anchor="middle">ROL</text>
+  <text x="419.9" y="537" text-anchor="middle" style="font-size:9px;fill:#52606D">A</text>
+  <rect x="448.2" y="512" width="56.6" height="30" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.7"/>
+  <text x="476.5" y="525" class="ms" xml:space="preserve" text-anchor="middle">ROL</text>
+  <text x="476.5" y="537" text-anchor="middle" style="font-size:9px;fill:#52606D">(n)</text>
+  <rect x="504.8" y="512" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="533.1" y="525" class="ms" xml:space="preserve" text-anchor="middle">MV</text>
+  <text x="533.1" y="537" text-anchor="middle" style="font-size:9px;fill:#52606D">[r3],(n)</text>
+  <rect x="561.4" y="512" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="589.7" y="525" class="ms" xml:space="preserve" text-anchor="middle">MVW</text>
+  <text x="589.7" y="537" text-anchor="middle" style="font-size:9px;fill:#52606D">[r3],(n)</text>
+  <rect x="618" y="512" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="646.3" y="525" class="ms" xml:space="preserve" text-anchor="middle">MVP</text>
+  <text x="646.3" y="537" text-anchor="middle" style="font-size:9px;fill:#52606D">[r3],(n)</text>
+  <rect x="674.6" y="512" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="702.9" y="525" class="ms" xml:space="preserve" text-anchor="middle">MVL</text>
+  <text x="702.9" y="537" text-anchor="middle" style="font-size:9px;fill:#52606D">[r3++],(n)</text>
+  <rect x="731.2" y="512" width="56.6" height="30" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.7"/>
+  <text x="759.5" y="525" class="ms" xml:space="preserve" text-anchor="middle">DSLL</text>
+  <text x="759.5" y="537" text-anchor="middle" style="font-size:9px;fill:#52606D">(n)</text>
+  <rect x="787.8" y="512" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="816.1" y="525" class="ms" xml:space="preserve" text-anchor="middle">EX</text>
+  <text x="816.1" y="537" text-anchor="middle" style="font-size:9px;fill:#52606D">r2,r2&#x27;</text>
+  <rect x="844.4" y="512" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="872.7" y="525" class="ms" xml:space="preserve" text-anchor="middle">SWAP</text>
+  <text x="872.7" y="537" text-anchor="middle" style="font-size:9px;fill:#52606D">A</text>
+  <rect x="901" y="512" width="56.6" height="30" rx="0" fill="#FDECEA" stroke="#C0392B" stroke-width="0.7"/>
+  <text x="929.3" y="525" class="ms" xml:space="preserve" text-anchor="middle">WAIT</text>
+  <text x="44" y="562" class="ms" xml:space="preserve" text-anchor="end">Fx</text>
+  <rect x="52" y="542" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="80.3" y="555" class="ms" xml:space="preserve" text-anchor="middle">MV</text>
+  <text x="80.3" y="567" text-anchor="middle" style="font-size:9px;fill:#52606D">(m),[(n)]</text>
+  <rect x="108.6" y="542" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="136.9" y="555" class="ms" xml:space="preserve" text-anchor="middle">MVW</text>
+  <text x="136.9" y="567" text-anchor="middle" style="font-size:9px;fill:#52606D">(m),[(n)]</text>
+  <rect x="165.2" y="542" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="193.5" y="555" class="ms" xml:space="preserve" text-anchor="middle">MVP</text>
+  <text x="193.5" y="567" text-anchor="middle" style="font-size:9px;fill:#52606D">(m),[(n)]</text>
+  <rect x="221.8" y="542" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="250.1" y="555" class="ms" xml:space="preserve" text-anchor="middle">MVL</text>
+  <text x="250.1" y="567" text-anchor="middle" style="font-size:9px;fill:#52606D">(m),[(n)]</text>
+  <rect x="278.4" y="542" width="56.6" height="30" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.7"/>
+  <text x="306.7" y="555" class="ms" xml:space="preserve" text-anchor="middle">SHR</text>
+  <text x="306.7" y="567" text-anchor="middle" style="font-size:9px;fill:#52606D">A</text>
+  <rect x="335" y="542" width="56.6" height="30" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.7"/>
+  <text x="363.3" y="555" class="ms" xml:space="preserve" text-anchor="middle">SHR</text>
+  <text x="363.3" y="567" text-anchor="middle" style="font-size:9px;fill:#52606D">(n)</text>
+  <rect x="391.6" y="542" width="56.6" height="30" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.7"/>
+  <text x="419.9" y="555" class="ms" xml:space="preserve" text-anchor="middle">SHL</text>
+  <text x="419.9" y="567" text-anchor="middle" style="font-size:9px;fill:#52606D">A</text>
+  <rect x="448.2" y="542" width="56.6" height="30" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.7"/>
+  <text x="476.5" y="555" class="ms" xml:space="preserve" text-anchor="middle">SHL</text>
+  <text x="476.5" y="567" text-anchor="middle" style="font-size:9px;fill:#52606D">(n)</text>
+  <rect x="504.8" y="542" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="533.1" y="555" class="ms" xml:space="preserve" text-anchor="middle">MV</text>
+  <text x="533.1" y="567" text-anchor="middle" style="font-size:9px;fill:#52606D">[(l)±m],(n)</text>
+  <rect x="561.4" y="542" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="589.7" y="555" class="ms" xml:space="preserve" text-anchor="middle">MVW</text>
+  <text x="589.7" y="567" text-anchor="middle" style="font-size:9px;fill:#52606D">[(l)±m],(n)</text>
+  <rect x="618" y="542" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="646.3" y="555" class="ms" xml:space="preserve" text-anchor="middle">MVP</text>
+  <text x="646.3" y="567" text-anchor="middle" style="font-size:9px;fill:#52606D">[(l)±m],(n)</text>
+  <rect x="674.6" y="542" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="702.9" y="555" class="ms" xml:space="preserve" text-anchor="middle">MVL</text>
+  <text x="702.9" y="567" text-anchor="middle" style="font-size:9px;fill:#52606D">[(l)±m],(n)</text>
+  <rect x="731.2" y="542" width="56.6" height="30" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.7"/>
+  <text x="759.5" y="555" class="ms" xml:space="preserve" text-anchor="middle">DSRL</text>
+  <text x="759.5" y="567" text-anchor="middle" style="font-size:9px;fill:#52606D">(n)</text>
+  <rect x="787.8" y="542" width="56.6" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.7"/>
+  <text x="816.1" y="555" class="ms" xml:space="preserve" text-anchor="middle">MV</text>
+  <text x="816.1" y="567" text-anchor="middle" style="font-size:9px;fill:#52606D">r,r&#x27;</text>
+  <rect x="844.4" y="542" width="56.6" height="30" rx="0" fill="#FDECEA" stroke="#C0392B" stroke-width="0.7"/>
+  <text x="872.7" y="555" class="ms" xml:space="preserve" text-anchor="middle">IR</text>
+  <rect x="901" y="542" width="56.6" height="30" rx="0" fill="#FDECEA" stroke="#C0392B" stroke-width="0.7"/>
+  <text x="929.3" y="555" class="ms" xml:space="preserve" text-anchor="middle">RESET</text>
+  <rect x="52" y="594" width="14" height="14" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="72" y="606" class="s" xml:space="preserve">転送、交換</text>
+  <rect x="182" y="594" width="14" height="14" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="202" y="606" class="s" xml:space="preserve">演算、比較</text>
+  <rect x="312" y="594" width="14" height="14" rx="3" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="332" y="606" class="s" xml:space="preserve">分岐、呼び出し</text>
+  <rect x="462" y="594" width="14" height="14" rx="3" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="482" y="606" class="s" xml:space="preserve">スタック</text>
+  <rect x="582" y="594" width="14" height="14" rx="3" fill="#FDECEA" stroke="#C0392B" stroke-width="1.2"/>
+  <text x="602" y="606" class="s" xml:space="preserve">制御、SC、RC</text>
+  <rect x="722" y="594" width="14" height="14" rx="3" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="742" y="606" class="s" xml:space="preserve">PRE</text>
+  <rect x="812" y="594" width="14" height="14" rx="3" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.2"/>
+  <text x="832" y="606" class="s" xml:space="preserve">未使用</text>
+</svg>

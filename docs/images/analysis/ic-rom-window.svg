@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 500" width="980" height="500" role="img" aria-labelledby="t d">
+  <title id="t">4 Mbit の ROM と CPU のウィンドウ（推定）</title>
+  <desc id="d">4 Mbit の ROM の 20000h〜3FFFFh と 40000h〜7FFFFh が、CPU の CE3 のウィンドウと CE2 のウィンドウに見える様子の図。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .mb { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; font-weight: 700; }
+  </style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#52606D"/></marker><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#C0392B"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="499" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h" xml:space="preserve">4 Mbit の ROM と CPU のウィンドウ（推定）</text>
+  <text x="24" y="55" class="sub" xml:space="preserve">CPU の A0〜A18 が ROM の A0〜A18 に入るとしたときの対応</text>
+  <text x="150" y="88" class="b" xml:space="preserve">CPU のアドレス（1 MB）</text>
+  <text x="660" y="88" class="b" xml:space="preserve">ROM の中の位置（512 KB）</text>
+  <rect x="150" y="100" width="180" height="320" rx="2" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <rect x="150" y="140" width="180" height="40" rx="2" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="240" y="165" class="b" xml:space="preserve" text-anchor="middle">CE3 のウィンドウ</text>
+  <rect x="150" y="340" width="180" height="80" rx="2" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="240" y="385" class="b" xml:space="preserve" text-anchor="middle">CE2 のウィンドウ</text>
+  <text x="142" y="110" class="ms" xml:space="preserve" text-anchor="end">00000h</text>
+  <text x="142" y="145" class="ms" xml:space="preserve" text-anchor="end">20000h</text>
+  <text x="142" y="185" class="ms" xml:space="preserve" text-anchor="end">40000h</text>
+  <text x="142" y="345" class="ms" xml:space="preserve" text-anchor="end">C0000h</text>
+  <text x="142" y="420" class="ms" xml:space="preserve" text-anchor="end">FFFFFh</text>
+  <rect x="660" y="100" width="180" height="80" rx="2" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="750" y="145" class="s" xml:space="preserve" text-anchor="middle">ウィンドウからは見えない</text>
+  <rect x="660" y="180" width="180" height="80" rx="2" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="750" y="225" class="b" xml:space="preserve" text-anchor="middle">128 KB</text>
+  <rect x="660" y="260" width="180" height="160" rx="2" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="750" y="345" class="b" xml:space="preserve" text-anchor="middle">256 KB</text>
+  <text x="850" y="110" class="ms" xml:space="preserve">00000h</text>
+  <text x="850" y="185" class="ms" xml:space="preserve">20000h</text>
+  <text x="850" y="265" class="ms" xml:space="preserve">40000h</text>
+  <text x="850" y="419.999" class="ms" xml:space="preserve">7FFFFh</text>
+  <path d="M332 160L658 220" fill="none" stroke="#52606D" stroke-width="1.6" marker-end="url(#a)" marker-start="url(#a)"/>
+  <path d="M332 380L658 340" fill="none" stroke="#52606D" stroke-width="1.6" marker-end="url(#a)" marker-start="url(#a)"/>
+  <rect x="24" y="440" width="932" height="34" rx="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="36" y="461" class="s" xml:space="preserve" style="fill:#1F2933">2 つのウィンドウを合わせると 128 KB + 256 KB = 384 KB。E500S、E650、U6000 のイメージの大きさと同じです。</text>
+</svg>

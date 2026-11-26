@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 420" width="980" height="420" role="img" aria-labelledby="t d">
+  <title id="t">G: ドライブの 2 つの形式</title>
+  <desc id="d">形式 A と形式 B の G: ドライブについて、FAT、ディレクトリ、データの位置と大きさを 2 本ずつの帯で示した図。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .lbl { font-size: 12px; fill: #52606D; paint-order: stroke; stroke: #FFFFFF; stroke-width: 4px; stroke-linejoin: round; }
+  </style>
+  <defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#52606D"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="419" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">G: ドライブの 2 つの形式</text>
+  <text x="24" y="55" class="sub">C0000h〜DFFFFh の 128 KB を同じ縮尺で並べた。下は先頭部分の拡大</text>
+  <text x="108" y="108" class="b" text-anchor="end">形式 A</text>
+  <rect x="120" y="80" width="1" height="44" rx="0" fill="#FDECEA" stroke="#C0392B" stroke-width="0.6"/>
+  <rect x="120.551" y="80" width="18.418" height="44" rx="0" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="0.6"/>
+  <rect x="138.969" y="80" width="14.0137" height="44" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.6"/>
+  <rect x="152.982" y="80" width="770.752" height="44" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.6"/>
+  <rect x="923.734" y="80" width="16.2659" height="44" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="0.6"/>
+  <text x="108" y="172" class="b" text-anchor="end">形式 B</text>
+  <rect x="120" y="144" width="1.75171" height="44" rx="0" fill="#FDECEA" stroke="#C0392B" stroke-width="0.6"/>
+  <rect x="121.752" y="144" width="3.20312" height="44" rx="0" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="0.6"/>
+  <rect x="124.955" y="144" width="12.8125" height="44" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.6"/>
+  <rect x="137.767" y="144" width="323.516" height="44" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.6"/>
+  <rect x="461.283" y="144" width="478.717" height="44" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="0.6"/>
+  <text x="520" y="107" class="s" text-anchor="middle">データ　C1498h〜DF5D7h（64 バイト × 1,925）</text>
+  <text x="300" y="171" class="s" text-anchor="middle">データ　C0B18h〜CD517h（256 バイト × 201）</text>
+  <text x="690" y="171" class="s" text-anchor="middle">GRAPH の機械語など</text>
+  <text x="120" y="206" class="ms" xml:space="preserve">C0000h</text>
+  <text x="940" y="206" class="ms" xml:space="preserve" text-anchor="end">DFFFFh</text>
+  <text x="120" y="236" class="b">先頭 1800h バイトの拡大</text>
+  <text x="108" y="278" class="b" text-anchor="end">形式 A</text>
+  <rect x="120" y="250" width="11.7448" height="44" rx="0" fill="#FDECEA" stroke="#C0392B" stroke-width="0.8"/>
+  <rect x="131.745" y="250" width="392.917" height="44" rx="0" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="0.8"/>
+  <rect x="524.661" y="250" width="298.958" height="44" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.8"/>
+  <rect x="823.62" y="250" width="116.38" height="44" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.8"/>
+  <text x="108" y="342" class="b" text-anchor="end">形式 B</text>
+  <rect x="120" y="314" width="37.3698" height="44" rx="0" fill="#FDECEA" stroke="#C0392B" stroke-width="0.8"/>
+  <rect x="157.37" y="314" width="68.3333" height="44" rx="0" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="0.8"/>
+  <rect x="225.703" y="314" width="273.333" height="44" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.8"/>
+  <rect x="499.036" y="314" width="440.964" height="44" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="0.8"/>
+  <text x="135.745" y="277" class="s">FAT C0058h</text>
+  <text x="528.661" y="277" class="s">ルート C0BD8h（70 項目）</text>
+  <text x="827.62" y="277" class="s">データ C1498h</text>
+  <text x="161.37" y="341" class="s">FAT C0118h</text>
+  <text x="229.703" y="341" class="s">ルート C0318h（64 項目）</text>
+  <text x="503.036" y="341" class="s">データ C0B18h</text>
+  <rect x="120" y="385" width="14" height="14" rx="3" fill="#FDECEA" stroke="#C0392B" stroke-width="1.2"/>
+  <text x="140" y="396" class="s">ヘッダなど</text>
+  <rect x="224" y="385" width="14" height="14" rx="3" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="244" y="396" class="s">FAT</text>
+  <rect x="287.8" y="385" width="14" height="14" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="307.8" y="396" class="s">ルートディレクトリ</text>
+  <rect x="439.8" y="385" width="14" height="14" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="459.8" y="396" class="s">データ</text>
+  <rect x="519.8" y="385" width="14" height="14" rx="3" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="539.8" y="396" class="s">G: のファイルの外</text>
+</svg>

@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 304" width="980" height="304" role="img" aria-labelledby="t d">
+  <title id="t">文字を打つときのキーの時間（例）</title>
+  <desc id="d">A と ! を打つときのキーの押下時間</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .lbl { font-size: 12px; fill: #52606D; paint-order: stroke; stroke: #FFFFFF; stroke-width: 4px; stroke-linejoin: round; }
+  </style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#52606D"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="303" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">文字を打つときのキーの時間（例）</text>
+  <text x="24" y="55" class="sub">type で A! を打つ。「!」は SHIFT + Q。1 秒 = 768000 サイクル</text>
+  <text x="24" y="108" class="b">A</text>
+  <path d="M110 120L950 120" fill="none" stroke="#B8C2CC" stroke-width="1"/>
+  <text x="24" y="158" class="b">SHIFT</text>
+  <path d="M110 170L950 170" fill="none" stroke="#B8C2CC" stroke-width="1"/>
+  <text x="24" y="208" class="b">Q</text>
+  <path d="M110 220L950 220" fill="none" stroke="#B8C2CC" stroke-width="1"/>
+  <path d="M110 80L110 234" fill="none" stroke="#B8C2CC" stroke-width="1" stroke-dasharray="5 4"/>
+  <text x="110" y="250" class="ms" xml:space="preserve" text-anchor="start">0</text>
+  <path d="M236 80L236 234" fill="none" stroke="#B8C2CC" stroke-width="1" stroke-dasharray="5 4"/>
+  <text x="236" y="250" class="ms" xml:space="preserve" text-anchor="middle">18000</text>
+  <path d="M404 80L404 234" fill="none" stroke="#B8C2CC" stroke-width="1" stroke-dasharray="5 4"/>
+  <text x="404" y="250" class="ms" xml:space="preserve" text-anchor="middle">42000</text>
+  <path d="M530 80L530 234" fill="none" stroke="#B8C2CC" stroke-width="1" stroke-dasharray="5 4"/>
+  <text x="530" y="250" class="ms" xml:space="preserve" text-anchor="middle">60000</text>
+  <path d="M656 80L656 234" fill="none" stroke="#B8C2CC" stroke-width="1" stroke-dasharray="5 4"/>
+  <text x="656" y="250" class="ms" xml:space="preserve" text-anchor="middle">78000</text>
+  <path d="M824 80L824 234" fill="none" stroke="#B8C2CC" stroke-width="1" stroke-dasharray="5 4"/>
+  <text x="824" y="250" class="ms" xml:space="preserve" text-anchor="middle">102000</text>
+  <path d="M950 80L950 234" fill="none" stroke="#B8C2CC" stroke-width="1" stroke-dasharray="5 4"/>
+  <text x="950" y="250" class="ms" xml:space="preserve" text-anchor="end">120000</text>
+  <rect x="110" y="88" width="126" height="30" rx="2" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="173" y="108" class="ms" xml:space="preserve" text-anchor="middle">押す 18000</text>
+  <text x="320" y="108" class="ms" xml:space="preserve" text-anchor="middle">離して 24000 待つ</text>
+  <rect x="404" y="138" width="420" height="30" rx="2" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="614" y="158" class="ms" xml:space="preserve" text-anchor="middle">押し続ける（Q の前に 18000 待つ）</text>
+  <text x="887" y="158" class="ms" xml:space="preserve" text-anchor="middle">離して 18000</text>
+  <rect x="530" y="188" width="126" height="30" rx="2" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="593" y="208" class="ms" xml:space="preserve" text-anchor="middle">押す 18000</text>
+  <text x="740" y="208" class="ms" xml:space="preserve" text-anchor="middle">離して 24000 待つ</text>
+  <text x="24" y="282" class="s">合計 120000 サイクル = 約 156 ミリ秒。BASIC、MENU、F1 を離した後だけは 200000 サイクル（約 260 ミリ秒）待つ。</text>
+</svg>

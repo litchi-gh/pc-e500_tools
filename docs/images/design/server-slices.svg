@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 404" width="980" height="404" role="img" aria-labelledby="t d">
+  <title id="t">実時間で動かすしくみ</title>
+  <desc id="d">実行ループの流れと、しきい値</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .lbl { font-size: 12px; fill: #52606D; paint-order: stroke; stroke: #FFFFFF; stroke-width: 4px; stroke-linejoin: round; }
+  </style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#52606D"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="403" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">実時間で動かすしくみ</text>
+  <text x="24" y="55" class="sub">時計から「動かすべきサイクル」を計算し、足りない分だけ短い区間で動かす</text>
+  <rect x="24" y="80" width="210" height="70" rx="6" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="129" y="111" class="b" text-anchor="middle">時計（Stopwatch）</text>
+  <text x="129" y="129" class="s" text-anchor="middle">経過秒 × 768000 × 速さ</text>
+  <rect x="24" y="176" width="210" height="70" rx="6" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="129" y="207" class="b" text-anchor="middle">clockCycles</text>
+  <text x="129" y="225" class="s" text-anchor="middle">これまでに動かした数</text>
+  <rect x="286" y="118" width="190" height="84" rx="6" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="381" y="147" class="b" text-anchor="middle">due（遅れ）</text>
+  <text x="381" y="165" class="s" text-anchor="middle">= 上 − 下</text>
+  <text x="381" y="183" class="s" text-anchor="middle">1 回の区間の元</text>
+  <path d="M234 115L286 145" fill="none" stroke="#52606D" stroke-width="1.5" marker-end="url(#a)"/>
+  <path d="M234 211L286 175" fill="none" stroke="#52606D" stroke-width="1.5" marker-end="url(#a)"/>
+  <rect x="530" y="78" width="426" height="52" rx="6" fill="#FDECEA" stroke="#C0392B" stroke-width="1.2"/>
+  <text x="743" y="100" class="b" text-anchor="middle">due &gt; 153600（0.2 秒）</text>
+  <text x="743" y="118" class="s" text-anchor="middle">追いかけるのをやめ、12800（1/60 秒）から</text>
+  <path d="M476 160L500 160L500 104L530 104" fill="none" stroke="#52606D" stroke-width="1.5" marker-end="url(#a)"/>
+  <rect x="530" y="140" width="426" height="52" rx="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="743" y="162" class="b" text-anchor="middle">due &lt; 2000（約 2.6 ミリ秒）</text>
+  <text x="743" y="180" class="s" text-anchor="middle">2 ミリ秒眠って、要求を見に戻る</text>
+  <path d="M476 160L500 160L500 166L530 166" fill="none" stroke="#52606D" stroke-width="1.5" marker-end="url(#a)"/>
+  <rect x="530" y="202" width="426" height="52" rx="6" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="743" y="224" class="b" text-anchor="middle">それ以外</text>
+  <text x="743" y="242" class="s" text-anchor="middle">min(due, 38400 = 1/20 秒) だけ動かす</text>
+  <path d="M476 160L500 160L500 228L530 228" fill="none" stroke="#52606D" stroke-width="1.5" marker-end="url(#a)"/>
+  <text x="24" y="284" class="b">1 回の繰り返し</text>
+  <rect x="24" y="298" width="218" height="54" rx="6" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="133" y="321" class="b" text-anchor="middle">要求をすべて処理</text>
+  <text x="133" y="339" class="s" text-anchor="middle">動作中は待たない</text>
+  <path d="M242 325L262 325" fill="none" stroke="#52606D" stroke-width="1.5" marker-end="url(#a)"/>
+  <rect x="262" y="298" width="218" height="54" rx="6" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="371" y="321" class="b" text-anchor="middle">Slice</text>
+  <text x="371" y="339" class="s" text-anchor="middle">キーの押下、e500_debug_run</text>
+  <path d="M480 325L500 325" fill="none" stroke="#52606D" stroke-width="1.5" marker-end="url(#a)"/>
+  <rect x="500" y="298" width="218" height="54" rx="6" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="609" y="321" class="b" text-anchor="middle">止まったか</text>
+  <text x="609" y="339" class="s" text-anchor="middle">stopped を送る</text>
+  <path d="M718 325L738 325" fill="none" stroke="#52606D" stroke-width="1.5" marker-end="url(#a)"/>
+  <rect x="738" y="298" width="218" height="54" rx="6" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="847" y="321" class="b" text-anchor="middle">画面</text>
+  <text x="847" y="339" class="s" text-anchor="middle">16 ミリ秒以上、変化あり</text>
+  <path d="M847 352L847 376L133 376L133 352" fill="none" stroke="#52606D" stroke-width="1.5" marker-end="url(#a)"/>
+  <text x="490" y="393" class="lbl" text-anchor="middle">繰り返す。止まっているときは、要求を 50 ミリ秒ずつ待つ</text>
+</svg>

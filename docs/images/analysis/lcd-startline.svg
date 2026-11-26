@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 400" width="980" height="400" role="img" aria-labelledby="t d">
+  <title id="t">表示開始ラインと、縦のスクロール</title>
+  <desc id="d">表示開始ラインを 0 と 8 にしたとき、画面の左半分に見える RAM のライン。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .lbl { font-size: 12px; fill: #52606D; paint-order: stroke; stroke: #FFFFFF; stroke-width: 4px; stroke-linejoin: round; }
+  </style>
+  <defs><marker id="a52606D" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#52606D"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="399" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">表示開始ラインと、縦のスクロール</text>
+  <text x="24" y="55" class="sub">画面の左半分（ページ 0〜3 が見えている部分）で考える。RAM は 64 ラインで、63 の次は 0 に戻る</text>
+  <text x="80" y="90" class="b">表示 RAM（L = 0）</text>
+  <rect x="80" y="104" width="130" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="145" y="124" text-anchor="middle">ページ 0</text>
+  <text x="74" y="124" class="ms" xml:space="preserve" text-anchor="end">0〜7</text>
+  <rect x="80" y="134" width="130" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="145" y="154" text-anchor="middle">ページ 1</text>
+  <text x="74" y="154" class="ms" xml:space="preserve" text-anchor="end">8〜15</text>
+  <rect x="80" y="164" width="130" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="145" y="184" text-anchor="middle">ページ 2</text>
+  <text x="74" y="184" class="ms" xml:space="preserve" text-anchor="end">16〜23</text>
+  <rect x="80" y="194" width="130" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="145" y="214" text-anchor="middle">ページ 3</text>
+  <text x="74" y="214" class="ms" xml:space="preserve" text-anchor="end">24〜31</text>
+  <rect x="80" y="224" width="130" height="30" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="145" y="244" text-anchor="middle">ページ 4</text>
+  <text x="74" y="244" class="ms" xml:space="preserve" text-anchor="end">32〜39</text>
+  <rect x="80" y="254" width="130" height="30" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="145" y="274" text-anchor="middle">ページ 5</text>
+  <text x="74" y="274" class="ms" xml:space="preserve" text-anchor="end">40〜47</text>
+  <rect x="80" y="284" width="130" height="30" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="145" y="304" text-anchor="middle">ページ 6</text>
+  <text x="74" y="304" class="ms" xml:space="preserve" text-anchor="end">48〜55</text>
+  <rect x="80" y="314" width="130" height="30" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="145" y="334" text-anchor="middle">ページ 7</text>
+  <text x="74" y="334" class="ms" xml:space="preserve" text-anchor="end">56〜63</text>
+  <text x="250" y="90" class="b">画面の左半分</text>
+  <rect x="250" y="104" width="200" height="120" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.5"/>
+  <rect x="250" y="104" width="200" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="350" y="124" text-anchor="middle">ページ 0（ライン 0〜7）</text>
+  <rect x="250" y="134" width="200" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="350" y="154" text-anchor="middle">ページ 1（ライン 8〜15）</text>
+  <rect x="250" y="164" width="200" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="350" y="184" text-anchor="middle">ページ 2（ライン 16〜23）</text>
+  <rect x="250" y="194" width="200" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="350" y="214" text-anchor="middle">ページ 3（ライン 24〜31）</text>
+  <polyline points="212,164 249,164" fill="none" stroke="#52606D" stroke-width="1.8" marker-end="url(#a52606D)"/>
+  <text x="560" y="90" class="b">表示 RAM（L = 8）</text>
+  <rect x="560" y="104" width="130" height="30" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="625" y="124" text-anchor="middle">ページ 0</text>
+  <text x="554" y="124" class="ms" xml:space="preserve" text-anchor="end">0〜7</text>
+  <rect x="560" y="134" width="130" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="625" y="154" text-anchor="middle">ページ 1</text>
+  <text x="554" y="154" class="ms" xml:space="preserve" text-anchor="end">8〜15</text>
+  <rect x="560" y="164" width="130" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="625" y="184" text-anchor="middle">ページ 2</text>
+  <text x="554" y="184" class="ms" xml:space="preserve" text-anchor="end">16〜23</text>
+  <rect x="560" y="194" width="130" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="625" y="214" text-anchor="middle">ページ 3</text>
+  <text x="554" y="214" class="ms" xml:space="preserve" text-anchor="end">24〜31</text>
+  <rect x="560" y="224" width="130" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="625" y="244" text-anchor="middle">ページ 4</text>
+  <text x="554" y="244" class="ms" xml:space="preserve" text-anchor="end">32〜39</text>
+  <rect x="560" y="254" width="130" height="30" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="625" y="274" text-anchor="middle">ページ 5</text>
+  <text x="554" y="274" class="ms" xml:space="preserve" text-anchor="end">40〜47</text>
+  <rect x="560" y="284" width="130" height="30" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="625" y="304" text-anchor="middle">ページ 6</text>
+  <text x="554" y="304" class="ms" xml:space="preserve" text-anchor="end">48〜55</text>
+  <rect x="560" y="314" width="130" height="30" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="625" y="334" text-anchor="middle">ページ 7</text>
+  <text x="554" y="334" class="ms" xml:space="preserve" text-anchor="end">56〜63</text>
+  <text x="730" y="90" class="b">画面の左半分</text>
+  <rect x="730" y="104" width="200" height="120" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.5"/>
+  <rect x="730" y="104" width="200" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="830" y="124" text-anchor="middle">ページ 1（ライン 8〜15）</text>
+  <rect x="730" y="134" width="200" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="830" y="154" text-anchor="middle">ページ 2（ライン 16〜23）</text>
+  <rect x="730" y="164" width="200" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="830" y="184" text-anchor="middle">ページ 3（ライン 24〜31）</text>
+  <rect x="730" y="194" width="200" height="30" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="830" y="214" text-anchor="middle">ページ 4（ライン 32〜39）</text>
+  <polyline points="692,194 729,164" fill="none" stroke="#52606D" stroke-width="1.8" marker-end="url(#a52606D)"/>
+  <text x="250" y="252" class="m" xml:space="preserve">命令 C0h（L = 0）</text>
+  <text x="250" y="272" class="s">画面の一番上が RAM のライン 0</text>
+  <text x="730" y="252" class="m" xml:space="preserve">命令 C8h（L = 8）</text>
+  <text x="730" y="272" class="s">画面の一番上が RAM のライン 8</text>
+  <text x="730" y="290" class="s">0〜31 の絵が 8 ドット上へ動いて見える</text>
+  <text x="40" y="376">RAM の中身は書き換えない。1 ずつ変えれば 1 ドット単位で動く。同じ RAM の点が、画面では別の y に出ることに注意</text>
+</svg>

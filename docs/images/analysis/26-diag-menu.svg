@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 560" width="980" height="560" role="img" aria-labelledby="t d">
+  <title id="t">診断メニューの構成（8.5）</title>
+  <desc id="d">SHIFT と「,」を押したまま RESET して入る診断メニューの 8 項目と、check list 2 の 6 項目を、RAM への影響で色分けした図。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .lbl { font-size: 12px; fill: #52606D; paint-order: stroke; stroke: #FFFFFF; stroke-width: 4px; stroke-linejoin: round; }
+  </style>
+  <defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#52606D"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="559" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">診断メニューの構成（8.5）</text>
+  <text x="24" y="55" class="sub">赤は RAM の内容が消える、または書き換える項目。灰色は内容や影響が分かっていない項目</text>
+  <rect x="360" y="72" width="260" height="44" rx="6" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="490" y="90.5" class="b" text-anchor="middle">SHIFT と「,」を押したまま RESET</text>
+  <text x="490" y="107.5" class="s" text-anchor="middle">ON は押さない</text>
+  <polyline points="490,116 490,138" fill="none" stroke="#7B8794" stroke-width="1.2" stroke-linejoin="round" marker-end="url(#ar)"/>
+  <rect x="330" y="140" width="320" height="36" rx="6" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1"/>
+  <text x="490" y="163" class="b" text-anchor="middle">Diag Menu（314C7h のループ）</text>
+  <polyline points="490,176 490,196 79,196 79,214" fill="none" stroke="#7B8794" stroke-width="1" stroke-linejoin="round" marker-end="url(#ar)"/>
+  <rect x="24" y="216" width="110" height="62" rx="6" fill="#FDECEA" stroke="#C0392B" stroke-width="1"/>
+  <text x="79" y="243.5" class="b" text-anchor="middle">1  diag</text>
+  <text x="79" y="260.5" class="s" text-anchor="middle">31574h</text>
+  <polyline points="490,176 490,196 196.5,196 196.5,214" fill="none" stroke="#7B8794" stroke-width="1" stroke-linejoin="round" marker-end="url(#ar)"/>
+  <rect x="141.5" y="216" width="110" height="62" rx="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1"/>
+  <text x="196.5" y="243.5" class="b" text-anchor="middle">2  LB</text>
+  <text x="196.5" y="260.5" class="s" text-anchor="middle">31A22h</text>
+  <polyline points="490,176 490,196 314,196 314,214" fill="none" stroke="#7B8794" stroke-width="1" stroke-linejoin="round" marker-end="url(#ar)"/>
+  <rect x="259" y="216" width="110" height="62" rx="6" fill="#FDECEA" stroke="#C0392B" stroke-width="1"/>
+  <text x="314" y="243.5" class="b" text-anchor="middle">3  aging1</text>
+  <text x="314" y="260.5" class="s" text-anchor="middle">31941h</text>
+  <polyline points="490,176 490,196 431.5,196 431.5,214" fill="none" stroke="#7B8794" stroke-width="1" stroke-linejoin="round" marker-end="url(#ar)"/>
+  <rect x="376.5" y="216" width="110" height="62" rx="6" fill="#FDECEA" stroke="#C0392B" stroke-width="1"/>
+  <text x="431.5" y="243.5" class="b" text-anchor="middle">4  aging2</text>
+  <text x="431.5" y="260.5" class="s" text-anchor="middle">3194Dh</text>
+  <polyline points="490,176 490,196 549,196 549,214" fill="none" stroke="#7B8794" stroke-width="1" stroke-linejoin="round" marker-end="url(#ar)"/>
+  <rect x="494" y="216" width="110" height="62" rx="6" fill="#FDECEA" stroke="#C0392B" stroke-width="1"/>
+  <text x="549" y="243.5" class="b" text-anchor="middle">5  RAM</text>
+  <text x="549" y="260.5" class="s" text-anchor="middle">31AA6h</text>
+  <polyline points="490,176 490,196 666.5,196 666.5,214" fill="none" stroke="#7B8794" stroke-width="1" stroke-linejoin="round" marker-end="url(#ar)"/>
+  <rect x="611.5" y="216" width="110" height="62" rx="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1"/>
+  <text x="666.5" y="243.5" class="b" text-anchor="middle">6  FCC</text>
+  <text x="666.5" y="260.5" class="s" text-anchor="middle">3211Ah</text>
+  <polyline points="490,176 490,196 784,196 784,214" fill="none" stroke="#7B8794" stroke-width="1" stroke-linejoin="round" marker-end="url(#ar)"/>
+  <rect x="729" y="216" width="110" height="62" rx="6" fill="#FFF5DF" stroke="#B7791F" stroke-width="1"/>
+  <text x="784" y="243.5" class="b" text-anchor="middle">7  ESD</text>
+  <text x="784" y="260.5" class="s" text-anchor="middle">31F1Ah</text>
+  <polyline points="490,176 490,196 901.5,196 901.5,214" fill="none" stroke="#7B8794" stroke-width="1" stroke-linejoin="round" marker-end="url(#ar)"/>
+  <rect x="846.5" y="216" width="110" height="62" rx="6" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="901.5" y="243.5" class="b" text-anchor="middle">8  diag(menu)</text>
+  <text x="901.5" y="260.5" class="s" text-anchor="middle">318EAh</text>
+  <polyline points="901.5,278 901.5,308 490,308 490,326" fill="none" stroke="#7B8794" stroke-width="1.2" stroke-linejoin="round" marker-end="url(#ar)"/>
+  <rect x="330" y="328" width="320" height="34" rx="6" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1"/>
+  <text x="490" y="350" class="b" text-anchor="middle">check list 2</text>
+  <polyline points="490,362 490,378 104,378 104,396" fill="none" stroke="#7B8794" stroke-width="1" stroke-linejoin="round" marker-end="url(#ar)"/>
+  <rect x="34" y="398" width="140" height="56" rx="6" fill="#E6F6EC" stroke="#2F855A" stroke-width="1"/>
+  <text x="104" y="422.5" class="b" text-anchor="middle">1  LCD check</text>
+  <text x="104" y="439.5" class="s" text-anchor="middle">残った</text>
+  <polyline points="490,362 490,378 258,378 258,396" fill="none" stroke="#7B8794" stroke-width="1" stroke-linejoin="round" marker-end="url(#ar)"/>
+  <rect x="188" y="398" width="140" height="56" rx="6" fill="#E6F6EC" stroke="#2F855A" stroke-width="1"/>
+  <text x="258" y="422.5" class="b" text-anchor="middle">2  ROM check</text>
+  <text x="258" y="439.5" class="s" text-anchor="middle">残った</text>
+  <polyline points="490,362 490,378 412,378 412,396" fill="none" stroke="#7B8794" stroke-width="1" stroke-linejoin="round" marker-end="url(#ar)"/>
+  <rect x="342" y="398" width="140" height="56" rx="6" fill="#FDECEA" stroke="#C0392B" stroke-width="1"/>
+  <text x="412" y="422.5" class="b" text-anchor="middle">3  RAM check</text>
+  <text x="412" y="439.5" class="s" text-anchor="middle">消える</text>
+  <polyline points="490,362 490,378 566,378 566,396" fill="none" stroke="#7B8794" stroke-width="1" stroke-linejoin="round" marker-end="url(#ar)"/>
+  <rect x="496" y="398" width="140" height="56" rx="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1"/>
+  <text x="566" y="422.5" class="b" text-anchor="middle">4  KEY check</text>
+  <text x="566" y="439.5" class="s" text-anchor="middle">未確認</text>
+  <polyline points="490,362 490,378 720,378 720,396" fill="none" stroke="#7B8794" stroke-width="1" stroke-linejoin="round" marker-end="url(#ar)"/>
+  <rect x="650" y="398" width="140" height="56" rx="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1"/>
+  <text x="720" y="422.5" class="b" text-anchor="middle">5  11pin check</text>
+  <text x="720" y="439.5" class="s" text-anchor="middle">未確認</text>
+  <polyline points="490,362 490,378 874,378 874,396" fill="none" stroke="#7B8794" stroke-width="1" stroke-linejoin="round" marker-end="url(#ar)"/>
+  <rect x="804" y="398" width="140" height="56" rx="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1"/>
+  <text x="874" y="422.5" class="b" text-anchor="middle">6  15pin check</text>
+  <text x="874" y="439.5" class="s" text-anchor="middle">未確認</text>
+  <rect x="34" y="481" width="14" height="14" rx="3" fill="#FDECEA" stroke="#C0392B" stroke-width="1.2"/>
+  <text x="54" y="492" class="s">RAM が消える、書き換える</text>
+  <rect x="224.4" y="481" width="14" height="14" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="244.4" y="492" class="s">書き換えると見られる項目を含む</text>
+  <rect x="448.4" y="481" width="14" height="14" rx="3" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="468.4" y="492" class="s">BASIC プログラムが残った</text>
+  <rect x="640" y="481" width="14" height="14" rx="3" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="660" y="492" class="s">未確認、記載なし</text>
+  <text x="34" y="526" class="s">CCE はメニューに戻るだけ。抜けるには RESET する</text>
+</svg>

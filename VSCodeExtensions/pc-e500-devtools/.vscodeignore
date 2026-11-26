@@ -1,0 +1,10 @@
+.vscode/**
+src/**
+scripts/**
+npm-dist/**
+out/test/**
+tsconfig.json
+**/*.map
+node_modules/@types/**
+server/**
+out/server/*.pdb

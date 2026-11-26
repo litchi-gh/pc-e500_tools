@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 452" width="980" height="452" role="img" aria-labelledby="t d">
+  <title id="t">キー操作と表示</title>
+  <desc id="d">足し算、円周率、10 のべき乗、打ち間違いの直し方のキーの順番と、そのときの表示。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .xs { font-size: 11px; fill: #52606D; }
+    .r { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; fill: #B7791F; font-weight: 700; }
+    .j { font-size: 10px; fill: #B7791F; font-weight: 700; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .lcd { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 14px; font-weight: 700; fill: #24351D; }
+  </style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#7B8794"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="451" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">キー操作と表示</text>
+  <text x="24" y="56" class="sub">左から順に押す。黄色は 2nd F、青は計算の実行、赤は消去</text>
+  <rect x="24" y="82" width="30" height="26" rx="5" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="39.0" y="100.0" class="m" xml:space="preserve" text-anchor="middle">2</text>
+  <rect x="60" y="82" width="30" height="26" rx="5" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="75.0" y="100.0" class="m" xml:space="preserve" text-anchor="middle">8</text>
+  <rect x="96" y="82" width="30" height="26" rx="5" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="111.0" y="100.0" class="m" xml:space="preserve" text-anchor="middle">5</text>
+  <line x1="136" y1="95" x2="632" y2="95" stroke="#7B8794" stroke-width="1.4" marker-end="url(#a)"/>
+  <rect x="640" y="80" width="200" height="30" rx="4" fill="#BDD08B" stroke="#4A5A2A" stroke-width="1.2"/>
+  <text x="830" y="100" class="lcd" xml:space="preserve" text-anchor="end">285.</text>
+  <rect x="24" y="124" width="30" height="26" rx="5" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="39.0" y="142.0" class="m" xml:space="preserve" text-anchor="middle">+</text>
+  <line x1="64" y1="137" x2="632" y2="137" stroke="#7B8794" stroke-width="1.4" marker-end="url(#a)"/>
+  <rect x="640" y="122" width="200" height="30" rx="4" fill="#BDD08B" stroke="#4A5A2A" stroke-width="1.2"/>
+  <text x="830" y="142" class="lcd" xml:space="preserve" text-anchor="end">285.</text>
+  <text x="852" y="142" class="s">保留中</text>
+  <rect x="24" y="166" width="30" height="26" rx="5" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="39.0" y="184.0" class="m" xml:space="preserve" text-anchor="middle">3</text>
+  <rect x="60" y="166" width="30" height="26" rx="5" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="75.0" y="184.0" class="m" xml:space="preserve" text-anchor="middle">6</text>
+  <rect x="96" y="166" width="30" height="26" rx="5" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="111.0" y="184.0" class="m" xml:space="preserve" text-anchor="middle">4</text>
+  <line x1="136" y1="179" x2="632" y2="179" stroke="#7B8794" stroke-width="1.4" marker-end="url(#a)"/>
+  <rect x="640" y="164" width="200" height="30" rx="4" fill="#BDD08B" stroke="#4A5A2A" stroke-width="1.2"/>
+  <text x="830" y="184" class="lcd" xml:space="preserve" text-anchor="end">364.</text>
+  <rect x="24" y="208" width="30" height="26" rx="5" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="39.0" y="226.0" class="m" xml:space="preserve" text-anchor="middle">=</text>
+  <line x1="64" y1="221" x2="632" y2="221" stroke="#7B8794" stroke-width="1.4" marker-end="url(#a)"/>
+  <rect x="640" y="206" width="200" height="30" rx="4" fill="#BDD08B" stroke="#4A5A2A" stroke-width="1.2"/>
+  <text x="830" y="226" class="lcd" xml:space="preserve" text-anchor="end">649.</text>
+  <text x="852" y="226" class="s">285 + 364</text>
+  <rect x="24" y="260" width="52" height="26" rx="5" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="50.0" y="278.0" class="m" xml:space="preserve" text-anchor="middle">2nd F</text>
+  <rect x="82" y="260" width="30" height="26" rx="5" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="97.0" y="278.0" class="m" xml:space="preserve" text-anchor="middle">π</text>
+  <line x1="122" y1="273" x2="632" y2="273" stroke="#7B8794" stroke-width="1.4" marker-end="url(#a)"/>
+  <rect x="640" y="258" width="200" height="30" rx="4" fill="#BDD08B" stroke="#4A5A2A" stroke-width="1.2"/>
+  <text x="830" y="278" class="lcd" xml:space="preserve" text-anchor="end">3.141592654</text>
+  <rect x="24" y="302" width="30" height="26" rx="5" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="39.0" y="320.0" class="m" xml:space="preserve" text-anchor="middle">3</text>
+  <rect x="60" y="302" width="52" height="26" rx="5" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="86.0" y="320.0" class="m" xml:space="preserve" text-anchor="middle">2nd F</text>
+  <rect x="118" y="302" width="41" height="26" rx="5" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="138.5" y="320.0" class="m" xml:space="preserve" text-anchor="middle">10ˣ</text>
+  <line x1="169" y1="315" x2="632" y2="315" stroke="#7B8794" stroke-width="1.4" marker-end="url(#a)"/>
+  <rect x="640" y="300" width="200" height="30" rx="4" fill="#BDD08B" stroke="#4A5A2A" stroke-width="1.2"/>
+  <text x="830" y="320" class="lcd" xml:space="preserve" text-anchor="end">1000.</text>
+  <text x="852" y="320" class="s">10 の 3 乗</text>
+  <rect x="24" y="354" width="30" height="26" rx="5" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="39.0" y="372.0" class="m" xml:space="preserve" text-anchor="middle">2</text>
+  <rect x="60" y="354" width="30" height="26" rx="5" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="75.0" y="372.0" class="m" xml:space="preserve" text-anchor="middle">5</text>
+  <rect x="96" y="354" width="30" height="26" rx="5" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="111.0" y="372.0" class="m" xml:space="preserve" text-anchor="middle">×</text>
+  <rect x="132" y="354" width="30" height="26" rx="5" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="147.0" y="372.0" class="m" xml:space="preserve" text-anchor="middle">1</text>
+  <rect x="168" y="354" width="30" height="26" rx="5" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="183.0" y="372.0" class="m" xml:space="preserve" text-anchor="middle">7</text>
+  <line x1="208" y1="367" x2="632" y2="367" stroke="#7B8794" stroke-width="1.4" marker-end="url(#a)"/>
+  <rect x="640" y="352" width="200" height="30" rx="4" fill="#BDD08B" stroke="#4A5A2A" stroke-width="1.2"/>
+  <text x="830" y="372" class="lcd" xml:space="preserve" text-anchor="end">17.</text>
+  <text x="852" y="372" class="s">18 の入力ミス</text>
+  <rect x="24" y="396" width="44" height="26" rx="5" fill="#FDECEA" stroke="#C0392B" stroke-width="1.2"/>
+  <text x="46.0" y="414.0" class="m" xml:space="preserve" text-anchor="middle">C·CE</text>
+  <rect x="74" y="396" width="30" height="26" rx="5" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="89.0" y="414.0" class="m" xml:space="preserve" text-anchor="middle">1</text>
+  <rect x="110" y="396" width="30" height="26" rx="5" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="125.0" y="414.0" class="m" xml:space="preserve" text-anchor="middle">8</text>
+  <rect x="146" y="396" width="30" height="26" rx="5" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="161.0" y="414.0" class="m" xml:space="preserve" text-anchor="middle">=</text>
+  <line x1="186" y1="409" x2="632" y2="409" stroke="#7B8794" stroke-width="1.4" marker-end="url(#a)"/>
+  <rect x="640" y="394" width="200" height="30" rx="4" fill="#BDD08B" stroke="#4A5A2A" stroke-width="1.2"/>
+  <text x="830" y="414" class="lcd" xml:space="preserve" text-anchor="end">450.</text>
+  <text x="852" y="414" class="s">25 × 18</text>
+</svg>

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 420" width="980" height="420" role="img" aria-labelledby="t d">
+  <title id="t">命令ごとのフラグの変わり方</title>
+  <desc id="d">命令を、C と Z の両方を変えるもの、Z だけを変えるもの、C だけを変えるもの、どちらも変えないものに分けた図。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .lbl { font-size: 12px; fill: #52606D; paint-order: stroke; stroke: #FFFFFF; stroke-width: 4px; stroke-linejoin: round; }
+  </style>
+  <defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#52606D"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="419" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">命令ごとのフラグの変わり方</text>
+  <text x="24" y="55" class="sub">おもな命令をエミュレータで、C と Z を 0 と 1 の両方から始めて確かめた</text>
+  <rect x="40" y="80" width="440" height="138" rx="6" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="58" y="108" class="b">C と Z の両方が変わる</text>
+  <text x="58" y="134" class="m" xml:space="preserve">ADD SUB ADC SBC CMP CMPW CMPP</text>
+  <text x="58" y="158" class="m" xml:space="preserve">ADCL SBCL DADL DSBL</text>
+  <text x="58" y="182" class="m" xml:space="preserve">ROR ROL SHR SHL</text>
+  <rect x="500" y="80" width="440" height="138" rx="6" fill="#E6F6EC" stroke="#2F855A" stroke-width="1"/>
+  <text x="518" y="108" class="b">Z だけが変わる</text>
+  <text x="518" y="134" class="m" xml:space="preserve">AND OR XOR TEST</text>
+  <text x="518" y="158" class="m" xml:space="preserve">INC DEC SWAP</text>
+  <text x="518" y="182" class="m" xml:space="preserve">DSRL DSLL</text>
+  <rect x="40" y="234" width="440" height="138" rx="6" fill="#FFF5DF" stroke="#B7791F" stroke-width="1"/>
+  <text x="58" y="262" class="b">C だけが変わる</text>
+  <text x="58" y="288" class="m" xml:space="preserve">SC（C = 1） RC（C = 0）</text>
+  <rect x="500" y="234" width="440" height="138" rx="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1"/>
+  <text x="518" y="262" class="b">どちらも変わらない</text>
+  <text x="518" y="288" class="m" xml:space="preserve">MV MVW MVP MVL MVLD EX EXW EXP EXL</text>
+  <text x="518" y="312" class="m" xml:space="preserve">PUSH POP（F 以外） PMDF WAIT</text>
+  <text x="518" y="336" class="m" xml:space="preserve">JP JR CALL RET と条件分岐</text>
+  <text x="40" y="398" class="s">POPU F、POPS F、RETI は、積んであった F の値に戻す。HALT、OFF から戻ったあとは不定</text>
+</svg>

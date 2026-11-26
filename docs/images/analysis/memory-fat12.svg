@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 600" width="980" height="600" role="img" aria-labelledby="t d">
+  <title id="t">RAM ディスクのファイルを読む（E:16K の例）</title>
+  <desc id="d">12 ビット FAT の 3 バイトから 2 つの値を取り出し、ディレクトリのエントリからクラスタの鎖をたどる手順。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .lbl { font-size: 12px; fill: #52606D; paint-order: stroke; stroke: #FFFFFF; stroke-width: 4px; stroke-linejoin: round; }
+  </style>
+  <defs><marker id="a2F6DB5" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2F6DB5"/></marker><marker id="a2F855A" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2F855A"/></marker><marker id="a52606D" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#52606D"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="599" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">RAM ディスクのファイルを読む（E:16K の例）</text>
+  <text x="24" y="55" class="sub">712 バイトのファイル。ディレクトリ → FAT → データの順にたどる</text>
+  <text x="40" y="88" class="b">1. ディレクトリから、最初のクラスタと長さを読む</text>
+  <rect x="40" y="112" width="200" height="32" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="140" y="133" text-anchor="middle">名前 8 + 拡張子 3</text>
+  <text x="41" y="106" class="ms" xml:space="preserve">+00</text>
+  <rect x="240" y="112" width="60" height="32" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="270" y="133" text-anchor="middle">属性</text>
+  <text x="241" y="106" class="ms" xml:space="preserve">+0B</text>
+  <rect x="300" y="112" width="120" height="32" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="360" y="133" text-anchor="middle">…</text>
+  <text x="301" y="106" class="ms" xml:space="preserve">+0C</text>
+  <rect x="420" y="112" width="90" height="32" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+  <text x="465" y="133" class="m" xml:space="preserve" text-anchor="middle">02 00</text>
+  <text x="421" y="106" class="ms" xml:space="preserve">+1A</text>
+  <rect x="510" y="112" width="130" height="32" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+  <text x="575" y="133" class="m" xml:space="preserve" text-anchor="middle">C8 02 00 00</text>
+  <text x="511" y="106" class="ms" xml:space="preserve">+1C</text>
+  <text x="660" y="124">最初のクラスタは 2</text>
+  <text x="660" y="144">長さは 2C8h = 712 バイト（3 クラスタ）</text>
+  <polyline points="24,166 956,166" fill="none" stroke="#D9E0E8" stroke-width="1"/>
+  <text x="40" y="190" class="b">2. FAT の 3 バイトから、12 ビットの値を 2 つ取り出す</text>
+  <rect x="60" y="206" width="50" height="34" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="85" y="228" class="m" xml:space="preserve" text-anchor="middle">F4</text>
+  <rect x="110" y="206" width="50" height="34" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="135" y="228" class="m" xml:space="preserve" text-anchor="middle">00</text>
+  <rect x="160" y="206" width="50" height="34" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="185" y="228" class="m" xml:space="preserve" text-anchor="middle">00</text>
+  <rect x="58" y="278" width="74" height="44" rx="6" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+  <text x="95" y="296" class="s" text-anchor="middle">番号 0</text>
+  <text x="95" y="314" class="m" xml:space="preserve" text-anchor="middle">0F4h</text>
+  <rect x="136" y="278" width="74" height="44" rx="6" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="173" y="296" class="s" text-anchor="middle">番号 1</text>
+  <text x="173" y="314" class="m" xml:space="preserve" text-anchor="middle">000h</text>
+  <polyline points="85,240 85,277" fill="none" stroke="#2F855A" stroke-width="1.4" marker-end="url(#a2F855A)"/>
+  <polyline points="130,240 105,277" fill="none" stroke="#2F855A" stroke-width="1.4" marker-end="url(#a2F855A)"/>
+  <polyline points="140,240 158,277" fill="none" stroke="#2F6DB5" stroke-width="1.4" marker-end="url(#a2F6DB5)"/>
+  <polyline points="185,240 180,277" fill="none" stroke="#2F6DB5" stroke-width="1.4" marker-end="url(#a2F6DB5)"/>
+  <rect x="280" y="206" width="50" height="34" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="305" y="228" class="m" xml:space="preserve" text-anchor="middle">03</text>
+  <rect x="330" y="206" width="50" height="34" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="355" y="228" class="m" xml:space="preserve" text-anchor="middle">40</text>
+  <rect x="380" y="206" width="50" height="34" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="405" y="228" class="m" xml:space="preserve" text-anchor="middle">00</text>
+  <rect x="278" y="278" width="74" height="44" rx="6" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+  <text x="315" y="296" class="s" text-anchor="middle">クラスタ 2</text>
+  <text x="315" y="314" class="m" xml:space="preserve" text-anchor="middle">003h</text>
+  <rect x="356" y="278" width="74" height="44" rx="6" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="393" y="296" class="s" text-anchor="middle">クラスタ 3</text>
+  <text x="393" y="314" class="m" xml:space="preserve" text-anchor="middle">004h</text>
+  <polyline points="305,240 305,277" fill="none" stroke="#2F855A" stroke-width="1.4" marker-end="url(#a2F855A)"/>
+  <polyline points="350,240 325,277" fill="none" stroke="#2F855A" stroke-width="1.4" marker-end="url(#a2F855A)"/>
+  <polyline points="360,240 378,277" fill="none" stroke="#2F6DB5" stroke-width="1.4" marker-end="url(#a2F6DB5)"/>
+  <polyline points="405,240 400,277" fill="none" stroke="#2F6DB5" stroke-width="1.4" marker-end="url(#a2F6DB5)"/>
+  <rect x="500" y="206" width="50" height="34" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="525" y="228" class="m" xml:space="preserve" text-anchor="middle">F0</text>
+  <rect x="550" y="206" width="50" height="34" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="575" y="228" class="m" xml:space="preserve" text-anchor="middle">0F</text>
+  <rect x="600" y="206" width="50" height="34" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="625" y="228" class="m" xml:space="preserve" text-anchor="middle">00</text>
+  <rect x="498" y="278" width="74" height="44" rx="6" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+  <text x="535" y="296" class="s" text-anchor="middle">クラスタ 4</text>
+  <text x="535" y="314" class="m" xml:space="preserve" text-anchor="middle">FF0h</text>
+  <rect x="576" y="278" width="74" height="44" rx="6" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="613" y="296" class="s" text-anchor="middle">クラスタ 5</text>
+  <text x="613" y="314" class="m" xml:space="preserve" text-anchor="middle">000h</text>
+  <polyline points="525,240 525,277" fill="none" stroke="#2F855A" stroke-width="1.4" marker-end="url(#a2F855A)"/>
+  <polyline points="570,240 545,277" fill="none" stroke="#2F855A" stroke-width="1.4" marker-end="url(#a2F855A)"/>
+  <polyline points="580,240 598,277" fill="none" stroke="#2F6DB5" stroke-width="1.4" marker-end="url(#a2F6DB5)"/>
+  <polyline points="625,240 620,277" fill="none" stroke="#2F6DB5" stroke-width="1.4" marker-end="url(#a2F6DB5)"/>
+  <text x="700" y="212" class="s">前の値：2 バイト目の下位 4 ビットが上位</text>
+  <text x="700" y="234" class="s">　　　　1 バイト目が下位 8 ビット</text>
+  <text x="700" y="256" class="s">後の値：3 バイト目が上位 8 ビット</text>
+  <text x="700" y="278" class="s">　　　　2 バイト目の上位 4 ビットが下位</text>
+  <text x="700" y="300" class="s">先頭 3 バイトはメディアの種類</text>
+  <text x="700" y="322" class="s">FF0h は終わり、000h は空き</text>
+  <polyline points="24,344 956,344" fill="none" stroke="#D9E0E8" stroke-width="1"/>
+  <text x="40" y="368" class="b">3. クラスタの鎖をたどって、データを読む（1 クラスタ = 1 セクタ = 256 バイト、データはセクタ 6 から）</text>
+  <rect x="60" y="386" width="220" height="74" rx="6" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+  <text x="170" y="410" class="b" text-anchor="middle">クラスタ 2</text>
+  <text x="170" y="428" class="s" text-anchor="middle">セクタ 6（先頭から 600h）</text>
+  <text x="170" y="446" class="s" text-anchor="middle">ここから 256 バイトを使う</text>
+  <polyline points="280,423 349,423" fill="none" stroke="#52606D" stroke-width="1.6" marker-end="url(#a52606D)"/>
+  <text x="314" y="414" class="ms" xml:space="preserve" text-anchor="middle">003h</text>
+  <rect x="350" y="386" width="220" height="74" rx="6" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+  <text x="460" y="410" class="b" text-anchor="middle">クラスタ 3</text>
+  <text x="460" y="428" class="s" text-anchor="middle">セクタ 7（先頭から 700h）</text>
+  <text x="460" y="446" class="s" text-anchor="middle">ここから 256 バイトを使う</text>
+  <polyline points="570,423 639,423" fill="none" stroke="#52606D" stroke-width="1.6" marker-end="url(#a52606D)"/>
+  <text x="604" y="414" class="ms" xml:space="preserve" text-anchor="middle">004h</text>
+  <rect x="640" y="386" width="220" height="74" rx="6" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+  <text x="750" y="410" class="b" text-anchor="middle">クラスタ 4</text>
+  <text x="750" y="428" class="s" text-anchor="middle">セクタ 8（先頭から 800h）</text>
+  <text x="750" y="446" class="s" text-anchor="middle">ここから 200 バイトを使う</text>
+  <polyline points="860,423 890,423" fill="none" stroke="#52606D" stroke-width="1.6" marker-end="url(#a52606D)"/>
+  <text x="894" y="428" class="s">終わり</text>
+  <text x="875" y="414" class="ms" xml:space="preserve" text-anchor="middle">FF0h</text>
+  <rect x="40" y="486" width="900" height="94" rx="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="490" y="520" class="b" text-anchor="middle">セクタ番号 = クラスタ番号 − 2 + データの最初のセクタ（+36）</text>
+  <text x="490" y="538" class="s" text-anchor="middle">E:16K では +36 が 06h なので、クラスタ 2 はセクタ 6。RAMFILE ブロックの先頭から 6 × 256 = 600h の位置</text>
+  <text x="490" y="556" class="s" text-anchor="middle">256 + 256 + 200 = 712 バイト。最後のセクタの残り 56 バイトは、このファイルのデータではない</text>
+</svg>

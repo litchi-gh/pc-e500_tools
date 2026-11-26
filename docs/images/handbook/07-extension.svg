@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 330" width="980" height="330" role="img" aria-labelledby="t d">
+  <title id="t">エンジニアソフトの拡張子と階層</title>
+  <desc id="d">拡張子の 3 桁が、上から順に押す PF キーの番号になることを示す図</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+  </style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#52606D"/></marker></defs>
+
+  <rect width="980" height="330" fill="#FFFFFF"/>
+  <text x="30.0" y="34.0" class="h" text-anchor="start" xml:space="preserve">拡張子の 3 桁 = 上から順に押す PF キーの番号</text>
+  <rect x="40.0" y="60.0" width="200.0" height="74.0" rx="4" fill="#FFF5DF" stroke="#B7791F"/>
+  <text x="140.0" y="86.0" class="m" text-anchor="middle" xml:space="preserve">ｽｳｶﾞｸ.1##</text>
+  <text x="140.0" y="108.0" class="s" text-anchor="middle" xml:space="preserve">1 階層（PF1）</text>
+  <text x="140.0" y="126.0" class="s" text-anchor="middle" xml:space="preserve">ガイダンス</text>
+  <line x1="240.0" y1="97.0" x2="296.0" y2="97.0" stroke="#52606D" stroke-width="1.2" marker-end="url(#a)"/>
+  <rect x="300.0" y="60.0" width="200.0" height="74.0" rx="4" fill="#FFF5DF" stroke="#B7791F"/>
+  <text x="400.0" y="86.0" class="m" text-anchor="middle" xml:space="preserve">ﾎｳﾃｲｼｷ.12#</text>
+  <text x="400.0" y="108.0" class="s" text-anchor="middle" xml:space="preserve">2 階層（PF2）</text>
+  <text x="400.0" y="126.0" class="s" text-anchor="middle" xml:space="preserve">ガイダンス</text>
+  <line x1="500.0" y1="97.0" x2="556.0" y2="97.0" stroke="#52606D" stroke-width="1.2" marker-end="url(#a)"/>
+  <rect x="560.0" y="60.0" width="200.0" height="74.0" rx="4" fill="#E6F6EC" stroke="#2F855A"/>
+  <text x="660.0" y="86.0" class="m" text-anchor="middle" xml:space="preserve">3ｼﾞ.121</text>
+  <text x="660.0" y="108.0" class="s" text-anchor="middle" xml:space="preserve">3 階層（PF1）</text>
+  <text x="660.0" y="126.0" class="s" text-anchor="middle" xml:space="preserve">BASIC プログラム</text>
+  <rect x="800.0" y="60.0" width="150.0" height="74.0" rx="4" fill="#E8F1FC" stroke="#2F6DB5"/>
+  <text x="875.0" y="90.0" class="b" text-anchor="middle" xml:space="preserve">三次方程式</text>
+  <text x="875.0" y="112.0" class="s" text-anchor="middle" xml:space="preserve">が動き出す</text>
+  <line x1="760.0" y1="97.0" x2="796.0" y2="97.0" stroke="#52606D" stroke-width="1.2" marker-end="url(#a)"/>
+  <text x="30.0" y="176.0" class="h" text-anchor="start" xml:space="preserve">同じ拡張子のファイルが 2 つ以上あるとき、探す順番</text>
+  <rect x="40.0" y="196.0" width="270.0" height="60.0" rx="4" fill="#F1ECFB" stroke="#6B4FBB"/>
+  <text x="60.0" y="222.0" class="m" text-anchor="start" xml:space="preserve">F:</text>
+  <text x="100.0" y="222.0" class="" text-anchor="start" xml:space="preserve">RAM カードの RAM ディスク</text>
+  <text x="60.0" y="244.0" class="s" text-anchor="start" xml:space="preserve">最優先</text>
+  <line x1="310.0" y1="226.0" x2="346.0" y2="226.0" stroke="#52606D" stroke-width="1.2" marker-end="url(#a)"/>
+  <rect x="350.0" y="196.0" width="270.0" height="60.0" rx="4" fill="#F1ECFB" stroke="#6B4FBB"/>
+  <text x="370.0" y="222.0" class="m" text-anchor="start" xml:space="preserve">E:</text>
+  <text x="410.0" y="222.0" class="" text-anchor="start" xml:space="preserve">内蔵 RAM の RAM ディスク</text>
+  <text x="370.0" y="244.0" class="s" text-anchor="start" xml:space="preserve">次</text>
+  <line x1="620.0" y1="226.0" x2="656.0" y2="226.0" stroke="#52606D" stroke-width="1.2" marker-end="url(#a)"/>
+  <rect x="660.0" y="196.0" width="270.0" height="60.0" rx="4" fill="#F3F5F8" stroke="#7B8794"/>
+  <text x="680.0" y="222.0" class="m" text-anchor="start" xml:space="preserve">G:</text>
+  <text x="720.0" y="222.0" class="" text-anchor="start" xml:space="preserve">ROM（付属のソフト）</text>
+  <text x="680.0" y="244.0" class="s" text-anchor="start" xml:space="preserve">最後</text>
+  <text x="40.0" y="290.0" class="" text-anchor="start" xml:space="preserve">例: E: に MYPRIM.111 を置くと、ｾｲｽｳ のメニューの PF1 は ｿｲﾝｽｳ から MYPRIM に変わる。消せば ｿｲﾝｽｳ に戻る。</text>
+  <text x="40.0" y="312.0" class="s" text-anchor="start" xml:space="preserve">ROM の中身は変わらない。</text>
+</svg>

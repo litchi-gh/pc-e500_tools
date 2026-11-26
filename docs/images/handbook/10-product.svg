@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 250" width="980" height="250" role="img" aria-labelledby="t d">
+  <title id="t">行列のかけ算</title>
+  <desc id="d">2 行 2 列の X と Y をかけて 25 −35 20 −30 になる計算の図</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+  </style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#52606D"/></marker></defs>
+
+  <rect width="980" height="250" fill="#FFFFFF"/>
+  <path d="M68.0 74.0 L56.0 74.0 L56.0 174.0 L68.0 174.0" fill="none" stroke="#1F2933" stroke-width="2"/>
+  <path d="M192.0 74.0 L204.0 74.0 L204.0 174.0 L192.0 174.0" fill="none" stroke="#1F2933" stroke-width="2"/>
+  <rect x="64.0" y="83.0" width="62.0" height="38.0" rx="4" fill="#FFF5DF" stroke="#B7791F"/>
+  <text x="95.0" y="107.0" class="m" text-anchor="middle" xml:space="preserve">4</text>
+  <rect x="134.0" y="83.0" width="62.0" height="38.0" rx="4" fill="#FFF5DF" stroke="#B7791F"/>
+  <text x="165.0" y="107.0" class="m" text-anchor="middle" xml:space="preserve">7</text>
+  <rect x="64.0" y="127.0" width="62.0" height="38.0" rx="4" fill="#F3F5F8" stroke="#7B8794"/>
+  <text x="95.0" y="151.0" class="m" text-anchor="middle" xml:space="preserve">2</text>
+  <rect x="134.0" y="127.0" width="62.0" height="38.0" rx="4" fill="#F3F5F8" stroke="#7B8794"/>
+  <text x="165.0" y="151.0" class="m" text-anchor="middle" xml:space="preserve">6</text>
+  <text x="225.0" y="128.0" class="h" text-anchor="start" xml:space="preserve">×</text>
+  <path d="M278.0 74.0 L266.0 74.0 L266.0 174.0 L278.0 174.0" fill="none" stroke="#1F2933" stroke-width="2"/>
+  <path d="M402.0 74.0 L414.0 74.0 L414.0 174.0 L402.0 174.0" fill="none" stroke="#1F2933" stroke-width="2"/>
+  <rect x="274.0" y="83.0" width="62.0" height="38.0" rx="4" fill="#F3F5F8" stroke="#7B8794"/>
+  <text x="305.0" y="107.0" class="m" text-anchor="middle" xml:space="preserve">1</text>
+  <rect x="344.0" y="83.0" width="62.0" height="38.0" rx="4" fill="#FFF5DF" stroke="#B7791F"/>
+  <text x="375.0" y="107.0" class="m" text-anchor="middle" xml:space="preserve">0</text>
+  <rect x="274.0" y="127.0" width="62.0" height="38.0" rx="4" fill="#F3F5F8" stroke="#7B8794"/>
+  <text x="305.0" y="151.0" class="m" text-anchor="middle" xml:space="preserve">3</text>
+  <rect x="344.0" y="127.0" width="62.0" height="38.0" rx="4" fill="#FFF5DF" stroke="#B7791F"/>
+  <text x="375.0" y="151.0" class="m" text-anchor="middle" xml:space="preserve">-5</text>
+  <text x="435.0" y="128.0" class="h" text-anchor="start" xml:space="preserve">=</text>
+  <path d="M488.0 74.0 L476.0 74.0 L476.0 174.0 L488.0 174.0" fill="none" stroke="#1F2933" stroke-width="2"/>
+  <path d="M612.0 74.0 L624.0 74.0 L624.0 174.0 L612.0 174.0" fill="none" stroke="#1F2933" stroke-width="2"/>
+  <rect x="484.0" y="83.0" width="62.0" height="38.0" rx="4" fill="#F3F5F8" stroke="#7B8794"/>
+  <text x="515.0" y="107.0" class="m" text-anchor="middle" xml:space="preserve">25</text>
+  <rect x="554.0" y="83.0" width="62.0" height="38.0" rx="4" fill="#FFF5DF" stroke="#B7791F"/>
+  <text x="585.0" y="107.0" class="m" text-anchor="middle" xml:space="preserve">-35</text>
+  <rect x="484.0" y="127.0" width="62.0" height="38.0" rx="4" fill="#F3F5F8" stroke="#7B8794"/>
+  <text x="515.0" y="151.0" class="m" text-anchor="middle" xml:space="preserve">20</text>
+  <rect x="554.0" y="127.0" width="62.0" height="38.0" rx="4" fill="#F3F5F8" stroke="#7B8794"/>
+  <text x="585.0" y="151.0" class="m" text-anchor="middle" xml:space="preserve">-30</text>
+  <text x="130.0" y="60.0" class="b" text-anchor="middle" xml:space="preserve">X</text>
+  <text x="340.0" y="60.0" class="b" text-anchor="middle" xml:space="preserve">Y</text>
+  <text x="550.0" y="60.0" class="b" text-anchor="middle" xml:space="preserve">X（答え）</text>
+  <text x="680.0" y="100.0" class="b" text-anchor="start" xml:space="preserve">答えの 1 行 2 列 =</text>
+  <text x="680.0" y="126.0" class="m" text-anchor="start" xml:space="preserve">4 × 0 + 7 × (-5) = -35</text>
+  <text x="680.0" y="160.0" class="s" text-anchor="start" xml:space="preserve">X の 1 行目と</text>
+  <text x="680.0" y="180.0" class="s" text-anchor="start" xml:space="preserve">Y の 2 列目を順にかけて足す</text>
+  <text x="60.0" y="220.0" class="s" text-anchor="start" xml:space="preserve">X の列の数と、Y の行の数が同じでなければならない（違えば IMPOSSIBLE CALCULATION）。</text>
+</svg>

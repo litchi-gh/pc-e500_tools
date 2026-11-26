@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 470" width="980" height="470" role="img" aria-labelledby="t d">
+  <title id="t">ポインタ表と、1000h バイト確保したときの移動</title>
+  <desc id="d">BFCDEh からのポインタ表が指す U スタック、S スタック、BASIC 作業域、IOCS 作業域、機械語エリアが、確保によって 1000h だけ下へ移動することを示す図。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+  </style>
+  <defs><marker id="a2F6DB5" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2F6DB5"/></marker><marker id="a52606D" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#52606D"/></marker><marker id="aC0392B" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#C0392B"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="469" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">ポインタ表と、1000h バイト確保したときの移動</text>
+  <text x="24" y="55" class="sub">ポインタの値は ROM 3.2 の例。各領域は、そのポインタの値から次のポインタの値まで（高さは実際と異なる）</text>
+  <text x="180" y="92" class="b" text-anchor="middle">ポインタ</text>
+  <text x="370" y="92" class="b" text-anchor="middle">確保前</text>
+  <text x="770" y="92" class="b" text-anchor="middle">確保後（1000h）</text>
+  <rect x="130" y="108" width="100" height="34" rx="6" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="180" y="129.68" class="m" xml:space="preserve" text-anchor="middle">BFCDEh</text>
+  <rect x="290" y="108" width="170" height="48" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="375" y="128.54" class="b" text-anchor="middle">U スタック</text>
+  <text x="375" y="145.82" class="s" text-anchor="middle">BF21Bh から</text>
+  <rect x="690" y="108" width="170" height="48" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="775" y="128.54" class="b" text-anchor="middle">U スタック</text>
+  <text x="775" y="145.82" class="s" text-anchor="middle">BE21Bh から</text>
+  <polyline points="230,125 288,125" fill="none" stroke="#52606D" stroke-width="1.5" marker-end="url(#a52606D)"/>
+  <polyline points="460,132 688,132" fill="none" stroke="#2F6DB5" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#a2F6DB5)"/>
+  <text x="574" y="126" class="s" text-anchor="middle">1000h だけ下へ</text>
+  <rect x="130" y="160" width="100" height="34" rx="6" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="180" y="181.68" class="m" xml:space="preserve" text-anchor="middle">BFCE1h</text>
+  <rect x="290" y="160" width="170" height="48" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="375" y="180.54" class="b" text-anchor="middle">S スタック</text>
+  <text x="375" y="197.82" class="s" text-anchor="middle">BF6A0h から</text>
+  <rect x="690" y="160" width="170" height="48" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="775" y="180.54" class="b" text-anchor="middle">S スタック</text>
+  <text x="775" y="197.82" class="s" text-anchor="middle">BE6A0h から</text>
+  <polyline points="230,177 288,177" fill="none" stroke="#52606D" stroke-width="1.5" marker-end="url(#a52606D)"/>
+  <polyline points="460,184 688,184" fill="none" stroke="#2F6DB5" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#a2F6DB5)"/>
+  <text x="574" y="178" class="s" text-anchor="middle">1000h だけ下へ</text>
+  <rect x="130" y="212" width="100" height="34" rx="6" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="180" y="233.68" class="m" xml:space="preserve" text-anchor="middle">BFD0Eh</text>
+  <rect x="290" y="212" width="170" height="48" rx="2" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.5"/>
+  <text x="375" y="232.54" class="b" text-anchor="middle">BASIC 作業域</text>
+  <text x="375" y="249.82" class="s" text-anchor="middle">BF858h から</text>
+  <rect x="690" y="212" width="170" height="48" rx="2" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.5"/>
+  <text x="775" y="232.54" class="b" text-anchor="middle">BASIC 作業域</text>
+  <text x="775" y="249.82" class="s" text-anchor="middle">BE858h から</text>
+  <polyline points="230,229 288,229" fill="none" stroke="#52606D" stroke-width="1.5" marker-end="url(#a52606D)"/>
+  <polyline points="460,236 688,236" fill="none" stroke="#2F6DB5" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#a2F6DB5)"/>
+  <text x="574" y="230" class="s" text-anchor="middle">1000h だけ下へ</text>
+  <rect x="130" y="264" width="100" height="34" rx="6" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="180" y="285.68" class="m" xml:space="preserve" text-anchor="middle">BFD17h</text>
+  <rect x="290" y="264" width="170" height="48" rx="2" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.5"/>
+  <text x="375" y="284.54" class="b" text-anchor="middle">IOCS 作業域</text>
+  <text x="375" y="301.82" class="s" text-anchor="middle">BF9B4h から</text>
+  <rect x="690" y="264" width="170" height="48" rx="2" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.5"/>
+  <text x="775" y="284.54" class="b" text-anchor="middle">IOCS 作業域</text>
+  <text x="775" y="301.82" class="s" text-anchor="middle">BE9B4h から</text>
+  <polyline points="230,281 288,281" fill="none" stroke="#52606D" stroke-width="1.5" marker-end="url(#a52606D)"/>
+  <polyline points="460,288 688,288" fill="none" stroke="#2F6DB5" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#a2F6DB5)"/>
+  <text x="574" y="282" class="s" text-anchor="middle">1000h だけ下へ</text>
+  <rect x="130" y="316" width="100" height="34" rx="6" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="180" y="337.68" class="m" xml:space="preserve" text-anchor="middle">BFD1Ah</text>
+  <polyline points="230,333 288,333" fill="none" stroke="#52606D" stroke-width="1.5" marker-end="url(#a52606D)"/>
+  <text x="296" y="338" class="s">BFC00h（大きさ 0）</text>
+  <rect x="690" y="316" width="170" height="66" rx="2" fill="#FDECEA" stroke="#C0392B" stroke-width="1.5"/>
+  <text x="775" y="345.54" class="b" text-anchor="middle">機械語エリア</text>
+  <text x="775" y="362.82" class="s" text-anchor="middle">BEC00h〜BFBFFh</text>
+  <polyline points="230,346 560,362 688,362" fill="none" stroke="#C0392B" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#aC0392B)"/>
+  <text x="574" y="354" class="s"></text>
+  <rect x="290" y="366" width="170" height="40" rx="2" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="375" y="390.32" class="s" text-anchor="middle">システム領域 BFC00h〜</text>
+  <rect x="690" y="390" width="170" height="40" rx="2" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="775" y="414.32" class="s" text-anchor="middle">システム領域 BFC00h〜</text>
+  <text x="24" y="450" class="s">予約のポインタ（BFCE4h〜BFD0Bh、BFD11h、BFD14h）は省いた。</text>
+</svg>

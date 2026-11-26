@@ -1,0 +1,153 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 480" width="980" height="480" role="img" aria-labelledby="t d">
+  <title id="t">CSAVE M のヘッダを 1 バイトずつ読む</title>
+  <desc id="d">CSAVE M "CD",&amp;HB8000,&amp;HB800F のヘッダ 48 バイトと検査値を、意味ごとに色分けした図。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .lbl { font-size: 12px; fill: #52606D; paint-order: stroke; stroke: #FFFFFF; stroke-width: 4px; stroke-linejoin: round; }
+  </style>
+  <defs></defs>
+  <rect x="0.5" y="0.5" width="979" height="479" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">CSAVE M のヘッダを 1 バイトずつ読む</text>
+  <text x="24" y="55" class="sub">CSAVE M "CD",&amp;HB8000,&amp;HB800F の実データ（48 バイト + 検査値 2 バイト）</text>
+  <text x="146" y="90" class="ms" xml:space="preserve" text-anchor="middle">+0</text>
+  <text x="196" y="90" class="ms" xml:space="preserve" text-anchor="middle">+1</text>
+  <text x="246" y="90" class="ms" xml:space="preserve" text-anchor="middle">+2</text>
+  <text x="296" y="90" class="ms" xml:space="preserve" text-anchor="middle">+3</text>
+  <text x="346" y="90" class="ms" xml:space="preserve" text-anchor="middle">+4</text>
+  <text x="396" y="90" class="ms" xml:space="preserve" text-anchor="middle">+5</text>
+  <text x="446" y="90" class="ms" xml:space="preserve" text-anchor="middle">+6</text>
+  <text x="496" y="90" class="ms" xml:space="preserve" text-anchor="middle">+7</text>
+  <text x="546" y="90" class="ms" xml:space="preserve" text-anchor="middle">+8</text>
+  <text x="596" y="90" class="ms" xml:space="preserve" text-anchor="middle">+9</text>
+  <text x="646" y="90" class="ms" xml:space="preserve" text-anchor="middle">+A</text>
+  <text x="696" y="90" class="ms" xml:space="preserve" text-anchor="middle">+B</text>
+  <text x="746" y="90" class="ms" xml:space="preserve" text-anchor="middle">+C</text>
+  <text x="796" y="90" class="ms" xml:space="preserve" text-anchor="middle">+D</text>
+  <text x="846" y="90" class="ms" xml:space="preserve" text-anchor="middle">+E</text>
+  <text x="896" y="90" class="ms" xml:space="preserve" text-anchor="middle">+F</text>
+  <rect x="120" y="98" width="50" height="36" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="145" y="121" class="m" xml:space="preserve" text-anchor="middle">01</text>
+  <rect x="170" y="98" width="50" height="36" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="195" y="121" class="m" xml:space="preserve" text-anchor="middle">43</text>
+  <rect x="220" y="98" width="50" height="36" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="245" y="121" class="m" xml:space="preserve" text-anchor="middle">44</text>
+  <rect x="270" y="98" width="50" height="36" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="295" y="121" class="m" xml:space="preserve" text-anchor="middle">20</text>
+  <rect x="320" y="98" width="50" height="36" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="345" y="121" class="m" xml:space="preserve" text-anchor="middle">20</text>
+  <rect x="370" y="98" width="50" height="36" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="395" y="121" class="m" xml:space="preserve" text-anchor="middle">20</text>
+  <rect x="420" y="98" width="50" height="36" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="445" y="121" class="m" xml:space="preserve" text-anchor="middle">20</text>
+  <rect x="470" y="98" width="50" height="36" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="495" y="121" class="m" xml:space="preserve" text-anchor="middle">20</text>
+  <rect x="520" y="98" width="50" height="36" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="545" y="121" class="m" xml:space="preserve" text-anchor="middle">20</text>
+  <rect x="570" y="98" width="50" height="36" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="595" y="121" class="m" xml:space="preserve" text-anchor="middle">20</text>
+  <rect x="620" y="98" width="50" height="36" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="645" y="121" class="m" xml:space="preserve" text-anchor="middle">20</text>
+  <rect x="670" y="98" width="50" height="36" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="695" y="121" class="m" xml:space="preserve" text-anchor="middle">20</text>
+  <rect x="720" y="98" width="50" height="36" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="745" y="121" class="m" xml:space="preserve" text-anchor="middle">20</text>
+  <rect x="770" y="98" width="50" height="36" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="795" y="121" class="m" xml:space="preserve" text-anchor="middle">20</text>
+  <rect x="820" y="98" width="50" height="36" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="845" y="121" class="m" xml:space="preserve" text-anchor="middle">20</text>
+  <rect x="870" y="98" width="50" height="36" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="895" y="121" class="m" xml:space="preserve" text-anchor="middle">20</text>
+  <rect x="120" y="142" width="50" height="36" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="145" y="165" class="m" xml:space="preserve" text-anchor="middle">20</text>
+  <rect x="170" y="142" width="50" height="36" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="195" y="165" class="m" xml:space="preserve" text-anchor="middle">0D</text>
+  <rect x="220" y="142" width="50" height="36" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+  <text x="245" y="165" class="m" xml:space="preserve" text-anchor="middle">10</text>
+  <rect x="270" y="142" width="50" height="36" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+  <text x="295" y="165" class="m" xml:space="preserve" text-anchor="middle">00</text>
+  <rect x="320" y="142" width="50" height="36" rx="0" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.5"/>
+  <text x="345" y="165" class="m" xml:space="preserve" text-anchor="middle">00</text>
+  <rect x="370" y="142" width="50" height="36" rx="0" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.5"/>
+  <text x="395" y="165" class="m" xml:space="preserve" text-anchor="middle">80</text>
+  <rect x="420" y="142" width="50" height="36" rx="0" fill="#FDECEA" stroke="#C0392B" stroke-width="1.5"/>
+  <text x="445" y="165" class="m" xml:space="preserve" text-anchor="middle">FF</text>
+  <rect x="470" y="142" width="50" height="36" rx="0" fill="#FDECEA" stroke="#C0392B" stroke-width="1.5"/>
+  <text x="495" y="165" class="m" xml:space="preserve" text-anchor="middle">FF</text>
+  <rect x="520" y="142" width="50" height="36" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="545" y="165" class="m" xml:space="preserve" text-anchor="middle">00</text>
+  <rect x="570" y="142" width="50" height="36" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="595" y="165" class="m" xml:space="preserve" text-anchor="middle">00</text>
+  <rect x="620" y="142" width="50" height="36" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="645" y="165" class="m" xml:space="preserve" text-anchor="middle">00</text>
+  <rect x="670" y="142" width="50" height="36" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="695" y="165" class="m" xml:space="preserve" text-anchor="middle">00</text>
+  <rect x="720" y="142" width="50" height="36" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="745" y="165" class="m" xml:space="preserve" text-anchor="middle">00</text>
+  <rect x="770" y="142" width="50" height="36" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+  <text x="795" y="165" class="m" xml:space="preserve" text-anchor="middle">00</text>
+  <rect x="820" y="142" width="50" height="36" rx="0" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.5"/>
+  <text x="845" y="165" class="m" xml:space="preserve" text-anchor="middle">0B</text>
+  <rect x="870" y="142" width="50" height="36" rx="0" fill="#FDECEA" stroke="#C0392B" stroke-width="1.5"/>
+  <text x="895" y="165" class="m" xml:space="preserve" text-anchor="middle">FF</text>
+  <rect x="120" y="186" width="50" height="36" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="145" y="209" class="m" xml:space="preserve" text-anchor="middle">00</text>
+  <rect x="170" y="186" width="50" height="36" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="195" y="209" class="m" xml:space="preserve" text-anchor="middle">00</text>
+  <rect x="220" y="186" width="50" height="36" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="245" y="209" class="m" xml:space="preserve" text-anchor="middle">00</text>
+  <rect x="270" y="186" width="50" height="36" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="295" y="209" class="m" xml:space="preserve" text-anchor="middle">00</text>
+  <rect x="320" y="186" width="50" height="36" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="345" y="209" class="m" xml:space="preserve" text-anchor="middle">00</text>
+  <rect x="370" y="186" width="50" height="36" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="395" y="209" class="m" xml:space="preserve" text-anchor="middle">00</text>
+  <rect x="420" y="186" width="50" height="36" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="445" y="209" class="m" xml:space="preserve" text-anchor="middle">00</text>
+  <rect x="470" y="186" width="50" height="36" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="495" y="209" class="m" xml:space="preserve" text-anchor="middle">00</text>
+  <rect x="520" y="186" width="50" height="36" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="545" y="209" class="m" xml:space="preserve" text-anchor="middle">00</text>
+  <rect x="570" y="186" width="50" height="36" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="595" y="209" class="m" xml:space="preserve" text-anchor="middle">00</text>
+  <rect x="620" y="186" width="50" height="36" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="645" y="209" class="m" xml:space="preserve" text-anchor="middle">00</text>
+  <rect x="670" y="186" width="50" height="36" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="695" y="209" class="m" xml:space="preserve" text-anchor="middle">00</text>
+  <rect x="720" y="186" width="50" height="36" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="745" y="209" class="m" xml:space="preserve" text-anchor="middle">00</text>
+  <rect x="770" y="186" width="50" height="36" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="795" y="209" class="m" xml:space="preserve" text-anchor="middle">00</text>
+  <rect x="820" y="186" width="50" height="36" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="845" y="209" class="m" xml:space="preserve" text-anchor="middle">00</text>
+  <rect x="870" y="186" width="50" height="36" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="895" y="209" class="m" xml:space="preserve" text-anchor="middle">00</text>
+  <text x="110" y="121" class="m" xml:space="preserve" text-anchor="end">+00</text>
+  <text x="110" y="165" class="m" xml:space="preserve" text-anchor="end">+10</text>
+  <text x="110" y="209" class="m" xml:space="preserve" text-anchor="end">+20</text>
+  <text x="110" y="253" class="m" xml:space="preserve" text-anchor="end">+30</text>
+  <rect x="120" y="230" width="100" height="36" rx="0" fill="#FDECEA" stroke="#C0392B" stroke-width="1.5"/>
+  <text x="170" y="253" class="m" xml:space="preserve" text-anchor="middle">00 34</text>
+  <text x="232" y="253" class="s">検査値。48 バイトの中の 1 のビットは 34h = 52 個</text>
+  <rect x="120" y="290" width="26" height="24" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="160" y="307" class="b">種別</text>
+  <text x="250" y="307" class="m" xml:space="preserve">+00 = 01h → CSAVE M。+11 は 0Dh</text>
+  <rect x="120" y="324" width="26" height="24" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="160" y="341" class="b">名前</text>
+  <text x="250" y="341" class="m" xml:space="preserve">43 44 20 … → "CD"（余りは 20h）</text>
+  <rect x="120" y="358" width="26" height="24" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+  <text x="160" y="375" class="b">長さ</text>
+  <text x="250" y="375" class="m" xml:space="preserve">+1D, +13, +12 = 00, 00, 10 → 00010h（16 バイト）</text>
+  <rect x="120" y="392" width="26" height="24" rx="0" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.5"/>
+  <text x="160" y="409" class="b">開始アドレス</text>
+  <text x="250" y="409" class="m" xml:space="preserve">+1E, +15, +14 = 0B, 80, 00 → B8000h</text>
+  <rect x="120" y="426" width="26" height="24" rx="0" fill="#FDECEA" stroke="#C0392B" stroke-width="1.5"/>
+  <text x="160" y="443" class="b">実行アドレス</text>
+  <text x="250" y="443" class="m" xml:space="preserve">+1F, +17, +16 = FF, FF, FF → FFFFFh（なし）</text>
+  <text x="250" y="468" class="s">長さとアドレスの上位（bit 16 から）は +1D〜+1F に離れて入る</text>
+</svg>

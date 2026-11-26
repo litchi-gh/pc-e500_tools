@@ -1,0 +1,7 @@
+{
+  "program": "starcatch.asm",
+  "tests": [
+    { "name": "敵に当たると終わる", "basic": "CALL &HBE000", "expect": { "screen": "GAME OVER" }, "maxCycles": 4600000 },
+    { "name": "ON/BRK で戻る", "basic": "CALL &HBE000", "keys": ["ON/BRK"], "expect": { "screen": ">" }, "maxCycles": 1500000 }
+  ]
+}

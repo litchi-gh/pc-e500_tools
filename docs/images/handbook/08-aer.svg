@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 250" width="980" height="250" role="img" aria-labelledby="t d">
+  <title id="t">式の登録と呼び出しの流れ</title>
+  <desc id="d">AER モードで式を書き、RUN モードや BASIC から使う流れの図</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+  </style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#52606D"/></marker></defs>
+
+  <rect width="980" height="250" fill="#FFFFFF"/>
+  <rect x="30.0" y="50.0" width="280.0" height="150.0" rx="4" fill="#FFF5DF" stroke="#B7791F"/>
+  <text x="170.0" y="36.0" class="b" text-anchor="middle" xml:space="preserve">AER モード（書く）</text>
+  <text x="48.0" y="76.0" class="m" text-anchor="start" xml:space="preserve">01:BMI</text>
+  <text x="48.0" y="98.0" class="m" text-anchor="start" xml:space="preserve">  F(W,H)=W/H^2</text>
+  <text x="48.0" y="120.0" class="m" text-anchor="start" xml:space="preserve">02:GRAVITY</text>
+  <text x="48.0" y="142.0" class="m" text-anchor="start" xml:space="preserve">  9.80665</text>
+  <text x="48.0" y="164.0" class="m" text-anchor="start" xml:space="preserve">03:FALL TIME</text>
+  <text x="48.0" y="186.0" class="m" text-anchor="start" xml:space="preserve">  F(H)=SQR (2*H/9.8)</text>
+  <rect x="400.0" y="50.0" width="250.0" height="60.0" rx="4" fill="#E6F6EC" stroke="#2F855A"/>
+  <text x="525.0" y="36.0" class="b" text-anchor="middle" xml:space="preserve">RUN モード（使う）</text>
+  <text x="415.0" y="76.0" class="" text-anchor="start" xml:space="preserve">TITLE で選んで ⏎</text>
+  <text x="415.0" y="98.0" class="s" text-anchor="start" xml:space="preserve">W=?、H=? と聞かれる</text>
+  <rect x="400.0" y="140.0" width="250.0" height="60.0" rx="4" fill="#E8F1FC" stroke="#2F6DB5"/>
+  <text x="525.0" y="130.0" class="b" text-anchor="middle" xml:space="preserve">BASIC（使う）</text>
+  <text x="415.0" y="166.0" class="m" text-anchor="start" xml:space="preserve">AER 1(W,1.75)</text>
+  <text x="415.0" y="188.0" class="s" text-anchor="start" xml:space="preserve">番号と値を渡す</text>
+  <line x1="310.0" y1="80.0" x2="396.0" y2="80.0" stroke="#52606D" stroke-width="1.2" marker-end="url(#a)"/>
+  <line x1="310.0" y1="170.0" x2="396.0" y2="170.0" stroke="#52606D" stroke-width="1.2" marker-end="url(#a)"/>
+  <rect x="740.0" y="50.0" width="200.0" height="60.0" rx="4" fill="#F1ECFB" stroke="#6B4FBB"/>
+  <text x="840.0" y="76.0" class="m" text-anchor="middle" xml:space="preserve">22.49134948</text>
+  <text x="840.0" y="98.0" class="s" text-anchor="middle" xml:space="preserve">W=65、H=1.7</text>
+  <line x1="650.0" y1="80.0" x2="736.0" y2="80.0" stroke="#52606D" stroke-width="1.2" marker-end="url(#a)"/>
+  <rect x="740.0" y="140.0" width="200.0" height="60.0" rx="4" fill="#F1ECFB" stroke="#6B4FBB"/>
+  <text x="840.0" y="166.0" class="m" text-anchor="middle" xml:space="preserve">22.85714286</text>
+  <text x="840.0" y="188.0" class="s" text-anchor="middle" xml:space="preserve">W=70、H=1.75</text>
+  <line x1="650.0" y1="170.0" x2="736.0" y2="170.0" stroke="#52606D" stroke-width="1.2" marker-end="url(#a)"/>
+  <text x="30.0" y="232.0" class="s" text-anchor="start" xml:space="preserve">式は BASIC のプログラムと同じ空き領域に入る。周辺機器へ送ることはできない。</text>
+</svg>

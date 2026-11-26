@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 560" width="980" height="560" role="img" aria-labelledby="t d">
+  <title id="t">MEM$ の 3 つの設定を、アドレスの絵で見る</title>
+  <desc id="d">MEM$ が S1、S2、B のとき、プログラムと変数がカードと内蔵 RAM のどこに置かれるか。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .lbl { font-size: 12px; fill: #52606D; paint-order: stroke; stroke: #FFFFFF; stroke-width: 4px; stroke-linejoin: round; }
+  </style>
+  <defs></defs>
+  <rect x="0.5" y="0.5" width="979" height="559" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">MEM$ の 3 つの設定を、アドレスの絵で見る</text>
+  <text x="24" y="55" class="sub">内蔵 RAM 32 KB、カード 64 KB の例。ソフトから見えるアドレスで描いている</text>
+  <text x="120" y="88" class="b">MEM$="S1"</text>
+  <text x="120" y="108" class="s">プログラムは内蔵 RAM（既定）</text>
+  <text x="58" y="132" class="ms" xml:space="preserve">40000h</text>
+  <text x="58" y="270" class="ms" xml:space="preserve">4FFFFh</text>
+  <text x="58" y="352" class="ms" xml:space="preserve">B8000h</text>
+  <text x="58" y="476" class="ms" xml:space="preserve">BFFFFh</text>
+  <text x="180" y="316" class="s">（離れている）</text>
+  <polyline points="210,276 210,300" fill="none" stroke="#52606D" stroke-width="1.2" stroke-dasharray="5 4"/>
+  <polyline points="210,324 210,340" fill="none" stroke="#52606D" stroke-width="1.2" stroke-dasharray="5 4"/>
+  <rect x="120" y="122" width="180" height="150" rx="6" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="210" y="184" class="b" text-anchor="middle">カード（S2:）</text>
+  <text x="210" y="202" class="s" text-anchor="middle">RAMFILE（F:）</text>
+  <text x="210" y="220" class="s" text-anchor="middle">保存したファイル</text>
+  <rect x="120" y="342" width="180" height="86" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="210" y="372" class="b" text-anchor="middle">内蔵 RAM（S1:）</text>
+  <text x="210" y="390" class="s" text-anchor="middle">RAMFILE（E:）</text>
+  <text x="210" y="408" class="s" text-anchor="middle">DATA、TEXT、FUNCKEY、AER</text>
+  <rect x="120" y="428" width="180" height="50" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="210" y="449" class="b" text-anchor="middle">システムの領域</text>
+  <text x="210" y="467" class="s" text-anchor="middle">作業域、BFC00h〜</text>
+  <text x="425" y="88" class="b">MEM$="S2"</text>
+  <text x="425" y="108" class="s">プログラムはカード</text>
+  <text x="363" y="132" class="ms" xml:space="preserve">40000h</text>
+  <text x="363" y="270" class="ms" xml:space="preserve">4FFFFh</text>
+  <text x="363" y="352" class="ms" xml:space="preserve">B8000h</text>
+  <text x="363" y="476" class="ms" xml:space="preserve">BFFFFh</text>
+  <text x="485" y="316" class="s">（離れている）</text>
+  <polyline points="515,276 515,300" fill="none" stroke="#52606D" stroke-width="1.2" stroke-dasharray="5 4"/>
+  <polyline points="515,324 515,340" fill="none" stroke="#52606D" stroke-width="1.2" stroke-dasharray="5 4"/>
+  <rect x="425" y="122" width="180" height="150" rx="6" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="515" y="175" class="b" text-anchor="middle">カード（S2:）</text>
+  <text x="515" y="193" class="s" text-anchor="middle">RAMFILE（F:）</text>
+  <text x="515" y="211" class="b" text-anchor="middle">DATA、TEXT</text>
+  <text x="515" y="229" class="s" text-anchor="middle">プログラムと変数</text>
+  <rect x="425" y="342" width="180" height="86" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="515" y="372" class="b" text-anchor="middle">内蔵 RAM（S1:）</text>
+  <text x="515" y="390" class="s" text-anchor="middle">RAMFILE（E:）</text>
+  <text x="515" y="408" class="s" text-anchor="middle">FUNCKEY、AER は残る</text>
+  <rect x="425" y="428" width="180" height="50" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="515" y="449" class="b" text-anchor="middle">システムの領域</text>
+  <text x="515" y="467" class="s" text-anchor="middle">作業域、BFC00h〜</text>
+  <text x="730" y="88" class="b">MEM$="B"</text>
+  <text x="730" y="108" class="s">2 つをつないで 1 つに使う</text>
+  <text x="668" y="132" class="ms" xml:space="preserve">A8000h</text>
+  <text x="668" y="270" class="ms" xml:space="preserve">B7FFFh</text>
+  <text x="668" y="284" class="ms" xml:space="preserve">B8000h</text>
+  <text x="668" y="476" class="ms" xml:space="preserve">BFFFFh</text>
+  <rect x="730" y="122" width="180" height="150" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="820" y="184" class="b" text-anchor="middle">カード</text>
+  <text x="820" y="202" class="s" text-anchor="middle">実体は 40000h〜4FFFFh</text>
+  <text x="820" y="220" class="s" text-anchor="middle">AMC で前につなぐ</text>
+  <rect x="730" y="272" width="180" height="156" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="820" y="346" class="b" text-anchor="middle">内蔵 RAM</text>
+  <text x="820" y="364" class="s" text-anchor="middle"></text>
+  <rect x="730" y="428" width="180" height="50" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="820" y="449" class="b" text-anchor="middle">システムの領域</text>
+  <text x="820" y="467" class="s" text-anchor="middle">作業域、BFC00h〜</text>
+  <polyline points="920,124 928,124 928,426 920,426" fill="none" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="932" y="280" class="ms" xml:space="preserve">S1:</text>
+  <text x="820" y="382" class="s" text-anchor="middle">1 続きの S1: になる</text>
+  <text x="820" y="402" class="s" text-anchor="middle">F: は使えない</text>
+  <text x="210" y="512" class="m" xml:space="preserve" text-anchor="middle">使える量 28600</text>
+  <text x="515" y="512" class="m" xml:space="preserve" text-anchor="middle">S2 で 65069</text>
+  <text x="820" y="512" class="m" xml:space="preserve" text-anchor="middle">B で 94136</text>
+  <text x="490" y="540" class="s" text-anchor="middle">使える量は PRINT FRE 0 の値（§5.7.2）。94136 = 28600 + 65536</text>
+</svg>

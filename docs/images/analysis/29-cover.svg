@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 500" width="980" height="500" role="img" aria-labelledby="t d">
+  <title id="t">カバーの 3 つの形</title>
+  <desc id="d">閉じた形、45 度、平らに開いた形の横から見た図と、PC-E500 との寸法の比較。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .xs { font-size: 11px; fill: #52606D; }
+    .r { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; fill: #B7791F; font-weight: 700; }
+    .j { font-size: 10px; fill: #B7791F; font-weight: 700; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .lcd { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 14px; font-weight: 700; fill: #24351D; }
+  </style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#7B8794"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="499" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">カバーの 3 つの形</text>
+  <text x="24" y="56" class="sub">横から見た模式図。長さの比は実際の寸法に合わせてある</text>
+  <rect x="24" y="76" width="240" height="196" rx="10" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="40" y="104" class="b">閉じる（持ち運ぶとき）</text>
+  <text x="40" y="126" class="s">奥行 104.5 mm、厚さ 19 mm</text>
+  <rect x="284" y="76" width="270" height="196" rx="10" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="300" y="104" class="b">45° に立てて使う</text>
+  <text x="300" y="126" class="s">カバーの一覧を見ながら打つ</text>
+  <rect x="584" y="76" width="376" height="196" rx="10" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="600" y="104" class="b">平らに開いて使う</text>
+  <text x="600" y="126" class="s">奥行 202.5 mm、厚さ 14 mm</text>
+  <rect x="40" y="212" width="151.5" height="20.3" rx="5" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <rect x="40" y="204" width="151.5" height="8" rx="5" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <circle cx="185.5" cy="212" r="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <rect x="310" y="212" width="151.5" height="20.3" rx="5" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <circle cx="457.5" cy="212" r="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <path d="M458 210 l72 -72 l6 6 l-72 72 z" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.4"/>
+  <rect x="600" y="212" width="151.5" height="20.3" rx="5" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <rect x="757.5" y="212" width="160.1" height="12.3" rx="5" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <circle cx="753.5" cy="220" r="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="50" y="227" class="xs">本体</text>
+  <text x="320" y="227" class="xs">本体</text>
+  <text x="610" y="227" class="xs">本体</text>
+  <text x="811.5" y="225" class="xs">カバー</text>
+  <text x="50" y="200" class="xs">カバー</text>
+  <text x="40" y="258" class="s">手前</text>
+  <text x="167.5" y="258" class="s">奥</text>
+  <text x="24" y="306" class="b">PC-E500 と並べる（上から見た大きさ）</text>
+  <rect x="40" y="326" width="300" height="150" rx="8" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="52" y="354" class="b">PC-E500</text>
+  <text x="52" y="378" class="s">幅 200 × 奥行 100 × 厚さ 14 mm、250 g</text>
+  <rect x="400" y="326" width="330" height="157" rx="8" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="412" y="354" class="b">PC-E500S（閉じたとき）</text>
+  <text x="412" y="378" class="s">幅 220 × 奥行 104.5 × 厚さ 19 mm、340 g</text>
+  <text x="52" y="404" class="s">カバーは別の部品で、抜いて使う</text>
+  <text x="412" y="404" class="s">カバーは蝶番で付いている</text>
+  <text x="760" y="360" class="s">重さはどちらも</text>
+  <text x="760" y="380" class="s">電池込み。E500S は</text>
+  <text x="760" y="400" class="s">カバー込み。</text>
+</svg>

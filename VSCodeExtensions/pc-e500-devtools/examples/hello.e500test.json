@@ -1,0 +1,28 @@
+{
+  // テスト エクスプローラー（フラスコのアイコン）に出る。1 件ずつ、プログラムを書き込んだ直後の状態から始まる。
+  "program": "hello.asm",
+  "tests": [
+    {
+      "name": "3 + 4 = 7",
+      "call": "add2",
+      "memory": { "WORK": [3, 4] },
+      "expect": { "registers": { "A": 7, "C": 0 }, "memory": { "WORK+2": [7] } }
+    },
+    {
+      "name": "200 + 100 は桁上がり",
+      "call": "add2",
+      "memory": { "WORK": [200, 100] },
+      "expect": { "registers": { "A": 44, "C": 1 } }
+    },
+    {
+      "name": "最下行に表示する",
+      "call": "start",
+      "expect": { "registers": { "C": 0 }, "screen": "HELLO, PC-E500!" }
+    },
+    {
+      "name": "BASIC の CALL から",
+      "basic": "CLS:CALL &HBEC00",
+      "expect": { "screen": "HELLO, PC-E500!" }
+    }
+  ]
+}

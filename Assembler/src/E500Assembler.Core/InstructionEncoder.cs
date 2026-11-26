@@ -2,7 +2,7 @@ using System.Text.RegularExpressions;
 
 namespace E500Assembler;
 
-internal sealed class InstructionEncoder(Func<string, long> evaluate, int pc, bool strict)
+internal sealed class InstructionEncoder(Func<string, long> evaluate, int pc, bool strict, Func<string, bool>? lowLabel = null)
 {
     private static readonly string[] Registers = ["A", "IL", "BA", "I", "X", "Y", "U", "S"];
     private static readonly Dictionary<string, int> Fixed = new()
@@ -136,7 +136,7 @@ internal sealed class InstructionEncoder(Func<string, long> evaluate, int pc, bo
             else
             {
                 long target = Value(x.Text, 20);
-                if (strict && target > 0xffff && (target >> 16) != (pc >> 16)) throw new AssemblyException("Near branch crosses a 64 KiB segment; use JPF/CALLF or an explicit far-branch sequence");
+                if (strict && (target >> 16) != (pc >> 16) && (target > 0xffff || lowLabel?.Invoke(x.Text) == true)) throw new AssemblyException("Near branch crosses a 64 KiB segment; use JPF/CALLF or an explicit far-branch sequence");
                 Emit((int)target, (int)(target >> 8));
             }
             return true;
@@ -150,7 +150,7 @@ internal sealed class InstructionEncoder(Func<string, long> evaluate, int pc, bo
             else
             {
                 long target = Value(expression, 20);
-                if (target <= 0xffff) target += pc & 0xf0000;
+                if (target <= 0xffff && lowLabel?.Invoke(expression) != true) target += pc & 0xf0000;
                 if (strict && (target >> 16) != (pc >> 16)) throw new AssemblyException("Relative branch crosses a 64 KiB segment");
                 delta = (target - ((pc + 2) & 0xffff | (pc & 0xf0000))) & 0xffff;
                 if (delta > 32767) delta -= 65536;
@@ -165,7 +165,16 @@ internal sealed class InstructionEncoder(Func<string, long> evaluate, int pc, bo
             if (r < 0) return false;
             Emit((m == "PUSHU" ? 0x28 : 0x38) + r); return true;
         }
-        if (m is "PUSHS" or "POPS") { if (x.Kind != "F") return false; Emit(m == "PUSHS" ? 0x4f : 0x5f); return true; }
+        if (m is "PUSHS" or "POPS")
+        {
+            // Only F has opcodes of its own. The others are written as MV [--S],x and MV x,[S++] (ESR-L manual p. 67).
+            bool push = m == "PUSHS";
+            if (x.Kind == "F") Emit(push ? 0x4f : 0x5f);
+            else if (x.Kind == "IMR") { Emit(push ? 0xe8 : 0xe0, push ? 0x37 : 0x27); Mem(new("M", "0FBh", Mode: 0)); }
+            else if (x.Kind == "R" && x.Reg < 6) Emit((push ? 0xb0 : 0x90) + x.Reg, push ? 0x37 : 0x27);
+            else return false;
+            return true;
+        }
         if (m is "INC" or "DEC")
         {
             int op = m == "INC" ? 0x6c : 0x7c;

@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 320" width="980" height="320" role="img" aria-labelledby="t d">
+  <title id="t">1 つのブロックの中の 2 つの空き領域</title>
+  <desc id="d">メモリブロックの空き領域 0 と 1 の始まりと終わりを、ヘッダの欄と対応させた図。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+  </style>
+  <defs></defs>
+  <rect x="0.5" y="0.5" width="979" height="319" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">1 つのブロックの中の 2 つの空き領域</text>
+  <text x="24" y="55" class="sub">ヘッダの +16〜+21 が、2 つの空き領域の始まりと終わりを持つ。例は 42h で作った MYBLK</text>
+  <rect x="60" y="110" width="150" height="54" rx="0" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.5"/>
+  <text x="135" y="142.04" class="b" text-anchor="middle">ヘッダ</text>
+  <text x="60" y="102" class="ms" xml:space="preserve">00h</text>
+  <rect x="210" y="110" width="250" height="54" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="335" y="142.04" class="b" text-anchor="middle">空き領域 1（40h）</text>
+  <text x="210" y="102" class="ms" xml:space="preserve">22h</text>
+  <rect x="460" y="110" width="400" height="54" rx="0" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.5"/>
+  <text x="660" y="142.04" class="b" text-anchor="middle">空き領域 0（100h）</text>
+  <text x="460" y="102" class="ms" xml:space="preserve">62h</text>
+  <text x="860" y="102" class="ms" xml:space="preserve" text-anchor="end">162h</text>
+  <text x="856" y="192" class="s" text-anchor="end">次のブロックまで（+11 = 162h）</text>
+  <polyline points="60,176 860,176" fill="none" stroke="#52606D" stroke-width="1.2"/>
+  <rect x="60" y="210" width="390" height="40" rx="6" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.5"/>
+  <text x="255" y="234.68" class="m" xml:space="preserve" text-anchor="middle">+16 = 62h  +19 = 162h</text>
+  <text x="60" y="268" class="s">空き領域 0 の始まり（= 使っている長さ）と終わり（= +11 と同じ）</text>
+  <rect x="490" y="210" width="370" height="40" rx="6" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="675" y="234.68" class="m" xml:space="preserve" text-anchor="middle">+1C = 00h  +1F = 40h</text>
+  <text x="490" y="268" class="s">空き領域 1 の始まりと終わり（ヘッダの直後 +22 から数える）</text>
+  <text x="60" y="300" class="s">空き領域 0 はブロックの最後、空き領域 1 はヘッダの直後にできた（実験、ROM 7.2）</text>
+</svg>

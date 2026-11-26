@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 440" width="980" height="440" role="img" aria-labelledby="t d">
+  <title id="t">ピボット選択のつまずき</title>
+  <desc id="d">行列の 1 列目から最大の要素を探す手順を、古いバージョンと改訂 6 以降で並べた図。古いバージョンは 0 を選んで 0 除算になる。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .lbl { font-size: 12px; fill: #52606D; paint-order: stroke; stroke: #FFFFFF; stroke-width: 4px; stroke-linejoin: round; }
+  </style>
+  <defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#52606D"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="439" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">ピボット選択のつまずき</text>
+  <text x="24" y="55" class="sub">1 列目の値 1、−10、0、0 から「絶対値が最大の要素」を探す。更新のときに符号を残すと 0 が勝つ</text>
+  <rect x="30" y="76" width="440" height="34" rx="6" fill="#FDECEA" stroke="#C0392B" stroke-width="1"/>
+  <text x="250" y="98" class="b" text-anchor="middle">古いバージョン（2.1、2.2、3.2、5.3）</text>
+  <text x="90" y="136" class="s" text-anchor="middle">候補</text>
+  <text x="195" y="136" class="s" text-anchor="middle">比べる値</text>
+  <text x="300" y="136" class="s" text-anchor="middle">比べる相手</text>
+  <text x="405" y="136" class="s" text-anchor="middle">結果</text>
+  <rect x="30" y="148" width="440" height="40" rx="4" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1"/>
+  <text x="90" y="173" class="m" xml:space="preserve" text-anchor="middle">1</text>
+  <text x="195" y="173" class="m" xml:space="preserve" text-anchor="middle">1</text>
+  <text x="300" y="173" class="m" xml:space="preserve" text-anchor="middle">—</text>
+  <text x="405" y="173" class="s" text-anchor="middle">最大 = 1</text>
+  <rect x="30" y="194" width="440" height="40" rx="4" fill="#FFF5DF" stroke="#B7791F" stroke-width="1"/>
+  <text x="90" y="219" class="m" xml:space="preserve" text-anchor="middle">−10</text>
+  <text x="195" y="219" class="m" xml:space="preserve" text-anchor="middle">10</text>
+  <text x="300" y="219" class="m" xml:space="preserve" text-anchor="middle">1</text>
+  <text x="405" y="219" class="s" text-anchor="middle">最大 = −10（符号つき）</text>
+  <rect x="30" y="240" width="440" height="40" rx="4" fill="#FDECEA" stroke="#C0392B" stroke-width="1"/>
+  <text x="90" y="265" class="m" xml:space="preserve" text-anchor="middle">0</text>
+  <text x="195" y="265" class="m" xml:space="preserve" text-anchor="middle">0</text>
+  <text x="300" y="265" class="m" xml:space="preserve" text-anchor="middle">−10</text>
+  <text x="405" y="265" class="s" text-anchor="middle">0 &gt; −10 なので 0 を選ぶ</text>
+  <rect x="30" y="286" width="440" height="40" rx="4" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1"/>
+  <text x="90" y="311" class="m" xml:space="preserve" text-anchor="middle">0</text>
+  <text x="195" y="311" class="m" xml:space="preserve" text-anchor="middle">0</text>
+  <text x="300" y="311" class="m" xml:space="preserve" text-anchor="middle">0</text>
+  <text x="405" y="311" class="s" text-anchor="middle">変わらない</text>
+  <rect x="30" y="346" width="440" height="50" rx="6" fill="#FDECEA" stroke="#C0392B" stroke-width="1"/>
+  <text x="250" y="367.5" class="b" text-anchor="middle">0 がピボットになる</text>
+  <text x="250" y="384.5" class="s" text-anchor="middle">DIVISION BY ZERO</text>
+  <rect x="510" y="76" width="440" height="34" rx="6" fill="#E6F6EC" stroke="#2F855A" stroke-width="1"/>
+  <text x="730" y="98" class="b" text-anchor="middle">改訂 6 以降（符号を消してから覚える）</text>
+  <text x="570" y="136" class="s" text-anchor="middle">候補</text>
+  <text x="675" y="136" class="s" text-anchor="middle">比べる値</text>
+  <text x="780" y="136" class="s" text-anchor="middle">比べる相手</text>
+  <text x="885" y="136" class="s" text-anchor="middle">結果</text>
+  <rect x="510" y="148" width="440" height="40" rx="4" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1"/>
+  <text x="570" y="173" class="m" xml:space="preserve" text-anchor="middle">1</text>
+  <text x="675" y="173" class="m" xml:space="preserve" text-anchor="middle">1</text>
+  <text x="780" y="173" class="m" xml:space="preserve" text-anchor="middle">—</text>
+  <text x="885" y="173" class="s" text-anchor="middle">最大 = 1</text>
+  <rect x="510" y="194" width="440" height="40" rx="4" fill="#FFF5DF" stroke="#B7791F" stroke-width="1"/>
+  <text x="570" y="219" class="m" xml:space="preserve" text-anchor="middle">−10</text>
+  <text x="675" y="219" class="m" xml:space="preserve" text-anchor="middle">10</text>
+  <text x="780" y="219" class="m" xml:space="preserve" text-anchor="middle">1</text>
+  <text x="885" y="219" class="s" text-anchor="middle">最大 = 10</text>
+  <rect x="510" y="240" width="440" height="40" rx="4" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1"/>
+  <text x="570" y="265" class="m" xml:space="preserve" text-anchor="middle">0</text>
+  <text x="675" y="265" class="m" xml:space="preserve" text-anchor="middle">0</text>
+  <text x="780" y="265" class="m" xml:space="preserve" text-anchor="middle">10</text>
+  <text x="885" y="265" class="s" text-anchor="middle">変わらない</text>
+  <rect x="510" y="286" width="440" height="40" rx="4" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1"/>
+  <text x="570" y="311" class="m" xml:space="preserve" text-anchor="middle">0</text>
+  <text x="675" y="311" class="m" xml:space="preserve" text-anchor="middle">0</text>
+  <text x="780" y="311" class="m" xml:space="preserve" text-anchor="middle">10</text>
+  <text x="885" y="311" class="s" text-anchor="middle">変わらない</text>
+  <rect x="510" y="346" width="440" height="50" rx="6" fill="#E6F6EC" stroke="#2F855A" stroke-width="1"/>
+  <text x="730" y="367.5" class="b" text-anchor="middle">−10 がピボットになる</text>
+  <text x="730" y="384.5" class="s" text-anchor="middle">X(1,1) = 0.156626506</text>
+  <text x="30" y="422" class="s">「比べる値」は候補の絶対値。違うのは、それまでの最大値を読み出した直後に AND (BP+0),F7h で符号を消すかどうかだけ</text>
+</svg>

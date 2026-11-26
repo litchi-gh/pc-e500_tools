@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 330" width="980" height="330" role="img" aria-labelledby="t d">
+  <title id="t">IOCS の引数を置く場所</title>
+  <desc id="d">内部 RAM D4h から DFh の BL、BH、CL、CH、DL、DH、SI、DI の並びと、CPU のレジスタの使い方。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+  </style>
+  <defs></defs>
+  <rect x="0.5" y="0.5" width="979" height="329" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">IOCS の引数を置く場所</text>
+  <text x="24" y="55" class="sub">デバイス、ドライブ、座標などは内部 RAM D4h〜DFh に、番号は IL に、そのほかはレジスタに入れる</text>
+  <text x="61" y="90" class="ms" xml:space="preserve" text-anchor="middle">D4h</text>
+  <rect x="24" y="98" width="74" height="44" rx="6" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="61" y="124.68" class="m" xml:space="preserve" text-anchor="middle">(BL)</text>
+  <text x="139" y="90" class="ms" xml:space="preserve" text-anchor="middle">D5h</text>
+  <rect x="102" y="98" width="74" height="44" rx="6" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="139" y="124.68" class="m" xml:space="preserve" text-anchor="middle">(BH)</text>
+  <text x="217" y="90" class="ms" xml:space="preserve" text-anchor="middle">D6h</text>
+  <rect x="180" y="98" width="74" height="44" rx="6" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="217" y="124.68" class="m" xml:space="preserve" text-anchor="middle">(CL)</text>
+  <text x="295" y="90" class="ms" xml:space="preserve" text-anchor="middle">D7h</text>
+  <rect x="258" y="98" width="74" height="44" rx="6" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="295" y="124.68" class="m" xml:space="preserve" text-anchor="middle">(CH)</text>
+  <text x="373" y="90" class="ms" xml:space="preserve" text-anchor="middle">D8h</text>
+  <rect x="336" y="98" width="74" height="44" rx="6" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="373" y="124.68" class="m" xml:space="preserve" text-anchor="middle">(DL)</text>
+  <text x="451" y="90" class="ms" xml:space="preserve" text-anchor="middle">D9h</text>
+  <rect x="414" y="98" width="74" height="44" rx="6" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="451" y="124.68" class="m" xml:space="preserve" text-anchor="middle">(DH)</text>
+  <text x="529" y="90" class="ms" xml:space="preserve" text-anchor="middle">DAh</text>
+  <text x="607" y="90" class="ms" xml:space="preserve" text-anchor="middle">DBh</text>
+  <text x="685" y="90" class="ms" xml:space="preserve" text-anchor="middle">DCh</text>
+  <text x="763" y="90" class="ms" xml:space="preserve" text-anchor="middle">DDh</text>
+  <text x="841" y="90" class="ms" xml:space="preserve" text-anchor="middle">DEh</text>
+  <text x="919" y="90" class="ms" xml:space="preserve" text-anchor="middle">DFh</text>
+  <rect x="492" y="98" width="230" height="44" rx="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="607" y="124.68" class="m" xml:space="preserve" text-anchor="middle">(SI) 3 バイト</text>
+  <rect x="726" y="98" width="230" height="44" rx="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="841" y="124.68" class="m" xml:space="preserve" text-anchor="middle">(DI) 3 バイト</text>
+  <polyline points="24,150 24,158 176,158 176,150" fill="none" stroke="#52606D" stroke-width="1.2"/>
+  <text x="100" y="176" class="s" text-anchor="middle">(BX) 2 バイト</text>
+  <polyline points="180,150 180,158 332,158 332,150" fill="none" stroke="#52606D" stroke-width="1.2"/>
+  <text x="256" y="176" class="s" text-anchor="middle">(CX) デバイス、ドライブ</text>
+  <polyline points="336,150 336,158 488,158 488,150" fill="none" stroke="#52606D" stroke-width="1.2"/>
+  <text x="412" y="176" class="s" text-anchor="middle">(DX) 2 バイト</text>
+  <text x="24" y="222" class="b">レジスタ</text>
+  <rect x="24" y="236" width="178" height="56" rx="6" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+  <text x="113" y="260.18" class="m" xml:space="preserve" text-anchor="middle">IL</text>
+  <text x="113" y="277.32" class="s" text-anchor="middle">コマンド番号</text>
+  <rect x="211" y="236" width="178" height="56" rx="6" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="300" y="260.18" class="m" xml:space="preserve" text-anchor="middle">A、B</text>
+  <text x="300" y="277.32" class="s" text-anchor="middle">1 バイトの引数、戻り値</text>
+  <rect x="398" y="236" width="178" height="56" rx="6" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="487" y="260.18" class="m" xml:space="preserve" text-anchor="middle">X、Y</text>
+  <text x="487" y="277.32" class="s" text-anchor="middle">アドレス、座標、長さ</text>
+  <rect x="585" y="236" width="178" height="56" rx="6" fill="#FDECEA" stroke="#C0392B" stroke-width="1.5"/>
+  <text x="674" y="260.18" class="m" xml:space="preserve" text-anchor="middle">C（フラグ）</text>
+  <text x="674" y="277.32" class="s" text-anchor="middle">戻り：1 ならエラー</text>
+  <rect x="772" y="236" width="178" height="56" rx="6" fill="#FDECEA" stroke="#C0392B" stroke-width="1.5"/>
+  <text x="861" y="260.18" class="m" xml:space="preserve" text-anchor="middle">A</text>
+  <text x="861" y="277.32" class="s" text-anchor="middle">戻り：エラー番号</text>
+</svg>

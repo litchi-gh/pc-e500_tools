@@ -1,0 +1,158 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 470" width="980" height="470" role="img" aria-labelledby="t d">
+  <title id="t">LCD のアドレスの読み方</title>
+  <desc id="d">A13、A12、A3、A2、A1、A0 の 6 本で、どのコントローラに、命令かデータか、書きか読みかが決まることを示す図。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .lbl { font-size: 12px; fill: #52606D; paint-order: stroke; stroke: #FFFFFF; stroke-width: 4px; stroke-linejoin: round; }
+  </style>
+  <defs></defs>
+  <rect x="0.5" y="0.5" width="979" height="469" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">LCD のアドレスの読み方</text>
+  <text x="24" y="55" class="sub">CE5 の範囲（00000h〜03FFFh、08000h〜0BFFFh）のアドレスの下位 16 ビット。色の付いた 6 本がコントローラの端子につながっている</text>
+  <text x="87" y="86" class="ms" xml:space="preserve" text-anchor="middle">A15</text>
+  <rect x="60" y="92" width="54" height="36" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="87" y="115" class="m" xml:space="preserve" text-anchor="middle">−</text>
+  <text x="141" y="86" class="ms" xml:space="preserve" text-anchor="middle">A14</text>
+  <rect x="114" y="92" width="54" height="36" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="141" y="115" class="m" xml:space="preserve" text-anchor="middle">−</text>
+  <text x="195" y="86" class="ms" xml:space="preserve" text-anchor="middle">A13</text>
+  <rect x="168" y="92" width="54" height="36" rx="0" fill="#FDECEA" stroke="#C0392B" stroke-width="1.5"/>
+  <text x="195" y="115" class="m" xml:space="preserve" text-anchor="middle">1</text>
+  <text x="249" y="86" class="ms" xml:space="preserve" text-anchor="middle">A12</text>
+  <rect x="222" y="92" width="54" height="36" rx="0" fill="#FDECEA" stroke="#C0392B" stroke-width="1.5"/>
+  <text x="249" y="115" class="m" xml:space="preserve" text-anchor="middle">0</text>
+  <text x="303" y="86" class="ms" xml:space="preserve" text-anchor="middle">A11</text>
+  <rect x="276" y="92" width="54" height="36" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="303" y="115" class="m" xml:space="preserve" text-anchor="middle">−</text>
+  <text x="357" y="86" class="ms" xml:space="preserve" text-anchor="middle">A10</text>
+  <rect x="330" y="92" width="54" height="36" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="357" y="115" class="m" xml:space="preserve" text-anchor="middle">−</text>
+  <text x="411" y="86" class="ms" xml:space="preserve" text-anchor="middle">A9</text>
+  <rect x="384" y="92" width="54" height="36" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="411" y="115" class="m" xml:space="preserve" text-anchor="middle">−</text>
+  <text x="465" y="86" class="ms" xml:space="preserve" text-anchor="middle">A8</text>
+  <rect x="438" y="92" width="54" height="36" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="465" y="115" class="m" xml:space="preserve" text-anchor="middle">−</text>
+  <text x="519" y="86" class="ms" xml:space="preserve" text-anchor="middle">A7</text>
+  <rect x="492" y="92" width="54" height="36" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="519" y="115" class="m" xml:space="preserve" text-anchor="middle">−</text>
+  <text x="573" y="86" class="ms" xml:space="preserve" text-anchor="middle">A6</text>
+  <rect x="546" y="92" width="54" height="36" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="573" y="115" class="m" xml:space="preserve" text-anchor="middle">−</text>
+  <text x="627" y="86" class="ms" xml:space="preserve" text-anchor="middle">A5</text>
+  <rect x="600" y="92" width="54" height="36" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="627" y="115" class="m" xml:space="preserve" text-anchor="middle">−</text>
+  <text x="681" y="86" class="ms" xml:space="preserve" text-anchor="middle">A4</text>
+  <rect x="654" y="92" width="54" height="36" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="681" y="115" class="m" xml:space="preserve" text-anchor="middle">−</text>
+  <text x="735" y="86" class="ms" xml:space="preserve" text-anchor="middle">A3</text>
+  <rect x="708" y="92" width="54" height="36" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+  <text x="735" y="115" class="m" xml:space="preserve" text-anchor="middle">a</text>
+  <text x="789" y="86" class="ms" xml:space="preserve" text-anchor="middle">A2</text>
+  <rect x="762" y="92" width="54" height="36" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="789" y="115" class="m" xml:space="preserve" text-anchor="middle">b</text>
+  <text x="843" y="86" class="ms" xml:space="preserve" text-anchor="middle">A1</text>
+  <rect x="816" y="92" width="54" height="36" rx="0" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.5"/>
+  <text x="843" y="115" class="m" xml:space="preserve" text-anchor="middle">c</text>
+  <text x="897" y="86" class="ms" xml:space="preserve" text-anchor="middle">A0</text>
+  <rect x="870" y="92" width="54" height="36" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="897" y="115" class="m" xml:space="preserve" text-anchor="middle">d</text>
+  <polyline points="168,130 168,138 276,138 276,130" fill="none" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="222" y="154" class="s" text-anchor="middle">LCD のウィンドウを選ぶ（A13=1、A12=0）</text>
+  <polyline points="708,130 708,138 816,138 816,130" fill="none" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="762" y="154" class="s" text-anchor="middle">0 のほうを選ぶ</text>
+  <polyline points="822,130 822,138 924,138 924,130" fill="none" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="873" y="154" class="s" text-anchor="middle">D/I と R/W</text>
+  <text x="60" y="196" class="b">例：同じ 6 本の組み合わせで、表のアドレスがすべて出てくる</text>
+  <rect x="60" y="210" width="90" height="30" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="105" y="230" class="b" text-anchor="middle">アドレス</text>
+  <rect x="150" y="210" width="100" height="30" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="200" y="230" class="b" text-anchor="middle">A13 A12</text>
+  <rect x="250" y="210" width="100" height="30" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="300" y="230" class="b" text-anchor="middle">A3 A2</text>
+  <rect x="350" y="210" width="260" height="30" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="480" y="230" class="b" text-anchor="middle">選ばれる相手</text>
+  <rect x="610" y="210" width="130" height="30" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="675" y="230" class="b" text-anchor="middle">A1（D/I）</text>
+  <rect x="740" y="210" width="130" height="30" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="805" y="230" class="b" text-anchor="middle">A0（R/W）</text>
+  <rect x="60" y="240" width="90" height="30" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="1"/>
+  <text x="105" y="260" class="m" xml:space="preserve" text-anchor="middle">2000h</text>
+  <rect x="150" y="240" width="100" height="30" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="1"/>
+  <text x="200" y="260" class="m" xml:space="preserve" text-anchor="middle">1 0</text>
+  <rect x="250" y="240" width="100" height="30" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="1"/>
+  <text x="300" y="260" class="m" xml:space="preserve" text-anchor="middle">0 0</text>
+  <rect x="350" y="240" width="260" height="30" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="1"/>
+  <text x="480" y="260" text-anchor="middle">両方</text>
+  <rect x="610" y="240" width="130" height="30" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="1"/>
+  <text x="675" y="260" text-anchor="middle">0 命令</text>
+  <rect x="740" y="240" width="130" height="30" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="1"/>
+  <text x="805" y="260" text-anchor="middle">0 書く</text>
+  <rect x="60" y="270" width="90" height="30" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="1"/>
+  <text x="105" y="290" class="m" xml:space="preserve" text-anchor="middle">2004h</text>
+  <rect x="150" y="270" width="100" height="30" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="1"/>
+  <text x="200" y="290" class="m" xml:space="preserve" text-anchor="middle">1 0</text>
+  <rect x="250" y="270" width="100" height="30" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="1"/>
+  <text x="300" y="290" class="m" xml:space="preserve" text-anchor="middle">0 1</text>
+  <rect x="350" y="270" width="260" height="30" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="1"/>
+  <text x="480" y="290" text-anchor="middle">コントローラ 2（IC5）</text>
+  <rect x="610" y="270" width="130" height="30" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="1"/>
+  <text x="675" y="290" text-anchor="middle">0 命令</text>
+  <rect x="740" y="270" width="130" height="30" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="1"/>
+  <text x="805" y="290" text-anchor="middle">0 書く</text>
+  <rect x="60" y="300" width="90" height="30" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="1"/>
+  <text x="105" y="320" class="m" xml:space="preserve" text-anchor="middle">2006h</text>
+  <rect x="150" y="300" width="100" height="30" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="1"/>
+  <text x="200" y="320" class="m" xml:space="preserve" text-anchor="middle">1 0</text>
+  <rect x="250" y="300" width="100" height="30" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="1"/>
+  <text x="300" y="320" class="m" xml:space="preserve" text-anchor="middle">0 1</text>
+  <rect x="350" y="300" width="260" height="30" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="1"/>
+  <text x="480" y="320" text-anchor="middle">コントローラ 2（IC5）</text>
+  <rect x="610" y="300" width="130" height="30" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="1"/>
+  <text x="675" y="320" text-anchor="middle">1 表示データ</text>
+  <rect x="740" y="300" width="130" height="30" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="1"/>
+  <text x="805" y="320" text-anchor="middle">0 書く</text>
+  <rect x="60" y="330" width="90" height="30" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="1"/>
+  <text x="105" y="350" class="m" xml:space="preserve" text-anchor="middle">2008h</text>
+  <rect x="150" y="330" width="100" height="30" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="1"/>
+  <text x="200" y="350" class="m" xml:space="preserve" text-anchor="middle">1 0</text>
+  <rect x="250" y="330" width="100" height="30" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="1"/>
+  <text x="300" y="350" class="m" xml:space="preserve" text-anchor="middle">1 0</text>
+  <rect x="350" y="330" width="260" height="30" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="1"/>
+  <text x="480" y="350" text-anchor="middle">コントローラ 1（IC6）</text>
+  <rect x="610" y="330" width="130" height="30" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="1"/>
+  <text x="675" y="350" text-anchor="middle">0 命令</text>
+  <rect x="740" y="330" width="130" height="30" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="1"/>
+  <text x="805" y="350" text-anchor="middle">0 書く</text>
+  <rect x="60" y="360" width="90" height="30" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="1"/>
+  <text x="105" y="380" class="m" xml:space="preserve" text-anchor="middle">2009h</text>
+  <rect x="150" y="360" width="100" height="30" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="1"/>
+  <text x="200" y="380" class="m" xml:space="preserve" text-anchor="middle">1 0</text>
+  <rect x="250" y="360" width="100" height="30" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="1"/>
+  <text x="300" y="380" class="m" xml:space="preserve" text-anchor="middle">1 0</text>
+  <rect x="350" y="360" width="260" height="30" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="1"/>
+  <text x="480" y="380" text-anchor="middle">コントローラ 1（IC6）</text>
+  <rect x="610" y="360" width="130" height="30" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="1"/>
+  <text x="675" y="380" text-anchor="middle">0 状態</text>
+  <rect x="740" y="360" width="130" height="30" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="1"/>
+  <text x="805" y="380" text-anchor="middle">1 読む</text>
+  <rect x="60" y="390" width="90" height="30" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="1"/>
+  <text x="105" y="410" class="m" xml:space="preserve" text-anchor="middle">200Bh</text>
+  <rect x="150" y="390" width="100" height="30" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="1"/>
+  <text x="200" y="410" class="m" xml:space="preserve" text-anchor="middle">1 0</text>
+  <rect x="250" y="390" width="100" height="30" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="1"/>
+  <text x="300" y="410" class="m" xml:space="preserve" text-anchor="middle">1 0</text>
+  <rect x="350" y="390" width="260" height="30" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="1"/>
+  <text x="480" y="410" text-anchor="middle">コントローラ 1（IC6）</text>
+  <rect x="610" y="390" width="130" height="30" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="1"/>
+  <text x="675" y="410" text-anchor="middle">1 表示データ</text>
+  <rect x="740" y="390" width="130" height="30" rx="0" fill="#FFFFFF" stroke="#7B8794" stroke-width="1"/>
+  <text x="805" y="410" text-anchor="middle">1 読む</text>
+  <text x="60" y="450" class="s">A3 = 0 で IC5（コントローラ 2、両端）、A2 = 0 で IC6（コントローラ 1、中央）を選ぶ。A1、A0 の意味は両方に共通</text>
+</svg>

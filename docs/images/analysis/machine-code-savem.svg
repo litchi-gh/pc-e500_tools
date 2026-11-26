@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 240" width="980" height="240" role="img" aria-labelledby="t d">
+  <title id="t">SAVE M のヘッダ 16 バイト</title>
+  <desc id="d">先頭 5 バイトの印、長さ 3 バイト、開始アドレス 3 バイト、残り 5 バイトと、続く本体 64 バイトの並び。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+  </style>
+  <defs></defs>
+  <rect x="0.5" y="0.5" width="979" height="239" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">SAVE M のヘッダ 16 バイト</text>
+  <text x="24" y="55" class="sub">SAVE M &quot;X:PROG.BIN&quot;,&amp;HBEC00,&amp;HBEC3F の場合。アドレスと長さは下位のバイトから</text>
+  <text x="47" y="92" class="ms" xml:space="preserve" text-anchor="middle">0</text>
+  <rect x="24" y="100" width="46" height="38" rx="4" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="47" y="123.68" class="m" xml:space="preserve" text-anchor="middle">FF</text>
+  <text x="97" y="92" class="ms" xml:space="preserve" text-anchor="middle">1</text>
+  <rect x="74" y="100" width="46" height="38" rx="4" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="97" y="123.68" class="m" xml:space="preserve" text-anchor="middle">00</text>
+  <text x="147" y="92" class="ms" xml:space="preserve" text-anchor="middle">2</text>
+  <rect x="124" y="100" width="46" height="38" rx="4" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="147" y="123.68" class="m" xml:space="preserve" text-anchor="middle">06</text>
+  <text x="197" y="92" class="ms" xml:space="preserve" text-anchor="middle">3</text>
+  <rect x="174" y="100" width="46" height="38" rx="4" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="197" y="123.68" class="m" xml:space="preserve" text-anchor="middle">01</text>
+  <text x="247" y="92" class="ms" xml:space="preserve" text-anchor="middle">4</text>
+  <rect x="224" y="100" width="46" height="38" rx="4" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="247" y="123.68" class="m" xml:space="preserve" text-anchor="middle">10</text>
+  <text x="297" y="92" class="ms" xml:space="preserve" text-anchor="middle">5</text>
+  <rect x="274" y="100" width="46" height="38" rx="4" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="297" y="123.68" class="m" xml:space="preserve" text-anchor="middle">40</text>
+  <text x="347" y="92" class="ms" xml:space="preserve" text-anchor="middle">6</text>
+  <rect x="324" y="100" width="46" height="38" rx="4" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="347" y="123.68" class="m" xml:space="preserve" text-anchor="middle">00</text>
+  <text x="397" y="92" class="ms" xml:space="preserve" text-anchor="middle">7</text>
+  <rect x="374" y="100" width="46" height="38" rx="4" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="397" y="123.68" class="m" xml:space="preserve" text-anchor="middle">00</text>
+  <text x="447" y="92" class="ms" xml:space="preserve" text-anchor="middle">8</text>
+  <rect x="424" y="100" width="46" height="38" rx="4" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="447" y="123.68" class="m" xml:space="preserve" text-anchor="middle">00</text>
+  <text x="497" y="92" class="ms" xml:space="preserve" text-anchor="middle">9</text>
+  <rect x="474" y="100" width="46" height="38" rx="4" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="497" y="123.68" class="m" xml:space="preserve" text-anchor="middle">EC</text>
+  <text x="547" y="92" class="ms" xml:space="preserve" text-anchor="middle">10</text>
+  <rect x="524" y="100" width="46" height="38" rx="4" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="547" y="123.68" class="m" xml:space="preserve" text-anchor="middle">0B</text>
+  <text x="597" y="92" class="ms" xml:space="preserve" text-anchor="middle">11</text>
+  <rect x="574" y="100" width="46" height="38" rx="4" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="597" y="123.68" class="m" xml:space="preserve" text-anchor="middle">FF</text>
+  <text x="647" y="92" class="ms" xml:space="preserve" text-anchor="middle">12</text>
+  <rect x="624" y="100" width="46" height="38" rx="4" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="647" y="123.68" class="m" xml:space="preserve" text-anchor="middle">FF</text>
+  <text x="697" y="92" class="ms" xml:space="preserve" text-anchor="middle">13</text>
+  <rect x="674" y="100" width="46" height="38" rx="4" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="697" y="123.68" class="m" xml:space="preserve" text-anchor="middle">FF</text>
+  <text x="747" y="92" class="ms" xml:space="preserve" text-anchor="middle">14</text>
+  <rect x="724" y="100" width="46" height="38" rx="4" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="747" y="123.68" class="m" xml:space="preserve" text-anchor="middle">00</text>
+  <text x="797" y="92" class="ms" xml:space="preserve" text-anchor="middle">15</text>
+  <rect x="774" y="100" width="46" height="38" rx="4" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="797" y="123.68" class="m" xml:space="preserve" text-anchor="middle">0F</text>
+  <rect x="828" y="100" width="126" height="38" rx="4" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+  <text x="891" y="123.32" class="s" text-anchor="middle">本体 64 バイト</text>
+  <polyline points="24,148 24,154 270,154 270,148" fill="none" stroke="#52606D" stroke-width="1.2"/>
+  <text x="147" y="174" class="s" text-anchor="middle">印（いつも同じ）</text>
+  <polyline points="274,148 274,154 420,154 420,148" fill="none" stroke="#52606D" stroke-width="1.2"/>
+  <text x="347" y="174" class="s" text-anchor="middle">長さ 000040h</text>
+  <polyline points="424,148 424,154 570,154 570,148" fill="none" stroke="#52606D" stroke-width="1.2"/>
+  <text x="497" y="174" class="s" text-anchor="middle">開始 0BEC00h</text>
+  <polyline points="574,148 574,154 820,154 820,148" fill="none" stroke="#52606D" stroke-width="1.2"/>
+  <text x="697" y="174" class="s" text-anchor="middle">いつも同じ</text>
+  <text x="24" y="216" class="s">長さ = 終了 − 開始 + 1 = BEC3Fh − BEC00h + 1 = 40h（64 バイト）。ファイル全体は 16 + 64 = 80 バイト。</text>
+</svg>

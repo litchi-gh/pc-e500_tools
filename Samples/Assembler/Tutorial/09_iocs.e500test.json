@@ -1,0 +1,6 @@
+{
+  "program": "09_iocs.asm",
+  "tests": [
+    { "name": "表示", "basic": "CLS:CALL &HBEC00", "expect": { "screen": "HELLO, IOCS!" } }
+  ]
+}

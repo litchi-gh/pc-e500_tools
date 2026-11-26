@@ -1,0 +1,8 @@
+{
+  "program": "12_divide.asm",
+  "tests": [
+    { "name": "1000 ÷ 7", "call": "start", "memory": { "NUM": [232, 3], "BY": [7] }, "expect": { "memory": { "QUOT": [142, 0], "REST": [6] }, "registers": { "C": 0 } } },
+    { "name": "0 で割る", "call": "start", "memory": { "BY": [0] }, "expect": { "registers": { "C": 1, "A": 21 } } },
+    { "name": "BASIC のエラーになる", "basic": "CLS:POKE &HBEC02,0:CALL &HBEC06", "expect": { "screen": "Division by Zero" } }
+  ]
+}

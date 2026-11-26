@@ -1,0 +1,6 @@
+{
+  "program": "11_draw.asm",
+  "tests": [
+    { "name": "描く", "call": "start", "expect": { "registers": { "C": 0 } } }
+  ]
+}

@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 392" width="980" height="392" role="img" aria-labelledby="t d">
+  <title id="t">IOCS の作業域の並び</title>
+  <desc id="d">BF9B4h から 24Ch バイトの IOCS の作業域の中で、キーボードバッファ、シリアルバッファ、FCB などが並ぶ様子。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .lbl { font-size: 12px; fill: #52606D; paint-order: stroke; stroke: #FFFFFF; stroke-width: 4px; stroke-linejoin: round; }
+  </style>
+  <defs><marker id="a52606D" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#52606D"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="391" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">IOCS の作業域の並び</text>
+  <text x="24" y="55" class="sub">ROM 3.2 の値。P = BF9B4h（内部 RAM の E6h と BFD17h に入っている）。幅は比率どおりではない</text>
+  <rect x="70" y="124" width="150" height="66" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="145" y="152" class="b" text-anchor="middle">設定と位置の表</text>
+  <text x="145" y="174" class="s" text-anchor="middle">カーソルなど</text>
+  <text x="70" y="116" class="ms" xml:space="preserve">P+00h</text>
+  <text x="70" y="100" class="ms" xml:space="preserve">BF9B4h</text>
+  <rect x="220" y="124" width="120" height="66" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="280" y="152" class="b" text-anchor="middle">キーボード</text>
+  <text x="280" y="174" class="s" text-anchor="middle">20h バイト</text>
+  <text x="220" y="116" class="ms" xml:space="preserve">P+60h</text>
+  <text x="220" y="100" class="ms" xml:space="preserve">BFA14h</text>
+  <rect x="340" y="124" width="120" height="66" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+  <text x="400" y="152" class="b" text-anchor="middle">シリアル</text>
+  <text x="400" y="174" class="s" text-anchor="middle">14h バイト</text>
+  <text x="340" y="116" class="ms" xml:space="preserve">P+80h</text>
+  <text x="340" y="100" class="ms" xml:space="preserve">BFA34h</text>
+  <rect x="460" y="124" width="160" height="66" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="540" y="152" class="b" text-anchor="middle">FCB 5 個</text>
+  <text x="540" y="174" class="s" text-anchor="middle">1Fh × 5 = 9Bh</text>
+  <text x="460" y="116" class="ms" xml:space="preserve">P+94h</text>
+  <text x="460" y="100" class="ms" xml:space="preserve">BFA48h</text>
+  <rect x="620" y="124" width="170" height="66" rx="0" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.5"/>
+  <text x="705" y="152" class="b" text-anchor="middle">その他のバッファ</text>
+  <text x="705" y="174" class="s" text-anchor="middle">105h バイト</text>
+  <text x="620" y="116" class="ms" xml:space="preserve">P+12Fh</text>
+  <text x="620" y="100" class="ms" xml:space="preserve">BFAE3h</text>
+  <rect x="790" y="124" width="120" height="66" rx="0" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.5"/>
+  <text x="850" y="152" class="b" text-anchor="middle">その他</text>
+  <text x="850" y="174" class="s" text-anchor="middle">18h バイト</text>
+  <text x="790" y="116" class="ms" xml:space="preserve">P+234h</text>
+  <text x="790" y="100" class="ms" xml:space="preserve">BFBE8h</text>
+  <text x="914" y="116" class="ms" xml:space="preserve">P+24Ch</text>
+  <text x="914" y="100" class="ms" xml:space="preserve">BFC00h</text>
+  <rect x="224" y="232" width="112" height="72" rx="6" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="280" y="252" class="s" text-anchor="middle">キーボード</text>
+  <text x="280" y="272" class="ms" xml:space="preserve" text-anchor="middle">P+10h = 60h</text>
+  <text x="280" y="291" class="ms" xml:space="preserve" text-anchor="middle">P+14h = 20h</text>
+  <polyline points="280,231 280,192" fill="none" stroke="#52606D" stroke-width="1.4" marker-end="url(#a52606D)"/>
+  <rect x="344" y="232" width="112" height="72" rx="6" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="400" y="252" class="s" text-anchor="middle">シリアル</text>
+  <text x="400" y="272" class="ms" xml:space="preserve" text-anchor="middle">P+16h = 80h</text>
+  <text x="400" y="291" class="ms" xml:space="preserve" text-anchor="middle">P+1Ch = 14h</text>
+  <polyline points="400,231 400,192" fill="none" stroke="#52606D" stroke-width="1.4" marker-end="url(#a52606D)"/>
+  <rect x="484" y="232" width="112" height="72" rx="6" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="540" y="252" class="s" text-anchor="middle">FCB</text>
+  <text x="540" y="272" class="ms" xml:space="preserve" text-anchor="middle">P+25h = 94h</text>
+  <text x="540" y="291" class="ms" xml:space="preserve" text-anchor="middle">P+27h = 5</text>
+  <polyline points="540,231 540,192" fill="none" stroke="#52606D" stroke-width="1.4" marker-end="url(#a52606D)"/>
+  <rect x="649" y="232" width="112" height="72" rx="6" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="705" y="252" class="s" text-anchor="middle">その他のバッファ</text>
+  <text x="705" y="272" class="ms" xml:space="preserve" text-anchor="middle">P+28h = 12Fh</text>
+  <text x="705" y="291" class="ms" xml:space="preserve" text-anchor="middle"></text>
+  <polyline points="705,231 705,192" fill="none" stroke="#52606D" stroke-width="1.4" marker-end="url(#a52606D)"/>
+  <rect x="794" y="232" width="112" height="72" rx="6" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="850" y="252" class="s" text-anchor="middle">その他の作業域</text>
+  <text x="850" y="272" class="ms" xml:space="preserve" text-anchor="middle">P+2Bh = 234h</text>
+  <text x="850" y="291" class="ms" xml:space="preserve" text-anchor="middle"></text>
+  <polyline points="850,231 850,192" fill="none" stroke="#52606D" stroke-width="1.4" marker-end="url(#a52606D)"/>
+  <text x="70" y="252" class="s">表の中の</text>
+  <text x="70" y="270" class="s">位置と大きさ →</text>
+  <text x="70" y="340">表の値を読めば、バッファのアドレスは P に足すだけで求まる（例：シリアルバッファは BF9B4h + 80h = BFA34h）</text>
+  <text x="70" y="366" class="s">広げるときは、BFD17h の領域を IOCS の i=42h で広げてから、P+1Ch や P+27h を書き換える</text>
+</svg>

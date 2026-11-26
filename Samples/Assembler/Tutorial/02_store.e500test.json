@@ -1,0 +1,7 @@
+{
+  "program": "02_store.asm",
+  "tests": [
+    { "name": "123 を置く", "call": "start", "expect": { "memory": { "RESULT": [123] }, "registers": { "C": 0 } } },
+    { "name": "BASIC から", "basic": "CLS:CALL &HBEC00:PRINT PEEK &HBEC08", "expect": { "screen": "123" } }
+  ]
+}

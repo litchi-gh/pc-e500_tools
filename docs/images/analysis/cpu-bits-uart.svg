@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 300" width="980" height="300" role="img" aria-labelledby="t d">
+  <title id="t">UART のレジスタのビット</title>
+  <desc id="d">UCR と USR のビットの割り当てを並べた図。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .mb { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; font-weight: 700; }
+  </style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#52606D"/></marker><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#C0392B"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="299" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h" xml:space="preserve">UART のレジスタのビット</text>
+  <text x="24" y="55" class="sub" xml:space="preserve">上の数字がビット番号。灰色は使わないビット</text>
+  <text x="24" y="120" class="b" xml:space="preserve">UCR</text>
+  <text x="24" y="138" class="s" xml:space="preserve">F7h  読み書き</text>
+  <rect x="156" y="100" width="100" height="44" rx="2" fill="#FDECEA" stroke="#C0392B" stroke-width="1.2"/>
+  <text x="206" y="95" class="ms" xml:space="preserve" text-anchor="middle">7</text>
+  <text x="206" y="120" class="mb" xml:space="preserve" text-anchor="middle">BOE</text>
+  <text x="206" y="137" class="s" xml:space="preserve" text-anchor="middle">ブレーク</text>
+  <rect x="256" y="100" width="300" height="44" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="306" y="95" class="ms" xml:space="preserve" text-anchor="middle">6</text>
+  <text x="406" y="95" class="ms" xml:space="preserve" text-anchor="middle">5</text>
+  <text x="506" y="95" class="ms" xml:space="preserve" text-anchor="middle">4</text>
+  <text x="406" y="120" class="mb" xml:space="preserve" text-anchor="middle">BR2 BR1 BR0</text>
+  <text x="406" y="137" class="s" xml:space="preserve" text-anchor="middle">ボーレート（000 で停止）</text>
+  <rect x="556" y="100" width="200" height="44" rx="2" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="606" y="95" class="ms" xml:space="preserve" text-anchor="middle">3</text>
+  <text x="706" y="95" class="ms" xml:space="preserve" text-anchor="middle">2</text>
+  <text x="656" y="120" class="mb" xml:space="preserve" text-anchor="middle">PA1 PA0</text>
+  <text x="656" y="137" class="s" xml:space="preserve" text-anchor="middle">パリティ</text>
+  <rect x="756" y="100" width="100" height="44" rx="2" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="806" y="95" class="ms" xml:space="preserve" text-anchor="middle">1</text>
+  <text x="806" y="120" class="mb" xml:space="preserve" text-anchor="middle">DL</text>
+  <text x="806" y="137" class="s" xml:space="preserve" text-anchor="middle">データ長</text>
+  <rect x="856" y="100" width="100" height="44" rx="2" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="906" y="95" class="ms" xml:space="preserve" text-anchor="middle">0</text>
+  <text x="906" y="120" class="mb" xml:space="preserve" text-anchor="middle">ST</text>
+  <text x="906" y="137" class="s" xml:space="preserve" text-anchor="middle">ストップ</text>
+  <text x="24" y="210" class="b" xml:space="preserve">USR</text>
+  <text x="24" y="228" class="s" xml:space="preserve">F8h  読むだけ</text>
+  <rect x="156" y="190" width="200" height="44" rx="2" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="206" y="185" class="ms" xml:space="preserve" text-anchor="middle">7</text>
+  <text x="306" y="185" class="ms" xml:space="preserve" text-anchor="middle">6</text>
+  <text x="256" y="217" class="mb" xml:space="preserve" text-anchor="middle"></text>
+  <rect x="356" y="190" width="100" height="44" rx="2" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="406" y="185" class="ms" xml:space="preserve" text-anchor="middle">5</text>
+  <text x="406" y="210" class="mb" xml:space="preserve" text-anchor="middle">RXR</text>
+  <text x="406" y="227" class="s" xml:space="preserve" text-anchor="middle">受信した</text>
+  <rect x="456" y="190" width="100" height="44" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="506" y="185" class="ms" xml:space="preserve" text-anchor="middle">4</text>
+  <text x="506" y="210" class="mb" xml:space="preserve" text-anchor="middle">TXE</text>
+  <text x="506" y="227" class="s" xml:space="preserve" text-anchor="middle">送信が空</text>
+  <rect x="556" y="190" width="100" height="44" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="606" y="185" class="ms" xml:space="preserve" text-anchor="middle">3</text>
+  <text x="606" y="210" class="mb" xml:space="preserve" text-anchor="middle">TXR</text>
+  <text x="606" y="227" class="s" xml:space="preserve" text-anchor="middle">TXD に書ける</text>
+  <rect x="656" y="190" width="100" height="44" rx="2" fill="#FDECEA" stroke="#C0392B" stroke-width="1.2"/>
+  <text x="706" y="185" class="ms" xml:space="preserve" text-anchor="middle">2</text>
+  <text x="706" y="210" class="mb" xml:space="preserve" text-anchor="middle">FE</text>
+  <text x="706" y="227" class="s" xml:space="preserve" text-anchor="middle">フレーミング</text>
+  <rect x="756" y="190" width="100" height="44" rx="2" fill="#FDECEA" stroke="#C0392B" stroke-width="1.2"/>
+  <text x="806" y="185" class="ms" xml:space="preserve" text-anchor="middle">1</text>
+  <text x="806" y="210" class="mb" xml:space="preserve" text-anchor="middle">OE</text>
+  <text x="806" y="227" class="s" xml:space="preserve" text-anchor="middle">オーバーラン</text>
+  <rect x="856" y="190" width="100" height="44" rx="2" fill="#FDECEA" stroke="#C0392B" stroke-width="1.2"/>
+  <text x="906" y="185" class="ms" xml:space="preserve" text-anchor="middle">0</text>
+  <text x="906" y="210" class="mb" xml:space="preserve" text-anchor="middle">PE</text>
+  <text x="906" y="227" class="s" xml:space="preserve" text-anchor="middle">パリティ</text>
+  <text x="24" y="272" xml:space="preserve" style="fill:#1F2933">例: UCR = 60h なら 0 110 00 0 0 で、9600 bps、パリティ偶数、8 ビット、ストップ 1 ビット。</text>
+</svg>

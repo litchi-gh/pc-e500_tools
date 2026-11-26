@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 400" width="980" height="400" role="img" aria-labelledby="t d">
+  <title id="t">6 つのモードと移り方</title>
+  <desc id="d">メインメニューから PF キーで選ぶモードと、キーで直接移れるモード。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .xs { font-size: 11px; fill: #52606D; }
+    .r { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; fill: #B7791F; font-weight: 700; }
+    .j { font-size: 10px; fill: #B7791F; font-weight: 700; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .lcd { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 14px; font-weight: 700; fill: #24351D; }
+  </style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#7B8794"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="399" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">6 つのモードと移り方</text>
+  <text x="24" y="56" class="sub">実線はメニューから選ぶ。点線は、どのモードからでも移れるキー</text>
+  <rect x="380" y="80" width="220" height="56" rx="6" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="490" y="104" class="b" text-anchor="middle">メインメニュー</text>
+  <text x="490" y="124" class="s" text-anchor="middle">MENU キー</text>
+  <rect x="24" y="230" width="140" height="70" rx="6" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="94" y="258" class="b" text-anchor="middle">BASIC</text>
+  <text x="94" y="282" class="s" text-anchor="middle">RUN / PRO</text>
+  <line x1="490" y1="136" x2="94" y2="196" stroke="#7B8794" stroke-width="1.4"/>
+  <rect x="44" y="196" width="100" height="26" rx="5" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="94.0" y="214.0" class="m" xml:space="preserve" text-anchor="middle">PF1</text>
+  <line x1="94" y1="222" x2="94" y2="230" stroke="#7B8794" stroke-width="1.4" marker-end="url(#a)"/>
+  <rect x="183" y="230" width="140" height="70" rx="6" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="253" y="258" class="b" text-anchor="middle">CAL</text>
+  <text x="253" y="282" class="s" text-anchor="middle">電卓</text>
+  <line x1="490" y1="136" x2="253" y2="196" stroke="#7B8794" stroke-width="1.4"/>
+  <rect x="203" y="196" width="100" height="26" rx="5" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="253.0" y="214.0" class="m" xml:space="preserve" text-anchor="middle">PF2</text>
+  <line x1="253" y1="222" x2="253" y2="230" stroke="#7B8794" stroke-width="1.4" marker-end="url(#a)"/>
+  <rect x="342" y="230" width="140" height="70" rx="6" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="412" y="258" class="b" text-anchor="middle">MATRIX</text>
+  <text x="412" y="282" class="s" text-anchor="middle">行列</text>
+  <line x1="490" y1="136" x2="412" y2="196" stroke="#7B8794" stroke-width="1.4"/>
+  <rect x="362" y="196" width="100" height="26" rx="5" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="412.0" y="214.0" class="m" xml:space="preserve" text-anchor="middle">PF3</text>
+  <line x1="412" y1="222" x2="412" y2="230" stroke="#7B8794" stroke-width="1.4" marker-end="url(#a)"/>
+  <rect x="501" y="230" width="140" height="70" rx="6" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="571" y="258" class="b" text-anchor="middle">STAT</text>
+  <text x="571" y="282" class="s" text-anchor="middle">統計</text>
+  <line x1="490" y1="136" x2="571" y2="196" stroke="#7B8794" stroke-width="1.4"/>
+  <rect x="521" y="196" width="100" height="26" rx="5" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="571.0" y="214.0" class="m" xml:space="preserve" text-anchor="middle">PF4</text>
+  <line x1="571" y1="222" x2="571" y2="230" stroke="#7B8794" stroke-width="1.4" marker-end="url(#a)"/>
+  <rect x="660" y="230" width="140" height="70" rx="6" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="730" y="258" class="b" text-anchor="middle">ｴﾝｼﾞﾆｱ</text>
+  <text x="730" y="282" class="s" text-anchor="middle">公式集、解法</text>
+  <line x1="490" y1="136" x2="730" y2="196" stroke="#7B8794" stroke-width="1.4"/>
+  <rect x="680" y="196" width="100" height="26" rx="5" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="730.0" y="214.0" class="m" xml:space="preserve" text-anchor="middle">PF5</text>
+  <line x1="730" y1="222" x2="730" y2="230" stroke="#7B8794" stroke-width="1.4" marker-end="url(#a)"/>
+  <rect x="819" y="230" width="140" height="70" rx="6" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="889" y="258" class="b" text-anchor="middle">AER</text>
+  <text x="889" y="282" class="s" text-anchor="middle">式の登録</text>
+  <line x1="490" y1="136" x2="889" y2="196" stroke="#7B8794" stroke-width="1.4"/>
+  <rect x="839" y="196" width="100" height="26" rx="5" fill="#FFFFFF" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="889.0" y="214.0" class="m" xml:space="preserve" text-anchor="middle">▲▼ PF1</text>
+  <line x1="889" y1="222" x2="889" y2="230" stroke="#7B8794" stroke-width="1.4" marker-end="url(#a)"/>
+  <line x1="94" y1="350" x2="94" y2="302" stroke="#6B4FBB" stroke-width="1.6" stroke-dasharray="4 3" marker-end="url(#a)"/>
+  <text x="94" y="368" class="s" text-anchor="middle">BASIC キー</text>
+  <line x1="253" y1="350" x2="253" y2="302" stroke="#6B4FBB" stroke-width="1.6" stroke-dasharray="4 3" marker-end="url(#a)"/>
+  <text x="253" y="368" class="s" text-anchor="middle">SHIFT + MENU</text>
+  <line x1="889" y1="350" x2="889" y2="302" stroke="#6B4FBB" stroke-width="1.6" stroke-dasharray="4 3" marker-end="url(#a)"/>
+  <text x="889" y="368" class="s" text-anchor="middle">SHIFT + BASIC</text>
+  <text x="490" y="390" class="s" text-anchor="middle">MATRIX、STAT、ｴﾝｼﾞﾆｱ には直接移るキーはない。MENU でメインメニューに戻って選ぶ</text>
+</svg>

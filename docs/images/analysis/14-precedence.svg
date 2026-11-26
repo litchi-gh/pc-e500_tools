@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 520" width="980" height="520" role="img">
+<title>計算の優先順位</title><desc>優先順位の段と、例の式がどう計算されるか</desc>
+<style>
+text{font-family:"Yu Gothic UI","Meiryo","Noto Sans CJK JP",sans-serif;fill:#1F2933}
+.b{font-size:17px;font-weight:700}.s{font-size:15px}.t{font-size:13px;fill:#52606D}
+.m{font-family:Consolas,"DejaVu Sans Mono",monospace;font-size:16px}.ms{font-family:Consolas,"DejaVu Sans Mono",monospace;font-size:14px}
+</style>
+<rect width="980" height="520" fill="#fff"/>
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#52606D"/></marker></defs>
+<text x="30" y="34" class="b" text-anchor="start" xml:space="preserve">上の段ほど先に計算される</text>
+<rect x="30" y="56" width="430" height="42" rx="4" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+<text x="46" y="83" class="b" text-anchor="start" xml:space="preserve">1</text>
+<text x="76" y="83" class="s" text-anchor="start" xml:space="preserve">括弧</text>
+<text x="448" y="83" class="ms" text-anchor="end" xml:space="preserve">( )</text>
+<rect x="30" y="105" width="430" height="42" rx="4" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+<text x="46" y="132" class="b" text-anchor="start" xml:space="preserve">2</text>
+<text x="76" y="132" class="s" text-anchor="start" xml:space="preserve">変数、定数、PI</text>
+<text x="448" y="132" class="ms" text-anchor="end" xml:space="preserve">A  12  PI</text>
+<rect x="30" y="154" width="430" height="42" rx="4" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+<text x="46" y="181" class="b" text-anchor="start" xml:space="preserve">3</text>
+<text x="76" y="181" class="s" text-anchor="start" xml:space="preserve">関数、NOT</text>
+<text x="448" y="181" class="ms" text-anchor="end" xml:space="preserve">SIN x  SQR x  NOT x</text>
+<rect x="30" y="203" width="430" height="42" rx="4" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+<text x="46" y="230" class="b" text-anchor="start" xml:space="preserve">4</text>
+<text x="76" y="230" class="s" text-anchor="start" xml:space="preserve">累乗、累乗根</text>
+<text x="448" y="230" class="ms" text-anchor="end" xml:space="preserve">^  ROT（右から）</text>
+<rect x="30" y="252" width="430" height="42" rx="4" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+<text x="46" y="279" class="b" text-anchor="start" xml:space="preserve">5</text>
+<text x="76" y="279" class="s" text-anchor="start" xml:space="preserve">符号</text>
+<text x="448" y="279" class="ms" text-anchor="end" xml:space="preserve">-x  +x</text>
+<rect x="30" y="301" width="430" height="42" rx="4" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+<text x="46" y="328" class="b" text-anchor="start" xml:space="preserve">6</text>
+<text x="76" y="328" class="s" text-anchor="start" xml:space="preserve">掛け算、割り算</text>
+<text x="448" y="328" class="ms" text-anchor="end" xml:space="preserve">*  /（左から）</text>
+<rect x="30" y="350" width="430" height="42" rx="4" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+<text x="46" y="377" class="b" text-anchor="start" xml:space="preserve">7</text>
+<text x="76" y="377" class="s" text-anchor="start" xml:space="preserve">足し算、引き算</text>
+<text x="448" y="377" class="ms" text-anchor="end" xml:space="preserve">+  -（左から）</text>
+<rect x="30" y="399" width="430" height="42" rx="4" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.5"/>
+<text x="46" y="426" class="b" text-anchor="start" xml:space="preserve">8</text>
+<text x="76" y="426" class="s" text-anchor="start" xml:space="preserve">比較</text>
+<text x="448" y="426" class="ms" text-anchor="end" xml:space="preserve">=  &lt;&gt;  &lt;  &gt;  &lt;=  &gt;=（左から）</text>
+<rect x="30" y="448" width="430" height="42" rx="4" fill="#FDECEA" stroke="#C0392B" stroke-width="1.5"/>
+<text x="46" y="475" class="b" text-anchor="start" xml:space="preserve">9</text>
+<text x="76" y="475" class="s" text-anchor="start" xml:space="preserve">論理</text>
+<text x="448" y="475" class="ms" text-anchor="end" xml:space="preserve">AND  OR  XOR（左から、同じ順位）</text>
+<text x="500" y="72" class="b" text-anchor="start" xml:space="preserve">例 1:  SIN 30^2</text>
+<rect x="520" y="88" width="110" height="34" rx="4" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+<text x="575" y="110" class="m" text-anchor="middle" xml:space="preserve">SIN 30</text>
+<line x1="632" y1="105" x2="682" y2="105" stroke="#52606D" stroke-width="1.6" marker-end="url(#a)"/>
+<text x="690" y="110" class="m" text-anchor="start" xml:space="preserve">0.5</text>
+<text x="740" y="110" class="m" text-anchor="start" xml:space="preserve">→  0.5^2 = 0.25</text>
+<text x="500" y="172" class="b" text-anchor="start" xml:space="preserve">例 2:  -2^4</text>
+<rect x="520" y="188" width="110" height="34" rx="4" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+<text x="575" y="210" class="m" text-anchor="middle" xml:space="preserve">2^4</text>
+<line x1="632" y1="205" x2="682" y2="205" stroke="#52606D" stroke-width="1.6" marker-end="url(#a)"/>
+<text x="690" y="210" class="m" text-anchor="start" xml:space="preserve">16</text>
+<text x="740" y="210" class="m" text-anchor="start" xml:space="preserve">→  -16</text>
+<text x="500" y="272" class="b" text-anchor="start" xml:space="preserve">例 3:  2^3^2</text>
+<rect x="520" y="288" width="110" height="34" rx="4" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+<text x="575" y="310" class="m" text-anchor="middle" xml:space="preserve">3^2</text>
+<line x1="632" y1="305" x2="682" y2="305" stroke="#52606D" stroke-width="1.6" marker-end="url(#a)"/>
+<text x="690" y="310" class="m" text-anchor="start" xml:space="preserve">9</text>
+<text x="740" y="310" class="m" text-anchor="start" xml:space="preserve">→  2^9 = 512</text>
+<text x="500" y="372" class="b" text-anchor="start" xml:space="preserve">例 4:  6 OR 1 AND 0</text>
+<rect x="520" y="388" width="110" height="34" rx="4" fill="#FDECEA" stroke="#C0392B" stroke-width="1.5"/>
+<text x="575" y="410" class="m" text-anchor="middle" xml:space="preserve">6 OR 1</text>
+<line x1="632" y1="405" x2="682" y2="405" stroke="#52606D" stroke-width="1.6" marker-end="url(#a)"/>
+<text x="690" y="410" class="m" text-anchor="start" xml:space="preserve">7</text>
+<text x="740" y="410" class="m" text-anchor="start" xml:space="preserve">→  7 AND 0 = 0</text>
+<text x="500" y="452" class="t" text-anchor="start" xml:space="preserve">AND を先に計算する言語なら 6 になる式です。</text>
+<text x="500" y="474" class="t" text-anchor="start" xml:space="preserve">意図どおりにするには 6 OR (1 AND 0) と書きます。</text>
+</svg>

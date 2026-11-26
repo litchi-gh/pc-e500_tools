@@ -1,0 +1,26 @@
+#!/bin/sh
+# The extension from a command line. Runs on Node.js.
+here=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+main=$here/../out/cli/main.js
+# Git Bash turns every argument that starts with / into a Windows path, also what is typed on
+# the machine (--type /A): the files are turned here, and the rest is left alone.
+if [ -n "${MSYSTEM-}" ] && command -v cygpath >/dev/null 2>&1; then
+  main=$(cygpath -m "$main")
+  text=
+  for a do
+    shift
+    if [ -n "$text" ]; then text=
+    else
+      case $a in
+        --type|--basic|--keys|--memory|--only) text=1 ;;
+        /?*) a=$(cygpath -m "$a") ;;
+        --type=*|--basic=*|--keys=*|--memory=*|--only=*) ;;
+        --*=/?*) a=${a%%=*}=$(cygpath -m "${a#*=}") ;;
+      esac
+    fi
+    set -- "$@" "$a"
+  done
+  # The variables (PCE500_EMULATOR ...) are still turned.
+  MSYS2_ARG_CONV_EXCL='*' exec node "$main" "$@"
+fi
+exec node "$main" "$@"

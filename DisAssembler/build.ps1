@@ -1,7 +1,7 @@
 # -Runtime linux-x64 and so on build the CLI for another system into app/<runtime>/. The GUI is Windows only.
 param([switch]$TestOnly, [string]$Runtime = 'win-x64')
 $ErrorActionPreference = 'Stop'
-Push-Location $PSScriptRoot
+Push-Location -LiteralPath $PSScriptRoot
 try {
     dotnet run --project tests/E500Disassembler.Tests -c Release
     if ($LASTEXITCODE -ne 0) { throw 'Disassembler tests failed' }

@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 350" width="980" height="350" role="img" aria-labelledby="t d">
+  <title id="t">SCR（FDh）と SSR（FFh）のビット</title>
+  <desc id="d">システム制御レジスタ SCR の 8 ビットと、BZ2 から BZ0 の 3 ビットによる CO と CI の設定、SSR の下位 4 ビットを並べた図。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+  </style>
+  <defs></defs>
+  <rect x="0.5" y="0.5" width="979" height="349" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">SCR（FDh）と SSR（FFh）のビット</text>
+  <text x="24" y="55" class="sub">SCR は書き込んで設定するレジスタ、SSR は読むだけのレジスタ</text>
+  <text x="24" y="128" class="b">SCR（FDh）</text>
+  <text x="178" y="88" class="ms" xml:space="preserve" text-anchor="middle">7</text>
+  <rect x="130" y="96" width="98" height="52" rx="6" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.5"/>
+  <text x="179" y="118.54" class="b" text-anchor="middle">ISE</text>
+  <text x="179" y="135.82" class="s" text-anchor="middle">外部で復帰</text>
+  <text x="280" y="88" class="ms" xml:space="preserve" text-anchor="middle">6</text>
+  <rect x="232" y="96" width="98" height="52" rx="6" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="281" y="118.54" class="b" text-anchor="middle">BZ2</text>
+  <text x="281" y="135.82" class="s" text-anchor="middle">CO と CI</text>
+  <text x="382" y="88" class="ms" xml:space="preserve" text-anchor="middle">5</text>
+  <rect x="334" y="96" width="98" height="52" rx="6" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="383" y="118.54" class="b" text-anchor="middle">BZ1</text>
+  <text x="383" y="135.82" class="s" text-anchor="middle">CO と CI</text>
+  <text x="484" y="88" class="ms" xml:space="preserve" text-anchor="middle">4</text>
+  <rect x="436" y="96" width="98" height="52" rx="6" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="485" y="118.54" class="b" text-anchor="middle">BZ0</text>
+  <text x="485" y="135.82" class="s" text-anchor="middle">CO と CI</text>
+  <text x="586" y="88" class="ms" xml:space="preserve" text-anchor="middle">3</text>
+  <rect x="538" y="96" width="98" height="52" rx="6" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="587" y="118.54" class="b" text-anchor="middle">VDDC</text>
+  <text x="587" y="135.82" class="s" text-anchor="middle">表示電源</text>
+  <text x="688" y="88" class="ms" xml:space="preserve" text-anchor="middle">2</text>
+  <rect x="640" y="96" width="98" height="52" rx="6" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+  <text x="689" y="118.54" class="b" text-anchor="middle">STS</text>
+  <text x="689" y="135.82" class="s" text-anchor="middle">遅いタイマ</text>
+  <text x="790" y="88" class="ms" xml:space="preserve" text-anchor="middle">1</text>
+  <rect x="742" y="96" width="98" height="52" rx="6" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+  <text x="791" y="118.54" class="b" text-anchor="middle">MTS</text>
+  <text x="791" y="135.82" class="s" text-anchor="middle">速いタイマ</text>
+  <text x="892" y="88" class="ms" xml:space="preserve" text-anchor="middle">0</text>
+  <rect x="844" y="96" width="98" height="52" rx="6" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="893" y="118.54" class="b" text-anchor="middle">DISC</text>
+  <text x="893" y="135.82" class="s" text-anchor="middle">表示の制御</text>
+  <text x="24" y="300" class="b">SSR（FFh）</text>
+  <text x="178" y="260" class="ms" xml:space="preserve" text-anchor="middle">7</text>
+  <rect x="130" y="268" width="98" height="52" rx="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="179" y="298.32" class="s" text-anchor="middle"></text>
+  <text x="280" y="260" class="ms" xml:space="preserve" text-anchor="middle">6</text>
+  <rect x="232" y="268" width="98" height="52" rx="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="281" y="298.32" class="s" text-anchor="middle"></text>
+  <text x="382" y="260" class="ms" xml:space="preserve" text-anchor="middle">5</text>
+  <rect x="334" y="268" width="98" height="52" rx="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="383" y="298.32" class="s" text-anchor="middle"></text>
+  <text x="484" y="260" class="ms" xml:space="preserve" text-anchor="middle">4</text>
+  <rect x="436" y="268" width="98" height="52" rx="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="485" y="298.32" class="s" text-anchor="middle"></text>
+  <text x="586" y="260" class="ms" xml:space="preserve" text-anchor="middle">3</text>
+  <rect x="538" y="268" width="98" height="52" rx="6" fill="#FDECEA" stroke="#C0392B" stroke-width="1.5"/>
+  <text x="587" y="290.54" class="b" text-anchor="middle">ONK</text>
+  <text x="587" y="307.82" class="s" text-anchor="middle">ON ピン</text>
+  <text x="688" y="260" class="ms" xml:space="preserve" text-anchor="middle">2</text>
+  <rect x="640" y="268" width="98" height="52" rx="6" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.5"/>
+  <text x="689" y="298.32" class="s" text-anchor="middle">RSF</text>
+  <text x="790" y="260" class="ms" xml:space="preserve" text-anchor="middle">1</text>
+  <rect x="742" y="268" width="98" height="52" rx="6" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="791" y="290.54" class="b" text-anchor="middle">CI</text>
+  <text x="791" y="307.82" class="s" text-anchor="middle">テープ入力</text>
+  <text x="892" y="260" class="ms" xml:space="preserve" text-anchor="middle">0</text>
+  <rect x="844" y="268" width="98" height="52" rx="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.5"/>
+  <text x="893" y="290.54" class="b" text-anchor="middle">TEST</text>
+  <text x="893" y="307.82" class="s" text-anchor="middle">TEST ピン</text>
+  <text x="130" y="186" class="b">BZ2〜0</text>
+  <rect x="232" y="168" width="98" height="40" rx="6" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.5"/>
+  <text x="281" y="184.18" class="m" xml:space="preserve" text-anchor="middle">000</text>
+  <text x="281" y="201.32" class="s" text-anchor="middle">Low</text>
+  <rect x="334" y="168" width="98" height="40" rx="6" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.5"/>
+  <text x="383" y="184.18" class="m" xml:space="preserve" text-anchor="middle">001</text>
+  <text x="383" y="201.32" class="s" text-anchor="middle">High</text>
+  <rect x="436" y="168" width="98" height="40" rx="6" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.5"/>
+  <text x="485" y="184.18" class="m" xml:space="preserve" text-anchor="middle">010</text>
+  <text x="485" y="201.32" class="s" text-anchor="middle">2 kHz</text>
+  <rect x="538" y="168" width="98" height="40" rx="6" fill="#FFFFFF" stroke="#9AA5B1" stroke-width="1.5"/>
+  <text x="587" y="184.18" class="m" xml:space="preserve" text-anchor="middle">011</text>
+  <text x="587" y="201.32" class="s" text-anchor="middle">4 kHz</text>
+  <rect x="640" y="168" width="98" height="40" rx="6" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="689" y="184.18" class="m" xml:space="preserve" text-anchor="middle">100</text>
+  <text x="689" y="201.32" class="s" text-anchor="middle">Low＋CI</text>
+  <rect x="742" y="168" width="98" height="40" rx="6" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="791" y="184.18" class="m" xml:space="preserve" text-anchor="middle">101</text>
+  <text x="791" y="201.32" class="s" text-anchor="middle">High＋CI</text>
+  <rect x="844" y="168" width="98" height="40" rx="6" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="893" y="184.18" class="m" xml:space="preserve" text-anchor="middle">11x</text>
+  <text x="893" y="201.32" class="s" text-anchor="middle">CO=CI</text>
+  <text x="130" y="230" class="s">青い 3 つは CI（テープの入力）を使う設定。11x ではテープの音がそのままブザーへ出る。</text>
+</svg>

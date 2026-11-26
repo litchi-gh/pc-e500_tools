@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 380" width="980" height="380" role="img" aria-labelledby="t d">
+  <title id="t">AER の式の記録</title>
+  <desc id="d">手引書の例 F(A,B,C) = B*C*SIN A/2、名前 AERA の記録を、番号、長さ、名前、変数、式、終わりに分けた図。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .mb { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 15px; font-weight: 700; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .lbl { font-size: 12px; fill: #52606D; paint-order: stroke; stroke: #FFFFFF; stroke-width: 4px; stroke-linejoin: round; }
+  </style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#52606D"/></marker><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#C0392B"/></marker><marker id="ab" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2F6DB5"/></marker><marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2F855A"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="379" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h" xml:space="preserve">AER の式の記録</text>
+  <text x="24" y="55" class="sub" xml:space="preserve">手引書の例: F(A,B,C) = B*C*SIN A/2、名前 AERA</text>
+  <rect x="40" y="84" width="48" height="34" rx="0" fill="#FDECEA" stroke="#C0392B" stroke-width="1"/>
+  <text x="64" y="106" class="mb" text-anchor="middle" xml:space="preserve">01</text>
+  <rect x="88" y="84" width="48" height="34" rx="0" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1"/>
+  <text x="112" y="106" class="mb" text-anchor="middle" xml:space="preserve">9C</text>
+  <rect x="136" y="84" width="48" height="34" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="1"/>
+  <text x="160" y="106" class="mb" text-anchor="middle" xml:space="preserve">04</text>
+  <rect x="184" y="84" width="48" height="34" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="1"/>
+  <text x="208" y="106" class="mb" text-anchor="middle" xml:space="preserve">41</text>
+  <rect x="232" y="84" width="48" height="34" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="1"/>
+  <text x="256" y="106" class="mb" text-anchor="middle" xml:space="preserve">45</text>
+  <rect x="280" y="84" width="48" height="34" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="1"/>
+  <text x="304" y="106" class="mb" text-anchor="middle" xml:space="preserve">52</text>
+  <rect x="328" y="84" width="48" height="34" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="1"/>
+  <text x="352" y="106" class="mb" text-anchor="middle" xml:space="preserve">41</text>
+  <rect x="376" y="84" width="48" height="34" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1"/>
+  <text x="400" y="106" class="mb" text-anchor="middle" xml:space="preserve">00</text>
+  <rect x="424" y="84" width="48" height="34" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="448" y="106" class="mb" text-anchor="middle" xml:space="preserve">41</text>
+  <rect x="472" y="84" width="48" height="34" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="496" y="106" class="mb" text-anchor="middle" xml:space="preserve">2C</text>
+  <rect x="520" y="84" width="48" height="34" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="544" y="106" class="mb" text-anchor="middle" xml:space="preserve">42</text>
+  <rect x="568" y="84" width="48" height="34" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="592" y="106" class="mb" text-anchor="middle" xml:space="preserve">2C</text>
+  <rect x="616" y="84" width="48" height="34" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="640" y="106" class="mb" text-anchor="middle" xml:space="preserve">43</text>
+  <rect x="664" y="84" width="48" height="34" rx="0" fill="#F3F5F8" stroke="#7B8794" stroke-width="1"/>
+  <text x="688" y="106" class="mb" text-anchor="middle" xml:space="preserve">00</text>
+  <path d="M42,122 v6 H86 v-6" fill="none" stroke="#52606D" stroke-width="1.2"/>
+  <text x="64" y="144" class="s" text-anchor="middle" style="fill:#52606D;" xml:space="preserve">番号</text>
+  <path d="M90,122 v6 H134 v-6" fill="none" stroke="#52606D" stroke-width="1.2"/>
+  <text x="112" y="144" class="s" text-anchor="middle" style="fill:#52606D;" xml:space="preserve">長さ</text>
+  <path d="M138,122 v6 H374 v-6" fill="none" stroke="#52606D" stroke-width="1.2"/>
+  <text x="256" y="144" class="s" text-anchor="middle" style="fill:#52606D;" xml:space="preserve">名前の長さ 4 と「AERA」</text>
+  <path d="M378,122 v6 H422 v-6" fill="none" stroke="#52606D" stroke-width="1.2"/>
+  <text x="400" y="144" class="s" text-anchor="middle" style="fill:#52606D;" xml:space="preserve">区切り</text>
+  <path d="M426,122 v6 H662 v-6" fill="none" stroke="#52606D" stroke-width="1.2"/>
+  <text x="544" y="144" class="s" text-anchor="middle" style="fill:#52606D;" xml:space="preserve">変数 A , B , C</text>
+  <path d="M666,122 v6 H710 v-6" fill="none" stroke="#52606D" stroke-width="1.2"/>
+  <text x="688" y="144" class="s" text-anchor="middle" style="fill:#52606D;" xml:space="preserve">区切り</text>
+  <rect x="40" y="184" width="48" height="34" rx="0" fill="#FFFFFF" stroke="#B8C2CC" stroke-width="1"/>
+  <text x="64" y="206" class="mb" text-anchor="middle" xml:space="preserve">42</text>
+  <rect x="88" y="184" width="48" height="34" rx="0" fill="#FFFFFF" stroke="#B8C2CC" stroke-width="1"/>
+  <text x="112" y="206" class="mb" text-anchor="middle" xml:space="preserve">2A</text>
+  <rect x="136" y="184" width="48" height="34" rx="0" fill="#FFFFFF" stroke="#B8C2CC" stroke-width="1"/>
+  <text x="160" y="206" class="mb" text-anchor="middle" xml:space="preserve">43</text>
+  <rect x="184" y="184" width="48" height="34" rx="0" fill="#FFFFFF" stroke="#B8C2CC" stroke-width="1"/>
+  <text x="208" y="206" class="mb" text-anchor="middle" xml:space="preserve">2A</text>
+  <rect x="232" y="184" width="48" height="34" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="256" y="206" class="mb" text-anchor="middle" xml:space="preserve">FE</text>
+  <rect x="280" y="184" width="48" height="34" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1"/>
+  <text x="304" y="206" class="mb" text-anchor="middle" xml:space="preserve">95</text>
+  <rect x="328" y="184" width="48" height="34" rx="0" fill="#FFFFFF" stroke="#B8C2CC" stroke-width="1"/>
+  <text x="352" y="206" class="mb" text-anchor="middle" xml:space="preserve">41</text>
+  <rect x="376" y="184" width="48" height="34" rx="0" fill="#FFFFFF" stroke="#B8C2CC" stroke-width="1"/>
+  <text x="400" y="206" class="mb" text-anchor="middle" xml:space="preserve">2F</text>
+  <rect x="424" y="184" width="48" height="34" rx="0" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1"/>
+  <text x="448" y="206" class="mb" text-anchor="middle" xml:space="preserve">1D</text>
+  <rect x="472" y="184" width="48" height="34" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1"/>
+  <text x="496" y="206" class="mb" text-anchor="middle" xml:space="preserve">00</text>
+  <rect x="520" y="184" width="48" height="34" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1"/>
+  <text x="544" y="206" class="mb" text-anchor="middle" xml:space="preserve">00</text>
+  <rect x="568" y="184" width="48" height="34" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1"/>
+  <text x="592" y="206" class="mb" text-anchor="middle" xml:space="preserve">20</text>
+  <rect x="616" y="184" width="48" height="34" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1"/>
+  <text x="640" y="206" class="mb" text-anchor="middle" xml:space="preserve">00</text>
+  <rect x="664" y="184" width="48" height="34" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1"/>
+  <text x="688" y="206" class="mb" text-anchor="middle" xml:space="preserve">00</text>
+  <rect x="712" y="184" width="48" height="34" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1"/>
+  <text x="736" y="206" class="mb" text-anchor="middle" xml:space="preserve">00</text>
+  <rect x="760" y="184" width="48" height="34" rx="0" fill="#FFF5DF" stroke="#B7791F" stroke-width="1"/>
+  <text x="784" y="206" class="mb" text-anchor="middle" xml:space="preserve">00</text>
+  <rect x="808" y="184" width="48" height="34" rx="0" fill="#FDECEA" stroke="#C0392B" stroke-width="1"/>
+  <text x="832" y="206" class="mb" text-anchor="middle" xml:space="preserve">FF</text>
+  <rect x="856" y="184" width="48" height="34" rx="0" fill="#FDECEA" stroke="#C0392B" stroke-width="1"/>
+  <text x="880" y="206" class="mb" text-anchor="middle" xml:space="preserve">FF</text>
+  <path d="M42,222 v6 H230 v-6" fill="none" stroke="#52606D" stroke-width="1.2"/>
+  <text x="136" y="244" class="s" text-anchor="middle" style="fill:#52606D;" xml:space="preserve">B * C *</text>
+  <path d="M234,222 v6 H326 v-6" fill="none" stroke="#52606D" stroke-width="1.2"/>
+  <text x="280" y="244" class="s" text-anchor="middle" style="fill:#52606D;" xml:space="preserve">SIN</text>
+  <path d="M330,222 v6 H422 v-6" fill="none" stroke="#52606D" stroke-width="1.2"/>
+  <text x="376" y="244" class="s" text-anchor="middle" style="fill:#52606D;" xml:space="preserve">A /</text>
+  <path d="M426,222 v6 H470 v-6" fill="none" stroke="#52606D" stroke-width="1.2"/>
+  <text x="448" y="244" class="s" text-anchor="middle" style="fill:#52606D;" xml:space="preserve">数値</text>
+  <path d="M474,222 v6 H806 v-6" fill="none" stroke="#52606D" stroke-width="1.2"/>
+  <text x="640" y="244" class="s" text-anchor="middle" style="fill:#52606D;" xml:space="preserve">単精度の 2</text>
+  <path d="M810,222 v6 H902 v-6" fill="none" stroke="#52606D" stroke-width="1.2"/>
+  <text x="856" y="244" class="s" text-anchor="middle" style="fill:#52606D;" xml:space="preserve">終わり</text>
+  <text x="40" y="276" class="b" xml:space="preserve">長さの 9Ch = 1Ch + 80h。80h は「最後の式」の印、1Ch = 28 バイトが長さです。</text>
+  <text x="40" y="302" xml:space="preserve">28 = 名前の長さから式の終わりまで（04 〜 1D 00 00 20 00 00 00 00）の 28 バイト</text>
+  <text x="40" y="328" xml:space="preserve">式は BASIC と同じ中間コードです。FE 95 が SIN、1D のあとの 7 バイトが数値 2 です。</text>
+</svg>

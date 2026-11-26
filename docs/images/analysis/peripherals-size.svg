@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 470" width="980" height="470" role="img" aria-labelledby="t d">
+  <title id="t">本体と周辺機器の大きさ（上から見た形、同じ縮尺）</title>
+  <desc id="d">PC-E500、CE-126P、CE-140F、CE-515P の幅と奥行を同じ縮尺の長方形で比べた図。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+  </style>
+  <defs></defs>
+  <rect x="0.5" y="0.5" width="979" height="469" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">本体と周辺機器の大きさ（上から見た形、同じ縮尺）</text>
+  <text x="24" y="55" class="sub">幅 × 奥行 × 高さ（mm）。PC-E500 は §16.9 の公式の寸法</text>
+  <rect x="40" y="80" width="230" height="115" rx="3" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+  <text x="155" y="134.04" class="b" text-anchor="middle">PC-E500</text>
+  <text x="155" y="151.32" class="s" text-anchor="middle">200 × 100 × 14</text>
+  <rect x="40" y="230" width="379.5" height="184" rx="3" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.5"/>
+  <text x="229.75" y="318.54" class="b" text-anchor="middle">CE-515P</text>
+  <text x="229.75" y="335.82" class="s" text-anchor="middle">330 × 160 × 75</text>
+  <rect x="520" y="80" width="161.575" height="133.4" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="600.788" y="143.24" class="b" text-anchor="middle">CE-126P</text>
+  <text x="600.788" y="160.52" class="s" text-anchor="middle">140.5 × 116 × 23</text>
+  <rect x="760" y="80" width="135.7" height="166.75" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.5"/>
+  <text x="827.85" y="159.915" class="b" text-anchor="middle">CE-140F</text>
+  <text x="827.85" y="177.195" class="s" text-anchor="middle">118 × 145 × 39</text>
+  <polyline points="520,400 635,400" fill="none" stroke="#52606D" stroke-width="2"/>
+  <polyline points="520,394 520,406" fill="none" stroke="#52606D" stroke-width="2"/>
+  <polyline points="635,394 635,406" fill="none" stroke="#52606D" stroke-width="2"/>
+  <text x="577.5" y="388" class="s" text-anchor="middle">100 mm</text>
+</svg>

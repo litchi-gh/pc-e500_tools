@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 330" width="980" height="330" role="img" aria-labelledby="t d">
+  <title id="t">screen_show が 1 行を送る順</title>
+  <desc id="d">仮想画面の 1 行を 2 つのコントローラに送る順番</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .lbl { font-size: 12px; fill: #52606D; paint-order: stroke; stroke: #FFFFFF; stroke-width: 4px; stroke-linejoin: round; }
+  </style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#52606D"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="329" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">screen_show が 1 行を送る順</text>
+  <text x="24" y="55" class="sub">仮想画面は左から右へ 240 バイト。LCD へは 4 回に分け、右半分は後ろから前へ</text>
+  <text x="24" y="92" class="b">仮想画面の 1 行（240 バイト）</text>
+  <rect x="24" y="102" width="248.32" height="44" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="148.16" y="129" class="b" text-anchor="middle">① 64 バイト →</text>
+  <rect x="272.32" y="102" width="217.28" height="44" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="380.96" y="129" class="b" text-anchor="middle">② 56 バイト →</text>
+  <rect x="489.6" y="102" width="217.28" height="44" rx="0" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="598.24" y="129" class="b" text-anchor="middle">③ 56 バイト ←</text>
+  <rect x="706.88" y="102" width="248.32" height="44" rx="0" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="831.04" y="129" class="b" text-anchor="middle">④ 64 バイト ←</text>
+  <text x="24" y="162" class="ms" xml:space="preserve" text-anchor="start">0</text>
+  <text x="272.32" y="162" class="ms" xml:space="preserve" text-anchor="middle">64</text>
+  <text x="489.6" y="162" class="ms" xml:space="preserve" text-anchor="middle">120</text>
+  <text x="706.88" y="162" class="ms" xml:space="preserve" text-anchor="middle">176</text>
+  <text x="955.2" y="162" class="ms" xml:space="preserve" text-anchor="end">239</text>
+  <rect x="24" y="206" width="218" height="60" rx="6" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="133" y="232" class="b" text-anchor="middle">B ページ r、桁 0–63</text>
+  <text x="133" y="250" class="ms" xml:space="preserve" text-anchor="middle">[LCD_B_WRITE] ← [X++]</text>
+  <path d="M148.16 146L148.16 180L133 180L133 206" fill="none" stroke="#52606D" stroke-width="1.5" marker-end="url(#a)"/>
+  <rect x="262" y="206" width="218" height="60" rx="6" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="371" y="232" class="b" text-anchor="middle">A ページ r、桁 0–55</text>
+  <text x="371" y="250" class="ms" xml:space="preserve" text-anchor="middle">[LCD_A_WRITE] ← [X++]</text>
+  <path d="M380.96 146L380.96 180L371 180L371 206" fill="none" stroke="#52606D" stroke-width="1.5" marker-end="url(#a)"/>
+  <rect x="500" y="206" width="218" height="60" rx="6" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="609" y="232" class="b" text-anchor="middle">A ページ r+4、桁 0–55</text>
+  <text x="609" y="250" class="ms" xml:space="preserve" text-anchor="middle">[LCD_A_WRITE] ← [--X]</text>
+  <path d="M598.24 146L598.24 180L609 180L609 206" fill="none" stroke="#52606D" stroke-width="1.5" marker-end="url(#a)"/>
+  <rect x="738" y="206" width="218" height="60" rx="6" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="847" y="232" class="b" text-anchor="middle">B ページ r+4、桁 0–63</text>
+  <text x="847" y="250" class="ms" xml:space="preserve" text-anchor="middle">[LCD_B_WRITE] ← [--X]</text>
+  <path d="M831.04 146L831.04 180L847 180L847 206" fill="none" stroke="#52606D" stroke-width="1.5" marker-end="url(#a)"/>
+  <text x="24" y="294" class="s">③ の前に X に 56、④ の前に 120、終わりに 64 を足して位置を合わせる。4 行分繰り返す（ページ r = 0〜3）。</text>
+  <text x="24" y="314" class="s">各回の前に BUSY を待って、ページと桁 0 を設定する。データの 1 バイトごとには BUSY を見ない。</text>
+</svg>

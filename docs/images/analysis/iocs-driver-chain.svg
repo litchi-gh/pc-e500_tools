@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 330" width="980" height="330" role="img" aria-labelledby="t d">
+  <title id="t">自分のデバイスをつなぐ</title>
+  <desc id="d">追加したヘッダが連結リストの先頭に入る様子を、追加前と追加後で比べた図。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+  </style>
+  <defs><marker id="a2F6DB5" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2F6DB5"/></marker><marker id="a52606D" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#52606D"/></marker></defs>
+  <rect x="0.5" y="0.5" width="979" height="329" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">自分のデバイスをつなぐ</text>
+  <text x="24" y="55" class="sub">先頭のポインタ BFCA2h を自分のヘッダに向け、自分のヘッダから元の先頭へつなぐ</text>
+  <text x="40" y="92" class="b">追加する前</text>
+  <rect x="40" y="104" width="130" height="44" rx="6" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.5"/>
+  <text x="105" y="130.68" class="m" xml:space="preserve" text-anchor="middle">[BFCA2h]</text>
+  <rect x="400" y="104" width="170" height="44" rx="6" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+  <text x="485" y="131.04" class="b" text-anchor="middle">DF820h 画面</text>
+  <rect x="610" y="104" width="170" height="44" rx="6" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+  <text x="695" y="131.04" class="b" text-anchor="middle">DF833h キー</text>
+  <text x="800" y="131" class="m" xml:space="preserve">… FFFFFh</text>
+  <polyline points="170,126 398,126" fill="none" stroke="#52606D" stroke-width="1.6" marker-end="url(#a52606D)"/>
+  <polyline points="570,126 608,126" fill="none" stroke="#52606D" stroke-width="1.6" marker-end="url(#a52606D)"/>
+  <text x="40" y="190" class="b">追加した後</text>
+  <rect x="40" y="202" width="130" height="44" rx="6" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.5"/>
+  <text x="105" y="228.68" class="m" xml:space="preserve" text-anchor="middle">[BFCA2h]</text>
+  <rect x="205" y="202" width="160" height="72" rx="6" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.5"/>
+  <text x="285" y="227.04" class="b" text-anchor="middle">自分のヘッダ</text>
+  <text x="285" y="243.46" class="ms" xml:space="preserve" text-anchor="middle">0Ah、A2h、entry</text>
+  <text x="285" y="259.46" class="ms" xml:space="preserve" text-anchor="middle">LC:</text>
+  <rect x="400" y="202" width="170" height="44" rx="6" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+  <text x="485" y="229.04" class="b" text-anchor="middle">DF820h 画面</text>
+  <rect x="610" y="202" width="170" height="44" rx="6" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.5"/>
+  <text x="695" y="229.04" class="b" text-anchor="middle">DF833h キー</text>
+  <text x="800" y="229" class="m" xml:space="preserve">… FFFFFh</text>
+  <polyline points="170,224 203,224" fill="none" stroke="#2F6DB5" stroke-width="2" marker-end="url(#a2F6DB5)"/>
+  <polyline points="365,224 398,224" fill="none" stroke="#2F6DB5" stroke-width="2" marker-end="url(#a2F6DB5)"/>
+  <polyline points="570,224 608,224" fill="none" stroke="#52606D" stroke-width="1.6" marker-end="url(#a52606D)"/>
+  <text x="40" y="306" class="s">探すときは先頭から順に見るので、同じ番号や同じ名前なら、後から足したほうが先に見つかる</text>
+</svg>

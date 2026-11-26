@@ -1,0 +1,8 @@
+{
+  "program": "05_compare.asm",
+  "tests": [
+    { "name": "3 と 9", "call": "start", "memory": { "DATA": [3, 9] }, "expect": { "memory": { "MAX": [9] } } },
+    { "name": "200 と 7", "call": "start", "memory": { "DATA": [200, 7] }, "expect": { "memory": { "MAX": [200] } } },
+    { "name": "同じ", "call": "start", "memory": { "DATA": [5, 5] }, "expect": { "memory": { "MAX": [5] } } }
+  ]
+}

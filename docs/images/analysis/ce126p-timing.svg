@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 604" width="980" height="604" role="img" aria-labelledby="t d">
+  <title id="t">1 ビットの手順（デバイスコードとデータ）</title>
+  <desc id="d">上はデバイスコードの 1 ビット、下はデータの 1 ビットの波形。デバイスコードでは ACK の Low が受け取りの合図、データでは ACK の High が受け取りの合図。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+  </style>
+  <defs></defs>
+  <rect x="0.5" y="0.5" width="979" height="603" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <text x="24" y="34" class="h">1 ビットの手順（デバイスコードとデータ）</text>
+  <text x="24" y="55" class="sub">番号の順に進む。ACK の High と Low の意味が、2 つで逆になる</text>
+  <text x="24" y="84" class="b">デバイスコード（XOUT = High）</text>
+  <text x="40" y="128" class="b">DOUT</text>
+  <text x="40" y="186" class="b">BUSY</text>
+  <text x="40" y="244" class="b">ACK</text>
+  <polyline points="150,136 240,136 250,106 930,106" fill="none" stroke="#B7791F" stroke-width="2"/>
+  <polyline points="150,106 240,106 250,136 930,136" fill="none" stroke="#B7791F" stroke-width="2"/>
+  <text x="515" y="126" class="s" text-anchor="middle">ビットの値</text>
+  <polyline points="150,194 520,194 520,164 780,164 780,194 930,194" fill="none" stroke="#2F6DB5" stroke-width="2"/>
+  <polyline points="150,252 190,252 190,222 660,222 660,252 840,252 840,222 930,222" fill="none" stroke="#2F855A" stroke-width="2"/>
+  <polyline points="250,100 250,270" fill="none" stroke="#B8C2CC" stroke-width="1" stroke-dasharray="3 3"/>
+  <circle cx="250" cy="280" r="10" fill="#F1ECFB" stroke="#6B4FBB"/>
+  <text x="250" y="284" class="ms" xml:space="preserve" text-anchor="middle">1</text>
+  <polyline points="400,100 400,270" fill="none" stroke="#B8C2CC" stroke-width="1" stroke-dasharray="3 3"/>
+  <circle cx="400" cy="280" r="10" fill="#F1ECFB" stroke="#6B4FBB"/>
+  <text x="400" y="284" class="ms" xml:space="preserve" text-anchor="middle">2</text>
+  <polyline points="520,100 520,270" fill="none" stroke="#B8C2CC" stroke-width="1" stroke-dasharray="3 3"/>
+  <circle cx="520" cy="280" r="10" fill="#F1ECFB" stroke="#6B4FBB"/>
+  <text x="520" y="284" class="ms" xml:space="preserve" text-anchor="middle">3</text>
+  <polyline points="660,100 660,270" fill="none" stroke="#B8C2CC" stroke-width="1" stroke-dasharray="3 3"/>
+  <circle cx="660" cy="280" r="10" fill="#F1ECFB" stroke="#6B4FBB"/>
+  <text x="660" y="284" class="ms" xml:space="preserve" text-anchor="middle">4</text>
+  <polyline points="780,100 780,270" fill="none" stroke="#B8C2CC" stroke-width="1" stroke-dasharray="3 3"/>
+  <circle cx="780" cy="280" r="10" fill="#F1ECFB" stroke="#6B4FBB"/>
+  <text x="780" y="284" class="ms" xml:space="preserve" text-anchor="middle">5</text>
+  <text x="150" y="312" class="s">1 値を出す → 2 ACK が High か確かめる → 3 BUSY を High → 4 ACK が Low になるまで待つ → 5 BUSY を Low</text>
+  <text x="24" y="356" class="b">データ（XOUT = Low）</text>
+  <text x="40" y="400" class="b">DOUT</text>
+  <text x="40" y="458" class="b">BUSY</text>
+  <text x="40" y="516" class="b">ACK</text>
+  <polyline points="150,408 240,408 250,378 930,378" fill="none" stroke="#B7791F" stroke-width="2"/>
+  <polyline points="150,378 240,378 250,408 930,408" fill="none" stroke="#B7791F" stroke-width="2"/>
+  <text x="515" y="398" class="s" text-anchor="middle">ビットの値</text>
+  <polyline points="150,466 520,466 520,436 780,436 780,466 930,466" fill="none" stroke="#2F6DB5" stroke-width="2"/>
+  <polyline points="150,524 660,524 660,494 840,494 840,524 930,524" fill="none" stroke="#2F855A" stroke-width="2"/>
+  <polyline points="250,372 250,542" fill="none" stroke="#B8C2CC" stroke-width="1" stroke-dasharray="3 3"/>
+  <circle cx="250" cy="552" r="10" fill="#F1ECFB" stroke="#6B4FBB"/>
+  <text x="250" y="556" class="ms" xml:space="preserve" text-anchor="middle">1</text>
+  <polyline points="400,372 400,542" fill="none" stroke="#B8C2CC" stroke-width="1" stroke-dasharray="3 3"/>
+  <circle cx="400" cy="552" r="10" fill="#F1ECFB" stroke="#6B4FBB"/>
+  <text x="400" y="556" class="ms" xml:space="preserve" text-anchor="middle">2</text>
+  <polyline points="520,372 520,542" fill="none" stroke="#B8C2CC" stroke-width="1" stroke-dasharray="3 3"/>
+  <circle cx="520" cy="552" r="10" fill="#F1ECFB" stroke="#6B4FBB"/>
+  <text x="520" y="556" class="ms" xml:space="preserve" text-anchor="middle">3</text>
+  <polyline points="660,372 660,542" fill="none" stroke="#B8C2CC" stroke-width="1" stroke-dasharray="3 3"/>
+  <circle cx="660" cy="552" r="10" fill="#F1ECFB" stroke="#6B4FBB"/>
+  <text x="660" y="556" class="ms" xml:space="preserve" text-anchor="middle">4</text>
+  <polyline points="780,372 780,542" fill="none" stroke="#B8C2CC" stroke-width="1" stroke-dasharray="3 3"/>
+  <circle cx="780" cy="552" r="10" fill="#F1ECFB" stroke="#6B4FBB"/>
+  <text x="780" y="556" class="ms" xml:space="preserve" text-anchor="middle">5</text>
+  <text x="150" y="584" class="s">1 値を出す → 2 ACK が Low か確かめる → 3 割り込みを止め BUSY を High → 4 ACK が High になるまで待つ → 5 BUSY を Low</text>
+</svg>
