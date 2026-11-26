@@ -31,8 +31,8 @@
 %%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 timeline
   title シリーズの機種（発売年は 16 章の表の値）
-  1988 : PC-1480U（2.1） : PC-E500（2.2 ほか。1988 / 1989）
-  1990 : PC-E500PJ（6.2） : PC-E550（7.5） : PC-1490U（手元に ROM なし）
+  1988 : PC-1480U（2.1） : PC-E500<br>（2.2 ほか。<br>1988 / 1989）
+  1990 : PC-E500PJ（6.2） : PC-E550（7.5） : PC-1490U<br>（手元に<br>ROM なし）
   1991 : PC-1490UII（6.4）
   1993 : PC-E650（8.5） : PC-U6000（8.4） : PC-E500S（8.3）
 ```

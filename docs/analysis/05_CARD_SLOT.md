@@ -300,11 +300,11 @@ S2(CARD):
 stateDiagram-v2
     S1: S1（内蔵 RAM）
     S2: S2（カード）
-    B: B（内蔵 RAM + カード）
+    B: B<br>（内蔵 RAM<br>+ カード）
     [*] --> S1
     S1 --> S2: MEM$="S2"
-    S2 --> S1: MEM$="S1"、カードなしで起動
-    S1 --> B: MEM$="B"（カードが空のとき）
+    S2 --> S1: MEM$="S1"、<br>カードなしで起動
+    S1 --> B: MEM$="B"<br>（カードが空のとき）
     B --> S1: MEM$="S1"
 ```
 
@@ -398,13 +398,13 @@ ROM はこの 2 つの印で相方かどうかを判定します（§5.6.1）。
 %%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 stateDiagram-v2
     B: B で動作中
-    N: S1(MAIN)：NEW CARD の画面
-    P: S2(CARD)：PAIR MISMATCH の画面
-    X: 単独のカード（+05 = 01h）
-    B --> B: RESET（カードはそのまま）
+    N: S1(MAIN)：<br>NEW CARD<br>の画面
+    P: S2(CARD)：<br>PAIR MISMATCH<br>の画面
+    X: 単独のカード<br>（+05 = 01h）
+    B --> B: RESET<br>（カードはそのまま）
     B --> N: カードを抜いて起動
     N --> B: 抜いたカードを戻して起動
-    B --> P: カードを別の本体に入れて起動
+    B --> P: カードを別の本体に<br>入れて起動
     P --> X: PF1
 ```
 

@@ -414,10 +414,10 @@ stateDiagram-v2
   direction LR
   state "通常" as N
   state "BATT を表示" as C
-  state "BATT が消える<br>ON キーと RESET が効かない" as P
+  state "BATT が消える<br>ON キーと<br>RESET が<br>効かない" as P
   [*] --> N
   N --> C: CAU レベル（4.2〜4.6 V）
-  C --> P: STOP レベル（3.8〜4.2 V）
+  C --> P: STOP レベル<br>（3.8〜4.2 V）
 ```
 
 「方法」にある Hi-Z は出力を切り離した状態のことです。

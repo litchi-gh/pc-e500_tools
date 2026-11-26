@@ -736,7 +736,7 @@ flowchart TD
 stateDiagram-v2
   実行 --> HALT: HALT 命令
   実行 --> OFF: OFF 命令
-  HALT --> 実行: ON、KI、STI、IRQ（ISE = 1）
+  HALT --> 実行: ON、KI、STI、IRQ<br>（ISE = 1）
   OFF --> 実行: ON、KI、IRQ（ISE = 1）
   HALT --> リセット: RESET ピン
   OFF --> リセット: RESET ピン

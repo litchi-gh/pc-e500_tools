@@ -383,13 +383,13 @@ L0 / M0,-58 / D100,-58 / M0,-16 / D100,-16 / M100,-100
 ```mermaid
 %%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 stateDiagram-v2
-  state "四角形なし<br>PAINT は何も送らない" as N
-  state "四角形を覚えている<br>PAINT は網掛けする" as R
-  state "円を覚えている<br>PAINT は色を送り中心へ移動" as C
+  state "四角形なし<br>PAINT は<br>何も送らない" as N
+  state "四角形を<br>覚えている<br>PAINT は<br>網掛けする" as R
+  state "円を覚えている<br>PAINT は<br>色を送り<br>中心へ移動" as C
   N --> R: LLINE / RLINE に B
   C --> R: LLINE / RLINE に B
-  R --> R: PAINT、COLOR、CSIZE、LF、LPRINT、SORGN、エラー
-  R --> N: LLINE（B なし）、GLCURSOR
+  R --> R: PAINT、COLOR、CSIZE、<br>LF、LPRINT、SORGN、<br>エラー
+  R --> N: LLINE（B なし）、<br>GLCURSOR
   N --> C: CIRCLE
   R --> C: CIRCLE
 ```

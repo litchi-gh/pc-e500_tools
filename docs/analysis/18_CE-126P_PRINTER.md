@@ -242,14 +242,14 @@ sequenceDiagram
 %%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 stateDiagram-v2
   state "行をためている" as A
-  state "CR を受けた<br>（BFD1Eh bit6）" as B
+  state "CR を受けた<br>（BFD1Eh<br>bit6）" as B
   [*] --> A
   A --> A: 文字（1 桁進む）
-  A --> A: CR のない LF（空白を置く）
-  A --> A: 24 桁を超えた（印字して次の行）
+  A --> A: CR のない LF<br>（空白を置く）
+  A --> A: 24 桁を超えた<br>（印字して次の行）
   A --> B: CR
   B --> A: LF（行を印字）
-  B --> A: LF 以外（空白を 1 つ置き、その文字を扱う）
+  B --> A: LF 以外<br>（空白を 1 つ置き、<br>その文字を扱う）
 ```
 
 **例:** `AB` CR LF を送ると、`AB` と空白 22 個の 1 行が印字されます。`AB` CR `C` と送ると、印字はされず、行は `AB`、空白、`C` になります。
@@ -296,9 +296,9 @@ CE-126P の文字の番号は PC-E500 と少し違います。ドライバは送
 %%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 stateDiagram-v2
   state "待っている" as W
-  state "デバイスコードを受ける<br>（XOUT = High）" as C
-  state "選ばれた<br>データを受ける（XOUT = Low）" as S
-  state "印字中（ACK = High）" as R
+  state "デバイスコード<br>を受ける<br>（XOUT =<br>High）" as C
+  state "選ばれた<br>データを受ける<br>（XOUT = Low）" as S
+  state "印字中<br>（ACK = High）" as R
   [*] --> W
   W --> C: XOUT が High
   C --> S: 0Fh、20h

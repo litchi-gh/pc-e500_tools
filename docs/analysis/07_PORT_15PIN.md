@@ -168,10 +168,10 @@ OPEN "COM:ボーレート,パリティ,語長,ストップ,A,デリミタ,EOF,XO
 ```mermaid
 %%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 stateDiagram-v2
-    C: 閉じている（BFD34h のビット 7 = 0）
-    O: 開いている（BFD34h のビット 7 = 1、ER が High）
+    C: 閉じている<br>（BFD34h の<br>ビット 7 = 0）
+    O: 開いている<br>（BFD34h の<br>ビット 7 = 1、<br>ER が High）
     [*] --> C
-    C --> O: OPEN（BFD33h の値を F7h へ）
+    C --> O: OPEN<br>（BFD33h の値を F7h へ）
     O --> C: CLOSE、プログラムの RUN
 ```
 

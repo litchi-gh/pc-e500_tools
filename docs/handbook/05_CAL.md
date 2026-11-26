@@ -156,10 +156,10 @@ CAL モードの計算は印刷できません。印刷が必要なときは RUN
 %%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 stateDiagram-v2
   direction LR
-  NORM: NORM<br>（シンボルなし）
-  FIX: FIX<br>（小数点以下の桁数を固定）
-  SCI: SCI<br>（仮数 1 桁 × 10 のべき）
-  ENG: ENG<br>（10 のべきが 3 の倍数）
+  NORM: NORM<br>（シンボル<br>なし）
+  FIX: FIX<br>（小数点以下の<br>桁数を固定）
+  SCI: SCI<br>（仮数 1 桁 ×<br>10 のべき）
+  ENG: ENG<br>（10 のべきが<br>3 の倍数）
   [*] --> NORM
   NORM --> FIX: FSE
   FIX --> SCI: FSE

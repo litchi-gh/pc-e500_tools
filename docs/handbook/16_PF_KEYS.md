@@ -131,8 +131,8 @@ stateDiagram-v2
   state "ふつう" as A
   state "保護中" as B
   A --> B: PASS "SECRET"
-  B --> A: PASS "SECRET"（同じ文字）
-  B --> B: PASS "WRONG" → Password mismatch
+  B --> A: PASS "SECRET"<br>（同じ文字）
+  B --> B: PASS "WRONG"<br>→ Password mismatch
 ```
 
 | 保護中の操作 | 結果（実験、7.2） |
