@@ -32,6 +32,7 @@
 | [`e500 skill`](#e500-skill) | AI 用のスキルを、1 つのフォルダに置く | スキル | ○ | ○ | ○ |
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false}}}%%
 flowchart TD
   H["人（ターミナル、バッチ）"] --> C["e500"]
   A["Claude Code、Codex など"] --> C
@@ -323,11 +324,12 @@ AI 用のスキル（[22.6](#226-ai-に書かせる)。リポジトリでは `sk
 AI は SC62015 や PC-E500 BASIC をほとんど知らないので、そのまま頼むと、ほかの CPU の命令や、ない BASIC の命令を書きます。スキルは、間違えやすい決まり、`e500` での確かめ方、文書の引き方を 1 枚にまとめた案内です。AI はこれを読んで、書く、調べる、動かす、直すを自分で繰り返します。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false}}}%%
 flowchart TD
-  P["こういうゲームを作って"] --> S["スキルを読む"]
-  S --> W["テンプレートから書く"]
+  P["こういう<br>ゲームを<br>作って"] --> S["スキルを読む"]
+  S --> W["テンプレート<br>から書く"]
   W --> L["e500 lint"]
-  L --> R["e500 run、PNG を見る"]
+  L --> R["e500 run<br>PNG を見る"]
   R --> T["e500 test"]
   T --> Q{"期待どおりか"}
   Q -- いいえ --> W
@@ -349,6 +351,7 @@ npx -y pc-e500-tools@latest setup
 Claude Code と Codex がどのフォルダでも PC-E500 のプログラムを作れるようになります。AI は作業を始めるときに、`npx -y pc-e500-tools@latest guide` でスキルの本文を読みます。本文はいつも最新のバージョンなので、置き直す必要はありません。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false}}}%%
 flowchart LR
   U["npx -y pc-e500-tools@latest setup<br>（1 回だけ）"] --> H["ホームに入口の SKILL.md"]
   H --> A["Claude Code、Codex"]
