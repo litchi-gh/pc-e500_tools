@@ -275,8 +275,8 @@ Expand-Archive -Path "$HOME\Downloads\E500Disassembler-*-win-x64.zip" -Destinati
 
 | コマンド | 何をするか | 正しいとき |
 |---|---|---|
-| `.\Assembler\e500asm.cmd --version` | アセンブラのバージョンを表示する。`e500asm.cmd` は `app\e500asm.exe` を呼び出すだけの短いファイル | `e500asm 0.2.0 (SC62015)` |
-| `.\DisAssembler\e500dasm.cmd --version` | 逆アセンブラのバージョンを表示する | `e500dasm 0.1.0 (SC62015)` |
+| `.\Assembler\e500asm.cmd --version` | アセンブラのバージョンを表示する。`e500asm.cmd` は `app\e500asm.exe` を呼び出すだけの短いファイル | `e500asm 0.3.0 (SC62015)` |
+| `.\DisAssembler\e500dasm.cmd --version` | 逆アセンブラのバージョンを表示する | `e500dasm 0.2.0 (SC62015)` |
 
 「指定されたパスが見つかりません」などと出たら、`app` フォルダに EXE があるかを確かめます。
 

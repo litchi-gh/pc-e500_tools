@@ -17,7 +17,7 @@ static int Run(string[] args)
         switch (args[i])
         {
             case "--help": case "-h": Help(); return 0;
-            case "--version": Console.WriteLine("e500asm 0.2.0 (SC62015)"); return 0;
+            case "--version": Console.WriteLine("e500asm 0.3.0 (SC62015)"); return 0;
             case "-o": case "--output": output = Next(); break;
             case "-f": case "--format": format = Next().ToLowerInvariant(); break;
             case "-l": case "--listing": listing = Next(); break;
@@ -70,7 +70,7 @@ static int Run(string[] args)
 }
 
 static void Help() => Console.WriteLine("""
-e500asm 0.2.0 - SHARP PC-E500 series / SC62015 cross assembler
+e500asm 0.3.0 - SHARP PC-E500 series / SC62015 cross assembler
 Usage: e500asm source.asm [options]
   -o, --output PATH     Output path (default: source.bin / source.hex / source.BIN)
   -f, --format FORMAT   bin (raw binary, default), hex (Intel HEX) or ce140f (the file LOAD M reads)

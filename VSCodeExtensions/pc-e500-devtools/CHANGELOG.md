@@ -5,7 +5,7 @@
 Visual Studio Marketplace と Open VSX で出す最初の版です。発行者が変わったので、番号を 0.1.0 から振り直しました。
 
 - 発行者を `litchi-gh` にした（ID は `litchi-gh.pc-e500-devtools`）。前の VSIX（`pokecom-tools.pc-e500-devtools`）を入れている場合は、アンインストールしてから入れる
-- 設定画面に、エミュレータのダウンロードと、この拡張機能のマニュアルへのリンクを足した。「環境を確認」で、エミュレータが見つからないときにダウンロードのボタンを出す
+- 設定画面に、エミュレータのダウンロードと、この拡張機能のマニュアルへのリンクを足した。「環境を確認」で、エミュレータが見つからないときや古いときに、ダウンロードのボタンを出す
 - ドットエディタの文字入れのフォントを、SparkFun Electronics の 5 × 7 ドットのフォント（MIT）にした（`ThirdPartyNotices.txt`）
 
 - INCLUDE ファイル: `iocs.inc`（IOCS の名前）、`hardware.inc`、`keycode.inc`、ゲーム用の `game.inc`・`screen.inc`・`sprite.inc`・`pad.inc`・`text.inc`・`random.inc`。IOCS の番号の候補と説明、スニペット

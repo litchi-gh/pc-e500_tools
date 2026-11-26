@@ -17,7 +17,7 @@ static int Run(string[] args)
         switch (args[i].ToLowerInvariant())
         {
             case "-h": case "--help": Help(); return 0;
-            case "--version": Console.WriteLine("e500dasm 0.1.0 (SC62015)"); return 0;
+            case "--version": Console.WriteLine("e500dasm 0.2.0 (SC62015)"); return 0;
             case "-o": case "--output": output = Next(); break;
             case "-f": case "--format":
                 string f = Next().ToLowerInvariant();
@@ -58,7 +58,7 @@ static int Number(string text)
 }
 
 static void Help() => Console.WriteLine("""
-e500dasm 0.1.0 - SHARP PC-E500 series / SC62015 disassembler
+e500dasm 0.2.0 - SHARP PC-E500 series / SC62015 disassembler
 Usage: e500dasm input-file --format raw|ce140f [options]
   -f, --format raw|ce140f   RAW or CE-140F SAVE M with 16-byte header (required)
   --org ADDRESS             RAW load/start address (required for RAW)
