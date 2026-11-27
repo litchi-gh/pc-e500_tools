@@ -214,7 +214,7 @@ node --test --test-name-pattern "PRE" out/test/asm.test.js
 
 ### 入門の例題
 
-`Samples/Assembler/Tutorial/` の `*.e500test.json` は拡張を入れた VS Code のテスト エクスプローラーで実行できます。ゲームのサンプル（`StarCatch`、`Meteor`、`NineBox`）と `Recipes` にもテストがあります。例題を直したら、マニュアルの本文も合わせます。
+`Samples/Assembler/Tutorial/` の `*.e500test.json` は拡張を入れた VS Code のテスト エクスプローラーで実行できます。`Recipes` にもテストがあります。ゲームは別のリポジトリ [pc-e500_games](https://github.com/litchi-gh/pc-e500_games) にあり、そちらにもテストがあります。例題を直したら、マニュアルの本文も合わせます。
 
 ### アセンブラの実行ファイルのテスト
 

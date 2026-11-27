@@ -68,6 +68,7 @@ flowchart LR
 | 命令の書き方を調べたい | [命令一覧](05_INSTRUCTIONS.md) |
 | 掛け算や文字の変換のルーチンが欲しい | [逆引きレシピ](20_RECIPES.md) |
 | 動くプログラムを見たい | [サンプル](../../Samples/README.md) |
+| ゲームを遊びたい | [PC-E500 ゲーム集](https://github.com/litchi-gh/pc-e500_games)（別のリポジトリ） |
 | IOCS の番号と引数を調べたい | [INCLUDE ファイルの iocs.inc](06_INCLUDE_FILES.md#iocsinc) |
 | ゲームを作りたい | [ゲームを作る](07_GAME.md) |
 | 絵を描きたい | [ドットエディタ](12_DOT_EDITOR.md) |

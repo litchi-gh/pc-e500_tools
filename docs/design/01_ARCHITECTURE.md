@@ -23,7 +23,7 @@
 | `VSCodeExtensions/pc-e500-devtools/media/` | JavaScript | パネル、デバッグ画面、ドットエディタ、環境の確認のページ |
 | `VSCodeExtensions/pc-e500-devtools/server/` | C# | デバッグサーバー `e500dbg` |
 | `VSCodeExtensions/pc-e500-devtools/inc/` | ASM | INCLUDE ファイル |
-| `Samples/` | ASM、BASIC | 例題とゲーム |
+| `Samples/` | ASM、BASIC | 例題 |
 | `docs/` | Markdown、SVG、PNG | マニュアル、設計、解析資料、図 |
 
 ソースの大きさの目安です。全体を読む順番を決めるときに使ってください。

@@ -251,7 +251,7 @@ picture:
 110 GPRINT "183C7E7E3C18"
 ```
 
-動く例は [Walker](../../Samples/BASIC/Walker/README.md) です。
+動く例は [Walker](https://github.com/litchi-gh/pc-e500_games/blob/main/BASIC/Walker/README.md) です。
 
 ## 12.15 実習 5: INCLUDE を使わずに表示する
 

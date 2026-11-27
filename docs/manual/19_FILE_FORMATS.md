@@ -162,7 +162,7 @@ mm bb mm bb …（16 バイト）       ← コマ 1
 
 ## 19.8 実例: .spr
 
-[StarCatch](../../Samples/Assembler/StarCatch/README.md) の `face.spr` の始めです。
+[StarCatch](https://github.com/litchi-gh/pc-e500_games/blob/main/Assembler/StarCatch/README.md) の `face.spr` の始めです。
 
 ```text
 08 01 02 01   ← 幅 8、8 ドット × 1 行、2 コマ、マスクあり

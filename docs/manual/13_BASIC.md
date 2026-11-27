@@ -187,12 +187,14 @@ flowchart TD
 
 | サンプル | 学べること |
 |---|---|
-| [HighLow](../../Samples/BASIC/HighLow/README.md) | 乱数、入力、条件 |
-| [Reflex](../../Samples/BASIC/Reflex/README.md) | キーの待ち方、時間、音 |
+| [HighLow](https://github.com/litchi-gh/pc-e500_games/blob/main/BASIC/HighLow/README.md) | 乱数、入力、条件 |
+| [Reflex](https://github.com/litchi-gh/pc-e500_games/blob/main/BASIC/Reflex/README.md) | キーの待ち方、時間、音 |
 | [Curves](../../Samples/BASIC/Curves/README.md) | 座標と関数 |
-| [Walker](../../Samples/BASIC/Walker/README.md) | 絵を動かす |
-| [StarRunner](../../Samples/BASIC/StarRunner/README.md) | ゲーム全体の組み立て |
+| [Walker](https://github.com/litchi-gh/pc-e500_games/blob/main/BASIC/Walker/README.md) | 絵を動かす |
+| [StarRunner](https://github.com/litchi-gh/pc-e500_games/blob/main/BASIC/StarRunner/README.md) | ゲーム全体の組み立て |
 | [MachineCode](../../Samples/BASIC/MachineCode/README.md) | 機械語との組み合わせ |
+
+HighLow、Reflex、Walker、StarRunner は [PC-E500 ゲーム集](https://github.com/litchi-gh/pc-e500_games)にあります。
 
 ## 13.11 デバッグの実例
 

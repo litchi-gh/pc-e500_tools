@@ -66,7 +66,7 @@ flowchart LR
 
 ## サンプル
 
-[Samples/](../Samples/README.md) にアセンブラの例題とゲーム、BASIC のゲームがあります。
+[Samples/](../Samples/README.md) にアセンブラの例題と、BASIC の例があります。ゲームは別のリポジトリ [PC-E500 ゲーム集](https://github.com/litchi-gh/pc-e500_games)にあります。
 
 ## 解析資料
 

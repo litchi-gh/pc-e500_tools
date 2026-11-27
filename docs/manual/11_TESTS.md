@@ -268,7 +268,7 @@ flowchart LR
 
 ## 11.9 ゲームのテストの例
 
-[メテオ](../../Samples/Assembler/Meteor/meteor.e500test.json)のテストです。
+[メテオ](https://github.com/litchi-gh/pc-e500_games/blob/main/Assembler/Meteor/meteor.e500test.json)のテストです。
 
 | テスト | 調べること |
 |---|---|

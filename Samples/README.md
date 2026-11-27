@@ -2,26 +2,21 @@
 
 PC-E500 シリーズで動くプログラムを集めました。VS Code 拡張「PC-E500 開発ツール」で開いて `F5` を押すと、エミュレータで動きます（[クイックスタート](../docs/manual/01_QUICKSTART.md)）。
 
+ゲームは別のリポジトリ [PC-E500 ゲーム集](https://github.com/litchi-gh/pc-e500_games)にあります。
+
 ## アセンブラ
 
 | 画面 | サンプル | 内容 | 大きさ |
 |---|---|---|---|
 | ![線と四角](../docs/images/samples/tutorial-draw.png) | [Tutorial](Assembler/Tutorial/README.md) | [アセンブラ入門](../docs/manual/03_ASSEMBLER_TUTORIAL.md)の例題 12 本 | 2〜84 バイト |
 | ![文字の表示](../docs/images/samples/hello.png) | [Basics](Assembler/Basics/README.md) | 表示、足し算、10 進の足し算 | 15〜80 バイト程度 |
-| ![スターキャッチ](../docs/images/samples/starcatch.png) | [StarCatch](Assembler/StarCatch/README.md) | 敵をよけて星を取るゲーム。INCLUDE ファイルの使い方の見本 | 約 5 KB |
-| ![メテオ](../docs/images/samples/meteor.png) | [Meteor](Assembler/Meteor/README.md) | 隕石を撃つゲーム。配列、弾、残りと無敵時間、タイトル | 約 5 KB |
 | | [Recipes](Assembler/Recipes/README.md) | 掛け算、割り算、文字の変換など 25 のルーチン（[逆引きレシピ](../docs/manual/20_RECIPES.md)） | 約 900 バイト |
-| ![ナインボックス](../docs/images/samples/ninebox.png) | [NineBox](Assembler/NineBox/README.md) | 3×3 のマスを埋めて消すパズル。LCD を直接操作する | 約 9.3 KB |
 
 ## BASIC
 
 | 画面 | サンプル | 内容 | 主に使う命令 |
 |---|---|---|---|
-| ![スターランナー](../docs/images/samples/starrun.png) | [StarRunner](BASIC/StarRunner/README.md) | 隕石をよけるゲーム | `LOCATE` `MID$` `INKEY$` `BEEP` |
-| ![数当て](../docs/images/samples/highlow.png) | [HighLow](BASIC/HighLow/README.md) | 数当て | `RND` `INPUT` `IF` |
-| ![反応速度](../docs/images/samples/reflex.png) | [Reflex](BASIC/Reflex/README.md) | 音が鳴ったら SPACE を押す | `INKEY$` `BEEP` `FOR` |
 | ![曲線](../docs/images/samples/curves.png) | [Curves](BASIC/Curves/README.md) | サインとコサインのグラフ | `LINE` `PSET` `SIN` |
-| ![歩く人](../docs/images/samples/walker.png) | [Walker](BASIC/Walker/README.md) | キャラクタを動かす | `GCURSOR` `GPRINT` `LINE` |
 | | [MachineCode](BASIC/MachineCode/README.md) | BASIC から機械語を呼ぶ | `POKE` `CALL` `PEEK` `DATA` |
 
 ## 動かし方
