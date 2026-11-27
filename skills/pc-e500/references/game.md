@@ -57,6 +57,7 @@ quit:   CALL  game_end
 | `text_draw` | `X` = 0 で終わる文字列、`(text_x)` 1 バイト 0〜234 ドット、`(text_row)` 0〜3 | 文字 |
 | `number_draw` | `I` | 右詰め 5 桁 |
 | `random_below` | `IL` | `A` = 0〜IL−1。`random_seed`（外部メモリの 2 バイト、0 以外）を始めに変える |
+| `gray_clear` / `gray_load` / `gray_pset` / `gray_sprite` / `gray_show` | `INCLUDE "gray.inc"` | 4 階調（白、灰色 2 段、黒）。3 枚の画面を `gray_show` で 1 枚ずつ送る（18 ms）。間を 1〜2 ms あけるとちらつきが少ない。描くのは遅い（点 550 サイクル）ので灰色は背景向き。使い方は `e500 help gray_show` |
 
 仮想画面は `screen` から 960 バイト。x 桁、r 行（縦 8 ドット）は `screen+r*240+x`、ビット 0 が上。
 
