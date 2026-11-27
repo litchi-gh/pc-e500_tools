@@ -39,14 +39,11 @@ game_lcd2:
 ; 終わる: 音を止め、ON/BRK が離されるのを待ち、画面を消し、すべて元に戻す。
 game_end:
         AND   (SCR),BZ_OFF
-game_end1:
         MV    (KOL),0
         AND   (KOH),$F0         ; KOH の上位 4 ビットは別の信号なので残す
-        OR    (KOH),$08         ; KO11: ON/BRK は KI1
-        NOP
-        TEST  (KI),$02
+game_end1:
+        TEST  (SSR),ONK         ; ON/BRK は CPU の ON ピン（キーの行列にはない）
         JRNZ  game_end1
-        AND   (KOH),$F0
         MV    I,$C0
         MVL   ($00),[game_saved]
         MV    A,[game_scr]

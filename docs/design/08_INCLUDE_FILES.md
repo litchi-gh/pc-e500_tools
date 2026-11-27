@@ -211,7 +211,9 @@ flowchart LR
 | SPACE | KO2（04h） | 6 | `PAD_A` 10h |
 | 下 | KO2 | 7 | `PAD_DOWN` 08h |
 | Z | KO0（01h） | 5 | `PAD_C` 40h |
-| ON/BRK | KO11（KOH = 08h） | 1 | `PAD_BREAK` 80h |
+| ON/BRK | 行列の外（SSR のビット 3、`ONK`） | − | `PAD_BREAK` 80h |
+
+ON/BRK はキーの行列ではなく CPU の ON ピンにつながっているので、`TEST (SSR),ONK` で読みます。エミュレータは ON/BRK を KO11 の KI1 にも出しますが、実機（PC-E650）では出ず、行列で読んでいたころの `pad_read` では ON/BRK で戻れませんでした（実験）。`game_end` が ON/BRK が離されるのを待つのも `SSR` で見ます。
 
 KO を立てた後の `NOP` は、KI の値が落ち着くのを待つためです。読み終わったら KOL と、KOH の下位 4 ビットを 0 に戻します。KOH の上位 4 ビットは RS-232C の線なので変えません。
 

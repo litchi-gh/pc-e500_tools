@@ -50,6 +50,7 @@ KOL     EQU   $F0               ; ${L("キーの列（KO0-KO7）", "Key columns 
 KOH     EQU   $F1               ; ${L("キーの列（KO8-KO11）", "Key columns (KO8-KO11)")}
 KI      EQU   $F2               ; ${L("押されているキーの行", "Rows of the keys held")}
 ISR     EQU   $FC               ; ${L("割り込みの要求", "Interrupt requests")}
+SSR     EQU   $FF               ; ${L("システムの状態（ビット 3 = ON/BRK）", "System status (bit 3 = ON/BRK)")}
 ; ${L("IOCS に値を渡す内部 RAM（D4h-D7h）を作業用に使う。", "Work bytes: the internal RAM that passes values to IOCS (D4h-D7h).")}
 dot_x   EQU   $D4
 dot_y   EQU   $D5
@@ -266,9 +267,7 @@ k_4:    TEST  (KI),$80
         JRZ   k_5
         OR    (found),DOWN
 k_5:    MV    (KOL),0
-        OR    (KOH),$08         ; ${L("KO11: ON/BRK は KI1", "KO11: ON/BRK is KI1")}
-        NOP
-        TEST  (KI),$02
+        TEST  (SSR),$08         ; ${L("ON/BRK は CPU の ON ピン（キーの行列にはない）", "ON/BRK is the CPU's ON pin (not in the key matrix)")}
         JRZ   k_6
         OR    (found),BREAK
 k_6:    AND   (KOH),$F0

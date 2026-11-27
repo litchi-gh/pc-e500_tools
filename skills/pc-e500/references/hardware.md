@@ -90,9 +90,8 @@
 | ▲ / ◀ | KO3（KOL 08h） | 6 / 7 |
 | SPACE / ▼ | KO2（KOL 04h） | 6 / 7 |
 | Z | KO0（KOL 01h） | 5 |
-| ON/BRK | KO11（KOH 08h） | 1 |
 
-- 割り込みの中でも、ON/BRK は `TEST ($FF),$08`。同時押しを見るなら `pad.inc`（`pad_read`）。
+- **ON/BRK は行列にない**（CPU の ON ピン）。`TEST (SSR),ONK`（`TEST ($FF),$08`）で読む。エミュレータは KO11 の KI1 にも出すが、実機では出ないので、行列で読むと実機で抜けられなくなる。同時押しを見るなら `pad.inc`（`pad_read`）。
 - IOCS: `KYBD_READ`（文字。`keycode.inc` の `KEY_*`）、`KYBD_MATRIX` / `KYBD_PEEK`（行列コード `MTX_*`）。
 - BASIC の `INKEY$`: 矢印は右 0Eh、左 0Fh、上 04h、下 05h、RETURN 0Dh。
 - 資料: `docs/analysis/11_IOCS.md`「行列コードと、文字への変換表」、`docs/analysis/10_SYSTEM.md`「キー入力の流れ」
