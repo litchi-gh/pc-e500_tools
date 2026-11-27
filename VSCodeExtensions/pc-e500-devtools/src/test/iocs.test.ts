@@ -45,7 +45,16 @@ describe("include files", () => {
   it("assembles all of them together, with no name twice", () => {
     const p = build(`        ORG $BE000\n${CONSTANTS}start:  RETF\n${CODE}        END\n`);
     assert.deepEqual(p.result.issues, []);
-    assert.equal(ALL.length, 9);
+    assert.equal(ALL.length, 10);
+    // screen_part.inc by itself, for a program with a screen of its own.
+    const own = build(`        ORG $BE000
+${CONSTANTS}start:  RETF
+        INCLUDE "screen_part.inc"
+screen: DS 960
+        END
+`);
+    assert.deepEqual(own.result.issues, []);
+    assert.ok(own.binary.length < 960 + 400, `${own.binary.length}`);
     // Names only take no room.
     assert.equal(build(`        ORG $BE000\n${CONSTANTS}start:  RETF\n        END\n`).binary.length, 1);
   });
@@ -282,6 +291,17 @@ clear:  CALL  screen_clear
         RETF
 restore: CALL screen_restore
         RETF
+part:   PUSHU IMR                 ; no timer in the count
+        AND   (IMR),$7F
+        MV    A,[part_arg]
+        MV    (screen_part_x),A
+        MV    A,[part_arg+1]
+        MV    (screen_part_w),A
+        MV    A,[part_arg+2]
+        CALL  screen_part
+        POPU  IMR
+        RETF
+part_arg: DS  3,0
 leave_: MV    I,$C0             ; as game_end, without its clearing of the screen
         MVL   ($00),[game_saved]
         POPU  IMR
@@ -380,6 +400,34 @@ sprite_file: INCBIN "s.spr"
     if (process.env.E500_TIMES) console.log(`show ${t.cycles}, restore ${r.cycles}`);
     assert.ok(t.cycles < 768000 / 35, `show ${t.cycles}`);
     assert.ok(r.cycles < 768000 / 100, `restore ${r.cycles}`);
+  });
+  it("shows a part of the screen, a byte no faster than the LCD takes it", async () => {
+    await useGame();
+    await call("load");
+    const part = async (x: number, w: number, rows: number): Promise<number> => {
+      await client.write(program.resolve("part_arg"), Uint8Array.from([x, w, rows]));
+      return (await call("part")).cycles;
+    };
+    for (const [x, w, rows] of [[0, 240, 15], [0, 1, 1], [63, 2, 2], [119, 2, 4], [175, 2, 8], [239, 1, 15], [43, 154, 14], [43, 154, 1], [43, 155, 1], [10, 100, 5], [120, 56, 15], [100, 140, 9], [64, 56, 3], [176, 64, 12], [50, 50, 0]]) {
+      await call("restore"); await call("show"); await call("clear");
+      await part(x, w, rows);
+      const want = Uint8Array.from(pattern);
+      for (let i = 0; i < want.length; i++) {
+        const u = i % WIDTH, row = Math.floor(i / WIDTH / 8);
+        if (u >= x && u < x + w && (rows >> row) & 1) want[i] = 0;
+      }
+      await expectDots(want, `part ${x},${w},${rows}`);
+    }
+    // The real LCD drops data that comes less than 14 cycles after the last. The emulator does not.
+    for (const x of [0, 64, 120, 176]) {
+      // The second call of the same x and width, with no table to make.
+      const again = async (w: number): Promise<number> => { await part(x, w, 1); return part(x, w, 1); };
+      const gap = ((await again(41)) - (await again(1))) / 40;
+      assert.ok(gap >= 14, `part at ${x}: ${gap} cycles a byte`);
+    }
+    const whole = await part(0, 240, 15);
+    if (process.env.E500_TIMES) console.log(`part, the whole screen ${whole}`);
+    assert.ok(whole < 768000 / 35, `part ${whole}`);
   });
   it("draws sprites at every edge and shift, with and without a mask", async () => {
     for (const mask of [true, false]) {

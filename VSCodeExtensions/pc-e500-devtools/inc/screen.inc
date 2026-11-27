@@ -9,6 +9,8 @@
 ;   loop:   CALL  screen_restore    ; 背景に戻す
 ;           （キャラクタを描く）
 ;           CALL  screen_show       ; LCD へ
+;
+; 変わった所だけを送るなら screen_part（screen_part.inc。この中で INCLUDE している）。
 
 screen_n        EQU $3C         ; 作業用
 screen_buffer   EQU $60         ; 作業用（60h〜BFh）
@@ -181,3 +183,5 @@ screen_set_b3:
 
 screen:         DS 960
 screen_back:    DS 960
+
+        INCLUDE "screen_part.inc"

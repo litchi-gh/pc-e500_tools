@@ -231,7 +231,7 @@ describe("command line", () => {
     assert.match(lookup("sprite_draw").join("\n"), /sprite\.inc[\s\S]*コマ/);
     assert.match(lookup("random_seed").join("\n"), /random\.inc/);
     assert.match(lookup("PAD_LEFT").join("\n"), /EQU/);
-    for (const n of ["game_start", "game_end", "game_wait", "sound_on", "sound_off", "screen_load", "screen_keep", "screen_restore", "screen_clear", "screen_show", "sprite_draw", "box_hit", "pad_read", "text_draw", "text_put", "number_draw", "random", "random_below"]) assert.ok(lookup(n).length > 0, n);
+    for (const n of ["game_start", "game_end", "game_wait", "sound_on", "sound_off", "screen_load", "screen_keep", "screen_restore", "screen_clear", "screen_show", "screen_part", "sprite_draw", "box_hit", "pad_read", "text_draw", "text_put", "number_draw", "random", "random_below"]) assert.ok(lookup(n).length > 0, n);
     assert.deepEqual(lookup("NOSUCH"), []);
     for (const [kind, list] of words()) for (const w of list) assert.ok(lookup(w).length > 0, `${kind} ${w}`);
     assert.equal(e500("help", "NOSUCH").code, 1);

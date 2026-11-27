@@ -53,9 +53,8 @@
   <rect x="284" y="124" width="672" height="20" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.8"/>
   <text x="620" y="139" class="s" text-anchor="middle">sprite.inc（24h〜39h）</text>
   <rect x="60" y="144" width="560" height="20" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.8"/>
-  <rect x="620" y="144" width="112" height="20" rx="2" fill="#F3F5F8" stroke="#7B8794" stroke-width="0.8"/>
-  <rect x="732" y="144" width="56" height="20" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.8"/>
-  <text x="760" y="159" class="s" text-anchor="middle">screen</text>
+  <rect x="620" y="144" width="168" height="20" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.8"/>
+  <text x="704" y="159" class="s" text-anchor="middle">screen.inc</text>
   <rect x="788" y="144" width="112" height="20" rx="2" fill="#F3F5F8" stroke="#7B8794" stroke-width="0.8"/>
   <rect x="900" y="144" width="56" height="20" rx="2" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="0.8"/>
   <text x="928" y="159" class="s" text-anchor="middle">game</text>
