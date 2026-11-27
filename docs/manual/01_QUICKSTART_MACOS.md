@@ -52,7 +52,7 @@ e500 check
 ```
 
 ```text
-server: /Users/名前/.vscode/extensions/litchi-gh.pc-e500-devtools-0.1.0/out/server/e500dbg.dll
+server: /Users/名前/.vscode/extensions/litchi-gh.pc-e500-devtools-0.2.0/out/server/e500dbg.dll
 emulator: /Users/名前/pockecom/Emulator
 core: /Users/名前/pockecom/Emulator/libe500core.dylib
 rom: /Users/名前/pockecom/Emulator/rom/PC-E500(7.2).ROM

@@ -2,7 +2,7 @@
   "name": "pc-e500-devtools",
   "displayName": "%displayName%",
   "description": "%description%",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "publisher": "litchi-gh",
   "license": "MIT",
   "repository": {

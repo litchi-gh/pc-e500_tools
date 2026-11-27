@@ -111,7 +111,7 @@ e500 --version
 | コマンド | 何をするか | 正しいとき |
 |---|---|---|
 | `Get-Command e500` | `e500` と打ったときに動くものの場所を表示する | `e500.cmd` が出る |
-| `e500 --version` | バージョンを表示する | `0.1.0` など |
+| `e500 --version` | バージョンを表示する | `0.2.0` など |
 
 ## 23.3 エミュレータを教える
 
@@ -147,7 +147,7 @@ e500 check
 エミュレータと ROM を探し、実際に一度起動して、使えるかどうかを調べます。何も変えません。
 
 ```text
-server: C:\Users\名前\.vscode\extensions\litchi-gh.pc-e500-devtools-0.1.0\out\server\e500dbg.exe
+server: C:\Users\名前\.vscode\extensions\litchi-gh.pc-e500-devtools-0.2.0\out\server\e500dbg.exe
 emulator: C:\PockeCom\Emulator
 core: C:\PockeCom\Emulator\bin\e500core.dll
 rom: C:\PockeCom\Emulator\rom\PC-E500(7.2).ROM
