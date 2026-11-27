@@ -405,6 +405,15 @@ internal static class Program
             case "type": return new JsonObject { ["skipped"] = M.Type(Str(args, "text")) };
             case "releaseKeys": M.ReleaseKeys(); return null;
             case "screen": return Screen(M, M.Pixels(), true);
+            case "audio":
+            {
+                // ブザーの音（48 kHz、モノラル、16 ビット）を、前に取り出してからの分だけ返す。核は 1 秒分までためる。
+                var buf = new short[48000];
+                int n = Native.e500_audio(M.Handle, buf, buf.Length);
+                var bytes = new byte[n * 2];
+                Buffer.BlockCopy(buf, 0, bytes, 0, n * 2);
+                return new JsonObject { ["samples"] = n, ["data"] = Convert.ToBase64String(bytes) };
+            }
             case "disassemble": return Disassemble(M, Int(args, "address"), Int(args, "count", 16), Int(args, "before", 0));
             case "state.save": return new JsonObject { ["data"] = Convert.ToBase64String(M.SaveState()) };
             case "state.load":

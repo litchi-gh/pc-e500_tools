@@ -26,7 +26,8 @@
 | `hardware.inc` | 名前 | 0 | − |
 | `keycode.inc` | 名前 | 0 | − |
 | `game.inc` | 処理 | 336（うち退避用 192） | `hardware.inc` |
-| `screen.inc` | 処理 | 2247（うち仮想画面 2 枚で 1920） | `hardware.inc` |
+| `screen.inc` | 処理 | 2247（うち仮想画面 2 枚で 1920）＋ `screen_part.inc` | `hardware.inc` |
+| `screen_part.inc` | 処理 | 379 | `hardware.inc`、仮想画面 `screen`（`screen.inc` が INCLUDE する） |
 | `sprite.inc` | 処理 | 430 | `screen.inc` |
 | `pad.inc` | 処理 | 137 | `hardware.inc` |
 | `text.inc` | 処理 | 183 | `screen.inc`、`hardware.inc` |
@@ -63,11 +64,12 @@ flowchart LR
 | 00h〜1Fh | 利用者 |
 | 20h〜22h | `pad.inc`（`pad_now` `pad_new` `pad_old`） |
 | 24h〜39h | `sprite.inc` |
+| 3Ah〜3Bh | `screen_part.inc`（左端と幅） |
 | 3Ch | `screen.inc` の回数 |
 | 3Fh | `game.inc` の時間 |
 | 40h〜47h | `box_hit` の四角 |
 | 48h〜4Fh | `text.inc` |
-| 60h〜BFh | `screen.inc` と `text.inc` のバッファ |
+| 60h〜BFh | `screen.inc` と `text.inc` のバッファ（`screen_part.inc` の作業用も 60h〜69h） |
 | D4h〜DFh | IOCS の引数（ROM） |
 
 `game_start` は 00h〜BFh を外部メモリに退避し、`game_end` が戻します。C0h〜EBh の ROM の作業域には触りません（IOCS を呼ぶ `game_end` だけが、引数の D6h、D7h に書きます）。
@@ -116,6 +118,8 @@ flowchart LR
 
 - `screen_restore` と `screen_load` は内部 RAM のバッファを通して `MVL` で移します（外部メモリどうしの `MVL` がないため）。
 - `screen_show` はコントローラごとに BUSY を待ってページと桁を設定し、続けて 1 バイトずつ書きます。右半分は逆順に送ります。
+- `screen_part`（`screen_part.inc`）は、4 つの区画（x 0〜63、64〜119、120〜175、176〜239）と送る範囲の重なりを求めて、区画ごとの「バイト数、桁の命令、行の中の位置」の表（12 バイト）を作り、行ごとに重なった所だけを同じ形で送ります。右半分の区画は、桁を右端（175 − 右端の x、239 − 右端の x）から始めます。LCD には CPU が遅くしない `0A000h` 台のアドレスで書きます。x と幅が前の呼び出しと同じなら表を作り直さないので、1 行ずつ呼んでも遅くなりません。表は外部メモリにあり、間に `screen.inc` や `text.inc` を呼んでも壊れません。
+- `screen_part.inc` を別のファイルにしたのは、仮想画面を自分で持つプログラム（`screen_back` の 960 バイトを取れないもの）でも使えるようにするためです。`screen.inc` は最後でこのファイルを INCLUDE します。データを書くループは `MV A,[X++]`、`MV [Y],A`、`DEC IL`、`JRNZ` の 14 サイクルと、逆順の 15 サイクルです。実機の LCD が取りこぼさない 14 サイクル以上にしてあり、展開しません（[解析 30 章](../analysis/30_SPEED.md)）。
 
 仮想画面の 1 バイトは、`screen + 行×240 + x` の縦 8 ドット（ビット 0 が上）です。
 
@@ -144,12 +148,13 @@ flowchart LR
 |---|---|---|
 | `screen_show` | 16756 | 約 22 ミリ秒 |
 | `screen_restore` | 4176 | 約 5 ミリ秒 |
+| `screen_part`（1 画面すべて） | 17362 | 約 23 ミリ秒 |
 | `sprite_draw`（9 × 16、マスクあり） | 4653 | 約 6 ミリ秒 |
 | `sprite_draw`（9 × 16、マスクなし） | 3505 | 約 5 ミリ秒 |
 
 テンプレートのゲームは `game_wait` に 3 を渡します。`screen_restore` + 9 × 16 のキャラクタ 2 つ + `screen_show` は約 30000 サイクルで、残りが動きの計算と文字です。
 
-数字は `$env:E500_TIMES = '1'` を付けて `iocs.test` を動かすと出ます。テストの上限は、`screen_show` が 1/35 秒、`screen_restore` が 1/100 秒、`sprite_draw` が 1/150 秒です。
+数字は `$env:E500_TIMES = '1'` を付けて `iocs.test` を動かすと出ます。テストの上限は、`screen_show` と `screen_part`（1 画面）が 1/35 秒、`screen_restore` が 1/100 秒、`sprite_draw` が 1/150 秒です。
 
 ## 8.5 キャラクタ
 
@@ -246,6 +251,7 @@ KO を立てた後の `NOP` は、KI の値が落ち着くのを待つためで�
 |---|---|
 | すべてを一緒にアセンブル | 名前の重複、依存の順番 |
 | `screen_load` `screen_show` `screen_restore` | 240 × 32 の全ドット |
+| `screen_part` | 区画の境目にかかる範囲、行のビット、送らない所が変わらないこと、1 バイトの間隔が 14 サイクル以上 |
 | `sprite_draw` | x: −300〜300 の端、y: −18〜34 の全部、コマ 0 と 1、マスクの有無 |
 | `box_hit` | 隣り合う、重なる、離れるの境界 |
 | `text_draw` `number_draw` | ROM の字形と同じ、桁ぞろえ |

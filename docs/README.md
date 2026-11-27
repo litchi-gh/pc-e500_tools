@@ -91,3 +91,4 @@ flowchart LR
 | ROM の中、バージョンの違い | [ROM マップ](analysis/21_ROM_MAP.md)、[ROM バージョンの違い: 配置](analysis/23_ROM_VERSIONS_MAP.md)、[BASIC](analysis/24_ROM_VERSIONS_BASIC.md)、[ドライバ](analysis/25_ROM_VERSIONS_DRIVERS.md)、[システム](analysis/26_ROM_VERSIONS_SYSTEM.md)、[機種](analysis/27_ROM_VERSIONS_MODELS.md)、[G: ドライブ](analysis/22_ROM_GDRIVE.md) |
 | 外部資料 | [外部資料](analysis/28_RESOURCES.md) |
 | 機種（PC-E500S など）の違い | [機種ガイド](analysis/29_MODELS.md) |
+| 機械語を速くする、LCD に速く送る | [機械語を速くする](analysis/30_SPEED.md) |

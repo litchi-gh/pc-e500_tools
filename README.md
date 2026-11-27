@@ -23,7 +23,7 @@ SHARP ポケットコンピュータ PC-E500 シリーズ（PC-E500 / PC-E500S /
 | [サンプル](Samples/README.md) | 動くプログラム集 |
 | [ゲーム集](https://github.com/litchi-gh/pc-e500_games) | 機械語と BASIC のゲーム（別のリポジトリ） |
 | [ハンドブック](docs/handbook/README.md) | 本体の使い方。電卓、統計、行列、BASIC、機械語の動かし方。全 22 章 |
-| [解析資料](docs/analysis/README.md) | CPU、ハードウェア、ROM、BASIC、周辺機器。全 29 章 |
+| [解析資料](docs/analysis/README.md) | CPU、ハードウェア、ROM、BASIC、周辺機器。全 30 章 |
 | [設計の目次](docs/design/README.md) | ソースの作り |
 
 ## 収録内容
@@ -67,7 +67,7 @@ SHARP ポケットコンピュータ PC-E500 シリーズ（PC-E500 / PC-E500S /
 
 ## 解析資料
 
-ROM の解析と一次資料からまとめた、全 29 章の本です。[目次](docs/analysis/README.md)から読めます。
+ROM の解析と一次資料からまとめた、全 30 章の本です。[目次](docs/analysis/README.md)から読めます。
 
 | 部 | 章 | 内容 |
 |---|---|---|
@@ -76,7 +76,7 @@ ROM の解析と一次資料からまとめた、全 29 章の本です。[目�
 | 3 | 14〜15 | [BASIC の命令と関数](docs/analysis/14_BASIC_REFERENCE.md)、[BASIC の内部形式](docs/analysis/15_BASIC_INTERNALS.md) |
 | 4 | 16〜20 | [周辺機器](docs/analysis/16_PERIPHERALS.md)、[CE-140F](docs/analysis/17_CE-140F_DISK.md)、[CE-126P](docs/analysis/18_CE-126P_PRINTER.md)、[CE-515P](docs/analysis/19_CE-515P_PLOTTER.md)、[カセット](docs/analysis/20_CASSETTE.md) |
 | 5 | 21〜27 | [ROM マップ](docs/analysis/21_ROM_MAP.md)、[G: ドライブ](docs/analysis/22_ROM_GDRIVE.md)、バージョンの違い（[配置](docs/analysis/23_ROM_VERSIONS_MAP.md)、[BASIC](docs/analysis/24_ROM_VERSIONS_BASIC.md)、[ドライバ](docs/analysis/25_ROM_VERSIONS_DRIVERS.md)、[システム](docs/analysis/26_ROM_VERSIONS_SYSTEM.md)、[機種](docs/analysis/27_ROM_VERSIONS_MODELS.md)） |
-| 付録 | 28〜29 | [外部資料](docs/analysis/28_RESOURCES.md)、[機種ガイド](docs/analysis/29_MODELS.md)（PC-E500S、PC-E650 などの違い） |
+| 付録 | 28〜30 | [外部資料](docs/analysis/28_RESOURCES.md)、[機種ガイド](docs/analysis/29_MODELS.md)（PC-E500S、PC-E650 などの違い）、[機械語を速くする](docs/analysis/30_SPEED.md) |
 
 参照元の操作説明書や技術資料の PDF は、このリポジトリに含まれていません。
 

@@ -56,7 +56,7 @@
 
 - 自分の変数は内部 RAM の 20h〜（IOCS は D4h〜DFh を使う）か、プログラムの後ろの `DS`。
 - 終わりは、画面を消して `RC`、`RETF`。
-- 乗算、除算、10 進演算、並べ替えは `docs/manual/20_RECIPES.md`、BCD の計算は `Samples/Assembler/Basics/bcd.asm`。
+- 乗算、除算、並べ替えは `docs/manual/20_RECIPES.md`。BCD（10 進）の足し算、引き算は `docs/analysis/02_CPU.md`「DADL / DSBL」、例は `docs/analysis/12_MACHINE_CODE.md`「内部 RAM を退避して BCD 加算」。
 - ファイルは FCS、印刷とシリアルは IOCS（`e500 help DEV_PRN`、`docs/analysis/11_IOCS.md`）。長い計算の間は、ON/BRK を見る（`TEST ($FF),$08`）。
 
 ## 確かめ方

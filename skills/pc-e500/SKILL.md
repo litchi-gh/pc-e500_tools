@@ -91,7 +91,7 @@ e500 run prog.bas --type "21\n" --rom 8.5
 
 0. 新しいプログラムなら、BASIC か機械語かを聞く（上の節）。
 1. `e500 check`。だめなら、足りないものを利用者に伝える（`e500 lint` と `e500 bin` はエミュレータなしで使える）。
-2. 近いテンプレートかサンプルから始める。
+2. 近いテンプレート（`e500 new`）から始める。
 3. 使う命令と IOCS を `e500 help` で確かめて書く。
 4. `e500 lint` → `e500 run` → 期待どおりか、画面とメモリで確かめる。
 5. ルーチンごとに `*.e500test.json` を書き（テンプレートになければ作る）、`e500 test` を通す。直した間違いはテストに足す。
@@ -187,9 +187,10 @@ INCLUDE ファイルの名前（`sprite_draw`、`random_seed`、`PAD_LEFT` な�
 | アセンブラの文法、疑似命令、エラー | `docs/manual/04_ASSEMBLER_REFERENCE.md` |
 | IOCS と FCS の番号、引数、エラー | `docs/analysis/11_IOCS.md` |
 | 実機で動かす、エリアの確保、落とし穴 | `docs/analysis/12_MACHINE_CODE.md` |
-| 短いルーチン（掛け算、割り算、10 進表示など） | `docs/manual/20_RECIPES.md`、`Samples/Assembler/Recipes` |
+| 短いルーチン（掛け算、割り算、10 進表示など） | `docs/manual/20_RECIPES.md` |
 | INCLUDE ファイル、ゲームの作り方 | `docs/manual/06_INCLUDE_FILES.md`、`docs/manual/07_GAME.md` |
-| 入門（例題 12 本） | `docs/manual/03_ASSEMBLER_TUTORIAL.md`、`Samples/Assembler/Tutorial` |
+| 速くする（LCD への速い転送、送る量、内部 RAM、コマの時間、止めずに鳴らす音） | `docs/analysis/30_SPEED.md` |
+| 入門（例題 12 本） | `docs/manual/03_ASSEMBLER_TUTORIAL.md` |
 | ROM の中身の場所 | `docs/analysis/21_ROM_MAP.md` |
 | **BASIC** | |
 | 命令と関数の書式、例 | `docs/analysis/14_BASIC_REFERENCE.md`（`### 命令名` で検索） |
@@ -204,6 +205,5 @@ INCLUDE ファイルの名前（`sprite_draw`、`random_seed`、`PAD_LEFT` な�
 | ファイルの形式（`.lcd`、`.spr`、BIN） | `docs/manual/19_FILE_FORMATS.md` |
 | 実機へ送る | `docs/manual/14_TRANSFER.md` |
 | うまくいかないとき | `docs/manual/18_TROUBLESHOOTING.md` |
-| 動く見本 | `Samples/Assembler`（StarCatch、Meteor、NineBox はゲーム。テスト付き）、`Samples/BASIC` |
 
 文書にも無いことは、**推測せず、エミュレータで小さなプログラムを動かして確かめる**（`e500 run`、`PEEK`、`--memory`）。それでも分からなければ、利用者にそう伝える。
