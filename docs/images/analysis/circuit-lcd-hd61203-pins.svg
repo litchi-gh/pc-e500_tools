@@ -1,0 +1,331 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 902" width="1000" height="902" role="img" aria-labelledby="t d">
+  <title id="t">HD61203 の 100 ピン（IC4）</title>
+  <desc id="d">HD61203 の 100 本のピンを QFP の形に並べた図。下と上の辺に 30 本、左と右の辺に 20 本で、1 番は左下、番号は反時計回りに進む。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .mb { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; font-weight: 700; }
+  </style>
+  <rect x="0.5" y="0.5" width="999" height="901" rx="14" fill="#FFFFFF" stroke="#D9E0E8" stroke-width="1"/>
+  <text x="24" y="34" class="h" xml:space="preserve">HD61203 の 100 ピン（IC4）</text>
+  <text x="24" y="55" class="sub" xml:space="preserve">番号と名前は HD61203 のデータシート（FP-100）による。図はデータシートの図を 90 度回した向き</text>
+  <path d="M121 172 H879 Q887 172 887 180 V688 Q887 696 879 696 H139 L113 670 V180 Q113 172 121 172 Z" fill="#2E3640" stroke="#1F2933" stroke-width="1.5"/>
+  <circle cx="134" cy="675" r="11" fill="#3E4955" stroke="#9AA5B1" stroke-width="2"/>
+  <text x="500" y="425.2" class="h" text-anchor="middle" style="fill:#FFFFFF;font-size:22px" xml:space="preserve">HD61203</text>
+  <text x="500" y="453.8" class="s" text-anchor="middle" style="fill:#D9E0E8" xml:space="preserve">QFP 100 ピン（コモンドライバ）</text>
+  <rect x="126.5" y="700" width="22" height="92" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="142" y="705" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 142 705)">1</text>
+  <text x="142" y="732" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 142 732)">X22</text>
+  <rect x="151.5" y="700" width="22" height="92" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="167" y="705" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 167 705)">2</text>
+  <text x="167" y="732" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 167 732)">X21</text>
+  <rect x="176.5" y="700" width="22" height="92" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="192" y="705" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 192 705)">3</text>
+  <text x="192" y="732" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 192 732)">X20</text>
+  <rect x="201.5" y="700" width="22" height="92" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="217" y="705" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 217 705)">4</text>
+  <text x="217" y="732" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 217 732)">X19</text>
+  <rect x="226.5" y="700" width="22" height="92" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="242" y="705" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 242 705)">5</text>
+  <text x="242" y="732" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 242 732)">X18</text>
+  <rect x="251.5" y="700" width="22" height="92" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="267" y="705" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 267 705)">6</text>
+  <text x="267" y="732" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 267 732)">X17</text>
+  <rect x="276.5" y="700" width="22" height="92" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="292" y="705" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 292 705)">7</text>
+  <text x="292" y="732" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 292 732)">X16</text>
+  <rect x="301.5" y="700" width="22" height="92" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="317" y="705" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 317 705)">8</text>
+  <text x="317" y="732" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 317 732)">X15</text>
+  <rect x="326.5" y="700" width="22" height="92" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="342" y="705" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 342 705)">9</text>
+  <text x="342" y="732" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 342 732)">X14</text>
+  <rect x="351.5" y="700" width="22" height="92" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="367" y="705" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 367 705)">10</text>
+  <text x="367" y="732" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 367 732)">X13</text>
+  <rect x="376.5" y="700" width="22" height="92" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="392" y="705" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 392 705)">11</text>
+  <text x="392" y="732" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 392 732)">X12</text>
+  <rect x="401.5" y="700" width="22" height="92" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="417" y="705" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 417 705)">12</text>
+  <text x="417" y="732" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 417 732)">X11</text>
+  <rect x="426.5" y="700" width="22" height="92" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="442" y="705" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 442 705)">13</text>
+  <text x="442" y="732" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 442 732)">X10</text>
+  <rect x="451.5" y="700" width="22" height="92" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="467" y="705" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 467 705)">14</text>
+  <text x="467" y="732" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 467 732)">X9</text>
+  <rect x="476.5" y="700" width="22" height="92" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="492" y="705" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 492 705)">15</text>
+  <text x="492" y="732" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 492 732)">X8</text>
+  <rect x="501.5" y="700" width="22" height="92" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="517" y="705" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 517 705)">16</text>
+  <text x="517" y="732" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 517 732)">X7</text>
+  <rect x="526.5" y="700" width="22" height="92" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="542" y="705" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 542 705)">17</text>
+  <text x="542" y="732" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 542 732)">X6</text>
+  <rect x="551.5" y="700" width="22" height="92" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="567" y="705" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 567 705)">18</text>
+  <text x="567" y="732" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 567 732)">X5</text>
+  <rect x="576.5" y="700" width="22" height="92" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="592" y="705" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 592 705)">19</text>
+  <text x="592" y="732" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 592 732)">X4</text>
+  <rect x="601.5" y="700" width="22" height="92" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="617" y="705" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 617 705)">20</text>
+  <text x="617" y="732" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 617 732)">X3</text>
+  <rect x="626.5" y="700" width="22" height="92" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="642" y="705" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 642 705)">21</text>
+  <text x="642" y="732" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 642 732)">X2</text>
+  <rect x="651.5" y="700" width="22" height="92" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="667" y="705" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 667 705)">22</text>
+  <text x="667" y="732" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 667 732)">X1</text>
+  <rect x="676.5" y="700" width="22" height="92" rx="3" fill="#FDECEA" stroke="#C0392B" stroke-width="1.2"/>
+  <text x="692" y="705" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 692 705)">23</text>
+  <text x="692" y="732" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 692 732)">VEE</text>
+  <rect x="701.5" y="700" width="22" height="92" rx="3" fill="#FDECEA" stroke="#C0392B" stroke-width="1.2"/>
+  <text x="717" y="705" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 717 705)">24</text>
+  <text x="717" y="732" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 717 732)">V6L</text>
+  <rect x="726.5" y="700" width="22" height="92" rx="3" fill="#FDECEA" stroke="#C0392B" stroke-width="1.2"/>
+  <text x="742" y="705" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 742 705)">25</text>
+  <text x="742" y="732" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 742 732)">V5L</text>
+  <rect x="751.5" y="700" width="22" height="92" rx="3" fill="#FDECEA" stroke="#C0392B" stroke-width="1.2"/>
+  <text x="767" y="705" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 767 705)">26</text>
+  <text x="767" y="732" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 767 732)">V2L</text>
+  <rect x="776.5" y="700" width="22" height="92" rx="3" fill="#FDECEA" stroke="#C0392B" stroke-width="1.2"/>
+  <text x="792" y="705" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 792 705)">27</text>
+  <text x="792" y="732" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 792 732)">V1L</text>
+  <rect x="801.5" y="700" width="22" height="92" rx="3" fill="#FDECEA" stroke="#C0392B" stroke-width="1.2"/>
+  <text x="817" y="705" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 817 705)">28</text>
+  <text x="817" y="732" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 817 732)">VCC</text>
+  <rect x="826.5" y="700" width="22" height="92" rx="3" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="842" y="705" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 842 705)">29</text>
+  <text x="842" y="732" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 842 732)">DL</text>
+  <rect x="851.5" y="700" width="22" height="92" rx="3" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="867" y="705" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 867 705)">30</text>
+  <text x="867" y="732" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 867 732)">FS</text>
+  <rect x="126.5" y="76" width="22" height="92" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="142" y="163" class="ms" xml:space="preserve" transform="rotate(-90 142 163)">80</text>
+  <text x="142" y="136" class="mb" xml:space="preserve" transform="rotate(-90 142 136)">X43</text>
+  <rect x="151.5" y="76" width="22" height="92" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="167" y="163" class="ms" xml:space="preserve" transform="rotate(-90 167 163)">79</text>
+  <text x="167" y="136" class="mb" xml:space="preserve" transform="rotate(-90 167 136)">X44</text>
+  <rect x="176.5" y="76" width="22" height="92" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="192" y="163" class="ms" xml:space="preserve" transform="rotate(-90 192 163)">78</text>
+  <text x="192" y="136" class="mb" xml:space="preserve" transform="rotate(-90 192 136)">X45</text>
+  <rect x="201.5" y="76" width="22" height="92" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="217" y="163" class="ms" xml:space="preserve" transform="rotate(-90 217 163)">77</text>
+  <text x="217" y="136" class="mb" xml:space="preserve" transform="rotate(-90 217 136)">X46</text>
+  <rect x="226.5" y="76" width="22" height="92" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="242" y="163" class="ms" xml:space="preserve" transform="rotate(-90 242 163)">76</text>
+  <text x="242" y="136" class="mb" xml:space="preserve" transform="rotate(-90 242 136)">X47</text>
+  <rect x="251.5" y="76" width="22" height="92" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="267" y="163" class="ms" xml:space="preserve" transform="rotate(-90 267 163)">75</text>
+  <text x="267" y="136" class="mb" xml:space="preserve" transform="rotate(-90 267 136)">X48</text>
+  <rect x="276.5" y="76" width="22" height="92" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="292" y="163" class="ms" xml:space="preserve" transform="rotate(-90 292 163)">74</text>
+  <text x="292" y="136" class="mb" xml:space="preserve" transform="rotate(-90 292 136)">X49</text>
+  <rect x="301.5" y="76" width="22" height="92" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="317" y="163" class="ms" xml:space="preserve" transform="rotate(-90 317 163)">73</text>
+  <text x="317" y="136" class="mb" xml:space="preserve" transform="rotate(-90 317 136)">X50</text>
+  <rect x="326.5" y="76" width="22" height="92" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="342" y="163" class="ms" xml:space="preserve" transform="rotate(-90 342 163)">72</text>
+  <text x="342" y="136" class="mb" xml:space="preserve" transform="rotate(-90 342 136)">X51</text>
+  <rect x="351.5" y="76" width="22" height="92" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="367" y="163" class="ms" xml:space="preserve" transform="rotate(-90 367 163)">71</text>
+  <text x="367" y="136" class="mb" xml:space="preserve" transform="rotate(-90 367 136)">X52</text>
+  <rect x="376.5" y="76" width="22" height="92" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="392" y="163" class="ms" xml:space="preserve" transform="rotate(-90 392 163)">70</text>
+  <text x="392" y="136" class="mb" xml:space="preserve" transform="rotate(-90 392 136)">X53</text>
+  <rect x="401.5" y="76" width="22" height="92" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="417" y="163" class="ms" xml:space="preserve" transform="rotate(-90 417 163)">69</text>
+  <text x="417" y="136" class="mb" xml:space="preserve" transform="rotate(-90 417 136)">X54</text>
+  <rect x="426.5" y="76" width="22" height="92" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="442" y="163" class="ms" xml:space="preserve" transform="rotate(-90 442 163)">68</text>
+  <text x="442" y="136" class="mb" xml:space="preserve" transform="rotate(-90 442 136)">X55</text>
+  <rect x="451.5" y="76" width="22" height="92" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="467" y="163" class="ms" xml:space="preserve" transform="rotate(-90 467 163)">67</text>
+  <text x="467" y="136" class="mb" xml:space="preserve" transform="rotate(-90 467 136)">X56</text>
+  <rect x="476.5" y="76" width="22" height="92" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="492" y="163" class="ms" xml:space="preserve" transform="rotate(-90 492 163)">66</text>
+  <text x="492" y="136" class="mb" xml:space="preserve" transform="rotate(-90 492 136)">X57</text>
+  <rect x="501.5" y="76" width="22" height="92" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="517" y="163" class="ms" xml:space="preserve" transform="rotate(-90 517 163)">65</text>
+  <text x="517" y="136" class="mb" xml:space="preserve" transform="rotate(-90 517 136)">X58</text>
+  <rect x="526.5" y="76" width="22" height="92" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="542" y="163" class="ms" xml:space="preserve" transform="rotate(-90 542 163)">64</text>
+  <text x="542" y="136" class="mb" xml:space="preserve" transform="rotate(-90 542 136)">X59</text>
+  <rect x="551.5" y="76" width="22" height="92" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="567" y="163" class="ms" xml:space="preserve" transform="rotate(-90 567 163)">63</text>
+  <text x="567" y="136" class="mb" xml:space="preserve" transform="rotate(-90 567 136)">X60</text>
+  <rect x="576.5" y="76" width="22" height="92" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="592" y="163" class="ms" xml:space="preserve" transform="rotate(-90 592 163)">62</text>
+  <text x="592" y="136" class="mb" xml:space="preserve" transform="rotate(-90 592 136)">X61</text>
+  <rect x="601.5" y="76" width="22" height="92" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="617" y="163" class="ms" xml:space="preserve" transform="rotate(-90 617 163)">61</text>
+  <text x="617" y="136" class="mb" xml:space="preserve" transform="rotate(-90 617 136)">X62</text>
+  <rect x="626.5" y="76" width="22" height="92" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="642" y="163" class="ms" xml:space="preserve" transform="rotate(-90 642 163)">60</text>
+  <text x="642" y="136" class="mb" xml:space="preserve" transform="rotate(-90 642 136)">X63</text>
+  <rect x="651.5" y="76" width="22" height="92" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="667" y="163" class="ms" xml:space="preserve" transform="rotate(-90 667 163)">59</text>
+  <text x="667" y="136" class="mb" xml:space="preserve" transform="rotate(-90 667 136)">X64</text>
+  <rect x="676.5" y="76" width="22" height="92" rx="3" fill="#FDECEA" stroke="#C0392B" stroke-width="1.2"/>
+  <text x="692" y="163" class="ms" xml:space="preserve" transform="rotate(-90 692 163)">58</text>
+  <text x="692" y="136" class="mb" xml:space="preserve" transform="rotate(-90 692 136)">VEE</text>
+  <rect x="701.5" y="76" width="22" height="92" rx="3" fill="#FDECEA" stroke="#C0392B" stroke-width="1.2"/>
+  <text x="717" y="163" class="ms" xml:space="preserve" transform="rotate(-90 717 163)">57</text>
+  <text x="717" y="136" class="mb" xml:space="preserve" transform="rotate(-90 717 136)">V6R</text>
+  <rect x="726.5" y="76" width="22" height="92" rx="3" fill="#FDECEA" stroke="#C0392B" stroke-width="1.2"/>
+  <text x="742" y="163" class="ms" xml:space="preserve" transform="rotate(-90 742 163)">56</text>
+  <text x="742" y="136" class="mb" xml:space="preserve" transform="rotate(-90 742 136)">V5R</text>
+  <rect x="751.5" y="76" width="22" height="92" rx="3" fill="#FDECEA" stroke="#C0392B" stroke-width="1.2"/>
+  <text x="767" y="163" class="ms" xml:space="preserve" transform="rotate(-90 767 163)">55</text>
+  <text x="767" y="136" class="mb" xml:space="preserve" transform="rotate(-90 767 136)">V2R</text>
+  <rect x="776.5" y="76" width="22" height="92" rx="3" fill="#FDECEA" stroke="#C0392B" stroke-width="1.2"/>
+  <text x="792" y="163" class="ms" xml:space="preserve" transform="rotate(-90 792 163)">54</text>
+  <text x="792" y="136" class="mb" xml:space="preserve" transform="rotate(-90 792 136)">V1R</text>
+  <rect x="801.5" y="76" width="22" height="92" rx="3" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="817" y="163" class="ms" xml:space="preserve" transform="rotate(-90 817 163)">53</text>
+  <text x="817" y="136" class="mb" xml:space="preserve" transform="rotate(-90 817 136)">TH</text>
+  <rect x="826.5" y="76" width="22" height="92" rx="3" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="842" y="163" class="ms" xml:space="preserve" transform="rotate(-90 842 163)">52</text>
+  <text x="842" y="136" class="mb" xml:space="preserve" transform="rotate(-90 842 136)">CL2</text>
+  <rect x="851.5" y="76" width="22" height="92" rx="3" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="867" y="163" class="ms" xml:space="preserve" transform="rotate(-90 867 163)">51</text>
+  <text x="867" y="136" class="mb" xml:space="preserve" transform="rotate(-90 867 136)">CL1</text>
+  <rect x="17" y="185.5" width="92" height="22" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="104" y="201" class="ms" xml:space="preserve" text-anchor="end">81</text>
+  <text x="77" y="201" class="mb" xml:space="preserve" text-anchor="end">X42</text>
+  <rect x="17" y="210.5" width="92" height="22" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="104" y="226" class="ms" xml:space="preserve" text-anchor="end">82</text>
+  <text x="77" y="226" class="mb" xml:space="preserve" text-anchor="end">X41</text>
+  <rect x="17" y="235.5" width="92" height="22" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="104" y="251" class="ms" xml:space="preserve" text-anchor="end">83</text>
+  <text x="77" y="251" class="mb" xml:space="preserve" text-anchor="end">X40</text>
+  <rect x="17" y="260.5" width="92" height="22" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="104" y="276" class="ms" xml:space="preserve" text-anchor="end">84</text>
+  <text x="77" y="276" class="mb" xml:space="preserve" text-anchor="end">X39</text>
+  <rect x="17" y="285.5" width="92" height="22" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="104" y="301" class="ms" xml:space="preserve" text-anchor="end">85</text>
+  <text x="77" y="301" class="mb" xml:space="preserve" text-anchor="end">X38</text>
+  <rect x="17" y="310.5" width="92" height="22" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="104" y="326" class="ms" xml:space="preserve" text-anchor="end">86</text>
+  <text x="77" y="326" class="mb" xml:space="preserve" text-anchor="end">X37</text>
+  <rect x="17" y="335.5" width="92" height="22" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="104" y="351" class="ms" xml:space="preserve" text-anchor="end">87</text>
+  <text x="77" y="351" class="mb" xml:space="preserve" text-anchor="end">X36</text>
+  <rect x="17" y="360.5" width="92" height="22" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="104" y="376" class="ms" xml:space="preserve" text-anchor="end">88</text>
+  <text x="77" y="376" class="mb" xml:space="preserve" text-anchor="end">X35</text>
+  <rect x="17" y="385.5" width="92" height="22" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="104" y="401" class="ms" xml:space="preserve" text-anchor="end">89</text>
+  <text x="77" y="401" class="mb" xml:space="preserve" text-anchor="end">X34</text>
+  <rect x="17" y="410.5" width="92" height="22" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="104" y="426" class="ms" xml:space="preserve" text-anchor="end">90</text>
+  <text x="77" y="426" class="mb" xml:space="preserve" text-anchor="end">X33</text>
+  <rect x="17" y="435.5" width="92" height="22" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="104" y="451" class="ms" xml:space="preserve" text-anchor="end">91</text>
+  <text x="77" y="451" class="mb" xml:space="preserve" text-anchor="end">X32</text>
+  <rect x="17" y="460.5" width="92" height="22" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="104" y="476" class="ms" xml:space="preserve" text-anchor="end">92</text>
+  <text x="77" y="476" class="mb" xml:space="preserve" text-anchor="end">X31</text>
+  <rect x="17" y="485.5" width="92" height="22" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="104" y="501" class="ms" xml:space="preserve" text-anchor="end">93</text>
+  <text x="77" y="501" class="mb" xml:space="preserve" text-anchor="end">X30</text>
+  <rect x="17" y="510.5" width="92" height="22" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="104" y="526" class="ms" xml:space="preserve" text-anchor="end">94</text>
+  <text x="77" y="526" class="mb" xml:space="preserve" text-anchor="end">X29</text>
+  <rect x="17" y="535.5" width="92" height="22" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="104" y="551" class="ms" xml:space="preserve" text-anchor="end">95</text>
+  <text x="77" y="551" class="mb" xml:space="preserve" text-anchor="end">X28</text>
+  <rect x="17" y="560.5" width="92" height="22" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="104" y="576" class="ms" xml:space="preserve" text-anchor="end">96</text>
+  <text x="77" y="576" class="mb" xml:space="preserve" text-anchor="end">X27</text>
+  <rect x="17" y="585.5" width="92" height="22" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="104" y="601" class="ms" xml:space="preserve" text-anchor="end">97</text>
+  <text x="77" y="601" class="mb" xml:space="preserve" text-anchor="end">X26</text>
+  <rect x="17" y="610.5" width="92" height="22" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="104" y="626" class="ms" xml:space="preserve" text-anchor="end">98</text>
+  <text x="77" y="626" class="mb" xml:space="preserve" text-anchor="end">X25</text>
+  <rect x="17" y="635.5" width="92" height="22" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="104" y="651" class="ms" xml:space="preserve" text-anchor="end">99</text>
+  <text x="77" y="651" class="mb" xml:space="preserve" text-anchor="end">X24</text>
+  <rect x="17" y="660.5" width="92" height="22" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="104" y="676" class="ms" xml:space="preserve" text-anchor="end">100</text>
+  <text x="77" y="676" class="mb" xml:space="preserve" text-anchor="end">X23</text>
+  <rect x="891" y="185.5" width="92" height="22" rx="3" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="896" y="201" class="ms" xml:space="preserve">50</text>
+  <text x="923" y="201" class="mb" xml:space="preserve">DR</text>
+  <rect x="891" y="210.5" width="92" height="22" rx="3" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="896" y="226" class="ms" xml:space="preserve">49</text>
+  <text x="923" y="226" class="mb" xml:space="preserve">FCS</text>
+  <rect x="891" y="235.5" width="92" height="22" rx="3" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="896" y="251" class="ms" xml:space="preserve">48</text>
+  <text x="923" y="251" class="mb" xml:space="preserve">NC</text>
+  <rect x="891" y="260.5" width="92" height="22" rx="3" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="896" y="276" class="ms" xml:space="preserve">47</text>
+  <text x="923" y="276" class="mb" xml:space="preserve">M</text>
+  <rect x="891" y="285.5" width="92" height="22" rx="3" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="896" y="301" class="ms" xml:space="preserve">46</text>
+  <text x="923" y="301" class="mb" xml:space="preserve">FRM</text>
+  <rect x="891" y="310.5" width="92" height="22" rx="3" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="896" y="326" class="ms" xml:space="preserve">45</text>
+  <text x="923" y="326" class="mb" xml:space="preserve">NC</text>
+  <rect x="891" y="335.5" width="92" height="22" rx="3" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="896" y="351" class="ms" xml:space="preserve">44</text>
+  <text x="923" y="351" class="mb" xml:space="preserve">φ1</text>
+  <rect x="891" y="360.5" width="92" height="22" rx="3" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="896" y="376" class="ms" xml:space="preserve">43</text>
+  <text x="923" y="376" class="mb" xml:space="preserve">φ2</text>
+  <rect x="891" y="385.5" width="92" height="22" rx="3" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="896" y="401" class="ms" xml:space="preserve">42</text>
+  <text x="923" y="401" class="mb" xml:space="preserve">M/S</text>
+  <rect x="891" y="410.5" width="92" height="22" rx="3" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="896" y="426" class="ms" xml:space="preserve">41</text>
+  <text x="923" y="426" class="mb" xml:space="preserve">NC</text>
+  <rect x="891" y="435.5" width="92" height="22" rx="3" fill="#FDECEA" stroke="#C0392B" stroke-width="1.2"/>
+  <text x="896" y="451" class="ms" xml:space="preserve">40</text>
+  <text x="923" y="451" class="mb" xml:space="preserve">GND</text>
+  <rect x="891" y="460.5" width="92" height="22" rx="3" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="896" y="476" class="ms" xml:space="preserve">39</text>
+  <text x="923" y="476" class="mb" xml:space="preserve">SHL</text>
+  <rect x="891" y="485.5" width="92" height="22" rx="3" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="896" y="501" class="ms" xml:space="preserve">38</text>
+  <text x="923" y="501" class="mb" xml:space="preserve">STB</text>
+  <rect x="891" y="510.5" width="92" height="22" rx="3" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="896" y="526" class="ms" xml:space="preserve">37</text>
+  <text x="923" y="526" class="mb" xml:space="preserve">CR</text>
+  <rect x="891" y="535.5" width="92" height="22" rx="3" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="896" y="551" class="ms" xml:space="preserve">36</text>
+  <text x="923" y="551" class="mb" xml:space="preserve">NC</text>
+  <rect x="891" y="560.5" width="92" height="22" rx="3" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="896" y="576" class="ms" xml:space="preserve">35</text>
+  <text x="923" y="576" class="mb" xml:space="preserve">R</text>
+  <rect x="891" y="585.5" width="92" height="22" rx="3" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="896" y="601" class="ms" xml:space="preserve">34</text>
+  <text x="923" y="601" class="mb" xml:space="preserve">NC</text>
+  <rect x="891" y="610.5" width="92" height="22" rx="3" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="896" y="626" class="ms" xml:space="preserve">33</text>
+  <text x="923" y="626" class="mb" xml:space="preserve">C</text>
+  <rect x="891" y="635.5" width="92" height="22" rx="3" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="896" y="651" class="ms" xml:space="preserve">32</text>
+  <text x="923" y="651" class="mb" xml:space="preserve">DS2</text>
+  <rect x="891" y="660.5" width="92" height="22" rx="3" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="896" y="676" class="ms" xml:space="preserve">31</text>
+  <text x="923" y="676" class="mb" xml:space="preserve">DS1</text>
+  <rect x="24" y="818" width="14" height="14" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="44" y="830" class="s" xml:space="preserve">液晶のコモンへの出力</text>
+  <rect x="180" y="818" width="14" height="14" rx="3" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="200" y="830" class="s" xml:space="preserve">クロック、タイミング、設定</text>
+  <rect x="372" y="818" width="14" height="14" rx="3" fill="#FDECEA" stroke="#C0392B" stroke-width="1.2"/>
+  <text x="392" y="830" class="s" xml:space="preserve">電源、液晶の電圧</text>
+  <rect x="504" y="818" width="14" height="14" rx="3" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="524" y="830" class="s" xml:space="preserve">NC</text>
+  <rect x="24" y="848" width="952" height="34" rx="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="36" y="869" class="s" xml:space="preserve" style="fill:#1F2933">回路図では X の番号が逆（X1 と X64 が入れ替わる）で、41 番は HC と書かれています。</text>
+</svg>

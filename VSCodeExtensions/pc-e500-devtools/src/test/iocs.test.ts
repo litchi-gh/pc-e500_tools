@@ -43,9 +43,10 @@ describe("include files", () => {
     assert.equal(fs.readFileSync(path.join(inc, "iocs.inc"), "utf8").replace(/\r\n/g, "\n"), iocsInclude());
   });
   it("assembles all of them together, with no name twice", () => {
-    const p = build(`        ORG $BE000\n${CONSTANTS}start:  RETF\n${CODE}        END\n`);
+    // gray.inc（画面 3 枚で 3.8 KB）は大きいので、一緒にするのはここだけ。
+    const p = build(`        ORG $BC000\n${CONSTANTS}start:  RETF\n${CODE}        INCLUDE "gray.inc"\n        END\n`);
     assert.deepEqual(p.result.issues, []);
-    assert.equal(ALL.length, 10);
+    assert.equal(ALL.length, 11);
     // screen_part.inc by itself, for a program with a screen of its own.
     const own = build(`        ORG $BE000
 ${CONSTANTS}start:  RETF

@@ -11,6 +11,7 @@ PC-E500 シリーズで動くプログラムを集めました。VS Code 拡張�
 | ![線と四角](../docs/images/samples/tutorial-draw.png) | [Tutorial](Assembler/Tutorial/README.md) | [アセンブラ入門](../docs/manual/03_ASSEMBLER_TUTORIAL.md)の例題 12 本 | 2〜84 バイト |
 | ![文字の表示](../docs/images/samples/hello.png) | [Basics](Assembler/Basics/README.md) | 表示、足し算、10 進の足し算 | 15〜80 バイト程度 |
 | | [Recipes](Assembler/Recipes/README.md) | 掛け算、割り算、文字の変換など 25 のルーチン（[逆引きレシピ](../docs/manual/20_RECIPES.md)） | 約 900 バイト |
+| ![4 階調](Assembler/GrayDemo/screens/aim.png) | [GrayDemo](Assembler/GrayDemo/README.md) | 4 階調の絵、キャラクタ、点（`gray.inc`） | 6,543 バイト |
 
 ## BASIC
 

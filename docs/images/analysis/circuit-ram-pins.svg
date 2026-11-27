@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 454" width="760" height="454" role="img" aria-labelledby="t d">
+  <title id="t">RAM の 28 ピン（IC3）</title>
+  <desc id="d">HM62256LFP の 28 本のピンを SOP の形に並べた図。下の列に 1〜14、上の列に 15〜28 番。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .mb { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; font-weight: 700; }
+  </style>
+  <rect x="0.5" y="0.5" width="759" height="453" rx="14" fill="#FFFFFF" stroke="#D9E0E8" stroke-width="1"/>
+  <text x="24" y="34" class="h" xml:space="preserve">RAM の 28 ピン（IC3）</text>
+  <text x="24" y="55" class="sub" xml:space="preserve">名前は回路図（p.12）、番号は HM62256A のデータシート（SOP）による</text>
+  <path d="M138 150 H622 Q630 150 630 158 V262 Q630 270 622 270 H138 Q130 270 130 262 V158 Q130 150 138 150 Z" fill="#2E3640" stroke="#1F2933" stroke-width="1.5"/>
+  <path d="M130 198 A12 12 0 0 1 130 222" fill="#556270" stroke="#9AA5B1" stroke-width="1.5"/>
+  <text x="380" y="201.2" class="h" text-anchor="middle" style="fill:#FFFFFF;font-size:22px" xml:space="preserve">HM62256LFP</text>
+  <text x="380" y="229.8" class="s" text-anchor="middle" style="fill:#D9E0E8" xml:space="preserve">SOP 28 ピン</text>
+  <rect x="146" y="274" width="26" height="70" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="163.5" y="279" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 163.5 279)">1</text>
+  <text x="163.5" y="306" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 163.5 306)">A14</text>
+  <rect x="180" y="274" width="26" height="70" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="197.5" y="279" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 197.5 279)">2</text>
+  <text x="197.5" y="306" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 197.5 306)">A12</text>
+  <rect x="214" y="274" width="26" height="70" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="231.5" y="279" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 231.5 279)">3</text>
+  <text x="231.5" y="306" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 231.5 306)">A7</text>
+  <rect x="248" y="274" width="26" height="70" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="265.5" y="279" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 265.5 279)">4</text>
+  <text x="265.5" y="306" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 265.5 306)">A6</text>
+  <rect x="282" y="274" width="26" height="70" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="299.5" y="279" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 299.5 279)">5</text>
+  <text x="299.5" y="306" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 299.5 306)">A5</text>
+  <rect x="316" y="274" width="26" height="70" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="333.5" y="279" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 333.5 279)">6</text>
+  <text x="333.5" y="306" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 333.5 306)">A4</text>
+  <rect x="350" y="274" width="26" height="70" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="367.5" y="279" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 367.5 279)">7</text>
+  <text x="367.5" y="306" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 367.5 306)">A3</text>
+  <rect x="384" y="274" width="26" height="70" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="401.5" y="279" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 401.5 279)">8</text>
+  <text x="401.5" y="306" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 401.5 306)">A2</text>
+  <rect x="418" y="274" width="26" height="70" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="435.5" y="279" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 435.5 279)">9</text>
+  <text x="435.5" y="306" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 435.5 306)">A1</text>
+  <rect x="452" y="274" width="26" height="70" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="469.5" y="279" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 469.5 279)">10</text>
+  <text x="469.5" y="306" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 469.5 306)">A0</text>
+  <rect x="486" y="274" width="26" height="70" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="503.5" y="279" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 503.5 279)">11</text>
+  <text x="503.5" y="306" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 503.5 306)">D0</text>
+  <rect x="520" y="274" width="26" height="70" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="537.5" y="279" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 537.5 279)">12</text>
+  <text x="537.5" y="306" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 537.5 306)">D1</text>
+  <rect x="554" y="274" width="26" height="70" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="571.5" y="279" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 571.5 279)">13</text>
+  <text x="571.5" y="306" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 571.5 306)">D2</text>
+  <rect x="588" y="274" width="26" height="70" rx="3" fill="#FDECEA" stroke="#C0392B" stroke-width="1.2"/>
+  <text x="605.5" y="279" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 605.5 279)">14</text>
+  <text x="605.5" y="306" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 605.5 306)">GND</text>
+  <rect x="146" y="76" width="26" height="70" rx="3" fill="#FDECEA" stroke="#C0392B" stroke-width="1.2"/>
+  <text x="163.5" y="141" class="ms" xml:space="preserve" transform="rotate(-90 163.5 141)">28</text>
+  <text x="163.5" y="114" class="mb" xml:space="preserve" transform="rotate(-90 163.5 114)">VCC</text>
+  <rect x="180" y="76" width="26" height="70" rx="3" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="197.5" y="141" class="ms" xml:space="preserve" transform="rotate(-90 197.5 141)">27</text>
+  <text x="197.5" y="114" class="mb" xml:space="preserve" transform="rotate(-90 197.5 114)">WE</text>
+  <rect x="214" y="76" width="26" height="70" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="231.5" y="141" class="ms" xml:space="preserve" transform="rotate(-90 231.5 141)">26</text>
+  <text x="231.5" y="114" class="mb" xml:space="preserve" transform="rotate(-90 231.5 114)">A13</text>
+  <rect x="248" y="76" width="26" height="70" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="265.5" y="141" class="ms" xml:space="preserve" transform="rotate(-90 265.5 141)">25</text>
+  <text x="265.5" y="114" class="mb" xml:space="preserve" transform="rotate(-90 265.5 114)">A8</text>
+  <rect x="282" y="76" width="26" height="70" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="299.5" y="141" class="ms" xml:space="preserve" transform="rotate(-90 299.5 141)">24</text>
+  <text x="299.5" y="114" class="mb" xml:space="preserve" transform="rotate(-90 299.5 114)">A9</text>
+  <rect x="316" y="76" width="26" height="70" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="333.5" y="141" class="ms" xml:space="preserve" transform="rotate(-90 333.5 141)">23</text>
+  <text x="333.5" y="114" class="mb" xml:space="preserve" transform="rotate(-90 333.5 114)">A11</text>
+  <rect x="350" y="76" width="26" height="70" rx="3" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="367.5" y="141" class="ms" xml:space="preserve" transform="rotate(-90 367.5 141)">22</text>
+  <text x="367.5" y="114" class="mb" xml:space="preserve" transform="rotate(-90 367.5 114)">OE</text>
+  <rect x="384" y="76" width="26" height="70" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="401.5" y="141" class="ms" xml:space="preserve" transform="rotate(-90 401.5 141)">21</text>
+  <text x="401.5" y="114" class="mb" xml:space="preserve" transform="rotate(-90 401.5 114)">A10</text>
+  <rect x="418" y="76" width="26" height="70" rx="3" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="435.5" y="141" class="ms" xml:space="preserve" transform="rotate(-90 435.5 141)">20</text>
+  <text x="435.5" y="114" class="mb" xml:space="preserve" transform="rotate(-90 435.5 114)">CS</text>
+  <rect x="452" y="76" width="26" height="70" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="469.5" y="141" class="ms" xml:space="preserve" transform="rotate(-90 469.5 141)">19</text>
+  <text x="469.5" y="114" class="mb" xml:space="preserve" transform="rotate(-90 469.5 114)">D7</text>
+  <rect x="486" y="76" width="26" height="70" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="503.5" y="141" class="ms" xml:space="preserve" transform="rotate(-90 503.5 141)">18</text>
+  <text x="503.5" y="114" class="mb" xml:space="preserve" transform="rotate(-90 503.5 114)">D6</text>
+  <rect x="520" y="76" width="26" height="70" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="537.5" y="141" class="ms" xml:space="preserve" transform="rotate(-90 537.5 141)">17</text>
+  <text x="537.5" y="114" class="mb" xml:space="preserve" transform="rotate(-90 537.5 114)">D5</text>
+  <rect x="554" y="76" width="26" height="70" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="571.5" y="141" class="ms" xml:space="preserve" transform="rotate(-90 571.5 141)">16</text>
+  <text x="571.5" y="114" class="mb" xml:space="preserve" transform="rotate(-90 571.5 114)">D4</text>
+  <rect x="588" y="76" width="26" height="70" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="605.5" y="141" class="ms" xml:space="preserve" transform="rotate(-90 605.5 141)">15</text>
+  <text x="605.5" y="114" class="mb" xml:space="preserve" transform="rotate(-90 605.5 114)">D3</text>
+  <rect x="24" y="370" width="14" height="14" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="44" y="382" class="s" xml:space="preserve">アドレス、データ</text>
+  <rect x="156" y="370" width="14" height="14" rx="3" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="176" y="382" class="s" xml:space="preserve">選択、制御</text>
+  <rect x="252" y="370" width="14" height="14" rx="3" fill="#FDECEA" stroke="#C0392B" stroke-width="1.2"/>
+  <text x="272" y="382" class="s" xml:space="preserve">電源</text>
+  <rect x="24" y="400" width="712" height="34" rx="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="36" y="421" class="s" xml:space="preserve" style="fill:#1F2933">2 列に 14 本ずつです。1 番の側の端に半円の切り欠きがあります。</text>
+</svg>

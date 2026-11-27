@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 620" width="980" height="620" role="img" aria-labelledby="t d">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 902" width="1000" height="902" role="img" aria-labelledby="t d">
   <title id="t">CPU の 100 ピン</title>
-  <desc id="d">SC62015 の 100 本のピンを番号順に 10 列で並べ、信号名と種類を色で示した図。</desc>
+  <desc id="d">SC62015 の 100 本のピンを QFP の形に並べた図。上下の辺に 30 本、左右の辺に 20 本で、番号は反時計回りに進む。信号の種類を色で示す。</desc>
   <style>
     text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
     .b { font-weight: 700; }
@@ -12,319 +12,326 @@
     .mb { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; font-weight: 700; }
   </style>
   <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#52606D"/></marker><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#C0392B"/></marker></defs>
-  <rect x="0.5" y="0.5" width="979" height="619" rx="14" fill="#FFFFFF" stroke="#D9E0E8"/>
+  <rect x="0.5" y="0.5" width="999" height="901" rx="14" fill="#FFFFFF" stroke="#D9E0E8" stroke-width="1"/>
   <text x="24" y="34" class="h" xml:space="preserve">CPU の 100 ピン</text>
-  <text x="24" y="55" class="sub" xml:space="preserve">ピン番号の順に並べた図。灰色は本書の表にないピン</text>
-  <rect x="24" y="76" width="88" height="39" rx="4" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
-  <text x="31" y="101" class="ms" xml:space="preserve">1</text>
-  <text x="58" y="101" class="mb" xml:space="preserve">X1</text>
-  <rect x="117.4" y="76" width="88" height="39" rx="4" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
-  <text x="124.4" y="101" class="ms" xml:space="preserve">2</text>
-  <text x="151.4" y="101" class="mb" xml:space="preserve">X2</text>
-  <rect x="210.8" y="76" width="88" height="39" rx="4" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
-  <text x="217.8" y="101" class="ms" xml:space="preserve">3</text>
-  <text x="244.8" y="101" class="mb" xml:space="preserve">X3</text>
-  <rect x="304.2" y="76" width="88" height="39" rx="4" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
-  <text x="311.2" y="101" class="ms" xml:space="preserve">4</text>
-  <text x="338.2" y="101" class="mb" xml:space="preserve">X4</text>
-  <rect x="397.6" y="76" width="88" height="39" rx="4" fill="#FDECEA" stroke="#C0392B" stroke-width="1.2"/>
-  <text x="404.6" y="101" class="ms" xml:space="preserve">5</text>
-  <text x="431.6" y="101" class="mb" xml:space="preserve">VDD</text>
-  <rect x="491" y="76" width="88" height="39" rx="4" fill="#FDECEA" stroke="#C0392B" stroke-width="1.2"/>
-  <text x="498" y="101" class="ms" xml:space="preserve">6</text>
-  <text x="525" y="101" class="mb" xml:space="preserve">VCC</text>
-  <rect x="584.4" y="76" width="88" height="39" rx="4" fill="#FDECEA" stroke="#C0392B" stroke-width="1.2"/>
-  <text x="591.4" y="101" class="ms" xml:space="preserve">7</text>
-  <text x="618.4" y="101" class="mb" xml:space="preserve">RESET</text>
-  <rect x="677.8" y="76" width="88" height="39" rx="4" fill="#FDECEA" stroke="#C0392B" stroke-width="1.2"/>
-  <text x="684.8" y="101" class="ms" xml:space="preserve">8</text>
-  <text x="711.8" y="101" class="mb" xml:space="preserve">GND</text>
-  <rect x="771.2" y="76" width="88" height="39" rx="4" fill="#FDECEA" stroke="#C0392B" stroke-width="1.2"/>
-  <text x="778.2" y="101" class="ms" xml:space="preserve">9</text>
-  <text x="805.2" y="101" class="mb" xml:space="preserve">TEST</text>
-  <rect x="864.6" y="76" width="88" height="39" rx="4" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
-  <text x="871.6" y="101" class="ms" xml:space="preserve">10</text>
-  <text x="898.6" y="101" class="mb" xml:space="preserve">CI</text>
-  <rect x="24" y="121" width="88" height="39" rx="4" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
-  <text x="31" y="146" class="ms" xml:space="preserve">11</text>
-  <text x="58" y="146" class="mb" xml:space="preserve">CO</text>
-  <rect x="117.4" y="121" width="88" height="39" rx="4" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
-  <text x="124.4" y="146" class="ms" xml:space="preserve">12</text>
-  <text x="151.4" y="146" class="mb" xml:space="preserve">ON</text>
-  <rect x="210.8" y="121" width="88" height="39" rx="4" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
-  <text x="217.8" y="146" class="ms" xml:space="preserve">13</text>
-  <text x="244.8" y="146" class="mb" xml:space="preserve">WR</text>
-  <rect x="304.2" y="121" width="88" height="39" rx="4" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
-  <text x="311.2" y="146" class="ms" xml:space="preserve">14</text>
-  <text x="338.2" y="146" class="mb" xml:space="preserve"></text>
-  <rect x="397.6" y="121" width="88" height="39" rx="4" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
-  <text x="404.6" y="146" class="ms" xml:space="preserve">15</text>
-  <text x="431.6" y="146" class="mb" xml:space="preserve">KI0</text>
-  <rect x="491" y="121" width="88" height="39" rx="4" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
-  <text x="498" y="146" class="ms" xml:space="preserve">16</text>
-  <text x="525" y="146" class="mb" xml:space="preserve">KI1</text>
-  <rect x="584.4" y="121" width="88" height="39" rx="4" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
-  <text x="591.4" y="146" class="ms" xml:space="preserve">17</text>
-  <text x="618.4" y="146" class="mb" xml:space="preserve">KI2</text>
-  <rect x="677.8" y="121" width="88" height="39" rx="4" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
-  <text x="684.8" y="146" class="ms" xml:space="preserve">18</text>
-  <text x="711.8" y="146" class="mb" xml:space="preserve">KI3</text>
-  <rect x="771.2" y="121" width="88" height="39" rx="4" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
-  <text x="778.2" y="146" class="ms" xml:space="preserve">19</text>
-  <text x="805.2" y="146" class="mb" xml:space="preserve">KI4</text>
-  <rect x="864.6" y="121" width="88" height="39" rx="4" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
-  <text x="871.6" y="146" class="ms" xml:space="preserve">20</text>
-  <text x="898.6" y="146" class="mb" xml:space="preserve">KI5</text>
-  <rect x="24" y="166" width="88" height="39" rx="4" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
-  <text x="31" y="191" class="ms" xml:space="preserve">21</text>
-  <text x="58" y="191" class="mb" xml:space="preserve">KI6</text>
-  <rect x="117.4" y="166" width="88" height="39" rx="4" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
-  <text x="124.4" y="191" class="ms" xml:space="preserve">22</text>
-  <text x="151.4" y="191" class="mb" xml:space="preserve">KI7</text>
-  <rect x="210.8" y="166" width="88" height="39" rx="4" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
-  <text x="217.8" y="191" class="ms" xml:space="preserve">23</text>
-  <text x="244.8" y="191" class="mb" xml:space="preserve">DIO0</text>
-  <rect x="304.2" y="166" width="88" height="39" rx="4" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
-  <text x="311.2" y="191" class="ms" xml:space="preserve">24</text>
-  <text x="338.2" y="191" class="mb" xml:space="preserve">DIO1</text>
-  <rect x="397.6" y="166" width="88" height="39" rx="4" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
-  <text x="404.6" y="191" class="ms" xml:space="preserve">25</text>
-  <text x="431.6" y="191" class="mb" xml:space="preserve">DIO2</text>
-  <rect x="491" y="166" width="88" height="39" rx="4" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
-  <text x="498" y="191" class="ms" xml:space="preserve">26</text>
-  <text x="525" y="191" class="mb" xml:space="preserve">DIO3</text>
-  <rect x="584.4" y="166" width="88" height="39" rx="4" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
-  <text x="591.4" y="191" class="ms" xml:space="preserve">27</text>
-  <text x="618.4" y="191" class="mb" xml:space="preserve">DIO4</text>
-  <rect x="677.8" y="166" width="88" height="39" rx="4" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
-  <text x="684.8" y="191" class="ms" xml:space="preserve">28</text>
-  <text x="711.8" y="191" class="mb" xml:space="preserve">DIO5</text>
-  <rect x="771.2" y="166" width="88" height="39" rx="4" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
-  <text x="778.2" y="191" class="ms" xml:space="preserve">29</text>
-  <text x="805.2" y="191" class="mb" xml:space="preserve">DIO6</text>
-  <rect x="864.6" y="166" width="88" height="39" rx="4" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
-  <text x="871.6" y="191" class="ms" xml:space="preserve">30</text>
-  <text x="898.6" y="191" class="mb" xml:space="preserve">DIO7</text>
-  <rect x="24" y="211" width="88" height="39" rx="4" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
-  <text x="31" y="236" class="ms" xml:space="preserve">31</text>
-  <text x="58" y="236" class="mb" xml:space="preserve">A0</text>
-  <rect x="117.4" y="211" width="88" height="39" rx="4" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
-  <text x="124.4" y="236" class="ms" xml:space="preserve">32</text>
-  <text x="151.4" y="236" class="mb" xml:space="preserve">A1</text>
-  <rect x="210.8" y="211" width="88" height="39" rx="4" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
-  <text x="217.8" y="236" class="ms" xml:space="preserve">33</text>
-  <text x="244.8" y="236" class="mb" xml:space="preserve">A2</text>
-  <rect x="304.2" y="211" width="88" height="39" rx="4" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
-  <text x="311.2" y="236" class="ms" xml:space="preserve">34</text>
-  <text x="338.2" y="236" class="mb" xml:space="preserve">A3</text>
-  <rect x="397.6" y="211" width="88" height="39" rx="4" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
-  <text x="404.6" y="236" class="ms" xml:space="preserve">35</text>
-  <text x="431.6" y="236" class="mb" xml:space="preserve">A4</text>
-  <rect x="491" y="211" width="88" height="39" rx="4" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
-  <text x="498" y="236" class="ms" xml:space="preserve">36</text>
-  <text x="525" y="236" class="mb" xml:space="preserve">A5</text>
-  <rect x="584.4" y="211" width="88" height="39" rx="4" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
-  <text x="591.4" y="236" class="ms" xml:space="preserve">37</text>
-  <text x="618.4" y="236" class="mb" xml:space="preserve">A6</text>
-  <rect x="677.8" y="211" width="88" height="39" rx="4" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
-  <text x="684.8" y="236" class="ms" xml:space="preserve">38</text>
-  <text x="711.8" y="236" class="mb" xml:space="preserve">A7</text>
-  <rect x="771.2" y="211" width="88" height="39" rx="4" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
-  <text x="778.2" y="236" class="ms" xml:space="preserve">39</text>
-  <text x="805.2" y="236" class="mb" xml:space="preserve">A8</text>
-  <rect x="864.6" y="211" width="88" height="39" rx="4" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
-  <text x="871.6" y="236" class="ms" xml:space="preserve">40</text>
-  <text x="898.6" y="236" class="mb" xml:space="preserve">A9</text>
-  <rect x="24" y="256" width="88" height="39" rx="4" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
-  <text x="31" y="281" class="ms" xml:space="preserve">41</text>
-  <text x="58" y="281" class="mb" xml:space="preserve">A10</text>
-  <rect x="117.4" y="256" width="88" height="39" rx="4" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
-  <text x="124.4" y="281" class="ms" xml:space="preserve">42</text>
-  <text x="151.4" y="281" class="mb" xml:space="preserve">A11</text>
-  <rect x="210.8" y="256" width="88" height="39" rx="4" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
-  <text x="217.8" y="281" class="ms" xml:space="preserve">43</text>
-  <text x="244.8" y="281" class="mb" xml:space="preserve">A12</text>
-  <rect x="304.2" y="256" width="88" height="39" rx="4" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
-  <text x="311.2" y="281" class="ms" xml:space="preserve">44</text>
-  <text x="338.2" y="281" class="mb" xml:space="preserve">A13</text>
-  <rect x="397.6" y="256" width="88" height="39" rx="4" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
-  <text x="404.6" y="281" class="ms" xml:space="preserve">45</text>
-  <text x="431.6" y="281" class="mb" xml:space="preserve">A14</text>
-  <rect x="491" y="256" width="88" height="39" rx="4" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
-  <text x="498" y="281" class="ms" xml:space="preserve">46</text>
-  <text x="525" y="281" class="mb" xml:space="preserve">A15</text>
-  <rect x="584.4" y="256" width="88" height="39" rx="4" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
-  <text x="591.4" y="281" class="ms" xml:space="preserve">47</text>
-  <text x="618.4" y="281" class="mb" xml:space="preserve">A16</text>
-  <rect x="677.8" y="256" width="88" height="39" rx="4" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
-  <text x="684.8" y="281" class="ms" xml:space="preserve">48</text>
-  <text x="711.8" y="281" class="mb" xml:space="preserve">A17</text>
-  <rect x="771.2" y="256" width="88" height="39" rx="4" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
-  <text x="778.2" y="281" class="ms" xml:space="preserve">49</text>
-  <text x="805.2" y="281" class="mb" xml:space="preserve">A18</text>
-  <rect x="864.6" y="256" width="88" height="39" rx="4" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
-  <text x="871.6" y="281" class="ms" xml:space="preserve">50</text>
-  <text x="898.6" y="281" class="mb" xml:space="preserve"></text>
-  <rect x="24" y="301" width="88" height="39" rx="4" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
-  <text x="31" y="326" class="ms" xml:space="preserve">51</text>
-  <text x="58" y="326" class="mb" xml:space="preserve"></text>
-  <rect x="117.4" y="301" width="88" height="39" rx="4" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
-  <text x="124.4" y="326" class="ms" xml:space="preserve">52</text>
-  <text x="151.4" y="326" class="mb" xml:space="preserve">φD</text>
-  <rect x="210.8" y="301" width="88" height="39" rx="4" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
-  <text x="217.8" y="326" class="ms" xml:space="preserve">53</text>
-  <text x="244.8" y="326" class="mb" xml:space="preserve">KO15</text>
-  <rect x="304.2" y="301" width="88" height="39" rx="4" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
-  <text x="311.2" y="326" class="ms" xml:space="preserve">54</text>
-  <text x="338.2" y="326" class="mb" xml:space="preserve">KO14</text>
-  <rect x="397.6" y="301" width="88" height="39" rx="4" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
-  <text x="404.6" y="326" class="ms" xml:space="preserve">55</text>
-  <text x="431.6" y="326" class="mb" xml:space="preserve">KO13</text>
-  <rect x="491" y="301" width="88" height="39" rx="4" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
-  <text x="498" y="326" class="ms" xml:space="preserve">56</text>
-  <text x="525" y="326" class="mb" xml:space="preserve">KO12</text>
-  <rect x="584.4" y="301" width="88" height="39" rx="4" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
-  <text x="591.4" y="326" class="ms" xml:space="preserve">57</text>
-  <text x="618.4" y="326" class="mb" xml:space="preserve">KO11</text>
-  <rect x="677.8" y="301" width="88" height="39" rx="4" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
-  <text x="684.8" y="326" class="ms" xml:space="preserve">58</text>
-  <text x="711.8" y="326" class="mb" xml:space="preserve">KO10</text>
-  <rect x="771.2" y="301" width="88" height="39" rx="4" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
-  <text x="778.2" y="326" class="ms" xml:space="preserve">59</text>
-  <text x="805.2" y="326" class="mb" xml:space="preserve">IRQ</text>
-  <rect x="864.6" y="301" width="88" height="39" rx="4" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
-  <text x="871.6" y="326" class="ms" xml:space="preserve">60</text>
-  <text x="898.6" y="326" class="mb" xml:space="preserve"></text>
-  <rect x="24" y="346" width="88" height="39" rx="4" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
-  <text x="31" y="371" class="ms" xml:space="preserve">61</text>
-  <text x="58" y="371" class="mb" xml:space="preserve">CE7</text>
-  <rect x="117.4" y="346" width="88" height="39" rx="4" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
-  <text x="124.4" y="371" class="ms" xml:space="preserve">62</text>
-  <text x="151.4" y="371" class="mb" xml:space="preserve">CE6</text>
-  <rect x="210.8" y="346" width="88" height="39" rx="4" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
-  <text x="217.8" y="371" class="ms" xml:space="preserve">63</text>
-  <text x="244.8" y="371" class="mb" xml:space="preserve">CE5</text>
-  <rect x="304.2" y="346" width="88" height="39" rx="4" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
-  <text x="311.2" y="371" class="ms" xml:space="preserve">64</text>
-  <text x="338.2" y="371" class="mb" xml:space="preserve">CE4</text>
-  <rect x="397.6" y="346" width="88" height="39" rx="4" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
-  <text x="404.6" y="371" class="ms" xml:space="preserve">65</text>
-  <text x="431.6" y="371" class="mb" xml:space="preserve">CE3</text>
-  <rect x="491" y="346" width="88" height="39" rx="4" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
-  <text x="498" y="371" class="ms" xml:space="preserve">66</text>
-  <text x="525" y="371" class="mb" xml:space="preserve">CE2</text>
-  <rect x="584.4" y="346" width="88" height="39" rx="4" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
-  <text x="591.4" y="371" class="ms" xml:space="preserve">67</text>
-  <text x="618.4" y="371" class="mb" xml:space="preserve">CE1</text>
-  <rect x="677.8" y="346" width="88" height="39" rx="4" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
-  <text x="684.8" y="371" class="ms" xml:space="preserve">68</text>
-  <text x="711.8" y="371" class="mb" xml:space="preserve">CE0</text>
-  <rect x="771.2" y="346" width="88" height="39" rx="4" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
-  <text x="778.2" y="371" class="ms" xml:space="preserve">69</text>
-  <text x="805.2" y="371" class="mb" xml:space="preserve"></text>
-  <rect x="864.6" y="346" width="88" height="39" rx="4" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
-  <text x="871.6" y="371" class="ms" xml:space="preserve">70</text>
-  <text x="898.6" y="371" class="mb" xml:space="preserve"></text>
-  <rect x="24" y="391" width="88" height="39" rx="4" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
-  <text x="31" y="416" class="ms" xml:space="preserve">71</text>
-  <text x="58" y="416" class="mb" xml:space="preserve"></text>
-  <rect x="117.4" y="391" width="88" height="39" rx="4" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
-  <text x="124.4" y="416" class="ms" xml:space="preserve">72</text>
-  <text x="151.4" y="416" class="mb" xml:space="preserve"></text>
-  <rect x="210.8" y="391" width="88" height="39" rx="4" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
-  <text x="217.8" y="416" class="ms" xml:space="preserve">73</text>
-  <text x="244.8" y="416" class="mb" xml:space="preserve">KO9</text>
-  <rect x="304.2" y="391" width="88" height="39" rx="4" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
-  <text x="311.2" y="416" class="ms" xml:space="preserve">74</text>
-  <text x="338.2" y="416" class="mb" xml:space="preserve">KO8</text>
-  <rect x="397.6" y="391" width="88" height="39" rx="4" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
-  <text x="404.6" y="416" class="ms" xml:space="preserve">75</text>
-  <text x="431.6" y="416" class="mb" xml:space="preserve">KO7</text>
-  <rect x="491" y="391" width="88" height="39" rx="4" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
-  <text x="498" y="416" class="ms" xml:space="preserve">76</text>
-  <text x="525" y="416" class="mb" xml:space="preserve">KO6</text>
-  <rect x="584.4" y="391" width="88" height="39" rx="4" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
-  <text x="591.4" y="416" class="ms" xml:space="preserve">77</text>
-  <text x="618.4" y="416" class="mb" xml:space="preserve">KO5</text>
-  <rect x="677.8" y="391" width="88" height="39" rx="4" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
-  <text x="684.8" y="416" class="ms" xml:space="preserve">78</text>
-  <text x="711.8" y="416" class="mb" xml:space="preserve">KO4</text>
-  <rect x="771.2" y="391" width="88" height="39" rx="4" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
-  <text x="778.2" y="416" class="ms" xml:space="preserve">79</text>
-  <text x="805.2" y="416" class="mb" xml:space="preserve">KO3</text>
-  <rect x="864.6" y="391" width="88" height="39" rx="4" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
-  <text x="871.6" y="416" class="ms" xml:space="preserve">80</text>
-  <text x="898.6" y="416" class="mb" xml:space="preserve">KO2</text>
-  <rect x="24" y="436" width="88" height="39" rx="4" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
-  <text x="31" y="461" class="ms" xml:space="preserve">81</text>
-  <text x="58" y="461" class="mb" xml:space="preserve">KO1</text>
-  <rect x="117.4" y="436" width="88" height="39" rx="4" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
-  <text x="124.4" y="461" class="ms" xml:space="preserve">82</text>
-  <text x="151.4" y="461" class="mb" xml:space="preserve">KO0</text>
-  <rect x="210.8" y="436" width="88" height="39" rx="4" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
-  <text x="217.8" y="461" class="ms" xml:space="preserve">83</text>
-  <text x="244.8" y="461" class="mb" xml:space="preserve">RXD</text>
-  <rect x="304.2" y="436" width="88" height="39" rx="4" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
-  <text x="311.2" y="461" class="ms" xml:space="preserve">84</text>
-  <text x="338.2" y="461" class="mb" xml:space="preserve">TXD</text>
-  <rect x="397.6" y="436" width="88" height="39" rx="4" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
-  <text x="404.6" y="461" class="ms" xml:space="preserve">85</text>
-  <text x="431.6" y="461" class="mb" xml:space="preserve">E15</text>
-  <rect x="491" y="436" width="88" height="39" rx="4" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
-  <text x="498" y="461" class="ms" xml:space="preserve">86</text>
-  <text x="525" y="461" class="mb" xml:space="preserve">E14</text>
-  <rect x="584.4" y="436" width="88" height="39" rx="4" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
-  <text x="591.4" y="461" class="ms" xml:space="preserve">87</text>
-  <text x="618.4" y="461" class="mb" xml:space="preserve">E13</text>
-  <rect x="677.8" y="436" width="88" height="39" rx="4" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
-  <text x="684.8" y="461" class="ms" xml:space="preserve">88</text>
-  <text x="711.8" y="461" class="mb" xml:space="preserve">E12</text>
-  <rect x="771.2" y="436" width="88" height="39" rx="4" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
-  <text x="778.2" y="461" class="ms" xml:space="preserve">89</text>
-  <text x="805.2" y="461" class="mb" xml:space="preserve">E11</text>
-  <rect x="864.6" y="436" width="88" height="39" rx="4" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
-  <text x="871.6" y="461" class="ms" xml:space="preserve">90</text>
-  <text x="898.6" y="461" class="mb" xml:space="preserve">E10</text>
-  <rect x="24" y="481" width="88" height="39" rx="4" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
-  <text x="31" y="506" class="ms" xml:space="preserve">91</text>
-  <text x="58" y="506" class="mb" xml:space="preserve">E9</text>
-  <rect x="117.4" y="481" width="88" height="39" rx="4" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
-  <text x="124.4" y="506" class="ms" xml:space="preserve">92</text>
-  <text x="151.4" y="506" class="mb" xml:space="preserve">E8</text>
-  <rect x="210.8" y="481" width="88" height="39" rx="4" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
-  <text x="217.8" y="506" class="ms" xml:space="preserve">93</text>
-  <text x="244.8" y="506" class="mb" xml:space="preserve">E7</text>
-  <rect x="304.2" y="481" width="88" height="39" rx="4" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
-  <text x="311.2" y="506" class="ms" xml:space="preserve">94</text>
-  <text x="338.2" y="506" class="mb" xml:space="preserve">E6</text>
-  <rect x="397.6" y="481" width="88" height="39" rx="4" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
-  <text x="404.6" y="506" class="ms" xml:space="preserve">95</text>
-  <text x="431.6" y="506" class="mb" xml:space="preserve">E5</text>
-  <rect x="491" y="481" width="88" height="39" rx="4" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
-  <text x="498" y="506" class="ms" xml:space="preserve">96</text>
-  <text x="525" y="506" class="mb" xml:space="preserve">E4</text>
-  <rect x="584.4" y="481" width="88" height="39" rx="4" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
-  <text x="591.4" y="506" class="ms" xml:space="preserve">97</text>
-  <text x="618.4" y="506" class="mb" xml:space="preserve">E3</text>
-  <rect x="677.8" y="481" width="88" height="39" rx="4" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
-  <text x="684.8" y="506" class="ms" xml:space="preserve">98</text>
-  <text x="711.8" y="506" class="mb" xml:space="preserve">E2</text>
-  <rect x="771.2" y="481" width="88" height="39" rx="4" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
-  <text x="778.2" y="506" class="ms" xml:space="preserve">99</text>
-  <text x="805.2" y="506" class="mb" xml:space="preserve">E1</text>
-  <rect x="864.6" y="481" width="88" height="39" rx="4" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
-  <text x="871.6" y="506" class="ms" xml:space="preserve">100</text>
-  <text x="898.6" y="506" class="mb" xml:space="preserve">E0</text>
-  <rect x="24" y="540" width="14" height="14" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
-  <text x="44" y="552" class="s" xml:space="preserve">アドレス、データ</text>
-  <rect x="184" y="540" width="14" height="14" rx="3" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
-  <text x="204" y="552" class="s" xml:space="preserve">チップセレクト</text>
-  <rect x="334" y="540" width="14" height="14" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
-  <text x="354" y="552" class="s" xml:space="preserve">入出力（キー、E、シリアル、カセット）</text>
-  <rect x="614" y="540" width="14" height="14" rx="3" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
-  <text x="634" y="552" class="s" xml:space="preserve">クロック、制御</text>
-  <rect x="754" y="540" width="14" height="14" rx="3" fill="#FDECEA" stroke="#C0392B" stroke-width="1.2"/>
-  <text x="774" y="552" class="s" xml:space="preserve">電源、リセット、試験</text>
-  <rect x="24" y="570" width="932" height="34" rx="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
-  <text x="36" y="591" class="s" xml:space="preserve" style="fill:#1F2933">パッケージは四辺にピンがある QFP です。この図は番号の順で、辺の位置は表しません。</text>
+  <text x="24" y="55" class="sub" xml:space="preserve">QFP の形に並べた図。並びはサービスマニュアルの回路図（p.11）の CPU の記号のとおり</text>
+  <path d="M130 172 H884 Q894 172 894 182 V686 Q894 696 884 696 H150 L120 666 V182 Q120 172 130 172 Z" fill="#2E3640" stroke="#1F2933" stroke-width="1.5"/>
+  <circle cx="172" cy="644" r="13" fill="#3E4955" stroke="#9AA5B1" stroke-width="2"/>
+  <text x="507.0" y="412.0" class="h" text-anchor="middle" style="fill:#FFFFFF;font-size:26px" xml:space="preserve">SC62015</text>
+  <text x="507.0" y="444.0" class="b" text-anchor="middle" style="fill:#D9E0E8" xml:space="preserve">QFP 100 ピン（IC1）</text>
+  <text x="507.0" y="474.0" class="s" text-anchor="middle" style="fill:#D9E0E8" xml:space="preserve">番号は 1 → 30 → 50 → 80 → 100 と反時計回りに進む</text>
+  <rect x="133.5" y="700" width="22" height="92" rx="3" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="149.0" y="705" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 149.0 705)">1</text>
+  <text x="149.0" y="732" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 149.0 732)">X1</text>
+  <rect x="133.5" y="76" width="22" height="92" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="149.0" y="163" class="ms" xml:space="preserve" transform="rotate(-90 149.0 163)">80</text>
+  <text x="149.0" y="136" class="mb" xml:space="preserve" transform="rotate(-90 149.0 136)">KO2</text>
+  <rect x="158.5" y="700" width="22" height="92" rx="3" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="174.0" y="705" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 174.0 705)">2</text>
+  <text x="174.0" y="732" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 174.0 732)">X2</text>
+  <rect x="158.5" y="76" width="22" height="92" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="174.0" y="163" class="ms" xml:space="preserve" transform="rotate(-90 174.0 163)">79</text>
+  <text x="174.0" y="136" class="mb" xml:space="preserve" transform="rotate(-90 174.0 136)">KO3</text>
+  <rect x="183.5" y="700" width="22" height="92" rx="3" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="199.0" y="705" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 199.0 705)">3</text>
+  <text x="199.0" y="732" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 199.0 732)">X3</text>
+  <rect x="183.5" y="76" width="22" height="92" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="199.0" y="163" class="ms" xml:space="preserve" transform="rotate(-90 199.0 163)">78</text>
+  <text x="199.0" y="136" class="mb" xml:space="preserve" transform="rotate(-90 199.0 136)">KO4</text>
+  <rect x="208.5" y="700" width="22" height="92" rx="3" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="224.0" y="705" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 224.0 705)">4</text>
+  <text x="224.0" y="732" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 224.0 732)">X4</text>
+  <rect x="208.5" y="76" width="22" height="92" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="224.0" y="163" class="ms" xml:space="preserve" transform="rotate(-90 224.0 163)">77</text>
+  <text x="224.0" y="136" class="mb" xml:space="preserve" transform="rotate(-90 224.0 136)">KO5</text>
+  <rect x="233.5" y="700" width="22" height="92" rx="3" fill="#FDECEA" stroke="#C0392B" stroke-width="1.2"/>
+  <text x="249.0" y="705" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 249.0 705)">5</text>
+  <text x="249.0" y="732" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 249.0 732)">VDD</text>
+  <rect x="233.5" y="76" width="22" height="92" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="249.0" y="163" class="ms" xml:space="preserve" transform="rotate(-90 249.0 163)">76</text>
+  <text x="249.0" y="136" class="mb" xml:space="preserve" transform="rotate(-90 249.0 136)">KO6</text>
+  <rect x="258.5" y="700" width="22" height="92" rx="3" fill="#FDECEA" stroke="#C0392B" stroke-width="1.2"/>
+  <text x="274.0" y="705" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 274.0 705)">6</text>
+  <text x="274.0" y="732" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 274.0 732)">VCC</text>
+  <rect x="258.5" y="76" width="22" height="92" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="274.0" y="163" class="ms" xml:space="preserve" transform="rotate(-90 274.0 163)">75</text>
+  <text x="274.0" y="136" class="mb" xml:space="preserve" transform="rotate(-90 274.0 136)">KO7</text>
+  <rect x="283.5" y="700" width="22" height="92" rx="3" fill="#FDECEA" stroke="#C0392B" stroke-width="1.2"/>
+  <text x="299.0" y="705" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 299.0 705)">7</text>
+  <text x="299.0" y="732" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 299.0 732)">RESET</text>
+  <rect x="283.5" y="76" width="22" height="92" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="299.0" y="163" class="ms" xml:space="preserve" transform="rotate(-90 299.0 163)">74</text>
+  <text x="299.0" y="136" class="mb" xml:space="preserve" transform="rotate(-90 299.0 136)">KO8</text>
+  <rect x="308.5" y="700" width="22" height="92" rx="3" fill="#FDECEA" stroke="#C0392B" stroke-width="1.2"/>
+  <text x="324.0" y="705" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 324.0 705)">8</text>
+  <text x="324.0" y="732" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 324.0 732)">GND</text>
+  <rect x="308.5" y="76" width="22" height="92" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="324.0" y="163" class="ms" xml:space="preserve" transform="rotate(-90 324.0 163)">73</text>
+  <text x="324.0" y="136" class="mb" xml:space="preserve" transform="rotate(-90 324.0 136)">KO9</text>
+  <rect x="333.5" y="700" width="22" height="92" rx="3" fill="#FDECEA" stroke="#C0392B" stroke-width="1.2"/>
+  <text x="349.0" y="705" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 349.0 705)">9</text>
+  <text x="349.0" y="732" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 349.0 732)">TEST</text>
+  <rect x="333.5" y="76" width="22" height="92" rx="3" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="349.0" y="163" class="ms" xml:space="preserve" transform="rotate(-90 349.0 163)">72</text>
+  <text x="349.0" y="136" class="mb" xml:space="preserve" transform="rotate(-90 349.0 136)">RD</text>
+  <rect x="358.5" y="700" width="22" height="92" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="374.0" y="705" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 374.0 705)">10</text>
+  <text x="374.0" y="732" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 374.0 732)">CI</text>
+  <rect x="358.5" y="76" width="22" height="92" rx="3" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="374.0" y="163" class="ms" xml:space="preserve" transform="rotate(-90 374.0 163)">71</text>
+  <text x="374.0" y="136" class="mb" xml:space="preserve" transform="rotate(-90 374.0 136)">HA</text>
+  <rect x="383.5" y="700" width="22" height="92" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="399.0" y="705" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 399.0 705)">11</text>
+  <text x="399.0" y="732" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 399.0 732)">CO</text>
+  <rect x="383.5" y="76" width="22" height="92" rx="3" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="399.0" y="163" class="ms" xml:space="preserve" transform="rotate(-90 399.0 163)">70</text>
+  <text x="399.0" y="136" class="mb" xml:space="preserve" transform="rotate(-90 399.0 136)">DIS</text>
+  <rect x="408.5" y="700" width="22" height="92" rx="3" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="424.0" y="705" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 424.0 705)">12</text>
+  <text x="424.0" y="732" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 424.0 732)">ON</text>
+  <rect x="408.5" y="76" width="22" height="92" rx="3" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="424.0" y="163" class="ms" xml:space="preserve" transform="rotate(-90 424.0 163)">69</text>
+  <text x="424.0" y="136" class="mb" xml:space="preserve" transform="rotate(-90 424.0 136)">φA</text>
+  <rect x="433.5" y="700" width="22" height="92" rx="3" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="449.0" y="705" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 449.0 705)">13</text>
+  <text x="449.0" y="732" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 449.0 732)">WR</text>
+  <rect x="433.5" y="76" width="22" height="92" rx="3" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="449.0" y="163" class="ms" xml:space="preserve" transform="rotate(-90 449.0 163)">68</text>
+  <text x="449.0" y="136" class="mb" xml:space="preserve" transform="rotate(-90 449.0 136)">CE0</text>
+  <rect x="458.5" y="700" width="22" height="92" rx="3" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="474.0" y="705" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 474.0 705)">14</text>
+  <text x="474.0" y="732" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 474.0 732)">MRQ</text>
+  <rect x="458.5" y="76" width="22" height="92" rx="3" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="474.0" y="163" class="ms" xml:space="preserve" transform="rotate(-90 474.0 163)">67</text>
+  <text x="474.0" y="136" class="mb" xml:space="preserve" transform="rotate(-90 474.0 136)">CE1</text>
+  <rect x="483.5" y="700" width="22" height="92" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="499.0" y="705" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 499.0 705)">15</text>
+  <text x="499.0" y="732" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 499.0 732)">KI0</text>
+  <rect x="483.5" y="76" width="22" height="92" rx="3" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="499.0" y="163" class="ms" xml:space="preserve" transform="rotate(-90 499.0 163)">66</text>
+  <text x="499.0" y="136" class="mb" xml:space="preserve" transform="rotate(-90 499.0 136)">CE2</text>
+  <rect x="508.5" y="700" width="22" height="92" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="524.0" y="705" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 524.0 705)">16</text>
+  <text x="524.0" y="732" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 524.0 732)">KI1</text>
+  <rect x="508.5" y="76" width="22" height="92" rx="3" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="524.0" y="163" class="ms" xml:space="preserve" transform="rotate(-90 524.0 163)">65</text>
+  <text x="524.0" y="136" class="mb" xml:space="preserve" transform="rotate(-90 524.0 136)">CE3</text>
+  <rect x="533.5" y="700" width="22" height="92" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="549.0" y="705" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 549.0 705)">17</text>
+  <text x="549.0" y="732" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 549.0 732)">KI2</text>
+  <rect x="533.5" y="76" width="22" height="92" rx="3" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="549.0" y="163" class="ms" xml:space="preserve" transform="rotate(-90 549.0 163)">64</text>
+  <text x="549.0" y="136" class="mb" xml:space="preserve" transform="rotate(-90 549.0 136)">CE4</text>
+  <rect x="558.5" y="700" width="22" height="92" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="574.0" y="705" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 574.0 705)">18</text>
+  <text x="574.0" y="732" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 574.0 732)">KI3</text>
+  <rect x="558.5" y="76" width="22" height="92" rx="3" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="574.0" y="163" class="ms" xml:space="preserve" transform="rotate(-90 574.0 163)">63</text>
+  <text x="574.0" y="136" class="mb" xml:space="preserve" transform="rotate(-90 574.0 136)">CE5</text>
+  <rect x="583.5" y="700" width="22" height="92" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="599.0" y="705" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 599.0 705)">19</text>
+  <text x="599.0" y="732" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 599.0 732)">KI4</text>
+  <rect x="583.5" y="76" width="22" height="92" rx="3" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="599.0" y="163" class="ms" xml:space="preserve" transform="rotate(-90 599.0 163)">62</text>
+  <text x="599.0" y="136" class="mb" xml:space="preserve" transform="rotate(-90 599.0 136)">CE6</text>
+  <rect x="608.5" y="700" width="22" height="92" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="624.0" y="705" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 624.0 705)">20</text>
+  <text x="624.0" y="732" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 624.0 732)">KI5</text>
+  <rect x="608.5" y="76" width="22" height="92" rx="3" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="624.0" y="163" class="ms" xml:space="preserve" transform="rotate(-90 624.0 163)">61</text>
+  <text x="624.0" y="136" class="mb" xml:space="preserve" transform="rotate(-90 624.0 136)">CE7</text>
+  <rect x="633.5" y="700" width="22" height="92" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="649.0" y="705" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 649.0 705)">21</text>
+  <text x="649.0" y="732" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 649.0 732)">KI6</text>
+  <rect x="633.5" y="76" width="22" height="92" rx="3" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="649.0" y="163" class="ms" xml:space="preserve" transform="rotate(-90 649.0 163)">60</text>
+  <text x="649.0" y="136" class="mb" xml:space="preserve" transform="rotate(-90 649.0 136)">φOUT</text>
+  <rect x="658.5" y="700" width="22" height="92" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="674.0" y="705" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 674.0 705)">22</text>
+  <text x="674.0" y="732" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 674.0 732)">KI7</text>
+  <rect x="658.5" y="76" width="22" height="92" rx="3" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="674.0" y="163" class="ms" xml:space="preserve" transform="rotate(-90 674.0 163)">59</text>
+  <text x="674.0" y="136" class="mb" xml:space="preserve" transform="rotate(-90 674.0 136)">IRQ</text>
+  <rect x="683.5" y="700" width="22" height="92" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="699.0" y="705" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 699.0 705)">23</text>
+  <text x="699.0" y="732" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 699.0 732)">DIO0</text>
+  <rect x="683.5" y="76" width="22" height="92" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="699.0" y="163" class="ms" xml:space="preserve" transform="rotate(-90 699.0 163)">58</text>
+  <text x="699.0" y="136" class="mb" xml:space="preserve" transform="rotate(-90 699.0 136)">KO10</text>
+  <rect x="708.5" y="700" width="22" height="92" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="724.0" y="705" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 724.0 705)">24</text>
+  <text x="724.0" y="732" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 724.0 732)">DIO1</text>
+  <rect x="708.5" y="76" width="22" height="92" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="724.0" y="163" class="ms" xml:space="preserve" transform="rotate(-90 724.0 163)">57</text>
+  <text x="724.0" y="136" class="mb" xml:space="preserve" transform="rotate(-90 724.0 136)">KO11</text>
+  <rect x="733.5" y="700" width="22" height="92" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="749.0" y="705" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 749.0 705)">25</text>
+  <text x="749.0" y="732" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 749.0 732)">DIO2</text>
+  <rect x="733.5" y="76" width="22" height="92" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="749.0" y="163" class="ms" xml:space="preserve" transform="rotate(-90 749.0 163)">56</text>
+  <text x="749.0" y="136" class="mb" xml:space="preserve" transform="rotate(-90 749.0 136)">KO12</text>
+  <rect x="758.5" y="700" width="22" height="92" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="774.0" y="705" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 774.0 705)">26</text>
+  <text x="774.0" y="732" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 774.0 732)">DIO3</text>
+  <rect x="758.5" y="76" width="22" height="92" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="774.0" y="163" class="ms" xml:space="preserve" transform="rotate(-90 774.0 163)">55</text>
+  <text x="774.0" y="136" class="mb" xml:space="preserve" transform="rotate(-90 774.0 136)">KO13</text>
+  <rect x="783.5" y="700" width="22" height="92" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="799.0" y="705" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 799.0 705)">27</text>
+  <text x="799.0" y="732" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 799.0 732)">DIO4</text>
+  <rect x="783.5" y="76" width="22" height="92" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="799.0" y="163" class="ms" xml:space="preserve" transform="rotate(-90 799.0 163)">54</text>
+  <text x="799.0" y="136" class="mb" xml:space="preserve" transform="rotate(-90 799.0 136)">KO14</text>
+  <rect x="808.5" y="700" width="22" height="92" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="824.0" y="705" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 824.0 705)">28</text>
+  <text x="824.0" y="732" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 824.0 732)">DIO5</text>
+  <rect x="808.5" y="76" width="22" height="92" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="824.0" y="163" class="ms" xml:space="preserve" transform="rotate(-90 824.0 163)">53</text>
+  <text x="824.0" y="136" class="mb" xml:space="preserve" transform="rotate(-90 824.0 136)">KO15</text>
+  <rect x="833.5" y="700" width="22" height="92" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="849.0" y="705" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 849.0 705)">29</text>
+  <text x="849.0" y="732" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 849.0 732)">DIO6</text>
+  <rect x="833.5" y="76" width="22" height="92" rx="3" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="849.0" y="163" class="ms" xml:space="preserve" transform="rotate(-90 849.0 163)">52</text>
+  <text x="849.0" y="136" class="mb" xml:space="preserve" transform="rotate(-90 849.0 136)">φD</text>
+  <rect x="858.5" y="700" width="22" height="92" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="874.0" y="705" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 874.0 705)">30</text>
+  <text x="874.0" y="732" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 874.0 732)">DIO7</text>
+  <rect x="858.5" y="76" width="22" height="92" rx="3" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="874.0" y="163" class="ms" xml:space="preserve" transform="rotate(-90 874.0 163)">51</text>
+  <text x="874.0" y="136" class="mb" xml:space="preserve" transform="rotate(-90 874.0 136)">VA</text>
+  <rect x="24" y="185.5" width="92" height="22" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="111" y="201.0" class="ms" xml:space="preserve" text-anchor="end">81</text>
+  <text x="84" y="201.0" class="mb" xml:space="preserve" text-anchor="end">KO1</text>
+  <rect x="898" y="185.5" width="92" height="22" rx="3" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="903" y="201.0" class="ms" xml:space="preserve">50</text>
+  <text x="930" y="201.0" class="mb" xml:space="preserve">VDISP</text>
+  <rect x="24" y="210.5" width="92" height="22" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="111" y="226.0" class="ms" xml:space="preserve" text-anchor="end">82</text>
+  <text x="84" y="226.0" class="mb" xml:space="preserve" text-anchor="end">KO0</text>
+  <rect x="898" y="210.5" width="92" height="22" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="903" y="226.0" class="ms" xml:space="preserve">49</text>
+  <text x="930" y="226.0" class="mb" xml:space="preserve">A18</text>
+  <rect x="24" y="235.5" width="92" height="22" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="111" y="251.0" class="ms" xml:space="preserve" text-anchor="end">83</text>
+  <text x="84" y="251.0" class="mb" xml:space="preserve" text-anchor="end">RXD</text>
+  <rect x="898" y="235.5" width="92" height="22" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="903" y="251.0" class="ms" xml:space="preserve">48</text>
+  <text x="930" y="251.0" class="mb" xml:space="preserve">A17</text>
+  <rect x="24" y="260.5" width="92" height="22" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="111" y="276.0" class="ms" xml:space="preserve" text-anchor="end">84</text>
+  <text x="84" y="276.0" class="mb" xml:space="preserve" text-anchor="end">TXD</text>
+  <rect x="898" y="260.5" width="92" height="22" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="903" y="276.0" class="ms" xml:space="preserve">47</text>
+  <text x="930" y="276.0" class="mb" xml:space="preserve">A16</text>
+  <rect x="24" y="285.5" width="92" height="22" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="111" y="301.0" class="ms" xml:space="preserve" text-anchor="end">85</text>
+  <text x="84" y="301.0" class="mb" xml:space="preserve" text-anchor="end">E15</text>
+  <rect x="898" y="285.5" width="92" height="22" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="903" y="301.0" class="ms" xml:space="preserve">46</text>
+  <text x="930" y="301.0" class="mb" xml:space="preserve">A15</text>
+  <rect x="24" y="310.5" width="92" height="22" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="111" y="326.0" class="ms" xml:space="preserve" text-anchor="end">86</text>
+  <text x="84" y="326.0" class="mb" xml:space="preserve" text-anchor="end">E14</text>
+  <rect x="898" y="310.5" width="92" height="22" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="903" y="326.0" class="ms" xml:space="preserve">45</text>
+  <text x="930" y="326.0" class="mb" xml:space="preserve">A14</text>
+  <rect x="24" y="335.5" width="92" height="22" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="111" y="351.0" class="ms" xml:space="preserve" text-anchor="end">87</text>
+  <text x="84" y="351.0" class="mb" xml:space="preserve" text-anchor="end">E13</text>
+  <rect x="898" y="335.5" width="92" height="22" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="903" y="351.0" class="ms" xml:space="preserve">44</text>
+  <text x="930" y="351.0" class="mb" xml:space="preserve">A13</text>
+  <rect x="24" y="360.5" width="92" height="22" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="111" y="376.0" class="ms" xml:space="preserve" text-anchor="end">88</text>
+  <text x="84" y="376.0" class="mb" xml:space="preserve" text-anchor="end">E12</text>
+  <rect x="898" y="360.5" width="92" height="22" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="903" y="376.0" class="ms" xml:space="preserve">43</text>
+  <text x="930" y="376.0" class="mb" xml:space="preserve">A12</text>
+  <rect x="24" y="385.5" width="92" height="22" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="111" y="401.0" class="ms" xml:space="preserve" text-anchor="end">89</text>
+  <text x="84" y="401.0" class="mb" xml:space="preserve" text-anchor="end">E11</text>
+  <rect x="898" y="385.5" width="92" height="22" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="903" y="401.0" class="ms" xml:space="preserve">42</text>
+  <text x="930" y="401.0" class="mb" xml:space="preserve">A11</text>
+  <rect x="24" y="410.5" width="92" height="22" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="111" y="426.0" class="ms" xml:space="preserve" text-anchor="end">90</text>
+  <text x="84" y="426.0" class="mb" xml:space="preserve" text-anchor="end">E10</text>
+  <rect x="898" y="410.5" width="92" height="22" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="903" y="426.0" class="ms" xml:space="preserve">41</text>
+  <text x="930" y="426.0" class="mb" xml:space="preserve">A10</text>
+  <rect x="24" y="435.5" width="92" height="22" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="111" y="451.0" class="ms" xml:space="preserve" text-anchor="end">91</text>
+  <text x="84" y="451.0" class="mb" xml:space="preserve" text-anchor="end">E9</text>
+  <rect x="898" y="435.5" width="92" height="22" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="903" y="451.0" class="ms" xml:space="preserve">40</text>
+  <text x="930" y="451.0" class="mb" xml:space="preserve">A9</text>
+  <rect x="24" y="460.5" width="92" height="22" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="111" y="476.0" class="ms" xml:space="preserve" text-anchor="end">92</text>
+  <text x="84" y="476.0" class="mb" xml:space="preserve" text-anchor="end">E8</text>
+  <rect x="898" y="460.5" width="92" height="22" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="903" y="476.0" class="ms" xml:space="preserve">39</text>
+  <text x="930" y="476.0" class="mb" xml:space="preserve">A8</text>
+  <rect x="24" y="485.5" width="92" height="22" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="111" y="501.0" class="ms" xml:space="preserve" text-anchor="end">93</text>
+  <text x="84" y="501.0" class="mb" xml:space="preserve" text-anchor="end">E7</text>
+  <rect x="898" y="485.5" width="92" height="22" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="903" y="501.0" class="ms" xml:space="preserve">38</text>
+  <text x="930" y="501.0" class="mb" xml:space="preserve">A7</text>
+  <rect x="24" y="510.5" width="92" height="22" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="111" y="526.0" class="ms" xml:space="preserve" text-anchor="end">94</text>
+  <text x="84" y="526.0" class="mb" xml:space="preserve" text-anchor="end">E6</text>
+  <rect x="898" y="510.5" width="92" height="22" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="903" y="526.0" class="ms" xml:space="preserve">37</text>
+  <text x="930" y="526.0" class="mb" xml:space="preserve">A6</text>
+  <rect x="24" y="535.5" width="92" height="22" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="111" y="551.0" class="ms" xml:space="preserve" text-anchor="end">95</text>
+  <text x="84" y="551.0" class="mb" xml:space="preserve" text-anchor="end">E5</text>
+  <rect x="898" y="535.5" width="92" height="22" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="903" y="551.0" class="ms" xml:space="preserve">36</text>
+  <text x="930" y="551.0" class="mb" xml:space="preserve">A5</text>
+  <rect x="24" y="560.5" width="92" height="22" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="111" y="576.0" class="ms" xml:space="preserve" text-anchor="end">96</text>
+  <text x="84" y="576.0" class="mb" xml:space="preserve" text-anchor="end">E4</text>
+  <rect x="898" y="560.5" width="92" height="22" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="903" y="576.0" class="ms" xml:space="preserve">35</text>
+  <text x="930" y="576.0" class="mb" xml:space="preserve">A4</text>
+  <rect x="24" y="585.5" width="92" height="22" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="111" y="601.0" class="ms" xml:space="preserve" text-anchor="end">97</text>
+  <text x="84" y="601.0" class="mb" xml:space="preserve" text-anchor="end">E3</text>
+  <rect x="898" y="585.5" width="92" height="22" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="903" y="601.0" class="ms" xml:space="preserve">34</text>
+  <text x="930" y="601.0" class="mb" xml:space="preserve">A3</text>
+  <rect x="24" y="610.5" width="92" height="22" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="111" y="626.0" class="ms" xml:space="preserve" text-anchor="end">98</text>
+  <text x="84" y="626.0" class="mb" xml:space="preserve" text-anchor="end">E2</text>
+  <rect x="898" y="610.5" width="92" height="22" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="903" y="626.0" class="ms" xml:space="preserve">33</text>
+  <text x="930" y="626.0" class="mb" xml:space="preserve">A2</text>
+  <rect x="24" y="635.5" width="92" height="22" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="111" y="651.0" class="ms" xml:space="preserve" text-anchor="end">99</text>
+  <text x="84" y="651.0" class="mb" xml:space="preserve" text-anchor="end">E1</text>
+  <rect x="898" y="635.5" width="92" height="22" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="903" y="651.0" class="ms" xml:space="preserve">32</text>
+  <text x="930" y="651.0" class="mb" xml:space="preserve">A1</text>
+  <rect x="24" y="660.5" width="92" height="22" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="111" y="676.0" class="ms" xml:space="preserve" text-anchor="end">100</text>
+  <text x="84" y="676.0" class="mb" xml:space="preserve" text-anchor="end">E0</text>
+  <rect x="898" y="660.5" width="92" height="22" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="903" y="676.0" class="ms" xml:space="preserve">31</text>
+  <text x="930" y="676.0" class="mb" xml:space="preserve">A0</text>
+  <rect x="24" y="820" width="14" height="14" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="44" y="832" class="s" xml:space="preserve">アドレス、データ</text>
+  <rect x="152" y="820" width="14" height="14" rx="3" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="172" y="832" class="s" xml:space="preserve">チップセレクト</text>
+  <rect x="268" y="820" width="14" height="14" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="288" y="832" class="s" xml:space="preserve">入出力（キー、E、シリアル、カセット）</text>
+  <rect x="522.8" y="820" width="14" height="14" rx="3" fill="#F1ECFB" stroke="#6B4FBB" stroke-width="1.2"/>
+  <text x="542.8" y="832" class="s" xml:space="preserve">クロック、制御</text>
+  <rect x="638.8" y="820" width="14" height="14" rx="3" fill="#FDECEA" stroke="#C0392B" stroke-width="1.2"/>
+  <text x="658.8" y="832" class="s" xml:space="preserve">電源、リセット、試験</text>
+  <rect x="790.8" y="820" width="14" height="14" rx="3" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="810.8" y="832" class="s" xml:space="preserve">その他（表で Not used）</text>
+  <rect x="24" y="850" width="952" height="34" rx="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="36" y="871" class="s" xml:space="preserve" style="fill:#1F2933">上下の辺に 30 本、左右の辺に 20 本です。基板図（p.14）でも、CPU は横長の四角で、長い辺に多くの脚が並んでいます。</text>
 </svg>

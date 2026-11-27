@@ -57,9 +57,7 @@ pad_6:  MV    (KOL),$01         ; KO0: Z は KI5
         JRZ   pad_7
         OR    (pad_now),PAD_C
 pad_7:  MV    (KOL),0
-        OR    (KOH),$08         ; KO11: ON/BRK は KI1
-        NOP
-        TEST  (KI),$02
+        TEST  (SSR),ONK         ; ON/BRK は CPU の ON ピン（キーの行列にはない）
         JRZ   pad_8
         OR    (pad_now),PAD_BREAK
 pad_8:  AND   (KOH),$F0

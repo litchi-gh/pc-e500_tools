@@ -46,7 +46,7 @@ VS Code だけで使う人は 2.2〜2.6、コマンドも使う人は 2.8 まで
 | この章での書き方 | 意味 |
 |---|---|
 | `C:\PockeCom` | ツールを置くフォルダの例。好きな場所に変えてよい |
-| `<バージョン>` | `0.1.0` などに読み替える |
+| `<バージョン>` | `0.2.0` などに読み替える |
 | `.\` で始まるコマンド | 「今いるフォルダの中の」という意味。PowerShell では、これがないと今いるフォルダのコマンドを実行しない |
 | `#` より右 | 説明。打たなくてよい（打っても無視される） |
 
@@ -111,7 +111,7 @@ code --install-extension litchi-gh.pc-e500-devtools
 ```text
 Installing extensions...
 Installing extension 'litchi-gh.pc-e500-devtools'...
-Extension 'litchi-gh.pc-e500-devtools' v0.1.0 was successfully installed.
+Extension 'litchi-gh.pc-e500-devtools' v0.2.0 was successfully installed.
 ```
 
 `successfully installed` と出れば入りました。入っているかどうかは次のコマンドでも分かります。
@@ -120,13 +120,13 @@ Extension 'litchi-gh.pc-e500-devtools' v0.1.0 was successfully installed.
 code --list-extensions --show-versions
 ```
 
-入っている拡張機能の名前とバージョンを一覧にするコマンドです。`litchi-gh.pc-e500-devtools@0.1.0` があれば入っています。
+入っている拡張機能の名前とバージョンを一覧にするコマンドです。`litchi-gh.pc-e500-devtools@0.2.0` があれば入っています。
 
 VS Code を開いていたときは、「ウィンドウの再読み込み」を求められたら従います。
 
 拡張機能の実体は `%USERPROFILE%\.vscode\extensions\litchi-gh.pc-e500-devtools-<バージョン>` に入ります。コマンド `e500` はその中の `bin` フォルダにあります。
 
-**ファイルから入れる:** インターネットにつながらない PC や、前のバージョンを使うときは、[Releases](https://github.com/litchi-gh/pc-e500_tools/releases) から `pc-e500-devtools-<バージョン>.vsix` を取ります。拡張機能の画面の右上の「…」→「VSIX からのインストール」で、そのファイルを指定します。コマンドなら `code --install-extension pc-e500-devtools-0.1.0.vsix` です。
+**ファイルから入れる:** インターネットにつながらない PC や、前のバージョンを使うときは、[Releases](https://github.com/litchi-gh/pc-e500_tools/releases) から `pc-e500-devtools-<バージョン>.vsix` を取ります。拡張機能の画面の右上の「…」→「VSIX からのインストール」で、そのファイルを指定します。コマンドなら `code --install-extension pc-e500-devtools-0.2.0.vsix` です。
 
 **Cursor、VSCodium など:** VS Code から作られたエディタの多くは、Open VSX から拡張機能を取ります。拡張機能の画面で「PC-E500」を探して入れます。
 
@@ -350,7 +350,7 @@ PASS: 430 checks
 cd C:\PockeCom\pc-e500_tools\VSCodeExtensions\pc-e500-devtools
 npm ci
 npm run package
-code --install-extension pc-e500-devtools-0.1.0.vsix --force
+code --install-extension pc-e500-devtools-0.2.0.vsix --force
 ```
 
 | コマンド | 何をするか |
@@ -360,7 +360,7 @@ code --install-extension pc-e500-devtools-0.1.0.vsix --force
 | `npm run package` | ① TypeScript を JavaScript に変える ② `e500dbg` を作る ③ `.vsix` にまとめる |
 | `code --install-extension … --force` | できた `.vsix` を VS Code に入れる。`--force` は同じバージョンが入っていても入れ直す |
 
-`npm run package` の最後に `DONE  Packaged: …\pc-e500-devtools-0.1.0.vsix` と出れば成功です。途中の `npm warn …` は、そのまま進んでかまいません。
+`npm run package` の最後に `DONE  Packaged: …\pc-e500-devtools-0.2.0.vsix` と出れば成功です。途中の `npm warn …` は、そのまま進んでかまいません。
 
 ## 2.10 更新とアンインストール
 

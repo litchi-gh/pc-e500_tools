@@ -1,0 +1,29 @@
+{
+  // gray.inc のテスト。test/*.pixels は make_data.py が作る、gray_show で送った 1 枚ずつの画面。
+  // エミュレータは液晶の残像を真似しないので、灰色に見えるかは実機で見る。
+  "program": "graydemo_test.asm",
+  "tests": [
+    { "name": "動き続け、ON/BRK で戻る", "basic": "CALL &HBE000", "keys": ["wait:2", "ON/BRK"], "maxCycles": 3000000,
+      "expect": { "state": "ended", "screen": ">" } },
+    { "name": "1 枚目（絵、キャラクタ 2 つ、点）", "call": "t_show", "return": "near", "registers": { "A": 1 },
+      "expect": { "picture": "test/demo0.pixels", "memory": { "(gray_frame)": [1] } } },
+    { "name": "2 枚目", "call": "t_show", "return": "near", "registers": { "A": 2 },
+      "expect": { "picture": "test/demo1.pixels", "memory": { "(gray_frame)": [2] } } },
+    { "name": "3 枚目", "call": "t_show", "return": "near", "registers": { "A": 3 },
+      "expect": { "picture": "test/demo2.pixels", "memory": { "(gray_frame)": [0] } } },
+    { "name": "4 回目は 1 枚目に戻る", "call": "t_show", "return": "near", "registers": { "A": 4 },
+      "expect": { "picture": "test/demo0.pixels" } },
+    { "name": "gray_show_rows は選んだ行だけ送る", "call": "t_rows", "return": "near",
+      "expect": { "picture": "test/rows02.pixels", "memory": { "(gray_frame)": [2] } } },
+    { "name": "右と下にはみ出すキャラクタ", "call": "t_clip", "return": "near",
+      "expect": { "picture": "test/clip0.pixels", "memory": { "(gray_x)": [230], "(gray_row)": [3] } } },
+    { "name": "gray_show は 14,100 サイクル以内", "call": "gray_show", "return": "near", "maxCycles": 14100,
+      "memory": { "(gray_frame)": [0] }, "expect": { "memory": { "(gray_frame)": [1] } } },
+    { "name": "gray_pset は 3 枚に位相をずらして描く（x 1、y 0、濃さ 1 → 2 枚目だけ）", "call": "gray_pset", "return": "near",
+      "registers": { "A": 1 }, "memory": { "(gray_x)": [1], "(gray_y)": [0], "gray_frames+1": [0], "gray_frames+961": [0], "gray_frames+1921": [0] },
+      "expect": { "memory": { "gray_frames+1": [0], "gray_frames+961": [1], "gray_frames+1921": [0], "(gray_row)": [0] } } },
+    { "name": "gray_pset の濃さ 2（x 200、y 31 → 1 枚目と 2 枚目）", "call": "gray_pset", "return": "near",
+      "registers": { "A": 2 }, "memory": { "(gray_x)": [200], "(gray_y)": [31], "gray_frames+920": [0], "gray_frames+1880": [0], "gray_frames+2840": [0] },
+      "expect": { "memory": { "gray_frames+920": [128], "gray_frames+1880": [128], "gray_frames+2840": [0], "(gray_row)": [3] } } }
+  ]
+}
