@@ -37,7 +37,7 @@ BASIC で `PRINT` を実行すると、1 から順に下の層へ仕事が渡り
 | カードスロット | [カードスロット](05_CARD_SLOT.md) |
 | LCD | [液晶（LCD）](04_LCD.md) |
 | IC チップ（CPU、ROM、RAM、LCD コントローラ） | [IC チップ](08_IC_CHIPS.md) |
-| 部品、CPU のピン、消費電流 | [回路とサービス](09_CIRCUIT.md) |
+| 部品、IC のピン、消費電流 | [回路とサービス](09_CIRCUIT.md) |
 
 ### キーを 1 つ押したとき
 

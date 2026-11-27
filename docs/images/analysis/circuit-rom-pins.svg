@@ -1,0 +1,163 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 677" width="760" height="677" role="img" aria-labelledby="t d">
+  <title id="t">ROM の 44 ピン（IC2）</title>
+  <desc id="d">LH5320X の 44 本のピンを QFP の形に並べた図。各辺 11 本で、1 番は左下、番号は反時計回りに進む。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .mb { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; font-weight: 700; }
+  </style>
+  <rect x="0.5" y="0.5" width="759" height="676" rx="14" fill="#FFFFFF" stroke="#D9E0E8" stroke-width="1"/>
+  <text x="24" y="34" class="h" xml:space="preserve">ROM の 44 ピン（IC2）</text>
+  <text x="24" y="55" class="sub" xml:space="preserve">名前は回路図（p.12）、番号は同じ形の LH532000B の図による</text>
+  <path d="M238.5 172 H521.5 Q529.5 172 529.5 180 V445 L503.5 471 H238.5 Q230.5 471 230.5 463 V180 Q230.5 172 238.5 172 Z" fill="#2E3640" stroke="#1F2933" stroke-width="1.5"/>
+  <circle cx="251.5" cy="450" r="11" fill="#3E4955" stroke="#9AA5B1" stroke-width="2"/>
+  <text x="380" y="312.7" class="h" text-anchor="middle" style="fill:#FFFFFF;font-size:22px" xml:space="preserve">LH5320X</text>
+  <text x="380" y="341.3" class="s" text-anchor="middle" style="fill:#D9E0E8" xml:space="preserve">QFP 44 ピン</text>
+  <rect x="244" y="475" width="22" height="92" rx="3" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="259.5" y="480" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 259.5 480)">1</text>
+  <text x="259.5" y="507" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 259.5 507)">NC</text>
+  <rect x="269" y="475" width="22" height="92" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="284.5" y="480" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 284.5 480)">2</text>
+  <text x="284.5" y="507" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 284.5 507)">A3</text>
+  <rect x="294" y="475" width="22" height="92" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="309.5" y="480" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 309.5 480)">3</text>
+  <text x="309.5" y="507" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 309.5 507)">A2</text>
+  <rect x="319" y="475" width="22" height="92" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="334.5" y="480" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 334.5 480)">4</text>
+  <text x="334.5" y="507" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 334.5 507)">A1</text>
+  <rect x="344" y="475" width="22" height="92" rx="3" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="359.5" y="480" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 359.5 480)">5</text>
+  <text x="359.5" y="507" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 359.5 507)">CS</text>
+  <rect x="369" y="475" width="22" height="92" rx="3" fill="#FDECEA" stroke="#C0392B" stroke-width="1.2"/>
+  <text x="384.5" y="480" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 384.5 480)">6</text>
+  <text x="384.5" y="507" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 384.5 507)">GND</text>
+  <rect x="394" y="475" width="22" height="92" rx="3" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="409.5" y="480" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 409.5 480)">7</text>
+  <text x="409.5" y="507" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 409.5 507)">OE</text>
+  <rect x="419" y="475" width="22" height="92" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="434.5" y="480" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 434.5 480)">8</text>
+  <text x="434.5" y="507" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 434.5 507)">D0</text>
+  <rect x="444" y="475" width="22" height="92" rx="3" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="459.5" y="480" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 459.5 480)">9</text>
+  <text x="459.5" y="507" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 459.5 507)">NC</text>
+  <rect x="469" y="475" width="22" height="92" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="484.5" y="480" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 484.5 480)">10</text>
+  <text x="484.5" y="507" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 484.5 507)">D1</text>
+  <rect x="494" y="475" width="22" height="92" rx="3" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="509.5" y="480" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 509.5 480)">11</text>
+  <text x="509.5" y="507" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 509.5 507)">NC</text>
+  <rect x="244" y="76" width="22" height="92" rx="3" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="259.5" y="163" class="ms" xml:space="preserve" transform="rotate(-90 259.5 163)">33</text>
+  <text x="259.5" y="136" class="mb" xml:space="preserve" transform="rotate(-90 259.5 136)">NC</text>
+  <rect x="269" y="76" width="22" height="92" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="284.5" y="163" class="ms" xml:space="preserve" transform="rotate(-90 284.5 163)">32</text>
+  <text x="284.5" y="136" class="mb" xml:space="preserve" transform="rotate(-90 284.5 136)">A14</text>
+  <rect x="294" y="76" width="22" height="92" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="309.5" y="163" class="ms" xml:space="preserve" transform="rotate(-90 309.5 163)">31</text>
+  <text x="309.5" y="136" class="mb" xml:space="preserve" transform="rotate(-90 309.5 136)">A15</text>
+  <rect x="319" y="76" width="22" height="92" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="334.5" y="163" class="ms" xml:space="preserve" transform="rotate(-90 334.5 163)">30</text>
+  <text x="334.5" y="136" class="mb" xml:space="preserve" transform="rotate(-90 334.5 136)">A16</text>
+  <rect x="344" y="76" width="22" height="92" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="359.5" y="163" class="ms" xml:space="preserve" transform="rotate(-90 359.5 163)">29</text>
+  <text x="359.5" y="136" class="mb" xml:space="preserve" transform="rotate(-90 359.5 136)">A17</text>
+  <rect x="369" y="76" width="22" height="92" rx="3" fill="#FDECEA" stroke="#C0392B" stroke-width="1.2"/>
+  <text x="384.5" y="163" class="ms" xml:space="preserve" transform="rotate(-90 384.5 163)">28</text>
+  <text x="384.5" y="136" class="mb" xml:space="preserve" transform="rotate(-90 384.5 136)">GND</text>
+  <rect x="394" y="76" width="22" height="92" rx="3" fill="#FDECEA" stroke="#C0392B" stroke-width="1.2"/>
+  <text x="409.5" y="163" class="ms" xml:space="preserve" transform="rotate(-90 409.5 163)">27</text>
+  <text x="409.5" y="136" class="mb" xml:space="preserve" transform="rotate(-90 409.5 136)">GND</text>
+  <rect x="419" y="76" width="22" height="92" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="434.5" y="163" class="ms" xml:space="preserve" transform="rotate(-90 434.5 163)">26</text>
+  <text x="434.5" y="136" class="mb" xml:space="preserve" transform="rotate(-90 434.5 136)">A0</text>
+  <rect x="444" y="76" width="22" height="92" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="459.5" y="163" class="ms" xml:space="preserve" transform="rotate(-90 459.5 163)">25</text>
+  <text x="459.5" y="136" class="mb" xml:space="preserve" transform="rotate(-90 459.5 136)">D7</text>
+  <rect x="469" y="76" width="22" height="92" rx="3" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="484.5" y="163" class="ms" xml:space="preserve" transform="rotate(-90 484.5 163)">24</text>
+  <text x="484.5" y="136" class="mb" xml:space="preserve" transform="rotate(-90 484.5 136)">NC</text>
+  <rect x="494" y="76" width="22" height="92" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="509.5" y="163" class="ms" xml:space="preserve" transform="rotate(-90 509.5 163)">23</text>
+  <text x="509.5" y="136" class="mb" xml:space="preserve" transform="rotate(-90 509.5 136)">D6</text>
+  <rect x="134.5" y="185.5" width="92" height="22" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="221.5" y="201" class="ms" xml:space="preserve" text-anchor="end">34</text>
+  <text x="194.5" y="201" class="mb" xml:space="preserve" text-anchor="end">A13</text>
+  <rect x="134.5" y="210.5" width="92" height="22" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="221.5" y="226" class="ms" xml:space="preserve" text-anchor="end">35</text>
+  <text x="194.5" y="226" class="mb" xml:space="preserve" text-anchor="end">A12</text>
+  <rect x="134.5" y="235.5" width="92" height="22" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="221.5" y="251" class="ms" xml:space="preserve" text-anchor="end">36</text>
+  <text x="194.5" y="251" class="mb" xml:space="preserve" text-anchor="end">A11</text>
+  <rect x="134.5" y="260.5" width="92" height="22" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="221.5" y="276" class="ms" xml:space="preserve" text-anchor="end">37</text>
+  <text x="194.5" y="276" class="mb" xml:space="preserve" text-anchor="end">A10</text>
+  <rect x="134.5" y="285.5" width="92" height="22" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="221.5" y="301" class="ms" xml:space="preserve" text-anchor="end">38</text>
+  <text x="194.5" y="301" class="mb" xml:space="preserve" text-anchor="end">A9</text>
+  <rect x="134.5" y="310.5" width="92" height="22" rx="3" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="221.5" y="326" class="ms" xml:space="preserve" text-anchor="end">39</text>
+  <text x="194.5" y="326" class="mb" xml:space="preserve" text-anchor="end">NC</text>
+  <rect x="134.5" y="335.5" width="92" height="22" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="221.5" y="351" class="ms" xml:space="preserve" text-anchor="end">40</text>
+  <text x="194.5" y="351" class="mb" xml:space="preserve" text-anchor="end">A8</text>
+  <rect x="134.5" y="360.5" width="92" height="22" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="221.5" y="376" class="ms" xml:space="preserve" text-anchor="end">41</text>
+  <text x="194.5" y="376" class="mb" xml:space="preserve" text-anchor="end">A7</text>
+  <rect x="134.5" y="385.5" width="92" height="22" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="221.5" y="401" class="ms" xml:space="preserve" text-anchor="end">42</text>
+  <text x="194.5" y="401" class="mb" xml:space="preserve" text-anchor="end">A6</text>
+  <rect x="134.5" y="410.5" width="92" height="22" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="221.5" y="426" class="ms" xml:space="preserve" text-anchor="end">43</text>
+  <text x="194.5" y="426" class="mb" xml:space="preserve" text-anchor="end">A5</text>
+  <rect x="134.5" y="435.5" width="92" height="22" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="221.5" y="451" class="ms" xml:space="preserve" text-anchor="end">44</text>
+  <text x="194.5" y="451" class="mb" xml:space="preserve" text-anchor="end">A4</text>
+  <rect x="533.5" y="185.5" width="92" height="22" rx="3" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="538.5" y="201" class="ms" xml:space="preserve">22</text>
+  <text x="565.5" y="201" class="mb" xml:space="preserve">NC</text>
+  <rect x="533.5" y="210.5" width="92" height="22" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="538.5" y="226" class="ms" xml:space="preserve">21</text>
+  <text x="565.5" y="226" class="mb" xml:space="preserve">D5</text>
+  <rect x="533.5" y="235.5" width="92" height="22" rx="3" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="538.5" y="251" class="ms" xml:space="preserve">20</text>
+  <text x="565.5" y="251" class="mb" xml:space="preserve">NC</text>
+  <rect x="533.5" y="260.5" width="92" height="22" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="538.5" y="276" class="ms" xml:space="preserve">19</text>
+  <text x="565.5" y="276" class="mb" xml:space="preserve">D4</text>
+  <rect x="533.5" y="285.5" width="92" height="22" rx="3" fill="#FDECEA" stroke="#C0392B" stroke-width="1.2"/>
+  <text x="538.5" y="301" class="ms" xml:space="preserve">18</text>
+  <text x="565.5" y="301" class="mb" xml:space="preserve">VCC</text>
+  <rect x="533.5" y="310.5" width="92" height="22" rx="3" fill="#FDECEA" stroke="#C0392B" stroke-width="1.2"/>
+  <text x="538.5" y="326" class="ms" xml:space="preserve">17</text>
+  <text x="565.5" y="326" class="mb" xml:space="preserve">GND</text>
+  <rect x="533.5" y="335.5" width="92" height="22" rx="3" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="538.5" y="351" class="ms" xml:space="preserve">16</text>
+  <text x="565.5" y="351" class="mb" xml:space="preserve">NC</text>
+  <rect x="533.5" y="360.5" width="92" height="22" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="538.5" y="376" class="ms" xml:space="preserve">15</text>
+  <text x="565.5" y="376" class="mb" xml:space="preserve">D3</text>
+  <rect x="533.5" y="385.5" width="92" height="22" rx="3" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="538.5" y="401" class="ms" xml:space="preserve">14</text>
+  <text x="565.5" y="401" class="mb" xml:space="preserve">NC</text>
+  <rect x="533.5" y="410.5" width="92" height="22" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="538.5" y="426" class="ms" xml:space="preserve">13</text>
+  <text x="565.5" y="426" class="mb" xml:space="preserve">D2</text>
+  <rect x="533.5" y="435.5" width="92" height="22" rx="3" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="538.5" y="451" class="ms" xml:space="preserve">12</text>
+  <text x="565.5" y="451" class="mb" xml:space="preserve">NC</text>
+  <rect x="24" y="593" width="14" height="14" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="44" y="605" class="s" xml:space="preserve">アドレス、データ</text>
+  <rect x="156" y="593" width="14" height="14" rx="3" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="176" y="605" class="s" xml:space="preserve">選択、制御</text>
+  <rect x="252" y="593" width="14" height="14" rx="3" fill="#FDECEA" stroke="#C0392B" stroke-width="1.2"/>
+  <text x="272" y="605" class="s" xml:space="preserve">電源</text>
+  <rect x="312" y="593" width="14" height="14" rx="3" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="332" y="605" class="s" xml:space="preserve">NC</text>
+  <rect x="24" y="623" width="712" height="34" rx="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="36" y="644" class="s" xml:space="preserve" style="fill:#1F2933">各辺 11 本です。回路図の記号も、左下に 1 番の〇印、右下の角に切り欠きがあります。</text>
+</svg>

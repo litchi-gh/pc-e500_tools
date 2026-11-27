@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 478" width="1000" height="478" role="img" aria-labelledby="t d">
+  <title id="t">小さな IC のピン（IC7〜IC10）</title>
+  <desc id="d">MN1280Q、TC4S81F、TC7S04F、TC4S66F のピンを、パッケージの形に並べた図。</desc>
+  <style>
+    text { font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 14px; fill: #1F2933; }
+    .b { font-weight: 700; }
+    .h { font-weight: 700; font-size: 18px; }
+    .sub { font-size: 13px; fill: #52606D; }
+    .s { font-size: 12px; fill: #52606D; }
+    .m { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; }
+    .ms { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 11px; }
+    .mb { font-family: "Cascadia Mono", "Consolas", "Menlo", "DejaVu Sans Mono", monospace; font-size: 13px; font-weight: 700; }
+  </style>
+  <rect x="0.5" y="0.5" width="999" height="477" rx="14" fill="#FFFFFF" stroke="#D9E0E8" stroke-width="1"/>
+  <text x="24" y="34" class="h" xml:space="preserve">小さな IC のピン（IC7〜IC10）</text>
+  <text x="24" y="55" class="sub" xml:space="preserve">番号と名前は各 IC のデータシートによる。SMV は上から見た形</text>
+  <text x="143" y="96" class="b" text-anchor="middle" xml:space="preserve">IC7 MN1280Q</text>
+  <text x="143" y="116" class="s" text-anchor="middle" xml:space="preserve">電池の電圧の検出</text>
+  <path d="M73 216 H213 Q221 216 221 224 V272 Q221 280 213 280 H73 Q65 280 65 272 V224 Q65 216 73 216 Z" fill="#2E3640" stroke="#1F2933" stroke-width="1.5"/>
+  <text x="143" y="247.6" class="h" text-anchor="middle" style="fill:#FFFFFF;font-size:1px" xml:space="preserve"></text>
+  <text x="143" y="248.9" class="s" text-anchor="middle" style="fill:#D9E0E8" xml:space="preserve">SIP 3 ピン</text>
+  <rect x="86" y="284" width="26" height="80" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="103.5" y="289" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 103.5 289)">1</text>
+  <text x="103.5" y="316" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 103.5 316)">OUT</text>
+  <rect x="130" y="284" width="26" height="80" rx="3" fill="#FDECEA" stroke="#C0392B" stroke-width="1.2"/>
+  <text x="147.5" y="289" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 147.5 289)">2</text>
+  <text x="147.5" y="316" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 147.5 316)">VDD</text>
+  <rect x="174" y="284" width="26" height="80" rx="3" fill="#FDECEA" stroke="#C0392B" stroke-width="1.2"/>
+  <text x="191.5" y="289" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 191.5 289)">3</text>
+  <text x="191.5" y="316" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 191.5 316)">VSS</text>
+  <text x="381" y="96" class="b" text-anchor="middle" xml:space="preserve">IC8 TC4S81F</text>
+  <text x="381" y="116" class="s" text-anchor="middle" xml:space="preserve">AND</text>
+  <path d="M311 216 H451 Q459 216 459 224 V272 Q459 280 451 280 H311 Q303 280 303 272 V224 Q303 216 311 216 Z" fill="#2E3640" stroke="#1F2933" stroke-width="1.5"/>
+  <text x="381" y="247.6" class="h" text-anchor="middle" style="fill:#FFFFFF;font-size:1px" xml:space="preserve"></text>
+  <text x="381" y="248.9" class="s" text-anchor="middle" style="fill:#D9E0E8" xml:space="preserve">SMV 5 ピン</text>
+  <rect x="324" y="284" width="26" height="80" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="341.5" y="289" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 341.5 289)">1</text>
+  <text x="341.5" y="316" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 341.5 316)">IN B</text>
+  <rect x="368" y="284" width="26" height="80" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="385.5" y="289" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 385.5 289)">2</text>
+  <text x="385.5" y="316" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 385.5 316)">IN A</text>
+  <rect x="412" y="284" width="26" height="80" rx="3" fill="#FDECEA" stroke="#C0392B" stroke-width="1.2"/>
+  <text x="429.5" y="289" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 429.5 289)">3</text>
+  <text x="429.5" y="316" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 429.5 316)">VSS</text>
+  <rect x="324" y="132" width="26" height="80" rx="3" fill="#FDECEA" stroke="#C0392B" stroke-width="1.2"/>
+  <text x="341.5" y="207" class="ms" xml:space="preserve" transform="rotate(-90 341.5 207)">5</text>
+  <text x="341.5" y="180" class="mb" xml:space="preserve" transform="rotate(-90 341.5 180)">VDD</text>
+  <rect x="412" y="132" width="26" height="80" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="429.5" y="207" class="ms" xml:space="preserve" transform="rotate(-90 429.5 207)">4</text>
+  <text x="429.5" y="180" class="mb" xml:space="preserve" transform="rotate(-90 429.5 180)">OUT X</text>
+  <text x="619" y="96" class="b" text-anchor="middle" xml:space="preserve">IC9 TC7S04F</text>
+  <text x="619" y="116" class="s" text-anchor="middle" xml:space="preserve">インバータ</text>
+  <path d="M549 216 H689 Q697 216 697 224 V272 Q697 280 689 280 H549 Q541 280 541 272 V224 Q541 216 549 216 Z" fill="#2E3640" stroke="#1F2933" stroke-width="1.5"/>
+  <text x="619" y="247.6" class="h" text-anchor="middle" style="fill:#FFFFFF;font-size:1px" xml:space="preserve"></text>
+  <text x="619" y="248.9" class="s" text-anchor="middle" style="fill:#D9E0E8" xml:space="preserve">SMV 5 ピン</text>
+  <rect x="562" y="284" width="26" height="80" rx="3" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="579.5" y="289" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 579.5 289)">1</text>
+  <text x="579.5" y="316" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 579.5 316)">NC</text>
+  <rect x="606" y="284" width="26" height="80" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="623.5" y="289" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 623.5 289)">2</text>
+  <text x="623.5" y="316" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 623.5 316)">IN A</text>
+  <rect x="650" y="284" width="26" height="80" rx="3" fill="#FDECEA" stroke="#C0392B" stroke-width="1.2"/>
+  <text x="667.5" y="289" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 667.5 289)">3</text>
+  <text x="667.5" y="316" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 667.5 316)">GND</text>
+  <rect x="562" y="132" width="26" height="80" rx="3" fill="#FDECEA" stroke="#C0392B" stroke-width="1.2"/>
+  <text x="579.5" y="207" class="ms" xml:space="preserve" transform="rotate(-90 579.5 207)">5</text>
+  <text x="579.5" y="180" class="mb" xml:space="preserve" transform="rotate(-90 579.5 180)">VCC</text>
+  <rect x="650" y="132" width="26" height="80" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="667.5" y="207" class="ms" xml:space="preserve" transform="rotate(-90 667.5 207)">4</text>
+  <text x="667.5" y="180" class="mb" xml:space="preserve" transform="rotate(-90 667.5 180)">OUT Y</text>
+  <text x="857" y="96" class="b" text-anchor="middle" xml:space="preserve">IC10 TC4S66F</text>
+  <text x="857" y="116" class="s" text-anchor="middle" xml:space="preserve">アナログスイッチ</text>
+  <path d="M787 216 H927 Q935 216 935 224 V272 Q935 280 927 280 H787 Q779 280 779 272 V224 Q779 216 787 216 Z" fill="#2E3640" stroke="#1F2933" stroke-width="1.5"/>
+  <text x="857" y="247.6" class="h" text-anchor="middle" style="fill:#FFFFFF;font-size:1px" xml:space="preserve"></text>
+  <text x="857" y="248.9" class="s" text-anchor="middle" style="fill:#D9E0E8" xml:space="preserve">SMV 5 ピン</text>
+  <rect x="800" y="284" width="26" height="80" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="817.5" y="289" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 817.5 289)">1</text>
+  <text x="817.5" y="316" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 817.5 316)">IN/OUT</text>
+  <rect x="844" y="284" width="26" height="80" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="861.5" y="289" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 861.5 289)">2</text>
+  <text x="861.5" y="316" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 861.5 316)">OUT/IN</text>
+  <rect x="888" y="284" width="26" height="80" rx="3" fill="#FDECEA" stroke="#C0392B" stroke-width="1.2"/>
+  <text x="905.5" y="289" class="ms" xml:space="preserve" text-anchor="end" transform="rotate(-90 905.5 289)">3</text>
+  <text x="905.5" y="316" class="mb" xml:space="preserve" text-anchor="end" transform="rotate(-90 905.5 316)">VSS</text>
+  <rect x="800" y="132" width="26" height="80" rx="3" fill="#FDECEA" stroke="#C0392B" stroke-width="1.2"/>
+  <text x="817.5" y="207" class="ms" xml:space="preserve" transform="rotate(-90 817.5 207)">5</text>
+  <text x="817.5" y="180" class="mb" xml:space="preserve" transform="rotate(-90 817.5 180)">VDD</text>
+  <rect x="888" y="132" width="26" height="80" rx="3" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="905.5" y="207" class="ms" xml:space="preserve" transform="rotate(-90 905.5 207)">4</text>
+  <text x="905.5" y="180" class="mb" xml:space="preserve" transform="rotate(-90 905.5 180)">CONT</text>
+  <rect x="24" y="394" width="14" height="14" rx="3" fill="#E8F1FC" stroke="#2F6DB5" stroke-width="1.2"/>
+  <text x="44" y="406" class="s" xml:space="preserve">入力</text>
+  <rect x="84" y="394" width="14" height="14" rx="3" fill="#FFF5DF" stroke="#B7791F" stroke-width="1.2"/>
+  <text x="104" y="406" class="s" xml:space="preserve">出力、スイッチの端子</text>
+  <rect x="240" y="394" width="14" height="14" rx="3" fill="#E6F6EC" stroke="#2F855A" stroke-width="1.2"/>
+  <text x="260" y="406" class="s" xml:space="preserve">スイッチの切り替え</text>
+  <rect x="384" y="394" width="14" height="14" rx="3" fill="#FDECEA" stroke="#C0392B" stroke-width="1.2"/>
+  <text x="404" y="406" class="s" xml:space="preserve">電源</text>
+  <rect x="444" y="394" width="14" height="14" rx="3" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="464" y="406" class="s" xml:space="preserve">NC</text>
+  <rect x="24" y="424" width="952" height="34" rx="6" fill="#F3F5F8" stroke="#7B8794" stroke-width="1.2"/>
+  <text x="36" y="445" class="s" xml:space="preserve" style="fill:#1F2933">SMV は 3 本の側の左端が 1 番で、5 番は 1 番の、4 番は 3 番の向かいです。MN1280Q は 1 列に 3 本です。</text>
+</svg>
