@@ -87,6 +87,7 @@ npm run package
 ### ビルドの順番
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart TD
   T1["Assembler のテスト"] --> P1["e500asm を publish"]
   T2["DisAssembler のテスト"] --> T3["Assembler のテスト"] --> P2["e500dasm、GUI を publish"]
@@ -128,6 +129,7 @@ C# のプロジェクトは `TreatWarningsAsErrors`（`e500dbg` を除く）と 
 ### 何が何を守っているか
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart TD
   G["golden vector<br>（CPU の資料から）"] --> A["Assembler.Tests"]
   G --> B["asm.test（TypeScript）"]
@@ -212,7 +214,7 @@ node --test --test-name-pattern "PRE" out/test/asm.test.js
 
 ### 入門の例題
 
-`Samples/Assembler/Tutorial/` の `*.e500test.json` は拡張を入れた VS Code のテスト エクスプローラーで実行できます。ゲームのサンプル（`StarCatch`、`Meteor`、`NineBox`）と `Recipes` にもテストがあります。例題を直したら、マニュアルの本文も合わせます。
+`Samples/Assembler/Tutorial/` の `*.e500test.json` は拡張を入れた VS Code のテスト エクスプローラーで実行できます。`Recipes` にもテストがあります。ゲームは別のリポジトリ [pc-e500_games](https://github.com/litchi-gh/pc-e500_games) にあり、そちらにもテストがあります。例題を直したら、マニュアルの本文も合わせます。
 
 ### アセンブラの実行ファイルのテスト
 
@@ -325,6 +327,7 @@ node --test --test-name-pattern "PRE" out/test/asm.test.js
 | 置き場所 | 使い方は `docs/manual/`、作りは `docs/design/`、CPU・ROM・ハードウェアの資料は `docs/analysis/` |
 | 番号 | ファイルと見出しの番号は連番。章を足したらそろえる |
 | 図 | 処理の流れは Mermaid、配置やビットの図は `docs/images/` の SVG |
+| Mermaid | 1 行目に `%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%` を置く（GitHub が HTML のラベルの日本語を切るため）。ラベルは `<br>` でだけ改行される。状態遷移図と timeline は GitHub が決まった幅で折り返すので、1 行を状態は全角 7 文字、矢印は 12 文字までに `<br>` で区切る。横幅は 1100 px まで |
 | 画面 | `docs/images/manual/` の PNG。日本語の画面で、個人の名前やパスをコピーしない |
 | 命令一覧 | `src/asm/instructions.ts` と CPU（SC62015） §2.15 の表に合わせる |
 | 例 | 実際に動かした結果を載せる。アドレスやバイト列は、動かして確かめてから書く |

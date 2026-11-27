@@ -20,6 +20,7 @@
 テープへ書く側から見ると、積み木は次の順に組み上がります。下の段ほど小さな単位です。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart TD
     A["ファイル（§6.3）<br>ヘッダブロック 1 個 + 本体ブロック 1 個以上"] --> B["ブロック（§6.3）<br>搬送音 + 同期 + データ + 検査値"]
     B --> C["バイト（§6.2.1）<br>開始の長い周期 1 個 + 8 ビット"]
@@ -282,11 +283,12 @@ E ポートのレジスタは [CPU（SC62015）](02_CPU.md) §2.7.2 にありま
 4. 長い周期を待ち、データを読み始める
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 stateDiagram-v2
-    C: 1 搬送音を待つ（短い周期 5000 個）
-    L: 2 長い周期を数える（ヘッダ 40、本体 20）
-    S: 3 短い周期を数える（ヘッダ 40、本体 20）
-    E: 4 長い周期を待つ
+    C: 1 搬送音を待つ<br>（短い周期<br>5000 個）
+    L: 2 長い周期を<br>数える<br>（ヘッダ 40、<br>本体 20）
+    S: 3 短い周期を<br>数える<br>（ヘッダ 40、<br>本体 20）
+    E: 4 長い周期を<br>待つ
     D: データを読む
     [*] --> C
     C --> L: 最初の長い周期
@@ -390,6 +392,7 @@ stateDiagram-v2
 `CSAVE` から `CLOAD` までの流れを、テープを挟んで並べると次のようになります。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 sequenceDiagram
     participant B as BASIC
     participant D as カセットのドライバ

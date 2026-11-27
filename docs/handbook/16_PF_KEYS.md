@@ -126,12 +126,13 @@ PF1 を押したときの画面です。いくつものプログラムを入れ�
 プログラムを入れた状態で `PASS "文字"`（8 文字まで）を打つと、プログラムの中身が見えなくなります。同じ文字でもう一度 `PASS` を打つと元に戻ります。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 stateDiagram-v2
   state "ふつう" as A
   state "保護中" as B
   A --> B: PASS "SECRET"
-  B --> A: PASS "SECRET"（同じ文字）
-  B --> B: PASS "WRONG" → Password mismatch
+  B --> A: PASS "SECRET"<br>（同じ文字）
+  B --> B: PASS "WRONG"<br>→ Password mismatch
 ```
 
 | 保護中の操作 | 結果（実験、7.2） |

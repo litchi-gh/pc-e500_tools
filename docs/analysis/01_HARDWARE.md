@@ -44,6 +44,7 @@ BASIC で `PRINT` を実行すると、1 から順に下の層へ仕事が渡り
 BASIC の画面で `A` を押し、画面に `A` が出るまでを、部品の順に追ってみます。マップの見方の練習です。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 sequenceDiagram
   participant K as キーの格子
   participant C as CPU
@@ -67,6 +68,7 @@ sequenceDiagram
 目的でエントリが変わります。全部を順に読む必要はありません。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart TD
   A["1 章<br>全体"] --> Q{"何をしたいか"}
   Q -->|"BASIC を使う"| B["14 章<br>BASIC の命令"] --> B2["15 章<br>内部形式"]
@@ -112,6 +114,7 @@ flowchart TD
 読むときは縦の線を 1 本だけ 1（H レベル）にします。その列のキーが押されていれば、1 がキーを通って横の線に届きます。これを列の数だけ繰り返すと、全部のキーの状態が分かります。この動作を**キースキャン**といいます。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 sequenceDiagram
   participant P as プログラム
   participant K as KO（F0h、F1h）

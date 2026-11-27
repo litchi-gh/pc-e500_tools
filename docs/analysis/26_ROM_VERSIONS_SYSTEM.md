@@ -21,6 +21,7 @@
 変更は大きく 2 種類に分かれます。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart LR
   A["バージョンの違い"] --> B["改訂による違い<br>同じ改訂なら全機種に入る"]
   A --> C["機種による違い<br>言語や機能の差"]
@@ -138,6 +139,7 @@ AND の結果         0 1 0 0 0 0 0 0     （1 つだけ残る）
 #5・#6 はリセット時のキー操作で入る診断メニューです。判定は「KO0 の KI6（SHIFT）と KO4 の KI4（`,`）だけが押され、他の行には何も押されていない」ことです。入り方と中身は §26.2.4 にあります。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart TB
   R["リセット F10BEh<br>($D8) = 1"] --> O{"ON を押しているか<br>F10D4h、F10DEh"}
   O -->|"押している"| Z["F1151h で確かめ直して<br>($D8) = 0（F115Bh）"]

@@ -653,6 +653,7 @@ ISR のあるビットが 1 で、IMR の同じビットと IRM がどちらも 
 3. `FFFFAh` からの 3 バイトを PC と PS に読みます。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 sequenceDiagram
   participant M as 本体のプログラム
   participant C as CPU
@@ -715,6 +716,7 @@ p.37 は順序を「PCL、PCH、PS、F、IMR」、IRM を「1 にする」と書
 処理の組み立てを流れにすると、次のようになります。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart TD
   A["割り込みのエントリ"] --> B{"ISR AND IMR に<br>自分の要因があるか"}
   B -->|ない| Z["何もせずに戻る"]
@@ -730,10 +732,11 @@ flowchart TD
 電池で動く機械では、仕事のない間は CPU を止めて電流を減らします。止め方は 2 つあり、どのクロックを止めるかと、何で起きるかが違います。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 stateDiagram-v2
   実行 --> HALT: HALT 命令
   実行 --> OFF: OFF 命令
-  HALT --> 実行: ON、KI、STI、IRQ（ISE = 1）
+  HALT --> 実行: ON、KI、STI、IRQ<br>（ISE = 1）
   OFF --> 実行: ON、KI、IRQ（ISE = 1）
   HALT --> リセット: RESET ピン
   OFF --> リセット: RESET ピン
@@ -916,6 +919,7 @@ r3 は X, Y, U, S のみです。**S を転送先／転送元にするときは 
 内部 RAM オペランドが 1 つだけの命令は、そのオペランドが第 1・第 2 のどちらに書かれていても **`(BP+n)` の列（太字）** を使います。例: `MV A,(20h)` → `30 80 20`、`MV [X],(PX+2)` → `34 E8 04 02`。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart TD
   A{"内部 RAM の<br>オペランドはいくつか"}
   A -->|0| N["PRE は要らない"]

@@ -117,6 +117,7 @@ B#=3
 新しい題を待っている `04:TITLE?` の画面から押すと、次のように進みました（実験）。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart LR
   P["04:TITLE?"] -->|TITLE| C["03:FALL TIME"] -->|TITLE| A["01:BMI"] -->|TITLE| B["02:GRAVITY"]
   A -->|"SHIFT + TITLE"| C

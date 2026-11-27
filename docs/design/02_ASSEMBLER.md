@@ -51,6 +51,7 @@ Core は CLI に依存しません。`new Assembler().AssembleFile(path)` か `A
 `Parse` は 1 行を `Statement` にします。式の中身はまだ見ません。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart TD
   A["1 行"] --> B["StripComment<br>引用符の外の ; から後ろを捨てる"]
   B --> C{"名前 :"}
@@ -95,6 +96,7 @@ loop:   MV    A,[X+4]   ; 次の値
 ![e500asm の処理の流れ](../images/assembler-passes.svg)
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart TD
   A["読み込み、INCLUDE の展開、行の解釈"] --> B["緩いパス<br>未定義は 0"]
   B --> C{"前回と同じ配置か"}
@@ -193,6 +195,7 @@ a1 EQU a1+1
 `table` = B8010h とします。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart TD
   OR["| → 17h"] --> F["LOW( … ) → 16h"]
   OR --> ONE["1"]
@@ -349,6 +352,7 @@ r は X=4、Y=5、U=6、S=7。`EI` では 0 です。変位は「符号から始
 CLI は次の順に動きます。書き出す前に、すべての検査が済みます。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart TD
   A["オプション"] --> B["出力先どうし、入力との重なりを検査"]
   B --> C["AssembleFile"]

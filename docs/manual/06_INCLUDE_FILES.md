@@ -51,6 +51,7 @@ start:  …
 ### 組み合わせ
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart BT
   H["hardware.inc"]
   G["game.inc"] --> H

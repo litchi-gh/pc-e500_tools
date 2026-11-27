@@ -27,6 +27,7 @@
 この章はこの順に説明していきます。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart TD
     A["PRINT #1、SAVE など"] --> B["文字の変換<br>（§7.4）"]
     B --> C["送ってよいか調べる<br>CS、XON（§7.5）"]
@@ -165,11 +166,12 @@ OPEN "COM:ボーレート,パリティ,語長,ストップ,A,デリミタ,EOF,XO
 `BFD34h` のビット 7 は開いている間だけ立ちます。`CLOSE` で `F7h` のビット 6〜4 が 0 になり、`F1h` の信号も下がります。プログラムの `RUN` でも閉じます（マニュアル、実験）。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 stateDiagram-v2
-    C: 閉じている（BFD34h のビット 7 = 0）
-    O: 開いている（BFD34h のビット 7 = 1、ER が High）
+    C: 閉じている<br>（BFD34h の<br>ビット 7 = 0）
+    O: 開いている<br>（BFD34h の<br>ビット 7 = 1、<br>ER が High）
     [*] --> C
-    C --> O: OPEN（BFD33h の値を F7h へ）
+    C --> O: OPEN<br>（BFD33h の値を F7h へ）
     O --> C: CLOSE、プログラムの RUN
 ```
 
@@ -242,6 +244,7 @@ stateDiagram-v2
 この機械が受ける側のとき、やり取りは次のように進みます。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 sequenceDiagram
     participant H as 相手の機器
     participant R as 受信割り込み
@@ -261,6 +264,7 @@ sequenceDiagram
 この機械が送る側のときは、相手が止める番です。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 sequenceDiagram
     participant P as 本体
     participant H as 相手の機器
@@ -378,6 +382,7 @@ b = BFD60h × 2 ms（1 バイトごとの待ち。既定 0）
 3Fh は設定と受信バッファを「何も受けていない」状態に戻します（公式資料 p.50）。41h と 42h は変換をしないので、§7.4 のデリミタや EOF、シフトの処理は自分で行います。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart TD
     A["BFD33h などに設定を書く"] --> B["43h で反映する"]
     B --> C["41h で 1 バイト送る、<br>42h で 1 バイト受ける"]

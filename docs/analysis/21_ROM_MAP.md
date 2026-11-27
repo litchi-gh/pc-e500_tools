@@ -31,6 +31,7 @@ ROM の中身を調べる目的は大きく 3 つあります。
 読み解く手順を図にすると、次のようになります。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart TD
   A["ROM の<br>ファイル"] --> B["大きさで<br>形を決める<br>§21.1"]
   B --> C["位置をアドレスに<br>換算する<br>§21.1"]
@@ -248,6 +249,7 @@ A や X などのレジスタに値が要るコマンドは、この口だけで
 **例: IOCS を呼ぶとき**
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart LR
   P["自分の機械語<br>CALLF FFFE8h"] --> V["FFFE8h<br>全バージョンで同じアドレス"]
   V -->|"2.1"| A["F33B8h"]
@@ -310,6 +312,7 @@ IOCS（入出力の処理の窓口）はデバイスごとのヘッダを連結�
 BASIC のプログラムは命令の名前をそのまま覚えるのではなく、1 バイトの番号（**token**）に置き換えて持ちます。ROM には、名前から番号を引く辞書、番号から名前を引く逆引き、番号から処理のエントリを引く処理レコードの 3 つの表があります。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart LR
   N["打ち込んだ名前<br>WHILE"] -->|"キーワード辞書"| T["token 7Ah"]
   T -->|"トークン逆引き"| N2["名前 WHILE"]

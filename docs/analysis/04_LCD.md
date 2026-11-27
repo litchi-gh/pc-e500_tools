@@ -24,6 +24,7 @@
 たとえるなら、倉庫の中に直接入るのではなく、受付の係に「3 番の棚の、左から 10 番目から」と場所を伝え、そのあと荷物を 1 個ずつ渡していく形です。係は荷物を受け取るたびに、次の場所へ自動で移ります。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart LR
     subgraph CPU側["CPU から見えるもの"]
         W["命令のアドレス<br>2008h、2004h"]
@@ -164,6 +165,7 @@ CPU の資料には LCD のウィンドウのアクセスが遅くなるとあ�
 書くときと読むときの手順を並べると、次のようになります。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 sequenceDiagram
     participant C as CPU
     participant L as コントローラ 1

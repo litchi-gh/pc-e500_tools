@@ -17,6 +17,7 @@ SHARP PC-E500 シリーズ（PC-E500 / PC-E500S / PC-E550 / PC-E650 / PC-1480U /
 全部を順に読む必要はありません。目的によって次の道を選んでください。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart LR
   S{"何をしたいか"}
   S -- "とにかく動かす" --> A["1 クイックスタート"] --> A2["7 ゲームを作る"] --> A3["12 ドットエディタ"]
@@ -67,6 +68,7 @@ flowchart LR
 | 命令の書き方を調べたい | [命令一覧](05_INSTRUCTIONS.md) |
 | 掛け算や文字の変換のルーチンが欲しい | [逆引きレシピ](20_RECIPES.md) |
 | 動くプログラムを見たい | [サンプル](../../Samples/README.md) |
+| ゲームを遊びたい | [PC-E500 ゲーム集](https://github.com/litchi-gh/pc-e500_games)（別のリポジトリ） |
 | IOCS の番号と引数を調べたい | [INCLUDE ファイルの iocs.inc](06_INCLUDE_FILES.md#iocsinc) |
 | ゲームを作りたい | [ゲームを作る](07_GAME.md) |
 | 絵を描きたい | [ドットエディタ](12_DOT_EDITOR.md) |

@@ -5,6 +5,7 @@ SHARP PC-E500 シリーズ（PC-E500 / PC-E500S / PC-E550 / PC-E650 / PC-1480U /
 ツールの使い方は[マニュアル](../manual/README.md)にあります。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart TD
   P1["第 1 部<br>ハードウェア（1〜9 章）"] --> P2["第 2 部<br>システム（10〜13 章）"]
   P2 --> P3["第 3 部<br>BASIC（14〜15 章）"]

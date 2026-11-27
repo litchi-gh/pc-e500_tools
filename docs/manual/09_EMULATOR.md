@@ -108,6 +108,7 @@ SHIFT と CTRL はクリックすると次のキーまで押したままにな�
 ## 9.5 F5 で起きること
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart TD
   A["アセンブル<br>（未保存でもよい）"] --> B["エミュレータを初期化<br>BASIC の RUN モード"]
   B --> C["機械語エリアを確保"]
@@ -205,13 +206,14 @@ POKE &HBEC00,200,100:CALL &HBEC04:PRINT PEEK &HBEC02
 ## 9.10 パネルとデバッグの関係
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 stateDiagram-v2
   [*] --> なし
   なし --> 単独: エミュレータを開く
   なし --> デバッグ: F5
   単独 --> デバッグ: F5（新しい本体になる）
   デバッグ --> なし: Shift+F5
-  デバッグ --> 停止中: ブレークポイント、一時停止
+  デバッグ --> 停止中: ブレークポイント、<br>一時停止
   停止中 --> デバッグ: 続ける
 ```
 

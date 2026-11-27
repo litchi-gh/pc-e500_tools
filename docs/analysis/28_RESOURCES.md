@@ -34,6 +34,7 @@
 | 別のエミュレータの作りを見る | [IOCS と FCS](11_IOCS.md) | §28.7 |
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart LR
   Q{"何をしたいか"} --> A["読む・解析する"]
   Q --> B["作る・動かす"]
@@ -181,6 +182,7 @@ Forth500 のソースから分かることです。
 | HP Museum のフォーラム、manualslib | 自動の取得を拒む（403）。ブラウザで開く |
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart LR
   A["リンクを開く"] --> B{"開けたか"}
   B -->|"はい"| C["読む"]

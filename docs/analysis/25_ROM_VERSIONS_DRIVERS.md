@@ -231,6 +231,7 @@ BASIC の `ERN` の値はこの表の番号に 9 を足したものです（実�
 PC-1480U（2.1）、PC-1490UII（6.4）、PC-U6000（8.4）だけが、FUNC デバイスの行列演算に追加の処理を持ちます。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart TB
   N["演算番号<br>BFEE3h"] --> Q{"機種コード 1・4 か"}
   Q -->|"はい"| A["0〜6 をこの経路で処理<br>bit3 と bit0 による分岐がある"]

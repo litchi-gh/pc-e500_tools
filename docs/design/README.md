@@ -19,6 +19,7 @@
 ## 全体をひと目で
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart TD
   subgraph S["作る"]
     ED["VS Code で編集<br>（5 章）"]

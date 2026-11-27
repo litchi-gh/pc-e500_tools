@@ -24,6 +24,7 @@ BASIC で `A=1.5` と打つと、`1.5` という値はメモリのどこかに�
 登場するのは 2 つのブロック（メモリの中のファイル）です。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart LR
   T["TEXT.BAS<br>プログラムの行<br>（15.3）"] -->|RUN で実行| D["DATA.BAS<br>変数、配列、文字列<br>（15.2）"]
   D --> C["計算中の 15 バイト<br>内部 RAM の作業領域<br>（15.1.2、15.1.3）"]
@@ -300,6 +301,7 @@ GOTO 10 の中間コード:  FE 2B  1F 00 0A
 プログラムの先頭から行をたどる手順は次のとおりです。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart TD
   A["先頭の位置（0Dh の場所）+ 1 へ"] --> B{"このバイトは FFh か"}
   B -->|はい| E["プログラムの終わり"]

@@ -47,6 +47,7 @@ Core は `E500Assembler.Core` を参照します。`e500dbg` も逆アセンブ�
 ![e500dasm が往復一致を保証するしくみ](../images/disassembler-verify.svg)
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart TD
   A["DecodeAt: 1 命令をデコード"] --> B{"デコードできたか"}
   B -- いいえ --> D["DB"]
@@ -76,16 +77,17 @@ SC62015 には、同じ意味になる別の符号がいくつもあります。
 `Decode` は先頭から順に、次の判断を繰り返します。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart TD
-  S["offset のバイト"] --> P{"21h〜27h か 30h〜37h"}
-  P -- はい --> Q{"次もあって、次は PRE でない"}
-  Q -- はい --> R["PRE と次の命令をまとめてデコード"]
+  S["offset のバイト"] --> P{"21h〜27h か<br>30h〜37h"}
+  P -- はい --> Q{"次もあって、<br>次は PRE でない"}
+  Q -- はい --> R["PRE と次の命令を<br>まとめてデコード"]
   R --> RM{"照合が一致"}
   RM -- はい --> OUT["1 行にする"]
   RM -- いいえ --> PRE["PRE $nn の 1 行"]
   Q -- いいえ --> PRE
   P -- いいえ --> D["1 命令をデコード"]
-  D -- 途中で終わり --> T["残りすべてを DB<br>truncated instruction at end of input"]
+  D -- 途中で終わり --> T["残りすべてを DB<br>truncated instruction<br>at end of input"]
   D -- 予約や不正 --> X["読んだ分を DB<br>（理由を注記）"]
   D -- 読めた --> M{"照合が一致"}
   M -- はい --> OUT

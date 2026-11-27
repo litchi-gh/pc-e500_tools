@@ -15,12 +15,13 @@
 ## 5.1 全体
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart LR
   EX["extension.ts<br>登録、診断の更新"]
   EX --> LINT["linter/ dialects/<br>BASIC の診断"]
-  EX --> ASM["asm/<br>アセンブラの移植、候補、説明、定義"]
+  EX --> ASM["asm/<br>アセンブラの移植、<br>候補、説明、定義"]
   EX --> BAS["basic/<br>BASIC の候補、説明"]
-  EX --> PROJ["project/<br>テンプレート、BIN、INCLUDE のコピー"]
+  EX --> PROJ["project/<br>テンプレート、BIN、<br>INCLUDE のコピー"]
   EX --> LCD["lcd/<br>ドットエディタ"]
   EX --> SET["setup/<br>環境の確認"]
   EX --> DBG["debug/<br>デバッグアダプター"]
@@ -103,6 +104,7 @@ VS Code の API を使うのは、画面や登録を受け持つファイルだ�
 `lint` は 2 回に分けて調べます。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart TD
   A["parseLines<br>行番号の有無、範囲、重複、順番"] --> B["ラベル（*名前）を集める"]
   B --> C["行ごとに"]
@@ -171,6 +173,7 @@ flowchart TD
 ### 名前の集め方（AsmNames）
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart TD
   F["開いているファイル"] --> D["definitions<br>INCLUDE をたどる（64 段まで）"]
   W["ワークスペースの .asm .inc .e500asm<br>（500 個まで）"] --> I["このファイルを INCLUDE するもの"]
@@ -194,6 +197,7 @@ flowchart TD
 ## 5.4 ドットエディタ
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart TD
   subgraph EXTH["拡張"]
     DOC["lcdDocument / sprEditor<br>CustomDocument、元に戻す、保存"]
@@ -291,10 +295,11 @@ offset     = controller*512 + page*64 + column
 ### 本体は 1 台（MachineHub）
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 stateDiagram-v2
   [*] --> なし
   なし --> 単独: エミュレータを開く
-  単独 --> デバッグ: デバッグを始める（単独のものは終了）
+  単独 --> デバッグ: デバッグを始める<br>（単独のものは終了）
   なし --> デバッグ: デバッグを始める
   デバッグ --> なし: デバッグの終わり
   単独 --> なし: e500dbg の終了

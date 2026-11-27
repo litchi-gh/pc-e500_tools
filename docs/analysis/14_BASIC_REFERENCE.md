@@ -86,6 +86,7 @@
 PC-E500 の BASIC にはプログラムを動かすモードと書くモードがあります。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 stateDiagram-v2
   state "RUN モード" as RUN
   state "PRO モード" as PRO
@@ -260,6 +261,7 @@ stateDiagram-v2
 データを読み書きするときは「開く、読み書きする、閉じる」の順です。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart LR
   A["OPEN … FOR OUTPUT<br>AS #1"] --> B["PRINT #1,値"] --> C["CLOSE #1"]
   D["OPEN … FOR INPUT<br>AS #1"] --> E{"EOF (1) は -1 か"}
@@ -380,6 +382,7 @@ IF 条件 THEN *ラベル ELSE 文
 条件が真なら `THEN` 側、偽なら `ELSE` 側を実行します。行番号またはラベルを指定した場合はその位置へ移ります。比較には `=`, `<>`, `<`, `>`, `<=`, `>=` を使用します。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart TD
   A{"条件"} -->|真| B["THEN の文"]
   A -->|偽| C["ELSE の文<br>（なければ何もしない）"]
@@ -418,6 +421,7 @@ RETURN
 時間の順に描くと、次のようになります。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 sequenceDiagram
   participant M as 本文（100 行〜）
   participant S as サブルーチン（500 行〜）
@@ -440,6 +444,7 @@ ON 式 GOTO  行番号1, 行番号2, ...
 式の値で移動先を選びます。`ON ... GOSUB` の各候補は `RETURN` で戻るサブルーチンにします。ラベルも行番号の代わりに指定できます。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart LR
   A{"式の値"} -->|1| B["行番号1"]
   A -->|2| C["行番号2"]
@@ -5379,6 +5384,7 @@ WAIT
 動きを図にすると次のようになります。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart TD
   subgraph W["WHILE ... WEND"]
     W1{"条件が真か"} -->|真| W2["囲まれた文"] --> W1
@@ -5392,6 +5398,7 @@ flowchart TD
 ```
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart TD
   S{"SWITCH 変数 の値"} -->|CASE 値1 と同じ| A["値1 の文"]
   S -->|CASE 値2 と同じ| B["値2 の文"]

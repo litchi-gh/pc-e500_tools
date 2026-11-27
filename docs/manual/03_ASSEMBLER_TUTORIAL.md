@@ -26,6 +26,7 @@
 CPU が直接実行するのは、数の並び（**機械語**）です。人が読み書きしやすいように、1 つ 1 つの命令に名前を付けたものが**アセンブリ言語**で、それを機械語に変えるのが**アセンブラ**（`e500asm`）です。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart LR
   A["アセンブリ（ASM）<br>MV A,123"] -- アセンブル --> B["機械語<br>08 7B"]
   B -- 書き込む --> C["メモリ<br>BEC00h から"]
@@ -271,6 +272,7 @@ start:  MV    A,[DATA]
 8 ビットに入るのは 255 までです。200 + 100 = 300 は、`A` に 44（300 − 256）が残り、`C` が 1 になります。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart LR
   A["200 + 100 = 300"] --> B["下位 8 ビット = 44 → A"]
   A --> C["桁上がり = 1 → C"]
@@ -308,6 +310,7 @@ loop:   ADD   BA,I              ; BA = BA + I
 `DEC` は 1 を引き、結果が 0 なら `Z` を 1 にします。`JRNZ`（jump relative if not zero）は `Z` が 0 のときだけ飛びます。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart TD
   A["BA = 0、IL = 10"] --> B["BA = BA + I"]
   B --> C["IL を 1 減らす"]
@@ -437,6 +440,7 @@ mul_1:  PUSHU I                 ; 回数を預けて、I を足し算に使う
 `CALL` はリターンアドレスを **S スタック**に積んでから飛びます。`RET` はそれを取り出して戻ります。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 sequenceDiagram
   participant M as start
   participant S as S スタック

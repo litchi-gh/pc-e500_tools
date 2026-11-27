@@ -21,6 +21,7 @@ SHARP ポケットコンピュータ PC-E500 シリーズ（PC-E500 / PC-E500S /
 | [コマンド e500 と AI](docs/manual/22_COMMAND_LINE_AI.md) | `e500` コマンドの働きと、Claude Code や Codex 用のスキル |
 | [マニュアルの目次](docs/manual/README.md) | 全 25 章 |
 | [サンプル](Samples/README.md) | 動くプログラム集 |
+| [ゲーム集](https://github.com/litchi-gh/pc-e500_games) | 機械語と BASIC のゲーム（別のリポジトリ） |
 | [ハンドブック](docs/handbook/README.md) | 本体の使い方。電卓、統計、行列、BASIC、機械語の動かし方。全 22 章 |
 | [解析資料](docs/analysis/README.md) | CPU、ハードウェア、ROM、BASIC、周辺機器。全 29 章 |
 | [設計の目次](docs/design/README.md) | ソースの作り |
@@ -32,7 +33,7 @@ SHARP ポケットコンピュータ PC-E500 シリーズ（PC-E500 / PC-E500S /
 | [VSCodeExtensions/](VSCodeExtensions/pc-e500-devtools/) | VS Code 拡張「PC-E500 開発ツール」。編集、エミュレータでの実行とデバッグ、テスト、ドットエディタ、BIN 作成 |
 | [Assembler/](Assembler/) | クロスアセンブラ `e500asm` |
 | [DisAssembler/](DisAssembler/) | 逆アセンブラ `e500dasm`（コマンド）と `E500Disassembler`（画面、Windows） |
-| [Samples/](Samples/README.md) | サンプル。アセンブラの例題とゲーム、BASIC のゲームなど |
+| [Samples/](Samples/README.md) | サンプル。アセンブラの例題とレシピ、BASIC のグラフと機械語の呼び方 |
 | [docs/](docs/README.md) | ハンドブック、マニュアル、設計、解析資料 |
 
 ## はじめに

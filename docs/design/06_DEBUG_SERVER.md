@@ -49,6 +49,7 @@
 ### スレッド
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart TD
   IN["標準入力"] --> T1["読み取りスレッド<br>1 行を JSON にする"]
   T1 --> Q["BlockingCollection<br>要求の列"]
@@ -69,6 +70,7 @@ JSON として読めない行には `output` の通知を返して、次の行�
 | 知らせ | `{"event": "stopped", "body": {…}}` |
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 sequenceDiagram
   participant V as 拡張
   participant D as e500dbg
@@ -305,6 +307,7 @@ sequenceDiagram
 3. 行数がいちばん多いものを使う（`before` 行に届いたら終わり）。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart LR
   A["address - 6×before"] -- 1 バイトずつ --> B["デコード"]
   B --> C{"address で終わるか"}

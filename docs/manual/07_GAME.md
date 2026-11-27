@@ -1,6 +1,6 @@
 # 7. ゲームを作る
 
-この章はテンプレート「キャラクタを動かすゲーム」を読み解き、敵とゲームオーバーを足して、自分のゲームにするまでの実習です。できあがりは [starcatch.asm](../../Samples/Assembler/StarCatch/starcatch.asm)、続けてもう 1 本、弾を撃つ[メテオ](../../Samples/Assembler/Meteor/meteor.asm)も作ります。
+この章はテンプレート「キャラクタを動かすゲーム」を読み解き、敵とゲームオーバーを足して、自分のゲームにするまでの実習です。できあがりは [starcatch.asm](https://github.com/litchi-gh/pc-e500_games/blob/main/Assembler/StarCatch/starcatch.asm)、続けてもう 1 本、弾を撃つ[メテオ](https://github.com/litchi-gh/pc-e500_games/blob/main/Assembler/Meteor/meteor.asm)も作ります（どちらも [PC-E500 ゲーム集](https://github.com/litchi-gh/pc-e500_games)にあります）。
 
 ゲームは「入力を読む、動かす、描く、待つ」を繰り返すプログラムです。この形が分かると、時計、お絵かき、グラフの表示など、画面が動くものは何でも同じように作れます。アセンブラの基本は[入門](03_ASSEMBLER_TUTORIAL.md)の例題 8（内部 RAM）まで済ませておくと、楽に読めます。
 
@@ -26,6 +26,7 @@
 映画のフィルムのように、少しずつ違う絵を続けて見せると、動いて見えます。ゲームではキーの状態に応じて次の絵をその場で作ります。1 枚の絵を作る作業をいつも同じ順番で行うのが、ゲームの流れです。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart TD
   A["game_start<br>準備"] --> B["背景を読み込む<br>screen_load、screen_keep"]
   B --> C["変数を初期値に"]
@@ -281,7 +282,7 @@ mygame.asm: BE000〜BF2CD（4814 バイト）、開始 BE000 START
 ## 7.8 確かめる
 
 - 途中の値を見る: 行番号の左をクリックしてブレークポイントを置き、`F5`。パネルの「ウォッチ」に `(score):2` などを足します（[デバッグ](10_DEBUG.md)）。
-- 自動で確かめる: [starcatch.e500test.json](../../Samples/Assembler/StarCatch/starcatch.e500test.json) は、敵に当たって「GAME OVER」が出ることと、ON/BRK で戻ることを調べます（[テスト](11_TESTS.md)）。
+- 自動で確かめる: [starcatch.e500test.json](https://github.com/litchi-gh/pc-e500_games/blob/main/Assembler/StarCatch/starcatch.e500test.json) は、敵に当たって「GAME OVER」が出ることと、ON/BRK で戻ることを調べます（[テスト](11_TESTS.md)）。
 - 実機で遊ぶ: 「BIN を作成」（[実機へ送る](14_TRANSFER.md)）。
 
 ## 7.9 気をつけること
@@ -294,7 +295,7 @@ mygame.asm: BE000〜BF2CD（4814 バイト）、開始 BE000 START
 
 ## 7.10 もう 1 本: メテオ
 
-2 本目の例は隕石を撃つゲームです。「同じものをたくさん動かす」「弾を撃つ」「残りと無敵時間」「タイトル画面」を加えました。ソースは [meteor.asm](../../Samples/Assembler/Meteor/meteor.asm) です。
+2 本目の例は隕石を撃つゲームです。「同じものをたくさん動かす」「弾を撃つ」「残りと無敵時間」「タイトル画面」を加えました。ソースは [meteor.asm](https://github.com/litchi-gh/pc-e500_games/blob/main/Assembler/Meteor/meteor.asm) です。
 
 ![タイトル](../images/samples/meteor-title.png)
 
@@ -303,6 +304,7 @@ mygame.asm: BE000〜BF2CD（4814 バイト）、開始 BE000 START
 ### 全体の流れ
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart TD
   A["game_start"] --> T["タイトルを描く<br>SPACE を待つ"]
   T --> I["init: 初めの値"]
@@ -413,6 +415,7 @@ gain_1: MV    (beep),2
 ## 7.11 ゲームを作る順番
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart TD
   A["動く 1 つの<br>キャラクタ"] --> B["背景"] --> C["相手"] --> D["当たり判定"] --> E["点数と残り"] --> F["音"] --> G["タイトルと<br>終わり"] --> H["難しさの<br>調整"]
 ```

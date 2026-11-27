@@ -168,6 +168,7 @@ PC-E500 には 6 つの動作モードがあります。
 ### 1.5.1 目的別の選び方
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart TD
   S["したいことは"] --> A{"ふつうの計算、<br>関数の計算"}
   S --> B{"実験などの<br>データの計算"}

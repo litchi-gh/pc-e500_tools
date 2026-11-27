@@ -28,10 +28,11 @@
 機種を発売の順に並べると次のようになります。発売年は [周辺機器](16_PERIPHERALS.md) §16.1 の表の値（PC-E500S はサービスマニュアルの発行年月 1993 年 5 月、ほかは百科事典の値）で、バージョンは手元の ROM です。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 timeline
   title シリーズの機種（発売年は 16 章の表の値）
-  1988 : PC-1480U（2.1） : PC-E500（2.2 ほか。1988 / 1989）
-  1990 : PC-E500PJ（6.2） : PC-E550（7.5） : PC-1490U（手元に ROM なし）
+  1988 : PC-1480U（2.1） : PC-E500<br>（2.2 ほか。<br>1988 / 1989）
+  1990 : PC-E500PJ（6.2） : PC-E550（7.5） : PC-1490U<br>（手元に<br>ROM なし）
   1991 : PC-1490UII（6.4）
   1993 : PC-E650（8.5） : PC-U6000（8.4） : PC-E500S（8.3）
 ```
@@ -77,6 +78,7 @@ PRINT PEEK &HFFFF0;PEEK &HFFFF1
 BASIC を使わなくても、電源を入れた画面とメインメニューの 5 番目を見れば、機種コードの見当がつきます。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart TB
   A{"メインメニューの<br>5 番目は"} -->|"ENG"| M3["機種コード 3（英語）<br>PC-E500、PC-E500S"]
   A -->|"TIMER"| M1["機種コード 1<br>PC-1480U"]

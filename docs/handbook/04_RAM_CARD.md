@@ -119,6 +119,7 @@ A
 ### 4.5.1 切り替えの規則
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 stateDiagram-v2
   direction LR
   S1: S1
@@ -127,7 +128,7 @@ stateDiagram-v2
   S1 --> S2: MEM$="S2"
   S2 --> S1: MEM$="S1"
   S1 --> B: MEM$="B"（カードが空）
-  B --> S1: MEM$="S1"（内蔵メモリに収まるとき）
+  B --> S1: MEM$="S1"<br>（内蔵メモリに<br>収まるとき）
 ```
 
 | 操作 | 結果 | 根拠 |

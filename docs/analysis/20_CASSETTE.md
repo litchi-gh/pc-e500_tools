@@ -22,6 +22,7 @@
 しくみは単純です。本体が「短い波」と「長い波」の 2 種類の音を出し、それをテープに録音します。読み込むときは、再生した音を本体に入れ、1 つ 1 つの波の長さを測って元のデータに戻します。声で数字を読み上げて録音し、あとで聞いて書き取るのと同じです。違うのは、1 秒に数百個から 3,000 個の波を使うことです。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart TD
   A["プログラム<br>（本体のメモリ）"] -->|"CSAVE"| B["音<br>短い波と長い波"]
   B -->|"録音"| C["テープ、または<br>パソコンの WAV ファイル"]
@@ -313,6 +314,7 @@ EOF
 ### 20.6.2 症状から探す
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart LR
   S{"どうなったか"} -->|"名前も * も出ず、<br>いつまでも終わらない"| A["音が届いていない、<br>または音量が小さい"]
   S -->|"名前が出るが、<br>* にならず探し続ける"| B["名前か種別が違う<br>§20.4.2"]
@@ -381,6 +383,7 @@ flowchart LR
 WAV とプログラムを変換するパソコンのソフトもあります。以前の機種では PocketTools の `wav2bin`、`bin2wav` が使われています（個人）。PC-E500 のヘッダと本体の形は [11 ピン（テープ、周辺機器）](06_PORT_11PIN.md) §6.3〜§6.5 にあります。自分で書くなら、次の手順です。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart TD
   W["WAV"] --> Z["0 を横切る時刻を求める"] --> H["上向きから下向きまでの<br>時間を測る"] --> D{"約 290 µs より長いか"}
   D -->|"短い"| B0["0"]
@@ -558,6 +561,7 @@ D4h と D7h の後ろには `1E 02` が付きました。行番号の参照を�
 ### 20.10.3 テープの形の移り変わり
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart LR
   A["1 バイトの中間コードの機種<br>種別 70h、71h<br>4 kHz と 2 kHz の波の数"] --> B["2 バイトの中間コードの機種<br>種別 72h、73h<br>同じ信号"]
   B --> C["PC-E500<br>種別 01h、02h、04h<br>波の長さ、検査値は 1 の数"]

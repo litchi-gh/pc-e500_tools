@@ -17,6 +17,7 @@
 ポケコンは 1 台でも使えますが、作ったプログラムを残す、印刷する、図を描く、パソコンへ送る、といった仕事には外の機器が要ります。何をしたいかによって、使う機器と接続口が決まります。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart LR
   A{"何をしたいか"} --> B["プログラムや結果を印刷する"]
   A --> C["図を描く"]
@@ -89,12 +90,13 @@ flowchart LR
 発売年の順に並べると、次のようになります。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 timeline
   title PC-E500 シリーズの発売年
-  1988 : PC-1480U（32 KB） : PC-E500（32 KB、1988 / 1989）
+  1988 : PC-1480U（32 KB） : PC-E500<br>（32 KB、<br>1988 / 1989）
   1990 : PC-E500PJ（32 KB） : PC-E550（64 KB） : PC-1490U（32 KB）
   1991 : PC-1490UII（64 KB）
-  1993 : PC-E650（64 KB） : PC-U6000（64 KB） : PC-E500S（32 KB、サービスマニュアルの年）
+  1993 : PC-E650（64 KB） : PC-U6000（64 KB） : PC-E500S<br>（32 KB、<br>サービスマニュアル<br>の年）
 ```
 
 内蔵 RAM は百科事典の値で、PC-E500、PC-E500S、PC-E650、PC-U6000 はサービスマニュアルの部品表と一致します。発売年は、PC-E500S のほかは百科事典の値です。PC-E500S のサービスマニュアルは 1993 年 5 月の発行で、PC-E650 と PC-U6000 の部品も載せているので、3 機種は 1993 年にはそろっていたことになります。ROM の違いは [ROM バージョンの違い: 機種](27_ROM_VERSIONS_MODELS.md) を参照してください。
@@ -272,6 +274,7 @@ GCR（4/5）は 4 ビットのデータを 5 ビットに置き換えて記録�
 本体の 15 ピンの信号は CMOS レベル（4〜6 V）なので、RS-232C のパソコンとは直接つなげません（[15 ピン（シリアル）](07_PORT_15PIN.md)）。電圧の違いを変換する機器がレベルコンバータです。
 
 ```mermaid
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false, "wrappingWidth": 1000}}}%%
 flowchart LR
   A["本体 15 ピン<br>CMOS レベル"] --> B["レベルコンバータ<br>CE-130T、CE-140T"]
   B --> C["パソコン<br>RS-232C"]
